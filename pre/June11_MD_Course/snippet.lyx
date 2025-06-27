@@ -1,0 +1,246 @@
+#LyX file created by tex2lyx 2.4
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /Users/cheneyg./Documents/WorkingProjects/blind/pre/June11_MD_Course/
+\textclass article
+\use_default_options false
+\maintain_unincluded_children no
+\language english
+\language_package none
+\inputencoding auto-legacy
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\use_lineno false
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\series bold
+Summary & Key Takeaways
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Contribution: A New Mechanism for Sovereign Default
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+ I introduce a tractable sovereign default model with 
+\series bold
+heterogeneous lender beliefs
+\series default
+, where the market consists of both rational and boundedly rational agents.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset VSpace 0.7cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Theoretical Result: Endogenous 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+Price Cliff
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+ This mechanism endogenously generates a 
+\series bold
+discontinuous bond price schedule
+\series default
+. This provides a new theoretical foundation for understanding sudden stops and financial crises.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset VSpace 0.7cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Quantitative Success: Resolving the Spread Puzzles
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+ When calibrated, the model can match the 
+\series bold
+high average spreads
+\series default
+ observed in emerging markets. Crucially, it then endogenously produces 
+\series bold
+extreme spread volatility
+\series default
+, resolving a key puzzle the standard model cannot.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset VSpace 0.7cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Key Insight: Endogenous Financial Fragility
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+ The model reveals a counterintuitive behavioral response: the government is induced to 
+\series bold
+borrow more aggressively
+\series default
+ to exploit 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+cheap
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+ credit offered by optimistic lenders. This leads to higher equilibrium debt and makes the economy 
+\series bold
+endogenously more fragile
+\series default
+.
+\end_layout
+
+\end_body
+\end_document

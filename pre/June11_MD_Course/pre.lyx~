@@ -1,0 +1,1615 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme[progressbar=frametitle]{metropolis}
+% or ...
+
+% \setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+\usepackage{fontspec}
+\setsansfont{Fira Sans}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usetikzlibrary{arrows.meta, positioning}
+\usetikzlibrary{fit, positioning}
+\usepackage{amsthm}
+\theoremstyle{definition}    % 或 remark, plain
+\newtheorem{proposition}{Proposition}[section]
+\end_preamble
+\options aspectratio=1610
+\use_default_options false
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding default
+\font_roman "lmodern" "default"
+\font_sans "lmss" "default"
+\font_typewriter "lmtt" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf5
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 2
+\use_package esint 2
+\use_package mathdots 2
+\use_package mathtools 2
+\use_package mhchem 2
+\use_package stackrel 2
+\use_package stmaryrd 2
+\use_package undertilde 2
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This file is a solution template for:
+\end_layout
+
+\begin_layout Itemize
+Talk at a conference/colloquium.
+ 
+\end_layout
+
+\begin_layout Itemize
+Talk length is about 20min.
+ 
+\end_layout
+
+\begin_layout Itemize
+Style is ornate.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+In principle,
+ this file can be redistributed and/or modified under the terms of the GNU Public License,
+ version 2.
+ However,
+ this file is supposed to be a template to be modified for your own needs.
+ For this reason,
+ if you use this file as a template and not specifically distribute it as part of a another package/program,
+ the author grants the extra permission to freely copy and modify this file as you see fit and even to delete this copyright notice.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Sovereign Default with Bounded Rationality
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Chen Gao
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+Give the names in the same order as the appear in the paper.
+ 
+\end_layout
+
+\begin_layout Itemize
+Use the 
+\begin_inset Quotes eld
+\end_inset
+
+Institute mark
+\begin_inset Quotes erd
+\end_inset
+
+ inset (
+\family sans
+Insert\SpecialChar menuseparator
+Custom Insets\SpecialChar menuseparator
+InstituteMark
+\family default
+) only if the authors have different affiliations.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Chen Gao
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+\begin_inset Flex InstituteMark
+status collapsed
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+National School of Development,
+ Peking University
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+Use the 
+\begin_inset Quotes eld
+\end_inset
+
+Institute mark
+\begin_inset Quotes erd
+\end_inset
+
+ inset (
+\family sans
+Insert\SpecialChar menuseparator
+Custom Insets\SpecialChar menuseparator
+InstituteMark
+\family default
+) only if there are several affiliations.
+\end_layout
+
+\begin_layout Itemize
+Keep it simple,
+ no one is interested in your street address.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+PKU
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+\begin_inset Info
+type  "date"
+arg   "loclong"
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+Either use conference name or its abbreviation.
+ 
+\end_layout
+
+\begin_layout Itemize
+Not really informative to the audience,
+ more for people (including yourself) who are reading the slides online
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If you have a file called "institution-logo-filename.xxx",
+ where xxx is a graphic format that can be processed by latex or pdflatex,
+ resp.,
+ then you can add a logo by uncommenting the following:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pgfdeclareimage[height=0.5cm]{institution-logo}{institution-logo-filename}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+logo{
+\backslash
+pgfuseimage{institution-logo}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The following causes the table of contents to be shown at the beginning of every subsection.
+ Delete this,
+ if you do not want it.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginSubsection[]{%
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+frame<beamer>{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+frametitle{Outline}   
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+tableofcontents[currentsection,currentsubsection] 
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If you wish to uncover everything in a step-wise fashion,
+ uncomment the following command:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beamerdefaultoverlayspecification{<+->}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Outline
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Structuring a talk is a difficult task and the following structure may not be suitable.
+ Here are some rules that apply for this solution:
+ 
+\end_layout
+
+\begin_layout Itemize
+Exactly two or three sections (other than the summary).
+ 
+\end_layout
+
+\begin_layout Itemize
+At *most* three subsections per section.
+ 
+\end_layout
+
+\begin_layout Itemize
+Talk about 30s to 2min per frame.
+ So there should be between about 15 and 30 frames,
+ all told.
+\end_layout
+
+\begin_layout Itemize
+A conference audience is likely to know very little of what you are going to talk about.
+ So *simplify*!
+ 
+\end_layout
+
+\begin_layout Itemize
+In a 20min talk,
+ getting the main ideas across is hard enough.
+ Leave out details,
+ even if it means being less precise than you think necessary.
+ 
+\end_layout
+
+\begin_layout Itemize
+If you omit details that are vital to the proof/implementation,
+ just say so once.
+ Everybody will be happy with that.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Motivation
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Puzzle of Sovereign Spreads
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% The 'T' option aligns the columns at the top
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+0.5
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+The Stylized Facts:
+ 
+\series default
+What a Crisis Looks Like
+\end_layout
+
+\begin_layout Itemize
+Emerging market sovereign spreads are 
+\series bold
+high
+\series default
+ and extremely 
+\series bold
+volatile
+\end_layout
+
+\begin_layout Itemize
+Crises are characterized by sudden 
+\series bold
+spikes in spreads
+\series default
+,
+ often accompanying deep recessions
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+The Puzzle:
+ 
+\series default
+Standard Models Fall Short
+\end_layout
+
+\begin_layout Itemize
+generates spreads that are too low and too smooth,
+ failing to capture the sudden spikes seen in crises
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+0.5
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Argentina's Spread (1983-2003)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename spread.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{columns}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Model with Bounded Rationality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout PlainFrame
+
+\series bold
+My solution
+\series default
+:
+ Relax the full rationality assumption
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Standard default model (Arellano,
+ 2008) + Heterogeneous Lenders
+\end_layout
+
+\begin_layout Itemize
+Boundedly Rational agents (Information & Cognitive Costs 
+\begin_inset Formula $\to$
+\end_inset
+
+ Heuristics)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Key Results:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theoretical:
+
+\series default
+ The model endogenously generates a "price cliff"
+\end_layout
+
+\begin_layout Itemize
+A new mechanism for sudden crises
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Quantitative
+\series default
+:
+ Calibrated model matches high average spreads AND produces
+\end_layout
+
+\begin_layout Itemize
+Extreme spread volatility
+\end_layout
+
+\begin_layout Itemize
+Higher financial fragility (more debt & defaults)
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Model
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Model Setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+A small open economy with AR(1) potential output stream 
+\begin_inset Formula $\left\{ y_{t}\right\} _{t=0}^{\infty}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\ln(y_{t+1})=\rho\ln(y_{t})+\varepsilon_{t+1},\quad\text{where }\varepsilon_{t+1}\sim N(0,\sigma_{\varepsilon}^{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+Identical households rank stochastic consumption streams according to:
+\begin_inset Formula 
+\[
+\mathbb{E}_{0}\left[\sum_{t=0}^{\infty}\beta^{t}u\left(c_{t}\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+The government try to smooth consumption by borrowing from (and lending to) foreign creditors.
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\size larger
+The Model:
+ Key Ingredients
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "48text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+The Sovereign Government
+\series default
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+State:
+
+\series default
+ 
+\begin_inset Formula $(B,y)$
+\end_inset
+
+ - Current Assets & Income Shock.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Decision:
+ Default or Repay?
+\end_layout
+
+\begin_layout Itemize
+If 
+\series bold
+Default
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Output cost:
+ 
+\begin_inset Formula $y\to h(y)\le y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Excluded from credit markets
+\end_layout
+
+\begin_layout Itemize
+Re-entry with probability 
+\begin_inset Formula $\theta$
+\end_inset
+
+ each period
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\series bold
+Repay
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Honors current debt 
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Chooses next period's assets 
+\begin_inset Formula $B'$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+
+\series bold
+Budget Constraint
+\series default
+ (when repaying):
+ 
+\begin_inset Formula 
+\[
+c=y+B-q(B',y)B'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "48text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+The Financial Market
+\series default
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Lenders:
+
+\series default
+ Competitive & Risk-Neutral.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Asset:
+
+\series default
+ One-period,
+ non-contingent bond.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+The Bond Pricing Equation:
+
+\series default
+ 
+\begin_inset Formula 
+\begin{equation}
+q(B',y)=\frac{1-\delta(B',y)}{1+r}\label{eq:qdelta}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\delta(B',y)$
+\end_inset
+
+ is the endogenous probability of default on the new debt 
+\begin_inset Formula $B'$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Government's Problem:
+ A Recursive Formulation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+
+\series bold
+The Value of Default,
+ 
+\begin_inset Formula $V^{D}(y)$
+\end_inset
+
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+V^{D}(y)=u(h(y))+\beta\mathbb{E}_{y'}\left[\theta V(0,y')+(1-\theta)V^{D}(y')|y\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+The Value of Repayment,
+ 
+\begin_inset Formula $V^{R}(B,y)$
+\end_inset
+
+
+\series default
+
+\begin_inset Formula 
+\begin{equation}
+V^{R}(B,y)=\max_{B'\ge-Z}\left\{ u\left(y+B-q(B',y)B'\right)+\beta\mathbb{E}_{y'}[V(B',y')|y]\right\} 
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+The Optimal Decision & Overall Value Function,
+ 
+\begin_inset Formula $V(B,y)$
+\end_inset
+
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+It defaults if and only if 
+\begin_inset Formula $V^{D}(y)>V^{R}(B,y)$
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\begin{equation}
+V(B,y)=\max\left\{ V^{R}(B,y),V^{D}(y)\right\} 
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Core Mechanism:
+ Default Probability with 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-Rationality 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout PlainFrame
+Assuming the market consists of two types of lenders:
+\end_layout
+
+\begin_layout PlainFrame
+
+\series bold
+Fraction 
+\begin_inset Formula $\lambda$
+\end_inset
+
+:
+ Rational Lenders
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\delta_{r}(B',y)=\mathbb{E}_{y'}\left[\mathbb{I}_{\left\{ V^{D}(y')>V^{R}(B',y')\right\} }|y\right]=\int\mathbb{I}_{\left\{ \dots\right\} }p(y,y')dy'
+\end{equation}
+
+\end_inset
+
+
+\series bold
+Fraction 
+\begin_inset Formula $(1-\lambda)$
+\end_inset
+
+:
+ Boundedly Rational Lenders
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+These lenders use a simple heuristic,
+ assessing default risk based only on the point expectation of future output,
+ 
+\begin_inset Formula $\mathbb{E}[y'|y]=y^{\rho}$
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\begin{equation}
+\delta_{ir}(B',y)=\mathbb{I}_{\left\{ V^{D}(\mathbb{E}[y'|y])>V^{R}(B',\mathbb{E}[y'|y])\right\} }
+\end{equation}
+
+\end_inset
+
+
+\series bold
+Aggregate Market Belief
+\end_layout
+
+\begin_layout PlainFrame
+The market's overall perceived default probability is the weighted average of the two groups' beliefs.
+ 
+\begin_inset Formula 
+\begin{equation}
+\delta(B',y;\lambda)=\lambda\delta_{r}(B',y)+(1-\lambda)\delta_{ir}(B',y)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Theoretical Results
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Discontinuous Price Schedule
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Bounded rationality creates a 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+price cliff
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% --- Formal Statement of the Theorem ---
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{theorem}[Price Discontinuity under Bounded Rationality]
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:price_drop_slide"
+
+\end_inset
+
+ With a fraction 
+\begin_inset Formula $(1-\lambda)>0$
+\end_inset
+
+ of boundedly rational lenders,
+ the equilibrium bond price schedule 
+\begin_inset Formula $q(B',y;\lambda)$
+\end_inset
+
+ exhibits a unique discontinuity at a critical debt threshold 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+.
+ Specifically:
+ 
+\end_layout
+
+\begin_layout Itemize
+The magnitude of the price drop at the threshold:
+ 
+\begin_inset Formula 
+\[
+\lim_{B'\to\tilde{B}'(y)^{+}}q(B',y;\lambda)-\lim_{B'\to\tilde{B}'(y)^{-}}q(B',y;\lambda)=\frac{1-\lambda}{1+r}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+safe
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ debt levels (
+\begin_inset Formula $B'>\tilde{B}'(y)$
+\end_inset
+
+),
+ 
+\begin_inset Formula $q(B',y;\lambda)\ge q(B',y;1)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+For 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+risky
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ debt levels (
+\begin_inset Formula $B'<\tilde{B}'(y)$
+\end_inset
+
+),
+ 
+\begin_inset Formula $q(B',y;\lambda)\le q(B',y;1)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{theorem}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Intuition:
+
+\series default
+ the 
+\series bold
+abrupt shift
+\series default
+ in the beliefs of boundedly rational lenders 
+\begin_inset Formula $\implies$
+\end_inset
+
+ a sudden drop in the market price.
+\end_layout
+
+\end_deeper
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Implications & Dynamics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The discontinuous price schedule has two powerful implications for crisis dynamics.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Implication 1:
+ Endogenous Interest Rate Spikes
+\end_layout
+
+\begin_layout Corollary
+\noindent
+For adverse states 
+\begin_inset Formula $(B,y)$
+\end_inset
+
+ where the government is forced to borrow beyond the critical threshold (
+\begin_inset Formula $B'<\tilde{B}'(y)$
+\end_inset
+
+),
+ the resulting equilibrium interest rate 
+\begin_inset Formula $r^{c}(B,y)$
+\end_inset
+
+ is strictly higher than in the fully rational benchmark.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Implication 2:
+ State-Dependent Financial Fragility
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+The critical debt threshold 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+ is a decreasing function of current output 
+\begin_inset Formula $y$
+\end_inset
+
+,
+ i.e.,
+ 
+\begin_inset Formula $\frac{d\tilde{B}'(y)}{dy}<0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Intuition:
+
+\series default
+ In good times 
+\begin_inset Formula $\implies$
+\end_inset
+
+ lenders are more optimistic 
+\begin_inset Formula $\implies$
+\end_inset
+
+ the government sustain more debt before a crisis is triggered
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

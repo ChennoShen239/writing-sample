@@ -1,0 +1,311 @@
+\documentclass{article}
+
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Note on Calibration}
+\author{Chen Gao}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section{Calibration}
+
+For the original setting, I have the following parameters:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Parameter}       & \textbf{Value}   & \textbf{Description}             \\
+        \midrule
+        \multicolumn{2}{l}{\textbf{Preferences and endowment}}                         \\
+        $\sigma$ \hspace{1em}    & 2.0              & CRRA                             \\
+        $\beta$ \hspace{1em}     & 0.9775           & Sovereign discounting            \\
+        $\rho_y$ \hspace{1em}    & 0.95             & Endowment autocorrelation        \\
+        $\sigma_y$ \hspace{1em}  & 0.005            & Endowment innovation             \\
+        \addlinespace
+        \multicolumn{2}{l}{\textbf{International lending}}                             \\
+        $r$ \hspace{1em}         & 0.01             & Risk-free rate                   \\
+        $\delta$ \hspace{1em}    & 0.04             & 5 years debt duration            \\
+        $\kappa$ \hspace{1em}    & $r + \delta$     & Normalization, $q^{rf} = 1$      \\
+        \addlinespace
+        \multicolumn{2}{l}{\textbf{Default}}                                           \\
+        $\lambda_0$ \hspace{1em} & $-0.48$          & Penalty linear term              \\
+        $\lambda_1$ \hspace{1em} & $0.525$          & Penalty quadratic term           \\
+        $\chi$ \hspace{1em}      & $0.125$          & 2 years average market exclusion \\
+        \addlinespace
+        \multicolumn{2}{l}{\textbf{Taste shocks}}                                      \\
+        $\eta$ \hspace{1em}      & $5\text{e}^{-4}$ & Default choice                   \\
+        $\rho$ \hspace{1em}      & $1\text{e}^{-5}$ & Borrowing choice                 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Parameter Values}
+    \label{tab:param_values}
+\end{table}
+so this is quarterly calibrated and the annualized result is shown in Table \ref{tab:original_params}.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{Moment}               &                      & \textbf{Value (\%)} \\
+        \midrule
+        \textbf{Mean}                 & Debt to GDP          & 7.87                \\
+                                      & Spread               & 8.53                \\
+        \addlinespace
+        \textbf{Standard Deviation}   & Spread               & 3.90                \\
+                                      & GDP                  & 3.13                \\
+                                      & Consumption          & 3.56                \\
+        \addlinespace
+        \textbf{Correlation with GDP} & Spread               & $-41.13$            \\
+                                      & Trade Balance to GDP & $-29.03$            \\
+        \bottomrule
+    \end{tabular}
+    \caption{Moments (\%)} \label{tab:original_params}
+\end{table}
+The main problem is that the mean debt to GDP is too low and the spread is too high given this.
+\paragraph{The strategy} Following CE 2012, I want to calibrate the default parameters to match the mean
+($8.15\%$) and SD of the spread ($4.43\%$) and the debt to GDP ratio
+($17.5\%$). I'll first try to match the $B/Y$ ratio. The first trial is shown
+in Table \ref{tab:new_param_values}. One particular finding is that by lowering
+$\beta$, resetting the income process parameters as in CE 2012, the result
+changes hugely. Also, making $\rho$ a bit larger make the model easier to
+converge and do not change the result much. The results from this new
+parameterization are shown in Table \ref{tab:new_moments}.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Parameter}       & \textbf{Value}   & \textbf{Description}        \\
+        \midrule
+        \multicolumn{2}{l}{\textbf{Preferences and endowment}}                    \\
+        $\sigma$ \hspace{1em}    & 2.0              & CRRA                        \\
+        $\beta$ \hspace{1em}     & 0.95             & Sovereign discounting       \\
+        $\rho_y$ \hspace{1em}    & 0.948503         & Endowment autocorrelation   \\
+        $\sigma_y$ \hspace{1em}  & 0.027092         & Endowment innovation        \\
+        \addlinespace
+        \multicolumn{2}{l}{\textbf{International lending}}                        \\
+        $r$ \hspace{1em}         & 0.01             & Risk-free rate              \\
+        $\delta$ \hspace{1em}    & 0.05             & 5 years debt duration       \\
+        $\kappa$ \hspace{1em}    & $r + \delta$     & Normalization, $q^{rf} = 1$ \\
+        \addlinespace
+        \multicolumn{2}{l}{\textbf{Default}}                                      \\
+        $\lambda_0$ \hspace{1em} & $-0.48$          & Penalty linear term         \\
+        $\lambda_1$ \hspace{1em} & $0.525$          & Penalty quadratic term      \\
+        $\gamma$ \hspace{1em}    & $0.0385$         & Re-entry probability        \\
+        \addlinespace
+        \multicolumn{2}{l}{\textbf{Taste shocks}}                                 \\
+        $\eta$ \hspace{1em}      & $5\text{e}^{-4}$ & Default choice              \\
+        $\rho$ \hspace{1em}      & $1\text{e}^{-4}$ & Borrowing choice            \\
+        \bottomrule
+    \end{tabular}
+    \caption{New Parameter Values}
+    \label{tab:new_param_values}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{Moment}               &                      & \textbf{Value (\%)} \\
+        \midrule
+        \textbf{Mean}                 & Debt to GDP          & 17.61               \\
+                                      & Spread               & 48.60               \\
+        \addlinespace
+        \textbf{Standard Deviation}   & Spread               & 45.98               \\
+                                      & GDP                  & 13.31               \\
+                                      & Consumption          & 14.17               \\
+        \addlinespace
+        \textbf{Correlation with GDP} & Spread               & $-74.40$            \\
+                                      & Trade Balance to GDP & $-55.59$            \\
+        \bottomrule
+    \end{tabular}
+    \caption{New Moments (\%)} \label{tab:new_moments}
+\end{table}
+
+To reduce the behavior of the spread, I need to re-calibrate the default
+parameters. I then set the default punishment parameters $\lambda_0 = -0.18$
+and $\lambda_1 = 0.245$. The results are shown in Table
+\ref{tab:new_moments_2}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{Moment}               &                      & \textbf{Value (\%)} \\
+        \midrule
+        \textbf{Mean}                 & Debt to GDP          & 18.65               \\
+                                      & Spread               & 4.79                \\
+        \addlinespace
+        \textbf{Standard Deviation}   & Spread               & 7.99                \\
+                                      & GDP                  & 16.76               \\
+                                      & Consumption          & 17.20               \\
+        \addlinespace
+        \textbf{Correlation with GDP} & Spread               & $-60.64$            \\
+                                      & Trade Balance to GDP & $-54.91$            \\
+        \bottomrule
+    \end{tabular}
+    \caption{New Moments with Updated Default Parameters (\%)} \label{tab:new_moments_2}
+\end{table}
+
+I then try to slightly increase the $\beta$ to 0.96. The results are shown in
+Table \ref{tab:new_moments_3}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{Moment}               &                      & \textbf{Value (\%)} \\
+        \midrule
+        \textbf{Mean}                 & Debt to GDP          & 18.66               \\
+                                      & Spread               & 3.52                \\
+        \addlinespace
+        \textbf{Standard Deviation}   & Spread               & 5.07                \\
+                                      & GDP                  & 16.73               \\
+                                      & Consumption          & 17.13               \\
+        \addlinespace
+        \textbf{Correlation with GDP} & Spread               & $-66.98$            \\
+                                      & Trade Balance to GDP & $-39.94$            \\
+        \bottomrule
+    \end{tabular}
+    \caption{New Moments with Higher $\beta$ (\%)} \label{tab:new_moments_3}
+\end{table}
+
+\paragraph{Effect of $\beta$} Comparing the results in Table \ref{tab:new_moments_3} and Table
+\ref{tab:new_moments_2}, I find that raising $\beta$ from 0.95 to 0.96 reduces
+the mean and sd of the spread.
+
+\paragraph{Effect of $\lambda_0$ and $\lambda_1$} I then try to figure out what will happen if I change the default punishment
+parameters. I first try to set $\lambda_0 = -0.2$ from $\lambda_0 = -0.18$. The
+result changes dramatically. The results are shown in Table
+\ref{tab:new_moments_4}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{Moment}               &                      & \textbf{Value (\%)} \\
+        \midrule
+        \textbf{Mean}                 & Debt to GDP          & 17.56               \\
+                                      & Spread               & 39.89               \\
+        \addlinespace
+        \textbf{Standard Deviation}   & Spread               & 32.71               \\
+                                      & GDP                  & 13.77               \\
+                                      & Consumption          & 14.71               \\
+        \addlinespace
+        \textbf{Correlation with GDP} & Spread               & $-78.09$            \\
+                                      & Trade Balance to GDP & $-58.19$            \\
+        \bottomrule
+    \end{tabular}
+    \caption{New Moments with Lower $\lambda_0$ (\%)} \label{tab:new_moments_4}
+\end{table}
+
+Basically, increasing $\lambda_0$ from -0.18 to -0.2 makes the mean and sd of
+the spread much higher. It will also reduce the mean debt to GDP ratio. I then
+try $\lambda_0 = -0.19$ to recover to a normal level. The results are shown in
+Table \ref{tab:new_moments_5}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{Moment}               &                      & \textbf{Value (\%)} \\
+        \midrule
+        \textbf{Mean}                 & Debt to GDP          & 18.33               \\
+                                      & Spread               & 14.85               \\
+        \addlinespace
+        \textbf{Standard Deviation}   & Spread               & 17.41               \\
+                                      & GDP                  & 15.35               \\
+                                      & Consumption          & 16.08               \\
+        \addlinespace
+        \textbf{Correlation with GDP} & Spread               & $-70.07$            \\
+                                      & Trade Balance to GDP & $-63.98$            \\
+        \bottomrule
+    \end{tabular}
+    \caption{New Moments with $\lambda_0 = -0.19$ (\%)} \label{tab:new_moments_5}
+\end{table}
+
+Then what if I change the $\lambda_0=-0.17$? The results are not so good. The
+results are shown in Table \ref{tab:new_moments_6}. But the spread is
+definitely not behaving as expected. In conclusion, I'll then fix the default
+punishment parameters to $\lambda_0 = -0.18$ for now.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{Moment}               &                      & \textbf{Value (\%)} \\
+        \midrule
+        \textbf{Mean}                 & Debt to GDP          & 18.81               \\
+                                      & Spread               & 0.00                \\
+        \addlinespace
+        \textbf{Standard Deviation}   & Spread               & 0.00                \\
+                                      & GDP                  & 17.81               \\
+                                      & Consumption          & 17.67               \\
+        \addlinespace
+        \textbf{Correlation with GDP} & Spread               & -99.98              \\
+                                      & Trade Balance to GDP & -21.86              \\
+        \bottomrule
+    \end{tabular}
+    \caption{New Moments with $\lambda_0 = -0.17$ (\%)} \label{tab:new_moments_6}
+\end{table}
+
+\paragraph{Effect of $\lambda_1$} I then try to figure out what will happen if I change the $\lambda_1$ from
+0.245 to 0.25. The results are shown in Table \ref{tab:new_moments_7}. The
+basic observation is that increasing $\lambda_1$ from 0.245 to 0.25 makes the
+mean and sd of the spread much lower.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{Moment}               &                      & \textbf{Value (\%)} \\
+        \midrule
+        \textbf{Mean}                 & Debt to GDP          & 18.79               \\
+                                      & Spread               & 0.50                \\
+        \addlinespace
+        \textbf{Standard Deviation}   & Spread               & 0.89                \\
+                                      & GDP                  & 17.57               \\
+                                      & Consumption          & 17.39               \\
+        \addlinespace
+        \textbf{Correlation with GDP} & Spread               & -60.14              \\
+                                      & Trade Balance to GDP & -27.43              \\
+        \bottomrule
+    \end{tabular}
+    \caption{New Moments with $\lambda_1 = 0.25$ (\%)} \label{tab:new_moments_7}
+\end{table}
+
+So I try to figure our what will happen if I change the $\lambda_1$ from 0.245
+to 0.24. The results are shown in Table \ref{tab:new_moments_8}. Compared with
+Table \ref{tab:new_moments_2}, the mean and the sd of the spread are higher,
+with the std of the spread being much higher than the mean.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{Moment}               &                      & \textbf{Value (\%)} \\
+        \midrule
+        \textbf{Mean}                 & Debt to GDP          & 18.55               \\
+                                      & Spread               & 8.54                \\
+        \addlinespace
+        \textbf{Standard Deviation}   & Spread               & 12.25               \\
+                                      & GDP                  & 16.70               \\
+                                      & Consumption          & 16.13               \\
+        \addlinespace
+        \textbf{Correlation with GDP} & Spread               & -65.11              \\
+                                      & Trade Balance to GDP & -62.19              \\
+        \bottomrule
+    \end{tabular}
+    \caption{New Moments with $\lambda_1 = 0.24$ (\%)} \label{tab:new_moments_8}
+\end{table}
+
+\paragraph{What to do now?} Given the initial guess in Table \ref{tab:new_moments_2}, I 'll need to reduce
+the $B/Y$ ratio, increase the mean of the spread and reduce the sd of the
+spread.
+
+\end{document}

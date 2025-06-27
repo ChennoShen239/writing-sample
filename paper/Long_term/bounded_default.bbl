@@ -1,0 +1,347 @@
+\ifx\undefined\bysame
+\newcommand{\bysame}{\leavevmode\hbox to\leftmargin{\hrulefill\,\,}}
+\fi
+\begin{thebibliography}{xx}
+
+\harvarditem[Abbas et al., eds]{Abbas, Pienkowski and Rogoff,
+  eds}{2019}{Abbas2019}
+{\bf Abbas, S.~M.~Ali, Alex Pienkowski, and Kenneth~S. Rogoff, eds}, {\it
+  Sovereign Debt: A Guide for Economists and Practitioners}, Oxford University
+  Press, 2019.
+
+\harvarditem[Aguiar and Gopinath]{Aguiar and
+  Gopinath}{2007}{AguiarGopinath2007}
+{\bf Aguiar, M. and G.~Gopinath}, ``Emerging Market Business Cycles: The Cycle
+  Is the Trend,'' {\it Journal of Political Economy}, 2007, {\it 115} (1),
+  69--102.
+
+\harvarditem[Aiyagari et al.]{Aiyagari, Marcet, Sargent and
+  Sepp\"{a}l\"{a}}{2002}{AiyagariMarcetSargentSeppala2002}
+{\bf Aiyagari, S.~Rao, Albert Marcet, Thomas~J. Sargent, and Juha
+  Sepp\"{a}l\"{a}}, ``Optimal Taxation without State-Contingent Debt,'' {\it
+  Journal of Political Economy}, 2002, {\it 110} (6), 1220--1254.
+
+\harvarditem[Amador and Phelan]{Amador and Phelan}{2021}{AmadorPhelan2021}
+{\bf Amador, M. and C.~Phelan}, ``Reputation and Sovereign Default,'' {\it
+  Econometrica}, 2021, {\it 89} (4), 1979--2010.
+
+\harvarditem[Amador and Phelan]{Amador and Phelan}{2023}{AmadorPhelan2023}
+{\bf \bysame{} and \bysame{}}, ``Reputation and Partial Default,'' {\it
+  American Economic Review: Insights}, 2023, {\it 5} (2), 158--172.
+
+\harvarditem[Angeletos and Pavan]{Angeletos and
+  Pavan}{2007}{AngelosetsPavan2007}
+{\bf Angeletos, George-Marios and Alessandro Pavan}, ``Efficient Use of
+  Information and Social Value of Information,'' {\it Econometrica}, 2007, {\it
+  75} (4), 1103--1142.
+
+\harvarditem[Arellano]{Arellano}{2008}{Arellano2008}
+{\bf Arellano, C.}, ``Default Risk and Income Fluctuations in Emerging
+  Economies,'' {\it American Economic Review}, 2008, {\it 98} (3), 690--712.
+
+\harvarditem[Arellano and Ramanarayanan]{Arellano and
+  Ramanarayanan}{2012}{ArellanoRamanarayanan2012}
+{\bf \bysame{} and A.~Ramanarayanan}, ``Default and the Maturity Structure in
+  Sovereign Bonds,'' {\it Journal of Political Economy}, 2012, {\it 120} (2),
+  187--232.
+
+\harvarditem[Baker and Wurgler]{Baker and Wurgler}{2006}{BakerWurgler2006}
+{\bf Baker, M. and J.~Wurgler}, ``Investor Sentiment and the Cross-Section of
+  Stock Returns,'' {\it The Journal of Finance}, 2006, {\it 61} (4),
+  1645--1680.
+
+\harvarditem[Barberis and Thaler]{Barberis and
+  Thaler}{2003}{BarberisThaler2003}
+{\bf Barberis, N. and R.~Thaler}, ``A survey of behavioral finance,'' in
+  George~M. Constantinides, Milton Harris, and Ren{\'e}~M. Stulz, eds., {\it
+  Handbook of the Economics of Finance}, Vol.~1, Elsevier, 2003,
+  pp.~1053--1128.
+
+\harvarditem[Baumeister et al.]{Baumeister, Bratslavsky, Finkenauer and
+  Vohs}{2001}{BaumeisterBratslavskyFinkenauer2001}
+{\bf Baumeister, Roy~F., Ellen Bratslavsky, Catrin Finkenauer, and Kathleen~D.
+  Vohs}, ``Bad Is Stronger Than Good,'' {\it Review of General Psychology},
+  2001, {\it 5} (4), 323--370.
+
+\harvarditem[Blinder et al.]{Blinder, Ehrmann, Fratzscher, De~Haan and
+  Jansen}{2008}{BlinderEhrmannFratzscher2008}
+{\bf Blinder, Alan~S., Michael Ehrmann, Marcel Fratzscher, Jakob~De Haan, and
+  David-Jan Jansen}, ``Central Bank Communication and Monetary Policy: A Survey
+  of Theory and Evidence,'' {\it Journal of Economic Literature}, 2008, {\it
+  46} (4), 910--945.
+
+\harvarditem[Bocola and Dovis]{Bocola and Dovis}{2019}{BocolaDovis2019}
+{\bf Bocola, L. and A.~Dovis}, ``Self-Fulfilling Debt Crises: A Quantitative
+  Analysis,'' {\it American Economic Review}, 2019, {\it 109} (12), 4343--4377.
+
+\harvarditem[Bordalo et al.]{Bordalo, Gennaioli, La~Porta and
+  Shleifer}{2023}{BordaloEtAl2023}
+{\bf Bordalo, P., N.~Gennaioli, Rafael~La Porta, and A.~Shleifer}, ``Diagnostic
+  Expectations and Credit Cycles,'' {\it Quarterly Journal of Economics}, 2023,
+  {\it 138} (2), 941--994.
+
+\harvarditem[Bordalo et al.]{Bordalo, Gennaioli and
+  Shleifer}{2018}{BordaloGennaioli​Shleifer2018}
+{\bf Bordalo, Pedro, Nicola Gennaioli, and Andrei Shleifer}, ``Diagnostic
+  Expectations and Credit Cycles,'' {\it The Journal of Finance}, 2018, {\it
+  73} (1), 199--227.
+
+\harvarditem[Brunnermeier and Nagel]{Brunnermeier and
+  Nagel}{2004}{BrunnermeierNagel2004}
+{\bf Brunnermeier, M.~K. and S.~Nagel}, ``Hedge Funds and the Technology
+  Bubble,'' {\it The Journal of Finance}, 2004, {\it 59} (5), 2013--2040.
+
+\harvarditem[Calvo et al.]{Calvo, Leiderman and
+  Reinhart}{1996}{CalvoLeidermanReinhart1996}
+{\bf Calvo, G.~A., L.~Leiderman, and C.~M. Reinhart}, ``Inflows of Capital to
+  Developing Countries in the 1990s,'' {\it Journal of Economic Perspectives},
+  1996, {\it 10} (2), 123--139.
+
+\harvarditem[Cavallo]{Cavallo}{2013}{Cavallo2013}
+{\bf Cavallo, A.}, ``Online and Official Price Indexes: Measuring Argentina's
+  Inflation,'' {\it Journal of Monetary Economics}, 2013, {\it 60} (2),
+  152--165.
+
+\harvarditem[Chari and Kehoe]{Chari and Kehoe}{1999}{ChariKehoe1999}
+{\bf Chari, V.~V. and Patrick~J. Kehoe}, ``Optimal Fiscal and Monetary
+  Policy,'' {\it Handbook of Macroeconomics}, 1999, {\it 1}, 1671--1745.
+
+\harvarditem[Chatterjee and Eyigungor]{Chatterjee and
+  Eyigungor}{2012}{ChatterjeeEyigungor2012}
+{\bf Chatterjee, S. and B.~Eyigungor}, ``Maturity, Indebtedness, and Default
+  Risk,'' {\it American Economic Review}, 2012, {\it 102} (6), 2674--2699.
+
+\harvarditem[Cogley and Sargent]{Cogley and Sargent}{2008}{CogleySargent2008}
+{\bf Cogley, Timothy and Thomas~J. Sargent}, ``The Market Price of Risk and the
+  Equity Premium: A Legacy of the Great Depression?,'' {\it Journal of Monetary
+  Economics}, 2008, {\it 55} (3), 454--476.
+
+\harvarditem[Cole and Kehoe]{Cole and Kehoe}{1998}{ColeKehoe1998}
+{\bf Cole, H.~L. and P.~J. Kehoe}, ``Models of Sovereign Debt: Partial versus
+  General Reputations,'' {\it International Economic Review}, 1998, {\it 39}
+  (1), 55--70.
+
+\harvarditem[Cole and Kehoe]{Cole and Kehoe}{2000}{ColeKehoe2000}
+{\bf \bysame{} and T.~J. Kehoe}, ``Self-Fulfilling Debt Crises,'' {\it The
+  Review of Economic Studies}, 2000, {\it 67} (1), 91--116.
+
+\harvarditem[Cole et al.]{Cole, Dow and English}{1995}{ColeDowEnglish1995}
+{\bf Cole, Harold~L., James Dow, and William~B. English}, ``Default,
+  Settlement, and Signalling: Lending Resumption in a Reputational Model of
+  Sovereign Debt,'' {\it International Economic Review}, 1995, {\it 36} (2),
+  365--385.
+
+\harvarditem[Cruces and Trebesch]{Cruces and
+  Trebesch}{2013}{CrucesTrebesch2013}
+{\bf Cruces, J.~J. and C.~Trebesch}, ``Sovereign Defaults: The Price of
+  Haircuts,'' {\it American Economic Journal: Macroeconomics}, 2013, {\it 5}
+  (3), 85--117.
+
+\harvarditem[D'Erasmo]{D'Erasmo}{2011}{DErasmo2011}
+{\bf D'Erasmo, P.}, ``Government Reputation and Debt Repayment in Emerging
+  Economies,'' {\it Working Paper}, 2011.
+\newblock Federal Reserve Bank of Philadelphia.
+
+\harvarditem[Dovis and Kirpalani]{Dovis and
+  Kirpalani}{2020}{DovisKirpalani2020}
+{\bf Dovis, A. and R.~Kirpalani}, ``Fiscal Rules, Bailouts, and Reputation in
+  Federal Governments,'' {\it American Economic Review}, 2020, {\it 110} (3),
+  860--888.
+
+\harvarditem[Dovis and Kirpalani]{Dovis and
+  Kirpalani}{2021}{DovisKirpalani2021}
+{\bf \bysame{} and \bysame{}}, ``Reputation, Bailouts, and Interest Rate Spread
+  Dynamics,'' {\it Working Paper}, 2021.
+\newblock University of Wisconsin-Madison.
+
+\harvarditem[Dvorkin et al.]{Dvorkin, Sanchez, Sapriza and
+  Yurdagul}{2021}{DvorkinSancheSaprizaYurdagul2021}
+{\bf Dvorkin, M., J.~M. Sanchez, H.~Sapriza, and E.~Yurdagul}, ``Sovereign Debt
+  Restructurings,'' {\it American Economic Journal: Macroeconomics}, 2021, {\it
+  13} (2), 26--77.
+
+\harvarditem[Eaton and Gersovitz]{Eaton and
+  Gersovitz}{1981}{EatonGersovitz1981}
+{\bf Eaton, J. and M.~Gersovitz}, ``Debt with Potential Repudiation:
+  Theoretical and Empirical Analysis,'' {\it The Review of Economic Studies},
+  1981, {\it 48} (2), 289--309.
+
+\harvarditem[Egorov and Fabinger]{Egorov and
+  Fabinger}{2016}{EgorovFabinger2016}
+{\bf Egorov, K. and M.~Fabinger}, ``Reputational Effects in Sovereign
+  Default,'' {\it Working Paper}, 2016.
+\newblock University of Chicago.
+
+\harvarditem[Fourakis]{Fourakis}{2024}{Fourakis2021}
+{\bf Fourakis, S.}, ``Sovereign Default and Government Reputation,'' {\it
+  Working Paper}, 2024.
+
+\harvarditem[Gabaix]{Gabaix}{2012}{Gabaix2012}
+{\bf Gabaix, X.}, ``Variable Rare Disasters: An Exactly Solved Framework for
+  Ten Puzzles in Macro-Finance,'' {\it The Quarterly Journal of Economics},
+  2012, {\it 127} (2), 645--700.
+
+\harvarditem[Gennaioli et al.]{Gennaioli, Martin and
+  Rossi}{2014}{GennaioliMartinRossi2014}
+{\bf Gennaioli, N., A.~Martin, and S.~Rossi}, ``Sovereign Default, Domestic
+  Banks, and Financial Institutions,'' {\it The Journal of Finance}, 2014, {\it
+  69} (2), 819--866.
+
+\harvarditem[Gennaioli and Shleifer]{Gennaioli and
+  Shleifer}{2018}{GennaioliShleifer2018}
+{\bf \bysame{} and A.~Shleifer}, {\it A Crisis of Beliefs: Investor Psychology
+  and Financial Fragility}, Oxford University Press, 2018.
+
+\harvarditem[Gilboa and Schmeidler]{Gilboa and
+  Schmeidler}{1989}{GilboaSchmeidler1989}
+{\bf Gilboa, I. and D.~Schmeidler}, ``Maxmin expected utility with non-unique
+  prior,'' {\it Journal of Mathematical Economics}, 1989, {\it 18} (2),
+  141--153.
+
+\harvarditem[Grajewski and Raszewski]{Grajewski and
+  Raszewski}{2013}{ReutersFines2013}
+{\bf Grajewski, Silvio and Elzbieta Raszewski}, ``Argentina Fines Private
+  Economists for Inflation Reports,'' Reuters February 2013.
+\newblock Online news article; Accessed 20 June 2025.
+
+\harvarditem[Hansen and Sargent]{Hansen and Sargent}{2008}{HansenSargent2008}
+{\bf Hansen, L.~P. and T.~J. Sargent}, {\it Robustness}, Princeton University
+  Press, 2008.
+
+\harvarditem[Hansen and Sargent]{Hansen and Sargent}{2001}{HansenSargent2001}
+{\bf Hansen, Lars~Peter and Thomas~J. Sargent}, ``Robust Control and Model
+  Uncertainty,'' {\it American Economic Review}, 2001, {\it 91} (2), 60--66.
+
+\harvarditem[Hatchondo and Martinez]{Hatchondo and
+  Martinez}{2009}{HatchondoMartinez2009}
+{\bf Hatchondo, J.~C. and L.~Martinez}, ``Long-duration bonds and sovereign
+  defaults,'' {\it Journal of International Economics}, 2009, {\it 79} (1),
+  117--125.
+
+\harvarditem[{International Monetary Fund}]{{International Monetary
+  Fund}}{2013}{IMFPress2013}
+{\bf {International Monetary Fund}}, ``IMF Executive Board Issues Declaration
+  of Censure on Argentina,'' Press Release No.~13/33, February 1, 2013 2013.
+\newblock Accessed 20 June 2025.
+
+\harvarditem[Kahneman and Tversky]{Kahneman and
+  Tversky}{1979}{KahnemanTversky1979}
+{\bf Kahneman, D. and A.~Tversky}, ``Prospect Theory: An Analysis of Decision
+  under Risk,'' {\it Econometrica}, 1979, {\it 47} (2), 263--291.
+
+\harvarditem[Kindleberger]{Kindleberger}{1978}{Kindleberger1978}
+{\bf Kindleberger, C.~P.}, {\it Manias, Panics and Crashes: A History of
+  Financial Crises}, New York: Basic Books, 1978.
+
+\harvarditem[Lizarazo]{Lizarazo}{2013}{Lizarazo2013}
+{\bf Lizarazo, S.~V.}, ``Default risk and risk averse international
+  investors,'' {\it Journal of International Economics}, 2013, {\it 89} (2),
+  317--330.
+
+\harvarditem[Ljungqvist and Sargent]{Ljungqvist and
+  Sargent}{2000}{LjungqvistSargent2000}
+{\bf Ljungqvist, L. and T.~J. Sargent}, {\it Recursive Macroeconomic Theory},
+  1st ed., Cambridge, MA: The MIT Press, 2000.
+
+\harvarditem[De~Long et al.]{De~Long, Shleifer, Summers and
+  Waldmann}{1990}{DeLongEtAl1990}
+{\bf Long, J.~B.~De, A.~Shleifer, L.~H. Summers, and R.~J. Waldmann}, ``Noise
+  Trader Risk in Financial Markets,'' {\it Journal of Political Economy}, 1990,
+  {\it 98} (4), 703--738.
+
+\harvarditem[Longstaff et al.]{Longstaff, Pan, Pedersen and
+  Singleton}{2011}{LongstaffPanPedersenSingleton2011}
+{\bf Longstaff, F.~A., J.~Pan, L.~H. Pedersen, and K.~J. Singleton}, ``How
+  Sovereign Is Sovereign Credit Risk?,'' {\it American Economic Journal:
+  Macroeconomics}, 2011, {\it 3} (2), 75--103.
+
+\harvarditem[Lucas and Stokey]{Lucas and Stokey}{1983}{LucasStokey1983}
+{\bf Lucas, Robert~E. and Nancy~L. Stokey}, ``Optimal Fiscal and Monetary
+  Policy in an Economy without Capital,'' {\it Journal of Monetary Economics},
+  1983, {\it 12} (1), 55--93.
+
+\harvarditem[Mendoza and Yue]{Mendoza and Yue}{2012}{MendozaYue2012}
+{\bf Mendoza, E.~G. and V.~Z. Yue}, ``A General Equilibrium Model of Sovereign
+  Default and Business Cycles,'' {\it The Quarterly Journal of Economics},
+  2012, {\it 127} (2), 889--946.
+
+\harvarditem[Meyer et al.]{Meyer, Reinhart and
+  Trebesch}{2022}{MeyerReinhartTrebesch2022}
+{\bf Meyer, J., C.~M. Reinhart, and C.~Trebesch}, ``Sovereign Bonds Since
+  Waterloo,'' {\it The Quarterly Journal of Economics}, 2022, {\it 137} (3),
+  1615--1680.
+
+\harvarditem[Mihalache]{Mihalache}{2024}{MIHALACHEOREEF2024}
+{\bf Mihalache, G.}, ``Solving default models,'' {\it Oxford Research
+  Encyclopedia of Economics and Finance}, 2024.
+\newblock Forthcoming.
+
+\harvarditem[Mitchener and Trebesch]{Mitchener and
+  Trebesch}{2023}{MitchenerTrebesch2023}
+{\bf Mitchener, K.~J. and C.~Trebesch}, ``Sovereign Debt in the Twenty-first
+  Century,'' {\it Journal of Economic Literature}, 2023, {\it 61} (2),
+  565--623.
+
+\harvarditem[Morelli and Moretti]{Morelli and
+  Moretti}{2023}{MorelliMoretti2023}
+{\bf Morelli, J.~M. and M.~Moretti}, ``Information Frictions, Reputation, and
+  Sovereign Spreads,'' {\it Journal of Political Economy}, 2023, {\it 131}
+  (11), 3066--3102.
+
+\harvarditem[Morris and Shin]{Morris and Shin}{2002}{MorrisShin2002}
+{\bf Morris, Stephen and Hyun~Song Shin}, ``Social Value of Public
+  Information,'' {\it American Economic Review}, 2002, {\it 92} (5),
+  1521--1534.
+
+\harvarditem[Neumeyer and Perri]{Neumeyer and Perri}{2005}{NeumeyerPerri2005}
+{\bf Neumeyer, P.~A. and F.~Perri}, ``Business cycles in emerging economies:
+  the role of interest rates,'' {\it Journal of Monetary Economics}, 2005, {\it
+  52} (2), 345--380.
+
+\harvarditem[Paluszynski]{Paluszynski}{2023}{Paluszynski2023}
+{\bf Paluszynski, R.}, ``Learning about Debt Crises,'' {\it American Economic
+  Journal: Macroeconomics}, 2023, {\it 15} (1), 106--134.
+
+\harvarditem[Phelan]{Phelan}{2006}{Phelan2006}
+{\bf Phelan, C.}, ``Public trust and government betrayal,'' {\it Journal of
+  Economic Theory}, 2006, {\it 130} (1), 27--43.
+
+\harvarditem[Pouzo and Presno]{Pouzo and Presno}{2016}{PouzoPresno2016}
+{\bf Pouzo, D. and I.~Presno}, ``Sovereign Default under Model Uncertainty,''
+  {\it American Economic Review}, 2016, {\it 106} (9), 2337--2371.
+
+\harvarditem[Roch and Rold{\'a}n]{Roch and Rold{\'a}n}{2023}{RochRoldan2023}
+{\bf Roch, F. and F.~Rold{\'a}n}, ``Uncertainty, Sovereign Default Risk, and
+  State-Contingent Debt,'' {\it Journal of Political Economy Macroeconomics},
+  2023, {\it 1} (2), 334--370.
+
+\harvarditem[Shefrin and Statman]{Shefrin and
+  Statman}{1985}{ShefrinStatman1985}
+{\bf Shefrin, Hersh and Meir Statman}, ``The Disposition to Sell Winners Too
+  Early and Ride Losers Too Long: Theory and Evidence,'' {\it The Journal of
+  Finance}, 1985, {\it 40} (3), 777--790.
+
+\harvarditem[Stangebye]{Stangebye}{2020}{Stangebye2020}
+{\bf Stangebye, Z.~R.}, ``Beliefs and long-maturity sovereign debt,'' {\it
+  Journal of International Economics}, 2020, {\it 127}, 103381.
+
+\harvarditem[Tauchen]{Tauchen}{1986}{Tauchen1986}
+{\bf Tauchen, G.}, ``Finite state markov-chain approximations to univariate and
+  vector autoregressions,'' {\it Economics Letters}, 1986, {\it 20} (2),
+  177--181.
+
+\harvarditem[{The Economist}]{{The Economist}}{2012}{Economist2012}
+{\bf {The Economist}}, ``Don't Lie to Me, Argentina,'' The Economist February
+  2012.
+
+\harvarditem[Tomz and Wright]{Tomz and Wright}{2013}{TomzWright2013}
+{\bf Tomz, Michael and Mark L.~J. Wright}, ``Empirical Research on Sovereign
+  Debt and Default,'' {\it Annual Review of Economics}, 2013, {\it 5},
+  247--272.
+
+\harvarditem[Tversky and Kahneman]{Tversky and
+  Kahneman}{1974}{TverskyKahneman1974}
+{\bf Tversky, A. and D.~Kahneman}, ``Judgment under Uncertainty: Heuristics and
+  Biases,'' {\it Science}, 1974, {\it 185} (4157), 1124--1131.
+
+\end{thebibliography}

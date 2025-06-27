@@ -1,0 +1,70 @@
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb} % For \square and \boxtimes
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{libertine}
+
+\title{To-Do List for ``Default with Pessimism''}
+\author{Generated for Chen Gao}
+\date{\today}
+
+% Define custom list environments for to-do items
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\newcommand{\done}{\item[\rlap{$\boxtimes$}]} % Command for completed items
+
+\begin{document}
+\maketitle
+
+\section{High Priority / Manuscript Finalization}
+\begin{todolist}
+    \item \textbf{Fix File Paths:} Change all \texttt{includegraphics} paths from absolute (e.g., \texttt{/Users/cheneyg./...}) to relative paths (e.g., \texttt{./results/figure.pdf}) to ensure the document is portable and can be compiled by co-authors or journals.
+    \item \textbf{Update Key Figure:} For Figure~\ref{fig:argentina_spreads}, download the new EMBI+ data from a Bloomberg terminal or similar source, regenerate the plot, and save it in the project's \texttt{Empirics} folder.
+    \item \textbf{Add Robustness Checks (Quantitative):} Add a new table or appendix subsection showing robustness of the quantitative results. This should include:
+    \begin{itemize}
+        \item Results from longer simulations (e.g., 500,000 periods).
+        \item Results using different random seeds to ensure simulation path-dependence is
+              not driving the results.
+    \end{itemize}
+    \item \textbf{Add Calibration Target Table:} Add a new table in Section~\ref{sec:quant} that explicitly lays out the parameter-target correspondence (e.g., "$\beta$ targets average real interest rate", "$\gamma$ targets average exclusion duration") to improve the transparency of the calibration strategy.
+\end{todolist}
+
+\section{Section 2: Motivation}
+\begin{todolist}
+    \item Add the planned comparison table showing core macroeconomic indicators
+    (Debt-to-GDP, GDP growth, sovereign spreads) for Argentina versus its regional
+    peers (e.g., Brazil, Chile, Colombia) to more intuitively highlight Argentina's
+    "anomaly."
+\end{todolist}
+
+\section{Section 4: Theoretical Analysis (Proofs in Appendix)}
+\begin{todolist}
+    \item Strengthen the proof of Proposition~\ref{prop:welfare} (Welfare Loss) by adding
+    a brief discussion of a Ramsey policy perspective. Argue that the welfare loss
+    is fundamental because pessimism distorts the intertemporal price of
+    consumption, a distortion that would persist even if a benevolent planner could
+    use lump-sum taxes/transfers to compensate for direct spread costs.
+\end{todolist}
+
+\section{Section 6: Extensions (Flesh out this section)}
+\begin{todolist}
+    \item \textbf{Empirical Validation:} Outline a potential empirical strategy. The "bond price pivot" is a key unique prediction. Could one test this using bond-level data? The model suggests that during a shock that increases pessimism, prices for very high-risk (near-default) bonds should fall *less* than prices for safer bonds.
+    \item \textbf{Testable Prediction:} Elaborate on the "illusion of financial stability." This implies a testable cross-country prediction: sovereigns perceived as more erratic (higher $\theta$) should exhibit higher average spreads but lower *volatility* of spreads and debt ratios.
+    \item \textbf{Theoretical Extensions:}
+    \begin{itemize}
+        \item \textit{Endogenizing Beliefs ($\theta$):} Briefly discuss potential microfoundations for lender pessimism. Could it be modeled with robust control (Hansen-Sargent), ambiguity aversion (Gilboa-Schmeidler), or diagnostic expectations (Bordalo et al.)?
+        \item \textit{Optimal Policy and Communication:} If a sovereign knows its lenders are pessimistic, what are the implications for optimal debt management? Should it favor shorter maturities to prove its type more frequently? Can government communication (e.g., clear fiscal rules) anchor beliefs and reduce the perceived $\theta$?
+    \end{itemize}
+\end{todolist}
+
+\section{Section 7: Conclusion}
+\begin{todolist}
+    \item Expand the conclusion slightly to touch upon the potential policy implications
+    raised in the "Extensions" section, making the paper's final takeaway more
+    impactful.
+\end{todolist}
+
+\end{document}

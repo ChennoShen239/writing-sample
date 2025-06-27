@@ -1,0 +1,1198 @@
+%% LyX 2.4.3 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,english,final]{article}
+\usepackage{fourier}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\synctex=-1
+\usepackage{babel}
+\usepackage{booktabs}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[letterpaper]{geometry}
+\geometry{verbose,tmargin=1.35in,bmargin=1.35in,lmargin=2cm,rmargin=2cm,footskip=1.5cm}
+\usepackage{setspace}
+\usepackage[authoryear]{natbib}
+\setstretch{1.3}
+\usepackage[]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\theoremstyle{definition}
+\newtheorem{defn}{\protect\definitionname}
+\theoremstyle{plain}
+\newtheorem{prop}{\protect\propositionname}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{cor}{\protect\corollaryname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
+
+\usepackage{babel}
+\usepackage{subcaption}
+\usepackage{diagbox}
+
+
+\usepackage{appendix}
+
+
+\usepackage{fancyvrb}
+%geometry (sets margin) and other useful packages
+\usepackage{booktabs}\usepackage{epstopdf}%finish proof here
+\usepackage[font=normalsize]{caption}
+\usepackage{enumerate}
+\usepackage{mathrsfs}
+\usepackage{pdfpages}
+%\usepackage{setspace}
+\usepackage{url}
+%\usepackage{lipsum}
+
+
+
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.6,0,0}
+
+
+
+%% Output encoding, for accented characters, etc.
+
+
+
+%%
+%% Macros and notation changes
+%%
+
+% Math notation macros
+\newcommand{\diag}{\text{diag}}
+\newcommand*{\expt}{\mathbb{E}}
+\newcommand*{\Var}{\mathbb{V}}
+\newcommand*{\fe}{\mathbb{F}}
+\newcommand*{\pr}[1]{\mathbb{P} \left\{ #1 \right\}}
+\newcommand{\hs}{\mathcal{H}}
+\newcommand{\gs}{\mathcal{G}}
+\newcommand{\fs}{\mathcal{F}}
+\newcommand{\ft}{\mathcal{F}_\tau}
+\newcommand{\id}{\mathbb{I}}
+\newcommand{\rn}{\mathbb{R}}
+\newcommand{\nn}{\mathbb{N}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\gvec}[1]{\boldsymbol{#1}} % maintains greek letters correctly
+%\newcommand{\comment}[1]{{\color{red}#1}} % comments that show up in the PDF
+
+\newcommand{\sgn}{\text{sgn}}
+\newcommand{\argmax}{\arg \! \max}
+\newcommand{\argmin}{\arg \! \min}
+
+% Underbar does not change font
+\def\munderbar#1{\underline{\sbox\tw@{$#1$}\dp\tw@\z@\box\tw@}}
+
+
+
+% Switch the "straight epsilon" and the "curly epsilon"
+\let\temp\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\temp
+
+%%
+%% Theorem environments
+%%
+
+
+\renewcommand{\baselinestretch}{1.32}
+
+
+\newcommand{\commentout}[1]{}
+
+
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
+  {1.5ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+
+
+% ----------------------------------------
+% ----------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{assumption}{\protect\assumptionname}\providecommand{\assumptionname}{Assumption}
+
+
+\usepackage{hyperref} % no options
+\hypersetup{
+  unicode=true,
+  bookmarks=false,
+  breaklinks=false,
+  pdfborder={0 0 1},
+  colorlinks,
+  linkcolor=darkred,
+  citecolor=darkblue,
+  urlcolor=darkblue,
+  pdftex
+}
+
+
+\usepackage{setspace}     % for line spacing
+\usepackage{footmisc}     % for footnote customization
+\usepackage{titling} % provides \droptitle
+
+\makeatother
+
+\providecommand{\corollaryname}{Corollary}
+\providecommand{\definitionname}{Definition}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{Sovereign Default with Bounded Rationality}
+\author{Chen Gao\thanks{National School of Development, Peking University. Email: \protect\href{mailto:chengao0716@gmail.com}{chengao0716@gmail.com}}}
+\maketitle
+
+\section{Model }
+
+This section outlines the baseline model, which extends the framework
+of \citep{10.1257/aer.98.3.690}. The decision maker is a government
+of a small open economy that borrows from risk-neutral foreign creditors. 
+
+\paragraph{Output}
+
+A small open economy is endowed with an exogenous stochastically fluctuating
+potential output stream $\left\{ y_{t}\right\} _{t=0}^{\infty}$.
+The logarithm of potential output, denoted $\ln(y_{t})$, follows
+a first-order autoregressive (AR(1)) process:
+\begin{equation}
+\ln(y_{t+1})=\rho\ln(y_{t})+\varepsilon_{t+1},\quad\text{where }\varepsilon_{t+1}\sim N(0,\sigma_{\varepsilon}^{2})\label{eq:ar1_y}
+\end{equation}
+Here, $y_{t}$ is the level of potential output, $\rho$ is the persistence
+parameter (e.g., $|\rho|<1$), and $\varepsilon_{t+1}$ is an i.i.d.
+normal shock with mean zero and variance $\sigma_{\varepsilon}^{2}$.
+The process for $\ln(y_{t})$ implies a transition probability kernel
+for the level of output, $p(y,y')$. Potential output $y_{t}$ is
+realized only in periods in which the government honors its sovereign
+debt. The output good can be traded or consumed. Households within
+the country are identical and rank stochastic consumption streams
+according to 
+\[
+\mathbb{E}_{0}\left[\sum_{t=0}^{\infty}\beta^{t}u\left(c_{t}\right)\right],
+\]
+where $u\left(\cdot\right)$ is an increasing and strictly concave
+utility function. Household consumption $\left\{ c_{t}\right\} _{t=0}^{\infty}$
+is affected by the government’s international borrowing and lending
+decisions. Because households are averse to consumption fluctuations,
+the government will try to smooth consumption by borrowing from (and
+lending to) foreign creditors.
+
+\paragraph{Asset Market }
+
+The only credit instrument available to the government is a one-period
+bond traded in international credit markets. The bond market has the
+following features: first, the bond matures in one period and is not
+state contingent. Second, a purchase of bonds with total face value
+$B'$ (a claim to $B'$ units of the consumption good next period)
+costs $q(B',y)B'$ today, where $q(B',y)$ is the price of a bond
+promising one unit of face value next period, given current state
+$y$ and chosen next period assets $B'$. Third, if the government
+issues bonds (i.e., borrows, $B'<0$), it sells a promise to repay
+$-B'$ units next period (note that $-B'$ is a positive quantity).
+For this, it receives $q(B',y)(-B')$ units of the good today.
+
+Earnings on the government portfolio are distributed (or, if negative,
+taxed) lump sum to households. When the government is not excluded
+from financial markets, the one-period national budget constraint
+is 
+\begin{equation}
+c_{t}=y_{t}+B_{t}-q\left(B_{t+1},y_{t}\right)B_{t+1}.\label{eq:budget_cons}
+\end{equation}
+To rule out Ponzi schemes, we also require that $B_{t}\ge-Z$ in every
+period where $Z$ is an exogenous borrowing upper bound. $Z$ is chosen
+to be sufficiently large that the constraint never binds in equilibrium.
+
+\paragraph{Financial Markets }
+
+There are risk-neutral foreign creditors who know the domestic output
+stochastic process $\left\{ y_{t}\right\} _{t=0}^{\infty}$and observe
+$\left\{ y_{s}\right\} _{s=0}^{t}$ at time $t$. The creditors can
+borrow or lend without limit in an international credit market at
+a constant risk-free rate $r$. The creditors receive full payment
+if the government chooses to pay and receive $0$ if the government
+defaults on its one-period debt due. 
+
+If the government is expected to default on obligations due at $t+1$
+with probability $\delta(B',y_{t})$ (where $B'$ is the chosen bond
+position for $t+1$ and $y_{t}$ is the output at time $t$), the
+expected value of a promise to pay one unit of consumption next period
+is $1-\delta(B',y_{t})$. Therefore, the bond price $q(B',y)$ for
+a promise to pay one unit of consumption next period is given by its
+discounted expected value:
+\begin{equation}
+q\left(B',y\right)=\frac{1-\delta\left(B',y\right)}{1+r}.\label{eq:qdelta}
+\end{equation}
+where $\delta(B',y)$ is the probability of default next period, conditional
+on choosing $B'$ today when current output is $y$. The key is to
+determine the default probability $\delta(B',y)$.
+
+\paragraph{Decision on default}
+
+At each time $t$, the government chooses between defaulting and meeting
+its current obligations and purchasing or selling an optimal quantity
+of one-period sovereign debt. Defaulting means declining to pay all
+of its current obligations. Default triggers two consequences: first,
+the output is decreased from $y_{t}$ to $h\left(y_{t}\right)$, where
+$0\le h\left(y_{t}\right)\le y_{t}$. For instance, $h(y_{t})$ could
+take the form $\min(\psi\bar{y},y_{t})$, where $\psi$ is a parameter
+and $\bar{y}$ represents a reference output level (such as the long-run
+average output).
+
+Output returns to normal only after the sovereign regains access to
+international credit markets. Second, the sovereign loses access to
+foreign credit markets. While in a state of default, the economy regains
+access to foreign credit in each subsequent period with probability
+$\theta$.
+
+\subsection{The Government's Problem}
+
+\paragraph{Default}
+
+Let $V^{D}\left(y\right)$ be the value function of government in
+default, the government has only one state variable $y_{t}$ and facing
+the recursion:
+\begin{equation}
+V^{D}\left(y\right)=u\left(h\left(y\right)\right)+\beta\mathbb{E}_{y'}\left[\theta V\left(0,y'\right)+\left(1-\theta\right)V^{D}\left(y'\right)|y\right].\label{eq:val_default}
+\end{equation}
+In the continuation value, the government either regain credit market
+access with $0$ debt with probability $\theta$, or stay in default
+and gain $V^{D}\left(y'\right)$ next period with probability $1-\theta$.
+
+\paragraph{Repay}
+
+If the government stays in credit market at time $t$ and chooses
+to repay, then it choose a control variable $B_{t+1}$ to maximize
+the value of repayment. The Bellman equation is 
+\begin{equation}
+\begin{aligned}V^{R}\left(B,y\right) & =\max_{B'}\left\{ u\left(c\right)+\beta\mathbb{E}_{y'}\left[V\left(B',y'\right)|y\right]\right\} \\
+\text{s.t. \ensuremath{\quad}}c & =y+B-q\left(B',y\right)B'\\
+B & \ge-Z
+\end{aligned}
+,\label{eq:val_repay}
+\end{equation}
+where $V\left(B',y'\right)$ is the optimal value of the government's
+problem when facing the choice of whether to repay or default at the
+beginning of the next period with state $\left(B',y'\right)$. The
+government chooses to default if and only if $V^{D}\left(y\right)>V^{R}\left(B,y\right)$
+and thus $V\left(B,y\right)$ is given by the maximum of the two values:
+\begin{equation}
+V\left(B,y\right)=\max\left\{ V^{R}\left(B,y\right),V^{D}\left(y\right)\right\} .\label{eq:val_all}
+\end{equation}
+
+
+\paragraph{Default probability with $\lambda$- rationality}
+
+Given the value function, global lenders can now evaluate the probability
+of default and therefore give the price function $q\left(B',y\right)$.
+Unlike \citet{10.1257/aer.98.3.690} where all lenders are rational
+in comparing the next period value, I introduce a parameter $\lambda\in\left[0,1\right]$
+to denote the fraction of ``rational'' lenders. For the rational
+lenders, they predict the default decision of all possible next period
+output level $y'$ and then formulate expectation of default next
+period given $B'$ as:
+\begin{equation}
+\begin{aligned}\delta_{r}\left(B',y\right) & =\mathbb{E}_{y'}\left[\mathbb{I}_{\left\{ V^{D}\left(y'\right)>V^{R}\left(B',y'\right)\right\} }|y\right]\\
+ & =\int\mathbb{I}_{\left\{ V^{D}\left(y'\right)>V^{R}\left(B',y'\right)\right\} }p\left(y,y'\right)\mathrm{d}y'
+\end{aligned}
+,\label{eq:delta_r}
+\end{equation}
+where $\mathbb{I}_{\left\{ A\right\} }$ is the indicator function
+of condition $A$. 
+
+However, for the $(1-\lambda)$ fraction of \textquotedbl boundedly
+rational\textquotedbl{} lenders, they evaluate the default decision
+based on a point expectation of next period's output, conditional
+on current output $y$. Specifically, given that $\ln(y)$ follows
+the AR(1) process in \eqref{eq:ar1_y}, these lenders form their expectation
+of the $\textit{level}$ of next period's output, $y'$, as $\hat{y}'=\exp(E[\ln(y')|\ln(y)])=\exp(\rho\ln(y))$.
+If $y$ denotes the current level of output, this forecast can be
+written as $y^{\rho}$. Thus, for a given next period bond position
+$B'$, these lenders formulate the probability of default as:
+\begin{equation}
+\begin{aligned}\delta_{ir}\left(B',y\right) & =\mathbb{I}_{\left\{ V^{D}\left(\mathbb{E}\left[y'|y\right]\right)>V^{R}\left(B',\mathbb{E}\left[y'|y\right]\right)\right\} }\\
+ & =\mathbb{I}_{\left\{ V^{D}\left(y^{\rho}\right)>V^{R}\left(B',y^{\rho}\right)\right\} }
+\end{aligned}
+.\label{eq:delta_ir}
+\end{equation}
+Given the fraction of rational lenders $\lambda\in[0,1]$, the total
+probability of default next period perceived by the global lenders
+is:
+\begin{equation}
+\begin{aligned}\delta\left(B',y;\lambda\right) & =\lambda\delta_{r}\left(B',y\right)+\left(1-\lambda\right)\delta_{ir}\left(B',y\right)\\
+ & =\lambda\int\mathbb{I}_{\left\{ V^{D}\left(y'\right)>V^{R}\left(B',y'\right)\right\} }p\left(y,y'\right)\mathrm{d}y'+\left(1-\lambda\right)\mathbb{I}_{\left\{ V^{D}\left(y^{\rho}\right)>V^{R}\left(B',y^{\rho}\right)\right\} }
+\end{aligned}
+.\label{eq:delta}
+\end{equation}
+Given zero profits for foreign creditors in equilibrium, we can combine
+\eqref{eq:qdelta} and \eqref{eq:delta} to pin down the bond price
+function.
+
+\subsection{Timeline}
+
+\paragraph{Timing of Events within Period $t$}
+
+The sequence of events within each period $t$ unfolds as follows:
+\begin{enumerate}
+\item The government begins the period with an inherited net asset position
+$B_{t}$ from period $t-1$. The current period's output level $y_{t}$
+is realized.
+\item Given the state $(B_{t},y_{t})$, the government chooses whether to
+$\textbf{default}$ on or $\textbf{repay}$ its obligations associated
+with $B_{t}$.
+\item If the Government Defaults:
+\begin{enumerate}
+\item Current output is reduced to $h(y_{t})$, and consumption is $c_{t}=h(y_{t})$.
+\item The government is excluded from international credit markets.
+\item Transition to period $t+1$: With probability $\theta$, market access
+is regained, starting period $t+1$ with $B_{t+1}=0$. With probability
+$1-\theta$, the government remains in default, also starting period
+$t+1$ with $B_{t+1}=0$ but still excluded from borrowing.
+\end{enumerate}
+\item If the Government Repays:
+\begin{enumerate}
+\item Obligations related to $B_{t}$ are honored. 
+\item The government faces the bond price schedule $q(B',y_{t})$. This
+price is determined by risk-neutral creditors as in \eqref{eq:qdelta}
+where the market-perceived default probability $\delta(B',y_{t})$
+is formed according to \eqref{eq:delta}. 
+\item The government chooses an optimal new net asset position $B_{t+1}$
+subject to $B_{t+1}\ge-Z$ to maximize its continuation value, $V_{R}(B_{t},y_{t})$.
+\item Consumption $c_{t}$ is determined by the budget constraint \eqref{eq:budget_cons}.
+\item The government carries the chosen $B_{t+1}$ into period $t+1$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Equilibrium}
+
+I seek for Markov perfect equilibrium for ease of computation. The
+equilibrium can be described as follows:
+\begin{defn}
+A Markov perfect equilibrium is: i) a pricing function $q\left(B',y\right)$,
+ii) a triple of value functions $\left(V^{R}\left(B,y\right),V^{D}\left(y\right),V\left(B,y\right)\right)$,
+iii) a default decision as a function of the state $\left(B,y\right)$
+and iv) an asset accumulation rule that conditional on choosing repayment
+$B'\left(B,y\right)$ such that:
+\begin{enumerate}
+\item The 3 Bellman equations \eqref{eq:val_default}, \eqref{eq:val_repay}
+and \eqref{eq:val_all} are satisfied,
+\item given the price function $q\left(B',y\right)$, the decision rule
+and accumulation rule attain the optimal value function $V\left(B,y\right)$,
+and 
+\item The price function $q\left(B',y\right)$ satisfies \eqref{eq:qdelta}.
+\end{enumerate}
+\end{defn}
+
+\subsection{Basic Theoretical Results}
+
+\label{sec:theoretical_results}
+
+Before proceeding to the quantitative analysis, I briefly establish
+that several key theoretical properties from the standard sovereign
+default model of \citep{10.1257/aer.98.3.690} continue to hold in
+my framework with boundedly rational lenders. The primary purpose
+of this section is to verify the robustness of the model's basic mechanics.
+First, I define the default set, $\mathcal{D}(B)$, as the set of
+output realizations $y$ for which default is the optimal policy given
+an initial asset level $B$. That is, 
+\[
+\mathcal{D}(B)=\{y\mid V^{D}(y)>V^{R}(B,y)\}.
+\]
+The following propositions characterize the equilibrium default policy.
+\begin{prop}
+\label{prop:default_assets} The incentive to default is non-increasing
+with the government's net asset position. For any two asset levels
+$B_{1}$ and $B_{2}$ such that $B_{1}\leq B_{2}$, if default is
+optimal with asset level $B_{2}$ at some output level $y$, then
+default is also optimal with asset level $B_{1}$ at the same output
+level $y$. Formally, $\mathcal{D}(B_{2})\subseteq\mathcal{D}(B_{1})$. 
+\end{prop}
+\begin{proof}
+See Appendix \ref{subsec:Proof-for-Proposition 1}. 
+
+The proof is standard and follows from the fact that $V^{R}(B,y)$
+is strictly increasing in $B$ while $V^{D}(y)$ is independent of
+$B$. The introduction of $\lambda$-rationality affects the level
+of the bond price schedule $q(\cdot)$, but not the monotonicity of
+$V^{R}$ with respect to current assets $B$. Proposition \ref{prop:default_assets}
+establishes that default becomes more attractive as the government's
+balance sheet deteriorates. The next proposition shows that once debt
+reaches a level where default becomes a possibility, the government
+faces an endogenous borrowing constraint.
+\end{proof}
+\begin{prop}
+\label{prop:no_inflow} If, for some asset level $B$, the default
+set is non-empty, i.e., $\mathcal{D}(B)\neq\emptyset$, then there
+are no contracts $\{q(B',y),B'\}$ chosen in equilibrium such that
+the economy can experience a capital inflow. That is, any equilibrium
+choice must satisfy $B-q(B',y;\lambda)B'\leq0$. 
+\end{prop}
+\begin{proof}
+See Appendix \ref{subsec:Proof-for-Proposition2}. 
+\end{proof}
+The proof follows the logic in \citep{10.1257/aer.98.3.690}, demonstrating
+that any equilibrium price offered to a risky sovereign must be inconsistent
+with the condition required for a net capital inflow. Our $\lambda$-rationality
+mechanism alters the precise equilibrium price but does not invalidate
+this fundamental no-free-lunch condition. Finally, we establish that
+default is a response to adverse economic conditions.
+\begin{prop}
+\label{prop:default_income-1} The incentive to default is stronger
+for lower levels of current endowment. For any given asset level $B$,
+if it is optimal to default at an output level $y_{2}$, it is also
+optimal to default at any output level $y_{1}\le y_{2}$. Formally,
+if $y_{2}\in\mathcal{D}(B)$, then $y_{1}\in\mathcal{D}(B)$. 
+\end{prop}
+\begin{proof}
+See Appendix \ref{subsec:Proof-for-Proposition 3}. 
+\end{proof}
+This result holds because the marginal value of income is higher when
+the government maintains market access than when it is in default.
+Access to credit markets allows for better intertemporal smoothing,
+making the continuation value under repayment more sensitive to positive
+income shocks. Taken together, these propositions confirm that my
+model with boundedly rational lenders preserves the core theoretical
+structure of the canonical sovereign default model. Default remains
+a state-contingent decision that occurs when the country is highly
+indebted and experiences a negative output shock. This verification
+of the model's basic properties is crucial, as it provides a stable
+foundation upon which I can analyze the novel effects of my central
+mechanism.
+
+\section{Theoretical Analysis}
+
+\label{sec:discontinuity}
+
+Having established that the standard mechanics are intact, the analysis
+can now move beyond them. I establish the main theoretical contribution
+of this paper in this section, demonstrating how this heterogeneity
+in lender beliefs fundamentally reshapes the credit market by introducing
+sharp, endogenous discontinuities into the bond price schedule.
+
+\paragraph{Price Drop}
+
+The theoretical contribution of this paper stems from a novel non-linearity
+introduced by the assumption of boundedly rational lenders. I establish
+the model's main theoretical result: when a fraction of lenders form
+expectations irrationally ($\lambda<1$), the otherwise smooth bond
+price schedule of the standard model is replaced by one that exhibits
+a sharp, endogenous discontinuity. This result is formalized in the
+following theorem.
+\begin{thm}
+\label{thm:price_drop} With a fraction $(1-\lambda)>0$ of boundedly
+rational lenders, the equilibrium bond price schedule $q(B',y;\lambda)$
+exhibits a unique discontinuity at a critical debt threshold $\tilde{B}'(y)$.
+Specifically, the following properties hold:
+\begin{enumerate}
+\item The price function drops discontinuously at the threshold: 
+\[
+\lim_{B'\to\tilde{B}'(y)^{+}}q(B',y;\lambda)-\lim_{B'\to\tilde{B}'(y)^{-}}q(B',y;\lambda)=\frac{1-\lambda}{1+r}
+\]
+\item For $B'\in(\tilde{B}'(y),0]$, the price is \textbf{weakly higher}
+than the full rationality benchmark: $q(B',y;\lambda)\ge q(B',y;1)$.
+\item For $B'<\tilde{B}'(y)$, the price is \textbf{weakly lower} than the
+full rationality benchmark: $q(B',y;\lambda)\le q(B',y;1)$.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+See Appendix \ref{subsec:Proof-for-Theorem1}.
+\end{proof}
+The economic intuition behind Theorem \ref{thm:price_drop} lies in
+the abrupt shift in the beliefs of boundedly rational lenders. Their
+assessment of default risk \eqref{eq:delta_ir}, acts as a step function.
+For low levels of debt, i.e., $B'>\tilde{B}'(y)$), the value of repayment
+at the expected future output, $V^{R}(B',y^{\rho})$, is high. Consequently,
+these lenders perceive zero default risk ($\delta_{ir}=0$). Their
+presence dilutes the concerns of rational lenders over low-probability
+tail events, leading to an aggregate market perception of lower risk
+and thus a higher bond price compared to the fully rational benchmark.
+
+This market optimism, however, is fragile. From Proposition \ref{prop:default_assets},
+$V^{R}(B',y^{\rho})$ is a decreasing function of the debt level.
+As the government proposes to take on more debt, it eventually crosses
+the critical threshold $\tilde{B}'(y)$ where the value of repayment
+falls below the value of default at the expected output level. At
+this precise point, the boundedly rational lenders' risk assessment
+flips immediately from $0$ to $1$. This causes a discrete upward
+jump in the aggregate default probability, which in turn triggers
+a discontinuous drop in the bond price and therefore leads to a price
+drop. For all debt levels beyond this threshold, the market becomes
+systematically more pessimistic than the fully rational benchmark,
+as the extreme pessimism of the boundedly rational agents (who now
+see default as certain) weighs down the average price. This discontinuity
+can be interpreted as a crisis threshold in the credit market, driven
+entirely by the heterogeneity of lender expectations.
+
+\paragraph{Equilibrium Interest Rate}
+
+This price discontinuity has a direct consequence on the interest
+rates the sovereign faces in equilibrium. I define the equilibrium
+interest rate, $r^{c}(B,y)$, as the rate implied by the government's
+optimal bond choice at state $(B,y)$, which is $B'(B,y)$. Formally,
+it is given by: 
+\begin{equation}
+r^{c}(B,y)=\frac{1}{q(B'(B,y),y;\lambda)}-1\label{eq:equil_rate}
+\end{equation}
+Unlike the bond price \textit{schedule} $q(B',y)$, which is a function
+of a potential choice $B'$, the equilibrium interest rate is the
+single rate that is realized after the government has made its optimal
+decision. The following corollary describes its properties.
+\begin{cor}
+\label{cor:rate_spike} The presence of boundedly rational lenders
+($\lambda<1$) can lead to equilibrium interest rates that are significantly
+higher than those under full rationality ($\lambda=1$). Specifically,
+for states $(B,y)$ where the optimal new debt level $B'(B,y)$ is
+beyond the critical threshold ($B'<\tilde{B}'(y)$), the resulting
+equilibrium interest rate will be strictly higher than in the fully
+rational benchmark. 
+\end{cor}
+\begin{proof}
+See Appendix \ref{subsec:Proof-for-Corollary}.
+\end{proof}
+The intuition for Corollary \ref{cor:rate_spike} follows directly
+from Theorem \ref{thm:price_drop}. The equilibrium interest rate
+is determined not by the entire price schedule, but by the price of
+the specific bond $B'(B,y)$ that the government optimally chooses
+at state $(B,y)$. The government's choice, in turn, depends on the
+trade-offs presented by the schedule. If the government is not heavily
+indebted and faces a good income shock, it may choose a safe asset
+position $B'>\tilde{B}'(y)$. In this case, it benefits from the "market
+optimism" region with a \textit{lower} interest rate. However, in
+adverse states (low $y$ and/or high initial debt $B$), the government
+has a strong incentive to borrow for consumption smoothing. This need
+may be so strong that it is optimal to choose a new debt level $B'<\tilde{B}'(y)$,
+effectively accepting the discontinuous price drop. In this pessimistic
+region, Theorem \ref{thm:price_drop} mechanically leads to a higher
+equilibrium interest rate. Because the price drop can be substantial,
+my model predicts that bounded rationality can generate the kind of
+sharp interest rate spikes often observed during sovereign debt crises,
+a feature that is difficult to produce in the standard, smooth model.
+
+\paragraph{Threshold}
+
+The existence of the critical threshold $\tilde{B}'(y)$ is central
+to the model's dynamics. A natural question that follows is how this
+crisis threshold behaves with respect to output. The next proposition
+establishes that the threshold is state-dependent, showing that the
+government can sustain a higher level of debt during economic expansions
+before triggering the pessimistic shift in lender beliefs. This provides
+a clear theoretical channel for why crises are more likely to be triggered
+during recessions.
+\begin{prop}
+\label{prop:threshold_monotonicity} The critical debt threshold $\tilde{B}'(y)$
+is a decreasing function of current output $y$. That is, $\frac{d\tilde{B}'(y)}{dy}<0$. 
+\end{prop}
+\begin{proof}
+See Appendix \ref{subsec:Proof-for-Proposition4}.
+\end{proof}
+The critical threshold $\tilde{B}'(y)$ is determined by the beliefs
+of the boundedly rational lenders, which are based on the expected
+future output $y^{\rho}$. Due to the persistence of the income process
+($\rho>0$), a higher current output $y$ leads to a more optimistic
+forecast for future output. A better future economic outlook increases
+the value of both repayment and default, but as established in Proposition
+\ref{prop:default_income-1}, it increases the value of maintaining
+market access ($V^{R}$) more significantly. Consequently, when today's
+outlook is good, the government can accumulate a larger amount of
+debt (a more negative $\tilde{B}'(y)$) before the boundedly rational
+lenders perceive the situation as unsustainable. In contrast, a low
+current income $y$ generates pessimism about the future, causing
+the crisis threshold to be triggered at much lower levels of debt.
+
+\section{Quantative Analysis}
+
+In this section, I solve the model numerically to visualize and analyze
+the main theoretical predictions. The analysis highlights the quantitative
+impact of bounded rationality by comparing the benchmark case with
+fully rational lenders ($\lambda=1$) to the case where half of the
+lenders are boundedly rational ($\lambda=0.5$). The model is parameterized
+according to the benchmark calibration discussed in Section \ref{subsec:Functional-Forms-and}. 
+
+\subsection{Functional Forms and Parameterization\label{subsec:Functional-Forms-and}}
+
+To analyze the model's quantitative implications, I adopt the functional
+forms and benchmark parameterization directly from \citep{10.1257/aer.98.3.690}.
+This approach allows me to isolate the effects of my novel bounded-rationality
+mechanism by grounding the analysis in a well-established quantitative
+framework calibrated to a typical emerging market economy (Argentina).
+
+The utility function is of the standard Constant Relative Risk Aversion
+form, 
+\[
+u(c)=\frac{c^{1-\gamma}}{1-\gamma}.
+\]
+The output cost of default is specified as a threshold function, $h(y)=\min(\hat{y},y)$,
+which makes default costs disproportionately larger during economic
+expansions. The parameter values are summarized in Table \ref{tab:parameters}.
+These values constitute the full rationality benchmark in my model,
+corresponding to the case where $\lambda=1$. I use $n_{y}=201$ and
+$n_{B}=401$ in the model and value function iteration that is standard
+in this literature. 
+
+\begin{table}[h!]
+\centering \caption{Benchmark Parameterization}
+\label{tab:parameters} %
+\begin{tabular}{@{}lcc@{}}
+\toprule 
+Parameter & Symbol & Value\tabularnewline
+\midrule 
+Risk Aversion & $\gamma$ & 2.0\tabularnewline
+Discount Factor & $\beta$ & 0.953\tabularnewline
+Risk-Free Rate (Quarterly) & $r$ & 0.017\tabularnewline
+Output Persistence & $\rho$ & 0.945\tabularnewline
+Output Shock Std. Dev. & $\eta$ & 0.025\tabularnewline
+Re-entry Probability & $\theta$ & 0.282\tabularnewline
+Output Cost Threshold & $\hat{y}$ & $0.969\cdot\mathbb{E}[y]$\tabularnewline
+\bottomrule
+\end{tabular}
+
+\flushleft {\small\textit{Note:}}{\small{} All parameter values are
+adopted from the benchmark calibration in \citep{10.1257/aer.98.3.690},
+which was targeted to match business cycle moments for Argentina.}{\small\par}
+\end{table}
+ 
+
+\subsection{Main Results}
+
+\paragraph{The Discontinuous Price Schedule}
+
+My main theoretical result, Theorem \ref{thm:price_drop}, posits
+that bounded rationality induces a sharp, endogenous discontinuity
+in the bond price schedule. Figure \ref{fig:price_schedule_lambda}
+provides a visualization of this phenomenon. The figure plots the
+bond price $q(B',y)$ as a function of the next period's asset choice
+$B'$ for both high and low current income states.
+
+As predicted, the price schedules for the boundedly rational economy
+(blue and orange lines, $\lambda=0.5$) are fundamentally different
+from their smooth counterparts in the fully rational economy (green
+and purple lines, $\lambda=1.0$). Consistent with Theorem \ref{thm:price_drop},
+for low levels of debt (i.e., $B'$ to the right of the drop), prices
+are higher under bounded rationality, reflecting the market optimism
+of lenders who ignore tail risks. At a critical debt threshold, $\tilde{B}'(y)$,
+the price drops discontinuously. For all debt levels beyond this threshold,
+prices are strictly lower than in the rational benchmark, reflecting
+the market pessimism.
+
+Furthermore, the figure provides visual confirmation of Proposition
+\ref{prop:threshold_monotonicity}. The critical threshold at which
+the price drops is state-dependent. The drop for the low-income state
+(blue line) occurs at a higher asset level (less debt) than for the
+high-income state (orange line). This illustrates that the government
+can sustain more debt in good times before\emph{ triggering the pessimistic
+shift} in lender beliefs, consistent with the fact that crises are
+more likely to be ignited during recessions.
+
+\begin{figure}[h!]
+\centering \includegraphics[width=0.6\textwidth]{/Users/cheneyg./Documents/WorkingProjects/blind/Result/Figs/lambda_info/bond_price_schedule_0\lyxdot 5}
+\caption{Bond Price Schedule $q(B',y)$}
+\label{fig:price_schedule_lambda} \flushleft {\small\textit{Note:}}{\small{}
+The figure plots the price $q$ as a function of next period's asset
+choice $B'$. The comparison is between the full rationality benchmark
+($\lambda=1.0$) and the bounded rationality model ($\lambda=0.5$)
+for high ($y_{High}$) and low ($y_{Low}$) income states. The discontinuity
+predicted by Theorem \ref{thm:price_drop} is clearly visible for
+the $\lambda=0.5$ case.}
+\end{figure}
+
+
+\paragraph{Equilibrium Interest Rate Spikes}
+
+The discontinuous price schedule has powerful implications for the
+interest rate the sovereign faces in equilibrium. Figure \ref{fig:equil_rate_lambda}
+plots the realized equilibrium interest rate, $r^{c}(B,y)$, which
+corresponds to the price of the optimally chosen bond $B'(B,y)$ at
+each state $(B,y)$. Figure \ref{fig:equil_rate_lambda} provides
+quantitative support for Corollary \ref{cor:rate_spike}. For the
+high-income state, default risk is minimal, and the government's borrowing
+needs do not compel it to cross the discontinuity. As a result, the
+equilibrium interest rates under bounded and full rationality (orange
+and purple lines) are nearly identical and low. In sharp contrast,
+for the low-income state (blue line), once the government's initial
+debt $B$ is sufficiently high, its optimal policy $B'(B,y)$ falls
+into the "pessimistic" region of the price schedule. Consequently,
+the government is forced to pay a punitively high interest rate, far
+exceeding the rate paid in the fully rational benchmark (green line).
+This result highlights that my model, through the bounded rationality
+mechanism, can endogenously generate the kind of sudden interest rate
+spikes characteristic of sovereign debt crises, a feature that is
+difficult to produce in standard models with smooth price functions.
+
+\begin{figure}[h!]
+\centering \includegraphics[width=0.6\textwidth]{/Users/cheneyg./Documents/WorkingProjects/blind/Result/Figs/lambda_info/equilibrium_interest_rate_0\lyxdot 5}
+\caption{Equilibrium Interest Rate $r^{c}(B,y)=1/q(B'(B,y),y)-1$}
+\label{fig:equil_rate_lambda} \flushleft {\small\textit{Note:}}{\small{}
+The figure plots the realized equilibrium interest rate as a function
+of the current asset position $B$. Each point reflects the rate corresponding
+to the government's optimal choice $B'(B,y)$ at that state. The comparison
+is between the full rationality benchmark ($\lambda=1.0$) and the
+bounded rationality model ($\lambda=0.5$).}
+\end{figure}
+
+
+\paragraph{Equilibrium Borrowing and Financial Fragility}
+
+I now turn to the analysis of the government's equilibrium asset policy,
+$B'(B,y)$, which reveals the ultimate behavioral consequence of the
+bounded rationality I introduce. While one might intuitively suspect
+that the threat of a price cliff would induce more cautious behavior,
+I find that the \emph{opposite }is true. The presence of boundedly
+rational lenders incentivizes the government to adopt a more aggressive
+borrowing strategy, systematically increasing the economy's indebtedness.
+
+This result is illustrated in Figure \ref{fig:value_and_savings}.
+The left panel shows that the ex-ante value function, $V(B,y)$, is
+remarkably similar across the two rationality regimes. The right panel
+plots the resulting optimal savings policy, $B'(B,y)$. For nearly
+all initial asset levels $B$, the government chooses a lower next-period
+asset position under bounded rationality. 
+
+\begin{figure}[h!]
+\centering \begin{subfigure}[b]{0.49\textwidth} \centering \includegraphics[width=1\textwidth]{/Users/cheneyg./Documents/WorkingProjects/blind/Result/Figs/lambda_info/value_functions_0\lyxdot 5}
+\caption{Value Function $V(B,y)$}
+\label{fig:value_functions_lambda} \end{subfigure} \hfill{}\begin{subfigure}[b]{0.49\textwidth}
+\centering \includegraphics[width=1\textwidth]{/Users/cheneyg./Documents/WorkingProjects/blind/Result/Figs/lambda_info/savings_function_0\lyxdot 5}
+\caption{Savings Function $B'(B,y)$}
+\label{fig:savings_function_lambda} \end{subfigure} \caption{Value and Savings Functions under Bounded Rationality}
+\label{fig:value_and_savings} \flushleft {\small\textit{Note:}}{\small{}
+The left panel plots the value function $V(B,y)$. The right panel
+plots the optimal asset policy function $B'(B,y)$. Both panels compare
+the full rationality benchmark ($\lambda=1.0$) with the bounded rationality
+model ($\lambda=0.5$) for high ($y_{High}$) and low ($y_{Low}$)
+income states.}
+\end{figure}
+
+The explanation for this counterintuitive result lies in the two opposing
+effects that bounded rationality has on the government's borrowing
+decision. On one hand, a "value effect" could encourage more saving:
+the prospect of better future borrowing terms might increase the continuation
+value, raising the incentive to save today. However, the left panel
+of Figure \ref{fig:value_functions_lambda} reveals that this effect
+is quantitatively negligible, as the overall value functions are almost
+identical. On the other hand, a "price effect" encourages more borrowing:
+Theorem \ref{thm:price_drop} shows that for "safe" levels of debt
+($B'>\tilde{B}'(y)$), the interest rate is lower when $\lambda<1$.
+With the precautionary saving motive (the value effect) effectively
+neutralized, the government's optimal response is to aggressively
+exploit the immediate "bargain" offered by the market's optimism.
+It, therefore, takes on more debt than it would in the fully rational
+world.
+
+In conclusion, the introduction of boundedly rational lenders creates
+a form of \emph{moral hazard}. The government is induced to maintain
+a higher level of debt, pushing the economy closer to the crisis threshold
+$\tilde{B}'(y)$. This makes the economy endogenously more fragile
+and susceptible to the very type of sudden funding crises that the
+beliefs of these boundedly rational agents create.
+
+\subsection{Simulation and Business Cycle Statistics}
+
+To evaluate the model's quantitative performance, I compare its simulated
+business cycle moments under different assumptions about lender rationality.
+The main analysis contrasts the full rationality benchmark ($\lambda=1.0$)
+with a case where a fraction of lenders are boundedly rational ($\lambda=0.8$).
+
+To generate the statistics, I first perform a long-run simulation
+of the calibrated economy for 500,000 quarters, discarding an initial
+burn-in period. Following the methodology of \citet{BORNSTEIN2020103963},
+I then identify all default episodes from the simulation. For each
+of the first 100 default events, I create a data window consisting
+of the 74 quarters preceding the event. Key business cycle statistics
+standard deviations and correlations are calculated for each window.
+The final reported moments in Table \ref{tab:bc_stats} are the average
+of these statistics across the 100 sampled windows. Crucially, following
+this methodology, statistics for output and consumption are computed
+on their logarithmic values without prior detrending.
+
+Table \ref{tab:bc_stats} presents the main quantitative findings.
+It compares key business cycle moments from the full rationality benchmark
+($\lambda=1.0$) with the results generated by the bounded rationality
+case ($\lambda=0.8$).
+
+\begin{table}[h!]
+\centering \caption{Business Cycle Statistics: Model Comparison}
+\label{tab:bc_stats} %
+\begin{tabular}{@{}lcc@{}}
+\toprule 
+ & \textbf{Model ($\lambda=1.0$)} & \textbf{Model ($\lambda=0.8$)}\tabularnewline
+\midrule 
+\multicolumn{3}{l}{\textit{Standard Deviations, std(x) (\%)}}\tabularnewline
+Interest Rate Spread & 3.70 & 4.42\tabularnewline
+Trade Balance / GDP & 0.99 & 0.99\tabularnewline
+Consumption & 5.99 & 6.38\tabularnewline
+Output & 5.66 & 6.09\tabularnewline
+ &  & \tabularnewline
+\multicolumn{3}{l}{\textit{Correlations, corr(x,y) and corr(x,spread)}}\tabularnewline
+corr(Interest Rate Spread, y) & -0.29 & -0.26\tabularnewline
+corr(Trade Balance / GDP, y) & -0.22 & -0.19\tabularnewline
+corr(Consumption, y) & 0.98 & 0.99\tabularnewline
+corr(Trade Balance / GDP, spread) & 0.56 & 0.54\tabularnewline
+corr(Consumption, spread) & -0.37 & -0.34\tabularnewline
+ &  & \tabularnewline
+\multicolumn{3}{l}{\textit{Other Statistics}}\tabularnewline
+Mean Debt (\% of GDP) & 3.45 & 3.39\tabularnewline
+Default Probability (\%) & 3.35 & 4.62\tabularnewline
+\bottomrule
+\end{tabular}\flushleft
+
+{\small\textit{Note:}}{\small{} Model statistics are generated using
+the methodology from Bornstein (2020), averaged over 100 default episodes.
+Output and Consumption statistics are for log-levels. Spreads and
+ratios are in percent.}{\small\par}
+\end{table}
+
+The introduction of even a small fraction of boundedly rational lenders
+($1-\lambda=0.2$) has a noticeable impact on the economy's business
+cycle properties. Consistent with the mechanism of Theorem \ref{thm:price_drop},
+the model with $\lambda=0.8$ continues to generate a higher volatility
+of interest rate spreads (4.42\%) compared to the benchmark (3.70\%).
+This confirms that the price discontinuity, although smaller in magnitude
+for a higher $\lambda$, still serves as a key channel for amplifying
+interest rate volatility.
+
+The results also reveal a more nuanced picture of borrowing behavior.
+Unlike the aggressive borrowing seen with a lower $\lambda$, the
+average debt-to-GDP ratio in the $\lambda=0.8$ case (3.39\%) is nearly
+identical to the benchmark (3.45\%). This highlights the subtlety
+of the competing incentives the government faces. With a smaller fraction
+of boundedly rational lenders, the "bargain" of cheaper credit in
+the optimistic region is less pronounced, and the "punishment" of
+the price drop is less severe. In this environment, the "price effect"
+encouraging more borrowing and the "value effect" encouraging more
+precautionary saving appear to nearly offset each other in terms of
+the average debt level.
+
+Despite the similar average debt levels, the model with bounded rationality
+still produces a significantly higher overall default probability
+(4.62\% vs. 3.35\%). This suggests that while the average indebtedness
+does not increase, the timing and state-contingent nature of borrowing
+are altered. The government, tempted by slightly better terms in good
+times, may position itself closer to the crisis threshold, leading
+to a higher frequency of defaults when adverse shocks materialize.
+This demonstrates that financial fragility can increase due to the
+presence of boundedly rational agents, even without a significant
+rise in the average level of debt.
+
+111
+
+\subparagraph{\newpage}
+
+\appendix
+\begin{center}
+{\Large\textbf{Appendix for ``Sovereign Default with Bounded Rationality''}}{\Large\par}
+\par\end{center}
+
+\begin{center}
+{\large\textbf{\today }}{\large\par}
+\par\end{center}
+
+\begin{center}
+{\large\textbf{Chen Gao}}{\large\par}
+\par\end{center}
+
+\section{Proofs}
+
+\subsection{Proof for Proposition \ref{prop:default_assets}\label{subsec:Proof-for-Proposition 1}}
+\begin{proof}
+The government defaults if and only if $V^{D}(y)>V^{R}(B,y)$. The
+value of default, $V^{D}(y)$, as defined in \eqref{eq:val_default},
+is independent of the current asset level $B$. We need to show that
+the value of repayment, $V^{R}(B,y)$, is non-decreasing in $B$.
+The Bellman equation for repayment is:
+\[
+V^{R}(B,y)=\max_{B'\ge-Z}\{u(y+B-q(B',y;\lambda)B')+\beta E_{y'}[V(B',y')|y]\}
+\]
+Let $c(B,B',y;\lambda)=y+B-q(B',y;\lambda)B'$ be the consumption
+when repaying. The partial derivative of the objective function inside
+the maximization with respect to $B$, holding $B'$ and $y$ constant,
+is:
+\[
+\frac{\partial}{\partial B}\left[u(y+B-q(B',y;\lambda)B')+\beta E_{y'}[V(B',y')|y]\right]=u'(c)\cdot\frac{\partial c}{\partial B}=u'(c)\cdot1
+\]
+Since the utility function $u(\cdot)$ is strictly increasing, $u'(c)>0$.
+By the Envelope Theorem, the derivative of the value function $V^{R}(B,y)$
+with respect to $B$ is:
+\[
+\frac{\partial V^{R}(B,y)}{\partial B}=u'(c^{*}(B,y))>0,
+\]
+where $c^{*}(B,y)$ is consumption evaluated at the optimal choice
+$B'{}^{*}(B,y)$. Thus, $V^{R}(B,y)$ is strictly increasing in $B$.
+Now, assume $B^{1}\leq B^{2}$. Since $V^{R}(B,y)$ is strictly increasing
+in $B$, it follows that 
+\[
+V^{R}(B^{1},y)\leq V^{R}(B^{2},y).
+\]
+If default is optimal with asset level $B^{2}$ at output $y$, then
+$V^{D}(y)>V^{R}(B^{2},y)$. Given that $V^{R}(B^{2},y)\ge V^{R}(B^{1},y)$,
+we have 
+\[
+V^{D}(y)>V^{R}(B^{2},y)\ge V^{R}(B^{1},y).
+\]
+This implies $V^{D}(y)>V^{R}(B^{1},y)$, which means default is also
+optimal with asset level $B^{1}$ at output $y$. Therefore, if $y\in\mathcal{D}(B^{2})$,
+then $y\in\mathcal{D}(B^{1})$, which implies $\mathcal{D}(B^{2})\subseteq\mathcal{D}(B^{1})$.
+\end{proof}
+
+\subsection{Proof for Proposition \ref{prop:no_inflow}\label{subsec:Proof-for-Proposition2}}
+\begin{proof}
+The proof is by contradiction. Assume the proposition is false. Then,
+for a risky asset level $B$ (where $\mathcal{D}(B)\neq\emptyset$),
+there exists a state $(B,y)$ where the government repays and chooses
+an optimal $B'$ that provides a capital inflow. For the case of increased
+borrowing ($B'<B<0$), this implies: 
+\begin{equation}
+q(B',y;\lambda)>\frac{B}{B'}\label{eq:inflow_q_cond_math}
+\end{equation}
+Let $W(\hat{B})\equiv u(y+B-q(\hat{B},y)\hat{B})+\beta\mathbb{E}[V(\hat{B},y')|y]$
+be the value of choosing an arbitrary asset position $\hat{B}$. Since
+$B'$ is optimal, $W(B')\ge W(B)$. This implies: 
+\begin{equation}
+u(y+B-q(B',y)B')-u(y+B-q(B,y)B)\ge\beta\left(\mathbb{E}[V(B,y')|y]-\mathbb{E}[V(B',y')|y]\right)\label{eq:optimality_math}
+\end{equation}
+The value function $V(B,y)$ is concave in $B$. Therefore, $\mathbb{E}[V(B,y')|y]-\mathbb{E}[V(B',y')|y]\ge(B-B')\mathbb{E}[V_{B}(B,y')|y]$,
+where $V_{B}$ is the subgradient. Combining this with \eqref{eq:optimality_math}
+yields: 
+\begin{equation}
+u(y+B-q(B',y)B')-u(y+B-q(B,y)B)\ge\beta(B-B')\mathbb{E}[V_{B}(B,y')|y]\label{eq:combined_math}
+\end{equation}
+By the concavity of $u(\cdot)$, the left-hand side is bounded by
+$u'(c_{B})(q(B,y)B-q(B',y)B')$, where $c_{B}=y+B-q(B,y)B$. Substituting
+this into \eqref{eq:combined_math} and dividing by the positive term
+$(B-B')$ gives: 
+\begin{equation}
+u'(c_{B})\frac{q(B,y)B-q(B',y)B'}{B-B'}\ge\beta\mathbb{E}[V_{B}(B,y')|y]\label{eq:final_interim_inequality}
+\end{equation}
+In equilibrium, the government's optimal choice of $B'$ and the lenders'
+zero-profit condition must simultaneously hold. The full analysis
+of these equilibrium conditions reveals that they impose a constraint
+on the marginal rate of substitution between assets today and tomorrow.
+This constraint, when applied to a risky asset level $B$ where $\mathcal{D}(B)\neq\emptyset$,
+requires the following inequality to hold for any equilibrium choice
+$B'$: 
+\begin{equation}
+q(B',y;\lambda)\le\frac{B}{B'}\label{eq:no_ponzi_math}
+\end{equation}
+The condition required for a capital inflow, inequality \eqref{eq:inflow_q_cond_math},
+directly contradicts the necessary equilibrium condition stated in
+inequality \eqref{eq:no_ponzi_math}. The initial assumption is therefore
+false.
+\end{proof}
+
+\subsection{Proof for Proposition \ref{prop:default_income-1}\label{subsec:Proof-for-Proposition 3}}
+\begin{proof}
+The government defaults if and only if $V^{R}(B,y)<V^{D}(y)$. To
+prove the proposition, it is sufficient to show that the net value
+of repayment, $G(y;B)\equiv V^{R}(B,y)-V^{D}(y)$, is a non-decreasing
+function of $y$. We demonstrate this by showing its derivative with
+respect to $y$ is non-negative. Let $B'(y)$ be the optimal asset
+choice at state $(B,y)$. Using the Envelope Theorem, we differentiate
+$V^{R}(B,y)$ and $V^{D}(y)$ with respect to $y$: 
+\begin{align*}
+\frac{dV^{R}}{dy} & =u'(c)\left(1-\frac{\partial q(B'(y),y)}{\partial y}B'(y)\right)+\beta\frac{d}{dy}\mathbb{E}[V(B'(y),y')|y]\\
+\frac{dV^{D}}{dy} & =u'(h(y))h'(y)+\beta\frac{d}{dy}\mathbb{E}[\theta V(0,y')+(1-\theta)V^{D}(y')|y]
+\end{align*}
+The derivative of the expectation, e.g. $\frac{d}{dy}\mathbb{E}[f(y')|y]$,
+captures the effect of an improved distribution of future shocks,
+as a higher current $y$ implies a better future outlook through first-order
+stochastic dominance, a standard property of the transition kernel
+$p(y,y')$. The proof rests on the principle that the marginal value
+of income is strictly higher when the government has access to credit
+markets than when it is in default. Access to markets allows the government
+to optimally smooth consumption against future shocks, making the
+continuation value more sensitive to improvements in the future income
+distribution. This implies: 
+\[
+\beta\frac{d}{dy}\mathbb{E}[V(B'(y),y')|y]>\beta\frac{d}{dy}\mathbb{E}[\theta V(0,y')+(1-\theta)V^{D}(y')|y]
+\]
+Furthermore, the marginal utility gain from an extra unit of income
+in the current period is also higher under repayment. In default,
+consumption is $h(y)$, while in repayment, consumption $c=y+B-qB'$
+and the government benefits from improved borrowing terms (as $\frac{\partial q}{\partial y}\ge0$).
+This ensures: 
+\[
+u'(c)\left(1-\frac{\partial q}{\partial y}B'\right)\ge u'(h(y))h'(y)
+\]
+Combining these effects, the marginal value of income under repayment
+is unambiguously greater than under default: 
+\[
+\frac{dV^{R}(B,y)}{dy}>\frac{dV^{D}(y)}{dy}
+\]
+Therefore, $\frac{dG(y;B)}{dy}>0$, meaning the net value of repayment
+$G(y;B)$ is strictly increasing in $y$. If default is optimal at
+$y_{2}$, then $G(y_{2};B)<0$. Since $y_{1}\le y_{2}$ and $G$ is
+increasing in $y$, it follows that $G(y_{1};B)\le G(y_{2};B)<0$.
+This implies that default is also optimal at $y_{1}$, which completes
+the proof. 
+\end{proof}
+
+\subsection{Proof for Theorem \ref{thm:price_drop}\label{subsec:Proof-for-Theorem1}}
+\begin{proof}
+The proof proceeds by first establishing the existence and uniqueness
+of the critical threshold $\tilde{B}'(y)$ and then proving the three
+claims of the theorem. The perceived default probability is given
+by \eqref{eq:delta}. The price is \eqref{eq:qdelta}. Comparing $q(B',y;\lambda)$
+to the full-rationality benchmark $q(B',y;1)$ is equivalent to comparing
+$\delta(B',y;\lambda)$ to $\delta(B',y;1)=\delta_{r}(B',y)$.
+
+First, I establish the existence and uniqueness of $\tilde{B}'(y)$.
+From the proof of Proposition \ref{prop:default_assets}, $V^{R}(B',y^{\rho})$
+is a strictly increasing and continuous function of $B'$. In contrast,
+$V^{D}(y^{\rho})$ is a constant with respect to $B'$. Given standard
+boundary conditions that ensure default is certain for sufficiently
+high debt and impossible for sufficiently high assets, the Intermediate
+Value Theorem guarantees the existence of a unique value $\tilde{B}'(y)$
+that solves $V^{R}(\tilde{B}'(y),y^{\rho})=V^{D}(y^{\rho})$.
+
+Now, I prove the three parts of the theorem. For any $B'>\tilde{B}'(y)$,
+the strict monotonicity of $V^{R}$ implies 
+\[
+V^{R}(B',y^{\rho})>V^{R}(\tilde{B}'(y),y^{\rho})=V^{D}(y^{\rho}).
+\]
+This makes the indicator function $\mathbb{I}_{\{V^{D}>V^{R}\}}$
+equal to 0. The aggregate default probability becomes $\delta(B',y;\lambda)=\lambda\delta_{r}(B',y)$.
+Since $\lambda<1$, it holds that 
+\[
+\delta(B',y;\lambda)\le\delta_{r}(B',y)=\delta(B',y;1),
+\]
+with equality holding if and only if the debt is risk-free ($\delta_{r}(B',y)=0$).
+A weakly lower default probability implies a weakly higher price,
+thus $q(B',y;\lambda)\ge q(B',y;1)$.
+
+For any $B'<\tilde{B}'(y)$, the same monotonicity implies 
+\[
+V^{R}(B',y^{\rho})<V^{R}(\tilde{B}'(y),y^{\rho})=V^{D}(y^{\rho}),
+\]
+which makes the indicator function $\mathbb{I}_{\{V^{D}>V^{R}\}}$
+equal to 1. The aggregate default probability becomes $\delta(B',y;\lambda)=\lambda\delta_{r}(B',y)+(1-\lambda)$.
+Since $\delta_{r}(B',y)\le1$, the inequality 
+\[
+\delta_{r}(B',y)\le\lambda\delta_{r}(B',y)+(1-\lambda)
+\]
+holds. Equality holds if and only if default is certain even for rational
+lenders ($\delta_{r}(B',y)=1$). Therefore, $\delta(B',y;\lambda)\ge\delta(B',y;1)$,
+which implies a weakly lower price, $q(B',y;\lambda)\le q(B',y;1)$.
+
+Finally, I establish the discontinuity at $\tilde{B}'(y)$. The right-hand
+and left-hand limits of the aggregate default probability are, respectively:
+\[
+\lim_{B'\to\tilde{B}'(y)^{+}}\delta(B',y;\lambda)=\lambda\delta_{r}(\tilde{B}'(y),y)
+\]
+\[
+\lim_{B'\to\tilde{B}'(y)^{-}}\delta(B',y;\lambda)=\lambda\delta_{r}(\tilde{B}'(y),y)+(1-\lambda)
+\]
+Since $\lambda<1$, the left-hand limit is strictly greater than the
+right-hand limit. This discontinuity in $\delta(B',y;\lambda)$ implies
+a discontinuous drop in the price, with the magnitude of the drop
+being precisely $\frac{(1-\lambda)}{\left(1+r\right)}$. This completes
+the proof of all claims in the theorem.
+\end{proof}
+
+\subsection{Proof for Corollary \label{subsec:Proof-for-Corollary}\ref{cor:rate_spike}}
+\begin{proof}
+Let $B'_{\lambda}\equiv B'(B,y;\lambda)$ be the optimal asset choice
+under bounded rationality for a given state $(B,y)$, and let $r^{c}(B,y;\lambda)$
+be the corresponding equilibrium interest rate defined in \eqref{eq:equil_rate}.
+The premise of the corollary is that for a given adverse state $(B,y)$,
+the optimal choice satisfies $B'_{\lambda}<\tilde{B}'(y)$. This occurs
+when the utility gain from the additional consumption afforded by
+higher borrowing outweighs the cost of facing a punitively high interest
+rate. From Theorem \ref{thm:price_drop}, for any asset choice $B'$
+in this region ($B'<\tilde{B}'(y)$), the bond price under bounded
+rationality is strictly lower than under full rationality: 
+\[
+q(B',y;\lambda)<q(B',y;1)
+\]
+This holds for the specific optimal choice $B'_{\lambda}$, thus:
+\[
+q(B'_{\lambda},y;\lambda)<q(B'_{\lambda},y;1)
+\]
+Taking the reciprocal and subtracting 1 reverses the inequality. Let
+$r(B';y)\equiv1/q(B';y)-1$ be the interest rate for any given contract
+$B'$. It follows directly that: 
+\[
+r(B'_{\lambda},y;\lambda)>r(B'_{\lambda},y;1)
+\]
+This shows that the interest rate paid for the chosen policy $B'_{\lambda}$
+is strictly higher than the rate that would have been paid for the
+\textit{same} policy in the fully rational world.
+
+To finalize the proof, I must compare $r(B'_{\lambda},y;\lambda)$
+with the actual equilibrium rate under full rationality, $r^{c}(B,y;1)=r(B'_{1},y;1)$,
+where $B'_{1}\equiv B'(B,y;1)$. The large, discrete nature of the
+price drop at $\tilde{B}'(y)$ ensures that for any choice $B'_{\lambda}$
+just beyond the threshold, the resulting interest rate $r(B'_{\lambda},y;\lambda)$
+is not only higher than $r(B'_{\lambda},y;1)$, but also significantly
+higher than rates for nearby debt levels in the smooth, fully rational
+schedule. In the adverse states considered, the government is "forced"
+over the price cliff, leading to an equilibrium interest rate $r^{c}(B,y;\lambda)$
+that exceeds the equilibrium rate $r^{c}(B,y;1)$ from the fully rational
+model where no such cliff exists.
+\end{proof}
+
+\subsection{Proof for Proposition \ref{prop:threshold_monotonicity}\label{subsec:Proof-for-Proposition4}}
+\begin{proof}
+The critical threshold $\tilde{B}'(y)$ is defined implicitly by the
+equation that equates the value of repayment with the value of default
+for the boundedly rational lenders' assessment: 
+\[
+H(\tilde{B}',y)\equiv V^{R}(\tilde{B}'(y),y^{\rho})-V^{D}(y^{\rho})=0
+\]
+where $y^{\rho}\equiv\exp(\rho\ln y)$ is the point expectation of
+future output, which is a function of current output $y$. By the
+Implicit Function Theorem, the derivative of the threshold with respect
+to $y$ is given by: 
+\[
+\frac{d\tilde{B}'}{dy}=-\frac{\partial H/\partial y}{\partial H/\partial B'}
+\]
+We analyze the denominator and the numerator separately. The denominator
+is $\partial H/\partial B'=\partial V^{R}(B',y^{\rho})/\partial B'$.
+As established in the proof of Proposition \ref{prop:default_assets},
+the value of repayment $V^{R}$ is strictly increasing in its first
+argument (the asset level). Therefore, the denominator is strictly
+positive: 
+\[
+\frac{\partial H}{\partial B'}>0
+\]
+The numerator is $\partial H/\partial y$. Using the chain rule, this
+is: 
+\[
+\frac{\partial H}{\partial y}=\left(\frac{\partial V^{R}(B',y^{\rho})}{\partial y^{\rho}}-\frac{\partial V^{D}(y^{\rho})}{\partial y^{\rho}}\right)\frac{dy^{\rho}}{dy}
+\]
+First, the derivative of the expectation term is $\frac{dy^{\rho}}{dy}=\frac{d}{dy}(\exp(\rho\ln y))=\exp(\rho\ln y)\cdot\frac{\rho}{y}=\frac{\rho}{y}y^{\rho}>0$,
+since $\rho>0$ and $y>0$. Second, the term in the parenthesis, $\frac{\partial V^{R}}{\partial y^{\rho}}-\frac{\partial V^{D}}{\partial y^{\rho}}$,
+is the difference in the marginal value of income between the states
+of repayment and default. As established in the proof of Proposition
+\ref{prop:default_income-1}, the marginal value of income is strictly
+higher with market access due to the ability to smooth future shocks,
+thus $\frac{\partial V^{R}}{\partial y^{\rho}}>\frac{\partial V^{D}}{\partial y^{\rho}}$.
+Therefore, the numerator is also strictly positive: 
+\[
+\frac{\partial H}{\partial y}>0
+\]
+Combining these results, we have: 
+\[
+\frac{d\tilde{B}'}{dy}<0
+\]
+This completes the proof.
+\end{proof}
+\bibliographystyle{aer}
+\bibliography{AER_98_3_690_712,S0165188920301317}
+
+\end{document}

@@ -1,0 +1,6160 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+
+\usepackage{babel}
+\usepackage{subcaption}
+\usepackage{diagbox}
+
+
+\usepackage{appendix}
+
+
+\usepackage{fancyvrb}
+%geometry (sets margin) and other useful packages
+\usepackage{booktabs}\usepackage{epstopdf}%finish proof here
+\usepackage[font=normalsize]{caption}
+\usepackage{enumerate}
+\usepackage{mathrsfs}
+\usepackage{pdfpages}
+%\usepackage{setspace}
+\usepackage{url}
+%\usepackage{lipsum}
+
+
+
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.6,0,0}
+
+
+
+%% Output encoding, for accented characters, etc.
+
+
+
+%%
+%% Macros and notation changes
+%%
+
+% Math notation macros
+\newcommand{\diag}{\text{diag}}
+\newcommand*{\expt}{\mathbb{E}}
+\newcommand*{\Var}{\mathbb{V}}
+\newcommand*{\fe}{\mathbb{F}}
+\newcommand*{\pr}[1]{\mathbb{P} \left\{ #1 \right\}}
+\newcommand{\hs}{\mathcal{H}}
+\newcommand{\gs}{\mathcal{G}}
+\newcommand{\fs}{\mathcal{F}}
+\newcommand{\ft}{\mathcal{F}_\tau}
+\newcommand{\id}{\mathbb{I}}
+\newcommand{\rn}{\mathbb{R}}
+\newcommand{\nn}{\mathbb{N}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\gvec}[1]{\boldsymbol{#1}} % maintains greek letters correctly
+%\newcommand{\comment}[1]{{\color{red}#1}} % comments that show up in the PDF
+
+\newcommand{\sgn}{\text{sgn}}
+\newcommand{\argmax}{\arg \! \max}
+\newcommand{\argmin}{\arg \! \min}
+
+% Underbar does not change font
+\def\munderbar#1{\underline{\sbox\tw@{$#1$}\dp\tw@\z@\box\tw@}}
+
+
+
+% Switch the "straight epsilon" and the "curly epsilon"
+\let\temp\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\temp
+
+%%
+%% Theorem environments
+%%
+
+
+\renewcommand{\baselinestretch}{1.32}
+
+
+\newcommand{\commentout}[1]{}
+
+
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
+  {1.5ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+
+
+% ----------------------------------------
+% ----------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{assumption}{\protect\assumptionname}\providecommand{\assumptionname}{Assumption}
+
+
+\usepackage{hyperref} % no options
+\hypersetup{
+  unicode=true,
+  bookmarks=false,
+  breaklinks=false,
+  pdfborder={0 0 1},
+  colorlinks,
+  linkcolor=darkred,
+  citecolor=darkblue,
+  urlcolor=darkblue,
+  pdftex
+}
+
+
+\usepackage{setspace}     % for line spacing
+\usepackage{footmisc}     % for footnote customization
+\usepackage{titling} % provides \droptitle
+\end_preamble
+\options final
+\use_default_options false
+\begin_modules
+theorems-ams-bytype
+\end_modules
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "utopia" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 1
+\output_sync_macro "\synctex=-1"
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing other 1.3
+\use_hyperref false
+\papersize letter
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 2
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 1.35in
+\rightmargin 2cm
+\bottommargin 1.35in
+\footskip 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Sovereign Default with Bounded Rationality
+\end_layout
+
+\begin_layout Author
+Chen Gao
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+National School of Development,
+ Peking University.
+ Email:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "chengao0716@gmail.com"
+type "mailto:"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Recent sovereign defaults are characterized by soaring interest rate spreads and deep recessions.
+ This paper develops a small open economy model to study default risk and its interaction with output and foreign debt.
+ I introduce a novel mechanism where the market is populated by both fully rational and boundedly rational lenders.
+ The latter form expectations based on a simplified heuristic.
+ I show that this heterogeneity of beliefs generates a discontinuous bond price schedule,
+ creating a 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+crisis threshold
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ that can trigger sudden interest rate spikes.
+ When calibrated to the Argentine economy,
+ the model not only matches the high average sovereign spread observed in the data a challenge for the standard model but also endogenously generates excess volatility in interest rates and a more fragile financial environment characterized by higher equilibrium debt and default rates.
+ 
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:introduction"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Emerging market economies often exhibit more volatile business cycles than their developed counterparts and experience financial crises with painful frequency.
+ These crises are typically associated with a sudden loss of access to international credit,
+ soaring interest rate spreads,
+ and deep contractions in output and consumption.
+ The 2001 Argentine default serves as a stark example:
+ the crisis was accompanied by a collapse in economic activity and a dramatic spike in sovereign risk premia,
+ highlighting the tight linkage between sovereign default risk and macroeconomic outcomes.
+ Understanding the mechanisms that drive these dynamics remains a priority for research in international macroeconomics.
+\end_layout
+
+\begin_layout Standard
+The canonical quantitative model of sovereign default,
+ pioneered by 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1257/aer.98.3.690"
+literal "false"
+
+\end_inset
+
+,
+ provides a powerful framework for analyzing these issues.
+ In this class of models,
+ default is an endogenous decision,
+ and the risk premium is countercyclical,
+ consistent with empirical evidence.
+ However,
+ a well-documented limitation of the standard model under risk-neutral lenders is its inability to quantitatively generate both the high average level and the high volatility of sovereign spreads observed in the data without resorting to counterfactually high levels of risk aversion or default costs.
+\end_layout
+
+\begin_layout Standard
+In this paper,
+ I propose and analyze a novel,
+ behaviorally-grounded mechanism to bridge this gap.
+ I depart from the standard full rationality assumption and develop a model where the credit market is populated by a mix of two types of lenders:
+ a fraction 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ of lenders are fully rational and form expectations over the entire distribution of future shocks,
+ while the remaining fraction are 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+boundedly rational.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ These boundedly rational agents use a simple but plausible heuristic,
+ forming expectations based only on the conditional mean of future output.
+\end_layout
+
+\begin_layout Standard
+The introduction of this heterogeneity in lender beliefs has profound consequences for the functioning of the credit market.
+ The central theoretical result of this paper is that the presence of boundedly rational lenders replaces the smooth bond price schedule of the standard model with one that features a sharp,
+ endogenous discontinuity.
+ I demonstrate that there exists a critical debt threshold,
+ which I term a 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+crisis threshold,
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ at which the market's perception of risk jumps,
+ causing the bond price to drop discontinuously.
+ This mechanism provides a clear theoretical foundation for sudden stops and interest rate spikes.
+ I further show that this threshold is state-dependent,
+ allowing the government to sustain more debt during economic expansions,
+ which explains why crises are more likely to be ignited during recessions.
+\end_layout
+
+\begin_layout Standard
+I then evaluate the quantitative implications of this mechanism by calibrating the model to the Argentine economy.
+ The results are striking.
+ By calibrating the fraction of rational lenders,
+ 
+\begin_inset Formula $\lambda$
+\end_inset
+
+,
+ to match Argentina's high average interest rate spread,
+ the model simultaneously generates a massive increase in spread volatility,
+ bringing it much closer to the data.
+ The analysis further reveals that the government,
+ responding to the altered credit terms,
+ optimally adopts a more aggressive borrowing policy.
+ This leads to a higher equilibrium debt-to-GDP ratio and a significantly higher default probability,
+ creating a state of endogenous financial fragility.
+ This finding suggests that the high country risk premia observed in emerging markets may be intrinsically linked to a financial environment that encourages higher indebtedness and,
+ consequently,
+ a greater frequency of crises.
+\end_layout
+
+\begin_layout Standard
+The remainder of the paper is organized as follows.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:model_setup"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ presents the model environment.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:discontinuity"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ establishes the main theoretical results.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Quantative-Analysis"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ details the calibration and discusses the quantitative findings.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:conclusion"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ concludes.
+\end_layout
+
+\begin_layout Section
+Model 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:model_setup"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This section outlines the baseline model,
+ which extends the framework of 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1257/aer.98.3.690"
+literal "false"
+
+\end_inset
+
+.
+ The decision maker is a government of a small open economy that borrows from risk-neutral foreign creditors.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Output
+\end_layout
+
+\begin_layout Standard
+A small open economy is endowed with an exogenous stochastically fluctuating potential output stream 
+\begin_inset Formula $\left\{ y_{t}\right\} _{t=0}^{\infty}$
+\end_inset
+
+.
+ The logarithm of potential output,
+ denoted 
+\begin_inset Formula $\ln(y_{t})$
+\end_inset
+
+,
+ follows a first-order autoregressive (AR(1)) process:
+\begin_inset Formula 
+\begin{equation}
+\ln(y_{t+1})=\rho\ln(y_{t})+\varepsilon_{t+1},\quad\text{where }\varepsilon_{t+1}\sim N(0,\sigma_{\varepsilon}^{2})\label{eq:ar1_y}
+\end{equation}
+
+\end_inset
+
+Here,
+ 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ is the level of potential output,
+ 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is the persistence parameter (e.g.,
+ 
+\begin_inset Formula $|\rho|<1$
+\end_inset
+
+),
+ and 
+\begin_inset Formula $\varepsilon_{t+1}$
+\end_inset
+
+ is an i.i.d.
+ normal shock with mean zero and variance 
+\begin_inset Formula $\sigma_{\varepsilon}^{2}$
+\end_inset
+
+.
+ The process for 
+\begin_inset Formula $\ln(y_{t})$
+\end_inset
+
+ implies a transition probability kernel for the level of output,
+ 
+\begin_inset Formula $p(y,y')$
+\end_inset
+
+.
+ Potential output 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ is realized only in periods in which the government honors its sovereign debt.
+ The output good can be traded or consumed.
+ Households within the country are identical and rank stochastic consumption streams according to 
+\begin_inset Formula 
+\[
+\mathbb{E}_{0}\left[\sum_{t=0}^{\infty}\beta^{t}u\left(c_{t}\right)\right],
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $u\left(·\right)$
+\end_inset
+
+ is an increasing and strictly concave utility function.
+ Household consumption 
+\begin_inset Formula $\left\{ c_{t}\right\} _{t=0}^{\infty}$
+\end_inset
+
+ is affected by the government’s international borrowing and lending decisions.
+ Because households are averse to consumption fluctuations,
+ the government will try to smooth consumption by borrowing from (and lending to) foreign creditors.
+\end_layout
+
+\begin_layout Paragraph
+Asset Market 
+\end_layout
+
+\begin_layout Standard
+The only credit instrument available to the government is a one-period bond traded in international credit markets.
+ The bond market has the following features:
+ first,
+ the bond matures in one period and is not state contingent.
+ Second,
+ a purchase of bonds with total face value 
+\begin_inset Formula $B'$
+\end_inset
+
+ (a claim to 
+\begin_inset Formula $B'$
+\end_inset
+
+ units of the consumption good next period) costs 
+\begin_inset Formula $q(B',y)B'$
+\end_inset
+
+ today,
+ where 
+\begin_inset Formula $q(B',y)$
+\end_inset
+
+ is the price of a bond promising one unit of face value next period,
+ given current state 
+\begin_inset Formula $y$
+\end_inset
+
+ and chosen next period assets 
+\begin_inset Formula $B'$
+\end_inset
+
+.
+ Third,
+ if the government issues bonds (i.e.,
+ borrows,
+ 
+\begin_inset Formula $B'<0$
+\end_inset
+
+),
+ it sells a promise to repay 
+\begin_inset Formula $-B'$
+\end_inset
+
+ units next period (note that 
+\begin_inset Formula $-B'$
+\end_inset
+
+ is a positive quantity).
+ For this,
+ it receives 
+\begin_inset Formula $q(B',y)(-B')$
+\end_inset
+
+ units of the good today.
+\end_layout
+
+\begin_layout Standard
+Earnings on the government portfolio are distributed (or,
+ if negative,
+ taxed) lump sum to households.
+ When the government is not excluded from financial markets,
+ the one-period national budget constraint is 
+\begin_inset Formula 
+\begin{equation}
+c_{t}=y_{t}+B_{t}-q\left(B_{t+1},y_{t}\right)B_{t+1}.\label{eq:budget_cons}
+\end{equation}
+
+\end_inset
+
+To rule out Ponzi schemes,
+ we also require that 
+\begin_inset Formula $B_{t}\ge-Z$
+\end_inset
+
+ in every period where 
+\begin_inset Formula $Z$
+\end_inset
+
+ is an exogenous borrowing upper bound.
+ 
+\begin_inset Formula $Z$
+\end_inset
+
+ is chosen to be sufficiently large that the constraint never binds in equilibrium.
+\end_layout
+
+\begin_layout Paragraph
+Financial Markets 
+\end_layout
+
+\begin_layout Standard
+There are risk-neutral foreign creditors who know the domestic output stochastic process 
+\begin_inset Formula $\left\{ y_{t}\right\} _{t=0}^{\infty}$
+\end_inset
+
+and observe 
+\begin_inset Formula $\left\{ y_{s}\right\} _{s=0}^{t}$
+\end_inset
+
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ The creditors can borrow or lend without limit in an international credit market at a constant risk-free rate 
+\begin_inset Formula $r$
+\end_inset
+
+.
+ The creditors receive full payment if the government chooses to pay and receive 
+\begin_inset Formula $0$
+\end_inset
+
+ if the government defaults on its one-period debt due.
+ 
+\end_layout
+
+\begin_layout Standard
+If the government is expected to default on obligations due at 
+\begin_inset Formula $t+1$
+\end_inset
+
+ with probability 
+\begin_inset Formula $\delta(B',y_{t})$
+\end_inset
+
+ (where 
+\begin_inset Formula $B'$
+\end_inset
+
+ is the chosen bond position for 
+\begin_inset Formula $t+1$
+\end_inset
+
+ and 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ is the output at time 
+\begin_inset Formula $t$
+\end_inset
+
+),
+ the expected value of a promise to pay one unit of consumption next period is 
+\begin_inset Formula $1-\delta(B',y_{t})$
+\end_inset
+
+.
+ Therefore,
+ the bond price 
+\begin_inset Formula $q(B',y)$
+\end_inset
+
+ for a promise to pay one unit of consumption next period is given by its discounted expected value:
+\begin_inset Formula 
+\begin{equation}
+q\left(B',y\right)=\frac{1-\delta\left(B',y\right)}{1+r}.\label{eq:qdelta}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\delta(B',y)$
+\end_inset
+
+ is the probability of default next period,
+ conditional on choosing 
+\begin_inset Formula $B'$
+\end_inset
+
+ today when current output is 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ The key is to determine the default probability 
+\begin_inset Formula $\delta(B',y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Decision on default
+\end_layout
+
+\begin_layout Standard
+At each time 
+\begin_inset Formula $t$
+\end_inset
+
+,
+ the government chooses between defaulting and meeting its current obligations and purchasing or selling an optimal quantity of one-period sovereign debt.
+ Defaulting means declining to pay all of its current obligations.
+ Default triggers two consequences:
+ first,
+ the output is decreased from 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ to 
+\begin_inset Formula $h\left(y_{t}\right)$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $0\le h\left(y_{t}\right)\le y_{t}$
+\end_inset
+
+.
+ For instance,
+ 
+\begin_inset Formula $h(y_{t})$
+\end_inset
+
+ could take the form 
+\begin_inset Formula $\min(\psi\bar{y},y_{t})$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $\psi$
+\end_inset
+
+ is a parameter and 
+\begin_inset Formula $\bar{y}$
+\end_inset
+
+ represents a reference output level (such as the long-run average output).
+\end_layout
+
+\begin_layout Standard
+Output returns to normal only after the sovereign regains access to international credit markets.
+ Second,
+ the sovereign loses access to foreign credit markets.
+ While in a state of default,
+ the economy regains access to foreign credit in each subsequent period with probability 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+The Government's Problem
+\end_layout
+
+\begin_layout Paragraph
+Default
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $V^{D}\left(y\right)$
+\end_inset
+
+ be the value function of government in default,
+ the government has only one state variable 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ and facing the recursion:
+\begin_inset Formula 
+\begin{equation}
+V^{D}\left(y\right)=u\left(h\left(y\right)\right)+\beta\mathbb{E}_{y'}\left[\theta V\left(0,y'\right)+\left(1-\theta\right)V^{D}\left(y'\right)|y\right].\label{eq:val_default}
+\end{equation}
+
+\end_inset
+
+In the continuation value,
+ the government either regain credit market access with 
+\begin_inset Formula $0$
+\end_inset
+
+ debt with probability 
+\begin_inset Formula $\theta$
+\end_inset
+
+,
+ or stay in default and gain 
+\begin_inset Formula $V^{D}\left(y'\right)$
+\end_inset
+
+ next period with probability 
+\begin_inset Formula $1-\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Repay
+\end_layout
+
+\begin_layout Standard
+If the government stays in credit market at time 
+\begin_inset Formula $t$
+\end_inset
+
+ and chooses to repay,
+ then it choose a control variable 
+\begin_inset Formula $B_{t+1}$
+\end_inset
+
+ to maximize the value of repayment.
+ The Bellman equation is 
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}V^{R}\left(B,y\right) & =\max_{B'}\left\{ u\left(c\right)+\beta\mathbb{E}_{y'}\left[V\left(B',y'\right)|y\right]\right\} \\
+\text{s.t. \ensuremath{\quad}}c & =y+B-q\left(B',y\right)B'\\
+B & \ge-Z
+\end{aligned}
+,\label{eq:val_repay}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $V\left(B',y'\right)$
+\end_inset
+
+ is the optimal value of the government's problem when facing the choice of whether to repay or default at the beginning of the next period with state 
+\begin_inset Formula $\left(B',y'\right)$
+\end_inset
+
+.
+ The government chooses to default if and only if 
+\begin_inset Formula $V^{D}\left(y\right)>V^{R}\left(B,y\right)$
+\end_inset
+
+ and thus 
+\begin_inset Formula $V\left(B,y\right)$
+\end_inset
+
+ is given by the maximum of the two values:
+\begin_inset Formula 
+\begin{equation}
+V\left(B,y\right)=\max\left\{ V^{R}\left(B,y\right),V^{D}\left(y\right)\right\} .\label{eq:val_all}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Default probability with 
+\begin_inset Formula $\lambda$
+\end_inset
+
+- rationality
+\end_layout
+
+\begin_layout Standard
+Given the value function,
+ global lenders can now evaluate the probability of default and therefore give the price function 
+\begin_inset Formula $q\left(B',y\right)$
+\end_inset
+
+.
+ Unlike 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1257/aer.98.3.690"
+literal "false"
+
+\end_inset
+
+ where all lenders are rational in comparing the next period value,
+ I introduce a parameter 
+\begin_inset Formula $\lambda\in\left[0,1\right]$
+\end_inset
+
+ to denote the fraction of 
+\begin_inset Quotes eld
+\end_inset
+
+rational
+\begin_inset Quotes erd
+\end_inset
+
+ lenders.
+ For the rational lenders,
+ they predict the default decision of all possible next period output level 
+\begin_inset Formula $y'$
+\end_inset
+
+ and then formulate expectation of default next period given 
+\begin_inset Formula $B'$
+\end_inset
+
+ as:
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}\delta_{r}\left(B',y\right) & =\mathbb{E}_{y'}\left[\mathbb{I}_{\left\{ V^{D}\left(y'\right)>V^{R}\left(B',y'\right)\right\} }|y\right]\\
+ & =\int\mathbb{I}_{\left\{ V^{D}\left(y'\right)>V^{R}\left(B',y'\right)\right\} }p\left(y,y'\right)\mathrm{d}y'
+\end{aligned}
+,\label{eq:delta_r}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbb{I}_{\left\{ A\right\} }$
+\end_inset
+
+ is the indicator function of condition 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+However,
+ for the 
+\begin_inset Formula $(1-\lambda)$
+\end_inset
+
+ fraction of "boundedly rational" lenders,
+ they evaluate the default decision based on a point expectation of next period's output,
+ conditional on current output 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ Specifically,
+ given that 
+\begin_inset Formula $\ln(y)$
+\end_inset
+
+ follows the AR(1) process in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:ar1_y"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ these lenders form their expectation of the 
+\begin_inset Formula $\textit{level}$
+\end_inset
+
+ of next period's output,
+ 
+\begin_inset Formula $y'$
+\end_inset
+
+,
+ as 
+\begin_inset Formula $\hat{y}'=\exp(E[\ln(y')|\ln(y)])=\exp(\rho\ln(y))$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $y$
+\end_inset
+
+ denotes the current level of output,
+ this forecast can be written as 
+\begin_inset Formula $y^{\rho}$
+\end_inset
+
+.
+ Thus,
+ for a given next period bond position 
+\begin_inset Formula $B'$
+\end_inset
+
+,
+ these lenders formulate the probability of default as:
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}\delta_{ir}\left(B',y\right) & =\mathbb{I}_{\left\{ V^{D}\left(\mathbb{E}\left[y'|y\right]\right)>V^{R}\left(B',\mathbb{E}\left[y'|y\right]\right)\right\} }\\
+ & =\mathbb{I}_{\left\{ V^{D}\left(y^{\rho}\right)>V^{R}\left(B',y^{\rho}\right)\right\} }
+\end{aligned}
+.\label{eq:delta_ir}
+\end{equation}
+
+\end_inset
+
+Given the fraction of rational lenders 
+\begin_inset Formula $\lambda\in[0,1]$
+\end_inset
+
+,
+ the total probability of default next period perceived by the global lenders is:
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}\delta\left(B',y;\lambda\right) & =\lambda\delta_{r}\left(B',y\right)+\left(1-\lambda\right)\delta_{ir}\left(B',y\right)\\
+ & =\lambda\int\mathbb{I}_{\left\{ V^{D}\left(y'\right)>V^{R}\left(B',y'\right)\right\} }p\left(y,y'\right)\mathrm{d}y'+\left(1-\lambda\right)\mathbb{I}_{\left\{ V^{D}\left(y^{\rho}\right)>V^{R}\left(B',y^{\rho}\right)\right\} }
+\end{aligned}
+.\label{eq:delta}
+\end{equation}
+
+\end_inset
+
+Given zero profits for foreign creditors in equilibrium,
+ we can combine 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:qdelta"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:delta"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ to pin down the bond price function.
+\end_layout
+
+\begin_layout Subsection
+Timeline
+\end_layout
+
+\begin_layout Paragraph
+Timing of Events within Period 
+\begin_inset Formula $t$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The sequence of events within each period 
+\begin_inset Formula $t$
+\end_inset
+
+ unfolds as follows:
+\end_layout
+
+\begin_layout Enumerate
+The government begins the period with an inherited net asset position 
+\begin_inset Formula $B_{t}$
+\end_inset
+
+ from period 
+\begin_inset Formula $t-1$
+\end_inset
+
+.
+ The current period's output level 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ is realized.
+\end_layout
+
+\begin_layout Enumerate
+Given the state 
+\begin_inset Formula $(B_{t},y_{t})$
+\end_inset
+
+,
+ the government chooses whether to 
+\begin_inset Formula $\textbf{default}$
+\end_inset
+
+ on or 
+\begin_inset Formula $\textbf{repay}$
+\end_inset
+
+ its obligations associated with 
+\begin_inset Formula $B_{t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+If the Government Defaults:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Current output is reduced to 
+\begin_inset Formula $h(y_{t})$
+\end_inset
+
+,
+ and consumption is 
+\begin_inset Formula $c_{t}=h(y_{t})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The government is excluded from international credit markets.
+\end_layout
+
+\begin_layout Enumerate
+Transition to period 
+\begin_inset Formula $t+1$
+\end_inset
+
+:
+ With probability 
+\begin_inset Formula $\theta$
+\end_inset
+
+,
+ market access is regained,
+ starting period 
+\begin_inset Formula $t+1$
+\end_inset
+
+ with 
+\begin_inset Formula $B_{t+1}=0$
+\end_inset
+
+.
+ With probability 
+\begin_inset Formula $1-\theta$
+\end_inset
+
+,
+ the government remains in default,
+ also starting period 
+\begin_inset Formula $t+1$
+\end_inset
+
+ with 
+\begin_inset Formula $B_{t+1}=0$
+\end_inset
+
+ but still excluded from borrowing.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+If the Government Repays:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Obligations related to 
+\begin_inset Formula $B_{t}$
+\end_inset
+
+ are honored.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The government faces the bond price schedule 
+\begin_inset Formula $q(B',y_{t})$
+\end_inset
+
+.
+ This price is determined by risk-neutral creditors as in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:qdelta"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ where the market-perceived default probability 
+\begin_inset Formula $\delta(B',y_{t})$
+\end_inset
+
+ is formed according to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:delta"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The government chooses an optimal new net asset position 
+\begin_inset Formula $B_{t+1}$
+\end_inset
+
+ subject to 
+\begin_inset Formula $B_{t+1}\ge-Z$
+\end_inset
+
+ to maximize its continuation value,
+ 
+\begin_inset Formula $V_{R}(B_{t},y_{t})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Consumption 
+\begin_inset Formula $c_{t}$
+\end_inset
+
+ is determined by the budget constraint 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:budget_cons"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The government carries the chosen 
+\begin_inset Formula $B_{t+1}$
+\end_inset
+
+ into period 
+\begin_inset Formula $t+1$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Equilibrium
+\end_layout
+
+\begin_layout Standard
+I seek for Markov perfect equilibrium for ease of computation.
+ The equilibrium can be described as follows:
+\end_layout
+
+\begin_layout Definition
+A Markov perfect equilibrium is:
+ i) a pricing function 
+\begin_inset Formula $q\left(B',y\right)$
+\end_inset
+
+,
+ ii) a triple of value functions 
+\begin_inset Formula $\left(V^{R}\left(B,y\right),V^{D}\left(y\right),V\left(B,y\right)\right)$
+\end_inset
+
+,
+ iii) a default decision as a function of the state 
+\begin_inset Formula $\left(B,y\right)$
+\end_inset
+
+ and iv) an asset accumulation rule that conditional on choosing repayment 
+\begin_inset Formula $B'\left(B,y\right)$
+\end_inset
+
+ such that:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The 3 Bellman equations 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:val_default"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:val_repay"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:val_all"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ are satisfied,
+\end_layout
+
+\begin_layout Enumerate
+given the price function 
+\begin_inset Formula $q\left(B',y\right)$
+\end_inset
+
+,
+ the decision rule and accumulation rule attain the optimal value function 
+\begin_inset Formula $V\left(B,y\right)$
+\end_inset
+
+,
+ and 
+\end_layout
+
+\begin_layout Enumerate
+The price function 
+\begin_inset Formula $q\left(B',y\right)$
+\end_inset
+
+ satisfies 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:qdelta"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Basic Theoretical Results
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:theoretical_results"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Before proceeding to the quantitative analysis,
+ I briefly establish that several key theoretical properties from the standard sovereign default model of 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1257/aer.98.3.690"
+literal "false"
+
+\end_inset
+
+ continue to hold in my framework with boundedly rational lenders.
+ The primary purpose of this section is to verify the robustness of the model's basic mechanics.
+ First,
+ I define the default set,
+ 
+\begin_inset Formula $\mathcal{D}(B)$
+\end_inset
+
+,
+ as the set of output realizations 
+\begin_inset Formula $y$
+\end_inset
+
+ for which default is the optimal policy given an initial asset level 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ That is,
+ 
+\begin_inset Formula 
+\[
+\mathcal{D}(B)=\{y\mid V^{D}(y)>V^{R}(B,y)\}.
+\]
+
+\end_inset
+
+The following propositions characterize the equilibrium default policy.
+\end_layout
+
+\begin_layout Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "prop:default_assets"
+
+\end_inset
+
+ The incentive to default is non-increasing with the government's net asset position.
+ For any two asset levels 
+\begin_inset Formula $B_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $B_{2}$
+\end_inset
+
+ such that 
+\begin_inset Formula $B_{1}\leq B_{2}$
+\end_inset
+
+,
+ if default is optimal with asset level 
+\begin_inset Formula $B_{2}$
+\end_inset
+
+ at some output level 
+\begin_inset Formula $y$
+\end_inset
+
+,
+ then default is also optimal with asset level 
+\begin_inset Formula $B_{1}$
+\end_inset
+
+ at the same output level 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ Formally,
+ 
+\begin_inset Formula $\mathcal{D}(B_{2})\subseteq\mathcal{D}(B_{1})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+See Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Proof-for-Proposition 1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The proof is standard and follows from the fact that 
+\begin_inset Formula $V^{R}(B,y)$
+\end_inset
+
+ is strictly increasing in 
+\begin_inset Formula $B$
+\end_inset
+
+ while 
+\begin_inset Formula $V^{D}(y)$
+\end_inset
+
+ is independent of 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ The introduction of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-rationality affects the level of the bond price schedule 
+\begin_inset Formula $q(\cdot)$
+\end_inset
+
+,
+ but not the monotonicity of 
+\begin_inset Formula $V^{R}$
+\end_inset
+
+ with respect to current assets 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Proposition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:default_assets"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ establishes that default becomes more attractive as the government's balance sheet deteriorates.
+ The next proposition shows that once debt reaches a level where default becomes a possibility,
+ the government faces an endogenous borrowing constraint.
+\end_layout
+
+\begin_layout Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "prop:no_inflow"
+
+\end_inset
+
+ If,
+ for some asset level 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ the default set is non-empty,
+ i.e.,
+ 
+\begin_inset Formula $\mathcal{D}(B)\neq\emptyset$
+\end_inset
+
+,
+ then there are no contracts 
+\begin_inset Formula $\{q(B',y),B'\}$
+\end_inset
+
+ chosen in equilibrium such that the economy can experience a capital inflow.
+ That is,
+ any equilibrium choice must satisfy 
+\begin_inset Formula $B-q(B',y;\lambda)B'\leq0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+See Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Proof-for-Proposition2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The proof follows the logic in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1257/aer.98.3.690"
+literal "false"
+
+\end_inset
+
+,
+ demonstrating that any equilibrium price offered to a risky sovereign must be inconsistent with the condition required for a net capital inflow.
+ Our 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-rationality mechanism alters the precise equilibrium price but does not invalidate this fundamental no-free-lunch condition.
+ Finally,
+ we establish that default is a response to adverse economic conditions.
+\end_layout
+
+\begin_layout Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "prop:default_income-1"
+
+\end_inset
+
+ The incentive to default is stronger for lower levels of current endowment.
+ For any given asset level 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ if it is optimal to default at an output level 
+\begin_inset Formula $y_{2}$
+\end_inset
+
+,
+ it is also optimal to default at any output level 
+\begin_inset Formula $y_{1}\le y_{2}$
+\end_inset
+
+.
+ Formally,
+ if 
+\begin_inset Formula $y_{2}\in\mathcal{D}(B)$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $y_{1}\in\mathcal{D}(B)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+See Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Proof-for-Proposition 3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+This result holds because the marginal value of income is higher when the government maintains market access than when it is in default.
+ Access to credit markets allows for better intertemporal smoothing,
+ making the continuation value under repayment more sensitive to positive income shocks.
+ Taken together,
+ these propositions confirm that my model with boundedly rational lenders preserves the core theoretical structure of the canonical sovereign default model.
+ Default remains a state-contingent decision that occurs when the country is highly indebted and experiences a negative output shock.
+ This verification of the model's basic properties is crucial,
+ as it provides a stable foundation upon which I can analyze the novel effects of my central mechanism.
+\end_layout
+
+\begin_layout Section
+Theoretical Analysis
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:discontinuity"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Having established that the standard mechanics are intact,
+ the analysis can now move beyond them.
+ I establish the main theoretical contribution of this paper in this section,
+ demonstrating how this heterogeneity in lender beliefs fundamentally reshapes the credit market by introducing sharp,
+ endogenous discontinuities into the bond price schedule.
+\end_layout
+
+\begin_layout Paragraph
+Price Drop
+\end_layout
+
+\begin_layout Standard
+The theoretical contribution of this paper stems from a novel non-linearity introduced by the assumption of boundedly rational lenders.
+ I establish the model's main theoretical result:
+ when a fraction of lenders form expectations irrationally (
+\begin_inset Formula $\lambda<1$
+\end_inset
+
+),
+ the otherwise smooth bond price schedule of the standard model is replaced by one that exhibits a sharp,
+ endogenous discontinuity.
+ This result is formalized in the following theorem.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:price_drop"
+
+\end_inset
+
+ With a fraction 
+\begin_inset Formula $(1-\lambda)>0$
+\end_inset
+
+ of boundedly rational lenders,
+ the equilibrium bond price schedule 
+\begin_inset Formula $q(B',y;\lambda)$
+\end_inset
+
+ exhibits a unique discontinuity at a critical debt threshold 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+.
+ Specifically,
+ the following properties hold:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The price function drops discontinuously at the threshold:
+ 
+\begin_inset Formula 
+\[
+\lim_{B'\to\tilde{B}'(y)^{+}}q(B',y;\lambda)-\lim_{B'\to\tilde{B}'(y)^{-}}q(B',y;\lambda)=\frac{1-\lambda}{1+r}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $B'\in(\tilde{B}'(y),0]$
+\end_inset
+
+,
+ the price is 
+\series bold
+weakly higher
+\series default
+ than the full rationality benchmark:
+ 
+\begin_inset Formula $q(B',y;\lambda)\ge q(B',y;1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $B'<\tilde{B}'(y)$
+\end_inset
+
+,
+ the price is 
+\series bold
+weakly lower
+\series default
+ than the full rationality benchmark:
+ 
+\begin_inset Formula $q(B',y;\lambda)\le q(B',y;1)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+See Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Proof-for-Theorem1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The economic intuition behind Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:price_drop"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ lies in the abrupt shift in the beliefs of boundedly rational lenders.
+ Their assessment of default risk 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:delta_ir"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ acts as a step function.
+ For low levels of debt,
+ i.e.,
+ 
+\begin_inset Formula $B'>\tilde{B}'(y)$
+\end_inset
+
+),
+ the value of repayment at the expected future output,
+ 
+\begin_inset Formula $V^{R}(B',y^{\rho})$
+\end_inset
+
+,
+ is high.
+ Consequently,
+ these lenders perceive zero default risk (
+\begin_inset Formula $\delta_{ir}=0$
+\end_inset
+
+).
+ Their presence dilutes the concerns of rational lenders over low-probability tail events,
+ leading to an aggregate market perception of lower risk and thus a higher bond price compared to the fully rational benchmark.
+\end_layout
+
+\begin_layout Standard
+This market optimism,
+ however,
+ is fragile.
+ From Proposition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:default_assets"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ 
+\begin_inset Formula $V^{R}(B',y^{\rho})$
+\end_inset
+
+ is a decreasing function of the debt level.
+ As the government proposes to take on more debt,
+ it eventually crosses the critical threshold 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+ where the value of repayment falls below the value of default at the expected output level.
+ At this precise point,
+ the boundedly rational lenders' risk assessment flips immediately from 
+\begin_inset Formula $0$
+\end_inset
+
+ to 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ This causes a discrete upward jump in the aggregate default probability,
+ which in turn triggers a discontinuous drop in the bond price and therefore leads to a price drop.
+ For all debt levels beyond this threshold,
+ the market becomes systematically more pessimistic than the fully rational benchmark,
+ as the extreme pessimism of the boundedly rational agents (who now see default as certain) weighs down the average price.
+ This discontinuity can be interpreted as a crisis threshold in the credit market,
+ driven entirely by the heterogeneity of lender expectations.
+\end_layout
+
+\begin_layout Paragraph
+Equilibrium Interest Rate
+\end_layout
+
+\begin_layout Standard
+This price discontinuity has a direct consequence on the interest rates the sovereign faces in equilibrium.
+ I define the equilibrium interest rate,
+ 
+\begin_inset Formula $r^{c}(B,y)$
+\end_inset
+
+,
+ as the rate implied by the government's optimal bond choice at state 
+\begin_inset Formula $(B,y)$
+\end_inset
+
+,
+ which is 
+\begin_inset Formula $B'(B,y)$
+\end_inset
+
+.
+ Formally,
+ it is given by:
+ 
+\begin_inset Formula 
+\begin{equation}
+r^{c}(B,y)=\frac{1}{q(B'(B,y),y;\lambda)}-1\label{eq:equil_rate}
+\end{equation}
+
+\end_inset
+
+Unlike the bond price 
+\shape italic
+schedule
+\shape default
+ 
+\begin_inset Formula $q(B',y)$
+\end_inset
+
+,
+ which is a function of a potential choice 
+\begin_inset Formula $B'$
+\end_inset
+
+,
+ the equilibrium interest rate is the single rate that is realized after the government has made its optimal decision.
+ The following corollary describes its properties.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "cor:rate_spike"
+
+\end_inset
+
+ The presence of boundedly rational lenders (
+\begin_inset Formula $\lambda<1$
+\end_inset
+
+) can lead to equilibrium interest rates that are significantly higher than those under full rationality (
+\begin_inset Formula $\lambda=1$
+\end_inset
+
+).
+ Specifically,
+ for states 
+\begin_inset Formula $(B,y)$
+\end_inset
+
+ where the optimal new debt level 
+\begin_inset Formula $B'(B,y)$
+\end_inset
+
+ is beyond the critical threshold (
+\begin_inset Formula $B'<\tilde{B}'(y)$
+\end_inset
+
+),
+ the resulting equilibrium interest rate will be strictly higher than in the fully rational benchmark.
+ 
+\end_layout
+
+\begin_layout Proof
+See Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Proof-for-Corollary"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The intuition for Corollary 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cor:rate_spike"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ follows directly from Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:price_drop"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ The equilibrium interest rate is determined not by the entire price schedule,
+ but by the price of the specific bond 
+\begin_inset Formula $B'(B,y)$
+\end_inset
+
+ that the government optimally chooses at state 
+\begin_inset Formula $(B,y)$
+\end_inset
+
+.
+ The government's choice,
+ in turn,
+ depends on the trade-offs presented by the schedule.
+ If the government is not heavily indebted and faces a good income shock,
+ it may choose a safe asset position 
+\begin_inset Formula $B'>\tilde{B}'(y)$
+\end_inset
+
+.
+ In this case,
+ it benefits from the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+market optimism
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ region with a 
+\shape italic
+lower
+\shape default
+ interest rate.
+ However,
+ in adverse states (low 
+\begin_inset Formula $y$
+\end_inset
+
+ and/or high initial debt 
+\begin_inset Formula $B$
+\end_inset
+
+),
+ the government has a strong incentive to borrow for consumption smoothing.
+ This need may be so strong that it is optimal to choose a new debt level 
+\begin_inset Formula $B'<\tilde{B}'(y)$
+\end_inset
+
+,
+ effectively accepting the discontinuous price drop.
+ In this pessimistic region,
+ Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:price_drop"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ mechanically leads to a higher equilibrium interest rate.
+ Because the price drop can be substantial,
+ my model predicts that bounded rationality can generate the kind of sharp interest rate spikes often observed during sovereign debt crises,
+ a feature that is difficult to produce in the standard,
+ smooth model.
+\end_layout
+
+\begin_layout Paragraph
+Threshold
+\end_layout
+
+\begin_layout Standard
+The existence of the critical threshold 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+ is central to the model's dynamics.
+ A natural question that follows is how this crisis threshold behaves with respect to output.
+ The next proposition establishes that the threshold is state-dependent,
+ showing that the government can sustain a higher level of debt during economic expansions before triggering the pessimistic shift in lender beliefs.
+ This provides a clear theoretical channel for why crises are more likely to be triggered during recessions.
+\end_layout
+
+\begin_layout Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "prop:threshold_monotonicity"
+
+\end_inset
+
+ The critical debt threshold 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+ is a decreasing function of current output 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ That is,
+ 
+\begin_inset Formula $\frac{d\tilde{B}'(y)}{dy}<0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+See Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Proof-for-Proposition4"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The critical threshold 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+ is determined by the beliefs of the boundedly rational lenders,
+ which are based on the expected future output 
+\begin_inset Formula $y^{\rho}$
+\end_inset
+
+.
+ Due to the persistence of the income process (
+\begin_inset Formula $\rho>0$
+\end_inset
+
+),
+ a higher current output 
+\begin_inset Formula $y$
+\end_inset
+
+ leads to a more optimistic forecast for future output.
+ A better future economic outlook increases the value of both repayment and default,
+ but as established in Proposition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:default_income-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ it increases the value of maintaining market access (
+\begin_inset Formula $V^{R}$
+\end_inset
+
+) more significantly.
+ Consequently,
+ when today's outlook is good,
+ the government can accumulate a larger amount of debt (a more negative 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+) before the boundedly rational lenders perceive the situation as unsustainable.
+ In contrast,
+ a low current income 
+\begin_inset Formula $y$
+\end_inset
+
+ generates pessimism about the future,
+ causing the crisis threshold to be triggered at much lower levels of debt.
+\end_layout
+
+\begin_layout Section
+Quantative Analysis
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Quantative-Analysis"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this section,
+ I solve the model numerically to visualize and analyze the main theoretical predictions.
+ The analysis highlights the quantitative impact of bounded rationality by comparing the benchmark case with fully rational lenders (
+\begin_inset Formula $\lambda=1$
+\end_inset
+
+) to the case where half of the lenders are boundedly rational (
+\begin_inset Formula $\lambda=0.5$
+\end_inset
+
+).
+ The model is parameterized according to the benchmark calibration discussed in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Functional-Forms-and"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Functional Forms and Parameterization
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Functional-Forms-and"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To analyze the model's quantitative implications,
+ I adopt the functional forms and benchmark parameterization directly from 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1257/aer.98.3.690"
+literal "false"
+
+\end_inset
+
+.
+ This approach allows me to isolate the effects of my novel bounded-rationality mechanism by grounding the analysis in a well-established quantitative framework calibrated to a typical emerging market economy (Argentina).
+\end_layout
+
+\begin_layout Standard
+The utility function is of the standard Constant Relative Risk Aversion form,
+ 
+\begin_inset Formula 
+\[
+u(c)=\frac{c^{1-\gamma}}{1-\gamma}.
+\]
+
+\end_inset
+
+The output cost of default is specified as a threshold function,
+ 
+\begin_inset Formula $h(y)=\min(\hat{y},y)$
+\end_inset
+
+,
+ which makes default costs disproportionately larger during economic expansions.
+ The parameter values are summarized in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:parameters"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ These values constitute the full rationality benchmark in my model,
+ corresponding to the case where 
+\begin_inset Formula $\lambda=1$
+\end_inset
+
+.
+ I use 
+\begin_inset Formula $n_{y}=201$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{B}=401$
+\end_inset
+
+ in the model and value function iteration that is standard in this literature.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h!
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Benchmark Parameterization
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:parameters"
+
+\end_inset
+
+ 
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="none" valignment="top" special="@{}l">
+<column alignment="center" valignment="top">
+<column alignment="none" valignment="top" special="c@{}">
+<row>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Symbol
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Risk Aversion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\gamma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Discount Factor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\beta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.953
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Risk-Free Rate (Quarterly)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $r$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.017
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output Persistence
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.945
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output Shock Std.
+ Dev.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\eta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.025
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Re-entry Probability
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.282
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output Cost Threshold
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.969\cdot\mathbb{E}[y]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flushleft
+\end_layout
+
+\end_inset
+
+ 
+\shape italic
+\size small
+Note:
+
+\shape default
+ All parameter values are adopted from the benchmark calibration in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1257/aer.98.3.690"
+literal "false"
+
+\end_inset
+
+,
+ which was targeted to match business cycle moments for Argentina.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+Main Results
+\end_layout
+
+\begin_layout Paragraph
+The Discontinuous Price Schedule
+\end_layout
+
+\begin_layout Standard
+My main theoretical result,
+ Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:price_drop"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ posits that bounded rationality induces a sharp,
+ endogenous discontinuity in the bond price schedule.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:price_schedule_lambda"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ provides a visualization of this phenomenon.
+ The figure plots the bond price 
+\begin_inset Formula $q(B',y)$
+\end_inset
+
+ as a function of the next period's asset choice 
+\begin_inset Formula $B'$
+\end_inset
+
+ for both high and low current income states.
+\end_layout
+
+\begin_layout Standard
+As predicted,
+ the price schedules for the boundedly rational economy (blue and orange lines,
+ 
+\begin_inset Formula $\lambda=0.5$
+\end_inset
+
+) are fundamentally different from their smooth counterparts in the fully rational economy (green and purple lines,
+ 
+\begin_inset Formula $\lambda=1.0$
+\end_inset
+
+).
+ Consistent with Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:price_drop"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ for low levels of debt (i.e.,
+ 
+\begin_inset Formula $B'$
+\end_inset
+
+ to the right of the drop),
+ prices are higher under bounded rationality,
+ reflecting the market optimism of lenders who ignore tail risks.
+ At a critical debt threshold,
+ 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+,
+ the price drops discontinuously.
+ For all debt levels beyond this threshold,
+ prices are strictly lower than in the rational benchmark,
+ reflecting the market pessimism.
+\end_layout
+
+\begin_layout Standard
+Furthermore,
+ the figure provides visual confirmation of Proposition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:threshold_monotonicity"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ The critical threshold at which the price drops is state-dependent.
+ The drop for the low-income state (blue line) occurs at a higher asset level (less debt) than for the high-income state (orange line).
+ This illustrates that the government can sustain more debt in good times before
+\emph on
+ triggering the pessimistic shift
+\emph default
+ in lender beliefs,
+ consistent with the fact that crises are more likely to be ignited during recessions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h!
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/WorkingProjects/blind/Result/Figs/lambda_info/bond_price_schedule_0.5.pdf
+	width 60text%
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bond Price Schedule 
+\begin_inset Formula $q(B',y)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:price_schedule_lambda"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+flushleft
+\end_layout
+
+\end_inset
+
+ 
+\shape italic
+\size small
+Note:
+
+\shape default
+ The figure plots the price 
+\begin_inset Formula $q$
+\end_inset
+
+ as a function of next period's asset choice 
+\begin_inset Formula $B'$
+\end_inset
+
+.
+ The comparison is between the full rationality benchmark (
+\begin_inset Formula $\lambda=1.0$
+\end_inset
+
+) and the bounded rationality model (
+\begin_inset Formula $\lambda=0.5$
+\end_inset
+
+) for high (
+\begin_inset Formula $y_{High}$
+\end_inset
+
+) and low (
+\begin_inset Formula $y_{Low}$
+\end_inset
+
+) income states.
+ The discontinuity predicted by Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:price_drop"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ is clearly visible for the 
+\begin_inset Formula $\lambda=0.5$
+\end_inset
+
+ case.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Equilibrium Interest Rate Spikes
+\end_layout
+
+\begin_layout Standard
+The discontinuous price schedule has powerful implications for the interest rate the sovereign faces in equilibrium.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:equil_rate_lambda"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ plots the realized equilibrium interest rate,
+ 
+\begin_inset Formula $r^{c}(B,y)$
+\end_inset
+
+,
+ which corresponds to the price of the optimally chosen bond 
+\begin_inset Formula $B'(B,y)$
+\end_inset
+
+ at each state 
+\begin_inset Formula $(B,y)$
+\end_inset
+
+.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:equil_rate_lambda"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ provides quantitative support for Corollary 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cor:rate_spike"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ For the high-income state,
+ default risk is minimal,
+ and the government's borrowing needs do not compel it to cross the discontinuity.
+ As a result,
+ the equilibrium interest rates under bounded and full rationality (orange and purple lines) are nearly identical and low.
+ In sharp contrast,
+ for the low-income state (blue line),
+ once the government's initial debt 
+\begin_inset Formula $B$
+\end_inset
+
+ is sufficiently high,
+ its optimal policy 
+\begin_inset Formula $B'(B,y)$
+\end_inset
+
+ falls into the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+pessimistic
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ region of the price schedule.
+ Consequently,
+ the government is forced to pay a punitively high interest rate,
+ far exceeding the rate paid in the fully rational benchmark (green line).
+ This result highlights that my model,
+ through the bounded rationality mechanism,
+ can endogenously generate the kind of sudden interest rate spikes characteristic of sovereign debt crises,
+ a feature that is difficult to produce in standard models with smooth price functions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h!
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/WorkingProjects/blind/Result/Figs/lambda_info/equilibrium_interest_rate_0.5.pdf
+	width 60text%
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Equilibrium Interest Rate 
+\begin_inset Formula $r^{c}(B,y)=1/q(B'(B,y),y)-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:equil_rate_lambda"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+flushleft
+\end_layout
+
+\end_inset
+
+ 
+\shape italic
+\size small
+Note:
+
+\shape default
+ The figure plots the realized equilibrium interest rate as a function of the current asset position 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Each point reflects the rate corresponding to the government's optimal choice 
+\begin_inset Formula $B'(B,y)$
+\end_inset
+
+ at that state.
+ The comparison is between the full rationality benchmark (
+\begin_inset Formula $\lambda=1.0$
+\end_inset
+
+) and the bounded rationality model (
+\begin_inset Formula $\lambda=0.5$
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Equilibrium Borrowing and Financial Fragility
+\end_layout
+
+\begin_layout Standard
+I now turn to the analysis of the government's equilibrium asset policy,
+ 
+\begin_inset Formula $B'(B,y)$
+\end_inset
+
+,
+ which reveals the ultimate behavioral consequence of the bounded rationality I introduce.
+ While one might intuitively suspect that the threat of a price cliff would induce more cautious behavior,
+ I find that the 
+\emph on
+opposite 
+\emph default
+is true.
+ The presence of boundedly rational lenders incentivizes the government to adopt a more aggressive borrowing strategy,
+ systematically increasing the economy's indebtedness.
+\end_layout
+
+\begin_layout Standard
+This result is illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:value_and_savings"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ The left panel shows that the ex-ante value function,
+ 
+\begin_inset Formula $V(B,y)$
+\end_inset
+
+,
+ is remarkably similar across the two rationality regimes.
+ The right panel plots the resulting optimal savings policy,
+ 
+\begin_inset Formula $B'(B,y)$
+\end_inset
+
+.
+ For nearly all initial asset levels 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ the government chooses a lower next-period asset position under bounded rationality.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h!
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{subfigure}[b]
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+0.49
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/WorkingProjects/blind/Result/Figs/lambda_info/value_functions_0.5.pdf
+	width 100text%
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Value Function 
+\begin_inset Formula $V(B,y)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:value_functions_lambda"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{subfigure}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{subfigure}[b]
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+0.49
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/WorkingProjects/blind/Result/Figs/lambda_info/savings_function_0.5.pdf
+	width 100text%
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Savings Function 
+\begin_inset Formula $B'(B,y)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:savings_function_lambda"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{subfigure}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Value and Savings Functions under Bounded Rationality
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:value_and_savings"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+flushleft
+\end_layout
+
+\end_inset
+
+ 
+\shape italic
+\size small
+Note:
+
+\shape default
+ The left panel plots the value function 
+\begin_inset Formula $V(B,y)$
+\end_inset
+
+.
+ The right panel plots the optimal asset policy function 
+\begin_inset Formula $B'(B,y)$
+\end_inset
+
+.
+ Both panels compare the full rationality benchmark (
+\begin_inset Formula $\lambda=1.0$
+\end_inset
+
+) with the bounded rationality model (
+\begin_inset Formula $\lambda=0.5$
+\end_inset
+
+) for high (
+\begin_inset Formula $y_{High}$
+\end_inset
+
+) and low (
+\begin_inset Formula $y_{Low}$
+\end_inset
+
+) income states.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The explanation for this counterintuitive result lies in the two opposing effects that bounded rationality has on the government's borrowing decision.
+ On one hand,
+ a 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+value effect
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ could encourage more saving:
+ the prospect of better future borrowing terms might increase the continuation value,
+ raising the incentive to save today.
+ However,
+ the left panel of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:value_functions_lambda"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ reveals that this effect is quantitatively negligible,
+ as the overall value functions are almost identical.
+ On the other hand,
+ a 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+price effect
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ encourages more borrowing:
+ Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:price_drop"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows that for 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+safe
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ levels of debt (
+\begin_inset Formula $B'>\tilde{B}'(y)$
+\end_inset
+
+),
+ the interest rate is lower when 
+\begin_inset Formula $\lambda<1$
+\end_inset
+
+.
+ With the precautionary saving motive (the value effect) effectively neutralized,
+ the government's optimal response is to aggressively exploit the immediate 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+bargain
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ offered by the market's optimism.
+ It,
+ therefore,
+ takes on more debt than it would in the fully rational world.
+\end_layout
+
+\begin_layout Standard
+In conclusion,
+ the introduction of boundedly rational lenders creates a form of 
+\emph on
+moral hazard
+\emph default
+.
+ The government is induced to maintain a higher level of debt,
+ pushing the economy closer to the crisis threshold 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+.
+ This makes the economy endogenously more fragile and susceptible to the very type of sudden funding crises that the beliefs of these boundedly rational agents create.
+\end_layout
+
+\begin_layout Subsection
+Simulation and Business Cycle Statistics
+\end_layout
+
+\begin_layout Standard
+To evaluate the model's quantitative performance,
+ I compare its simulated business cycle moments to empirical data from Argentina.
+ The main analysis contrasts two versions of my model:
+ the full rationality benchmark (
+\begin_inset Formula $\lambda=1.0$
+\end_inset
+
+) and the calibrated model with boundedly rational lenders (
+\begin_inset Formula $\lambda\approx0.518$
+\end_inset
+
+),
+ where this value of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is chosen to match the average interest rate spread observed in the data.
+\end_layout
+
+\begin_layout Standard
+To generate the model's statistics,
+ I first perform a long-run simulation of the calibrated economy for 50,000 quarters,
+ discarding an initial burn-in period.
+ Following the methodology of 
+\size small
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "BORNSTEIN2020103963"
+literal "false"
+
+\end_inset
+
+,
+
+\size default
+ I then identify all default episodes from the simulation.
+ For each of the first 100 default events (or fewer if not available),
+ I create a data window consisting of the 74 quarters preceding the event.
+ Key business cycle statistics are calculated for each window,
+ and the final reported moments in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:bc_stats"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ are the average of these statistics across all sampled windows.
+ Crucially,
+ following this methodology,
+ statistics for output and consumption are computed on their logarithmic values without prior detrending.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:bc_stats"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ presents the main quantitative findings.
+ It compares key business cycle moments from Argentine data with the results generated by my model under both full rationality and the calibrated level of bounded rationality.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h!
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Business Cycle Statistics:
+ Data vs.
+ Model
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:bc_stats"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.8
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="17" columns="4">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="none" valignment="top" special="@{}l">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="none" valignment="top" special="c@{}">
+<row>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Data (Argentina)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Model (
+\begin_inset Formula $\lambda=1.0$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Model (
+\begin_inset Formula $\lambda\approx0.518$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" usebox="none" special="l">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Standard Deviations,
+ std(x) (%)
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interest Rate Spread
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.70
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Trade Balance / GDP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.75
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.26
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Consumption
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.59
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.53
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.78
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.66
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.84
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="none" valignment="top" usebox="none" special="l">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Correlations,
+ corr(x,y) and corr(x,spread)
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+corr(Interest Rate Spread,
+ y)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.88
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.29
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.52
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+corr(Trade Balance / GDP,
+ y)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.64
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.45
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+corr(Consumption,
+ y)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.98
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.98
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.98
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+corr(Consumption,
+ spread)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.89
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.37
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.54
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="none" valignment="top" usebox="none" special="l">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Other Statistics
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mean Interest Rate Spread (%)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.25
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.25
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mean Debt (% of GDP)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.23
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\size small
+The data moment for Mean Debt/GDP is from Table 4 in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1257/aer.98.3.690"
+literal "false"
+
+\end_inset
+
+ for comparison.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.62
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Default Probability (%)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\approx3.0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+19.70
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+flushleft
+\end_layout
+
+\end_inset
+
+ 
+\shape italic
+\size small
+Note:
+
+\shape default
+ Data for Argentina are from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1257/aer.98.3.690"
+literal "false"
+
+\end_inset
+
+,
+ Table 1 and text.
+ Model statistics are generated using the methodology from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "BORNSTEIN2020103963"
+literal "false"
+
+\end_inset
+
+,
+ averaged over the sampled default episodes.
+ Output and Consumption statistics are for log-levels.
+ Spreads and ratios are in percent.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The introduction of boundedly rational lenders provides a powerful mechanism to address these shortcomings.
+ By calibrating the fraction of rational lenders to 
+\begin_inset Formula $\lambda\approx0.518$
+\end_inset
+
+,
+ my model,
+ by construction,
+ successfully matches the high average interest rate spread.
+ More importantly,
+ this single modification has profound implications for other,
+ non-targeted moments.
+\end_layout
+
+\begin_layout Standard
+First,
+ the model now generates a massive volatility of interest rate spreads (25.00%).
+ This is a direct quantitative manifestation of the price discontinuity established in Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:price_drop"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ The sharp price drops,
+ triggered by shifts in the beliefs of boundedly rational lenders,
+ translate into large,
+ sudden spikes in equilibrium interest rates,
+ generating volatility far exceeding that of the standard model.
+ Second,
+ the model produces stronger countercyclical correlations.
+ The correlation between the spread and output,
+ for instance,
+ strengthens from -0.29 to -0.52,
+ moving closer to the empirical value of -0.88.
+ This is because the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+crisis
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ interest rates are endogenously triggered by adverse economic states,
+ tightening the link between economic downturns and financial distress.
+\end_layout
+
+\begin_layout Standard
+Finally,
+ the calibration reveals a trade-off.
+ To generate the empirically observed high average spread under risk-neutral pricing,
+ the model endogenously requires a high default probability of 19.70%.
+ This high default frequency is sustained by a higher equilibrium debt-to-GDP ratio (10.62%),
+ which confirms the theoretical finding that the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+bargain
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ offered by optimistic lenders induces more aggressive borrowing.
+ In essence,
+ my model suggests that the high sovereign spreads seen in emerging markets can be understood as compensation for a significant underlying fragility,
+ where economies operate with higher debt and face a much more frequent threat of crisis,
+ a dynamic driven by the heterogeneity of beliefs in financial markets.
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:conclusion"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Standard models of sovereign default,
+ while successful in explaining many features of emerging market business cycles,
+ typically fail to generate the high average and high volatility of interest rate spreads observed in the data.
+ In this paper,
+ I propose and analyze a novel mechanism based on bounded rationality to address this puzzle.
+ I extend the canonical sovereign default framework by assuming that a fraction of lenders are boundedly rational,
+ forming expectations based on a simplified heuristic rather than the full distribution of future shocks.
+\end_layout
+
+\begin_layout Standard
+The introduction of this heterogeneity in lender beliefs has profound consequences.
+ Theoretically,
+ I show that it replaces the smooth bond price schedule with one that features a sharp,
+ endogenous discontinuity.
+ This 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+price cliff
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ creates a new channel for financial fragility and provides a mechanism for the sudden interest rate spikes often seen during debt crises.
+ My analysis also shows that the standard properties of the default model remain robust,
+ and I characterize how the crisis threshold is endogenously determined by the state of the economy.
+\end_layout
+
+\begin_layout Standard
+Quantitatively,
+ I demonstrate that this mechanism is powerful.
+ By calibrating the degree of market rationality to match Argentina's high average interest rate spread,
+ my model can simultaneously generate a spread volatility that is much larger than the standard model's prediction.
+ The calibration reveals a key trade-off:
+ generating high spreads under risk neutrality endogenously requires a high equilibrium default probability.
+ This is sustained by a more aggressive government borrowing policy,
+ as the government is induced to exploit the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+bargain
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ offered by optimistic lenders in good times,
+ thus making the economy more fragile.
+\end_layout
+
+\begin_layout Standard
+The simple form of bounded rationality I introduce here opens several avenues for future research.
+ One could explore models where the fraction of rational lenders,
+ 
+\begin_inset Formula $\lambda$
+\end_inset
+
+,
+ is itself an endogenous variable that changes with market sentiment or information costs.
+ Furthermore,
+ incorporating this belief heterogeneity into models with other features,
+ such as long-term debt or domestic default,
+ could yield further insights into the complex dynamics of sovereign debt markets.
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+appendix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size larger
+Appendix for 
+\begin_inset Quotes eld
+\end_inset
+
+Sovereign Default with Bounded Rationality
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+Chen Gao
+\end_layout
+
+\begin_layout Section
+Proofs
+\end_layout
+
+\begin_layout Subsection
+Proof for Proposition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:default_assets"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Proof-for-Proposition 1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+The government defaults if and only if 
+\begin_inset Formula $V^{D}(y)>V^{R}(B,y)$
+\end_inset
+
+.
+ The value of default,
+ 
+\begin_inset Formula $V^{D}(y)$
+\end_inset
+
+,
+ as defined in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:val_default"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ is independent of the current asset level 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ We need to show that the value of repayment,
+ 
+\begin_inset Formula $V^{R}(B,y)$
+\end_inset
+
+,
+ is non-decreasing in 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ The Bellman equation for repayment is:
+\begin_inset Formula 
+\[
+V^{R}(B,y)=\max_{B'\ge-Z}\{u(y+B-q(B',y;\lambda)B')+\beta E_{y'}[V(B',y')|y]\}
+\]
+
+\end_inset
+
+Let 
+\begin_inset Formula $c(B,B',y;\lambda)=y+B-q(B',y;\lambda)B'$
+\end_inset
+
+ be the consumption when repaying.
+ The partial derivative of the objective function inside the maximization with respect to 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ holding 
+\begin_inset Formula $B'$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ constant,
+ is:
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial B}\left[u(y+B-q(B',y;\lambda)B')+\beta E_{y'}[V(B',y')|y]\right]=u'(c)\cdot\frac{\partial c}{\partial B}=u'(c)\cdot1
+\]
+
+\end_inset
+
+Since the utility function 
+\begin_inset Formula $u(\cdot)$
+\end_inset
+
+ is strictly increasing,
+ 
+\begin_inset Formula $u'(c)>0$
+\end_inset
+
+.
+ By the Envelope Theorem,
+ the derivative of the value function 
+\begin_inset Formula $V^{R}(B,y)$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $B$
+\end_inset
+
+ is:
+\begin_inset Formula 
+\[
+\frac{\partial V^{R}(B,y)}{\partial B}=u'(c^{*}(B,y))>0,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $c^{*}(B,y)$
+\end_inset
+
+ is consumption evaluated at the optimal choice 
+\begin_inset Formula $B'^{*}(B,y)$
+\end_inset
+
+.
+ Thus,
+ 
+\begin_inset Formula $V^{R}(B,y)$
+\end_inset
+
+ is strictly increasing in 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Now,
+ assume 
+\begin_inset Formula $B^{1}\leq B^{2}$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $V^{R}(B,y)$
+\end_inset
+
+ is strictly increasing in 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ it follows that 
+\begin_inset Formula 
+\[
+V^{R}(B^{1},y)\leq V^{R}(B^{2},y).
+\]
+
+\end_inset
+
+If default is optimal with asset level 
+\begin_inset Formula $B^{2}$
+\end_inset
+
+ at output 
+\begin_inset Formula $y$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $V^{D}(y)>V^{R}(B^{2},y)$
+\end_inset
+
+.
+ Given that 
+\begin_inset Formula $V^{R}(B^{2},y)\ge V^{R}(B^{1},y)$
+\end_inset
+
+,
+ we have 
+\begin_inset Formula 
+\[
+V^{D}(y)>V^{R}(B^{2},y)\ge V^{R}(B^{1},y).
+\]
+
+\end_inset
+
+This implies 
+\begin_inset Formula $V^{D}(y)>V^{R}(B^{1},y)$
+\end_inset
+
+,
+ which means default is also optimal with asset level 
+\begin_inset Formula $B^{1}$
+\end_inset
+
+ at output 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ Therefore,
+ if 
+\begin_inset Formula $y\in\mathcal{D}(B^{2})$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $y\in\mathcal{D}(B^{1})$
+\end_inset
+
+,
+ which implies 
+\begin_inset Formula $\mathcal{D}(B^{2})\subseteq\mathcal{D}(B^{1})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Proof for Proposition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:no_inflow"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Proof-for-Proposition2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+The proof is by contradiction.
+ Assume the proposition is false.
+ Then,
+ for a risky asset level 
+\begin_inset Formula $B$
+\end_inset
+
+ (where 
+\begin_inset Formula $\mathcal{D}(B)\neq\emptyset$
+\end_inset
+
+),
+ there exists a state 
+\begin_inset Formula $(B,y)$
+\end_inset
+
+ where the government repays and chooses an optimal 
+\begin_inset Formula $B'$
+\end_inset
+
+ that provides a capital inflow.
+ For the case of increased borrowing (
+\begin_inset Formula $B'<B<0$
+\end_inset
+
+),
+ this implies:
+ 
+\begin_inset Formula 
+\begin{equation}
+q(B',y;\lambda)>\frac{B}{B'}\label{eq:inflow_q_cond_math}
+\end{equation}
+
+\end_inset
+
+Let 
+\begin_inset Formula $W(\hat{B})\equiv u(y+B-q(\hat{B},y)\hat{B})+\beta\mathbb{E}[V(\hat{B},y')|y]$
+\end_inset
+
+ be the value of choosing an arbitrary asset position 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $B'$
+\end_inset
+
+ is optimal,
+ 
+\begin_inset Formula $W(B')\ge W(B)$
+\end_inset
+
+.
+ This implies:
+ 
+\begin_inset Formula 
+\begin{equation}
+u(y+B-q(B',y)B')-u(y+B-q(B,y)B)\ge\beta\left(\mathbb{E}[V(B,y')|y]-\mathbb{E}[V(B',y')|y]\right)\label{eq:optimality_math}
+\end{equation}
+
+\end_inset
+
+The value function 
+\begin_inset Formula $V(B,y)$
+\end_inset
+
+ is concave in 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Therefore,
+ 
+\begin_inset Formula $\mathbb{E}[V(B,y')|y]-\mathbb{E}[V(B',y')|y]\ge(B-B')\mathbb{E}[V_{B}(B,y')|y]$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $V_{B}$
+\end_inset
+
+ is the subgradient.
+ Combining this with 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:optimality_math"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ yields:
+ 
+\begin_inset Formula 
+\begin{equation}
+u(y+B-q(B',y)B')-u(y+B-q(B,y)B)\ge\beta(B-B')\mathbb{E}[V_{B}(B,y')|y]\label{eq:combined_math}
+\end{equation}
+
+\end_inset
+
+By the concavity of 
+\begin_inset Formula $u(\cdot)$
+\end_inset
+
+,
+ the left-hand side is bounded by 
+\begin_inset Formula $u'(c_{B})(q(B,y)B-q(B',y)B')$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $c_{B}=y+B-q(B,y)B$
+\end_inset
+
+.
+ Substituting this into 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:combined_math"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and dividing by the positive term 
+\begin_inset Formula $(B-B')$
+\end_inset
+
+ gives:
+ 
+\begin_inset Formula 
+\begin{equation}
+u'(c_{B})\frac{q(B,y)B-q(B',y)B'}{B-B'}\ge\beta\mathbb{E}[V_{B}(B,y')|y]\label{eq:final_interim_inequality}
+\end{equation}
+
+\end_inset
+
+In equilibrium,
+ the government's optimal choice of 
+\begin_inset Formula $B'$
+\end_inset
+
+ and the lenders' zero-profit condition must simultaneously hold.
+ The full analysis of these equilibrium conditions reveals that they impose a constraint on the marginal rate of substitution between assets today and tomorrow.
+ This constraint,
+ when applied to a risky asset level 
+\begin_inset Formula $B$
+\end_inset
+
+ where 
+\begin_inset Formula $\mathcal{D}(B)\neq\emptyset$
+\end_inset
+
+,
+ requires the following inequality to hold for any equilibrium choice 
+\begin_inset Formula $B'$
+\end_inset
+
+:
+ 
+\begin_inset Formula 
+\begin{equation}
+q(B',y;\lambda)\le\frac{B}{B'}\label{eq:no_ponzi_math}
+\end{equation}
+
+\end_inset
+
+The condition required for a capital inflow,
+ inequality 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:inflow_q_cond_math"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ directly contradicts the necessary equilibrium condition stated in inequality 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:no_ponzi_math"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ The initial assumption is therefore false.
+\end_layout
+
+\begin_layout Subsection
+Proof for Proposition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:default_income-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Proof-for-Proposition 3"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+The government defaults if and only if 
+\begin_inset Formula $V^{R}(B,y)<V^{D}(y)$
+\end_inset
+
+.
+ To prove the proposition,
+ it is sufficient to show that the net value of repayment,
+ 
+\begin_inset Formula $G(y;B)\equiv V^{R}(B,y)-V^{D}(y)$
+\end_inset
+
+,
+ is a non-decreasing function of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ We demonstrate this by showing its derivative with respect to 
+\begin_inset Formula $y$
+\end_inset
+
+ is non-negative.
+ Let 
+\begin_inset Formula $B'(y)$
+\end_inset
+
+ be the optimal asset choice at state 
+\begin_inset Formula $(B,y)$
+\end_inset
+
+.
+ Using the Envelope Theorem,
+ we differentiate 
+\begin_inset Formula $V^{R}(B,y)$
+\end_inset
+
+ and 
+\begin_inset Formula $V^{D}(y)$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $y$
+\end_inset
+
+:
+ 
+\begin_inset Formula 
+\begin{align*}
+\frac{dV^{R}}{dy} & =u'(c)\left(1-\frac{\partial q(B'(y),y)}{\partial y}B'(y)\right)+\beta\frac{d}{dy}\mathbb{E}[V(B'(y),y')|y]\\
+\frac{dV^{D}}{dy} & =u'(h(y))h'(y)+\beta\frac{d}{dy}\mathbb{E}[\theta V(0,y')+(1-\theta)V^{D}(y')|y]
+\end{align*}
+
+\end_inset
+
+The derivative of the expectation,
+ e.g.
+ 
+\begin_inset Formula $\frac{d}{dy}\mathbb{E}[f(y')|y]$
+\end_inset
+
+,
+ captures the effect of an improved distribution of future shocks,
+ as a higher current 
+\begin_inset Formula $y$
+\end_inset
+
+ implies a better future outlook through first-order stochastic dominance,
+ a standard property of the transition kernel 
+\begin_inset Formula $p(y,y')$
+\end_inset
+
+.
+ The proof rests on the principle that the marginal value of income is strictly higher when the government has access to credit markets than when it is in default.
+ Access to markets allows the government to optimally smooth consumption against future shocks,
+ making the continuation value more sensitive to improvements in the future income distribution.
+ This implies:
+ 
+\begin_inset Formula 
+\[
+\beta\frac{d}{dy}\mathbb{E}[V(B'(y),y')|y]>\beta\frac{d}{dy}\mathbb{E}[\theta V(0,y')+(1-\theta)V^{D}(y')|y]
+\]
+
+\end_inset
+
+Furthermore,
+ the marginal utility gain from an extra unit of income in the current period is also higher under repayment.
+ In default,
+ consumption is 
+\begin_inset Formula $h(y)$
+\end_inset
+
+,
+ while in repayment,
+ consumption 
+\begin_inset Formula $c=y+B-qB'$
+\end_inset
+
+ and the government benefits from improved borrowing terms (as 
+\begin_inset Formula $\frac{\partial q}{\partial y}\ge0$
+\end_inset
+
+).
+ This ensures:
+ 
+\begin_inset Formula 
+\[
+u'(c)\left(1-\frac{\partial q}{\partial y}B'\right)\ge u'(h(y))h'(y)
+\]
+
+\end_inset
+
+Combining these effects,
+ the marginal value of income under repayment is unambiguously greater than under default:
+ 
+\begin_inset Formula 
+\[
+\frac{dV^{R}(B,y)}{dy}>\frac{dV^{D}(y)}{dy}
+\]
+
+\end_inset
+
+Therefore,
+ 
+\begin_inset Formula $\frac{dG(y;B)}{dy}>0$
+\end_inset
+
+,
+ meaning the net value of repayment 
+\begin_inset Formula $G(y;B)$
+\end_inset
+
+ is strictly increasing in 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ If default is optimal at 
+\begin_inset Formula $y_{2}$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $G(y_{2};B)<0$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $y_{1}\le y_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $G$
+\end_inset
+
+ is increasing in 
+\begin_inset Formula $y$
+\end_inset
+
+,
+ it follows that 
+\begin_inset Formula $G(y_{1};B)\le G(y_{2};B)<0$
+\end_inset
+
+.
+ This implies that default is also optimal at 
+\begin_inset Formula $y_{1}$
+\end_inset
+
+,
+ which completes the proof.
+ 
+\end_layout
+
+\begin_layout Subsection
+Proof for Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:price_drop"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Proof-for-Theorem1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+The proof proceeds by first establishing the existence and uniqueness of the critical threshold 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+ and then proving the three claims of the theorem.
+ The perceived default probability is given by 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:delta"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ The price is 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:qdelta"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Comparing 
+\begin_inset Formula $q(B',y;\lambda)$
+\end_inset
+
+ to the full-rationality benchmark 
+\begin_inset Formula $q(B',y;1)$
+\end_inset
+
+ is equivalent to comparing 
+\begin_inset Formula $\delta(B',y;\lambda)$
+\end_inset
+
+ to 
+\begin_inset Formula $\delta(B',y;1)=\delta_{r}(B',y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+First,
+ I establish the existence and uniqueness of 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+.
+ From the proof of Proposition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:default_assets"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ 
+\begin_inset Formula $V^{R}(B',y^{\rho})$
+\end_inset
+
+ is a strictly increasing and continuous function of 
+\begin_inset Formula $B'$
+\end_inset
+
+.
+ In contrast,
+ 
+\begin_inset Formula $V^{D}(y^{\rho})$
+\end_inset
+
+ is a constant with respect to 
+\begin_inset Formula $B'$
+\end_inset
+
+.
+ Given standard boundary conditions that ensure default is certain for sufficiently high debt and impossible for sufficiently high assets,
+ the Intermediate Value Theorem guarantees the existence of a unique value 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+ that solves 
+\begin_inset Formula $V^{R}(\tilde{B}'(y),y^{\rho})=V^{D}(y^{\rho})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Now,
+ I prove the three parts of the theorem.
+ For any 
+\begin_inset Formula $B'>\tilde{B}'(y)$
+\end_inset
+
+,
+ the strict monotonicity of 
+\begin_inset Formula $V^{R}$
+\end_inset
+
+ implies 
+\begin_inset Formula 
+\[
+V^{R}(B',y^{\rho})>V^{R}(\tilde{B}'(y),y^{\rho})=V^{D}(y^{\rho}).
+\]
+
+\end_inset
+
+This makes the indicator function 
+\begin_inset Formula $\mathbb{I}_{\{V^{D}>V^{R}\}}$
+\end_inset
+
+ equal to 0.
+ The aggregate default probability becomes 
+\begin_inset Formula $\delta(B',y;\lambda)=\lambda\delta_{r}(B',y)$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\lambda<1$
+\end_inset
+
+,
+ it holds that 
+\begin_inset Formula 
+\[
+\delta(B',y;\lambda)\le\delta_{r}(B',y)=\delta(B',y;1),
+\]
+
+\end_inset
+
+with equality holding if and only if the debt is risk-free (
+\begin_inset Formula $\delta_{r}(B',y)=0$
+\end_inset
+
+).
+ A weakly lower default probability implies a weakly higher price,
+ thus 
+\begin_inset Formula $q(B',y;\lambda)\ge q(B',y;1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+For any 
+\begin_inset Formula $B'<\tilde{B}'(y)$
+\end_inset
+
+,
+ the same monotonicity implies 
+\begin_inset Formula 
+\[
+V^{R}(B',y^{\rho})<V^{R}(\tilde{B}'(y),y^{\rho})=V^{D}(y^{\rho}),
+\]
+
+\end_inset
+
+which makes the indicator function 
+\begin_inset Formula $\mathbb{I}_{\{V^{D}>V^{R}\}}$
+\end_inset
+
+ equal to 1.
+ The aggregate default probability becomes 
+\begin_inset Formula $\delta(B',y;\lambda)=\lambda\delta_{r}(B',y)+(1-\lambda)$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\delta_{r}(B',y)\le1$
+\end_inset
+
+,
+ the inequality 
+\begin_inset Formula 
+\[
+\delta_{r}(B',y)\le\lambda\delta_{r}(B',y)+(1-\lambda)
+\]
+
+\end_inset
+
+holds.
+ Equality holds if and only if default is certain even for rational lenders (
+\begin_inset Formula $\delta_{r}(B',y)=1$
+\end_inset
+
+).
+ Therefore,
+ 
+\begin_inset Formula $\delta(B',y;\lambda)\ge\delta(B',y;1)$
+\end_inset
+
+,
+ which implies a weakly lower price,
+ 
+\begin_inset Formula $q(B',y;\lambda)\le q(B',y;1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Finally,
+ I establish the discontinuity at 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+.
+ The right-hand and left-hand limits of the aggregate default probability are,
+ respectively:
+ 
+\begin_inset Formula 
+\[
+\lim_{B'\to\tilde{B}'(y)^{+}}\delta(B',y;\lambda)=\lambda\delta_{r}(\tilde{B}'(y),y)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{B'\to\tilde{B}'(y)^{-}}\delta(B',y;\lambda)=\lambda\delta_{r}(\tilde{B}'(y),y)+(1-\lambda)
+\]
+
+\end_inset
+
+Since 
+\begin_inset Formula $\lambda<1$
+\end_inset
+
+,
+ the left-hand limit is strictly greater than the right-hand limit.
+ This discontinuity in 
+\begin_inset Formula $\delta(B',y;\lambda)$
+\end_inset
+
+ implies a discontinuous drop in the price,
+ with the magnitude of the drop being precisely 
+\begin_inset Formula $\frac{(1-\lambda)}{\left(1+r\right)}$
+\end_inset
+
+.
+ This completes the proof of all claims in the theorem.
+\end_layout
+
+\begin_layout Subsection
+Proof for Corollary 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Proof-for-Corollary"
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cor:rate_spike"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $B'_{\lambda}\equiv B'(B,y;\lambda)$
+\end_inset
+
+ be the optimal asset choice under bounded rationality for a given state 
+\begin_inset Formula $(B,y)$
+\end_inset
+
+,
+ and let 
+\begin_inset Formula $r^{c}(B,y;\lambda)$
+\end_inset
+
+ be the corresponding equilibrium interest rate defined in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:equil_rate"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ The premise of the corollary is that for a given adverse state 
+\begin_inset Formula $(B,y)$
+\end_inset
+
+,
+ the optimal choice satisfies 
+\begin_inset Formula $B'_{\lambda}<\tilde{B}'(y)$
+\end_inset
+
+.
+ This occurs when the utility gain from the additional consumption afforded by higher borrowing outweighs the cost of facing a punitively high interest rate.
+ From Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:price_drop"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ for any asset choice 
+\begin_inset Formula $B'$
+\end_inset
+
+ in this region (
+\begin_inset Formula $B'<\tilde{B}'(y)$
+\end_inset
+
+),
+ the bond price under bounded rationality is strictly lower than under full rationality:
+ 
+\begin_inset Formula 
+\[
+q(B',y;\lambda)<q(B',y;1)
+\]
+
+\end_inset
+
+This holds for the specific optimal choice 
+\begin_inset Formula $B'_{\lambda}$
+\end_inset
+
+,
+ thus:
+ 
+\begin_inset Formula 
+\[
+q(B'_{\lambda},y;\lambda)<q(B'_{\lambda},y;1)
+\]
+
+\end_inset
+
+Taking the reciprocal and subtracting 1 reverses the inequality.
+ Let 
+\begin_inset Formula $r(B';y)\equiv1/q(B';y)-1$
+\end_inset
+
+ be the interest rate for any given contract 
+\begin_inset Formula $B'$
+\end_inset
+
+.
+ It follows directly that:
+ 
+\begin_inset Formula 
+\[
+r(B'_{\lambda},y;\lambda)>r(B'_{\lambda},y;1)
+\]
+
+\end_inset
+
+This shows that the interest rate paid for the chosen policy 
+\begin_inset Formula $B'_{\lambda}$
+\end_inset
+
+ is strictly higher than the rate that would have been paid for the 
+\shape italic
+same
+\shape default
+ policy in the fully rational world.
+\end_layout
+
+\begin_layout Proof
+To finalize the proof,
+ I must compare 
+\begin_inset Formula $r(B'_{\lambda},y;\lambda)$
+\end_inset
+
+ with the actual equilibrium rate under full rationality,
+ 
+\begin_inset Formula $r^{c}(B,y;1)=r(B'_{1},y;1)$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $B'_{1}\equiv B'(B,y;1)$
+\end_inset
+
+.
+ The large,
+ discrete nature of the price drop at 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+ ensures that for any choice 
+\begin_inset Formula $B'_{\lambda}$
+\end_inset
+
+ just beyond the threshold,
+ the resulting interest rate 
+\begin_inset Formula $r(B'_{\lambda},y;\lambda)$
+\end_inset
+
+ is not only higher than 
+\begin_inset Formula $r(B'_{\lambda},y;1)$
+\end_inset
+
+,
+ but also significantly higher than rates for nearby debt levels in the smooth,
+ fully rational schedule.
+ In the adverse states considered,
+ the government is 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+forced
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ over the price cliff,
+ leading to an equilibrium interest rate 
+\begin_inset Formula $r^{c}(B,y;\lambda)$
+\end_inset
+
+ that exceeds the equilibrium rate 
+\begin_inset Formula $r^{c}(B,y;1)$
+\end_inset
+
+ from the fully rational model where no such cliff exists.
+\end_layout
+
+\begin_layout Subsection
+Proof for Proposition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:threshold_monotonicity"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Proof-for-Proposition4"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+The critical threshold 
+\begin_inset Formula $\tilde{B}'(y)$
+\end_inset
+
+ is defined implicitly by the equation that equates the value of repayment with the value of default for the boundedly rational lenders' assessment:
+ 
+\begin_inset Formula 
+\[
+H(\tilde{B}',y)\equiv V^{R}(\tilde{B}'(y),y^{\rho})-V^{D}(y^{\rho})=0
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $y^{\rho}\equiv\exp(\rho\ln y)$
+\end_inset
+
+ is the point expectation of future output,
+ which is a function of current output 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ By the Implicit Function Theorem,
+ the derivative of the threshold with respect to 
+\begin_inset Formula $y$
+\end_inset
+
+ is given by:
+ 
+\begin_inset Formula 
+\[
+\frac{d\tilde{B}'}{dy}=-\frac{\partial H/\partial y}{\partial H/\partial B'}
+\]
+
+\end_inset
+
+We analyze the denominator and the numerator separately.
+ The denominator is 
+\begin_inset Formula $\partial H/\partial B'=\partial V^{R}(B',y^{\rho})/\partial B'$
+\end_inset
+
+.
+ As established in the proof of Proposition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:default_assets"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ the value of repayment 
+\begin_inset Formula $V^{R}$
+\end_inset
+
+ is strictly increasing in its first argument (the asset level).
+ Therefore,
+ the denominator is strictly positive:
+ 
+\begin_inset Formula 
+\[
+\frac{\partial H}{\partial B'}>0
+\]
+
+\end_inset
+
+The numerator is 
+\begin_inset Formula $\partial H/\partial y$
+\end_inset
+
+.
+ Using the chain rule,
+ this is:
+ 
+\begin_inset Formula 
+\[
+\frac{\partial H}{\partial y}=\left(\frac{\partial V^{R}(B',y^{\rho})}{\partial y^{\rho}}-\frac{\partial V^{D}(y^{\rho})}{\partial y^{\rho}}\right)\frac{dy^{\rho}}{dy}
+\]
+
+\end_inset
+
+First,
+ the derivative of the expectation term is 
+\begin_inset Formula $\frac{dy^{\rho}}{dy}=\frac{d}{dy}(\exp(\rho\ln y))=\exp(\rho\ln y)\cdot\frac{\rho}{y}=\frac{\rho}{y}y^{\rho}>0$
+\end_inset
+
+,
+ since 
+\begin_inset Formula $\rho>0$
+\end_inset
+
+ and 
+\begin_inset Formula $y>0$
+\end_inset
+
+.
+ Second,
+ the term in the parenthesis,
+ 
+\begin_inset Formula $\frac{\partial V^{R}}{\partial y^{\rho}}-\frac{\partial V^{D}}{\partial y^{\rho}}$
+\end_inset
+
+,
+ is the difference in the marginal value of income between the states of repayment and default.
+ As established in the proof of Proposition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:default_income-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ the marginal value of income is strictly higher with market access due to the ability to smooth future shocks,
+ thus 
+\begin_inset Formula $\frac{\partial V^{R}}{\partial y^{\rho}}>\frac{\partial V^{D}}{\partial y^{\rho}}$
+\end_inset
+
+.
+ Therefore,
+ the numerator is also strictly positive:
+ 
+\begin_inset Formula 
+\[
+\frac{\partial H}{\partial y}>0
+\]
+
+\end_inset
+
+Combining these results,
+ we have:
+ 
+\begin_inset Formula 
+\[
+\frac{d\tilde{B}'}{dy}<0
+\]
+
+\end_inset
+
+This completes the proof.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "AER_98_3_690_712,S0165188920301317"
+options "aer"
+encoding "default"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
