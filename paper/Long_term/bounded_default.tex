@@ -16,7 +16,7 @@
 \usepackage[authoryear]{natbib}  % 文献引用
 \usepackage{booktabs}            % 表格美化
 \usepackage{tabularx}
-\usepackage{amsthm}              % 定理环境
+\usepackage{amsthm}              % 定理环境···
 \usepackage{setspace}
 \usepackage{tikz}                % 图形绘制
 \usepackage{hyperref}            % 超链接
@@ -248,27 +248,28 @@ the country \citep{Economist2012, IMFPress2013}.
 The financial consequences were profound. As inflation-indexed bonds
 constituted a significant portion of public debt, this act amounted to a
 \textit{de facto} partial default. The market's reaction was swift and severe.
-As shown in Figure~\ref{fig:argentina_spreads}, Argentina's EMBI+ spread, which
-had been tracking its Latin American peers, decoupled and widened sharply.
-Crucially, this repricing was not limited to the directly affected instruments;
-it spilled over entirely to its dollar-denominated sovereign debt. This
-reaction is paradoxical from a purely mechanical standpoint: a policy that
-lowers the real debt burden should have \textit{decreased} default risk on
-nominal bonds. The opposite happened, indicating the event was a pure, and
-powerful, information shock about the government's character and future
-actions.
+Argentina's EMBI+ spread, which had been tracking its Latin American peers,
+decoupled and widened sharply. Crucially, this repricing was not limited to the
+directly affected instruments; it spilled over entirely to its
+dollar-denominated sovereign debt. This reaction is paradoxical from a purely
+mechanical standpoint: a policy that lowers the real debt burden should have
+\textit{decreased} default risk on nominal bonds. The opposite happened,
+indicating the event was a pure, and powerful, information shock about the
+government's character and future actions.
 
-\begin{figure}[htbp]
-	\centering
-	{\color{red}[TODO: Download the new data from a Bloomberg terminal and save it in the Empirics folder]}
+	% \begin{figure}[htbp]
+	% 	\centering
+	% 	{\color{red}[TODO: Download the new data from a Bloomberg terminal and save it in the Empirics folder]}
+	% 
+	% 	\includegraphics[width=0.6\textwidth]{../../long_term/Empirics/Results/Figure_EMBI_LATAM.pdf}
+	% 	\caption{Argentina's EMBI+ spread relative to the Latin-American average,
+	% 		2006–2012.  The shaded area marks the period starting in 2007 when INDEC's CPI
+	% 		methodology was politically controlled.
+	% 		Source:~J.~P.~Morgan.}
+	% 	\label{fig:argentina_spreads}
+	% \end{figure}
 
-	\includegraphics[width=0.6\textwidth]{../../long_term/Empirics/Results/Figure_EMBI_LATAM.pdf}
-	\caption{Argentina's EMBI+ spread relative to the Latin-American average,
-		2006–2012.  The shaded area marks the period starting in 2007 when INDEC's CPI
-		methodology was politically controlled.
-		Source:~J.~P.~Morgan.}
-	\label{fig:argentina_spreads}
-\end{figure}
+	[Figure placeholder: Argentina's EMBI+ spread data - TODO: Download from Bloomberg terminal]
 
 \paragraph{Limits of Reputational Models}
 The conventional explanation, rooted in reputational models
@@ -396,7 +397,7 @@ information of policymakers. By modeling them as random draws, the framework
 acknowledges a degree of inherent unpredictability in government behavior.
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.6\textwidth]{/Users/cheneyg./Documents/WorkingProjects/blind/gumbel_distribution.png}
+	\includegraphics[width=0.6\textwidth]{gumbel_distribution.png}
 	\caption{The mean-zero Gumbel distribution ($\eta=5\times 10^{-4}$).}
 	\label{fig:gumbel_dist}
 	\parbox{\linewidth}{\small\textit{Note:} The Gumbel distribution is used to model the taste shocks in the sovereign's default and borrowing decisions. The scale parameter $\eta$ controls the variance of these shocks. The left $y$ axis is the PDF, the right $y$ axis is the CDF.}
@@ -468,7 +469,7 @@ decision-making process.\footnote{This probabilistic approach is also crucial
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.6\textwidth]{../../long_term/defaultModel/results/comparison_figure_8.pdf}
+	\includegraphics[width=0.6\textwidth]{../../pessimism-default-model/results/comparison_figure_8.pdf}
 	\caption{Example of the Probabilistic Borrowing Policy, $\Pr\{B'|y,B\}$.}
 	\label{fig:borrowing_dist_example}
 	\parbox{\textwidth}{\small\textit{\textbf{Note:} }The figure illustrates the sovereign's borrowing choice as a probability distribution over possible next-period debt levels ($B'$), given a specific state $(y, B)$. The peak of the distribution represents the most likely choice.}
@@ -606,7 +607,7 @@ exactly offset each other.
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../../long_term/defaultModel/results/comparison_figure_5.pdf}
+	\includegraphics[width=0.8\textwidth]{../../pessimism-default-model/results/comparison_figure_5.pdf}
 	\caption{Pivoting Bond Price Schedules}\label{fig:pivoting_proof}
 
 	\parbox{\textwidth}{\small\textit{\textbf{Note:} }This figure illustrates the pivoting effect described in Proposition~\ref{prop:pivot_concise} for a normal output level. The bond price schedules for three different levels of lender pessimism ($\theta = 1, 10, 100$) cross at the threshold $B^*(y)$ marked by the red dot. To the left of $B^*(y)$, pessimistic lenders impose a ``pessimism premium,'' offering lower prices than rational lenders. To the right of $B^*(y)$, the ``softening of doom'' effect emerges, where pessimistic lenders offer paradoxically higher prices as they perceive less certainty about default in high-debt scenarios.}
@@ -628,7 +629,7 @@ The intuition for this result lies in the differential response of the two marke
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../../long_term/defaultModel/results/comparison_figure_10.pdf}
+	\includegraphics[width=0.8\textwidth]{../../pessimism-default-model/results/comparison_figure_10.pdf}
 	\caption{Monotonicity of Debt Threshold $B^*(y)$}
 	\label{fig:monotonicity}
 	\parbox{\textwidth}{\small\textit{\textbf{Note:} }This figure illustrates Proposition~\ref{prop:monotonicity} by showing the debt threshold $B^*(y)$ as a function of the endowment level $y$. The threshold represents the debt level at which the baseline ($\theta=1$) and pessimistic ($\theta>1$) bond price schedules intersect.}
@@ -1093,14 +1094,14 @@ beliefs dominate their assessment of fundamentals.
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_7.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_7.pdf}
 		\caption{Debt-to-GDP Ratio Distribution}
 		\label{fig:dist_debt}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_6.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_6.pdf}
 		\caption{Credit Spread Distribution}
 		\label{fig:dist_spread}
 	\end{subfigure}
@@ -1142,28 +1143,28 @@ level for any given state (Proposition~\ref{prop:deleveraging}).
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_3.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_3.pdf}
 		\caption{Bond Price Schedule, $q(B',y)$}
 		\label{fig:pivot_price}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_4.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_4.pdf}
 		\caption{Credit Spread, $s(B',y)$}
 		\label{fig:pivot_spread}
 	\end{subfigure}
 	\vskip\baselineskip
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_2.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_2.pdf}
 		\caption{Default Probability, $P(d=1|B,y)$}
 		\label{fig:pivot_default}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_9.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_9.pdf}
 		\caption{Borrowing Policy, $\mathbb{E}[B'|B,y]$}
 		\label{fig:pivot_borrowing}
 	\end{subfigure}
@@ -1193,7 +1194,7 @@ propensity to fail.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.6\textwidth]{../../long_term/defaultModel/results/comparison_figure_1.pdf}
+	\includegraphics[width=0.6\textwidth]{../../pessimism-default-model/results/comparison_figure_1.pdf}
 	\caption{Welfare Loss}
 	\label{fig:welfare_loss}
 	\parbox{\linewidth}{\small\textit{Note:} The figure plots the sovereign's ex-ante value function $V(y, B)$ for the baseline ($\theta=1$, dashed), medium pessimism ($\theta=10$, dash-dot), and high pessimism ($\theta=100$, solid) economies. The value function is uniformly lower under higher degrees of pessimism, indicating a progressive welfare loss.}
@@ -1226,21 +1227,21 @@ than just current leverage.
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_11.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_11.pdf}
 		\caption{Debt}
 		\label{fig:debt_path}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_12.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_12.pdf}
 		\caption{Consumption}
 		\label{fig:consumption_path}
 	\end{subfigure}
 	\vskip\baselineskip
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_21.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_21.pdf}
 		\caption{Spread}
 		\label{fig:spread_path_delev}
 	\end{subfigure}
@@ -1271,28 +1272,28 @@ higher levels throughout adjustment.
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_13.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_13.pdf}
 		\caption{Output}
 		\label{fig:irf_trans_output}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_14.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_14.pdf}
 		\caption{Debt}
 		\label{fig:irf_trans_debt}
 	\end{subfigure}
 	\vskip\baselineskip
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_15.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_15.pdf}
 		\caption{Consumption}
 		\label{fig:irf_trans_consumption}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_16.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_16.pdf}
 		\caption{Spread}
 		\label{fig:irf_trans_spread}
 	\end{subfigure}
@@ -1317,28 +1318,28 @@ adjustment.
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_17.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_17.pdf}
 		\caption{Output}
 		\label{fig:irf_pers_output}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_18.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_18.pdf}
 		\caption{Debt}
 		\label{fig:irf_pers_debt}
 	\end{subfigure}
 	\vskip\baselineskip
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_19.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_19.pdf}
 		\caption{Consumption}
 		\label{fig:irf_pers_consumption}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../long_term/defaultModel/results/comparison_figure_20.pdf}
+		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_20.pdf}
 		\caption{Spread}
 		\label{fig:irf_pers_spread}
 	\end{subfigure}

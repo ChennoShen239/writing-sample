@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  27 JUN 2025 13:52
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  29 JUN 2025 18:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -994,49 +994,51 @@ Underfull \hbox (badness 2237) in paragraph at lines 128--128
 [3]
 
 [4]
-File: ../../long_term/Empirics/Results/Figure_EMBI_LATAM.pdf Graphic file (type pdf)
-<use ../../long_term/Empirics/Results/Figure_EMBI_LATAM.pdf>
+Overfull \hbox (5.42215pt too wide) in paragraph at lines 272--273
+[]\TU/erewhon(0)/m/n/12 [Figure placeholder: Argentina’s EMBI+ spread data - TODO: Download from Bloomberg
+ []
+
 
 
 [5]
+LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(2)/m/n' will be
+(Font)              scaled to size 12.00128pt on input line 323.
+LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(2)/m/n' will be
+(Font)              scaled to size 8.40088pt on input line 323.
+LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(2)/m/n' will be
+(Font)              scaled to size 6.60071pt on input line 323.
+LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(3)/m/n' will be
+(Font)              scaled to size 11.99872pt on input line 323.
+LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(3)/m/n' will be
+(Font)              scaled to size 8.3991pt on input line 323.
+LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(3)/m/n' will be
+(Font)              scaled to size 6.59929pt on input line 323.
+
 
 [6]
+File: gumbel_distribution.png Graphic file (type bmp)
+<gumbel_distribution.png>
 LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 322.
+(Font)              scaled to size 10.95116pt on input line 403.
 LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(2)/m/n' will be
-(Font)              scaled to size 8.40088pt on input line 322.
+(Font)              scaled to size 8.00085pt on input line 403.
 LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(2)/m/n' will be
-(Font)              scaled to size 6.60071pt on input line 322.
+(Font)              scaled to size 6.00064pt on input line 403.
 LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 322.
+(Font)              scaled to size 10.94882pt on input line 403.
 LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(3)/m/n' will be
-(Font)              scaled to size 8.3991pt on input line 322.
+(Font)              scaled to size 7.99915pt on input line 403.
 LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(3)/m/n' will be
-(Font)              scaled to size 6.59929pt on input line 322.
+(Font)              scaled to size 5.99936pt on input line 403.
 
 
 [7]
-File: /Users/cheneyg./Documents/WorkingProjects/blind/gumbel_distribution.png Graphic file (type bmp)
-</Users/cheneyg./Documents/WorkingProjects/blind/gumbel_distribution.png>
-LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 402.
-LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 402.
-LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 402.
-LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 402.
-LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 402.
-LaTeX Font Info:    Font shape `TU/Erewhon-Math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 402.
-
 
 [8]
 
 [9]
-File: ../../long_term/defaultModel/results/comparison_figure_8.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_8.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_8.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_8.pdf>
 
 
 [10]
@@ -1044,73 +1046,68 @@ File: ../../long_term/defaultModel/results/comparison_figure_8.pdf Graphic file 
 [11]
 
 [12]
-File: ../../long_term/defaultModel/results/comparison_figure_5.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_5.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_5.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_5.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_10.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_10.pdf>
 
-
-[13]
-File: ../../long_term/defaultModel/results/comparison_figure_10.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_10.pdf>
-
-Overfull \hbox (0.37082pt too wide) in paragraph at lines 638--641
+Overfull \hbox (0.37082pt too wide) in paragraph at lines 639--642
  []\TU/erewhon(0)/b/n/12 Spread[] \TU/erewhon(0)/m/n/12 These results on prices map directly and inversely to credit spreads. The sovereign
  []
 
 
 
-[14]
-Overfull \hbox (1.65472pt too wide) in paragraph at lines 649--650
+[13]
+Overfull \hbox (1.65472pt too wide) in paragraph at lines 650--651
 [][][][][][] [][] [] [][][][][][] [][]$ \TU/erewhon(0)/m/it/12 satisfies the opposite relationship to the price difference at the same thresh-
  []
 
 
 
-[15]
+[14]
 
-[16]
-Overfull \hbox (1.80014pt too wide) in paragraph at lines 716--717
+[15]
+Overfull \hbox (1.80014pt too wide) in paragraph at lines 717--718
 [][]\TU/erewhon(0)/b/n/12 Proposition 5 \TU/erewhon(0)/m/n/12 (Conservative Borrowing Policy under Pessimism)\TU/erewhon(0)/b/n/12 . []\TU/erewhon(0)/m/it/12 Consider economies with
  []
 
 
-Overfull \hbox (5.57614pt too wide) in paragraph at lines 753--754
+
+[16]
+Overfull \hbox (5.57614pt too wide) in paragraph at lines 754--755
 [][]\TU/erewhon(0)/b/n/12 Proposition 6 \TU/erewhon(0)/m/n/12 (Welfare Loss under Pessimism)\TU/erewhon(0)/b/n/12 . []\TU/erewhon(0)/m/it/12 Consider economies with pessimistic lenders
  []
 
 
 
 [17]
-Underfull \hbox (badness 4899) in paragraph at lines 866--866
+
+[18]
+Underfull \hbox (badness 4899) in paragraph at lines 867--867
 []|\TU/erewhon(0)/m/n/12 Reputation Model ([][]Cole et
  []
 
 
-Underfull \hbox (badness 2941) in paragraph at lines 866--866
+Underfull \hbox (badness 2941) in paragraph at lines 867--867
 []|\TU/erewhon(0)/m/n/12 Pessimism Model (This Pa-
  []
 
 
 
-[18]
-
 [19]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (7.45526pt too wide) in paragraph at lines 947--950
+Overfull \hbox (7.45526pt too wide) in paragraph at lines 948--951
 []\TU/erewhon(0)/m/n/12 The endowment process in [] is discretized into $[][] [] [][][]$ states using Tauchen’s method.
  []
 
 
 
 [20]
-Overfull \hbox (8.87294pt too wide) in paragraph at lines 967--977
+Overfull \hbox (8.87294pt too wide) in paragraph at lines 968--978
 \TU/erewhon(0)/m/n/12 business cycle moments from these simulations, revealing how pessimism reshapes macroe-
  []
 
 
-Overfull \hbox (1.14815pt too wide) in paragraph at lines 979--990
+Overfull \hbox (1.14815pt too wide) in paragraph at lines 980--991
 \TU/erewhon(0)/m/n/12 generates results that are broadly consistent with the stylized facts for emerging economies.
  []
 
@@ -1118,108 +1115,132 @@ Overfull \hbox (1.14815pt too wide) in paragraph at lines 979--990
 
 [21]
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
 [22]
+File: ../../pessimism-default-model/results/comparison_figure_7.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_7.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_6.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_6.pdf>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 
 [23]
-File: ../../long_term/defaultModel/results/comparison_figure_7.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_7.pdf>
-File: ../../long_term/defaultModel/results/comparison_figure_6.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_6.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_3.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_3.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_4.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_4.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_2.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_2.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_9.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_9.pdf>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 
 [24]
-File: ../../long_term/defaultModel/results/comparison_figure_3.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_3.pdf>
-File: ../../long_term/defaultModel/results/comparison_figure_4.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_4.pdf>
-File: ../../long_term/defaultModel/results/comparison_figure_2.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_2.pdf>
-File: ../../long_term/defaultModel/results/comparison_figure_9.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_9.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_1.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_1.pdf>
 
 
-[25]
-File: ../../long_term/defaultModel/results/comparison_figure_1.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_1.pdf>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Overfull \hbox (1.18813pt too wide) in paragraph at lines 1204--1206
+
+Overfull \hbox (1.18813pt too wide) in paragraph at lines 1205--1207
 \TU/erewhon(0)/m/n/12 The dynamic implications of lender pessimism reveal how pessimism affects the sovereign’s
  []
 
 
-Overfull \hbox (16.12416pt too wide) in paragraph at lines 1217--1224
+
+[25]
+Overfull \hbox (16.12416pt too wide) in paragraph at lines 1218--1225
 \TU/erewhon(0)/m/n/12 shows that high-pessimism economies experience more volatile consumption during delever-
  []
 
+File: ../../pessimism-default-model/results/comparison_figure_11.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_11.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_12.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_12.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_21.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_21.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-[26]
-File: ../../long_term/defaultModel/results/comparison_figure_11.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_11.pdf>
-File: ../../long_term/defaultModel/results/comparison_figure_12.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_12.pdf>
-File: ../../long_term/defaultModel/results/comparison_figure_21.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_21.pdf>
-
-Overfull \hbox (14.14133pt too wide) in paragraph at lines 1254--1257
+Overfull \hbox (14.14133pt too wide) in paragraph at lines 1255--1258
  []\TU/erewhon(0)/b/n/12 Impulse Response Functions: Shock Propagation under Pessimism[] \TU/erewhon(0)/m/n/12 I examine responses
  []
 
 
-Overfull \hbox (9.17079pt too wide) in paragraph at lines 1258--1269
+Overfull \hbox (9.17079pt too wide) in paragraph at lines 1259--1270
 \TU/erewhon(0)/m/n/12 pessimism fundamentally alters other responses. High-pessimism economies exhibit muted
  []
 
+File: ../../pessimism-default-model/results/comparison_figure_13.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_13.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_14.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_14.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_15.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_15.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_16.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_16.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-[27]
-File: ../../long_term/defaultModel/results/comparison_figure_13.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_13.pdf>
-File: ../../long_term/defaultModel/results/comparison_figure_14.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_14.pdf>
-File: ../../long_term/defaultModel/results/comparison_figure_15.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_15.pdf>
-File: ../../long_term/defaultModel/results/comparison_figure_16.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_16.pdf>
-
-Overfull \hbox (11.62682pt too wide) in paragraph at lines 1304--1315
+Overfull \hbox (11.62682pt too wide) in paragraph at lines 1305--1316
 \TU/erewhon(0)/m/n/12 underperform due to fundamental impairment of consumption insurance. Spread responses
  []
 
 
 
-[28]
-File: ../../long_term/defaultModel/results/comparison_figure_17.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_17.pdf>
-File: ../../long_term/defaultModel/results/comparison_figure_18.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_18.pdf>
-File: ../../long_term/defaultModel/results/comparison_figure_19.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_19.pdf>
-File: ../../long_term/defaultModel/results/comparison_figure_20.pdf Graphic file (type pdf)
-<use ../../long_term/defaultModel/results/comparison_figure_20.pdf>
+[26]
+File: ../../pessimism-default-model/results/comparison_figure_17.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_17.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_18.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_18.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_19.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_19.pdf>
+File: ../../pessimism-default-model/results/comparison_figure_20.pdf Graphic file (type pdf)
+<use ../../pessimism-default-model/results/comparison_figure_20.pdf>
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[27]
+
+[28]
 
 [29]
-
-[30]
-Overfull \hbox (1.83217pt too wide) in paragraph at lines 1425--1431
+Overfull \hbox (1.83217pt too wide) in paragraph at lines 1426--1432
 \TU/erewhon(0)/m/n/12 the taste shock volatility parameter $[]$ through Bayesian learning ([][]Cogley and Sargent[][], [][]2008[][]).
  []
 
 
 
+[30]
+
 [31]
-Overfull \hbox (12.84416pt too wide) in paragraph at lines 1476--1482
+Overfull \hbox (12.84416pt too wide) in paragraph at lines 1477--1483
  []\TU/erewhon(0)/b/n/12 Optimal Policy Communication[] \TU/erewhon(0)/m/n/12 Consider an extension where the government can choose
  []
 
 
-Overfull \hbox (17.52213pt too wide) in paragraph at lines 1483--1484
+Overfull \hbox (17.52213pt too wide) in paragraph at lines 1484--1485
 []\TU/erewhon(0)/m/it/12 Economic Intuition\TU/erewhon(0)/m/n/12 : This extension recognizes that governments facing pessimistic lenders
  []
 
 
-Overfull \hbox (6.03883pt too wide) in paragraph at lines 1483--1484
+Overfull \hbox (6.03883pt too wide) in paragraph at lines 1484--1485
 \TU/erewhon(0)/m/n/12 strains future policy flexibility. The optimal transparency choice balances these costs against
  []
 
@@ -1230,7 +1251,7 @@ Overfull \hbox (6.03883pt too wide) in paragraph at lines 1483--1484
 [33]
 
 [34]
-Overfull \hbox (0.22156pt too wide) in paragraph at lines 1588--1589
+Overfull \hbox (0.22156pt too wide) in paragraph at lines 1589--1590
 [][]\TU/erewhon(0)/b/n/12 Lemma 1. []\TU/erewhon(0)/m/it/12 Let $[][][] [][]$ be independent random variables distributed as Gumbel$[][][][][] [][]$, where
  []
 
@@ -1239,12 +1260,12 @@ Overfull \hbox (0.22156pt too wide) in paragraph at lines 1588--1589
 [35
 
 ]
-Overfull \hbox (18.86386pt too wide) in paragraph at lines 1629--1632
+Overfull \hbox (18.86386pt too wide) in paragraph at lines 1630--1633
 \TU/erewhon(0)/m/n/12 dom variable is $[][][][] [][] [][] [] [][][] [][][][][] [] [][][][][][]$. For the parametrization Gumbel$[][][][][] [][]$: 
  []
 
 
-Overfull \hbox (37.97687pt too wide) in paragraph at lines 1657--1661
+Overfull \hbox (37.97687pt too wide) in paragraph at lines 1658--1662
 \TU/erewhon(0)/m/n/12 Thus $[][][][][] [][][]$ follows a Gumbel$[][] [] [][][] [][]$ distribution. Since the expectation of a Gumbel$[][][] [][]$
  []
 
@@ -1253,7 +1274,7 @@ Overfull \hbox (37.97687pt too wide) in paragraph at lines 1657--1661
 [36]
 
 [37]
-Overfull \hbox (25.31541pt too wide) in paragraph at lines 1706--1707
+Overfull \hbox (25.31541pt too wide) in paragraph at lines 1707--1708
 []\TU/erewhon(0)/m/it/12 Inductive step: \TU/erewhon(0)/m/n/12 Assume the results hold for $[] [] []$. For $[] [] []$ alternatives, let $[][] [] [][][][][] []
  []
 
@@ -1264,7 +1285,7 @@ Overfull \hbox (25.31541pt too wide) in paragraph at lines 1706--1707
 [39]
 
 [40]
-Overfull \hbox (20.98419pt too wide) detected at line 1866
+Overfull \hbox (20.98419pt too wide) detected at line 1867
 [][][][][][][][][][][][] [][] [] [][][][][][][][][] [][] [] [][][] [] []
  []
 
@@ -1273,7 +1294,7 @@ Overfull \hbox (20.98419pt too wide) detected at line 1866
 [41]
 
 [42]
-Overfull \hbox (7.6992pt too wide) in paragraph at lines 1943--1944
+Overfull \hbox (7.6992pt too wide) in paragraph at lines 1944--1945
 []\TU/erewhon(0)/b/n/12 (ii) Non-degeneracy: \TU/erewhon(0)/m/n/12 We must show $[][][][][][][][][] [][] [] []$. Since $[] [] [][][] [] [] []
  []
 
@@ -1282,7 +1303,7 @@ Overfull \hbox (7.6992pt too wide) in paragraph at lines 1943--1944
 [43]
 
 [44]
-Overfull \hbox (17.68857pt too wide) in paragraph at lines 2052--2055
+Overfull \hbox (17.68857pt too wide) in paragraph at lines 2053--2056
 []\TU/erewhon(0)/m/n/12 The objective is to prove $[][][][][] [][] [] [][][][][] [][]$, which implies that the distribution $[][][][][][][][] [][]$
  []
 
@@ -1293,7 +1314,7 @@ Overfull \hbox (17.68857pt too wide) in paragraph at lines 2052--2055
 [46]
 
 [47]
-Overfull \hbox (5.7473pt too wide) in paragraph at lines 2197--2200
+Overfull \hbox (5.7473pt too wide) in paragraph at lines 2198--2201
 []\TU/erewhon(0)/b/n/12 Step 4: Choice-Specific Value Ordering. \TU/erewhon(0)/m/n/12 The continuation value term $[][][][][][][][][][] [][][][]$
  []
 
@@ -1302,7 +1323,7 @@ Overfull \hbox (5.7473pt too wide) in paragraph at lines 2197--2200
 [48]
 
 [49]
-Overfull \hbox (35.09889pt too wide) detected at line 2275
+Overfull \hbox (35.09889pt too wide) detected at line 2276
 []
  []
 
@@ -1313,7 +1334,7 @@ Overfull \hbox (35.09889pt too wide) detected at line 2275
 [51]
 
 [52]
-Overfull \hbox (16.4911pt too wide) in paragraph at lines 2419--2425
+Overfull \hbox (16.4911pt too wide) in paragraph at lines 2420--2426
 \TU/erewhon(0)/m/n/12 quires $[] [] [][][][] [] [][][][]$, convergence is indeed slow with half-life approximately $[][][][][] [][][][][][] []
  []
 
@@ -1328,29 +1349,29 @@ Overfull \hbox (16.4911pt too wide) in paragraph at lines 2419--2425
 [56
 
 ]
-Overfull \hbox (8.5005pt too wide) detected at line 2602
+Overfull \hbox (8.5005pt too wide) detected at line 2603
 [][][][][] [][][] [][][] [] [][][][] [] [][][] [] [][][] [] [][] [] [][][][][][][][][][][] [][][][] [] [] [] [][][][][] [][][][][][][][][] [][][][]
  []
 
 
-Overfull \hbox (1.83923pt too wide) in paragraph at lines 2611--2613
+Overfull \hbox (1.83923pt too wide) in paragraph at lines 2612--2614
 []\TU/erewhon(0)/m/n/12 Simultaneously, I compute the state-contingent \TU/erewhon(0)/b/n/12 borrowing policy\TU/erewhon(0)/m/n/12 , $[][][][][][][][] [][][]$,
  []
 
 
-Overfull \hbox (3.5559pt too wide) in paragraph at lines 2630--2631
+Overfull \hbox (3.5559pt too wide) in paragraph at lines 2631--2632
 []\TU/erewhon(0)/b/n/12 Update Bond Prices. \TU/erewhon(0)/m/n/12 I update the bond price schedule $[][][][][] [][][]$ based on the lenders’
  []
 
 
 
 [57]
-Overfull \hbox (41.95493pt too wide) detected at line 2648
+Overfull \hbox (41.95493pt too wide) detected at line 2649
 [][][][][][] [][][] [] [] [] [][][][][] [][][][][] [] [][][][][] [][][][] [] []
  []
 
 
-Overfull \hbox (0.8668pt too wide) in paragraph at lines 2651--2652
+Overfull \hbox (0.8668pt too wide) in paragraph at lines 2652--2653
 []\TU/erewhon(0)/b/n/12 Check for Convergence. \TU/erewhon(0)/m/n/12 The iteration concludes by calculating the supremum norm
  []
 
@@ -1379,10 +1400,10 @@ Package rerunfilecheck Info: File `bounded_default.out' has not changed.
 (rerunfilecheck)             Checksum: A7146DA55052A7353987EB8DB83D8939;8247.
  ) 
 Here is how much of TeX's memory you used:
- 30982 strings out of 473832
- 626710 string characters out of 5729482
- 1166317 words of memory out of 5000000
- 53515 multiletter control sequences out of 15000+600000
+ 30970 strings out of 473832
+ 625874 string characters out of 5729482
+ 1165079 words of memory out of 5000000
+ 53506 multiletter control sequences out of 15000+600000
  564338 words of font info for 132 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,16n,121p,1002b,973s stack positions out of 10000i,1000n,20000p,200000b,200000s
