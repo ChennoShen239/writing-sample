@@ -1,0 +1,46 @@
+# Compiled results and outputs
+*.bin
+*.mat
+*.tab
+*.dat
+*.o
+*.obj
+*.mod
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.xdv
+
+# Temporary files
+*.tmp
+*~
+.DS_Store
+
+# Result directories (keep structure but ignore large files)
+*/results/*.bin
+*/results/*.mat
+*/results/*.tab
+*/results/*.dat
+**/results/**/*.bin
+**/results/**/*.mat
+**/results/**/*.tab
+**/results/**/*.dat
+
+# Specific large result files
+pessimism-default-model/results/baseline/results.mat
+pessimism-default-model/results/baseline/bPol.bin
+pessimism-default-model/results/theta10/bPol.bin
+pessimism-default-model/results/thetad100/bPol.bin
+pessimism-default-model/results/baseline/simulation.mat
+pessimism-default-model/results/theta10/simulation.mat
+pessimism-default-model/results/thetad100/simulation.mat
+
+# Keep only source code
+# Include: *.jl, *.f90, *.m, *.tex, *.md, Makefile
