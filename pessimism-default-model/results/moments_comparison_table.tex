@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\begin{document}
+\begin{table}[htbp]
+\centering
+\caption{Simulation Moments Comparison}
+\begin{tabular}{lccc}
+\toprule
+Moment & Baseline ($\theta=1$) & Med $\theta$ ($\theta=10$) & High $\theta$ ($\theta=100$) \\
+\midrule
+Mean Debt/GDP             &    7.665 &    5.522 &    2.693 \\
+Std Debt/GDP              &    1.287 &    0.854 &    0.744 \\
+Mean Spread (ann.)        &    1.957 &    2.752 &    4.148 \\
+Std Spread (ann.)         &    0.764 &    0.486 &    0.582 \\
+Std log C                 &    3.556 &    3.532 &    3.411 \\
+Std log GDP               &    3.139 &    3.188 &    3.188 \\
+Corr(Sp,GDP)              &   -0.332 &   -0.803 &   -0.894 \\
+Corr(TB/GDP,GDP)          &   -0.004 &   -0.282 &   -0.256 \\
+Mean TB/GDP               &    0.270 &    0.320 &    0.176 \\
+Std TB/GDP                &    0.831 &    0.432 &    0.323 \\
+Corr(Debt/GDP,GDP)        &    0.707 &    0.859 &    0.839 \\
+Default Rate              &    3.609 &    0.000 &    0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{document}

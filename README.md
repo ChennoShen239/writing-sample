@@ -1,32 +1,45 @@
 # Economics Research Project
 
-This repository contains computational economics research focused on sovereign debt and default modeling.
+This repository contains two distinct computational economics research projects focused on sovereign debt and default modeling.
 
-## Overview
+## Projects
 
-The project includes theoretical and empirical analysis of debt dynamics, featuring:
+### 1. Heuristic Default Model (Julia)
+Located in `heuristic-default-model/`
 
+A Julia-based implementation exploring heuristic approaches to sovereign default decisions. Features full information and baseline scenarios with comprehensive visualization.
+
+**Key Features:**
 - Mathematical modeling of default decisions
-- Numerical simulations and calibration
-- Data analysis and visualization
-- Academic paper documentation
+- Lambda information calibration
+- Numerical simulations and visualization
+- Results output with detailed figures
 
-## Structure
+### 2. Pessimism Default Model (Fortran + MATLAB)
+Located in `pessimism-default-model/`
 
-- `baseline_info/` - Core model implementations
-- `full_info/` - Complete information scenarios
-- `long_term/` - Extended analysis and empirical work
-- `paper/` - Academic documentation and LaTeX files
-- `Result/` - Generated figures and output
-- `scripts/` - Utility and visualization scripts
+A Fortran computational model with MATLAB analysis tools examining pessimism-based default behavior in sovereign debt markets.
+
+**Key Features:**
+- High-performance Fortran numerical routines
+- MATLAB post-processing and visualization
+- Binary result files for large-scale simulations
+- Empirical calibration and moment matching
+
+## Shared Resources
+
+- `paper/` - Academic documentation and LaTeX files for both projects
+- `pre/` - Preliminary work and course materials
 
 ## Requirements
 
-- Julia for computational modeling
-- MATLAB for data processing
-- LaTeX for document compilation
-- Fortran compiler for numerical routines
+- **Julia** - For heuristic default model
+- **Fortran compiler** - For pessimism default model
+- **MATLAB** - For results processing and visualization
+- **LaTeX** - For document compilation
 
 ## Usage
 
-Individual components can be run independently. See specific directories for detailed implementation.
+Each project can be run independently. See individual project README files for specific instructions:
+- [Heuristic Default Model README](heuristic-default-model/README.md)
+- [Pessimism Default Model README](pessimism-default-model/README.md)
