@@ -46,7 +46,7 @@
 % --- TITLE BLOCK ---
 \title{Default with Pessimism}
 \author{Chen Gao \thanks{National School of Development, Peking University. Email: \url{chengao0716@gmail.com}. I thank Bo Li and Changhua Yu for thorough guidance. I thank Michael Devereux for helpful advice.}}
-\date{\today}
+\date{{\color{red} [INCOMPLETE AND PRELIMINARY]} \\ \today}
 
 % --- DOCUMENT START ---
 \begin{document}
@@ -512,21 +512,6 @@ payoff, where the probability of repayment is assessed using $\tilde{P}(y',
 \end{equation}
 It is important to note that the inner expectation, $\mathbb{E}_{B''|y',B'}$, is taken over the sovereign's \textit{true} borrowing policy, $\Pr\{B''|y', B'\}$, which is governed by the true shock parameter $\rho$. In this framework, lenders correctly understand the sovereign's borrowing behavior but misperceive its propensity to default. This mechanism endogenously generates a credit spread that contains a ``pessimism premium'', which reflects the lenders' biased beliefs about the sovereign's stability.
 
-\paragraph{Bond Price}
-The equilibrium bond price $q(B', y)$ must satisfy the no-arbitrage condition
-based on the lenders' pessimistic beliefs. A risk-neutral lender is willing to
-pay a price $q(y, B')$ today for a bond that promises a stream of future
-payments, taking into account the perceived risk of default. The price is the
-expected discounted value of the bond's payoff next period:
-\begin{equation}
-	q(B', y) = \frac{1}{1+r} \mathbb{E}_{y'|y} \left[ (1 - \tilde{P}_d(y', B')) \left( \kappa + (1-\delta) \mathbb{E}_{B''|y',B'} \left[ q(y', B'') \right] \right) \right],
-	\label{eq:q_pessimism}
-\end{equation}
-where the outer expectation is over the realizations of future income $y'$, and
-the inner expectation is over the choice of the subsequent debt level, $B''$,
-given the state $(y', B')$. The default probability $\tilde{P}_d(y', B')$ is
-calculated using the same formula as in~\eqref{eq:prd_1}, but with the
-pessimistic parameter $\tilde{\eta} = \theta\eta$.
 
 \subsection{Equilibrium}
 
