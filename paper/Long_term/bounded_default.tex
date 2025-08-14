@@ -20,11 +20,14 @@
 \usepackage{setspace}
 \usepackage{tikz}                % 图形绘制
 \usepackage{hyperref}            % 超链接
+% \usepackage{mathtools} % 提供 \coloneqq, \eqqcolon 等
 \usetikzlibrary{positioning,calc,arrows.meta}
 \onehalfspacing
 % % 定理样式
 % \theoremstyle{definition}
 % \newtheorem{definition}{Definition}
+\providecommand{\coloneqq}{\mathrel{\mathop:}=}
+\providecommand{\eqqcolon}{=\mathrel{\mathop:}}
 
 % 页面设置
 \geometry{a4paper, margin=1in}
@@ -41,6 +44,11 @@
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Y}{\mathcal{Y}}
+\newcommand{\bbP}{\mathbb{P}}
 
 
 % --- TITLE BLOCK ---
@@ -448,6 +456,7 @@ where $q(y, B')$ is the price at which it can issue new bonds. The borrowing cho
 $\{\varepsilon_{B'}\}$, for each possible debt level $B'$. Each shock is
 distributed as Gumbel$(-\rho\gamma, \rho)$. Applying Lemma~\ref{lem:gumbel_multinomial} in Appendix \ref{app:gumbel} with $V_i = W(y, B, B_i)$ and
 $\sigma = \rho$, the ex-ante value of repaying is:
+
 \begin{equation}\label{eq:Vr}
 	V^R(y, B) = \rho \ln\left( \sum_{B' \in \mathcal{B}} \exp\frac{W(y, B, B')}{\rho} \right),
 \end{equation}
@@ -455,7 +464,7 @@ where $\mathcal{B}$ is the discrete set of possible debt levels. The probability
 \begin{equation}
 	\Pr\{B' | y, B\} = \frac{\exp\frac{W(y, B, B')}{\rho}}{\sum_{B_j \in \mathcal{B}}\exp\frac{W(y, B, B_j)}{\rho}}.
 \end{equation}
-ssFigure~\ref{fig:borrowing_dist_example} provides a visualization of this
+Figure~\ref{fig:borrowing_dist_example} provides a visualization of this
 probabilistic borrowing policy. The taste shock framework transforms the choice
 of the next debt level, $B'$, from a single deterministic point into a smooth
 probability distribution over the entire set of available options,
@@ -512,7 +521,6 @@ payoff, where the probability of repayment is assessed using $\tilde{P}(y',
 \end{equation}
 It is important to note that the inner expectation, $\mathbb{E}_{B''|y',B'}$, is taken over the sovereign's \textit{true} borrowing policy, $\Pr\{B''|y', B'\}$, which is governed by the true shock parameter $\rho$. In this framework, lenders correctly understand the sovereign's borrowing behavior but misperceive its propensity to default. This mechanism endogenously generates a credit spread that contains a ``pessimism premium'', which reflects the lenders' biased beliefs about the sovereign's stability.
 
-
 \subsection{Equilibrium}
 
 As is standard in sovereign default literature, the solution concept is a
@@ -527,10 +535,21 @@ Recursive Markov Perfect Equilibrium, defined as follows:
 	\end{enumerate}
 \end{definition}
 
-With this taste shock introduced, the equilibrium in this model can be shown to
-exist and be unique.
-\begin{proposition}\label{prop:existence_uniqueness}
-	The Recursive Markov Perfect Equilibrium, as defined in Definition~\ref{def:equilibrium}, exists and is unique.
+With the taste shock (logit aggregator) in place, the recursive equilibrium is
+well behaved.
+
+\begin{proposition}[Existence and Uniqueness of the Recursive MPE]
+	\label{prop:existence_uniqueness}
+	Let $\mathcal Y$ and $\mathcal B$ be compact, $u\in C^1$ strictly increasing and concave with $u'$ bounded on the feasible consumption set, and parameters satisfy
+	$\beta\in(0,1)$, $r>0$, $\delta\in[0,1)$, $\eta>0$, $\rho>0$, $\kappa>0$.
+	Let prices be determined by the pricing operator in~\eqref{eq:pricing_operator} with logistic default rule and repayment/default values as defined in the model, and let the Bellman aggregator be the log-sum-exp with taste-shock scale $\rho$.
+	If the slope condition
+	\begin{equation}
+		\label{eq:SC}
+		L_{Jq}\,L_{TV} \;<\; (1-\beta)\Bigl(1-\tfrac{1-\delta}{1+r}\Bigr)
+	\end{equation}
+	holds (constants defined below), then the Recursive Markov Perfect Equilibrium
+	as in Definition~\ref{def:equilibrium} exists and is unique.
 \end{proposition}
 
 \begin{proof}
@@ -734,12 +753,16 @@ these changes on the sovereign's well-being. The final proposition demonstrates
 that the consequences of lender pessimism translate directly into a welfare
 loss for the sovereign.
 
-\begin{proposition}[Welfare Loss under Pessimism]
+\begin{proposition}[Welfare Loss under Lender Pessimism]
 	\label{prop:welfare}
-	Consider economies with pessimistic lenders ($\theta > 1$) and rational lenders ($\theta = 1$). Let $V_i(y, B)$ be the sovereign's equilibrium ex-ante value function in economy $i \in \{1, \theta\}$. For any state $(y, B)$ where the sovereign has market access, welfare is strictly lower under lender pessimism:
-	\begin{equation*}
-		V_\theta(y, B) < V_1(y, B).
-	\end{equation*}
+	Let $V_i(y,B)$ denote the sovereign's ex-ante equilibrium value function in economy $i\in\{1,\theta\}$, where $\theta>1$ indexes pessimistic lenders and $\theta=1$ rational lenders.
+	Suppose that for the given state $(y,B)$ the sovereign has market access and the baseline optimal choice $B'_1(y,B)$ lies on the ``risky'' side of the price pivot $B^*(y)$, i.e. $B'_1(y,B)\ge B^*(y)$.
+	Then equilibrium welfare is strictly lower under pessimistic lenders:
+	\[
+		V_\theta(y,B) \;<\; V_1(y,B).
+	\]
+	If $B'_1(y,B) \le B^*(y)$ (``safe'' side), the weak inequality $V_\theta(y,B)
+		\le V_1(y,B)$ holds.
 \end{proposition}
 
 \begin{proof}
@@ -1351,91 +1374,94 @@ sustained improvements are necessary to overcome entrenched pessimistic priors.
 
 \section{Extensions}
 
-\subsection{Theoretical Extensions}
+\subsection{Theoretical Extensions}\label{sec:extensions}
 
 \paragraph{Ramsey Planning Under Pessimism}\label{sec:ramsey}
+Proposition~\ref{prop:welfare} shows that lender pessimism reduces equilibrium
+welfare. A natural question is whether an optimal fiscal authority can undo
+this loss. We study a Ramsey planner who can choose lump-sum taxes/transfers
+but takes the bond pricing mechanism as given.
 
-While Proposition~\ref{prop:welfare} establishes that lender pessimism
-generates a welfare loss, a natural question arises: could this loss be
-mitigated through optimal fiscal policy? To address this, I consider a Ramsey
-planner \citep{LucasStokey1983} who can use lump-sum taxes and transfers but
-cannot alter the bond pricing mechanism. This extension formalizes the
-intuition that pessimism creates a fundamental allocative distortion beyond
-simple income effects \citep{ChariKehoe1999}.
+Lender pessimism acts like a persistent wedge in the intertemporal price of
+borrowing. Transfers can reallocate resources within and across periods subject
+to a zero present-value constraint, but they cannot change the shadow price at
+which the government trades across dates. Hence the pessimistic price schedule
+distorts debt choices even under optimal fiscal policy.
 
-\textit{Economic Intuition}: The key insight is that lender pessimism operates as a persistent ``tax'' on borrowing that distorts intertemporal prices. While a Ramsey planner can use lump-sum transfers to redistribute resources optimally within any given period, they cannot fix the distorted shadow prices that guide borrowing decisions. The pessimistic price schedule makes debt artificially expensive in safe states, leading to suboptimal savings and borrowing patterns. This creates a dynamic inefficiency that fiscal transfers cannot address---the government faces the wrong intertemporal trade-offs when deciding how much to borrow across different states of nature.
-
-Let the Ramsey planner's problem be to choose consumption allocations $\{c_t\}$
-and debt policies $\{B_{t+1}\}$ to maximize the sovereign's welfare, subject to
-the resource constraint modified by lump-sum transfers $\tau_t$\footnote{While
-	the baseline model is formulated as a Recursive Markov Perfect Equilibrium with
-	stationary value functions $V(y,B)$, the extensions in this section use
-	time-indexed notation $\{c_t, B_t, \theta_t\}$ to analyze dynamic processes.
-	This notation is equivalent to the recursive formulation: each period's
-	equilibrium state $(y_t, B_t)$ corresponds to the recursive state variables,
-	and the time-indexed sequences represent equilibrium paths under the recursive
-	decision rules. The time subscripts facilitate the analysis of belief updating,
-	learning dynamics, and intertemporal policy choices while maintaining
-	consistency with the underlying Markov structure.}:
+The planner chooses $\{c_t,B_{t+1},\tau_t\}_{t\ge0}$ to maximize expected
+utility subject to the per-period resource constraint and a zero present-value
+(PV) condition for transfers:
 \begin{equation}
-	c_t + \kappa B_t + \tau_t = y_t + [B_{t+1} - (1-\delta)B_t]q_\theta(y_t, B_{t+1}) \label{eq:ramsey_constraint}
+	c_t+\kappa B_t+\tau_t \;=\; y_t+\bigl(B_{t+1}-(1-\delta)B_t\bigr)\,q_\theta(y_t,B_{t+1}),
+	\qquad t\ge0, \text{ a.s.}
+	\label{eq:ramsey_rc}
 \end{equation}
-where the planner is constrained to use the pessimistic price schedule $q_\theta(\cdot)$ but can choose transfers to achieve first-best consumption smoothing.
+and
+\begin{equation}
+	\E_0\!\left[\sum_{t=0}^\infty \beta^t \tau_t\right]=0,
+	\quad c_t\ge0,
+	\quad B_{t+1}\in\mathcal B.
+	\label{eq:ramsey_pv}
+\end{equation}
 
-\begin{proposition}\label{prop:ramsey_welfare}
-	Define $W^R_i$ as the value of the Ramsey planner's problem under price schedule $q_i(\cdot)$:
-	\begin{equation}
-		W^R_i = \max_{\{c_t, B_{t+1}, \tau_t\}_{t=0}^\infty} \mathbb{E}_0 \left[ \sum_{t=0}^\infty \beta^t u(c_t) \right] \label{eq:ramsey_welfare_def}
-	\end{equation}
-	subject to \eqref{eq:ramsey_constraint} and $\mathbb{E}_0 \left[ \sum_{t=0}^\infty \frac{\tau_t}{\prod_{s=1}^t (1+r_s)} \right] = 0$.
-
-	Even under optimal Ramsey planning with lump-sum transfers, the welfare loss
-	from lender pessimism persists:
-	\begin{equation}
-		W^R_\theta < W^R_1 \label{eq:ramsey_welfare_loss}
-	\end{equation}
+\begin{proposition}[Ramsey welfare loss under pessimistic prices]
+	\label{prop:ramsey_welfare}
+	Let $r>-1$ satisfy $\beta(1+r)=1$. For $i\in\{1,\theta\}$ define the Ramsey value
+	\[
+		W^R_i \;=\; \sup_{\{c_t,B_{t+1},\tau_t\}}\E_0\!\Big[\sum_{t=0}^\infty \beta^t u(c_t)\Big]
+	\]
+	subject to~\eqref{eq:ramsey_rc}--\eqref{eq:ramsey_pv}. Assume:
+	\begin{enumerate}
+		\item[(A1)] $u$ is strictly increasing and strictly concave; $\mathcal B$ is compact.
+		\item[(A2)] (Price dominance by trade sign, consistent with Propositions~\ref{prop:pivot_concise} and~\ref{prop:deleveraging}). Let $\Delta_t\equiv B_{t+1}-(1-\delta)B_t$. For every history,
+		      \[
+			      \Delta_t\ge0 \ \Rightarrow\ q_1(y_t,B_{t+1})\ge q_\theta(y_t,B_{t+1}),\qquad
+			      \Delta_t\le0 \ \Rightarrow\ q_1(y_t,B_{t+1})\le q_\theta(y_t,B_{t+1}),
+		      \]
+		      with strict inequality on a set of positive probability and
+		      $\Pr(|\Delta_t|>0)>0$.
+	\end{enumerate}
+	Then $W^R_\theta<W^R_1$.
 \end{proposition}
 
 \begin{proof}
-	See Appendix \ref{app:proof_ramsey}.
+	See Appendix~\ref{app:proof_ramsey}.
 \end{proof}
-The intuition is that while the Ramsey planner can use transfers to achieve
-optimal consumption levels \textit{conditional on debt choices}, the
-pessimism-distorted price schedule still leads to suboptimal debt decisions.
-The planner faces the wrong intertemporal prices and thus makes allocatively
-inefficient borrowing choices, creating deadweight loss that transfers cannot
-eliminate \citep{AiyagariMarcetSargentSeppala2002}. Economically, this demonstrates that even omnipotent fiscal policy cannot undo the damage from mispricing in international capital markets---pessimism creates a wedge between social and private returns to borrowing that persists regardless of domestic redistribution. While this analysis takes the pessimistic beliefs as given, a natural extension is to endogenize their formation through learning processes, building on the literature of model uncertainty and robustness \citep{HansenSargent2001}.
+
+Transfers ensure first-best \emph{conditional} consumption smoothing but cannot
+change the intertemporal proceeds term $\E_0[\sum
+	\beta^t\,\Delta_t\,q_i(y_t,B_{t+1})]$ that appears in the implementability
+constraint; therefore the wedge in $q_\theta$ generates a genuine efficiency
+loss. See also \citep{AiyagariMarcetSargentSeppala2002}.
 
 \paragraph{Endogenous Belief Formation}
+We next let lenders learn about the taste-shock dispersion parameter $\theta$.
 
-Consider an extension where lenders form beliefs about the taste shock
-volatility parameter $\theta$ through Bayesian learning
-\citep{CogleySargent2008}. Let $\theta_t$ denote the lenders' perceived
-volatility parameter in period $t$, where $\theta_t \in [\underline{\theta},
-		\bar{\theta}]$ with $\underline{\theta} = 1$ (correct beliefs) and
-$\bar{\theta} > 1$ (maximum pessimism).
+Even with Bayesian updating, ``negativity bias''---overweighting unexpected
+defaults relative to unexpected repayments---can make pessimism persistent and
+self-reinforcing. Rare but salient defaults move beliefs more than frequent,
+modestly good realizations, creating a drift toward pessimism.
 
-\textit{Economic Intuition}: This extension addresses a natural question: if lenders are rational learners, shouldn't pessimistic beliefs eventually be corrected by experience? The answer hinges on psychological biases in information processing. Even rational Bayesian learners can maintain persistent pessimism if they exhibit ``negativity bias''---overweighting negative surprises relative to positive ones. When defaults occur unexpectedly (relative to their models), lenders update their beliefs more dramatically than when repayments exceed expectations. This asymmetric learning mechanism, well-documented in behavioral psychology, can cause pessimistic beliefs to become self-reinforcing: bad news matters more than good news, creating a ratchet effect where beliefs drift toward pessimism over time.
-
-Lenders observe the sovereign's default decisions $\{d_s\}_{s=0}^{t-1}$ and
-update their beliefs according to:
+Let $\theta_t\in[\underline\theta,\bar\theta]$ with
+$\underline\theta=1<\bar\theta$, and suppose beliefs evolve according to
 \begin{equation}
-	\theta_{t+1} = \lambda \theta_t + (1-\lambda) \hat{\theta}(\{d_s\}_{s=0}^t) \label{eq:belief_updating}
+	\theta_{t+1}\;=\; \lambda\,\theta_t + (1-\lambda)\,\widehat\theta(\{d_s\}_{s=0}^t),
+	\qquad \lambda\in(0,1),
+	\label{eq:belief_updating}
 \end{equation}
-where $\lambda \in (0,1)$ captures persistence in beliefs and $\hat{\theta}(\cdot)$ is the maximum likelihood estimator of $\theta$ given observed default patterns.
-
-Define the \textit{surprise intensity} of a default in state $(y,B)$ as:
+where $d_t\in\{0,1\}$ indicates default and $\widehat\theta(\cdot)$ is a (possibly biased) estimator that places extra weight on \emph{surprising} defaults. For instance, with
 \begin{equation}
-	\xi(y,B) = \max\left\{0, \frac{P_1(y,B) - P_{\theta_t}(y,B)}{P_1(y,B)}\right\} \label{eq:surprise_intensity}
+	\xi(y,B)\;=\;\max\!\left\{0,\ \frac{P_1(y,B)-P_{\theta_t}(y,B)}{P_1(y,B)}\right\},
+	\label{eq:surprise_intensity}
 \end{equation}
-where $P_\theta(y,B)$ is the default probability under parameter $\theta$. The belief updating mechanism exhibits \textit{negativity bias} \citep{BaumeisterBratslavskyFinkenauer2001}: lenders overweight surprising defaults relative to surprising repayments, consistent with the literature on overreaction to salient events \citep{BordaloGennaioli​Shleifer2018}.
+negativity bias means that $\widehat\theta$ responds more to larger $\xi$ when $d_t=1$ than to the analogous repayment surprise when $d_t=0$  \citep{BaumeisterBratslavskyFinkenauer2001,BordaloGennaioliShleifer2018}.
 
 \begin{proposition}\label{prop:endogenous_beliefs}
-	Under negativity bias in belief updating, there exists a stationary distribution $\Theta^*$ of beliefs with the following properties:
+	Under a stable, Feller belief-update kernel induced by~\eqref{eq:belief_updating} with negativity bias as above and mild drift/minorization conditions, the Markov process $\{\theta_t\}$ admits a unique invariant distribution $\Theta^*$ such that:
 	\begin{enumerate}
-		\item[\textbf{(i)}] \textbf{Persistent Pessimism}: $\mathbb{E}[\theta] > 1$ for all $\theta_0 \in [\underline{\theta}, \bar{\theta}]$.
-		\item[\textbf{(ii)}] \textbf{History Dependence}: The long-run belief distribution depends on the realized default history, with $\Theta^*$ first-order stochastically dominating the rational benchmark.
-		\item[\textbf{(iii)}] \textbf{Slow Convergence}: The convergence rate to $\Theta^*$ satisfies $\|\theta_t - \mathbb{E}[\Theta^*]\| = O(\lambda^t)$ with $\lambda$ close to 1 when defaults are rare.
+		\item[\textbf{(i)}] $\E[\Theta^*]>1$ (persistent pessimism);
+		\item[\textbf{(ii)}] $\Theta^*$ first-order stochastically dominates the rational benchmark (history dependence through rare defaults);
+		\item[\textbf{(iii)}] $\|\E[\theta_t]-\E[\Theta^*]\|=O(\lambda^t)$, with slow convergence when defaults are rare (large $\lambda$).
 	\end{enumerate}
 \end{proposition}
 
@@ -1443,54 +1469,25 @@ where $P_\theta(y,B)$ is the default probability under parameter $\theta$. The b
 	See Appendix~\ref{app:proof_endogenous_beliefs}.
 \end{proof}
 
-The economic implications are striking: even with rational learning, lenders
-can remain systematically pessimistic in the long run. The negativity bias acts
-like a ``pessimism trap'' where bad news sticks while good news fades, causing
-beliefs to drift away from rationality. This provides a microfoundation for why
-sovereign risk premia can remain elevated for extended periods even when
-fundamentals improve. The slow convergence result (part iii) captures the idea
-that once pessimistic beliefs become entrenched, they are slow to reverse,
-consistent with the observed persistence of sovereign risk episodes.
-
-Given that pessimistic beliefs can become entrenched through this learning
-mechanism, governments may seek to mitigate their effects through strategic
-information disclosure, drawing on insights from the literature on policy
-communication \citep{BlinderEhrmannFratzscher2008}.
-
 \paragraph{Optimal Policy Communication}
-
-Consider an extension where the government can choose its transparency level
-$\alpha \in [0,1]$, where $\alpha$ represents the precision of public
-information about future policy intentions \citep{MorrisShin2002}. Higher
-$\alpha$ reduces lenders' perceived uncertainty about taste shocks but may
-reveal unfavorable private information, reflecting the optimal information
-design trade-offs \citep{AngelosetsPavan2007}.
-
-\textit{Economic Intuition}: This extension recognizes that governments facing pessimistic lenders have an incentive to strategically manage information flows. The key trade-off is between transparency benefits and disclosure costs. By being more transparent about their policy processes, governments can reduce lenders' uncertainty about the true volatility of policy decisions, potentially countering pessimistic beliefs. However, transparency is costly---it requires institutional investments, may reveal unfavorable private information, and constrains future policy flexibility. The optimal transparency choice balances these costs against the benefit of reduced borrowing costs from less pessimistic lenders.
-
-The sovereign's period utility becomes:
+Now allow the government to choose a transparency level $\alpha\in[0,1]$ that
+affects lenders' effective dispersion:
 \begin{equation}
-	u(c,\alpha) = \frac{c^{1-\sigma}}{1-\sigma} - \phi(\alpha) \label{eq:utility_communication}
+	\theta_{\mathrm{eff}}(\alpha,\theta)\;=\;\alpha\cdot 1 + (1-\alpha)\cdot \theta,
+	\label{eq:effective_theta}
 \end{equation}
-where $\phi(\alpha) = \frac{\gamma \alpha^2}{2}$ represents the cost of transparency (monitoring, reporting, political costs).
-
-Under transparency level $\alpha$, lenders perceive the effective taste shock
-volatility as:
-\begin{equation}
-	\theta_{\text{eff}}(\alpha, \theta) = \alpha \cdot 1 + (1-\alpha) \cdot \theta \label{eq:effective_theta}
-\end{equation}
-where $\theta > 1$ is the baseline pessimism parameter. Higher transparency reduces the effective bias but is costly.
+and let period utility be $u(c,\alpha)=c^{1-\sigma}/(1-\sigma)-\phi(\alpha)$ with $\phi(\alpha)=\gamma\alpha^2/2$.
 
 \begin{proposition}\label{prop:optimal_communication}
-	The optimal transparency level $\alpha^*$ satisfies:
+	Let $W(\alpha)$ be the sovereign's value when the price schedule is $q_{\theta_{\mathrm{eff}}(\alpha,\theta)}$ and the planner otherwise solves the same Ramsey problem. Suppose $W(\alpha)$ is strictly concave in $\alpha$ (e.g., $q_\vartheta$ is smooth and $\phi$ is strictly convex). Then:
 	\begin{enumerate}
-		\item[\textbf{(i)}] \textbf{Interior Solution}: For $\gamma$ in an intermediate range, $\alpha^* \in (0,1)$ with
+		\item[\textbf{(i)}] There exists a unique $\alpha^*\in[0,1]$ satisfying the FOC
 		      \begin{equation}
-			      \frac{\partial}{\partial \alpha} \mathbb{E}[W(\alpha)] = \gamma \alpha^* \label{eq:foc_transparency}
+			      \frac{d}{d\alpha}W(\alpha^*) \;=\; \phi'(\alpha^*) \;=\; \gamma\,\alpha^*.
+			      \label{eq:foc_transparency}
 		      \end{equation}
-		      where $W(\alpha)$ is the sovereign's welfare under transparency $\alpha$.
-		\item[\textbf{(ii)}] \textbf{Pessimism Amplifies Transparency}: $\frac{\partial \alpha^*}{\partial \theta} > 0$. Higher lender pessimism increases optimal transparency.
-		\item[\textbf{(iii)}] \textbf{Welfare Dominance}: Under optimal communication, $W(\alpha^*) > W(0)$ when $\theta > \theta_c$ for some critical threshold $\theta_c > 1$.
+		\item[\textbf{(ii)}] If $\partial W/\partial \vartheta<0$ and $\partial \theta_{\mathrm{eff}}/\partial \alpha=1-\theta<0$, then $\partial \alpha^*/\partial \theta>0$: more pessimism raises optimal transparency.
+		\item[\textbf{(iii)}] There exists $\theta_c>1$ such that $W(\alpha^*)>W(0)$ for all $\theta>\theta_c$.
 	\end{enumerate}
 \end{proposition}
 
@@ -1498,17 +1495,10 @@ where $\theta > 1$ is the baseline pessimism parameter. Higher transparency redu
 	See Appendix~\ref{app:proof_optimal_communication}.
 \end{proof}
 
-The results reveal several important economic insights. First, the interior
-solution (part i) demonstrates that transparency is generally valuable but not
-unlimited---governments optimally choose partial rather than complete
-transparency. Second, the result that pessimism amplifies transparency (part
-ii) shows that transparency becomes more valuable precisely when lenders are
-more biased. This creates a natural feedback mechanism: countries with worse
-reputations or higher perceived policy uncertainty have stronger incentives to
-invest in transparent institutions. Finally, the welfare dominance result (part
-iii) confirms that strategic communication can be an effective policy tool, but
-only when pessimism is sufficiently severe to justify the costs of
-transparency.
+Transparency improves welfare by steepening lenders' price schedule toward the
+rational benchmark, but convex disclosure costs imply an interior optimum. The
+comparative static in (ii) formalizes that transparency is most valuable when
+pessimism is severe.
 
 \section{Conclusion}
 
@@ -1717,599 +1707,704 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	\end{equation*}
 \end{proof}
 
-\subsection{Proof of Proposition~\ref{prop:existence_uniqueness}}\label{app:proof_existence_uniqueness}
+\subsection{Proof of Proposition~\ref{prop:existence_uniqueness}}
+\label{app:proof_existence_uniqueness}
 
 \begin{proof}
-	Let $\mathcal{S} = \mathcal{Y} \times \mathcal{B}$ be the state space. Let $\mathcal{C}(\mathcal{S})$ be the space of bounded continuous functions on $\mathcal{S}$, equipped with the sup norm $\|\cdot\|_\infty$. The space for our equilibrium objects is $\mathbf{X} = \mathcal{C}(\mathcal{S}) \times \mathcal{C}(\mathcal{S})$, endowed with the norm $\|(V, q)\| = \max(\|V\|_\infty, \|q\|_\infty)$. $(\mathbf{X}, \|\cdot\|)$ is a complete metric space.
+	\textbf{Spaces and operator.}
+	Let $\mathcal S=\mathcal Y\times\mathcal B$ (compact) and
+	$\mathcal C(\mathcal S)$ be bounded continuous functions on $\mathcal S$ with the sup-norm $\|\cdot\|_\infty$.
+	Define the product space $\mathbf X=\mathcal C(\mathcal S)\times\mathcal C(\mathcal S)$ and, for a weight $\lambda>0$, the norm
+	\[
+		\|(V,q)\|_\lambda \;=\; \max\{\|V\|_\infty,\;\lambda\|q\|_\infty\}.
+	\]
+	$\bigl(\mathbf X,\|\cdot\|_\lambda\bigr)$ is complete.
+	Define $\mathcal T:\mathbf X\to\mathbf X$ by
+	\[
+		\mathcal T(V,q) \;=\; \bigl(J(V,q),\;T(V,q)\bigr),
+	\]
+	where $J$ is the Bellman operator (log-sum-exp/taste shocks) and $T$ is the
+	pricing operator~\eqref{eq:pricing_operator} (default probability given by the
+	logistic rule).
 
-	The equilibrium is the unique fixed point of an operator $\mathcal{T}:
-		\mathbf{X} \to \mathbf{X}$, which maps a pair of functions $(V, q)$ into a new
-	pair $(V', q')$. The operator $\mathcal{T}$ is defined by its two component
-	operators, the Bellman operator $J$ and the pricing operator $T$:
-	\begin{align*}
-		V' & = J(V, q) \\
-		q' & = T(V, q)
-	\end{align*}
-	I prove $\mathcal{T}$ is a contraction mapping by verifying Blackwell's sufficient conditions as stated in Theorem A.1.2 of \citep{LjungqvistSargent2000}:
+	\paragraph{Step 1: $\mathcal T$ maps $\mathbf X$ into itself.}
+	By compactness of $(y,B)$ and the discrete (or compact) choice set for $B'$,
+	continuity of the primitives, and the log-sum-exp aggregator with $\rho>0$,
+	$J(V,q)$ is bounded and continuous whenever $(V,q)$ is. For $T$, note that for
+	any $(y,B')$,
+	\[
+		0 \;\le\; q(y,B') \;\le\; \frac{1}{1+r}\Bigl(\kappa + (1-\delta)\|q\|_\infty\Bigr),
+	\]
+	hence taking suprema gives the uniform bound
+	\begin{equation}
+		\label{eq:qbar}
+		\|q\|_\infty \;\le\; \frac{\kappa}{r}\;\eqqcolon\;\bar q.
+	\end{equation}
+	Thus $T(V,q)$ is bounded and continuous, so $\mathcal T(\mathbf X)\subseteq\mathbf X$.
 
-	\textbf{(a) Monotonicity.} Let $(V_a, q_a) \ge (V_b, q_b)$, implying $V_a(\cdot) \ge V_b(\cdot)$ and $q_a(\cdot) \ge q_b(\cdot)$ pointwise.
-	Let $(V'_a, q'_a) = \mathcal{T}(V_a, q_a)$ and $(V'_b, q'_b) = \mathcal{T}(V_b, q_b)$.
+	\paragraph{Step 2: Lipschitz bounds (decoupled).}
+	We record the following constants (finite by compactness and~\eqref{eq:qbar}):
 
-	The Bellman operator $J(V, q)$ is strictly increasing in both arguments because
-	higher continuation values $V$ and better consumption possibilities from higher
-	prices $q$ both increase the sovereign's value. Thus, $V'_a = J(V_a, q_a) \ge
-		J(V_b, q_b) = V'_b$.
+	\medskip
+	(i) \emph{$J$ with respect to $V$.}
+	The continuation part of $J$ is multiplied by $\beta$ and the derivative of log-sum-exp is a probability in $[0,1]$, so
+	\[
+		\|J(V_1,q)-J(V_2,q)\|_\infty \;\le\; \beta\,\|V_1-V_2\|_\infty.
+	\]
 
-	The pricing operator $T(V, q)$ is also increasing in both arguments. It is
-	increasing in $q$ via the bond's resale value term $(1-\delta)q$. It is
-	increasing in $V$ because a higher $V^R$ implies a lower default probability
-	$\tilde{P}$, which increases the expected payoff. Thus, $q'_a = T(V_a, q_a) \ge
-		T(V_b, q_b) = q'_b$.
+	(ii) \emph{$J$ with respect to $q$.}
+	Consumption is $c(B')=y-\kappa B+[B'-(1-\delta)B]\,q(y,B')$.
+	Hence for some bound
+	\[
+		M_B \;\coloneqq\; \sup_{(y,B)\in\mathcal S}\;\sup_{B'\in\mathcal B} \bigl|B'-(1-\delta)B\bigr| \;<\;\infty,
+	\]
+	and with $\bar u'\coloneqq\sup u'(c)$ on the feasible set, the envelope theorem
+	and the $[0,1]$-valued logit weights imply
+	\begin{equation}
+		\label{eq:LJq}
+		\|J(V,q_1)-J(V,q_2)\|_\infty \;\le\; L_{Jq}\,\|q_1-q_2\|_\infty,
+		\qquad
+		L_{Jq}\;\le\;\bar u'\,M_B.
+	\end{equation}
 
-	Since both component operators are monotone, the composite operator
-	$\mathcal{T}$ is monotone.
+	(iii) \emph{$T$ with respect to $q$.}
+	In~\eqref{eq:pricing_operator}, $q$ enters only via the resale term $(1-\delta)\E q$ with one-period discount $1/(1+r)$, hence
+	\begin{equation}
+		\label{eq:Tq}
+		\|T(V,q_1)-T(V,q_2)\|_\infty \;\le\; m_q\,\|q_1-q_2\|_\infty,
+		\qquad
+		m_q \;\coloneqq\; \frac{1-\delta}{1+r}\;<\;1.
+	\end{equation}
 
-	\textbf{(b) Discounting.} Let $k=(k_v, k_q)$ be a pair of positive constants.
-	The Bellman operator satisfies the discounting property with modulus $\beta < 1$:
-	\begin{equation*}
-		\| J(V+k_v, q+k_q) - J(V,q) \|_\infty \le \beta k_v + C_J k_q,
-	\end{equation*}
-	where $C_J$ is the Lipschitz constant for $J$ with respect to $q$. Similarly, the pricing operator satisfies discounting with modulus $1/(1+r) < 1$:
-	\begin{equation*}
-		\| T(V+k_v, q+k_q) - T(V,q) \|_\infty \le C_T k_v + \frac{1-\delta}{1+r} k_q.
-	\end{equation*}
-	A more direct argument is that the system's overall effective discount factor is \[\beta_{\mathcal{T}} = \max\left\{\beta, \frac{1-\delta}{1+r}\right\}.\] Since $\beta < 1$ and $\frac{1-\delta}{1+r} < 1$, it holds that
-	$\beta_{\mathcal{T}} < 1$. The operator $\mathcal{T}$ satisfies the discounting
-	condition with this modulus.
+	(iv) \emph{$T$ with respect to $V$.}
+	Write $P=L\!\left(\Delta V/(\theta\eta)\right)$ with $L'(z)=L(z)\bigl(1-L(z)\bigr)\le\tfrac14$.
+	Let $\Pi\coloneqq \kappa+(1-\delta)\bar q$ bound the one-step payoff in~\eqref{eq:pricing_operator}.
+	The mapping $V\mapsto \Delta V$ is linear in $V$ through continuation values and default recursion; its operator norm is bounded by
+	\[
+		\|\Delta V(V_1)-\Delta V(V_2)\|_\infty \;\le\; C_\Delta\,\|V_1-V_2\|_\infty,
+		\qquad
+		C_\Delta \;\le\; \frac{\beta}{\,1-\beta(1-\gamma)\,}.
+	\]
+	Therefore
 
-	Since $\mathcal{T}$ satisfies both monotonicity and discounting, it is a
-	contraction mapping by Blackwell's Theorem. By the Contraction Mapping Theorem,
-	$\mathcal{T}$ has a unique fixed point $(V^*, q^*)$ in the complete metric
-	space $\mathbf{X}$. This fixed point is the unique Recursive Markov Perfect
-	Equilibrium of the model.
+	\begin{equation}
+		\label{eq:LTV}
+		\|T(V_1,q)-T(V_2,q)\|_\infty
+		\;\le\;
+		\frac{1}{1+r}\cdot \frac{1}{4\theta\eta}\cdot \Pi \cdot C_\Delta \|V_1-V_2\|_\infty
+		\eqqcolon L_{TV}\;\|V_1-V_2\|_\infty .
+	\end{equation}
+
+	\paragraph{Step 3: Joint contraction under a weighted norm.}
+	For any $(V_1,q_1),(V_2,q_2)$, combine the bounds above to get
+	\[
+		\|J(V_1,q_1)-J(V_2,q_2)\|_\infty
+		\le \beta\,\|V_1-V_2\|_\infty + L_{Jq}\,\|q_1-q_2\|_\infty,
+	\]
+	\[
+		\|T(V_1,q_1)-T(V_2,q_2)\|_\infty
+		\le L_{TV}\,\|V_1-V_2\|_\infty + m_q\,\|q_1-q_2\|_\infty.
+	\]
+	Multiplying the second inequality by $\lambda$ and taking the max of the two
+	gives
+	\[
+		\|\mathcal T(V_1,q_1)-\mathcal T(V_2,q_2)\|_\lambda
+		\le \alpha(\lambda)\,\|(V_1,q_1)-(V_2,q_2)\|_\lambda,
+	\]
+	where
+	\[
+		\alpha(\lambda)\;=\;\max\Bigl\{\;\beta+\frac{L_{Jq}}{\lambda},\;\; m_q+\lambda L_{TV}\;\Bigr\}.
+	\]
+	If there exists $\lambda>0$ such that
+	\[
+		\beta+\frac{L_{Jq}}{\lambda}<1
+		\quad\text{and}\quad
+		m_q+\lambda L_{TV}<1,
+	\]
+	then $\alpha(\lambda)<1$ and $\mathcal T$ is a contraction. These inequalities
+	can be satisfied if and only if
+	\[
+		L_{Jq}L_{TV} \;<\; (1-\beta)(1-m_q),
+	\]
+	which is exactly the slope condition~\eqref{eq:SC}. In that case one admissible
+	choice is
+	\[
+		\lambda^\star \;=\; \frac{(\beta-m_q) + \sqrt{(\beta-m_q)^2+4L_{Jq}L_{TV}}}{2L_{TV}},
+	\]
+	for which $\alpha(\lambda^\star)<1$.
+
+	\paragraph{Step 4: Conclusion.}
+	In the weighted complete normed space $\bigl(\mathbf
+		X,\|\cdot\|_{\lambda^\star}\bigr)$, $\mathcal T$ is a contraction mapping. By
+	the Contraction Mapping Theorem, it has a unique fixed point $(V^\ast,q^\ast)$,
+	which by construction satisfies the model’s recursive equilibrium conditions.
+	Therefore, the Recursive Markov Perfect Equilibrium exists and is unique.
 \end{proof}
 
 \subsection{Proof of Proposition~\ref{prop:pivot_concise}}\label{app:proof_pivot_concise}
 
 \begin{proof}
-	The proof relies on a standard result for monotone operators, which I state and prove as a lemma for completeness. This result establishes that the pointwise ordering of operators is preserved by their respective fixed points.
+	The proof relies on a standard monotone-operator result showing that pointwise orderings of operators are preserved by their fixed points.
 
-	\begin{lemma}
-		\label{lem:operator_dominance}
-		Let $(X, \|\cdot\|)$ be a Banach space and $T_1, T_2: X \to X$ be two operators satisfying:
+	\begin{lemma}\label{lem:operator_dominance}
+		Let $(X,\|\cdot\|)$ be a Banach space and $T_1,T_2:X\to X$ satisfy:
 		\begin{enumerate}
-			\item \textbf{Monotonicity:} $f \geq g \implies T_i(f) \geq T_i(g)$ for $i \in \{1,2\}$
-			\item \textbf{Discounting:} $\|T_i(f+c\mathbf{1}) - T_i(f)\| \leq \beta c$ for some $\beta \in (0,1)$ and constant function $\mathbf{1}$
+			\item \textbf{Monotonicity:} $f\ge g \Rightarrow T_i(f)\ge T_i(g)$ for $i\in\{1,2\}$.
+			\item \textbf{Discounting:} $\|T_i(f+c\mathbf{1})-T_i(f)\|\le \beta c$ for some $\beta\in(0,1)$ and constant function $\mathbf{1}$.
 		\end{enumerate}
-		If $T_1(f) \geq T_2(f)$ pointwise for all $f \in X$, then their unique fixed points satisfy $f_1^* \geq f_2^*$ where $T_i(f_i^*) = f_i^*$.
+		If $T_1(f)\ge T_2(f)$ pointwise for all $f\in X$, then their unique fixed points satisfy $f_1^*\ge f_2^*$ where $T_i(f_i^*)=f_i^*$.
 	\end{lemma}
 
 	\begin{proof}[Proof of Lemma~\ref{lem:operator_dominance}]
-		Let $f_1 = T_1(f_1)$ and $f_2 = T_2(f_2)$ be the unique fixed points.
-		I construct a sequence $\{f_n\}_{n=0}^\infty$ by iterating the ``larger'' operator $T_1$ starting from the ``smaller'' fixed point $f_2$. Let the initial function be $f_0 = f_2$. Then define the sequence recursively as $f_{n+1} = T_1(f_n)$ for $n \ge 0$. Since $T_1$ is a contraction, this sequence converges to its unique fixed point, $\lim_{n \to \infty} f_n = f_1$.
-
-		I now show by induction that this sequence is monotonically increasing.
-
-		\textit{Base Case (n=1):}
-		I compare $f_1$ and $f_0$.
-		\begin{equation*}
-			f_1 = T_1(f_0) = T_1(f_2).
-		\end{equation*}
-		By the premise of the lemma (operator dominance), we have $T_1(f_2) \ge T_2(f_2)$. By the definition of the fixed point $f_2$, we have $T_2(f_2) = f_2$. Combining these gives:
-		\begin{equation*}
-			f_1 = T_1(f_2) \ge T_2(f_2) = f_2 = f_0.
-		\end{equation*}
-		So, $f_1 \ge f_0$.
-
-		\textit{Inductive Step:}
-		Assume that $f_n \ge f_{n-1}$ for some $n \ge 1$. I must show that $f_{n+1} \ge f_n$.
-		This follows directly from the monotonicity of the operator $T_1$:
-		\begin{equation*}
-			f_n \ge f_{n-1} \implies T_1(f_n) \ge T_1(f_{n-1}) \implies f_{n+1} \ge f_n.
-		\end{equation*}
-		Thus, the sequence $\{f_n\}$ is non-decreasing.
-
-		Since the sequence starts at $f_0=f_2$ and is non-decreasing, it holds that
-		$f_n \ge f_2$ for all $n$. As weak inequalities are preserved under limits, I
-		can take the limit as $n \to \infty$:
-		\begin{equation*}
-			\lim_{n \to \infty} f_n \ge f_2.
-		\end{equation*}
-		Since $\lim_{n \to \infty} f_n = f_1$, it follows that $f_1 \ge f_2$. This completes the proof.
+		Let $f_1=T_1(f_1)$ and $f_2=T_2(f_2)$. Start from $f_0=f_2$ and iterate $f_{n+1}=T_1(f_n)$. By contraction, $f_n\to f_1$. Using $T_1(f_2)\ge T_2(f_2)=f_2$ and monotonicity of $T_1$, the sequence is nondecreasing and bounded below by $f_2$; taking limits yields $f_1\ge f_2$.
 	\end{proof}
-	With Lemma~\ref{lem:operator_dominance} established, I now return to the main proof. Let $q_i(B', y)$ for $i \in \{1, \theta\}$ be the unique fixed point of the pricing operator $T_i$, where $\theta_1=1$ and $\theta>1$. The operator is defined as
-	\begin{equation}
-		(T_i q)(B', y) = \frac{1}{1+r} \mathbb{E}_{y'|y} \left[ (1 - P_i(y', B')) \left( \kappa + (1-\delta) \mathbb{E}_{B''|y',B'} \left[ q(y', B'') \right] \right) \right] \label{eq:pricing_operator}
-	\end{equation}
-	where $P_i(y', B') = L(\Delta V_i(y', B')/\theta_i\eta)$ with $L(z) = (1+e^{-z})^{-1}$ being the logistic CDF and
-	\begin{equation}
-		\Delta V_i(y', B') \equiv V_i^R(y', B') - V_i^D(y') \label{eq:net_value_definition}
-	\end{equation}
-	representing the net value of repayment over default. 	\paragraph{Step 1: Probability Comparison} For the logistic function $L(z) = (1+e^{-z})^{-1}$, we have $L'(z) =
-		L(z)(1-L(z)) > 0$ for all $z \in \mathbb{R}$, so $L$ is strictly increasing.
-	Consider $P_i(y,B') = L(\Delta V_i(y,B')/\theta_i\eta)$ where $\theta_1 = 1$
-	and $\theta > 1$.
 
-	For any fixed $\Delta V_i(y,B') \neq 0$, define $\xi = \Delta V_i(y,B')$ and
-	consider the function $\phi(\alpha) = L(\xi/\alpha)$ for $\alpha > 0$. Taking
-	the derivative:
+	Let $q_i(B',y)$, $i\in\{1,\theta\}$ with $\theta_1=1$ and $\theta>1$, be the
+	fixed point of the pricing operator
 	\begin{equation}
-		\phi'(\alpha) = L'(\xi/\alpha) \cdot \left(-\frac{\xi}{\alpha^2}\right) = -\frac{\xi}{\alpha^2} L(\xi/\alpha)(1-L(\xi/\alpha)) \label{eq:phi_derivative}
+		(T_i q)(B',y)=\frac{1}{1+r}\,\E_{y'|y}\!\left[\bigl(1-P_i(y',B')\bigr)\Bigl(\kappa+(1-\delta)\E_{B''|y',B'}[\,q(y',B'')\,]\Bigr)\right],
+		\label{eq:pricing_operator}
 	\end{equation}
-	Since $L(z)(1-L(z)) > 0$ for all $z \in \mathbb{R}$, we have $\mathrm{sign}(\phi'(\alpha)) = -\mathrm{sign}(\xi)$.
+	where
+	\begin{equation}
+		P_i(y',B') \;=\; L\!\Bigl(-\frac{\Delta V_i(y',B')}{\theta_i\eta}\Bigr),\qquad
+		L(z)=\frac{1}{1+e^{-z}},\qquad
+		\Delta V_i(y',B')\equiv V_i^R(y',B')-V_i^D(y').
+		\label{eq:net_value_definition}
+	\end{equation}
 
-	Now, since $\theta > 1$, we have $\theta\eta > \eta$, and thus for $\xi \neq
-		0$:
+	\paragraph{Step 1: Probability ordering (correct sign).}
+	Fix $(y,B')$ and write $\xi\equiv \Delta V_i(y,B')\neq 0$. Define
+	$\phi(\alpha)\equiv L(-\xi/\alpha)$ for $\alpha>0$. Since
+	$L'(z)=L(z)(1-L(z))>0$,
+	\[
+		\phi'(\alpha)=L'(-\xi/\alpha)\cdot\frac{\xi}{\alpha^2}
+		\quad\Rightarrow\quad
+		\mathrm{sign}\,\phi'(\alpha)=\mathrm{sign}\,\xi.
+	\]
+	Because $\theta>1$ implies $\theta\eta>\eta$,
 	\begin{align}
-		\xi > 0 & \implies \phi'(\alpha) < 0 \implies \phi(\theta\eta) < \phi(\eta) \implies L(\xi/\theta\eta) < L(\xi/\eta) \nonumber \\
-		        & \implies P_\theta(y,B') < P_1(y,B') \label{eq:prob_order_pos}                                                        \\
-		\xi < 0 & \implies \phi'(\alpha) > 0 \implies \phi(\theta\eta) > \phi(\eta) \implies L(\xi/\theta\eta) > L(\xi/\eta) \nonumber \\
-		        & \implies P_\theta(y,B') > P_1(y,B') \label{eq:prob_order_neg}
+		\xi>0 & \;\Rightarrow\; \phi(\theta\eta)>\phi(\eta)
+		\;\Rightarrow\; P_\theta(y,B')>P_1(y,B'),
+		\label{eq:prob_order_pos_correct}                   \\
+		\xi<0 & \;\Rightarrow\; \phi(\theta\eta)<\phi(\eta)
+		\;\Rightarrow\; P_\theta(y,B')<P_1(y,B').
+		\label{eq:prob_order_neg_correct}
 	\end{align}
-	Now consider the difference in the operators applied to an arbitrary price function $q(\cdot, \cdot)$:
+	Intuitively: when repayment strictly dominates default (\(\Delta V>0\)), pessimistic lenders assign a \emph{higher} default probability; when default dominates (\(\Delta V<0\)), they assign a \emph{lower} default probability.
+
+	Given the strictly positive payoff term in \eqref{eq:pricing_operator}, we have
 	\begin{equation}
-		(T_\theta q)(B', y) - (T_1 q)(B', y) = \frac{1}{1+r} \mathbb{E}_{y'|y} \left[ \left(P_1(y', B') - P_\theta(y', B')\right) \cdot \underbrace{\left( \kappa + (1-\delta) \mathbb{E}_{B''|y',B'} \left[ q(y', B'') \right] \right)}_{\text{Payoff}>0} \right],
+		\mathrm{sign}\bigl((T_\theta q-T_1 q)(B',y)\bigr)
+		= \mathrm{sign}\Bigl(\E_{y'|y}\,[\,P_1(y',B')-P_\theta(y',B')\,]\Bigr).
+		\label{eq:operator_sign_correct}
 	\end{equation}
-	where the payoff term $\kappa + (1-\delta) \mathbb{E}_{B''|y',B'} [q(y', B'')] > 0$ is strictly positive.\footnote{This follows from $\kappa > 0$ (positive coupon rate) and $q(y', B'') \geq 0$ (non-negative bond prices).} Thus,
-	\begin{equation}
-		\mathrm{sign}\left((T_\theta q - T_1 q)(B', y)\right) = \mathrm{sign}\left(\mathbb{E}_{y'|y}[P_1(y', B') - P_\theta(y', B')]\right) \label{eq:operator_sign}
-	\end{equation}
 
-	\paragraph{Step 2: Safe Region Analysis} For sufficiently small debt levels $B' < \underline{B}(y)$, where
-	$\underline{B}(y) \equiv \min_{i \in \{1,\theta\}} \inf\{B' : \Delta V_i(y',
-		B') \leq 0 \text{ for some } y' \in \mathcal{Y}\}$, the sovereign operates in a
-	safe region where $\Delta V_i(y', B') > 0$ for all $(y', i)$
-	pairs.\footnote{The bound $\underline{B}(y)$ exists by compactness of
-		$\mathcal{Y}$ and continuity of value functions
-		(Proposition~\ref{prop:existence_uniqueness}).}
+	\paragraph{Step 2: Safe region (\(\Delta V>0\)).}
+	Define the safe set at income \(y\) by
+	\[
+		\underline{B}(y)\;\equiv\;\sup\Bigl\{b:\ \Delta V_i(y',b)>0\ \ \forall\,y'\in\Y,\ \forall\,i\in\{1,\theta\}\Bigr\}.
+	\]
+	For any \(B'<\underline{B}(y)\), \eqref{eq:prob_order_pos_correct} gives
+	\(P_\theta>P_1\) for all $y'$; hence
+	\[
+		\E_{y'|y}[P_1-P_\theta]<0
+		\ \Rightarrow\
+		(T_\theta q)(B',y)<(T_1 q)(B',y)
+		\ \Rightarrow\
+		q_\theta(B',y)<q_1(B',y).
+	\]
 
-	From (\ref{eq:prob_order_pos}), this implies $P_\theta(y', B') < P_1(y', B')$
-	for all $y' \in \mathcal{Y}$, and therefore:
-	\begin{equation}
-		\mathbb{E}_{y'|y}[P_1(y', B') - P_\theta(y', B')] > 0 \label{eq:safe_expectation}
-	\end{equation}
-	By (\ref{eq:operator_sign}), this yields $(T_\theta q)(B', y) > (T_1 q)(B', y)$. By Lemma~\ref{lem:operator_dominance}, the fixed points inherit this ordering: $q_\theta(B', y) > q_1(B', y)$.
+	\paragraph{Step 3: Risky region (\(\Delta V<0\)).}
+	Define the risky set at income \(y\) by
+	\[
+		\overline{B}(y)\;\equiv\;\inf\Bigl\{b:\ \Delta V_i(y',b)<0\ \ \forall\,y'\in\Y,\ \forall\,i\in\{1,\theta\}\Bigr\}.
+	\]
+	For any \(B'>\overline{B}(y)\), \eqref{eq:prob_order_neg_correct} yields
+	\(P_\theta<P_1\) for all $y'$; thus
+	\[
+		\E_{y'|y}[P_1-P_\theta]>0
+		\ \Rightarrow\
+		(T_\theta q)(B',y)>(T_1 q)(B',y)
+		\ \Rightarrow\
+		q_\theta(B',y)>q_1(B',y).
+	\]
 
-	\paragraph{Step 3: Risky Region Analysis} Conversely, for sufficiently large debt levels $B' > \overline{B}(y)$, where
-	$\overline{B}(y) \equiv \max_{i \in \{1,\theta\}} \sup\{B' : \Delta V_i(y', B')
-		\geq 0 \text{ for some } y' \in \mathcal{Y}\}$, the sovereign operates in a
-	risky region where $\Delta V_i(y', B') < 0$ for all $(y', i)$
-	pairs.\footnote{The bound $\overline{B}(y)$ exists by similar arguments,
-		ensuring that sufficiently high debt levels eventually become unsustainable for
-		all realizations.}
-
-	From (\ref{eq:prob_order_neg}), this implies $P_\theta(y', B') > P_1(y', B')$
-	for all $y' \in \mathcal{Y}$, and therefore:
-	\begin{equation}
-		\mathbb{E}_{y'|y}[P_1(y', B') - P_\theta(y', B')] < 0 \label{eq:risky_expectation}
-	\end{equation}
-	By (\ref{eq:operator_sign}), this yields $(T_\theta q)(B', y) < (T_1 q)(B', y)$, and therefore $q_\theta(B', y) < q_1(B', y)$.
-
-	\paragraph{Step 4: Pivot Point Existence} By Lemma~\ref{lem:operator_dominance}, fixed points inherit operator orderings.
-	From Steps 2-3, we have established:
-	\begin{align}
-		\lim_{B' \to -\infty} [q_\theta(B', y) - q_1(B', y)] & > 0 \label{eq:limit_safe}  \\
-		\lim_{B' \to +\infty} [q_\theta(B', y) - q_1(B', y)] & < 0 \label{eq:limit_risky}
-	\end{align}
-
-	Define $\Delta q(B', y) \equiv q_\theta(B', y) - q_1(B', y)$. Since $q_i(B',
-		y)$ are continuous in $B'$ (Proposition~\ref{prop:existence_uniqueness}),
-	$\Delta q(B', y)$ is continuous in $B'$ for fixed $y$.
-
-	From Steps 2-3, we have:
-	\begin{equation}
+	\paragraph{Step 4: Pivot existence.}
+	Let $\Delta q(B',y)\equiv q_\theta(B',y)-q_1(B',y)$. By continuity of $q_i$ in
+	$B'$ (Proposition~\ref{prop:existence_uniqueness}), $\Delta q(\cdot,y)$ is
+	continuous. Steps 2–3 imply
+	\[
+		\Delta q(B',y)<0\quad \text{for } B'<\underline{B}(y),
+		\qquad
+		\Delta q(B',y)>0\quad \text{for } B'>\overline{B}(y).
+	\]
+	By the Intermediate Value Theorem there exists at least one
+	$B^*(y)\in[\underline{B}(y),\overline{B}(y)]$ such that
+	\[
+		\Delta q(B^*(y),y)=0,
+	\]
+	and the local sign pattern is
+	\[
+		\mathrm{sign}\bigl(\Delta q(B',y)\bigr)
+		=
 		\begin{cases}
-			\Delta q(B', y) > 0 & \text{for } B' < \underline{B}(y) \text{ (safe region)} \\
-			\Delta q(B', y) < 0 & \text{for } B' > \overline{B}(y) \text{ (risky region)}
-		\end{cases} \label{eq:regional_ordering}
-	\end{equation}
-
-	By continuity of $\Delta q(\cdot, y)$ and the Intermediate Value Theorem, there
-	exists at least one $B^*(y) \in [\underline{B}(y), \overline{B}(y)]$ such that:
-	\begin{equation}
-		\Delta q(B^*(y), y) = 0 \label{eq:pivot_point}
-	\end{equation}
-
-	The pivot point $B^*(y)$ satisfies $q_\theta(B^*(y), y) = q_1(B^*(y), y)$,
-	establishing the price equivalence. The sign pattern follows from continuity:
-	\begin{equation}
-		\mathrm{sign}(\Delta q(B', y)) = \mathrm{sign}(B^*(y) - B') \label{eq:pivot_pattern}
-	\end{equation}
-	for $B'$ in neighborhoods of $B^*(y)$.\footnote{Parameter restrictions ensure $\underline{B}(y) < \overline{B}(y)$, creating non-trivial intermediate regions where the pivot occurs. These conditions are satisfied under our calibration with $\theta > 1$ and moderate default costs.}
+			-\!, & B'<B^*(y), \\
+			0,   & B'=B^*(y), \\
+			+\!, & B'>B^*(y).
+		\end{cases}
+	\]
+	This establishes the pivoting of $q_\theta$ around $q_1$ at $B^*(y)$.
 \end{proof}
 
 \subsection{Proof of Proposition~\ref{prop:monotonicity}}\label{app:proof_monotonicity}
 
 \begin{proof}
-	Define $F(B', y) \equiv q_\theta(B', y) - q_1(B', y)$ with $B^*(y)$ implicitly defined by $F(B^*(y), y) = 0$. To apply the Implicit Function Theorem, we verify the regularity conditions:
+	Define \(F(B',y)\equiv q_\theta(B',y)-q_1(B',y)\) and let \(B^*(y)\) be implicitly defined by \(F(B^*(y),y)=0\).
+	We verify the conditions of the Implicit Function Theorem at any \((B^*(y),y)\) where the crossing is interior.
 
-	\paragraph{Regularity Verification}
-	\textbf{(i) Smoothness:} By Proposition~\ref{prop:existence_uniqueness}, $q_i(B', y)$ are $C^1$ in both arguments since value functions are smooth solutions to the Bellman equation.\footnote{Smoothness follows from the contraction mapping theorem applied to differentiable operators, with compactness of state spaces ensuring uniform convergence of derivatives.}
+	\paragraph{Regularity.}
+	\textbf{(i) Smoothness.} Under the primitives assumed in the main text (CRRA utility, log-sum-exp smoothing in the sovereign’s choices, compact state grids, and the pricing operator with strictly positive payoff term), the pricing operator is \(C^1\) in \((B',y)\). Hence each fixed-point price function \(q_i(B',y)\) is \(C^1\) in both arguments.\footnote{This follows from differentiability of the Bellman/pricing operators and standard fixed-point differentiation arguments on compact spaces.}
 
-	\textbf{(ii) Non-degeneracy:} We must show $F_{B'}(B^*(y), y) \neq 0$. Since $\frac{\partial P_i(y',B')}{\partial B'} = \frac{1}{\theta_i\eta} L'\left(\frac{\Delta V_i}{\theta_i\eta}\right) \frac{\partial \Delta V_i}{\partial B'} < 0$ where $L'(z) = L(z)(1-L(z)) > 0$ and $\frac{\partial \Delta V_i}{\partial B'} < 0$ (higher debt reduces repayment value), we have:
+	\textbf{(ii) Non-degeneracy.} We show \(F_{B'}(B^*(y),y)\neq 0\) and in fact \(F_{B'}(B^*(y),y)>0\).
+	Recall the lenders’ perceived default probability
+	\[
+		P_i(y',B') \;=\; L\!\left(-\frac{\Delta V_i(y',B')}{\theta_i\eta}\right),
+		\quad L(z)=\frac{1}{1+e^{-z}},\quad
+		\Delta V_i \equiv V_i^R - V_i^D.
+	\]
+	Since \(L'>0\) and \(\partial\Delta V_i/\partial B' < 0\) (higher future debt
+	reduces the net value of repayment),
 	\begin{equation}
-		\left|\frac{\partial P_\theta}{\partial B'}\right| = \frac{1}{\theta\eta}\left|L'(\cdot)\frac{\partial \Delta V_\theta}{\partial B'}\right| < \frac{1}{\eta}\left|L'(\cdot)\frac{\partial \Delta V_1}{\partial B'}\right| = \left|\frac{\partial P_1}{\partial B'}\right| \label{eq:prob_sensitivity_order}
+		\frac{\partial P_i(y',B')}{\partial B'}
+		= -\frac{1}{\theta_i\eta}\,L'\!\left(-\frac{\Delta V_i}{\theta_i\eta}\right)\frac{\partial \Delta V_i}{\partial B'} \;>\; 0.
+		\label{eq:Pprime_pos}
 	\end{equation}
-	since $\theta > 1$ and the logistic derivative terms are comparable.
-
-	This probability sensitivity ordering transfers to price functions through the
-	pricing operator (\ref{eq:pricing_operator}), yielding:
+	Moreover, for \(\theta>1\),
 	\begin{equation}
-		\left|\frac{\partial q_\theta}{\partial B'}\right| < \left|\frac{\partial q_1}{\partial B'}\right| \label{eq:price_sensitivity_ordering}
-	\end{equation}
-
-	Since both derivatives are negative, we have $\frac{\partial q_\theta}{\partial
-			B'} > \frac{\partial q_1}{\partial B'}$, so:
-	\begin{equation}
-		F_{B'}(B^*, y) = \frac{\partial q_\theta}{\partial B'}\bigg|_{B^*(y)} - \frac{\partial q_1}{\partial B'}\bigg|_{B^*(y)} > 0 \label{eq:denominator_sign}
-	\end{equation}
-
-	With regularity established, the Implicit Function Theorem gives:
-	\begin{equation}
-		\frac{dB^*}{dy} = - \frac{F_y(B^*, y)}{F_{B'}(B^*, y)} \label{eq:ift_monotonicity}
+		0 \;<\; \frac{\partial P_\theta}{\partial B'} \;<\; \frac{\partial P_1}{\partial B'}.
+		\label{eq:Pprime_order}
 	\end{equation}
 
-	\paragraph{Sign Analysis} For the numerator, income persistence in the endowment process implies that
-	higher current income $y$ increases expected future income, making repayment
-	more attractive: $\frac{\partial \Delta V_i}{\partial y} > 0$. This translates
-	to $\frac{\partial q_i}{\partial y} > 0$ for both pricing functions.
-
-	However, the sensitivity to income differs across lender types. The rational
-	lender ($i=1$) responds more strongly to income changes than the pessimistic
-	lender ($i=\theta$) because the former correctly assesses the persistence of
-	income shocks.\footnote{Formally, this follows from the envelope theorem
-		applied to the value functions, where higher $\theta$ dampens the response to
-		state variables through the logistic probability weighting.} Therefore:
+	Write the pricing operator as
+	\[
+		(T_i q)(B',y)=\frac{1}{1+r}\,\E_{y'|y}\!\Big[(1-P_i(y',B'))\,R_i(y',B')\Big],\quad
+		R_i(y',B')\equiv \kappa+(1-\delta)\,\E_{B''|y',B'}[\,q_i(y',B'')\,].
+	\]
+	Since \(R_i>0\), the operator is pointwise \emph{decreasing} in \(P_i\). Hence,
+	as \(B'\) increases and \(P_i\) rises by \eqref{eq:Pprime_pos}, the price
+	\(q_i(B',y)\) strictly \emph{decreases} in \(B'\). Furthermore, because
+	\(\partial P_\theta/\partial B'\) is smaller than \(\partial P_1/\partial B'\)
+	by \eqref{eq:Pprime_order}, the magnitude of the induced price decline is
+	smaller under \(\theta\) than under \(1\). Therefore,
 	\begin{equation}
-		0 < \frac{\partial q_\theta}{\partial y} < \frac{\partial q_1}{\partial y} \implies F_y(B^*, y) = \frac{\partial q_\theta}{\partial y} - \frac{\partial q_1}{\partial y} < 0 \label{eq:income_derivative_sign}
+		\frac{\partial q_\theta}{\partial B'}(B^*(y),y)\;>\;\frac{\partial q_1}{\partial B'}(B^*(y),y),
+		\qquad\text{so}\qquad
+		F_{B'}(B^*(y),y)=\frac{\partial q_\theta}{\partial B'}-\frac{\partial q_1}{\partial B'}\;>\;0.
+		\label{eq:denominator_sign_correct}
 	\end{equation}
 
-	Combining (\ref{eq:denominator_sign}) and (\ref{eq:income_derivative_sign}) in
-	(\ref{eq:ift_monotonicity}):
+	\paragraph{Sign of the numerator.}
+	Income persistence implies that higher \(y\) raises expected future endowments,
+	increases \(\Delta V_i\), lowers \(P_i\), and thus raises prices: \(\partial
+	q_i/\partial y>0\). The sensitivity is dampened under pessimism because the
+	mapping \(\Delta V \mapsto P_\theta=L(-\Delta V/(\theta\eta))\) is flatter when
+	\(\theta>1\). Propagating through the pricing operator,
 	\begin{equation}
-		\frac{dB^*}{dy} = -\frac{F_y(B^*, y)}{F_{B'}(B^*, y)} = -\frac{(-)}{(+)} > 0 \label{eq:monotonicity_conclusion}
+		0 \;<\; \frac{\partial q_\theta}{\partial y}(B^*(y),y) \;<\; \frac{\partial q_1}{\partial y}(B^*(y),y),
+		\quad\Rightarrow\quad
+		F_y(B^*(y),y)=\frac{\partial q_\theta}{\partial y}-\frac{\partial q_1}{\partial y}\;<\;0.
+		\label{eq:income_derivative_sign_correct}
 	\end{equation}
+
+	\paragraph{Conclusion.}
+	By the Implicit Function Theorem,
+	\[
+		\frac{dB^*}{dy} \;=\; -\,\frac{F_y(B^*(y),y)}{F_{B'}(B^*(y),y)}
+		\;=\; -\,\frac{(-)}{(+)} \;>\; 0,
+	\]
+	so the pivot threshold \(B^*(y)\) is (strictly) increasing in \(y\).
 \end{proof}
 
 \subsection{Proof of Corollary~\ref{cor:spread_pivot}}\label{app:proof_spread_pivot}
 
 \begin{proof}
-	From the yield formula $y_i(B', y) = \frac{\kappa}{q_i(B', y)} - \delta$, the spread difference is:\footnote{Standard no-arbitrage pricing with coupon $\kappa$ and decay rate $\delta$.}
+	By definition of the spread,
+	\[
+		s_i(B',y)=\frac{\kappa}{q_i(B',y)}-\delta-r.
+	\]
+	Hence, for any \((B',y)\) with \(q_\theta(B',y),q_1(B',y)>0\),
 	\begin{align}
-		\Delta s(B', y) & \equiv s_\theta(B', y) - s_1(B', y) \nonumber                                                                 \\
-		                & = \kappa \left( \frac{1}{q_\theta(B', y)} - \frac{1}{q_1(B', y)} \right) \label{eq:spread_difference_compact} \\
-		                & = -\frac{\kappa \Delta q(B', y)}{q_\theta(B', y) q_1(B', y)} \label{eq:spread_price_relationship_compact}
+		\Delta s(B',y)
+		 & \equiv s_\theta(B',y)-s_1(B',y) \nonumber                                                                                            \\
+		 & =\Big(\tfrac{\kappa}{q_\theta(B',y)}-\delta-r\Big)-\Big(\tfrac{\kappa}{q_1(B',y)}-\delta-r\Big) \label{eq:spread_difference_compact} \\
+		 & =\kappa\!\left(\tfrac{1}{q_\theta(B',y)}-\tfrac{1}{q_1(B',y)}\right)
+		= -\,\frac{\kappa\,[\,q_\theta(B',y)-q_1(B',y)\,]}{q_\theta(B',y)\,q_1(B',y)} \nonumber                                                 \\
+		 & = -\,\frac{\kappa\,\Delta q(B',y)}{q_\theta(B',y)\,q_1(B',y)}. \label{eq:spread_price_relationship_compact}
 	\end{align}
-
-	Since $\kappa > 0$ and $q_i(B', y) > 0$, we have $\mathrm{sign}(\Delta s(B',
-		y)) = -\mathrm{sign}(\Delta q(B', y))$.
-
-	By Proposition~\ref{prop:pivot_concise}:
-	\begin{equation}
-		\Delta q(B', y) \left\{ \begin{array}{cl}
-			> 0 & \text{for } B' < B^*(y) \\
-			= 0 & \text{for } B' = B^*(y) \\
-			< 0 & \text{for } B' > B^*(y)
-		\end{array} \right. \implies \Delta s(B', y) \left\{ \begin{array}{cl}
-			< 0 & \text{for } B' < B^*(y) \\
-			= 0 & \text{for } B' = B^*(y) \\
-			> 0 & \text{for } B' > B^*(y)
-		\end{array} \right. \label{eq:spread_pivot_pattern}
-	\end{equation}
+	Because \(\kappa>0\) and \(q_i(B',y)>0\), it follows that
+	\(\operatorname{sign}(\Delta s(B',y))=-\operatorname{sign}(\Delta q(B',y))\).
+	By Proposition~\ref{prop:pivot_concise}, there exists \(B^*(y)\) such that
+	\[
+		\Delta q(B',y)\ \begin{cases}
+			< 0, & B' < B^*(y), \\
+			= 0, & B' = B^*(y), \\
+			> 0, & B' > B^*(y),
+		\end{cases}
+		\qquad\implies\qquad
+		\Delta s(B',y)\ \begin{cases}
+			> 0, & B' < B^*(y), \\
+			= 0, & B' = B^*(y), \\
+			< 0, & B' > B^*(y).
+		\end{cases}
+	\]
+	Moreover, if for some \((B',y)\) one price were zero (full default so the
+	payoff is null), then \(s_i(B',y)=+\infty\) and the sign relation holds
+	trivially in the limit.\footnote{From the pricing operator, \(
+		q_i(B',y)=\frac{1}{1+r}\,\E_{y'|y}\!\big[(1-P_i(y',B'))\big(\kappa+(1-\delta)\,\E_{B''|y',B'}[\,q_i(y',B'')\,]\big)\big],
+		\) so \(q_i\ge 0\) and \(q_i>0\) whenever the repayment probability is not
+		identically zero.}
 \end{proof}
 
 \subsection{Proof of Proposition~\ref{prop:threshold}}\label{app:proof_threshold}
 
 \begin{proof}
-	Let $B^*_{D,i}(y)$ satisfy $V^R_i(B^*_{D,i}(y), y) = V^D(y)$ for $i \in \{1, \theta\}$.\footnote{Existence and uniqueness follow from the monotonicity of $V^R_i(B,y)$ in $B$ and the envelope condition.}
+	For a fixed endowment level \(y\), define the repayment-default gap
+	\[
+		G_i(B;y)\;\equiv\;V^R_i(y,B)-V^D(y),\qquad i\in\{1,\theta\}.
+	\]
+	By standard arguments (concavity of \(u\), budget feasibility, and the fact
+	that higher current debt tightens the budget set), \(G_i(B;y)\) is strictly
+	decreasing in \(B\). The default threshold is the unique root \(B^*_{D,i}(y)\)
+	of \(G_i(\cdot\,;y)=0\).
 
-	\textbf{Step 1:} Assume $B^*_{D,\theta}(y) \leq B^*_{D,1}(y)$. Since $\frac{\partial V^R_1}{\partial B} < 0$:
+	Assume toward a contradiction that \(B^*_{D,\theta}(y)\le B^*_{D,1}(y)\).
+	Monotonicity of \(G_1(\cdot\,;y)\) then implies
 	\begin{equation}
-		V^R_1(B^*_{D,\theta}(y), y) \geq V^R_1(B^*_{D,1}(y), y) = V^D(y) \label{eq:value_ordering_assumption}
+		G_1\!\big(B^*_{D,\theta}(y);y\big)\;=\;V^R_1\!\big(y,B^*_{D,\theta}(y)\big)-V^D(y)
+		\;\ge\;V^R_1\!\big(y,B^*_{D,1}(y)\big)-V^D(y)\;=\;0.
+		\label{eq:baseline_nonnegative}
 	\end{equation}
 
-	\textbf{Step 2:} For debt levels $B' > B^*(y)$, Proposition~\ref{prop:pivot_concise} gives $q_\theta(B', y') > q_1(B', y')$. Since default thresholds lie in high-debt regions, the budget constraint yields:\footnote{The dominance follows from the envelope theorem applied to the continuation value.}
+	Next, invoke Proposition~\ref{prop:pivot_concise} (“price pivot”): for the
+	given \(y\) there exists \(B^*(y)\) such that
+	\[
+		q_\theta(y,B') \;\gtrless\; q_1(y,B')\quad\text{iff}\quad B' \;\gtrless\; B^*(y),
+	\]
+	with strict inequality on a set of \(B'\) of positive measure. Near the brink
+	of default (i.e., at \(B=B^*_{D,\theta}(y)\)), the sovereign’s optimal issuance
+	under repayment places (by the Euler condition and rollover incentives in
+	long-term debt models) essentially all probability mass on future debt levels
+	\(B'\ge B^*(y)\).\footnote{Intuitively, when current debt is high, the
+		sovereign rolls over rather than deleverages sharply; see, e.g., the rollover
+		logic in long-term debt environments. Formally, with small taste-shock
+		dispersion \(\rho\), the logit policy concentrates around the deterministic
+		maximizer, which lies weakly to the right of \(B^*(y)\) at high current \(B\).}
+	Hence, evaluating the choice-specific value
+	\[
+		W_i(y,B,B') \;=\; u\!\left(y-\kappa B + [B'-(1-\delta)B]\,q_i(y,B')\right)
+		\;+\; \beta\,\E_{y'|y}\big[V_i(y',B')\big],
+	\]
+	we have for all such relevant \(B'\ge B^*(y)\),
+	\[
+		q_\theta(y,B') \ge q_1(y,B') \quad\Longrightarrow\quad
+		u\!\big(\cdot\ \text{with }q_\theta\big)\; \ge\; u\!\big(\cdot\ \text{with }q_1\big),
+	\]
+	and (by monotonicity of the Bellman operator with respect to the price schedule
+	in those states) \(\E[V_\theta(y',B')]\ge \E[V_1(y',B')]\). Therefore
+	\(W_\theta(y,B,B')\ge W_1(y,B,B')\) on the support of the (repayment) choice
+	distribution, with strict inequality on a set of positive probability.
+
+	Aggregating with the log-sum-exp representation of the repayment value,
+	\[
+		V^R_i(y,B) \;=\; \rho \log\!\Big(\sum_{B'} \exp\{W_i(y,B,B')/\rho\}\Big),
+	\]
+	which is strictly increasing in each \(W_i(y,B,B')\), we obtain
 	\begin{equation}
-		V^R_\theta(B^*_{D,\theta}(y), y) > V^R_1(B^*_{D,\theta}(y), y) \label{eq:price_schedule_dominance}
+		V^R_\theta\!\big(y,B^*_{D,\theta}(y)\big) \;>\; V^R_1\!\big(y,B^*_{D,\theta}(y)\big).
+		\label{eq:VR_dominance}
 	\end{equation}
 
-	\textbf{Step 3:} Combining (\ref{eq:value_ordering_assumption}) and (\ref{eq:price_schedule_dominance}):
-	\begin{equation}
-		V^R_\theta(B^*_{D,\theta}(y), y) > V^D(y) \label{eq:contradiction_result}
-	\end{equation}
-
-	This contradicts $V^R_\theta(B^*_{D,\theta}(y), y) = V^D(y)$. Therefore:
-	$B^*_{D,\theta}(y) > B^*_{D,1}(y)$.
+	Combining \eqref{eq:baseline_nonnegative} and \eqref{eq:VR_dominance} yields
+	\[
+		V^R_\theta\!\big(y,B^*_{D,\theta}(y)\big) \;>\; V^D(y),
+	\]
+	which contradicts the definition of \(B^*_{D,\theta}(y)\) as the point where
+	\(V^R_\theta=V^D\). Hence the assumed ordering is false, and we must have
+	\[
+		B^*_{D,\theta}(y) \;>\; B^*_{D,1}(y).
+	\]
 \end{proof}
 
 \subsection{Proof of Proposition~\ref{prop:deleveraging}}\label{app:proof_deleveraging}
 
 \begin{proof}
-	\textbf{Setup:} For a sovereign in state $(y,B)$, let $B'_i(y, B)$ denote the optimal deterministic borrowing choice under price schedule $q_i$:
-	\begin{equation}
-		B'_i(y, B) \equiv \arg\max_{B' \in \mathcal{B}} W(y, B, B'; q_i) \label{eq:optimal_deterministic_choice}
+	\textbf{Setup.} Fix a state \((y,B)\). For each lender type \(i\in\{1,\theta\}\), let
+	\[
+		B'_i(y,B)\in\arg\max_{B'\in\mathcal{B}}\,W(y,B,B';q_i),
+		\quad
+		W(y,B,B';q_i)\equiv u\!\big(c_i(B')\big)+\beta\,\E_{y'|y}\!\big[V_i(y',B')\big],
+	\]
+	with
+	\[
+		c_i(B') \;=\; y-\kappa B+\big[B'-(1-\delta)B\big]\;q_i(y,B').
+	\]
+	By strict concavity of \(u\) and standard properties of the long-maturity debt
+	problem, \(B'_i(y,B)\) is unique.\footnote{The usual argument is that the
+		choice-specific value is strictly concave in \(B'\) because (i) \(u\) is
+		strictly concave and \(B'\mapsto c_i(B')\) is affine plus a (weakly) concave
+		price-feedback term, and (ii) the continuation term \(B'\mapsto
+		\E[V_i(y',B')]\) is concave by the concavity of the Bellman operator.} Define
+	the marginal objective
+	\[
+		g_i(B')\;\equiv\;\frac{\partial W(y,B,B';q_i)}{\partial B'}\;=\;u'\!\big(c_i(B')\big)\Big[q_i(y,B')+\big(B'-(1-\delta)B\big)q_{i,B'}(y,B')\Big]
+		\;+\;\beta\,\frac{\partial}{\partial B'}\E_{y'|y}[V_i(y',B')].
+	\]
+	FOC and uniqueness give
+	\begin{equation}\label{eq:foc_bi}
+		g_i\big(B'_i(y,B)\big)=0,\qquad i\in\{1,\theta\}.
 	\end{equation}
-	where $W(y, B, B'; q_i)$ is the choice-specific value function:
-	\begin{equation}
-		W(y, B, B'; q_i) = u(c(B')) + \beta \mathbb{E}_{y'|y}[V_i(y', B')] \label{eq:choice_specific_value}
+
+	\medskip
+	\textbf{Region of comparison.} By Proposition~\ref{prop:pivot_concise}, there exists \(B^*(y)\) such that
+	\begin{equation}\label{eq:price_pivot_region}
+		B'\ge B^*(y)\ \Longrightarrow\ q_\theta(y,B')<q_1(y,B'),\qquad
+		B'\le B^*(y)\ \Longrightarrow\ q_\theta(y,B')>q_1(y,B').
 	\end{equation}
-	with consumption $c(B') = y - \kappa B + [B' - (1-\delta)B]q_i(y, B')$.
-
-	The objective is to prove $B'_\theta(y,B) < B'_1(y,B)$, which implies that the
-	distribution $\Pr_\theta(B'|y,B)$ first-order stochastically dominates
-	$\Pr_1(B'|y,B)$ in the sense of lower debt choices.
-
-	\textbf{Step 1: First-Order Conditions.} The optimal choice $B'_i$ satisfies the first-order condition:
-	\begin{equation}
-		\frac{\partial W(y,B,B'; q_i)}{\partial B'}\bigg|_{B'=B'_i} = 0 \label{eq:foc_borrowing}
+	We prove the claim on the empirically relevant \emph{risky} side, i.e. for states with the baseline choice on (or to the right of) the pivot:
+	\begin{equation}\label{eq:baseline_risky_side}
+		B'_1(y,B)\ \ge\ B^*(y).
 	\end{equation}
+	(The complementary case is analogous and yields the weak inequality; see the remark at the end.)
 
-	Define the marginal value function:
-	\begin{equation}
-		g_i(B') \equiv \frac{\partial W(y,B,B'; q_i)}{\partial B'} \label{eq:marginal_value_definition}
-	\end{equation}
+	\medskip
+	\textbf{Two auxiliary inequalities.}
+	\begin{enumerate}
+		\item[(A1)] Since \(q_{i,B'}(y,B')\le 0\) in equilibrium and \(\big(B'-(1-\delta)B\big)\ge 0\) whenever the sovereign issues (rolls over) debt,\footnote{If net issuance is negative at the optimum, the conclusion below is even stronger because the self-impact term becomes favorable.}
+		      \begin{equation}\label{eq:dcdb_lower}
+			      q_i(y,B')+\big(B'-(1-\delta)B\big)q_{i,B'}(y,B')\ \le\ q_i(y,B').
+		      \end{equation}
 
-	By \eqref{eq:foc_borrowing}, we have $g_1(B'_1) = 0$ and $g_\theta(B'_\theta) =
-		0$.
+		\item[(A2)] (Continuation marginal ordering.) Increasing next-period debt lowers the continuation value and it does so \emph{more} under pessimistic lenders:
+		      \begin{equation}\label{eq:cont_deriv_order}
+			      \frac{\partial}{\partial B'}\,\E_{y'|y}[V_\theta(y',B')] \ \le\ \frac{\partial}{\partial B'}\,\E_{y'|y}[V_1(y',B')]
+			      \ \le\ 0,
+		      \end{equation}
+		      with strict inequality on a set of positive measure when \(B'\ge B^*(y)\).\footnote{This follows from monotonicity of the Bellman operator in the price schedule and Proposition~\ref{prop:pivot_concise}. For \(B'\ge B^*(y)\), pessimism implies lower prices \(q_\theta<q_1\) and (via the probability ordering embedded in the pricing operator) higher default likelihood, both of which tighten the next-period budget more when \(B'\) increases. Hence the marginal effect of \(B'\) on the continuation value is weakly more adverse under \(\theta\).}
+	\end{enumerate}
 
-	\textbf{Step 2: Marginal Value Decomposition.} Taking the derivative of \eqref{eq:choice_specific_value}:
+	\medskip
+	\textbf{Key evaluation at the baseline optimum.}
+	Evaluate \(g_\theta\) at \(B'_1\equiv B'_1(y,B)\). Using \eqref{eq:dcdb_lower} and \eqref{eq:cont_deriv_order},
 	\begin{align}
-		g_i(B') & = \frac{\partial}{\partial B'} \left[ u(c(B')) + \beta \mathbb{E}_{y'|y}[V_i(y', B')] \right] \nonumber                                              \\
-		        & = u'(c(B')) \frac{\partial c(B')}{\partial B'} + \beta \frac{\partial \mathbb{E}_{y'|y}[V_i(y', B')]}{\partial B'} \label{eq:marginal_decomposition}
+		g_\theta(B'_1)
+		 & = u'\!\big(c_\theta(B'_1)\big)\Big[q_\theta(y,B'_1)+\big(B'_1-(1-\delta)B\big)q_{\theta,B'}(y,B'_1)\Big]
+		+ \beta\,\frac{\partial}{\partial B'}\E[V_\theta(y',B')] \bigg|_{B'=B'_1} \nonumber                         \\
+		 & \le u'\!\big(c_\theta(B'_1)\big)\,q_\theta(y,B'_1)
+		+ \beta\,\frac{\partial}{\partial B'}\E[V_1(y',B')] \bigg|_{B'=B'_1}.
+		\label{eq:upper_gtheta}
 	\end{align}
-
-	The consumption derivative is:
-	\begin{equation}
-		\frac{\partial c(B')}{\partial B'} = q_i(y,B') + (B' - (1-\delta)B)\frac{\partial q_i(y,B')}{\partial B'} \label{eq:consumption_derivative}
+	By the baseline FOC \eqref{eq:foc_bi} for \(i=1\),
+	\[
+		0 \;=\; g_1(B'_1)
+		\;=\; u'\!\big(c_1(B'_1)\big)\Big[q_1+\big(B'_1-(1-\delta)B\big)q_{1,B'}\Big]
+		+ \beta\,\frac{\partial}{\partial B'}\E[V_1(y',B')] \bigg|_{B'=B'_1},
+	\]
+	and therefore, again using \(q_{1,B'}\le 0\),
+	\begin{equation}\label{eq:baseline_substitute}
+		\beta\,\frac{\partial}{\partial B'}\E[V_1(y',B')] \bigg|_{B'=B'_1}
+		\;=\; -\,u'\!\big(c_1(B'_1)\big)\Big[q_1+\big(B'_1-(1-\delta)B\big)q_{1,B'}\Big]
+		\;\le\; -\,u'\!\big(c_1(B'_1)\big)\,q_1(y,B'_1).
+	\end{equation}
+	Substituting \eqref{eq:baseline_substitute} into \eqref{eq:upper_gtheta} yields
+	\begin{equation}\label{eq:gtheta_bound}
+		g_\theta(B'_1)\;\le\; u'\!\big(c_\theta(B'_1)\big)\,q_\theta(y,B'_1)\;-\;u'\!\big(c_1(B'_1)\big)\,q_1(y,B'_1).
 	\end{equation}
 
-	Substituting \eqref{eq:consumption_derivative} into
-	\eqref{eq:marginal_decomposition}:
-	\begin{equation}
-		g_i(B') = u'(c_i(B')) \left[ q_i(y,B') + (B' - (1-\delta)B)\frac{\partial q_i}{\partial B'} \right] + \beta \frac{\partial \mathbb{E}_{y'|y}[V_i(y', B')]}{\partial B'} \label{eq:full_marginal_value}
-	\end{equation}
+	\medskip
+	\textbf{Sign of the bound on the risky side.}
+	Under \eqref{eq:baseline_risky_side}, \eqref{eq:price_pivot_region} gives \(q_\theta(y,B'_1)<q_1(y,B'_1)\).
+	Moreover, \(c_\theta(B'_1)<c_1(B'_1)\) because the only difference in the current-period budget is the price multiplying the same issuance \(\big[B'_1-(1-\delta)B\big]\), hence by concavity \(u'\big(c_\theta(B'_1)\big)>u'\big(c_1(B'_1)\big)\).
+	Combining these two facts in \eqref{eq:gtheta_bound} implies
+	\[
+		g_\theta(B'_1)\;<\;0.
+	\]
+	Since \(B'\mapsto W(y,B,B';q_\theta)\) is strictly concave, \(g_\theta\) is
+	strictly decreasing, so \(g_\theta(B'_1)<0\) forces the \(\theta\)-optimizer to
+	lie strictly to the left of \(B'_1\):
+	\[
+		B'_\theta(y,B)\;<\;B'_1(y,B).
+	\]
 
-	\textbf{Step 3: Gradient Comparison.} The key insight is to compare $g_\theta(B')$ and $g_1(B')$ for a given $B'$ in the relevant borrowing region.
+	\medskip
+	\textbf{From modes to distributions.}
+	Under the logit (Gumbel) regularization, the choice probabilities satisfy
+	\(\Pr_i(B'=b\mid y,B)\propto \exp\{W(y,B,b;q_i)/\eta\}\), which are unimodal and concentrate around the unique maximizer as \(\eta\downarrow 0\).
+	Because the mode shifts left from \(B'_1\) to \(B'_\theta\), the \(\theta\)-distribution first-order stochastically dominates (to the left) the baseline distribution, implying
+	\(\E_\theta[B'\mid y,B] < \E_1[B'\mid y,B]\).
 
-	For borrowing choices in the region $B' \leq B^*(y)$ (where most issuance
-	occurs), Proposition~\ref{prop:pivot_concise} establishes:
-	\begin{equation}
-		q_\theta(y, B') < q_1(y, B') \label{eq:price_ordering_delev}
-	\end{equation}
-
-	We decompose the marginal value comparison:
-	\begin{align}
-		g_\theta(B') - g_1(B') & = u'(c_\theta(B')) \left[ q_\theta(y,B') + (B' - (1-\delta)B)\frac{\partial q_\theta}{\partial B'} \right] \nonumber                                                                       \\
-		                       & \quad - u'(c_1(B')) \left[ q_1(y,B') + (B' - (1-\delta)B)\frac{\partial q_1}{\partial B'} \right] \nonumber                                                                                \\
-		                       & \quad + \beta \left[ \frac{\partial \mathbb{E}_{y'|y}[V_\theta(y', B')]}{\partial B'} - \frac{\partial \mathbb{E}_{y'|y}[V_1(y', B')]}{\partial B'} \right] \label{eq:gradient_difference}
-	\end{align}
-
-	The dominant term is the direct price effect. Since $q_\theta(y,B') <
-		q_1(y,B')$ and consumption levels are similar, the first-order effect implies:
-	\begin{equation}
-		g_\theta(B') < g_1(B') \text{ for } B' \leq B^*(y) \label{eq:gradient_ordering}
-	\end{equation}
-
-	\textbf{Step 4: Contradiction Argument.} Assume for contradiction that $B'_\theta \geq B'_1$.
-
-	Since $W_1(B')$ is strictly concave in $B'$ (due to the concavity of $u(\cdot)$
-	and the structure of the continuation value), the gradient $g_1(B')$ is
-	strictly decreasing. The assumption $B'_\theta \geq B'_1$ combined with
-	$g_1(B'_1) = 0$ implies:
-	\begin{equation}
-		g_1(B'_\theta) \leq g_1(B'_1) = 0 \label{eq:baseline_gradient_nonpositive}
-	\end{equation}
-
-	Combining \eqref{eq:gradient_ordering} and
-	\eqref{eq:baseline_gradient_nonpositive}:
-	\begin{equation}
-		g_\theta(B'_\theta) < g_1(B'_\theta) \leq 0 \label{eq:pessimistic_gradient_negative}
-	\end{equation}
-
-	But \eqref{eq:pessimistic_gradient_negative} contradicts the first-order
-	condition $g_\theta(B'_\theta) = 0$ that defines the optimum.
-
-	\textbf{Conclusion.} The contradiction establishes:
-	\begin{equation}
-		B'_\theta(y, B) < B'_1(y, B) \label{eq:deterministic_choice_ordering}
-	\end{equation}
-
-	Since the logit distribution $\Pr_i(B'|y,B)$ is unimodal and concentrated
-	around its mode $B'_i$ with dispersion parameter $\eta$,\footnote{The logit
-		distribution $\Pr_i(B' = b|y,B) \propto \exp(W(y,B,b;q_i)/\eta)$ has mean
-		approximately equal to the deterministic maximizer when $\eta$ is small, with
-		deviations of order $O(\eta)$.} the leftward shift of the mode from $B'_1$ to
-	$B'_\theta$ implies that the pessimistic distribution first-order
-	stochastically dominates the baseline distribution in terms of lower debt
-	choices:
-	\begin{equation}
-		\mathbb{E}_\theta[B'|y, B] < \mathbb{E}_1[B'|y, B] \label{eq:expected_deleveraging}
-	\end{equation}
+	\medskip
+	\textbf{Remark.} If \(B'_1(y,B)\le B^*(y)\) (safe side), the same argument yields the weak inequality \(B'_\theta(y,B)\le B'_1(y,B)\); strictness may fail when both prices and continuation effects coincide on the relevant grid.
 \end{proof}
 
 \subsection{Proof of Proposition~\ref{prop:welfare}}\label{app:proof_welfare}
-
 \begin{proof}
-	\textbf{Setup:} Let $V_i(y, B)$ be the unique fixed point of the Bellman operator $J_i$, i.e., $V_i = J_i(V_i)$, for $i \in \{1, \theta\}$. The proof proceeds by establishing pointwise operator dominance: for any candidate function $V_{in}$ in the relevant function space,\footnote{The function space is the set of bounded, continuous functions on the state space $\mathcal{Y} \times \mathcal{B}$, equipped with the supremum norm.} $J_\theta(V_{in}) \leq J_1(V_{in})$ with strict inequality for relevant states. By Lemma~\ref{lem:operator_dominance}, this ordering is preserved by the respective fixed points.
+	\textbf{Step 0: Bellman operators.}
+	Let $J_i$ be the Bellman operator for economy $i\in\{1,\theta\}$:
+	\[
+		(J_iV_{in})(y,B)
+		= \eta \,\ln\!\left(
+		\exp\!\left(\frac{V^D(y;V_{in})}{\eta}\right)
+		+ \exp\!\left(\frac{V^R(y,B;q_i,V_{in})}{\eta}\right)
+		\right),
+	\]
+	where $V^D$ and $V^R$ are the default and repayment values respectively. The
+	equilibrium value $V_i$ is the unique fixed point of $J_i$ on the space of
+	bounded continuous functions on $\mathcal{Y}\times\mathcal{B}$ with the sup
+	norm.
 
-	\textbf{Step 1: Bellman Operator Structure.} The Bellman operator is defined as:
-	\begin{equation}
-		(J_i V_{in})(y, B) = \eta \ln\left( \exp\left(\frac{V^D(y; V_{in})}{\eta}\right) + \exp\left(\frac{V^R(y, B; q_i, V_{in})}{\eta}\right) \right) \label{eq:bellman_operator}
-	\end{equation}
-	where the value functions are:
-	\begin{align}
-		V^D(y; V_{in})         & = u(y-d) + \beta \mathbb{E}_{y'|y}[\gamma V_{in}(y', B_0) + (1-\gamma) V^D(y')] \label{eq:default_value_def}   \\
-		V^R(y, B; q_i, V_{in}) & = \max_{B'} \left\{ u(c(B')) + \beta \mathbb{E}_{y'|y}[V_{in}(y', B')] \right\} \label{eq:repayment_value_def}
-	\end{align}
-	with consumption $c(B') = y - \kappa B + [B' - (1-\delta)B]q_i(y, B')$.
-
-	Since $f(a,b) = \ln(\exp(a) + \exp(b))$ is strictly increasing in both
-	arguments,\footnote{The log-sum-exponential function satisfies $\frac{\partial
-				f}{\partial a} = \frac{\exp(a)}{\exp(a) + \exp(b)} > 0$ and similarly for
-		$\frac{\partial f}{\partial b}$.} to show $(J_\theta V_{in})(y,B) < (J_1
-		V_{in})(y,B)$, it suffices to establish:
-	\begin{equation}
-		V^R(y, B; q_\theta, V_{in}) \leq V^R(y, B; q_1, V_{in}) \text{ with strict inequality for some } (y,B) \label{eq:sufficient_condition}
-	\end{equation}
-	since the default values are identical across economies.
-
-	\textbf{Step 2: Default Value Equality.} The value of default satisfies:
-	\begin{equation}
-		V^D(y; V_{in}) = u(h(y)) + \beta \left[ \gamma \mathbb{E}_{y'|y}[V_{in}(y', 0)] + (1-\gamma) \mathbb{E}_{y'|y}[V^D(y'; V_{in})] \right] \label{eq:default_value_recursive}
+	\medskip
+	\textbf{Step 1: Default value is identical across $i$.}
+	The default value
+	\[
+		V^D(y;V_{in}) = u(h(y)) + \beta\left[\gamma\,\E_{y'|y}V_{in}(y',B_0)
+		+ (1-\gamma)\,\E_{y'|y}V^D(y';V_{in})\right]
+	\]
+	is independent of the current price schedule $q_i$; hence
+	\begin{equation}\label{eq:default_equal}
+		V^D(y;V_{in}) \quad\text{is the same for $i=1$ and $i=\theta$}.
 	\end{equation}
 
-	Since (\ref{eq:default_value_recursive}) depends only on the utility of
-	consumption in default $u(h(y))$ and the continuation values from $V_{in}$, it
-	is independent of the current-period price schedule $q_i$.\footnote{The default
-		value is determined entirely by the autarky consumption level and the
-		stochastic re-entry process, which are exogenous to current lending
-		conditions.} Therefore:
-	\begin{equation}
-		V^D(y; q_\theta, V_{in}) = V^D(y; q_1, V_{in}) \text{ for all } y \label{eq:default_value_equality}
+	\medskip
+	\textbf{Step 2: Repayment value difference comes from prices.}
+	The repayment value is
+	\[
+		V^R(y,B;q_i,V_{in})
+		= \rho\,\ln\!\left(\sum_{B'\in\mathcal{B}} \exp\!\left(\frac{W(y,B,B';q_i,V_{in})}{\rho}\right)\right),
+	\]
+	with
+	\[
+		W(y,B,B';q_i,V_{in}) = u\!\big(c_i(B')\big) + \beta\,\E_{y'|y}V_{in}(y',B'),\quad
+		c_i(B') = y - \kappa B + [B'-(1-\delta)B]\,q_i(y,B').
+	\]
+	The continuation term $\E_{y'|y}V_{in}(y',B')$ is identical across $i$;
+	differences in $W$ come solely from $c_i(B')$.
+
+	\medskip
+	\textbf{Step 3: Price ordering on the risky side.}
+	From Proposition~\ref{prop:pivot_concise}, if $B'\ge B^*(y)$ then
+	\[
+		q_\theta(y,B') < q_1(y,B'),
+	\]
+	with strict inequality on a set of $B'$ with positive measure. If the baseline
+	optimal choice $B'_1(y,B)\ge B^*(y)$, the relevant $B'$ in the repayment
+	maximization fall in this region with positive probability.
+
+	\medskip
+	\textbf{Step 4: Consumption and utility ordering.}
+	For any such $B'$, $c_\theta(B') < c_1(B')$, hence by strict concavity of $u$,
+	\[
+		u(c_\theta(B')) < u(c_1(B')).
+	\]
+	Because the continuation term in $W$ is identical, we have
+	\begin{equation}\label{eq:choice_value_order}
+		W(y,B,B';q_\theta,V_{in}) < W(y,B,B';q_1,V_{in})
+		\quad\text{for such $B'$}.
 	\end{equation}
 
-	\textbf{Step 3: Repayment Value Comparison.} The value of repayment is defined as:
-	\begin{equation}
-		V^R(y, B; q_i, V_{in}) = \rho \ln\left( \sum_{B' \in \mathcal{B}} \exp\left(\frac{W(y, B, B'; q_i, V_{in})}{\rho}\right) \right) \label{eq:repayment_value}
-	\end{equation}
+	\medskip
+	\textbf{Step 5: Aggregating over choices.}
+	The log-sum-exp in $V^R$ is strictly increasing in each $W$.
+	From \eqref{eq:choice_value_order}, and because the inequality is strict for some $B'$ in the summation,
+	\[
+		V^R(y,B;q_\theta,V_{in}) < V^R(y,B;q_1,V_{in})
+	\]
+	whenever $B'_1(y,B)\ge B^*(y)$. On the safe side $B'_1(y,B)\le B^*(y)$, the
+	weak inequality holds.
 
-	where the choice-specific value function is:
-	\begin{equation}
-		W(y, B, B'; q_i, V_{in}) = u(c_i(B')) + \beta \mathbb{E}_{y'|y}[V_{in}(y',B')] \label{eq:choice_specific_value_welfare}
-	\end{equation}
-
-	with consumption $c_i(B') = y - \kappa B + [B' - (1-\delta)B]q_i(y,B')$.
-
-	\textbf{Step 4: Choice-Specific Value Ordering.} The continuation value term $\beta \mathbb{E}_{y'|y}[V_{in}(y',B')]$ is identical for both economies.\footnote{This follows because the continuation value depends only on the candidate function $V_{in}$ and future state
-		variables, not on current-period pricing.} The key difference lies in
-	consumption levels.
-
-	By Proposition~\ref{prop:pivot_concise}, for the relevant borrowing region
-	where most probability mass is concentrated:
-	\begin{equation}
-		q_\theta(y, B') \leq q_1(y, B') \text{ with strict inequality for some } B' \label{eq:price_ordering_welfare}
-	\end{equation}
-
-	This implies:
-	\begin{align}
-		c_\theta(B') & = y - \kappa B + [B' - (1-\delta)B]q_\theta(y,B') \nonumber                               \\
-		             & \leq y - \kappa B + [B' - (1-\delta)B]q_1(y,B') = c_1(B') \label{eq:consumption_ordering}
-	\end{align}
-
-	By the strict concavity of $u(\cdot)$ and \eqref{eq:consumption_ordering}:
-	\begin{equation}
-		u(c_\theta(B')) \leq u(c_1(B')) \text{ with strict inequality for some } B' \label{eq:utility_ordering}
-	\end{equation}
-
-	Therefore:
-	\begin{equation}
-		W(y, B, B'; q_\theta, V_{in}) \leq W(y, B, B'; q_1, V_{in}) \text{ with strict inequality for some } B' \label{eq:choice_value_ordering}
-	\end{equation}
-
-	\textbf{Step 5: Repayment Value Ordering.} From (\ref{eq:choice_value_ordering}) and the strict monotonicity of the log-sum-exp function:\footnote{Since the log-sum-exp function is strictly increasing in each argument, if choice-specific values are weakly dominated with strict inequality for some choices, the aggregated value is strictly dominated.}
-	\begin{equation}
-		V^R(y, B; q_\theta, V_{in}) < V^R(y, B; q_1, V_{in}) \text{ for states where price differences matter} \label{eq:repayment_value_ordering}
-	\end{equation}
-
-	\textbf{Step 6: Bellman Operator Dominance.} Combining (\ref{eq:default_value_equality}) and (\ref{eq:repayment_value_ordering}):
-	\begin{equation}
-		(J_\theta V_{in})(y, B) \leq (J_1 V_{in})(y, B) \text{ with strict inequality for relevant states} \label{eq:operator_dominance}
-	\end{equation}
-
-	Since the operators satisfy Blackwell's sufficient conditions for contraction
-	and (\ref{eq:operator_dominance}) holds for all $V_{in}$ in the function space,
-	Lemma~\ref{lem:operator_dominance} ensures that this ordering is preserved by
-	the unique fixed points:\footnote{The welfare loss is most pronounced for
-		intermediate debt levels where the sovereign is actively borrowing and price
-		differences materially affect consumption smoothing capabilities.}
-	\begin{equation}
-		V_\theta(y, B) \leq V_1(y, B) \text{ with strict inequality for relevant } (y,B) \label{eq:welfare_conclusion}
-	\end{equation}
+	\medskip
+	\textbf{Step 6: Bellman operator dominance and fixed points.}
+	By \eqref{eq:default_equal} and the above repayment ordering,
+	\[
+		(J_\theta V_{in})(y,B) \le (J_1V_{in})(y,B),
+	\]
+	strictly when $B'_1(y,B)\ge B^*(y)$. The operators $J_i$ are monotone and
+	contractions (Blackwell conditions), hence the pointwise ordering is preserved
+	at the unique fixed points:
+	\[
+		V_\theta(y,B) \le V_1(y,B),
+	\]
+	with strict inequality under the risky-side condition.
 
 \end{proof}
 
 \subsection{Proof of Proposition~\ref{prop:ramsey_welfare}}\label{app:proof_ramsey}
 
 \begin{proof}
-	The proof establishes that distorted bond prices create a fundamental constraint on the Ramsey planner's ability to achieve first-best allocations, generating welfare losses that cannot be eliminated through lump-sum transfers.
-
-	\textbf{Setup: The Ramsey Problem.} Define the constraint set under price schedule $q_i(\cdot)$:
+	\textbf{Step 1 (Intertemporal implementability).}
+	Multiply \eqref{eq:ramsey_rc} by $\beta^t$ and sum expectations over $t$, and use
+	$\beta(1+r)=1$ together with \eqref{eq:ramsey_pv}. Writing
+	$\Delta_t\equiv B_{t+1}-(1-\delta)B_t$, feasibility under schedule $q_i$ is
+	equivalent to the \emph{implementability constraint}
 	\begin{equation}
-		\mathcal{C}_i = \left\{ \{c_t, B_{t+1}, \tau_t\}_{t=0}^\infty : \begin{array}{l}
-			c_t + \kappa B_t + \tau_t = y_t + [B_{t+1} - (1-\delta)B_t]q_i(y_t, B_{t+1}) \text{ a.s.} \\
-			\mathbb{E}_0 \left[ \sum_{t=0}^\infty \frac{\tau_t}{\prod_{s=1}^t (1+r_s)} \right] = 0    \\
-			c_t \geq 0, \, B_{t+1} \in \mathcal{B} \text{ a.s.}
-		\end{array} \right\} \label{eq:constraint_set_full}
+		\label{eq:IIC}
+		\E_0\!\left[\sum_{t=0}^\infty \beta^t c_t\right]
+		\;=\;
+		\E_0\!\left[\sum_{t=0}^\infty \beta^t\bigl(y_t-\kappa B_t\bigr)\right]
+		\;+\;
+		\E_0\!\left[\sum_{t=0}^\infty \beta^t\,\Delta_t\,q_i(y_t,B_{t+1})\right],
 	\end{equation}
-	where $r_s = 1/\beta - 1$ is the planner's discount rate. The Ramsey welfare is:
+	together with $c_t\ge0$ and $B_{t+1}\in\mathcal B$. In particular, the transfer
+	sequence $\{\tau_t\}$ only enforces period constraints and has zero present value,
+	so it does not affect \eqref{eq:IIC}.
+
+	\smallskip
+	\textbf{Step 2 (Set inclusion of feasible $(c,B)$).}
+	Fix any feasible pair $(c,B)$ under $q_\theta$; it satisfies \eqref{eq:IIC} with $i=\theta$.
+	Consider the same $(c,B)$ under $q_1$. Subtracting the two versions of
+	\eqref{eq:IIC} gives the slack generated by switching from $q_\theta$ to $q_1$:
+
 	\begin{equation}
-		W^R_i = \sup_{\{c_t, B_{t+1}, \tau_t\} \in \mathcal{C}_i} \mathbb{E}_0 \left[ \sum_{t=0}^\infty \beta^t u(c_t) \right] \label{eq:ramsey_welfare_complete}
+		\label{eq:slack}
+		{\E_0\!\left[\sum_{t=0}^\infty \beta^t\,\Delta_t\,
+		\bigl(q_1(y_t,B_{t+1})-q_\theta(y_t,B_{t+1})\bigr)\right]}
+		\;=\;
+		\E_0\!\left[\sum_{t=0}^\infty \beta^t c_t\right]_{\!q_1}
+		-
+		\E_0\!\left[\sum_{t=0}^\infty \beta^t c_t\right]_{\!q_\theta}.
 	\end{equation}
+	By (A2), each summand in $\mathcal S(c,B)$ is nonnegative and strictly positive
+	with positive probability whenever $|\Delta_t|>0$. Hence
+	\[
+		\mathcal S(c,B)\ \ge\ 0 \quad\text{and}\quad \mathcal S(c,B)\ >\ 0
+		\ \text{ if } \Pr\!\bigl(|\Delta_t|>0\ \text{and}\ q_1\ne q_\theta\bigr)>0.
+	\]
+	Therefore, every $(c,B)$ feasible under $q_\theta$ is also feasible under
+	$q_1$, and generically with strictly more present-value resources available for
+	consumption under $q_1$.
 
-	\textbf{Step 1: Constraint Set Inclusion.} We first establish that $\mathcal{C}_\theta \subsetneq \mathcal{C}_1$.
+	\smallskip
+	\textbf{Step 3 (Value comparison).}
+	Let $(c^\theta,B^\theta)$ be Ramsey-optimal under $q_\theta$.
+	By Step 2, $(c^\theta,B^\theta)$ is feasible under $q_1$ and produces a weakly
+	larger right-hand side in \eqref{eq:IIC}; because $u$ is strictly increasing,
+	the planner can raise consumption at (at least) one date by an $\varepsilon>0$ while
+	keeping feasibility under $q_1$, yielding strictly higher utility. Hence
+	\[
+		W^R_1 \;\ge\; \E_0\!\left[\sum_{t=0}^\infty \beta^t u(c^\theta_t)\right],
+		\quad\text{with strict inequality under the strict part of (A2).}
+	\]
+	Taking the supremum over all feasible $(c,B)$ under $q_1$ gives
+	$W^R_1>W^R_\theta$.
 
-	\textit{Claim:} Any allocation $\{c_t, B_{t+1}, \tau_t\} \in \mathcal{C}_\theta$ also satisfies all constraints in $\mathcal{C}_1$ except possibly the resource constraint.
-
-	\textit{Proof of Claim:} Consider any $\{c_t, B_{t+1}, \tau_t\} \in \mathcal{C}_\theta$. Define modified transfers:
-	\begin{equation}
-		\hat{\tau}_t = \tau_t + [B_{t+1} - (1-\delta)B_t][q_1(y_t, B_{t+1}) - q_\theta(y_t, B_{t+1})] \label{eq:modified_transfers}
-	\end{equation}
-	Then $\{c_t, B_{t+1}, \hat{\tau}_t\} \in \mathcal{C}_1$ by construction. Since $q_\theta(y, B') \leq q_1(y, B')$ for all $(y, B')$ by Proposition~\ref{prop:pivot_concise}, we have $\hat{\tau}_t \geq \tau_t$ for all $t$. The present-value budget constraint is satisfied because:
-	\begin{align}
-		\mathbb{E}_0 \left[ \sum_{t=0}^\infty \frac{\hat{\tau}_t}{\prod_{s=1}^t (1+r_s)} \right] & = \mathbb{E}_0 \left[ \sum_{t=0}^\infty \frac{\tau_t}{\prod_{s=1}^t (1+r_s)} \right] + \mathbb{E}_0 \left[ \sum_{t=0}^\infty \frac{[B_{t+1} - (1-\delta)B_t][q_1(y_t, B_{t+1}) - q_\theta(y_t, B_{t+1})]}{\prod_{s=1}^t (1+r_s)} \right] \nonumber \\
-		                                                                                         & = 0 + \mathbb{E}_0 \left[ \sum_{t=0}^\infty \frac{[B_{t+1} - (1-\delta)B_t][q_1(y_t, B_{t+1}) - q_\theta(y_t, B_{t+1})]}{\prod_{s=1}^t (1+r_s)} \right] \label{eq:budget_constraint_check}
-	\end{align}
-	This equals zero if and only if the sovereign chooses the same debt path under both price schedules, which is generically false. Therefore, $\mathcal{C}_\theta \subsetneq \mathcal{C}_1$.
-
-	\textbf{Step 2: Optimality Conditions and Debt Choice Distortion.} The Ramsey planner's Lagrangian for problem under price schedule $q_i$ is:
-	\begin{align}
-		\mathcal{L}_i & = \mathbb{E}_0 \left[ \sum_{t=0}^\infty \beta^t u(c_t) \right] + \mathbb{E}_0 \left[ \sum_{t=0}^\infty \lambda_t \left( y_t + [B_{t+1} - (1-\delta)B_t]q_i(y_t, B_{t+1}) - c_t - \kappa B_t - \tau_t \right) \right] \nonumber \\
-		              & \quad + \mu \mathbb{E}_0 \left[ \sum_{t=0}^\infty \frac{\tau_t}{\prod_{s=1}^t (1+r_s)} \right] \label{eq:lagrangian}
-	\end{align}
-
-	The first-order conditions yield:
-	\begin{align}
-		\frac{\partial \mathcal{L}_i}{\partial c_t}     & = \beta^t u'(c_t) - \lambda_t = 0 \label{eq:foc_consumption}                                                                                                                      \\
-		\frac{\partial \mathcal{L}_i}{\partial \tau_t}  & = -\lambda_t + \frac{\mu}{\prod_{s=1}^t (1+r_s)} = 0 \label{eq:foc_transfers}                                                                                                     \\
-		\frac{\partial \mathcal{L}_i}{\partial B_{t+1}} & = \lambda_t \left[ q_i(y_t, B_{t+1}) + (B_{t+1} - (1-\delta)B_t) \frac{\partial q_i}{\partial B_{t+1}} \right] - \beta \mathbb{E}_t[\lambda_{t+1} \kappa] = 0 \label{eq:foc_debt}
-	\end{align}
-
-	From \eqref{eq:foc_consumption} and \eqref{eq:foc_transfers}, we get $\lambda_t
-		= \beta^t u'(c_t) = \frac{\mu}{\prod_{s=1}^t (1+r_s)}$, which implies $\mu =
-		u'(c_0)$ and the standard Euler equation $u'(c_t) = \beta(1+r) u'(c_{t+1})$.
-	Substituting into \eqref{eq:foc_debt}:
-	\begin{equation}
-		u'(c_t) \left[ q_i(y_t, B_{t+1}) + (B_{t+1} - (1-\delta)B_t) \frac{\partial q_i}{\partial B_{t+1}} \right] = \beta \mathbb{E}_t[u'(c_{t+1}) \kappa] \label{eq:debt_euler}
-	\end{equation}
-
-	Since $q_\theta(\cdot) \neq q_1(\cdot)$ and $\frac{\partial q_\theta}{\partial
-			B'} \neq \frac{\partial q_1}{\partial B'}$ in relevant regions by
-	Proposition~\ref{prop:pivot_concise}, the optimal debt choices differ:
-	$B^*_{t+1,\theta} \neq B^*_{t+1,1}$.
-
-	\textbf{Step 3: Transfer Payments Cannot Eliminate Distortion.} The key insight is that while transfers can achieve optimal consumption smoothing conditional on debt choices, they cannot correct the debt choice distortion.
-
-	Suppose, for contradiction, that there exist transfers such that the allocation
-	under $q_\theta$ achieves the same welfare as under $q_1$. This requires:
-	\begin{enumerate}
-		\item Optimal consumption smoothing: $u'(c_t) = \beta(1+r) u'(c_{t+1})$ for all $t$
-		\item Optimal debt choice: $B^*_{t+1,\theta} = B^*_{t+1,1}$ for all $t$
-	\end{enumerate}
-
-	But condition (2) contradicts \eqref{eq:debt_euler} when $q_\theta \neq q_1$.
-	The planner faces a binding constraint: it must choose debt according to the
-	distorted price $q_\theta$, which prevents achieving the first-best debt path
-	even with unlimited transfer authority.
-
-	\textbf{Step 4: Welfare Comparison.} Since $\mathcal{C}_\theta \subsetneq \mathcal{C}_1$ and the objective function is identical, we have:
-	\begin{equation}
-		W^R_\theta = \sup_{\mathcal{C}_\theta} \mathbb{E}_0 \left[ \sum_{t=0}^\infty \beta^t u(c_t) \right] < \sup_{\mathcal{C}_1} \mathbb{E}_0 \left[ \sum_{t=0}^\infty \beta^t u(c_t) \right] = W^R_1
-	\end{equation}
-
-	The strict inequality follows because: (i) the constraint sets are strictly
-	ordered, (ii) the optimal debt choice under $q_\theta$ is interior and differs
-	from that under $q_1$, and (iii) the objective function is strictly concave in
-	the relevant variables.
+	\smallskip
+	\textbf{Remark (Why transfers cannot undo the loss).}
+	Condition \eqref{eq:ramsey_pv} fixes the present value of transfers at zero, so
+	transfers only reshuffle consumption across dates without changing the
+	right-hand side of \eqref{eq:IIC}. The loss stems from the lower proceeds from
+	intertemporal trade encoded in $q_\theta$ whenever $\Delta_t$ and the
+	price dominance have the same sign; no transfer sequence can increase the
+	present value on the right-hand side of \eqref{eq:IIC}.
 \end{proof}
 
 \subsection{Proof of Proposition~\ref{prop:endogenous_beliefs}}\label{app:proof_endogenous_beliefs}
