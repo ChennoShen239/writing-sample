@@ -538,7 +538,7 @@ Recursive Markov Perfect Equilibrium, defined as follows:
 With the taste shock (logit aggregator) in place, the recursive equilibrium is
 well behaved.
 
-\begin{proposition}[Existence and Uniqueness of the Recursive MPE]
+\begin{proposition}
 	\label{prop:existence_uniqueness}
 	Let $\mathcal Y$ and $\mathcal B$ be compact, $u\in C^1$ strictly increasing and concave with $u'$ bounded on the feasible consumption set, and parameters satisfy
 	$\beta\in(0,1)$, $r>0$, $\delta\in[0,1)$, $\eta>0$, $\rho>0$, $\kappa>0$.
@@ -572,7 +572,7 @@ uniformly depress bond prices. Instead, it causes the price schedule to pivot
 relative to the rational benchmark, an effect distinct from the monotonic
 downward shift one might expect from a simple reputation downgrade.
 
-\begin{proposition}[Bond Price Pivoting]\label{prop:pivot_concise}
+\begin{proposition}\label{prop:pivot_concise}
 	Consider an economy with pessimistic lenders ($\theta > 1$) and a baseline economy with rational lenders ($\theta = 1$), both having a small true taste shock parameter $\eta > 0$. Let $q_1(B', y)$ and $q_\theta(B', y)$ be the respective equilibrium bond price functions. For a given endowment level $y$, there exists a debt threshold $B^*(y)$ such that the price difference $\Delta q(B', y) \equiv q_\theta(B', y) - q_1(B', y)$ satisfies:
 	\begin{itemize}
 		\item For levels of future debt $B' < B^*(y)$, $\Delta q(B', y) < 0$ (pessimistic
@@ -716,7 +716,7 @@ has the opposite effect on its day-to-day borrowing. The next proposition shows
 that a pessimistic market actively disciplines the sovereign into adopting a
 more conservative debt policy.
 
-\begin{proposition}[Conservative Borrowing Policy under Pessimism]
+\begin{proposition}
 	\label{prop:deleveraging}
 	Consider economies with pessimistic lenders ($\theta > 1$) and rational lenders ($\theta = 1$). Let $\mathbb{E}_i[B'|y, B]$ be the expected next-period debt level chosen by the sovereign in economy $i \in \{1, \theta\}$ from a given state $(y, B)$. For states $(y, B)$ where the sovereign chooses \textbf{not to default}, the borrowing policy is systematically more conservative under lender pessimism:
 	\begin{equation*}
@@ -753,7 +753,7 @@ these changes on the sovereign's well-being. The final proposition demonstrates
 that the consequences of lender pessimism translate directly into a welfare
 loss for the sovereign.
 
-\begin{proposition}[Welfare Loss under Lender Pessimism]
+\begin{proposition}
 	\label{prop:welfare}
 	Let $V_i(y,B)$ denote the sovereign's ex-ante equilibrium value function in economy $i\in\{1,\theta\}$, where $\theta>1$ indexes pessimistic lenders and $\theta=1$ rational lenders.
 	Suppose that for the given state $(y,B)$ the sovereign has market access and the baseline optimal choice $B'_1(y,B)$ lies on the ``risky'' side of the price pivot $B^*(y)$, i.e. $B'_1(y,B)\ge B^*(y)$.
@@ -1404,7 +1404,7 @@ and
 	\label{eq:ramsey_pv}
 \end{equation}
 
-\begin{proposition}[Ramsey welfare loss under pessimistic prices]
+\begin{proposition}
 	\label{prop:ramsey_welfare}
 	Let $r>-1$ satisfy $\beta(1+r)=1$. For $i\in\{1,\theta\}$ define the Ramsey value
 	\[
@@ -2500,9 +2500,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	Therefore, $\|\theta_t - \mathbb{E}[\Theta^*]\| = O(\lambda^t)$. Since
 	empirical persistence in sovereign spreads requires $\lambda \approx
 		0.95-0.99$, convergence is indeed slow with half-life approximately
-	$\ln(2)/\ln(1/\lambda) \approx 14-69$ periods.\footnote{These values are
-		consistent with empirical estimates of sovereign risk premium persistence in
-		emerging markets.}
+	$\ln(2)/\ln(1/\lambda) \approx 14-69$ periods.
 \end{proof}
 
 \subsection{Proof of Proposition~\ref{prop:optimal_communication}}\label{app:proof_optimal_communication}
