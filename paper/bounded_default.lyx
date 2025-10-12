@@ -1957,8 +1957,8 @@ nolink "false"
  This causes a discrete upward jump in the aggregate default probability,
  which in turn triggers a discontinuous drop in the bond price and therefore leads to a price drop.
  For all debt levels beyond this threshold,
- the market becomes systematically more pessimistic than the fully rational benchmark,
- as the extreme pessimism of the boundedly rational agents (who now see default as certain) weighs down the average price.
+ the market becomes systematically more PRO-biased than the fully rational benchmark,
+ as the strong PRO beliefs of the boundedly rational agents (who now see default as certain) weigh down the average price.
  This discontinuity can be interpreted as a crisis threshold in the credit market,
  driven entirely by the heterogeneity of lender expectations.
 \end_layout
@@ -2150,7 +2150,7 @@ lower
 
 ,
  effectively accepting the discontinuous price drop.
- In this pessimistic region,
+ In this PRO region,
  Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2181,7 +2181,7 @@ The existence of the critical threshold
  is central to the model's dynamics.
  A natural question that follows is how this crisis threshold behaves with respect to output.
  The next proposition establishes that the threshold is state-dependent,
- showing that the government can sustain a higher level of debt during economic expansions before triggering the pessimistic shift in lender beliefs.
+ showing that the government can sustain a higher level of debt during economic expansions before triggering the PRO shift in lender beliefs.
  This provides a clear theoretical channel for why crises are more likely to be triggered during recessions.
 \end_layout
 
@@ -2276,7 +2276,7 @@ nolink "false"
 \begin_inset Formula $y$
 \end_inset
 
- generates pessimism about the future,
+ generates PRO-constrained beliefs about the future,
  causing the crisis threshold to be triggered at much lower levels of debt.
 \end_layout
 
@@ -2823,7 +2823,7 @@ nolink "false"
  the price drops discontinuously.
  For all debt levels beyond this threshold,
  prices are strictly lower than in the rational benchmark,
- reflecting the market pessimism.
+ reflecting the PRO-induced repricing.
 \end_layout
 
 \begin_layout Standard
@@ -2844,7 +2844,7 @@ nolink "false"
  The drop for the low-income state (blue line) occurs at a higher asset level (less debt) than for the high-income state (orange line).
  This illustrates that the government can sustain more debt in good times before
 \emph on
- triggering the pessimistic shift
+ triggering the PRO shift
 \emph default
  in lender beliefs,
  consistent with the fact that crises are more likely to be ignited during recessions.
@@ -3048,7 +3048,7 @@ status collapsed
 
 \end_inset
 
-pessimistic
+PRO
 \begin_inset ERT
 status collapsed
 

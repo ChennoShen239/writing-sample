@@ -15,10 +15,10 @@ A Julia-based implementation exploring heuristic approaches to sovereign default
 - Numerical simulations and visualization
 - Results output with detailed figures
 
-### 2. Pessimism Default Model (Fortran + MATLAB)
-Located in `pessimism-default-model/`
+### 2. PRO Default Model (Fortran + MATLAB)
+Located in `pro-default-model/`
 
-A Fortran computational model with MATLAB analysis tools examining pessimism-based default behavior in sovereign debt markets.
+A Fortran computational model with MATLAB analysis tools examining policy‑randomness overestimation (PRO) in sovereign debt markets.
 
 **Key Features:**
 - High-performance Fortran numerical routines
@@ -34,7 +34,7 @@ A Fortran computational model with MATLAB analysis tools examining pessimism-bas
 ## Requirements
 
 - **Julia** - For heuristic default model
-- **Fortran compiler** - For pessimism default model
+- **Fortran compiler** - For PRO default model
 - **MATLAB** - For results processing and visualization
 - **LaTeX** - For document compilation
 
@@ -42,4 +42,4 @@ A Fortran computational model with MATLAB analysis tools examining pessimism-bas
 
 Each project can be run independently. See individual project README files for specific instructions:
 - [Heuristic Default Model README](heuristic-default-model/README.md)
-- [Pessimism Default Model README](pessimism-default-model/README.md)
+- [PRO Default Model README](pro-default-model/README.md)

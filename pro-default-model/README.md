@@ -1,6 +1,6 @@
-# Pessimism Default Model (Fortran + MATLAB)
+# PRO Default Model (Fortran + MATLAB)
 
-This project implements a pessimism-based sovereign default model using Fortran for computation and MATLAB for analysis.
+This project implements a sovereign default model with policy‑randomness overestimation (PRO), using Fortran for computation and MATLAB for analysis.
 
 ## Structure
 

@@ -106,12 +106,32 @@ a substitute.
 My main contribution embeds this behavioral friction into a quantitative
 sovereign default model and traces its macroeconomic consequences. Lenders with
 policy-randomness overestimation (PRO) fundamentally alter the borrowing
-environment by ``pivoting'' bond price schedules---making debt cheaper near
+environment by ``pivoting'' bond price schedules—making debt cheaper near
 default but more expensive in safe states. Rational sovereigns respond
 optimally by deleveraging yet paradoxically face higher average spreads. The
-model generates an ``illusion of financial stability'' where market volatility
+model generates an “illusion of financial stability” where market volatility
 falls despite rising risk premiums. This mechanism is complementary to
 reputational learning and can coexist in the data.
+
+\paragraph{Intuition: Deleveraging with Higher Spreads}
+The pivoted pricing created by PRO raises spreads precisely where governments
+typically borrow and lowers them only near the brink of default. In the normal
+borrowing region (future debt $B' < B^*(y)$), PRO magnifies perceived policy
+randomness, making lenders demand extra compensation; prices $q$ fall and
+spreads $s$ rise even when default risk is low. Near default ($B' > B^*(y)$),
+the same belief distortion makes lenders attach more weight to (perceived)
+repayment realizations, softening the “doom” and raising prices there. A
+rational sovereign facing this pivoted schedule borrows less (deleverages),
+which shifts the distribution of choices toward the safe region. Averaging over
+states, two forces determine the net effect: (i) a price‑wedge effect—under
+PRO, $1/q$ is higher than under rational pricing in the safe region—raises the
+average spread; (ii) a composition effect—deleveraging moves weight toward
+states with lower baseline spreads—works in the opposite direction. Because the
+sovereign spends most of its time in the safe region, the price‑wedge effect
+dominates, so average spreads rise even as debt falls. This intuition is
+formalized in the paper by a simple two‑term decomposition and local
+comparative statics that deliver $\partial q/\partial \theta < 0$ in the safe
+region and $\partial q/\partial \theta > 0$ near default.
 
 Three theoretical extensions deepen the analysis. First, even optimal Ramsey
 fiscal policy cannot eliminate welfare losses from PRO due to fundamental
@@ -273,17 +293,17 @@ government's character and future actions.
 	\centering
 	\begin{subfigure}[t]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{../../pessimism-default-model/results/inflation_arg.png}
+		\includegraphics[width=\linewidth]{../../pro-default-model/results/inflation_arg.png}
 		\subcaption{Official CPI (black) vs alternative measures (gray).}
 		\label{fig:argentina_inflation}
 	\end{subfigure}\hfill
 	\begin{subfigure}[t]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{../../pessimism-default-model/results/spread_arg.png}
+		\includegraphics[width=\linewidth]{../../pro-default-model/results/spread_arg.png}
 		\subcaption{EMBI+ spreads: Argentina (black) vs other LA (gray).}
 		\label{fig:argentina_spread}
 	\end{subfigure}
-	\caption{Argentina’s misreport of inflation and decoupling of spreads. Panel A shows the monthly official inflation rate announced by the Argentine government (black line) and alternative measures of inflation (gray lines). Panel B shows annualized emerging market bond index spreads for Argentina (black line) and other Latin American countries (gray lines). Vertical lines denote the first month in which the Argentine government underreported the inflation rate.}
+	\caption{Argentina’s misreport of inflation and decoupling of spreads. Panel A shows the monthly official inflation rate announced by the Argentine government (black line) and alternative measures of inflation (gray lines). Panel B shows annualized emerging market bond index spreads for Argentina (black line) and other Latin American countries (gray lines). Vertical lines denote the first month in which the Argentine government underreported the inflation rate. Sources: INDEC (official CPI); private and provincial estimates (\citep{Cavallo2013}); J.P. Morgan EMBI+.}
 	\label{fig:argentina_spreads}
 \end{figure}
 
@@ -500,7 +520,7 @@ decision-making process.\footnote{This probabilistic approach is also crucial
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.6\textwidth]{../../pessimism-default-model/results/comparison_figure_8.pdf}
+	\includegraphics[width=0.6\textwidth]{../../pro-default-model/results/comparison_figure_8.pdf}
 	\caption{Example of the Probabilistic Borrowing Policy, $\Pr\{B'|y,B\}$.}
 	\label{fig:borrowing_dist_example}
 	\parbox{\textwidth}{\small\textit{\textbf{Note:} }The figure illustrates the sovereign's borrowing choice as a probability distribution over possible next-period debt levels ($B'$), given a specific state $(y, B)$. The peak of the distribution represents the most likely choice.}
@@ -635,7 +655,7 @@ PRO is unfavorable. The average spread must therefore rise.
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../../pessimism-default-model/results/comparison_figure_5.pdf}
+	\includegraphics[width=0.8\textwidth]{../../pro-default-model/results/comparison_figure_5.pdf}
 	\caption{Pivoting Bond Price Schedules}\label{fig:pivoting_proof}
 
 	\parbox{\textwidth}{\small\textit{\textbf{Note:} }This figure illustrates the pivoting effect described in Proposition~\ref{prop:pivot_concise} for a normal output level. The bond price schedules for three different levels of PRO ($\theta = 1, 10, 100$) cross at the threshold $B^*(y)$ marked by the red dot. To the left of $B^*(y)$, PRO lenders impose a ``PRO premium,'' offering lower prices than rational lenders. To the right of $B^*(y)$, the ``softening of doom'' effect emerges, where PRO lenders offer paradoxically higher prices as they perceive less certainty about default in high-debt scenarios.}
@@ -657,7 +677,7 @@ The intuition for this result lies in the differential response of the two marke
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../../pessimism-default-model/results/comparison_figure_10.pdf}
+	\includegraphics[width=0.8\textwidth]{../../pro-default-model/results/comparison_figure_10.pdf}
 	\caption{Monotonicity of Debt Threshold $B^*(y)$}
 	\label{fig:monotonicity}
 	\parbox{\textwidth}{\small\textit{\textbf{Note:} }This figure illustrates Proposition~\ref{prop:monotonicity} by showing the debt threshold $B^*(y)$ as a function of the endowment level $y$. The threshold represents the debt level at which the baseline ($\theta=1$) and PRO ($\theta>1$) bond price schedules intersect.}
@@ -1154,14 +1174,14 @@ dominate their assessment of fundamentals.
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_7.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_7.pdf}
 		\caption{Debt-to-GDP Ratio Distribution}
 		\label{fig:dist_debt}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_6.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_6.pdf}
 		\caption{Credit Spread Distribution}
 		\label{fig:dist_spread}
 	\end{subfigure}
@@ -1203,28 +1223,28 @@ level for any given state (Proposition~\ref{prop:deleveraging}).
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_3.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_3.pdf}
 		\caption{Bond Price Schedule, $q(B',y)$}
 		\label{fig:pivot_price}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_4.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_4.pdf}
 		\caption{Credit Spread, $s(B',y)$}
 		\label{fig:pivot_spread}
 	\end{subfigure}
 	\vskip\baselineskip
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_2.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_2.pdf}
 		\caption{Default Probability, $P(d=1|B,y)$}
 		\label{fig:pivot_default}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_9.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_9.pdf}
 		\caption{Borrowing Policy, $\mathbb{E}[B'|B,y]$}
 		\label{fig:pivot_borrowing}
 	\end{subfigure}
@@ -1254,7 +1274,7 @@ propensity to fail.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.6\textwidth]{../../pessimism-default-model/results/comparison_figure_1.pdf}
+	\includegraphics[width=0.6\textwidth]{../../pro-default-model/results/comparison_figure_1.pdf}
 	\caption{Welfare Loss}
 	\label{fig:welfare_loss}
 	\parbox{\linewidth}{\small\textit{Note:} The figure plots the sovereign's ex-ante value function $V(y, B)$ for the baseline ($\theta=1$, dashed), medium PRO ($\theta=10$, dash-dot), and high PRO ($\theta=100$, solid) economies. The value function is uniformly lower under higher degrees of PRO, indicating a progressive welfare loss.}
@@ -1286,21 +1306,21 @@ than just current leverage.
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_11.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_11.pdf}
 		\caption{Debt}
 		\label{fig:debt_path}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_12.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_12.pdf}
 		\caption{Consumption}
 		\label{fig:consumption_path}
 	\end{subfigure}
 	\vskip\baselineskip
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_21.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_21.pdf}
 		\caption{Spread}
 		\label{fig:spread_path_delev}
 	\end{subfigure}
@@ -1331,28 +1351,28 @@ levels throughout adjustment.
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_13.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_13.pdf}
 		\caption{Output}
 		\label{fig:irf_trans_output}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_14.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_14.pdf}
 		\caption{Debt}
 		\label{fig:irf_trans_debt}
 	\end{subfigure}
 	\vskip\baselineskip
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_15.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_15.pdf}
 		\caption{Consumption}
 		\label{fig:irf_trans_consumption}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_16.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_16.pdf}
 		\caption{Spread}
 		\label{fig:irf_trans_spread}
 	\end{subfigure}
@@ -1376,28 +1396,28 @@ case, but high-PRO economies maintain higher levels throughout adjustment.
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_17.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_17.pdf}
 		\caption{Output}
 		\label{fig:irf_pers_output}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_18.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_18.pdf}
 		\caption{Debt}
 		\label{fig:irf_pers_debt}
 	\end{subfigure}
 	\vskip\baselineskip
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_19.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_19.pdf}
 		\caption{Consumption}
 		\label{fig:irf_pers_consumption}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{../../pessimism-default-model/results/comparison_figure_20.pdf}
+		\includegraphics[width=\textwidth]{../../pro-default-model/results/comparison_figure_20.pdf}
 		\caption{Spread}
 		\label{fig:irf_pers_spread}
 	\end{subfigure}
@@ -2912,6 +2932,47 @@ These numerical stability techniques, following the approach of
 \citep{MIHALACHEOREEF2024}, are essential for ensuring convergence of my value
 function iteration algorithm, particularly in the presence of the small taste
 shock parameters that characterize the discrete choice approach.
+
+\subsection{Pricing Operator: Contraction and Differentiability}\label{app:operator_analysis}
+\textbf{Setup.} For each \(\theta\ge 1\), define the bounded linear operator \(\mathcal T_\theta\) on the Banach space \(\mathcal X\) of bounded functions \(q:\,\Y\times\mathcal B\to\mathbb R\) (with sup norm) by
+\begin{equation}\label{eq:Ttheta_def}
+	(\mathcal T_\theta q)(y,B')\;\coloneqq\;\frac{1}{1+r}\,\E_{y'|y}\Big[(1-\tilde P_\theta(y',B'))\,(1-\delta)\,\E_{B''|y',B'}\big[q(y',B'')\big]\Big],
+\end{equation}
+and the bounded function
+\begin{equation}\label{eq:Ftheta_def}
+	F_\theta(y,B')\;\coloneqq\;\frac{1}{1+r}\,\E_{y'|y}\Big[(1-\tilde P_\theta(y',B'))\,\kappa\Big].
+\end{equation}
+The equilibrium price \(q_\theta\) solves the fixed point equation
+\begin{equation}\label{eq:q_fixed_point}
+	q_\theta\;=\;F_\theta\;+\;\mathcal T_\theta q_\theta\,.
+\end{equation}
+
+\textbf{Contraction and resolvent.} Since \(0\le 1-\tilde P_\theta\le 1\) and conditional expectation is a contraction under the sup norm,
+\begin{equation}\label{eq:Ttheta_norm}
+	\|\mathcal T_\theta q\|_\infty\;\le\;\frac{1}{1+r}\,(1-\delta)\,\|q\|_\infty\,\quad\Rightarrow\quad\|\mathcal T_\theta\|\;\le\;\beta(1-\delta)\,<1\,,\ \beta\coloneqq\tfrac{1}{1+r}.
+\end{equation}
+Thus \(\mathcal T_\theta\) is a contraction. By the Banach fixed-point theorem, \eqref{eq:q_fixed_point} has a unique solution and
+\((I-\mathcal T_\theta)^{-1}=\sum_{n\ge 0}\mathcal T_\theta^{\,n}\) exists as a bounded linear operator. Moreover, \(\mathcal T_\theta\) is \emph{positive} (maps nonnegative functions to nonnegative functions), hence the resolvent \((I-\mathcal T_\theta)^{-1}\) is positive.
+
+\textbf{Differentiability in \(\theta\).} Suppose \(\tilde P_\theta(y',B')\) is \(C^1\) in \(\theta\) and \(\sup_{y',B',\theta}\big|\partial_\theta \tilde P_\theta(y',B')\big|<\infty\). Then \(\theta\mapsto F_\theta\in\mathcal X\) and \(\theta\mapsto \mathcal T_\theta\in\mathcal L(\mathcal X)\) are \(C^1\) with
+\begin{align}
+	\partial_\theta F_\theta(y,B')               & = -\,\frac{1}{1+r}\,\E_{y'|y}\big[\,(\partial_\theta \tilde P_\theta(y',B'))\,\kappa\,\big], \label{eq:dF}                                   \\
+	(\partial_\theta \mathcal T_\theta)q\,(y,B') & = -\,\frac{1}{1+r}\,\E_{y'|y}\Big[\,(\partial_\theta \tilde P_\theta(y',B'))\,(1-\delta)\,\E_{B''|y',B'}[\,q(y',B'')\,] \Big]. \label{eq:dT}
+\end{align}
+Differentiate \eqref{eq:q_fixed_point} and use \((I-\mathcal T_\theta)^{-1}\) to obtain the unique derivative \(q_\theta^{(1)}\coloneqq\partial_\theta q_\theta\in\mathcal X\):
+\begin{equation}\label{eq:q_derivative_resolvent}
+	(I-\mathcal T_\theta)\,q_\theta^{(1)}\;=\;\partial_\theta F_\theta\;+\;(\partial_\theta \mathcal T_\theta)\,q_\theta\,.
+\end{equation}
+
+\textbf{Link to Equation~\eqref{eq:q_deriv_linear}.} Combining \eqref{eq:dF}–\eqref{eq:dT} and defining
+\begin{equation}\label{eq:Lambda_def}
+	\Lambda(y',B')\;\coloneqq\;\kappa\;+\;(1-\delta)\,\E_{B''|y',B'}\big[q_\theta(y',B'')\big],
+\end{equation}
+we can rewrite \eqref{eq:q_derivative_resolvent} pointwise as
+\begin{equation}\label{eq:q_deriv_linear_appendix}
+	\big(I-\mathcal T_\theta\big)\,\frac{\partial q_\theta(\cdot)}{\partial\theta}\,(y,B')\;=\;-\,\frac{1}{1+r}\,\E_{y'|y}\Big[\big(\partial_\theta \tilde P_\theta(y',B')\big)\,\Lambda(y',B')\Big],
+\end{equation}
+which coincides with Equation~\eqref{eq:q_deriv_linear} used in the main text. Existence and uniqueness of \(\partial_\theta q_\theta\) follow from invertibility of \(I-\mathcal T_\theta\).
 
 \bibliographystyle{aer}
 % This tells LaTeX to read the references from the file 'references.bib'

@@ -9,7 +9,7 @@ The repository currently contains two distinct research projects that are interm
    - Results: `Result/` folder with visualization plots (Figs/)
    - Language: Julia with plotting capabilities
 
-2. **Pessimism Default Model (Fortran + MATLAB Project)**:
+2. **PRO Default Model (Fortran + MATLAB Project)**:
    - Location: `/long_term/defaultModel/` folder
    - Source files: Fortran `.f90` files in `src/` folder
    - Processing: MATLAB `.m` files for results analysis
@@ -33,7 +33,7 @@ Create two separate project directories to clearly delineate the research:
 │   ├── scripts/
 │   │   └── [current scripts/ contents if Julia-related]
 │   └── README.md
-├── pessimism-default-model/     # Fortran + MATLAB project
+├── pro-default-model/     # Fortran + MATLAB project
 │   ├── src/
 │   │   └── [current long_term/defaultModel/src/ contents]
 │   ├── matlab/
@@ -50,8 +50,8 @@ Create two separate project directories to clearly delineate the research:
 ## Todo Items
 - [ ] Create `heuristic-default-model/` directory structure
 - [ ] Move Julia files to heuristic project directory
-- [ ] Create `pessimism-default-model/` directory structure  
-- [ ] Move Fortran/MATLAB files to pessimism project directory
+- [ ] Create `pro-default-model/` directory structure  
+- [ ] Move Fortran/MATLAB files to PRO project directory
 - [ ] Update file paths in source files to reflect new structure
 - [ ] Create individual README files for each project
 - [ ] Update main README.md to describe both projects
@@ -76,7 +76,7 @@ Successfully separated the two research projects into distinct directories:
    - Moved `scripts/` directory
    - Created project-specific README.md
 
-2. **Created pessimism-default-model/ directory**: Contains Fortran + MATLAB pessimism model
+2. **Created pro-default-model/ directory**: Contains Fortran + MATLAB PRO model
    - Copied Fortran source files from `long_term/defaultModel/src/` to `src/`
    - Copied MATLAB files to `matlab/` directory
    - Copied simulation results to `results/`
@@ -96,7 +96,7 @@ Successfully separated the two research projects into distinct directories:
 │   ├── results/
 │   ├── scripts/
 │   └── README.md
-├── pessimism-default-model/     # Fortran + MATLAB project
+├── pro-default-model/     # Fortran + MATLAB project
 │   ├── src/
 │   ├── matlab/
 │   ├── results/
@@ -111,9 +111,9 @@ Successfully merged two extension subsections into one cohesive subsection with 
 1. **Removed duplicate subsection headers**: Eliminated the first "Theoretical Extension" subsection header and integrated content under the unified "Theoretical Extensions" header.
 
 2. **Created coherent three-paragraph structure**:
-   - **Paragraph 1: Ramsey Planning Under Pessimism** - Welfare analysis showing persistent loss even under optimal fiscal policy
-   - **Paragraph 2: Endogenous Belief Formation** - Bayesian learning with negativity bias leading to persistent pessimism
-   - **Paragraph 3: Optimal Policy Communication** - Strategic transparency choice to mitigate pessimistic beliefs
+   - **Paragraph 1: Ramsey Planning Under PRO** - Welfare analysis showing persistent loss even under optimal fiscal policy
+   - **Paragraph 2: Endogenous Belief Formation** - Bayesian learning with negativity bias leading to persistent PRO beliefs
+   - **Paragraph 3: Optimal Policy Communication** - Strategic transparency choice to mitigate PRO-constrained beliefs
 
 3. **Added smooth transitions**: Included connecting sentences between paragraphs to create logical flow from welfare analysis → belief formation → communication strategy.
 
