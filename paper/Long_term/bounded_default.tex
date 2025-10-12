@@ -52,7 +52,7 @@
 
 
 % --- TITLE BLOCK ---
-\title{Default with Pessimism}
+\title{Default with Policy-Randomness Overestimation}
 \author{Chen Gao \thanks{National School of Development, Peking University. Email: \url{chengao0716@gmail.com}. I thank Bo Li and Changhua Yu for thorough guidance. I thank Michael Devereux for helpful advice.}}
 \date{{\color{red} [INCOMPLETE AND PRELIMINARY]} \\ \today}
 
@@ -62,10 +62,10 @@
 \maketitle
 
 \begin{abstract}
-	Why do emerging economies face persistently high borrowing costs despite moderate debt levels? I develop a quantitative sovereign default model where lenders systematically overestimate government policy randomness. This behavioral bias creates a ``pessimism wedge'' that pivots bond prices---making debt cheaper near default but more expensive in normal times. Rational sovereigns respond by deleveraging yet paradoxically face higher average spreads and an ``illusion of financial stability'' where volatility falls despite higher risk premiums. Theoretical extensions demonstrate that optimal fiscal policy cannot eliminate allocative distortions from pessimism, negative learning bias perpetuates pessimistic beliefs, and strategic communication can partially mitigate these effects. The framework provides a new behavioral foundation for understanding sovereign debt puzzles in emerging markets.
+	Why do emerging economies face persistently high borrowing costs despite moderate debt levels? I develop a quantitative sovereign default model where lenders systematically overestimate government policy randomness—policy-randomness overestimation (PRO). This behavioral bias creates a ``PRO wedge'' that pivots bond prices—making debt cheaper near default but more expensive in normal times. Rational sovereigns respond by deleveraging yet paradoxically face higher average spreads and an ``illusion of financial stability'' where volatility falls despite rising risk premiums. Theoretical extensions demonstrate that optimal fiscal policy cannot eliminate allocative distortions from PRO, learning frictions can perpetuate beliefs exhibiting PRO, and strategic communication can partially mitigate these effects. The framework provides a new behavioral foundation for understanding sovereign debt puzzles in emerging markets.
 \end{abstract}
 
-\noindent \textbf{Keywords:} Sovereign Default, Behavioral Macroeconomics, Lender Pessimism, Sovereign Spreads, Information Frictions, Argentina, Debt Management.
+\noindent \textbf{Keywords:} Sovereign Default, Behavioral Macroeconomics, Policy-Randomness Overestimation (PRO), Sovereign Spreads, Information Frictions, Argentina, Debt Management.
 
 \noindent \textbf{JEL Codes:} F34, E62, G15, D91.
 
@@ -94,28 +94,32 @@ pricing of this revealed information.
 This paper explores an alternative \textit{behavioral friction}. What if the
 problem is not what lenders do not know, but what they systematically believe
 to be true? Departing from rational learning, I posit that lenders suffer from
-pessimistic bias about government policy randomness. While sovereigns face
-unobserved ``taste shocks,'' lenders perceive these shocks as larger and more
-volatile than they truly are. This ``pessimism wedge'' distorts default risk
-assessment. Events like Argentina's misreporting signal not just strategic
-behavior but perceived policy unpredictability. Markets react to this perceived
-randomness increase beyond mere reputation downgrades.
+policy-randomness overestimation (PRO): a second-moment belief distortion about
+government policy randomness. While sovereigns face unobserved ``taste
+shocks,'' lenders perceive these shocks as larger and more volatile than they
+truly are. This ``PRO wedge'' distorts default risk assessment. Events like
+Argentina's misreporting signal not just strategic behavior but perceived
+policy unpredictability. Markets react to this perceived randomness increase
+alongside reputational downgrades, offering a complementary channel rather than
+a substitute.
 
 My main contribution embeds this behavioral friction into a quantitative
-sovereign default model and traces its macroeconomic consequences. Pessimistic
-lenders fundamentally alter the borrowing environment by ``pivoting'' bond
-price schedules---making debt cheaper near default but more expensive in safe
-states. Rational sovereigns respond optimally by deleveraging yet paradoxically
-face higher average spreads. The model generates an ``illusion of financial
-stability'' where market volatility falls despite rising risk premiums.
+sovereign default model and traces its macroeconomic consequences. Lenders with
+policy-randomness overestimation (PRO) fundamentally alter the borrowing
+environment by ``pivoting'' bond price schedules---making debt cheaper near
+default but more expensive in safe states. Rational sovereigns respond
+optimally by deleveraging yet paradoxically face higher average spreads. The
+model generates an ``illusion of financial stability'' where market volatility
+falls despite rising risk premiums. This mechanism is complementary to
+reputational learning and can coexist in the data.
 
 Three theoretical extensions deepen the analysis. First, even optimal Ramsey
-fiscal policy cannot eliminate welfare losses from pessimism due to fundamental
+fiscal policy cannot eliminate welfare losses from PRO due to fundamental
 allocative inefficiencies from distorted bond pricing. Second, endogenous
 belief formation through Bayesian learning with negativity bias shows how
-pessimistic beliefs persist and become entrenched. Third, optimal policy
+beliefs exhibiting PRO persist and become entrenched. Third, optimal policy
 communication demonstrates how governments can strategically choose
-transparency levels to partially mitigate lender pessimism. The analysis
+transparency levels to partially mitigate the effects of PRO. The analysis
 provides a new behavioral foundation for understanding sovereign risk and
 persistent debt challenges in emerging economies.
 
@@ -160,12 +164,14 @@ mixed-strategy equilibrium \citep{AmadorPhelan2023}.\footnote{Other important
 	reputation and debt repayment, \citep{EgorovFabinger2016} on reputational
 	effects in sovereign default, and \citep{DovisKirpalani2020,
 		DovisKirpalani2021} on reputation in policy design. A key distinction is that
-	while reputation models predict "bad types" default at lower debt thresholds,
-	my pessimism model counterintuitively predicts the opposite: pessimistic
-	lenders perceive higher default thresholds due to overestimated policy
-	randomness.} Yet even this learning-based view assumes lenders eventually
-converge to the truth, leaving unexplained why some sovereign risk premia
-appear systematically and persistently excessive.
+	while reputation models tend to predict (under canonical assumptions) that "bad
+	types" default at lower debt thresholds, the mechanism in this paper can imply
+	the opposite: PRO lenders may perceive higher default thresholds due to
+	overestimated policy randomness.} Yet even this learning-based view assumes
+lenders eventually converge to the truth, leaving unexplained why some
+sovereign risk premia appear systematically and persistently excessive.
+
+\noindent\textit{Comparative framing.} We view type‑based reputation and PRO as complementary rather than competing channels. Under canonical implementations, reputation models tend to generate monotonic price effects via type revelation, whereas the second‑moment distortion in this paper (PRO) implies a pivoting price schedule. This difference yields distinct, testable predictions for default thresholds, cross‑maturity responses to informational shocks, and spread–cycle comovement. Empirically, both mechanisms may coexist: reputation primarily shifts the perceived mean (type) while PRO inflates the perceived dispersion of policy choices.
 
 A third strand recognizes that market \textit{sentiment itself} can become a
 fundamental force. Beginning with \citep{CalvoLeidermanReinhart1996} and
@@ -180,8 +186,8 @@ implementations by \citep{GennaioliMartinRossi2014} and
 directly on this insight but asks a deeper question: what if markets
 systematically \emph{misperceive} the very nature of sovereign decision-making?
 
-Drawing from behavioral economics, I propose that lender pessimism---rooted in
-well-documented biases like \textit{heuristics and biases}
+Drawing from behavioral economics, I propose policy-randomness overestimation
+(PRO)---rooted in well-documented biases like \textit{heuristics and biases}
 \citep{TverskyKahneman1974}, \textit{prospect theory}
 \citep{KahnemanTversky1979}, and \textit{noise trading}
 \citep{DeLongEtAl1990}---can create persistent wedges between sovereign risk
@@ -197,28 +203,29 @@ leads them to price assets based on a "worst-case" scenario, generating an
 ambiguity premium that can explain high sovereign spreads
 \citep{PouzoPresno2016} and the puzzlingly poor pricing of contingent debt
 \citep{RochRoldan2023}. While these models distort the perceived distribution
-of \textit{macroeconomic shocks} across all states, my ``pessimism wedge''
+of \textit{macroeconomic shocks} across all states, my ``PRO wedge''
 specifically targets the perceived volatility of the sovereign's \textit{policy
 	choices}, creating a distinctive bond-price \textit{pivot}.\footnote{This pivot
-	effect contrasts sharply with both reputation and ambiguity aversion models.
-	While reputation models like \citep{AmadorPhelan2021} generate monotonic price
-	effects through type revelation and \citep{Fourakis2021} shows reputation loss
-	\textit{before} default through rapid debt accumulation, my model produces
-	non-monotonic price schedules where debt becomes cheaper near default but more
-	expensive in normal times. Similarly, ambiguity models like
-	\citep{RochRoldan2023} explain high spreads through a uniform distortion of
-	fundamental shocks, which also differs from the pivot mechanism.} And unlike
-\textit{diagnostic expectations} \citep{GennaioliShleifer2018,
-	BordaloEtAl2023}, which generate boom-bust cycles through time-varying news
-overreaction, my time-invariant bias produces persistent ``pessimism premia,''
-counterintuitive deleveraging, and the ``softening-of-doom'' effects that
-standard models cannot replicate.\footnote{The empirical predictions also
-	differ markedly from reputation models. While \citep{MorelliMoretti2023} find
-	that misreporting episodes increase spreads on all debt instruments, my model
-	predicts divergent effects across the debt distribution. Similarly, while
+	effect differs from both reputation and ambiguity aversion models. While
+	reputation models like \citep{AmadorPhelan2021} often generate monotonic price
+	effects through type revelation under standard implementations, and
+	\citep{Fourakis2021} shows reputation loss \textit{before} default through
+	rapid debt accumulation, the mechanism here can produce non-monotonic price
+	schedules where debt becomes cheaper near default but more expensive in normal
+	times. Similarly, ambiguity models like \citep{RochRoldan2023} explain high
+	spreads through a uniform distortion of fundamental shocks, which also differs
+	from the pivot mechanism.} And unlike \textit{diagnostic expectations}
+\citep{GennaioliShleifer2018, BordaloEtAl2023}, which generate boom-bust cycles
+through time-varying news overreaction, my time-invariant bias produces
+persistent ``PRO premia,'' counterintuitive deleveraging, and the
+``softening-of-doom'' effects that standard formulations may find challenging
+to replicate.\footnote{The empirical predictions may differ from those of
+	reputation models. While \citep{MorelliMoretti2023} find that misreporting
+	episodes increase spreads on all debt instruments, the mechanism here implies
+	divergent effects across the debt distribution. Similarly, while
 	\citep{AmadorPhelan2023} shows reputation effects strengthen with haircut size,
-	my pessimism model predicts that pessimism effects would weaken as larger
-	haircuts reduce the perceived randomness component.}
+	the mechanism here implies that PRO effects may weaken as larger haircuts
+	reduce the perceived randomness component.}
 
 % --- MOTIVATION ---------------------------------------------------------------
 \section{Motivation: Argentina's Inflation--Misreporting Episode}
@@ -229,14 +236,14 @@ The recent economic history of Argentina offers a powerful illustration of a
 core puzzle in international finance: why do emerging economies often face
 borrowing costs that seem disconnected from their macroeconomic fundamentals?
 \citep{TomzWright2013, MeyerReinhartTrebesch2022}. Standard models, even those
-incorporating reputational dynamics, struggle to fully account for the
-persistence and magnitude of the country-specific risk premium observed in
-cases like Argentina, where borrowing costs have often appeared divorced from
-traditional measures of repayment capacity \citep{MorelliMoretti2023}. This
-suggests the presence of frictions beyond those typically modeled.
-	{\color{red}[TODO: Add comparison table showing Argentina vs Brazil/Chile core
-			indicators (debt ratio, GDP growth, spreads) to more intuitively highlight the
-			``anomaly'' mentioned in reviewer feedback]}
+incorporating reputational dynamics, may not fully account for the persistence
+and magnitude of the country-specific risk premium observed in cases like
+Argentina, where borrowing costs have often appeared divorced from traditional
+measures of repayment capacity \citep{MorelliMoretti2023}. This suggests the
+presence of frictions beyond those typically modeled. {\color{red}[TODO: Add
+			comparison table showing Argentina vs Brazil/Chile core indicators (debt ratio,
+			GDP growth, spreads) to more intuitively highlight the ``anomaly'' mentioned in
+			reviewer feedback]}
 
 \paragraph{The Misreporting Episode}
 This puzzle was cast in sharp relief during the inflation misreporting episode
@@ -279,7 +286,7 @@ government's character and future actions.
 
 	[Figure placeholder: Argentina's EMBI+ spread data - TODO: Download from Bloomberg terminal]
 
-\paragraph{Limits of Reputational Models}
+\paragraph{Reputational Interpretation and Open Questions}
 The conventional explanation, rooted in reputational models
 \citep{ColeDowEnglish1995}, interprets this episode as a credible signal of a
 "bad type." In this view, advanced by \citep{MorelliMoretti2023}, lenders are
@@ -295,17 +302,20 @@ that the market's reaction was not just to what it learned about the
 sovereign's \textit{intent}, but to a perceived increase in its \textit{erratic
 	nature}.
 
-\paragraph{A Behavioral Hypothesis: Lender Pessimism}
+\noindent\textit{Comparative reading.} Both channels likely operated during the misreporting episode. A reputational interpretation views misreporting as a credible signal that raises spreads broadly by shifting the posterior over types. PRO instead emphasizes a perceived increase in policy unpredictability (dispersion), which implies a \emph{pivoting} price schedule: cheaper terms near the brink (due to a perceived chance of “irrational” repayment) but costlier terms in normal times. This yields two testable implications: (i) a heterogeneous cross‑maturity response—reputation effects tend to lift spreads across instruments, whereas PRO can produce divergent effects across the debt distribution; and (ii) a sustained elevation in average spreads even if volatility later declines (an “illusion of stability”), consistent with a persistent second‑moment bias. See Table~\ref{tab:prediction_comparison} for a summary of differences under canonical implementations.
+
+\paragraph{A Behavioral Hypothesis: Policy-Randomness Overestimation (PRO)}
 This paper explores an alternative, yet complementary, behavioral friction. I
 posit that the problem is not only what lenders do not know, but also what they
-systematically, and pessimistically, believe to be true. My core assumption is
-that lenders perceive the unobserved shocks driving sovereign policy choices to
-be larger and more volatile than they truly are. This ``pessimism wedge''
-distorts their assessment of default risk. From this perspective, an event like
-Argentina's misreporting is not just a signal of a sovereign's bad character (a
-strategic type), but is interpreted as evidence of its erratic nature (high
+systematically overestimate: the randomness in sovereign policy choices
+(policy-randomness overestimation, PRO). My core assumption is that lenders
+perceive the unobserved shocks driving sovereign policy choices to be larger
+and more volatile than they truly are. This ``PRO wedge'' distorts their
+assessment of default risk. From this perspective, an event like Argentina's
+misreporting is not just a signal of a sovereign's bad character (a strategic
+type), but is interpreted as evidence of its erratic nature (high
 unpredictability). The market reacts to a perceived increase in policy
-randomness, not just a downgrade of its reputation. This pessimism is not
+randomness, not just a downgrade of its reputation. This overestimation is not
 irrational in a colloquial sense; rather, it is a systematic bias in belief
 formation, consistent with behavioral findings on how agents process
 information under uncertainty \citep{TverskyKahneman1974, BarberisThaler2003}.
@@ -313,18 +323,17 @@ information under uncertainty \citep{TverskyKahneman1974, BarberisThaler2003}.
 \paragraph{A Bridge to the Model}
 Motivated by this reinterpretation of the Argentine case, I embed this
 behavioral friction into an otherwise standard quantitative sovereign default
-model. The subsequent sections will formalize the ``pessimism wedge'' and trace
-its consequences. I will show that the presence of pessimistic lenders
-fundamentally alters the sovereign's borrowing environment, creating a
-distinctive "pivoting" of the bond price schedule. This, in turn, generates a
-series of counterintuitive but empirically relevant outcomes: a rational
-sovereign deleverages yet faces higher average spreads, and market volatility
-can fall even as the underlying risk premium rises, creating an ``illusion of
-financial stability.'' This framework provides a new, behaviorally-grounded
-perspective on the persistent debt challenges that many emerging economies
-face.
+model. The subsequent sections will formalize the ``PRO wedge'' and trace its
+consequences. I will show that the presence of PRO lenders fundamentally alters
+the sovereign's borrowing environment, creating a distinctive "pivoting" of the
+bond price schedule. This, in turn, generates a series of counterintuitive but
+empirically relevant outcomes: a rational sovereign deleverages yet faces
+higher average spreads, and market volatility can fall even as the underlying
+risk premium rises, creating an ``illusion of financial stability.'' This
+framework provides a new, behaviorally-grounded perspective on the persistent
+debt challenges that many emerging economies face.
 
-\section{A Model of Pessimism}
+\section{A Model of Policy-Randomness Overestimation (PRO)}
 \label{sec:model}
 
 \subsection{Environment}
@@ -492,13 +501,14 @@ are competitive and risk-neutral, pricing bonds to make zero expected profit
 according to their beliefs. However, their beliefs are systematically biased in
 a specific way.
 
-\paragraph{Pessimism}The key assumption is that lenders perceive the sovereign to be more erratic or
+\paragraph{Policy-Randomness Overestimation (PRO)}The key assumption is that lenders perceive the sovereign to be more erratic or
 ``irrational'' than it truly is. They believe the sovereign's default decision
 is governed by a taste shock with a scale parameter $\tilde{\eta} = \theta
 	\cdot \eta$, where $\theta \ge 1$. The parameter $\theta$ captures the degree
-of \textit{lender pessimism, parameter uncertainty, or ambiguity aversion.
-}When $\theta > 1$, lenders act \textit{as if} the government's choices are
-more random than they actually are.
+of \textit{policy-randomness overestimation (PRO)}. This belief distortion is
+conceptually distinct from parameter uncertainty or ambiguity aversion. When
+$\theta > 1$, lenders act \textit{as if} the government's choices are more
+random than they actually are.
 
 Consequently, the lenders' perceived probability of default at a future state
 $(y', B')$, which I denote $\tilde{P}(y', B')$, is calculated using this
@@ -509,9 +519,8 @@ inflated shock parameter similar to \eqref{eq:prd_1}:
 \end{equation}
 
 \paragraph{Bond Price}The equilibrium bond price $q(y, B')$ must satisfy the no-arbitrage condition
-based on these pessimistic beliefs. The price equals the discounted expected
-payoff, where the probability of repayment is assessed using $\tilde{P}(y',
-	B')$:
+based on this overestimation. The price equals the discounted expected payoff,
+where the probability of repayment is assessed using $\tilde{P}(y', B')$:
 \begin{equation}
 	\begin{aligned}
 		q(y, B') & = \frac{1}{1+r} \mathbb{E}_{y'|y} \left[ \left(1 - \tilde{P}(y', B') \right) \left( \kappa + (1-\delta) \mathbb{E}_{B''|y',B'} \left[ q(y', B'') \right] \right) \right]            \\
@@ -519,7 +528,7 @@ payoff, where the probability of repayment is assessed using $\tilde{P}(y',
 	\end{aligned}
 	\label{eq:qprice_biased}
 \end{equation}
-It is important to note that the inner expectation, $\mathbb{E}_{B''|y',B'}$, is taken over the sovereign's \textit{true} borrowing policy, $\Pr\{B''|y', B'\}$, which is governed by the true shock parameter $\rho$. In this framework, lenders correctly understand the sovereign's borrowing behavior but misperceive its propensity to default. This mechanism endogenously generates a credit spread that contains a ``pessimism premium'', which reflects the lenders' biased beliefs about the sovereign's stability.
+It is important to note that the inner expectation, $\mathbb{E}_{B''|y',B'}$, is taken over the sovereign's \textit{true} borrowing policy, $\Pr\{B''|y', B'\}$, which is governed by the true shock parameter $\rho$. In this framework, lenders correctly understand the sovereign's borrowing behavior but misperceive its propensity to default. This mechanism endogenously generates a credit spread that contains a ``PRO premium'', which reflects the lenders' biased beliefs about the sovereign's stability.
 
 \subsection{Equilibrium}
 
@@ -561,24 +570,24 @@ well behaved.
 
 Before proceeding to the full quantitative analysis, this section theoretically
 unpacks the consequences of the behavioral wedge between the sovereign and its
-lenders. I demonstrate how lender pessimism ($\theta > 1$) systematically
-reshapes the equilibrium, beginning with its most direct impact on the bond
-price schedule and tracing the effects through to the sovereign's policies and
-ultimate welfare.
+lenders. I demonstrate how policy-randomness overestimation (PRO, $\theta > 1$)
+systematically reshapes the equilibrium, beginning with its most direct impact
+on the bond price schedule and tracing the effects through to the sovereign's
+policies and ultimate welfare.
 
-\paragraph{Bond Price Pivot}The first and most fundamental consequence of lender pessimism is on the price
-of debt. The following proposition establishes that pessimism does not
-uniformly depress bond prices. Instead, it causes the price schedule to pivot
-relative to the rational benchmark, an effect distinct from the monotonic
-downward shift one might expect from a simple reputation downgrade.
+\paragraph{Bond Price Pivot}The first and most fundamental consequence of PRO is on the price of debt. The
+following proposition establishes that PRO does not uniformly depress bond
+prices. Instead, it causes the price schedule to pivot relative to the rational
+benchmark, an effect distinct from the monotonic downward shift one might
+associate with reputational deterioration in canonical setups.
 
 \begin{proposition}\label{prop:pivot_concise}
-	Consider an economy with pessimistic lenders ($\theta > 1$) and a baseline economy with rational lenders ($\theta = 1$), both having a small true taste shock parameter $\eta > 0$. Let $q_1(B', y)$ and $q_\theta(B', y)$ be the respective equilibrium bond price functions. For a given endowment level $y$, there exists a debt threshold $B^*(y)$ such that the price difference $\Delta q(B', y) \equiv q_\theta(B', y) - q_1(B', y)$ satisfies:
+	Consider an economy with PRO lenders ($\theta > 1$) and a baseline economy with rational lenders ($\theta = 1$), both having a small true taste shock parameter $\eta > 0$. Let $q_1(B', y)$ and $q_\theta(B', y)$ be the respective equilibrium bond price functions. For a given endowment level $y$, there exists a debt threshold $B^*(y)$ such that the price difference $\Delta q(B', y) \equiv q_\theta(B', y) - q_1(B', y)$ satisfies:
 	\begin{itemize}
-		\item For levels of future debt $B' < B^*(y)$, $\Delta q(B', y) < 0$ (pessimistic
-		      lenders offer lower prices).
-		\item For levels of future debt $B' > B^*(y)$, $\Delta q(B', y) > 0$ (pessimistic
-		      lenders offer higher prices).
+		\item For levels of future debt $B' < B^*(y)$, $\Delta q(B', y) < 0$ (PRO lenders
+		      offer lower prices).
+		\item For levels of future debt $B' > B^*(y)$, $\Delta q(B', y) > 0$ (PRO lenders
+		      offer higher prices).
 	\end{itemize}
 \end{proposition}
 
@@ -588,33 +597,32 @@ downward shift one might expect from a simple reputation downgrade.
 
 The formal proof in Appendix~\ref{app:proof_pivot_concise} proceeds by
 comparing default probabilities under the two belief systems. The key insight
-is that pessimistic lenders overestimate default risk in low-debt scenarios
-(where fundamentals suggest safety) but underestimate the certainty of default
-in high-debt scenarios (where their emphasis on randomness creates perceived
+is that PRO lenders overestimate default risk in low-debt scenarios (where
+fundamentals suggest safety) but underestimate the certainty of default in
+high-debt scenarios (where their emphasis on randomness creates perceived
 escape possibilities). The pivoting occurs because these two opposing effects
 exactly balance at the threshold $B^*(y)$.
 
 Figure~\ref{fig:pivoting_proof} provides a graphical illustration of this
 pivoting effect, showing how the bond price schedules for different levels of
-lender pessimism cross at the threshold $B^*(y)$. The economic intuition behind
-this pivoting effect is twofold. For low debt levels ($B<B^*(y)$), where a
-rational lender sees default as a remote possibility, a pessimistic lender
-prices in a non-negligible risk of an ``out-of-the-blue'' default driven by the
-perceived high variance of taste shocks. This results in a ``pessimism
-premium'' that lowers the bond price. Conversely, for high debt levels
-($B>B^*(y)$), where a rational lender sees default as a near certainty based on
-fundamentals, the pessimistic lender's view, which emphasizes randomness, makes
-them less certain of this outcome. Their belief allows for a higher chance of
-an ``irrational'' repayment, which paradoxically supports a higher bond price.
-The threshold $B^*(y)$ marks the debt level where these two competing effects
-exactly offset each other.
+PRO levels cross at the threshold $B^*(y)$. The economic intuition behind this
+pivoting effect is twofold. For low debt levels ($B<B^*(y)$), where a rational
+lender sees default as a remote possibility, a PRO lender prices in a
+non-negligible risk of an ``out-of-the-blue'' default driven by the perceived
+high variance of taste shocks. This results in a ``PRO premium'' that lowers
+the bond price. Conversely, for high debt levels ($B>B^*(y)$), where a rational
+lender sees default as a near certainty based on fundamentals, the PRO lender's
+view, which emphasizes randomness, makes them less certain of this outcome.
+Their belief allows for a higher chance of an ``irrational'' repayment, which
+paradoxically supports a higher bond price. The threshold $B^*(y)$ marks the
+debt level where these two competing effects exactly offset each other.
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{../../pessimism-default-model/results/comparison_figure_5.pdf}
 	\caption{Pivoting Bond Price Schedules}\label{fig:pivoting_proof}
 
-	\parbox{\textwidth}{\small\textit{\textbf{Note:} }This figure illustrates the pivoting effect described in Proposition~\ref{prop:pivot_concise} for a normal output level. The bond price schedules for three different levels of lender pessimism ($\theta = 1, 10, 100$) cross at the threshold $B^*(y)$ marked by the red dot. To the left of $B^*(y)$, pessimistic lenders impose a ``pessimism premium,'' offering lower prices than rational lenders. To the right of $B^*(y)$, the ``softening of doom'' effect emerges, where pessimistic lenders offer paradoxically higher prices as they perceive less certainty about default in high-debt scenarios.}
+	\parbox{\textwidth}{\small\textit{\textbf{Note:} }This figure illustrates the pivoting effect described in Proposition~\ref{prop:pivot_concise} for a normal output level. The bond price schedules for three different levels of PRO ($\theta = 1, 10, 100$) cross at the threshold $B^*(y)$ marked by the red dot. To the left of $B^*(y)$, PRO lenders impose a ``PRO premium,'' offering lower prices than rational lenders. To the right of $B^*(y)$, the ``softening of doom'' effect emerges, where PRO lenders offer paradoxically higher prices as they perceive less certainty about default in high-debt scenarios.}
 \end{figure}
 
 \paragraph{Pivot Threshold}This pivot point is not static; it responds to the sovereign's economic
@@ -623,20 +631,20 @@ the pivot point shifts to higher levels of debt.
 
 \begin{proposition}
 	\label{prop:monotonicity}
-	The debt threshold $B^*(y)$ defined in Proposition~\ref{prop:pivot_concise}, at which the baseline and pessimistic price schedules cross, is monotonically increasing in the endowment level $y$. That is, $\frac{dB^*(y)}{dy} > 0$. Figure~\ref{fig:monotonicity} illustrates this monotonic relationship.
+	The debt threshold $B^*(y)$ defined in Proposition~\ref{prop:pivot_concise}, at which the baseline and PRO price schedules cross, is monotonically increasing in the endowment level $y$. That is, $\frac{dB^*(y)}{dy} > 0$. Figure~\ref{fig:monotonicity} illustrates this monotonic relationship.
 \end{proposition}
 
 \begin{proof}
 	See Appendix~\ref{app:proof_monotonicity}.
 \end{proof}
-The intuition for this result lies in the differential response of the two markets to good news. A higher income level $y$ improves the sovereign's repayment capacity, shifting both bond price schedules outward. However, the rational market ($q_1$) is more responsive to this positive signal about fundamentals than the pessimistic market ($q_\theta$), whose pricing remains partially anchored by its skeptical prior about the sovereign's stability. Because the rational price schedule shifts more strongly to the right, its intersection point with the pessimistic schedule, $B^*(y)$, must also shift to the right. In other words, a stronger economy can sustain more debt before the pessimism premium in the low debt level is outweighed by the ``softening of doom'' effect in the high debt level.
+The intuition for this result lies in the differential response of the two markets to good news. A higher income level $y$ improves the sovereign's repayment capacity, shifting both bond price schedules outward. However, the rational market ($q_1$) is more responsive to this positive signal about fundamentals than the PRO market ($q_\theta$), whose pricing remains partially anchored by its skeptical prior about the sovereign's stability. Because the rational price schedule shifts more strongly to the right, its intersection point with the PRO schedule, $B^*(y)$, must also shift to the right. In other words, a stronger economy can sustain more debt before the PRO premium in the low debt region is outweighed by the ``softening of doom'' effect in the high debt region.
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{../../pessimism-default-model/results/comparison_figure_10.pdf}
 	\caption{Monotonicity of Debt Threshold $B^*(y)$}
 	\label{fig:monotonicity}
-	\parbox{\textwidth}{\small\textit{\textbf{Note:} }This figure illustrates Proposition~\ref{prop:monotonicity} by showing the debt threshold $B^*(y)$ as a function of the endowment level $y$. The threshold represents the debt level at which the baseline ($\theta=1$) and pessimistic ($\theta>1$) bond price schedules intersect.}
+	\parbox{\textwidth}{\small\textit{\textbf{Note:} }This figure illustrates Proposition~\ref{prop:monotonicity} by showing the debt threshold $B^*(y)$ as a function of the endowment level $y$. The threshold represents the debt level at which the baseline ($\theta=1$) and PRO ($\theta>1$) bond price schedules intersect.}
 \end{figure}
 
 \paragraph{Spread}
@@ -651,7 +659,7 @@ This clear, inverse relationship allows the results from Proposition~\ref{prop:p
 
 \begin{corollary}
 	\label{cor:spread_pivot}
-	Let $s_1(B', y)$ and $s_\theta(B', y)$ be the equilibrium credit spreads in the baseline ($\theta=1$) and pessimistic ($\theta>1$) economies, respectively. The spread difference $\Delta s(B', y) \equiv s_\theta(B', y) - s_1(B', y)$ satisfies the opposite relationship to the price difference at the same threshold $B^*(y)$ defined in Proposition~\ref{prop:pivot_concise}:
+	Let $s_1(B', y)$ and $s_\theta(B', y)$ be the equilibrium credit spreads in the baseline ($\theta=1$) and PRO ($\theta>1$) economies, respectively. The spread difference $\Delta s(B', y) \equiv s_\theta(B', y) - s_1(B', y)$ satisfies the opposite relationship to the price difference at the same threshold $B^*(y)$ defined in Proposition~\ref{prop:pivot_concise}:
 	\begin{itemize}
 		\item For low levels of future debt $B' < B^*(y)$, $\Delta s(B', y) > 0$.
 		\item For high levels of future debt $B' > B^*(y)$, $\Delta s(B', y) < 0$.
@@ -665,30 +673,30 @@ This clear, inverse relationship allows the results from Proposition~\ref{prop:p
 \paragraph{Default Threshold}
 How does a rational sovereign react to these altered market conditions? The
 first area where its behavior changes is at the edge of default. The following
-proposition establishes that lender pessimism paradoxically makes the sovereign
-more resilient to debt, pushing its default threshold to a higher
+proposition establishes that PRO paradoxically makes the sovereign more
+resilient to debt, pushing its default threshold to a higher
 level.\footnote{This result differs fundamentally from the negative duration
 	effect in \citep{ChatterjeeEyigungor2012}. In their model, longer maturity
 	reduces the sovereign's incentive to default because it dilutes existing
 	bondholders, creating a debt dilution channel that works through the
 	\emph{quantity} of debt issued. In contrast, our mechanism operates through
-	lender \emph{beliefs} about the sovereign's decision-making process:
-	pessimistic lenders offer better terms in high-debt states due to their
-	perception of greater randomness in sovereign choices, making continued market
-	access more valuable and pushing out the default threshold through a behavioral
-	pricing channel rather than a debt structure effect.} This contrasts with
-standard reputation models, where a sovereign with a worse reputation (i.e., a
-higher perceived probability of being a 'strategic' type) would typically be
-expected to default at a lower debt level.
+	lender \emph{beliefs} about the sovereign's decision-making process: PRO
+	lenders offer better terms in high-debt states due to their perception of
+	greater randomness in sovereign choices, making continued market access more
+	valuable and pushing out the default threshold through a behavioral pricing
+	channel rather than a debt structure effect.} This contrasts with standard
+reputation models, where a sovereign with a worse reputation (i.e., a higher
+perceived probability of being a 'strategic' type) would typically be expected
+to default at a lower debt level.
 
 \begin{proposition}
 	\label{prop:threshold}
-	Consider economies with pessimistic lenders ($\theta > 1$) and rational lenders ($\theta = 1$). Let $B^*_{D,i}(y)$ be the sovereign's default threshold for economy $i \in \{1, \theta\}$, defined as the debt level $B$ that satisfies the indifference condition:
+	Consider economies with PRO lenders ($\theta > 1$) and rational lenders ($\theta = 1$). Let $B^*_{D,i}(y)$ be the sovereign's default threshold for economy $i \in \{1, \theta\}$, defined as the debt level $B$ that satisfies the indifference condition:
 	\begin{equation}
 		V^R_i(B^*_{D,i}(y),y) = V^D(y) \quad \text{for } i \in \{1, \theta\}.
 		\label{eq:default_threshold_definition}
 	\end{equation}
-	For any given endowment level $y$, the default threshold is higher in the economy with pessimistic lenders:
+	For any given endowment level $y$, the default threshold is higher in the economy with PRO lenders:
 	\begin{equation*}
 		B^*_{D,\theta}(y) > B^*_{D,1}(y).
 	\end{equation*}
@@ -697,28 +705,28 @@ expected to default at a lower debt level.
 \begin{proof}
 	See Appendix~\ref{app:proof_threshold}.
 \end{proof}
-The formal proof in Appendix~\ref{app:proof_threshold} proceeds by contradiction, showing that if $B^*_{D,\theta}(y) \leq B^*_{D,1}(y)$, then the "softening of doom" effect from Proposition~\ref{prop:pivot_concise} would make the value of repayment strictly higher under pessimism, violating the assumed threshold ordering. The economic mechanism is that pessimistic lenders offer better prices in high-debt scenarios, increasing the option value of remaining in markets and making sovereigns willing to endure higher debt burdens before defaulting.
+The formal proof in Appendix~\ref{app:proof_threshold} proceeds by contradiction, showing that if $B^*_{D,\theta}(y) \leq B^*_{D,1}(y)$, then the "softening of doom" effect from Proposition~\ref{prop:pivot_concise} would make the value of repayment strictly higher under PRO, violating the assumed threshold ordering. The economic mechanism is that PRO lenders offer better prices in high-debt scenarios, increasing the option value of remaining in markets and making sovereigns willing to endure higher debt burdens before defaulting.
 
 The sovereign's decision to default is a trade-off between the immediate
 benefit of ceasing payments and the long-term cost of losing market access. The
 value of this access depends directly on future borrowing terms. Proposition
 \ref{prop:pivot_concise} established the key result that when debt is already
-high, pessimistic lenders offer \textit{better} prices (the``softening of
-doom'' effect). A rational sovereign in the pessimistic economy foresees these
-more favorable future borrowing terms should it choose to repay. This increases
-the option value of repaying and rolling over debt. Because the prospect o is
-more attractive, the sovereign is willing to endure a higher debt burden before
+high, PRO lenders offer \textit{better} prices (the``softening of doom''
+effect). A rational sovereign in the PRO economy foresees these more favorable
+future borrowing terms should it choose to repay. This increases the option
+value of repaying and rolling over debt. Because the prospect o is more
+attractive, the sovereign is willing to endure a higher debt burden before
 finally choosing to default, pushing its default threshold further out.
 
 \paragraph{Borrowing Policy}
-While pessimism makes the sovereign more resilient at the brink of crisis, it
-has the opposite effect on its day-to-day borrowing. The next proposition shows
-that a pessimistic market actively disciplines the sovereign into adopting a
-more conservative debt policy.
+While PRO makes the sovereign more resilient at the brink of crisis, it has the
+opposite effect on its day-to-day borrowing. The next proposition shows that a
+PRO market actively disciplines the sovereign into adopting a more conservative
+debt policy.
 
 \begin{proposition}
 	\label{prop:deleveraging}
-	Consider economies with pessimistic lenders ($\theta > 1$) and rational lenders ($\theta = 1$). Let $\mathbb{E}_i[B'|y, B]$ be the expected next-period debt level chosen by the sovereign in economy $i \in \{1, \theta\}$ from a given state $(y, B)$. For states $(y, B)$ where the sovereign chooses \textbf{not to default}, the borrowing policy is systematically more conservative under lender pessimism:
+	Consider economies with PRO lenders ($\theta > 1$) and rational lenders ($\theta = 1$). Let $\mathbb{E}_i[B'|y, B]$ be the expected next-period debt level chosen by the sovereign in economy $i \in \{1, \theta\}$ from a given state $(y, B)$. For states $(y, B)$ where the sovereign chooses \textbf{not to default}, the borrowing policy is systematically more conservative under PRO:
 	\begin{equation*}
 		\mathbb{E}_\theta[B'|y, B] < \mathbb{E}_1[B'|y, B].
 	\end{equation*}
@@ -730,34 +738,34 @@ more conservative debt policy.
 
 The formal proof in Appendix~\ref{app:proof_deleveraging} proceeds by comparing
 the sovereign's first-order conditions for borrowing under the two price
-schedules. The key insight is that lower prices offered by pessimistic lenders
-in the primary borrowing range (as established in
+schedules. The key insight is that lower prices offered by PRO lenders in the
+primary borrowing range (as established in
 Proposition~\ref{prop:pivot_concise}) reduce the marginal benefit of issuing
 new debt. Since the marginal cost of debt remains unchanged, the sovereign
 optimally chooses a lower debt level to restore equilibrium between marginal
 benefits and costs.
 
 A rational sovereign government reacts optimally to the market prices it faces.
-In the region where the sovereign typically wants to borrow, pessimistic
-lenders offer lower prices for new debt. A lower bond price is a direct signal
-that borrowing has become more expensive. Faced with a higher cost of capital,
-the sovereign's optimal response is to borrow less. The pessimistic market,
-through its pricing, effectively ``disciplines'' the sovereign, forcing it to
-deleverage and adopt a more conservative fiscal policy than it would if it
-faced a rational market. This endogenous deleveraging is a key mechanism
-through which market beliefs shape real economic outcomes.
+In the region where the sovereign typically wants to borrow, PRO lenders offer
+lower prices for new debt. A lower bond price is a direct signal that borrowing
+has become more expensive. Faced with a higher cost of capital, the sovereign's
+optimal response is to borrow less. The PRO market, through its pricing,
+effectively ``disciplines'' the sovereign, forcing it to deleverage and adopt a
+more conservative fiscal policy than it would if it faced a rational market.
+This endogenous deleveraging is a key mechanism through which market beliefs
+shape real economic outcomes.
 
 \paragraph{Welfare}
 The final step in the theoretical analysis is to evaluate the net effect of
 these changes on the sovereign's well-being. The final proposition demonstrates
-that the consequences of lender pessimism translate directly into a welfare
-loss for the sovereign.
+that the consequences of PRO translate directly into a welfare loss for the
+sovereign.
 
 \begin{proposition}
 	\label{prop:welfare}
-	Let $V_i(y,B)$ denote the sovereign's ex-ante equilibrium value function in economy $i\in\{1,\theta\}$, where $\theta>1$ indexes pessimistic lenders and $\theta=1$ rational lenders.
+	Let $V_i(y,B)$ denote the sovereign's ex-ante equilibrium value function in economy $i\in\{1,\theta\}$, where $\theta>1$ indexes PRO lenders and $\theta=1$ rational lenders.
 	Suppose that for the given state $(y,B)$ the sovereign has market access and the baseline optimal choice $B'_1(y,B)$ lies on the ``risky'' side of the price pivot $B^*(y)$, i.e. $B'_1(y,B)\ge B^*(y)$.
-	Then equilibrium welfare is strictly lower under pessimistic lenders:
+	Then equilibrium welfare is strictly lower under PRO lenders:
 	\[
 		V_\theta(y,B) \;<\; V_1(y,B).
 	\]
@@ -768,45 +776,45 @@ loss for the sovereign.
 \begin{proof}
 	See Appendix~\ref{app:proof_welfare}.
 \end{proof}
-The formal proof in Appendix~\ref{app:proof_welfare} proceeds using operator theory to show that pessimistic pricing systematically reduces the sovereign's choice-specific value for all borrowing decisions. The key insight is that welfare loss stems directly from a tighter budget constraint: for any given amount of new borrowing, the sovereign receives fewer resources today under pessimistic lenders. While sovereigns adjust policies optimally (borrowing less, tolerating higher debt before default), they cannot fully escape the welfare loss from transacting with distorted markets.
+The formal proof in Appendix~\ref{app:proof_welfare} proceeds using operator theory to show that pricing under PRO systematically reduces the sovereign's choice-specific value for all borrowing decisions. The key insight is that welfare loss stems directly from a tighter budget constraint: for any given amount of new borrowing, the sovereign receives fewer resources today under PRO lenders. While sovereigns adjust policies optimally (borrowing less, tolerating higher debt before default), they cannot fully escape the welfare loss from transacting with distorted markets.
 
 The sovereign's welfare is fundamentally derived from its ability to use
 international financial markets to smooth consumption over time. The terms of
 this access are dictated by the bond price schedule, $q(y,B')$, which can be
-seen as the price of intertemporal trade. Lender pessimism, by inducing a lower
-$q$ in the low debt ($B' < B^*(y)$) region, effectively acts as a tax on the
-sovereign's ability to conduct this trade. For any given amount of borrowing,
-the sovereign receives fewer resources today, which directly curtails its
-consumption possibilities and lowers utility. While the sovereign optimally
-adjusts its policies in response—by borrowing less and tolerating more debt
-before default—it cannot fully escape the welfare loss imposed by being forced
-to transact with a paranoid market. The ``benefit'' of better prices in the
-high debt ($B' > B^*(y)$) region is an option too remote and uncertain to
-compensate for the welfare losses incurred due to worse prices in the normal
-course of borrowing.
+seen as the price of intertemporal trade. PRO, by inducing a lower $q$ in the
+low debt ($B' < B^*(y)$) region, effectively acts as a tax on the sovereign's
+ability to conduct this trade. For any given amount of borrowing, the sovereign
+receives fewer resources today, which directly curtails its consumption
+possibilities and lowers utility. While the sovereign optimally adjusts its
+policies in response—by borrowing less and tolerating more debt before
+default—it cannot fully escape the welfare loss imposed by being forced to
+transact with a paranoid market. The ``benefit'' of better prices in the high
+debt ($B' > B^*(y)$) region is an option too remote and uncertain to compensate
+for the welfare losses incurred due to worse prices in the normal course of
+borrowing.
 
-\paragraph{The Causal Chain of Pessimism}
+\paragraph{The Causal Chain of PRO}
 The theoretical results presented above follow a clear causal chain originating
-from the single shock of lender pessimism ($\theta > 1$). This shift in beliefs
-first and foremost reshapes the market environment by altering the bond price
-schedule, causing it to \textit{pivot} as established in Proposition
+from the single shock of PRO ($\theta > 1$). This shift in beliefs first and
+foremost reshapes the market environment by altering the bond price schedule,
+causing it to \textit{pivot} as established in Proposition
 \ref{prop:pivot_concise}. The inverse pivoting of the credit spread schedule,
 described in Corollary~\ref{cor:spread_pivot}, is an immediate algebraic
 consequence. In response to this new pricing reality, the rational sovereign
 optimally adjusts its policies. It leverages the ``softening of doom'' effect
-in the high debt region—where pessimistic lenders offer paradoxically better
-prices—to endure a greater debt burden before defaulting (Proposition
-\ref{prop:threshold}). Simultaneously, it reacts to the ``pessimism premium''
-in the primary borrowing region by systematically deleveraging and adopting a
-more conservative debt policy (Proposition~\ref{prop:deleveraging}). This set
-of constrained-optimal policy adjustments, however, cannot fully overcome the
+in the high debt region—where PRO lenders offer paradoxically better prices—to
+endure a greater debt burden before defaulting (Proposition
+\ref{prop:threshold}). Simultaneously, it reacts to the ``PRO premium'' in the
+primary borrowing region by systematically deleveraging and adopting a more
+conservative debt policy (Proposition~\ref{prop:deleveraging}). This set of
+constrained-optimal policy adjustments, however, cannot fully overcome the
 handicap of transacting with a paranoid market, culminating in awelfare loss
 for the sovereign (Proposition~\ref{prop:welfare}).\footnote{This welfare loss
 	is fundamental and cannot be eliminated even by optimal fiscal policy.
 	Section~\ref{sec:ramsey} develops a formal Ramsey planning extension
-	(Proposition~\ref{prop:ramsey_welfare}) showing that the pessimism-induced
-	distortion of intertemporal prices creates deadweight losses that persist
-	beyond what lump-sum transfers can correct.}
+	(Proposition~\ref{prop:ramsey_welfare}) showing that the PRO-induced distortion
+	of intertemporal prices creates deadweight losses that persist beyond what
+	lump-sum transfers can correct.}
 
 Figure~\ref{fig:causal_chain} illustrates this causal mechanism, showing how a
 single behavioral friction propagates through the economy's equilibrium
@@ -823,7 +831,7 @@ relationships.
 		]
 
 		% Initial shock
-		\node[box] (shock) {\textbf{Lender Pessimism} \\ $\theta > 1$};
+		\node[box] (shock) {\textbf{Policy‑Randomness Overestimation (PRO)} \\ $\theta > 1$};
 
 		% Market effects
 		\node[effect, below=of shock] (pivot) {\textbf{Price Pivot} \\ $q_\theta(B',y) \gtrless q_1(B',y)$ \\ at $B^*(y)$};
@@ -850,30 +858,32 @@ relationships.
 		\node[right=0.05cm] at ($(shock)!0.5!(pivot)$) {Pricing};
 		\node[right=0.05cm] at ($(pivot)!0.5!(spread)$) {Algebraic};
 		\node[left=0.05cm] at ($(spread)!0.5!(threshold)$) {``Doom Softening''};
-		\node[right=0.05cm] at ($(spread)!0.5!(deleverage)$) {``Pessimism Premium''};
+		\node[right=0.05cm] at ($(spread)!0.5!(deleverage)$) {``PRO Premium''};
 
 	\end{tikzpicture}
-	\caption{The Causal Chain of Lender Pessimism}
+	\caption{The Causal Chain of PRO}
 	\label{fig:causal_chain}
-	\parbox{\linewidth}{\small\textit{Note:} This diagram illustrates how a single behavioral friction ($\theta > 1$) propagates through the economy. Lender pessimism first alters market pricing, creating a pivoting bond price schedule. The sovereign optimally responds to this new environment, but cannot fully escape the welfare costs of dealing with biased lenders.}
+	\parbox{\linewidth}{\small\textit{Note:} This diagram illustrates how a single behavioral friction ($\theta > 1$) propagates through the economy. PRO first alters market pricing, creating a pivoting bond price schedule. The sovereign optimally responds to this new environment, but cannot fully escape the welfare costs of dealing with biased lenders.}
 \end{figure}
 To crystallize the novel contributions of this behavioral channel, Table
 \ref{tab:prediction_comparison} explicitly contrasts the key predictions of the
-pessimism model with those of a standard reputation model.
+PRO model with those of a standard reputation model.
 
 \begin{table}[h!]
 	\centering
-	\caption{Theoretical Predictions: Pessimism vs. Reputation}
+	\caption{Comparative Predictions: Reputation and PRO}
 	\label{tab:prediction_comparison}
 	\begin{tabularx}{\textwidth}{@{}lXX@{}}
 		\toprule
-		Prediction Dimension                 & Reputation Model \citep{ColeDowEnglish1995, MorelliMoretti2023} & Pessimism Model (This Paper)                  \\ \midrule
-		Price Curve, $q$                     & Monotonically \textit{lower}                                    & \textit{Pivots} around baseline ($q_1$)       \\
-		Default Threshold, $B^*_D$           & \textit{Lower}                                                  & \textit{Higher}: $B^*_{D,\theta} > B^*_{D,1}$ \\
-		Expected Borrowing, $\mathbb{E}[B']$ & \textit{Lower} (Constraint-driven)                              & \textit{Lower} (Price-driven)                 \\
-		Average Spread, $\mathbb{E}[s]$      & \textit{Higher}                                                 & \textit{Higher}                               \\ \bottomrule
+		Prediction Dimension                       & Reputation (canonical) \citep{ColeDowEnglish1995, MorelliMoretti2023} & Policy-Randomness Overestimation (PRO)                    \\ \midrule
+		Price Curve, $q$                           & Tends to be \textit{lower} (monotonic in canonical setups)            & \textit{Pivots} around baseline ($q_1$)                   \\
+		Default Threshold, $B^*_D$                 & Tends to be \textit{lower}                                            & \textit{Higher}: $B^*_{D,\theta} > B^*_{D,1}$             \\
+		Expected Borrowing, $\mathbb{E}[B']$       & Often \textit{lower} (constraint-driven)                              & \textit{Lower} (price-driven in this model)               \\
+		Average Spread, $\mathbb{E}[s]$            & \textit{Higher}                                                       & \textit{Higher}                                           \\
+		Cross-maturity response after misreporting & Tends to increase across instruments                                  & Divergent across debt distribution (pivot-consistent)     \\
+		Haircut-size effect on spreads             & Strengthens with larger haircuts \citep{AmadorPhelan2023}             & May weaken if larger haircuts reduce perceived randomness \\\ ottomrule
 	\end{tabularx}
-	\parbox{\linewidth}{\small\textit{Note:} This table compares the main theoretical predictions of a standard model where lenders learn about the sovereign's hidden type (reputation) with the behavioral model in this paper where lenders are systematically pessimistic about policy randomness. The bolded items highlight the unique and often counter-intuitive predictions of the pessimism model.}
+	\parbox{\linewidth}{\small\textit{Note:} This table compares predictions under canonical implementations of reputation models with the behavioral mechanism in this paper. The PRO column reflects this model's implementation assumptions.}
 \end{table}
 
 \section{Quantitative Analysis}
@@ -941,7 +951,7 @@ numerical solution.\footnote{Specifically, $\eta = 5 \times 10^{-4}$ for
 		\multicolumn{3}{l}{\textit{Computational Parameters}}                                      \\
 		$\eta$                 & $5 \times 10^{-4}$ & Scale of default taste shock                 \\
 		$\rho$                 & $1 \times 10^{-5}$ & Scale of borrowing taste shock               \\
-		$\theta$               & 1.0                & Baseline lender pessimism coefficient        \\ \bottomrule
+		$\theta$               & 1.0                & Baseline PRO coefficient                     \\ \bottomrule
 	\end{tabular}
 	\parbox{\linewidth}{\small\textit{Note:} The table presents the parameter values used in the baseline calibration of the model. Parameters are set to match standard values in the sovereign default literature and key macroeconomic features of emerging economies like Argentina.}
 
@@ -971,18 +981,18 @@ taste shock parameters.\footnote{ A detailed discussion of these numerical
 }The entire solution algorithm is implemented in Fortran and parallelized using
 OpenMP to leverage multi-core processors.
 
-\subsection{Business Cycle Implications of Lender Pessimism}
+\subsection{Business Cycle Implications of PRO}
 
-To understand the quantitative implications of lender pessimism, I simulate the
-model under three scenarios: the baseline rational-expectations benchmark
-($\theta=1$), a medium-pessimism case ($\theta=10$), and a high-pessimism case
-($\theta=100$).\footnote{The choice of $\theta=10$ and $\theta=100$ as medium
-	and high pessimism cases is motivated by the need to demonstrate clear
-	quantitative differences while maintaining computational tractability.
-	Intermediate values such as $\theta=30$ or $\theta=50$ could also be examined
-	to show the continuous nature of the relationship.} Table
-\ref{tab:main_results} reports the key business cycle moments from these
-simulations, revealing how pessimism reshapes macroeconomic behavior.
+To understand the quantitative implications of PRO, I simulate the model under
+three scenarios: the baseline rational-expectations benchmark ($\theta=1$), a
+medium‑PRO case ($\theta=10$), and a high‑PRO case ($\theta=100$).\footnote{The
+	choice of $\theta=10$ and $\theta=100$ as medium and high‑PRO cases is
+	motivated by the need to demonstrate clear quantitative differences while
+	maintaining computational tractability. Intermediate values such as $\theta=30$
+	or $\theta=50$ could also be examined to show the continuous nature of the
+	relationship.} Table \ref{tab:main_results} reports the key business cycle
+moments from these simulations, revealing how PRO reshapes macroeconomic
+behavior.
 
 \paragraph{The Rational Benchmark}
 The baseline model with rational lenders ($\theta=1$) successfully generates
@@ -995,46 +1005,46 @@ ln(GDP)), and a slightly counter-cyclical trade balance. When output falls,
 default risk rises, increasing spreads; simultaneously, the government attempts
 to borrow to smooth the shock, worsening the trade balance. These features
 confirm that the model provides a standard and reasonable benchmark against
-which to evaluate the effects of pessimism.
+which to evaluate the effects of PRO.
 
 \paragraph{Deleveraging and the Price of Fear}
-The introduction of lender pessimism dramatically alters these outcomes, but in
-a non-linear fashion. Under moderate pessimism ($\theta=10$), the sovereign's
-average debt level (5.53\%) and borrowing cost (2.75\%) remain remarkably close
-to the baseline. However, a shift to high pessimism ($\theta=100$) triggers a
-stark deleveraging and a significant increase in average borrowing costs. The
-mean debt-to-GDP ratio falls precipitously by nearly 5 percentage points to
-just 2.70\%. This is a direct consequence of the market discipline predicted in
+The introduction of PRO dramatically alters these outcomes, but in a non-linear
+fashion. Under moderate PRO ($\theta=10$), the sovereign's average debt level
+(5.53\%) and borrowing cost (2.75\%) remain remarkably close to the baseline.
+However, a shift to high PRO ($\theta=100$) triggers a stark deleveraging and a
+significant increase in average borrowing costs. The mean debt-to-GDP ratio
+falls precipitously by nearly 5 percentage points to just 2.70\%. This is a
+direct consequence of the market discipline predicted in
 Proposition~\ref{prop:deleveraging}: faced with worse prices in the primary
 borrowing region, the sovereign optimally reduces its debt issuance. However,
 this conservative policy does not earn it lower interest rates. Instead, the
 average credit spread more than doubles to 4.15\%. This result---deleveraging
 in the face of even higher average spreads—starkly illustrates the power of the
-behavioral bias. In a pure reputation model, deleveraging should lower risk and
-borrowing costs; here, it is a constrained-optimal response to the ``pessimism
-premium,'' a penalty the sovereign can never fully escape simply by reducing
-its debt. Lenders demand substantial compensation for the perceived risk of an
-``out of the blue'' default, an effect that overwhelms the fact that the
-sovereign is, in reality, safer due to its lower debt level.
+behavioral bias. In standard reputation frameworks, deleveraging would
+typically be associated with lower risk and borrowing costs (ceteris paribus);
+here, it is a constrained-optimal response to the ``PRO premium,'' a penalty
+the sovereign cannot fully offset simply by reducing its debt. Lenders demand
+substantial compensation for the perceived risk of an ``out of the blue''
+default, an effect that overwhelms the fact that the sovereign is, in reality,
+safer due to its lower debt level.
 
 \paragraph{Amplified Financial Cycles}
-Pessimism not only raises the level of borrowing costs but also progressively
+PRO not only raises the level of borrowing costs but also progressively
 amplifies their cyclicality. The correlation between credit spreads and GDP
-becomes more negative as pessimism increases, moving from -0.43 in the baseline
-to -0.80 under moderate pessimism, and then sharply to -0.89 in the
-high-pessimism case. This indicates that financial conditions become
-exquisitely sensitive to fluctuations in the country's income. When a negative
-shock hits, pessimistic lenders' fears are magnified, leading to a much sharper
-spike in spreads than would occur in a rational market. This tightening of
-financial conditions occurs precisely when the sovereign needs market access
-the most, exacerbating the downturn and making financial markets a powerful
-source of procyclical shocks rather than a tool for macroeconomic
-stabilization.
+becomes more negative as PRO increases, moving from -0.43 in the baseline to
+-0.80 under moderate PRO, and then sharply to -0.89 in the high‑PRO case. This
+indicates that financial conditions become exquisitely sensitive to
+fluctuations in the country's income. When a negative shock hits, PRO lenders'
+fears are magnified, leading to a much sharper spike in spreads than would
+occur in a rational market. This tightening of financial conditions occurs
+precisely when the sovereign needs market access the most, exacerbating the
+downturn and making financial markets a powerful source of procyclical shocks
+rather than a tool for macroeconomic stabilization.
 
 \paragraph{An Illusion of Stability}
 Interestingly, the volatility of both the debt-to-GDP ratio and credit spreads
-decreases as pessimism rises. This is not a sign of improved stability but
-rather a mechanical result of the sovereign's forced deleveraging, creating an
+decreases as PRO rises. This is not a sign of improved stability but rather a
+mechanical result of the sovereign's forced deleveraging, creating an
 \textit{illusion of financial stability}. By maintaining a lower average debt
 level, the sovereign operates further away from its default threshold (which,
 paradoxically, is higher, per Proposition~\ref{prop:threshold}). This reduces
@@ -1048,7 +1058,7 @@ integration for a quieter, but more expensive, life.
 
 \begin{table}[h]
 	\centering
-	\caption{Business Cycle Implications of Lender Pessimism}
+	\caption{Business Cycle Implications of PRO}
 	\label{tab:main_results}
 	\begin{tabular}{@{}lccc@{}}
 		\toprule
@@ -1072,7 +1082,7 @@ integration for a quieter, but more expensive, life.
 	{\color{red}[TODO: Add robustness checks showing results remain consistent under longer simulations and different random seeds]}
 \end{table}
 
-\subsection{The Mechanics of Pessimism: Distributions and Policy Functions}
+\subsection{The Mechanics of PRO: Distributions and Policy Functions}
 
 \paragraph{Long-Run Outcomes: A Shift in Distributions}
 The aggregate business cycle statistics in Table~\ref{tab:main_results} are the
@@ -1080,23 +1090,22 @@ result of fundamental shifts in the sovereign's equilibrium behavior, which are
 best understood by examining the model's policy functions and resulting
 stationary distributions. Figure~\ref{fig:sim_distributions} plots the
 simulated histograms for debt and credit spreads, revealing the long-run
-consequences of lender pessimism. Panel (a) starkly illustrates the
-deleveraging predicted by Proposition~\ref{prop:deleveraging}. The entire
-distribution of the debt-to-GDP ratio shifts dramatically to the left,
-representing a strategic retreat from international capital markets. This is
-not an arbitrary choice but the sovereign's optimal response to the punitive
-pricing it faces. Faced with a market that consistently overestimates its risk,
-the government is disciplined into a permanently more conservative fiscal
-stance.
+consequences of PRO. Panel (a) starkly illustrates the deleveraging predicted
+by Proposition~\ref{prop:deleveraging}. The entire distribution of the
+debt-to-GDP ratio shifts dramatically to the left, representing a strategic
+retreat from international capital markets. This is not an arbitrary choice but
+the sovereign's optimal response to the punitive pricing it faces. Faced with a
+market that consistently overestimates its risk, the government is disciplined
+into a permanently more conservative fiscal stance.
 
 This retreat, however, does not earn the sovereign better credit terms. Panel
 (b) reveals the central paradox: as the sovereign deleverages, its average
 borrowing cost increases. The entire distribution of credit spreads is pushed
-to the right. This is the tangible result of the "pessimism premium" described
-in Corollary~\ref{cor:spread_pivot}. The sovereign is forced into a low-debt
-trap where, despite being fundamentally safer due to its lower leverage, it
-faces a persistently higher cost of capital because lenders' pessimistic
-beliefs dominate their assessment of fundamentals.
+to the right. This is the tangible result of the "PRO premium" described in
+Corollary~\ref{cor:spread_pivot}. The sovereign is forced into a low-debt trap
+where, despite being fundamentally safer due to its lower leverage, it faces a
+persistently higher cost of capital because lenders' beliefs exhibiting PRO
+dominate their assessment of fundamentals.
 
 \begin{figure}[h!]
 	\centering
@@ -1115,26 +1124,26 @@ beliefs dominate their assessment of fundamentals.
 	\end{subfigure}
 	\caption{Simulated Stationary Distributions}
 	\label{fig:sim_distributions}
-	\parbox{\linewidth}{\small\textit{Note:} The distributions are generated from a long simulation of the model (100,000 periods). The figure shows how rising lender pessimism progressively shifts the long-run distribution of the debt-to-GDP ratio to the left (deleveraging) and the credit spread distribution to the right (higher borrowing costs).}
+	\parbox{\linewidth}{\small\textit{Note:} The distributions are generated from a long simulation of the model (100,000 periods). The figure shows how rising PRO progressively shifts the long-run distribution of the debt-to-GDP ratio to the left (deleveraging) and the credit spread distribution to the right (higher borrowing costs).}
 \end{figure}
 
 \paragraph{State-Contingent Policies: The Pivoting Effect}
 The long-run distributional shifts are driven by state-by-state changes in the
 sovereign's optimal policies, which are themselves a reaction to the altered
-price schedule. Figure~\ref{fig:policy_pivot} visualizes how pessimism causes
-key functions to "pivot" around the rational benchmark, providing a graphical
+price schedule. Figure~\ref{fig:policy_pivot} visualizes how PRO causes key
+functions to "pivot" around the rational benchmark, providing a graphical
 confirmation of the paper's central theoretical results.
 
 Panels~\ref{fig:pivot_price} and~\ref{fig:pivot_spread} illustrate the core
 price pivot. At low debt levels, where a rational lender sees little risk, the
-pessimistic lender prices in the possibility of an "out of the blue" default,
-leading to lower prices and higher spreads. At very high debt levels, where a
-rational lender sees default as nearly certain, the pessimistic lender's belief
-in randomness allows for a small chance of an "irrational" repayment, leading
-to paradoxically better terms (the "softening of doom" effect). This pivot in
-the price schedule is the key external force acting on the sovereign, and it
-offers a richer dynamic than the simple downward price shift one would expect
-from a pure reputation loss.
+PRO lender prices in the possibility of an "out of the blue" default, leading
+to lower prices and higher spreads. At very high debt levels, where a rational
+lender sees default as nearly certain, the PRO lender's belief in randomness
+allows for a small chance of an "irrational" repayment, leading to
+paradoxically better terms (the "softening of doom" effect). This pivot in the
+price schedule is the key external force acting on the sovereign, and it offers
+a richer dynamic than the simple downward price shift one might associate with
+reputational deterioration under standard assumptions.
 
 Panels~\ref{fig:pivot_default} and~\ref{fig:pivot_borrowing} show the
 sovereign's endogenous response. The government internalizes the new price
@@ -1178,7 +1187,7 @@ level for any given state (Proposition~\ref{prop:deleveraging}).
 	\end{subfigure}
 	\caption{Policy Function Pivoting}
 	\label{fig:policy_pivot}
-	\parbox{\linewidth}{\small\textit{Note:} The plots show the key policy and pricing functions for three different levels of endowment y (low, medium, and high). The functions for the baseline ($\theta=1$, dashed), medium pessimism ($\theta=10$, dash-dot), and high pessimism ($\theta=100$, solid) cases are shown. Rising pessimism causes the functions to pivot.}
+	\parbox{\linewidth}{\small\textit{Note:} The plots show the key policy and pricing functions for three different levels of endowment y (low, medium, and high). The functions for the baseline ($\theta=1$, dashed), medium PRO ($\theta=10$, dash-dot), and high PRO ($\theta=100$, solid) cases are shown. Rising PRO causes the functions to pivot.}
 \end{figure}
 
 \paragraph{Welfare Consequences}
@@ -1187,11 +1196,11 @@ before default—are optimal given the market it faces, but they cannot overcome
 the fundamental handicap of dealing with paranoid lenders. Proposition
 \ref{prop:welfare} predicted a direct welfare loss, a result powerfully
 confirmed by Figure~\ref{fig:welfare_loss}. The sovereign's value function is
-uniformly and significantly lower in the pessimistic economy.
+uniformly and significantly lower under higher PRO.
 
 This welfare loss stems from the impairment of the sovereign's ability to
 smooth consumption. Access to international credit markets is a tool to buffer
-domestic shocks. Pessimism effectively places a tax on the use of this tool. By
+domestic shocks. PRO effectively places a tax on the use of this tool. By
 making borrowing more expensive in the relevant range, it forces the sovereign
 to either endure more volatile consumption or to self-insure by maintaining an
 inefficiently low level of debt. The ``benefit'' of better prices in the
@@ -1205,29 +1214,28 @@ propensity to fail.
 	\includegraphics[width=0.6\textwidth]{../../pessimism-default-model/results/comparison_figure_1.pdf}
 	\caption{Welfare Loss}
 	\label{fig:welfare_loss}
-	\parbox{\linewidth}{\small\textit{Note:} The figure plots the sovereign's ex-ante value function $V(y, B)$ for the baseline ($\theta=1$, dashed), medium pessimism ($\theta=10$, dash-dot), and high pessimism ($\theta=100$, solid) economies. The value function is uniformly lower under higher degrees of pessimism, indicating a progressive welfare loss.}
+	\parbox{\linewidth}{\small\textit{Note:} The figure plots the sovereign's ex-ante value function $V(y, B)$ for the baseline ($\theta=1$, dashed), medium PRO ($\theta=10$, dash-dot), and high PRO ($\theta=100$, solid) economies. The value function is uniformly lower under higher degrees of PRO, indicating a progressive welfare loss.}
 \end{figure}
 
 \subsection{Dynamic Responses and Adjustment Paths}
 
-The dynamic implications of lender pessimism reveal how pessimism affects the
-sovereign's adjustment paths and responses to shocks.
+The dynamic implications of PRO reveal how PRO affects the sovereign's
+adjustment paths and responses to shocks.
 
 \paragraph{Deleveraging Dynamics: The Transition to Lower Debt}
 
 Figure~\ref{fig:deleveraging_paths} traces optimal debt adjustment paths under
-different initial conditions and degrees of lender pessimism. Consistent with
-Proposition~\ref{prop:deleveraging}, economies with higher pessimism
-systematically converge to lower debt levels regardless of starting point.
-Remarkably, even from low initial debt, the high-pessimism economy continues
-deleveraging, representing a fundamental fiscal shift rather than temporary
-adjustment.
+different initial conditions and degrees of PRO. Consistent with
+Proposition~\ref{prop:deleveraging}, economies with higher PRO systematically
+converge to lower debt levels regardless of starting point. Remarkably, even
+from low initial debt, the high‑PRO economy continues deleveraging,
+representing a fundamental fiscal shift rather than temporary adjustment.
 
 The consumption and spread dynamics reveal important adjustment costs.
-Panel~\ref{fig:consumption_path} shows that high-pessimism economies experience
-more volatile consumption during deleveraging despite ultimately achieving
-lower debt. Panel~\ref{fig:spread_path_delev} demonstrates that spreads remain
-persistently elevated throughout adjustment, confirming that the ``pessimism
+Panel~\ref{fig:consumption_path} shows that high‑PRO economies experience more
+volatile consumption during deleveraging despite ultimately achieving lower
+debt. Panel~\ref{fig:spread_path_delev} demonstrates that spreads remain
+persistently elevated throughout adjustment, confirming that the ``PRO
 premium'' reflects systematic risk overestimation at all debt levels rather
 than just current leverage.
 
@@ -1255,26 +1263,26 @@ than just current leverage.
 	\end{subfigure}
 	\caption{Deleveraging Dynamics}
 	\label{fig:deleveraging_paths}
-	\parbox{\linewidth}{\small\textit{Note:} The figure shows optimal adjustment paths over 6 quarters starting from three different initial debt levels (low, medium, high) for each degree of lender pessimism. The paths demonstrate how pessimism leads to systematic deleveraging that persists regardless of initial conditions, accompanied by persistently higher spreads and more volatile consumption during the transition.}
+	\parbox{\linewidth}{\small\textit{Note:} The figure shows optimal adjustment paths over 6 quarters starting from three different initial debt levels (low, medium, high) for each degree of PRO. The paths demonstrate how PRO leads to systematic deleveraging that persists regardless of initial conditions, accompanied by persistently higher spreads and more volatile consumption during the transition.}
 \end{figure}
 
-\paragraph{Impulse Response Functions: Shock Propagation under Pessimism}
+\paragraph{Impulse Response Functions: Shock Propagation under PRO}
 
 I examine responses to transitory and persistent productivity shocks (AR(1)
-with $\rho = 0.8$) to understand how lender pessimism affects the sovereign's
-shock absorption capacity.
+with $\rho = 0.8$) to understand how PRO affects the sovereign's shock
+absorption capacity.
 
 \subparagraph{Transitory Shock Responses.} Figure~\ref{fig:irf_transitory} shows responses to a 3\% positive productivity
 shock lasting one quarter. While output effects are identical by construction
-(panel~\ref{fig:irf_trans_output}), pessimism fundamentally alters other
-responses. High-pessimism economies exhibit muted debt reduction
+(panel~\ref{fig:irf_trans_output}), PRO fundamentally alters other responses.
+High‑PRO economies exhibit muted debt reduction
 (panel~\ref{fig:irf_trans_debt}) and consumption smoothing responses
 (panel~\ref{fig:irf_trans_consumption}), illustrating impaired ability to
 exploit temporary favorable conditions. Despite facing identical shocks, these
 economies cannot fully capitalize on good fortune due to persistently
 unfavorable credit pricing. Spreads fall in all economies
-(panel~\ref{fig:irf_trans_spread}), but high-pessimism economies maintain
-higher levels throughout adjustment.
+(panel~\ref{fig:irf_trans_spread}), but high‑PRO economies maintain higher
+levels throughout adjustment.
 
 \begin{figure}[h]
 	\centering
@@ -1307,20 +1315,19 @@ higher levels throughout adjustment.
 	\end{subfigure}
 	\caption{Impulse Responses to Transitory Productivity Shock}
 	\label{fig:irf_transitory}
-	\parbox{\linewidth}{\small\textit{Note:} The figure shows responses to a 3\% positive productivity shock that lasts for one quarter. All variables are expressed as percentage deviations from their respective steady states (spreads in basis points). The responses demonstrate how lender pessimism constrains the sovereign's ability to take advantage of temporary favorable conditions.}
+	\parbox{\linewidth}{\small\textit{Note:} The figure shows responses to a 3\% positive productivity shock that lasts for one quarter. All variables are expressed as percentage deviations from their respective steady states (spreads in basis points). The responses demonstrate how PRO constrains the sovereign's ability to take advantage of temporary favorable conditions.}
 \end{figure}
 
 \subparagraph{Persistent Shock Responses.} Figure~\ref{fig:irf_persistent} shows responses to persistent productivity
-shocks ($\rho = 0.8$). Persistence matters more for high-pessimism economies,
-which exhibit more pronounced and sustained debt reduction
+shocks ($\rho = 0.8$). Persistence matters more for high-PRO economies, which
+exhibit more pronounced and sustained debt reduction
 (panel~\ref{fig:irf_pers_debt}) as sovereigns recognize rare opportunities to
 escape the ``high-spread trap.'' While persistent shocks enable better
 consumption smoothing across all economies
-(panel~\ref{fig:irf_pers_consumption}), high-pessimism economies still
-underperform due to fundamental impairment of consumption insurance. Spread
-responses (panel~\ref{fig:irf_pers_spread}) are more persistent than in the
-transitory case, but high-pessimism economies maintain higher levels throughout
-adjustment.
+(panel~\ref{fig:irf_pers_consumption}), high-PRO economies still underperform
+due to fundamental impairment of consumption insurance. Spread responses
+(panel~\ref{fig:irf_pers_spread}) are more persistent than in the transitory
+case, but high-PRO economies maintain higher levels throughout adjustment.
 
 \begin{figure}[h]
 	\centering
@@ -1353,40 +1360,40 @@ adjustment.
 	\end{subfigure}
 	\caption{Impulse Responses to Persistent Productivity Shock}
 	\label{fig:irf_persistent}
-	\parbox{\linewidth}{\small\textit{Note:} The figure shows responses to a 3\% productivity shock with autocorrelation $\rho = 0.8$. All variables are expressed as percentage deviations from steady state (spreads in basis points). The persistent nature of the shock reveals how lender pessimism constrains fiscal flexibility even during extended periods of favorable fundamentals.}
+	\parbox{\linewidth}{\small\textit{Note:} The figure shows responses to a 3\% productivity shock with autocorrelation $\rho = 0.8$. All variables are expressed as percentage deviations from steady state (spreads in basis points). The persistent nature of the shock reveals how PRO constrains fiscal flexibility even during extended periods of favorable fundamentals.}
 \end{figure}
 
 \paragraph{Implications}
 
 The dynamic analysis reveals three fundamental economic mechanisms. First,
-deleveraging under pessimism creates persistent allocative distortions—the
-adjustment process itself becomes a source of inefficiency as elevated spreads
-persist throughout transition, generating deadweight losses that compound over
-time. This represents a departure from standard models where adjustment costs
-are temporary. Second, pessimism creates asymmetric shock transmission:
-sovereigns experience constrained benefits from favorable shocks while facing
-amplified costs from adverse ones, fundamentally altering the risk-return
-profile of sovereign borrowing. This asymmetry suggests that traditional
-moments-based calibrations may understate welfare costs. Finally, the
-interaction between persistence and beliefs generates hysteresis effects:
-temporary improvements in fundamentals produce limited deleveraging, while
-sustained improvements are necessary to overcome entrenched pessimistic priors.
+deleveraging under PRO creates persistent allocative distortions—the adjustment
+process itself becomes a source of inefficiency as elevated spreads persist
+throughout transition, generating deadweight losses that compound over time.
+This represents a departure from standard models where adjustment costs are
+temporary. Second, PRO creates asymmetric shock transmission: sovereigns
+experience constrained benefits from favorable shocks while facing amplified
+costs from adverse ones, fundamentally altering the risk-return profile of
+sovereign borrowing. This asymmetry suggests that traditional moments-based
+calibrations may understate welfare costs. Finally, the interaction between
+persistence and beliefs generates hysteresis effects: temporary improvements in
+fundamentals produce limited deleveraging, while sustained improvements are
+necessary to overcome entrenched priors exhibiting PRO.
 
 \section{Extensions}
 
 \subsection{Theoretical Extensions}\label{sec:extensions}
 
-\paragraph{Ramsey Planning Under Pessimism}\label{sec:ramsey}
-Proposition~\ref{prop:welfare} shows that lender pessimism reduces equilibrium
-welfare. A natural question is whether an optimal fiscal authority can undo
-this loss. We study a Ramsey planner who can choose lump-sum taxes/transfers
-but takes the bond pricing mechanism as given.
+\paragraph{Ramsey Planning Under PRO}\label{sec:ramsey}
+Proposition~\ref{prop:welfare} shows that PRO reduces equilibrium welfare. A
+natural question is whether an optimal fiscal authority can undo this loss. We
+study a Ramsey planner who can choose lump-sum taxes/transfers but takes the
+bond pricing mechanism as given.
 
-Lender pessimism acts like a persistent wedge in the intertemporal price of
-borrowing. Transfers can reallocate resources within and across periods subject
-to a zero present-value constraint, but they cannot change the shadow price at
-which the government trades across dates. Hence the pessimistic price schedule
-distorts debt choices even under optimal fiscal policy.
+PRO acts like a persistent wedge in the intertemporal price of borrowing.
+Transfers can reallocate resources within and across periods subject to a zero
+present-value constraint, but they cannot change the shadow price at which the
+government trades across dates. Hence the PRO price schedule distorts debt
+choices even under optimal fiscal policy.
 
 The planner chooses $\{c_t,B_{t+1},\tau_t\}_{t\ge0}$ to maximize expected
 utility subject to the per-period resource constraint and a zero present-value
@@ -1438,9 +1445,9 @@ loss. See also \citep{AiyagariMarcetSargentSeppala2002}.
 We next let lenders learn about the taste-shock dispersion parameter $\theta$.
 
 Even with Bayesian updating, ``negativity bias''---overweighting unexpected
-defaults relative to unexpected repayments---can make pessimism persistent and
+defaults relative to unexpected repayments---can make PRO persistent and
 self-reinforcing. Rare but salient defaults move beliefs more than frequent,
-modestly good realizations, creating a drift toward pessimism.
+modestly good realizations, creating a drift toward PRO.
 
 Let $\theta_t\in[\underline\theta,\bar\theta]$ with
 $\underline\theta=1<\bar\theta$, and suppose beliefs evolve according to
@@ -1459,7 +1466,7 @@ negativity bias means that $\widehat\theta$ responds more to larger $\xi$ when $
 \begin{proposition}\label{prop:endogenous_beliefs}
 	Under a stable, Feller belief-update kernel induced by~\eqref{eq:belief_updating} with negativity bias as above and mild drift/minorization conditions, the Markov process $\{\theta_t\}$ admits a unique invariant distribution $\Theta^*$ such that:
 	\begin{enumerate}
-		\item[\textbf{(i)}] $\E[\Theta^*]>1$ (persistent pessimism);
+		\item[\textbf{(i)}] $\E[\Theta^*]>1$ (persistent PRO);
 		\item[\textbf{(ii)}] $\Theta^*$ first-order stochastically dominates the rational benchmark (history dependence through rare defaults);
 		\item[\textbf{(iii)}] $\|\E[\theta_t]-\E[\Theta^*]\|=O(\lambda^t)$, with slow convergence when defaults are rare (large $\lambda$).
 	\end{enumerate}
@@ -1486,7 +1493,7 @@ and let period utility be $u(c,\alpha)=c^{1-\sigma}/(1-\sigma)-\phi(\alpha)$ wit
 			      \frac{d}{d\alpha}W(\alpha^*) \;=\; \phi'(\alpha^*) \;=\; \gamma\,\alpha^*.
 			      \label{eq:foc_transparency}
 		      \end{equation}
-		\item[\textbf{(ii)}] If $\partial W/\partial \vartheta<0$ and $\partial \theta_{\mathrm{eff}}/\partial \alpha=1-\theta<0$, then $\partial \alpha^*/\partial \theta>0$: more pessimism raises optimal transparency.
+		\item[\textbf{(ii)}] If $\partial W/\partial \vartheta<0$ and $\partial \theta_{\mathrm{eff}}/\partial \alpha=1-\theta<0$, then $\partial \alpha^*/\partial \theta>0$: greater PRO raises optimal transparency.
 		\item[\textbf{(iii)}] There exists $\theta_c>1$ such that $W(\alpha^*)>W(0)$ for all $\theta>\theta_c$.
 	\end{enumerate}
 \end{proposition}
@@ -1498,39 +1505,46 @@ and let period utility be $u(c,\alpha)=c^{1-\sigma}/(1-\sigma)-\phi(\alpha)$ wit
 Transparency improves welfare by steepening lenders' price schedule toward the
 rational benchmark, but convex disclosure costs imply an interior optimum. The
 comparative static in (ii) formalizes that transparency is most valuable when
-pessimism is severe.
+PRO is severe.
 
 \section{Conclusion}
 
 Standard models struggle to explain why emerging economies face persistently
 high borrowing costs. This paper develops a quantitative sovereign default
-model with a behavioral friction---lender pessimism---to address this puzzle. I
-assume lenders systematically overestimate the randomness of the sovereign's
-policy choices. Theoretically, this pessimism wedge does not uniformly depress
-bond prices but instead \textit{pivots} the price schedule, making debt cheaper
-at the edge of default but more expensive in normal times. A rational sovereign
-responds to these altered incentives in counterintuitive ways: it tolerates a
-higher debt burden before defaulting, yet simultaneously deleverages its
-day-to-day borrowing. Quantitatively, the model shows that high pessimism can
-force the debt-to-GDP ratio down from 7.90\% to 2.70\%, while more than
-doubling the average credit spread from 2.00\% to 4.15\%. This deleveraging
-creates an ``illusion of financial stability,'' where observable market
-volatility falls even as financial cycles are amplified and the sovereign's
-welfare declines.
+model with a behavioral friction---policy-randomness overestimation (PRO)---to
+address this puzzle. I assume lenders systematically overestimate the
+randomness of the sovereign's policy choices. Theoretically, this PRO wedge
+does not uniformly depress bond prices but instead \textit{pivots} the price
+schedule, making debt cheaper at the edge of default but more expensive in
+normal times. A rational sovereign responds to these altered incentives in
+counterintuitive ways: it tolerates a higher debt burden before defaulting, yet
+simultaneously deleverages its day-to-day borrowing. Quantitatively, the model
+shows that high PRO can force the debt-to-GDP ratio down from 7.90\% to 2.70\%,
+while more than doubling the average credit spread from 2.00\% to 4.15\%. This
+deleveraging creates an ``illusion of financial stability,'' where observable
+market volatility falls even as financial cycles are amplified and the
+sovereign's welfare declines.
+
+We view PRO as complementary to reputation‑based learning rather than a
+substitute. A joint empirical strategy that leverages maturity‑specific
+responses to informational shocks, the shape of the price schedule, and the
+evolution of volatility can help separate first‑moment (type) from
+second‑moment (dispersion) channels. In practice, both mechanisms may operate
+simultaneously.
 
 The theoretical extensions provide additional insights. Even optimal Ramsey
-fiscal policy cannot eliminate the welfare costs of pessimism because the
-distorted bond pricing creates fundamental allocative distortions that
-transfers cannot correct. When beliefs are formed endogenously through Bayesian
-learning with negativity bias, pessimistic perceptions become self-reinforcing
-and persist over time, explaining why some economies face chronically high
-borrowing costs. However, governments can partially mitigate these effects
-through strategic policy communication, choosing optimal transparency levels to
-reduce perceived uncertainty while managing the costs of information
-disclosure. My work thus offers a new, behaviorally-grounded perspective on
-sovereign risk, demonstrating how market beliefs can be a fundamental driver of
-debt crises and highlighting the importance of optimal policy design in
-managing these behavioral frictions.
+fiscal policy cannot eliminate the welfare costs of PRO because the distorted
+bond pricing creates fundamental allocative distortions that transfers cannot
+correct. When beliefs are formed endogenously through Bayesian learning with
+negativity bias, perceptions exhibiting PRO become self-reinforcing and persist
+over time, explaining why some economies face chronically high borrowing costs.
+However, governments can partially mitigate these effects through strategic
+policy communication, choosing optimal transparency levels to reduce perceived
+uncertainty while managing the costs of information disclosure. My work thus
+offers a new, behaviorally-grounded perspective on sovereign risk,
+demonstrating how market beliefs can be a fundamental driver of debt crises and
+highlighting the importance of optimal policy design in managing these
+behavioral frictions.
 
 \clearpage
 \appendix
@@ -1540,7 +1554,7 @@ managing these behavioral frictions.
 \renewcommand{\theequation}{\thesection.\arabic{equation}}
 
 \begin{center}
-	\Large \textbf{Appendices for ``Default with Pessimism''}\\
+	\Large \textbf{Appendices for ``Default with Policy-Randomness Overestimation''}\\
 	\vspace{0.5cm}
 	\large \textbf{Chen Gao}
 	\\
@@ -1891,7 +1905,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 		\;\Rightarrow\; P_\theta(y,B')<P_1(y,B').
 		\label{eq:prob_order_neg_correct}
 	\end{align}
-	Intuitively: when repayment strictly dominates default (\(\Delta V>0\)), pessimistic lenders assign a \emph{higher} default probability; when default dominates (\(\Delta V<0\)), they assign a \emph{lower} default probability.
+	Intuitively: when repayment strictly dominates default (\(\Delta V>0\)), PRO lenders assign a \emph{higher} default probability; when default dominates (\(\Delta V<0\)), they assign a \emph{lower} default probability.
 
 	Given the strictly positive payoff term in \eqref{eq:pricing_operator}, we have
 	\begin{equation}
@@ -2007,8 +2021,8 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	\paragraph{Sign of the numerator.}
 	Income persistence implies that higher \(y\) raises expected future endowments,
 	increases \(\Delta V_i\), lowers \(P_i\), and thus raises prices: \(\partial
-	q_i/\partial y>0\). The sensitivity is dampened under pessimism because the
-	mapping \(\Delta V \mapsto P_\theta=L(-\Delta V/(\theta\eta))\) is flatter when
+	q_i/\partial y>0\). The sensitivity is dampened under PRO because the mapping
+	\(\Delta V \mapsto P_\theta=L(-\Delta V/(\theta\eta))\) is flatter when
 	\(\theta>1\). Propagating through the pricing operator,
 	\begin{equation}
 		0 \;<\; \frac{\partial q_\theta}{\partial y}(B^*(y),y) \;<\; \frac{\partial q_1}{\partial y}(B^*(y),y),
@@ -2185,12 +2199,12 @@ This section contains the proofs for the lemmas and propositions in the paper.
 			      q_i(y,B')+\big(B'-(1-\delta)B\big)q_{i,B'}(y,B')\ \le\ q_i(y,B').
 		      \end{equation}
 
-		\item[(A2)] (Continuation marginal ordering.) Increasing next-period debt lowers the continuation value and it does so \emph{more} under pessimistic lenders:
+		\item[(A2)] (Continuation marginal ordering.) Increasing next-period debt lowers the continuation value and it does so \emph{more} under PRO lenders:
 		      \begin{equation}\label{eq:cont_deriv_order}
 			      \frac{\partial}{\partial B'}\,\E_{y'|y}[V_\theta(y',B')] \ \le\ \frac{\partial}{\partial B'}\,\E_{y'|y}[V_1(y',B')]
 			      \ \le\ 0,
 		      \end{equation}
-		      with strict inequality on a set of positive measure when \(B'\ge B^*(y)\).\footnote{This follows from monotonicity of the Bellman operator in the price schedule and Proposition~\ref{prop:pivot_concise}. For \(B'\ge B^*(y)\), pessimism implies lower prices \(q_\theta<q_1\) and (via the probability ordering embedded in the pricing operator) higher default likelihood, both of which tighten the next-period budget more when \(B'\) increases. Hence the marginal effect of \(B'\) on the continuation value is weakly more adverse under \(\theta\).}
+		      with strict inequality on a set of positive measure when \(B'\ge B^*(y)\).\footnote{This follows from monotonicity of the Bellman operator in the price schedule and Proposition~\ref{prop:pivot_concise}. For \(B'\ge B^*(y)\), PRO implies lower prices \(q_\theta<q_1\) and (via the probability ordering embedded in the pricing operator) higher default likelihood, both of which tighten the next-period budget more when \(B'\) increases. Hence the marginal effect of \(B'\) on the continuation value is weakly more adverse under \(\theta\).}
 	\end{enumerate}
 
 	\medskip
@@ -2412,7 +2426,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 \begin{proof}
 	We establish each part through rigorous analysis of the belief updating dynamics.
 
-	\textbf{Part (i): Persistent Pessimism.}
+	\textbf{Part (i): Persistent PRO.}
 	Define the conditional maximum likelihood estimators:
 	\begin{align}
 		\hat{\theta}_D(\{d_s\}_{s=0}^t) & = \arg\max_{\theta \in [\underline{\theta}, \bar{\theta}]} \prod_{s: d_s=1} P_\theta(y_s, B_s) \prod_{s: d_s=0} (1-P_\theta(y_s, B_s)) \label{eq:mle_default} \\
@@ -2509,7 +2523,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	We establish each part through detailed analysis of the sovereign's optimization problem under strategic communication.
 
 	\textbf{Setup: The Communication Problem.}
-	Let $\mathcal{W}(\alpha; \theta)$ denote the sovereign's value function under transparency level $\alpha$ and baseline pessimism $\theta$. This satisfies the Bellman equation:
+	Let $\mathcal{W}(\alpha; \theta)$ denote the sovereign's value function under transparency level $\alpha$ and baseline PRO $\theta$. This satisfies the Bellman equation:
 	\begin{equation}
 		\mathcal{W}(\alpha; \theta) = \max_{\{c_t, B_{t+1}\}} \mathbb{E}_0 \left[ \sum_{t=0}^\infty \beta^t \left( u(c_t) - \phi(\alpha) \right) \right] \label{eq:welfare_transparency}
 	\end{equation}
@@ -2564,7 +2578,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 		\frac{\partial \mathcal{W}}{\partial \alpha}\bigg|_{\alpha=0} > \gamma > \frac{\partial \mathcal{W}}{\partial \alpha}\bigg|_{\alpha=1} \label{eq:gamma_bounds}
 	\end{equation}
 
-	\textbf{Part (ii): Pessimism Amplifies Transparency.}
+	\textbf{Part (ii): PRO Amplifies Transparency.}
 	Differentiating the first-order condition \eqref{eq:foc_detailed} with respect to $\theta$ using the implicit function theorem:
 	\begin{equation}
 		\frac{\partial^2 \mathcal{W}}{\partial \alpha \partial \theta}\bigg|_{\alpha=\alpha^*} + \frac{\partial^2 \mathcal{W}}{\partial \alpha^2}\bigg|_{\alpha=\alpha^*} \frac{\partial \alpha^*}{\partial \theta} - \gamma \frac{\partial \alpha^*}{\partial \theta} = 0 \label{eq:ift_application}
@@ -2586,8 +2600,8 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	values, the direct effect dominates, ensuring $\frac{\partial^2
 			\mathcal{W}}{\partial \alpha \partial \theta} > 0$.\footnote{The direct effect
 		dominates because the immediate benefit of transparency increases linearly with
-		the degree of baseline pessimism, while the indirect effects through
-		equilibrium adjustments are second-order.}
+		the degree of baseline PRO, while the indirect effects through equilibrium
+		adjustments are second-order.}
 
 	Since the denominator in \eqref{eq:transparency_theta_derivative} is positive
 	by the second-order condition \eqref{eq:soc}, we conclude:
@@ -2706,7 +2720,7 @@ carefully ordered sequence of updates, parallelized with OpenMP where possible.
 		            \end{equation*}
 	      \end{enumerate}
 
-	\item \textbf{Update Bond Prices.} I update the bond price schedule $q_k(y, B')$ based on the lenders' zero-profit condition. This is the crucial step where I introduce the behavioral pessimism wedge, $\theta$ (\texttt{thetaD}). For each state $(y_i, B'_l)$:
+	\item \textbf{Update Bond Prices.} I update the bond price schedule $q_k(y, B')$ based on the lenders' zero-profit condition. This is the crucial step where I introduce the behavioral PRO wedge, $\theta$ (\texttt{thetaD}). For each state $(y_i, B'_l)$:
 	      \begin{enumerate}
 		      \item I calculate the \textbf{lender's perceived default probability},
 		            $\tilde{P}(y_m, B'_l)$. It uses the most recently updated value functions,
@@ -2824,13 +2838,13 @@ The corresponding expected value function is:
 	V(y,B) = \overline{V}(y,B) + \eta \ln\left[\exp\frac{V^D(y)-\overline{V}(y,B)}{\eta} + \exp\frac{V^R(y,B)-\overline{V}(y,B)}{\eta}\right]
 \end{equation}
 
-\subsubsection{Lender Pessimism and Numerical Stability}
+\subsubsection{PRO and Numerical Stability}
 
-The behavioral extension introducing lender pessimism as in equation
-\eqref{eq:plender} requires computing perceived default probabilities using the
-distorted parameter $\tilde{\eta} = \theta \eta$. I compute the lender's
-perceived default probability using the same stabilization technique as in the
-default choice probabilities:
+The behavioral extension introducing PRO as in equation \eqref{eq:plender}
+requires computing perceived default probabilities using the distorted
+parameter $\tilde{\eta} = \theta \eta$. I compute the lender's perceived
+default probability using the same stabilization technique as in the default
+choice probabilities:
 \begin{align}
 	\tilde{V}(y,B) & = \max\{V^D(y), V^R(y,B)\}                                                                                                                                 \\
 	\tilde{P}(y,B) & = \frac{\exp\frac{V^D(y)-\tilde{V}(y,B)}{\tilde{\eta}}}{\exp\frac{V^D(y)-\tilde{V}(y,B)}{\tilde{\eta}} + \exp\frac{V^R(y,B)-\tilde{V}(y,B)}{\tilde{\eta}}}
@@ -2861,4 +2875,3 @@ shock parameters that characterize the discrete choice approach.
 \bibliography{references}
 
 \end{document}
-

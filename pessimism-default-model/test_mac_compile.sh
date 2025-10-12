@@ -7,6 +7,7 @@ echo "Cleaning previous builds..."
 rm -rf bin/* ./*.mod ./*.o
 
 echo "Creating result directories..."
+mkdir -p bin
 mkdir -p results/baseline
 mkdir -p results/thetad100
 mkdir -p results/theta10
@@ -112,7 +113,7 @@ echo "🚀 Now running Matlab visualization..."
 
 # 切换到results目录并运行Matlab
 cd results
-matlab -nodisplay -nosplash -nodesktop -r "try; main; fprintf('\n✅ All plots generated successfully!\n'); catch ME; fprintf('\n❌ Matlab visualization failed: %s\n', ME.message); end; exit;"
+/Applications/MATLAB_R2025b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "try; main; fprintf('\n✅ All plots generated successfully!\n'); catch ME; fprintf('\n❌ Matlab visualization failed: %s\n', ME.message); end; exit;"
 
 echo ""
 echo "🎉 COMPLETE WORKFLOW FINISHED!"

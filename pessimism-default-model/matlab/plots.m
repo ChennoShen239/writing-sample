@@ -142,7 +142,7 @@ if ~isempty(sign_changes)
         plot([B_star B_star], [0 q_star], 'r--', 'LineWidth', 1, 'HandleVisibility', 'off');
 
         % 在图上标注区域
-        text(B_star/2, 0.85, 'Pessimism Premium', 'FontSize', 14, 'Interpreter', 'latex', ...
+        text(B_star/2, 0.85, 'PRO Premium', 'FontSize', 14, 'Interpreter', 'latex', ...
             'HorizontalAlignment', 'center', 'BackgroundColor', 'white', 'EdgeColor', 'black');
         text((B_star + 0.7)/2, 0.85, 'Doom Softening', 'FontSize', 14, 'Interpreter', 'latex', ...
             'HorizontalAlignment', 'center', 'BackgroundColor', 'white', 'EdgeColor', 'black');
@@ -302,7 +302,7 @@ formatFigure();
 figure(8);
 set(gcf, 'Position', [200, 200, 800, 600]);
 hold on;
-b_idx = 200; % 使用一个固定的索引
+b_idx = round(baseline.bSz * 0.6); % 使用动态索引，大约在60%位置
 
 % Baseline
 plot(baseline.bGrid, squeeze(baseline.bPol(fixYs(1), b_idx, :)), baselineStyle, 'Color', colors(1,:), 'LineWidth', lineWidth, 'DisplayName', 'Baseline Low');
@@ -624,98 +624,98 @@ fprintf('Figures 17-20 saved successfully.\n');
 %% --- 辅助函数 ---
 
 function irf_data = find_ss_and_simulate_irf(model, y_path_idx)
-% 1. 寻找不动点 B_ss
-y_idx_mean = y_path_idx(end); % 稳态时的y索引
+    % 1. 寻找不动点 B_ss
+    y_idx_mean = y_path_idx(end); % 稳态时的y索引
 
-% 定义函数 g(B) = E[B'|y_mean, B] - B
-expected_b_prime_func = @(b_idx) sum(squeeze(model.bPol(y_idx_mean, b_idx, :)) .* model.bGrid);
-g_func = @(b_idx) expected_b_prime_func(b_idx) - model.bGrid(b_idx);
+    % 定义函数 g(B) = E[B'|y_mean, B] - B
+    expected_b_prime_func = @(b_idx) sum(squeeze(model.bPol(y_idx_mean, b_idx, :)) .* model.bGrid);
+    g_func = @(b_idx) expected_b_prime_func(b_idx) - model.bGrid(b_idx);
 
-% 在整个债务网格上计算 g(B)
-g_values = arrayfun(g_func, 1:model.bSz);
+    % 在整个债务网格上计算 g(B)
+    g_values = arrayfun(g_func, 1:model.bSz);
 
-% 找到 g(B) 符号变化的位置，即不动点所在
-sign_changes = find(diff(sign(g_values)) ~= 0);
-if isempty(sign_changes)
-    % 如果没有交叉点，可能在边界，取g值最接近0的点
-    [~, ss_idx] = min(abs(g_values));
-    warning('No steady-state crossing found. Using point closest to zero.');
-else
-    % 线性插值找到更精确的不动点
-    idx1 = sign_changes(1);
-    idx2 = idx1 + 1;
-    B_ss = interp1(g_values([idx1, idx2]), model.bGrid([idx1, idx2]), 0);
-    [~, ss_idx] = min(abs(model.bGrid - B_ss)); % 找到最近的网格点
-end
+    % 找到 g(B) 符号变化的位置，即不动点所在
+    sign_changes = find(diff(sign(g_values)) ~= 0);
+    if isempty(sign_changes)
+        % 如果没有交叉点，可能在边界，取g值最接近0的点
+        [~, ss_idx] = min(abs(g_values));
+        warning('No steady-state crossing found. Using point closest to zero.');
+    else
+        % 线性插值找到更精确的不动点
+        idx1 = sign_changes(1);
+        idx2 = idx1 + 1;
+        B_ss = interp1(g_values([idx1, idx2]), model.bGrid([idx1, idx2]), 0);
+        [~, ss_idx] = min(abs(model.bGrid - B_ss)); % 找到最近的网格点
+    end
 
-B_ss = model.bGrid(ss_idx);
-fprintf('Found steady state debt B_ss = %.4f for model.\n', B_ss);
+    B_ss = model.bGrid(ss_idx);
+    fprintf('Found steady state debt B_ss = %.4f for model.\n', B_ss);
 
-% 2. 模拟IRF路径
-T = length(y_path_idx);
-irf_data = struct('y_path', zeros(T,1), 'B_path', zeros(T,1), ...
-    'C_path', zeros(T,1), 'Sp_path', zeros(T,1));
+    % 2. 模拟IRF路径
+    T = length(y_path_idx);
+    irf_data = struct('y_path', zeros(T,1), 'B_path', zeros(T,1), ...
+        'C_path', zeros(T,1), 'Sp_path', zeros(T,1));
 
-% 设置初始状态
-b_idx_current = ss_idx;
+    % 设置初始状态
+    b_idx_current = ss_idx;
 
-for t = 1:T
-    % 获取当前状态
-    B_current = model.bGrid(b_idx_current);
-    y_idx_current = y_path_idx(t);
-    y_current = model.yGrid(y_idx_current);
+    for t = 1:T
+        % 获取当前状态
+        B_current = model.bGrid(b_idx_current);
+        y_idx_current = y_path_idx(t);
+        y_current = model.yGrid(y_idx_current);
 
-    % 确定下一期债务 B' (取期望)
-    bPol_current = squeeze(model.bPol(y_idx_current, b_idx_current, :));
-    B_next = sum(bPol_current .* model.bGrid);
-    [~, b_idx_next] = min(abs(model.bGrid - B_next));
+        % 确定下一期债务 B' (取期望)
+        bPol_current = squeeze(model.bPol(y_idx_current, b_idx_current, :));
+        B_next = sum(bPol_current .* model.bGrid);
+        [~, b_idx_next] = min(abs(model.bGrid - B_next));
 
-    % 获取价格 q(B', y)
-    q_next = model.q(y_idx_current, b_idx_next);
+        % 获取价格 q(B', y)
+        q_next = model.q(y_idx_current, b_idx_next);
 
-    % 计算当期消费 C_t 和 利差 Sp_t
-    kappa = model.delta + model.rf;
-    C_t = y_current - kappa * B_current + q_next * (B_next - (1 - model.delta) * B_current);
-    Sp_t = (kappa * (1/q_next - 1)) * 4; % 算术年化
+        % 计算当期消费 C_t 和 利差 Sp_t
+        kappa = model.delta + model.rf;
+        C_t = y_current - kappa * B_current + q_next * (B_next - (1 - model.delta) * B_current);
+        Sp_t = (kappa * (1/q_next - 1)) * 4; % 算术年化
 
-    % 存储结果
-    irf_data.y_path(t) = y_current;
-    irf_data.B_path(t) = B_current;
-    irf_data.C_path(t) = C_t;
-    irf_data.Sp_path(t) = Sp_t;
+        % 存储结果
+        irf_data.y_path(t) = y_current;
+        irf_data.B_path(t) = B_current;
+        irf_data.C_path(t) = C_t;
+        irf_data.Sp_path(t) = Sp_t;
 
-    % 更新状态
-    b_idx_current = b_idx_next;
-end
+        % 更新状态
+        b_idx_current = b_idx_next;
+    end
 
-% 3. 计算稳态值并报告偏离
-y_ss = model.yGrid(y_idx_mean);
-C_ss = irf_data.C_path(end); % 假设T期后已回到稳态
-Sp_ss = irf_data.Sp_path(end);
+    % 3. 计算稳态值并报告偏离
+    y_ss = model.yGrid(y_idx_mean);
+    C_ss = irf_data.C_path(end); % 假设T期后已回到稳态
+    Sp_ss = irf_data.Sp_path(end);
 
-irf_data.y_path = (irf_data.y_path - y_ss) / y_ss; % 产出：百分比偏离
-irf_data.C_path = (irf_data.C_path - C_ss) / C_ss * 100; % 消费：百分比偏离
-irf_data.Sp_path = (irf_data.Sp_path - Sp_ss) * 10000; % 利差：基点(bps)偏离
-% 债务报告水平值，因为它本身就是我们关心的状态变量
-irf_data.B_path = (irf_data.B_path - B_ss) / B_ss * 100;
+    irf_data.y_path = (irf_data.y_path - y_ss) / y_ss; % 产出：百分比偏离
+    irf_data.C_path = (irf_data.C_path - C_ss) / C_ss * 100; % 消费：百分比偏离
+    irf_data.Sp_path = (irf_data.Sp_path - Sp_ss) * 10000; % 利差：基点(bps)偏离
+    % 债务报告水平值，因为它本身就是我们关心的状态变量
+    irf_data.B_path = (irf_data.B_path - B_ss) / B_ss * 100;
 end
 
 function plot_irf(fig_num, time, y_label, data_cell, y_axis_label, ls1, ls2, ls3, colors, lw)
-figure(fig_num);
-set(gcf, 'Position', [100 + 50*(fig_num-13), 100 + 50*(fig_num-13), 800, 600]);
-hold on;
-plot(time, data_cell{1}, ls1, 'Color', colors(2,:), 'LineWidth', lw, 'DisplayName', 'Baseline');
-plot(time, data_cell{2}, ls2, 'Color', colors(2,:), 'LineWidth', lw, 'DisplayName', 'Med $\theta$');
-plot(time, data_cell{3}, ls3, 'Color', colors(2,:), 'LineWidth', lw, 'DisplayName', 'High $\theta$');
-plot(time, zeros(size(time)), 'k-', 'LineWidth', 1, 'HandleVisibility', 'off'); % 零线
-hold off;
+    figure(fig_num);
+    set(gcf, 'Position', [100 + 50*(fig_num-13), 100 + 50*(fig_num-13), 800, 600]);
+    hold on;
+    plot(time, data_cell{1}, ls1, 'Color', colors(2,:), 'LineWidth', lw, 'DisplayName', 'Baseline');
+    plot(time, data_cell{2}, ls2, 'Color', colors(2,:), 'LineWidth', lw, 'DisplayName', 'Med $\theta$');
+    plot(time, data_cell{3}, ls3, 'Color', colors(2,:), 'LineWidth', lw, 'DisplayName', 'High $\theta$');
+    plot(time, zeros(size(time)), 'k-', 'LineWidth', 1, 'HandleVisibility', 'off'); % 零线
+    hold off;
 
-xlabel('Quarters', 'Interpreter', 'latex', 'FontSize', 12);
-ylabel(y_axis_label, 'Interpreter', 'latex', 'FontSize', 12);
-grid on;
-xlim([0, time(end)]);
-legend('Location', 'best', 'Interpreter', 'latex');
-formatFigure();
+    xlabel('Quarters', 'Interpreter', 'latex', 'FontSize', 12);
+    ylabel(y_axis_label, 'Interpreter', 'latex', 'FontSize', 12);
+    grid on;
+    xlim([0, time(end)]);
+    legend('Location', 'best', 'Interpreter', 'latex');
+    formatFigure();
 end
 
 
@@ -724,67 +724,67 @@ end
 %% --- 辅助函数 ---
 
 function path = simulate_path(model, B0, y_idx, T)
-% 该函数模拟给定初始债务和固定产出下的路径，并正确记录所有变量
+    % 该函数模拟给定初始债务和固定产出下的路径，并正确记录所有变量
 
-% 初始化结果存储
-path.B_path = zeros(T, 1);
-path.C_path = zeros(T, 1);
-path.Sp_path = zeros(T, 1); % 新增利差路径的初始化
+    % 初始化结果存储
+    path.B_path = zeros(T, 1);
+    path.C_path = zeros(T, 1);
+    path.Sp_path = zeros(T, 1); % 新增利差路径的初始化
 
-% 获取模型参数和网格
-bGrid = model.bGrid;
-y = model.yGrid(y_idx);
-kappa = model.delta + model.rf;
+    % 获取模型参数和网格
+    bGrid = model.bGrid;
+    y = model.yGrid(y_idx);
+    kappa = model.delta + model.rf;
 
-% 找到最接近初始债务 B0 的网格点索引
-[~, b_idx_current] = min(abs(bGrid - B0));
-path.B_path(1) = bGrid(b_idx_current);
+    % 找到最接近初始债务 B0 的网格点索引
+    [~, b_idx_current] = min(abs(bGrid - B0));
+    path.B_path(1) = bGrid(b_idx_current);
 
-% --- 循环结构修正 ---
-% 循环 T 次，每次计算 t 时刻的 C 和 Sp，以及 t+1 时刻的 B
-for t = 1:T
-    % 1. 获取当前状态 (y_idx, b_idx_current)
-    B_current = path.B_path(t);
-    [~, b_idx_current] = min(abs(bGrid - B_current));
+    % --- 循环结构修正 ---
+    % 循环 T 次，每次计算 t 时刻的 C 和 Sp，以及 t+1 时刻的 B
+    for t = 1:T
+        % 1. 获取当前状态 (y_idx, b_idx_current)
+        B_current = path.B_path(t);
+        [~, b_idx_current] = min(abs(bGrid - B_current));
 
-    % 2. 确定下一期债务 B' (取期望)
-    bPol_current = squeeze(model.bPol(y_idx, b_idx_current, :));
-    B_next = sum(bPol_current .* bGrid);
-    [~, b_idx_next] = min(abs(bGrid - B_next));
+        % 2. 确定下一期债务 B' (取期望)
+        bPol_current = squeeze(model.bPol(y_idx, b_idx_current, :));
+        B_next = sum(bPol_current .* bGrid);
+        [~, b_idx_next] = min(abs(bGrid - B_next));
 
-    % 3. 获取价格 q(B', y) 并计算当期利差
-    q_next = model.q(y_idx, b_idx_next);
-    Sp_t_quarterly = (kappa * (1/q_next - 1));
-    % 与图4保持一致，使用几何年化
-    path.Sp_path(t) = (1 + Sp_t_quarterly)^4 - 1;
+        % 3. 获取价格 q(B', y) 并计算当期利差
+        q_next = model.q(y_idx, b_idx_next);
+        Sp_t_quarterly = (kappa * (1/q_next - 1));
+        % 与图4保持一致，使用几何年化
+        path.Sp_path(t) = (1 + Sp_t_quarterly)^4 - 1;
 
-    % 4. 计算当期消费 C_t
-    path.C_path(t) = y - kappa * B_current + q_next * (B_next - (1 - model.delta) * B_current);
+        % 4. 计算当期消费 C_t
+        path.C_path(t) = y - kappa * B_current + q_next * (B_next - (1 - model.delta) * B_current);
 
-    % 5. 存储下一期债务（如果不是最后一次循环）
-    if t < T
-        path.B_path(t+1) = B_next;
+        % 5. 存储下一期债务（如果不是最后一次循环）
+        if t < T
+            path.B_path(t+1) = B_next;
+        end
     end
-end
 end
 
 % --- MODIFIED formatFigure function ---
 function formatFigure(hasLegendTitle, legendTitleText)
-% 格式化图像
-ax = gca; % Get current axes handle
-ax.FontSize = 18;
-ax.TickLabelInterpreter = 'latex';
+    % 格式化图像
+    ax = gca; % Get current axes handle
+    ax.FontSize = 18;
+    ax.TickLabelInterpreter = 'latex';
 
 
-% Create the legend AFTER adjusting axes position
-% You might need to adjust FontSize for specific figures (e.g., Figures 2 & 4 had 10)
-lgd = legend('Location', 'southoutside', 'Orientation', 'horizontal', 'NumColumns', 3, ...
-    'Interpreter', 'latex',  'Box', 'off');
+    % Create the legend AFTER adjusting axes position
+    % You might need to adjust FontSize for specific figures (e.g., Figures 2 & 4 had 10)
+    lgd = legend('Location', 'southoutside', 'Orientation', 'horizontal', 'NumColumns', 3, ...
+        'Interpreter', 'latex',  'Box', 'off');
 
-% Apply legend title if provided (for Figure 8)
-if nargin > 0 && hasLegendTitle
-    title(lgd, legendTitleText);
-end
+    % Apply legend title if provided (for Figure 8)
+    if nargin > 0 && hasLegendTitle
+        title(lgd, legendTitleText);
+    end
 
-% set(ax, 'Box', 'on', 'LineWidth', 1.5); % Uncomment if you want a box around the plot area itself
+    % set(ax, 'Box', 'on', 'LineWidth', 1.5); % Uncomment if you want a box around the plot area itself
 end
