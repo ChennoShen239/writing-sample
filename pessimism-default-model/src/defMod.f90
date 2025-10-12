@@ -24,8 +24,8 @@ MODULE defMod
    REAL(wp), PARAMETER :: rhoB = 1.0D-5
 
    INTEGER, PARAMETER :: maxIter = 1000, simSz = 100000
-   INTEGER, PARAMETER :: ySz = 101
-   INTEGER, PARAMETER :: bSz = 300
+   INTEGER, PARAMETER :: ySz = 201
+   INTEGER, PARAMETER :: bSz = 600
    ! remember to all x4
    REAL(wp), PARAMETER :: tolErrV = 1.0D-6, tolErrQ = 1.0D-6
    REAL(wp), PARAMETER :: bMin = 0.0_wp, bMax = 0.75_wp

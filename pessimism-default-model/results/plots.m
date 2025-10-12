@@ -296,7 +296,7 @@ formatFigure();
 figure(8);
 set(gcf, 'Position', [200, 200, 800, 600]);
 hold on;
-b_idx = round(baseline.bSz * 0.6); % 使用动态索引，大约在60%位置
+b_idx = round(baseline.bSz * 0.3); % 使用动态索引，大约在60%位置
 
 % Baseline
 plot(baseline.bGrid, squeeze(baseline.bPol(fixYs(1), b_idx, :)), baselineStyle, 'Color', colors(1,:), 'LineWidth', lineWidth, 'DisplayName', 'Baseline Low');

@@ -269,19 +269,23 @@ mechanical standpoint: a policy that lowers the real debt burden should have
 indicating the event was a pure, and powerful, information shock about the
 government's character and future actions.
 
-	% \begin{figure}[htbp]
-	% 	\centering
-	% 	{\color{red}[TODO: Download the new data from a Bloomberg terminal and save it in the Empirics folder]}
-
-	% 	\includegraphics[width=0.6\textwidth]{../../long_term/Empirics/Results/Figure_EMBI_LATAM.pdf}
-	% 	\caption{Argentina's EMBI+ spread relative to the Latin-American average,
-	% 		2006–2012.  The shaded area marks the period starting in 2007 when INDEC's CPI
-	% 		methodology was politically controlled.
-	% 		Source:~J.~P.~Morgan.}
-	% 	\label{fig:argentina_spreads}
-	% \end{figure}
-
-	[Figure placeholder: Argentina's EMBI+ spread data - TODO: Download from Bloomberg terminal]
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[t]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{../../pessimism-default-model/results/inflation_arg.png}
+		\subcaption{Official CPI (black) vs alternative measures (gray).}
+		\label{fig:argentina_inflation}
+	\end{subfigure}\hfill
+	\begin{subfigure}[t]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{../../pessimism-default-model/results/spread_arg.png}
+		\subcaption{EMBI+ spreads: Argentina (black) vs other LA (gray).}
+		\label{fig:argentina_spread}
+	\end{subfigure}
+	\caption{Argentina’s misreport of inflation and decoupling of spreads. Panel A shows the monthly official inflation rate announced by the Argentine government (black line) and alternative measures of inflation (gray lines). Panel B shows annualized emerging market bond index spreads for Argentina (black line) and other Latin American countries (gray lines). Vertical lines denote the first month in which the Argentine government underreported the inflation rate.}
+	\label{fig:argentina_spreads}
+\end{figure}
 
 \paragraph{Reputational Interpretation and Open Questions}
 The conventional explanation, rooted in reputational models
@@ -299,7 +303,19 @@ that the market's reaction was not just to what it learned about the
 sovereign's \textit{intent}, but to a perceived increase in its \textit{erratic
 	nature}.
 
-\paragraph{Comparative reading} Both channels likely operated during the misreporting episode. A reputational interpretation views misreporting as a credible signal that raises spreads broadly by shifting the posterior over types. PRO instead emphasizes a perceived increase in policy unpredictability (dispersion), which implies a \emph{pivoting} price schedule: cheaper terms near the brink (due to a perceived chance of “irrational” repayment) but costlier terms in normal times. This yields two testable implications: (i) a heterogeneous cross‑maturity response—reputation effects tend to lift spreads across instruments, whereas PRO can produce divergent effects across the debt distribution; and (ii) a sustained elevation in average spreads even if volatility later declines (an “illusion of stability”), consistent with a persistent second‑moment bias. See Table~\ref{tab:prediction_comparison} for a summary of differences under canonical implementations.
+\paragraph{Comparative reading} Both channels likely operated during the misreporting episode. A reputational
+interpretation views misreporting as a credible signal that raises spreads
+broadly by shifting the posterior over types. PRO instead emphasizes a
+perceived increase in policy unpredictability (dispersion), which implies a
+\emph{pivoting} price schedule: cheaper terms near the brink (due to a
+perceived chance of “irrational” repayment) but costlier terms in normal times.
+This yields two testable implications: (i) a heterogeneous cross‑maturity
+response—reputation effects tend to lift spreads across instruments, whereas
+PRO can produce divergent effects across the debt distribution; and (ii) a
+sustained elevation in average spreads even if volatility later declines (an
+“illusion of stability”), consistent with a persistent second‑moment bias. See
+Table~\ref{tab:prediction_comparison} for a summary of differences under
+canonical implementations.
 
 \paragraph{A Behavioral Hypothesis: Policy-Randomness Overestimation (PRO)}
 This paper explores an alternative, yet complementary, behavioral friction. I
@@ -610,9 +626,12 @@ high variance of taste shocks. This results in a ``PRO premium'' that lowers
 the bond price. Conversely, for high debt levels ($B>B^*(y)$), where a rational
 lender sees default as a near certainty based on fundamentals, the PRO lender's
 view, which emphasizes randomness, makes them less certain of this outcome.
-Their belief allows for a higher chance of an ``irrational'' repayment, which
-paradoxically supports a higher bond price. The threshold $B^*(y)$ marks the
-debt level where these two competing effects exactly offset each other.
+
+Intuitively, PRO rotates the price schedule so that normal-time borrowing
+becomes \emph{more expensive} (a positive ``PRO premium'' at low debt), while
+extreme high-debt states become marginally cheaper. Optimal policy moves the
+economy away from the region where PRO is favorable and toward the region where
+PRO is unfavorable. The average spread must therefore rise.
 
 \begin{figure}[htb]
 	\centering
@@ -711,9 +730,38 @@ value of this access depends directly on future borrowing terms. Proposition
 high, PRO lenders offer \textit{better} prices (the``softening of doom''
 effect). A rational sovereign in the PRO economy foresees these more favorable
 future borrowing terms should it choose to repay. This increases the option
-value of repaying and rolling over debt. Because the prospect o is more
-attractive, the sovereign is willing to endure a higher debt burden before
-finally choosing to default, pushing its default threshold further out.
+value of repaying and rolling over debt.
+\paragraph{Why Average Spreads Rise Despite Deleveraging}
+Let $s_i(y,B')$ denote the spread defined in~\eqref{eq:spread_definition} with
+price $q_i$ for economy $i\in\{1,\theta\}$, where $q_i$ is the equilibrium bond
+price under rational lenders ($i=1$) and PRO lenders ($i=\theta$). Denote by
+$\mu_i$ the stationary distribution over non-default states and optimal choices
+(including the sovereign's optimal $B'$) in economy $i$. The difference in
+average spreads can be written as the decomposition
+\begin{equation}\label{eq:spread_decomp}
+	\bar s_\theta - \bar s_1 \;=\; \kappa\,\underbrace{\E_{\mu_\theta}\Big[\tfrac{1}{q_\theta}-\tfrac{1}{q_1}\Big]}_{\text{price wedge at PRO weights}}\;\; +\; \kappa\,\underbrace{\Big(\E_{\mu_\theta}\left[\tfrac{1}{q_1}\right] - \E_{\mu_1}\left[\tfrac{1}{q_1}\right]\Big)}_{\text{composition (policy) effect}}\,.
+\end{equation}
+The pivot result (Proposition~\ref{prop:pivot_concise}) implies that for each $y$ there exists $B^*(y)$ such that $q_\theta(y,B')<q_1(y,B')$ (equivalently, $1/q_\theta>1/q_1$) for $B'<B^*(y)$, and the opposite inequality holds for $B'>B^*(y)$. In the empirically relevant set where new issuance occurs (the primary borrowing region), one typically has $B'<B^*(y)$ and $V^R(y,B')>V^D(y)$.
+
+Two implications follow.
+\begin{itemize}
+	\item \emph{Local comparative statics.} Differentiating~\eqref{eq:qprice_biased} with respect to $\theta$ yields the linear equation
+	      \begin{equation}\label{eq:q_deriv_linear}
+		      \big(I - \mathcal T_\theta\big)\,\frac{\partial q_\theta(\cdot)}{\partial\theta}\,(y,B') \;=\; -\frac{1}{1+r}\,\E_{y'|y}\Big[\big(\partial_\theta \tilde P(y',B')\big)\,\Lambda(y',B')\Big],
+	      \end{equation}
+	      where $\Lambda(y',B')\equiv \kappa + (1-\delta)\sum_{B''\in\mathcal B} \Pr\{B''|y',B'\}\,q_\theta(y',B'')$ and $\mathcal T_\theta$ is the positive linear operator
+	      \[\big(\mathcal T_\theta f\big)(y,B') \;=\; \frac{1}{1+r}\,\E_{y'|y}\Big[(1-\tilde P(y',B'))\,(1-\delta)\sum_{B''\in\mathcal B} \Pr\{B''|y',B'\}\, f(y',B'')\Big].\]
+	      Because $\|\mathcal T_\theta\|<1$ under discounting and $(1-\delta)<1$,
+	      $(I-\mathcal T_\theta)^{-1}$ exists and is positive. Using~\eqref{eq:plender}
+	      with $\Delta V(y',B')\equiv V^R(y',B')-V^D(y')$ gives
+	      \[\partial_\theta \tilde P(y',B')
+		      = \tilde P(y',B')\big(1-\tilde P(y',B')\big)\,\frac{\Delta V(y',B')}{\theta^2\eta}.\]
+	      Hence, when $\Delta V(y',B')>0$ (repayment dominates; typically $B'<B^*(y)$),
+	      the right-hand side of~\eqref{eq:q_deriv_linear} is negative, implying
+	      $\partial q_\theta/\partial\theta<0$, and therefore $\partial
+		      s_\theta/\partial\theta>0$ by~\eqref{eq:spread_definition}.
+	\item \emph{Average spread dominance.} By~\eqref{eq:spread_decomp}, the first term (price wedge at PRO weights) is strictly positive and \emph{strengthened} by deleveraging, because mass shifts toward $B'<B^*(y)$ where $1/q_\theta - 1/q_1>0$. The second term (composition effect at baseline prices) is weakly negative since $1/q_1$ is lower at smaller $B'$. Under mild regularity (small taste-shock scale $\eta$ and monotone price/borrowing policies), the first term dominates the second, implying $\bar s_\theta>\bar s_1$ even though the sovereign deleverages.
+\end{itemize}
 
 \paragraph{Borrowing Policy}
 While PRO makes the sovereign more resilient at the brink of crisis, it has the
