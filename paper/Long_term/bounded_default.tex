@@ -240,10 +240,7 @@ incorporating reputational dynamics, may not fully account for the persistence
 and magnitude of the country-specific risk premium observed in cases like
 Argentina, where borrowing costs have often appeared divorced from traditional
 measures of repayment capacity \citep{MorelliMoretti2023}. This suggests the
-presence of frictions beyond those typically modeled. {\color{red}[TODO: Add
-			comparison table showing Argentina vs Brazil/Chile core indicators (debt ratio,
-			GDP growth, spreads) to more intuitively highlight the ``anomaly'' mentioned in
-			reviewer feedback]}
+presence of frictions beyond those typically modeled.
 
 \paragraph{The Misreporting Episode}
 This puzzle was cast in sharp relief during the inflation misreporting episode
@@ -275,7 +272,7 @@ government's character and future actions.
 	% \begin{figure}[htbp]
 	% 	\centering
 	% 	{\color{red}[TODO: Download the new data from a Bloomberg terminal and save it in the Empirics folder]}
-	% 
+
 	% 	\includegraphics[width=0.6\textwidth]{../../long_term/Empirics/Results/Figure_EMBI_LATAM.pdf}
 	% 	\caption{Argentina's EMBI+ spread relative to the Latin-American average,
 	% 		2006–2012.  The shaded area marks the period starting in 2007 when INDEC's CPI
@@ -881,7 +878,7 @@ PRO model with those of a standard reputation model.
 		Expected Borrowing, $\mathbb{E}[B']$       & Often \textit{lower} (constraint-driven)                              & \textit{Lower} (price-driven in this model)               \\
 		Average Spread, $\mathbb{E}[s]$            & \textit{Higher}                                                       & \textit{Higher}                                           \\
 		Cross-maturity response after misreporting & Tends to increase across instruments                                  & Divergent across debt distribution (pivot-consistent)     \\
-		Haircut-size effect on spreads             & Strengthens with larger haircuts \citep{AmadorPhelan2023}             & May weaken if larger haircuts reduce perceived randomness \\\ ottomrule
+		Haircut-size effect on spreads             & Strengthens with larger haircuts \citep{AmadorPhelan2023}             & May weaken if larger haircuts reduce perceived randomness \\\bottomrule
 	\end{tabularx}
 	\parbox{\linewidth}{\small\textit{Note:} This table compares predictions under canonical implementations of reputation models with the behavioral mechanism in this paper. The PRO column reflects this model's implementation assumptions.}
 \end{table}
@@ -955,7 +952,6 @@ numerical solution.\footnote{Specifically, $\eta = 5 \times 10^{-4}$ for
 	\end{tabular}
 	\parbox{\linewidth}{\small\textit{Note:} The table presents the parameter values used in the baseline calibration of the model. Parameters are set to match standard values in the sovereign default literature and key macroeconomic features of emerging economies like Argentina.}
 
-	{\color{red}[TODO: Add parameter-target correspondence table showing which parameter targets which moment/statistic, as suggested by reviewer to improve transparency of calibration strategy]}
 \end{table}
 
 \paragraph{Numerical Solution}
@@ -1079,7 +1075,6 @@ integration for a quieter, but more expensive, life.
 	\end{tabular}
 	\parbox{\linewidth}{\small\textit{Note:} The table reports moments from a long simulation of the model (100,000 periods after a 1,000-period burn-in). Spreads are annualized. All other variables are in quarterly terms.}
 
-	{\color{red}[TODO: Add robustness checks showing results remain consistent under longer simulations and different random seeds]}
 \end{table}
 
 \subsection{The Mechanics of PRO: Distributions and Policy Functions}
