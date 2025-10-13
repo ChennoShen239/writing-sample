@@ -53,8 +53,8 @@
 
 % --- TITLE BLOCK ---
 \title{Default with Policy-Randomness Overestimation}
-\author{Chen Gao \thanks{National School of Development, Peking University. Email: \url{chengao0716@gmail.com}. I thank Bo Li and Changhua Yu for thorough guidance. I thank Michael Devereux for helpful advice.}}
-\date{{\color{red} [INCOMPLETE AND PRELIMINARY]} \\ \today}
+\author{Chen Gao \thanks{National School of Development, Peking University. Email: \url{chengao0716@gmail.com}. I thank Bo Li and Changhua Yu for thorough guidance. I thank Michael Devereux, Chen Lian for helpful advice.}}
+\date{ \today}
 
 % --- DOCUMENT START ---
 \begin{document}
@@ -62,7 +62,7 @@
 \maketitle
 
 \begin{abstract}
-	Why do emerging economies face persistently high borrowing costs despite moderate debt levels? I develop a quantitative sovereign default model where lenders systematically overestimate government policy randomness—policy-randomness overestimation (PRO). This behavioral bias creates a ``PRO wedge'' that pivots bond prices—making debt cheaper near default but more expensive in normal times. Rational sovereigns respond by deleveraging yet paradoxically face higher average spreads and an ``illusion of financial stability'' where volatility falls despite rising risk premiums. Theoretical extensions demonstrate that optimal fiscal policy cannot eliminate allocative distortions from PRO, learning frictions can perpetuate beliefs exhibiting PRO, and strategic communication can partially mitigate these effects. The framework provides a new behavioral foundation for understanding sovereign debt puzzles in emerging markets.
+	Why do some sovereigns pay high spreads despite moderate debt? I build a quantitative default model where lenders overweight the dispersion of policy realizations (policy‑randomness overestimation, PRO). Within a single pricing operator, PRO pivots price/spread schedules around a state‑contingent threshold: the sovereign deleverages while defaulting at higher debt, raising average spreads and producing a “stability illusion” (lower volatility with higher premia). I microfound PRO via rational inattention: optimal attention to dispersion generates a state‑dependent tail weight $\theta_{\mathrm{RI}}(y,B')$ that enters the same operator, so baseline comparative statics extend mechanically. Policy and information extensions show limited power of fiscal transfers, persistence from negativity‑biased learning, and welfare gains from transparency. Event‑style hooks (e.g., Argentina’s inflation misreporting) align with the model’s pivot, threshold, and decoupling predictions.
 \end{abstract}
 
 \noindent \textbf{Keywords:} Sovereign Default, Behavioral Macroeconomics, Policy-Randomness Overestimation (PRO), Sovereign Spreads, Information Frictions, Argentina, Debt Management.
@@ -74,44 +74,27 @@
 \section{Introduction}
 \label{sec:intro}
 
-Why is sovereign debt in some emerging economies particularly expensive?
-Standard models struggle to explain why countries with moderate debt-to-GDP
-ratios face persistently high borrowing costs, excess volatility, and puzzling
-``decoupling'' from their peers \citep{TomzWright2013,
-	MeyerReinhartTrebesch2022}. Argentina exemplifies this puzzle: as documented by
-\citep{MorelliMoretti2023}, its borrowing costs often appear divorced from
-macroeconomic fundamentals, suggesting a large country-specific risk premium
-that defies conventional explanation.
+Sovereign spreads in some emerging markets remain high despite moderate debt
+and improving fundamentals. I argue a second‑moment belief
+distortion—policy‑randomness overestimation (PRO)—is central: within one
+pricing operator, PRO pivots price/spread schedules around a state‑contingent
+threshold. A rational sovereign deleverages while defaulting at higher debt, so
+average spreads rise and volatility falls—a “stability illusion.”
 
-The leading explanation centers on reputation and \textit{information
-	frictions} \citep{ColeDowEnglish1995}. In this view, advanced quantitatively by
-\citep{MorelliMoretti2023}, lenders are rational but uninformed about a
-government's hidden type---whether ``committed'' or ``strategic.'' Policy
-missteps like Argentina's inflation misreporting signal a ``bad type,'' causing
-persistent reputation downgrades. High spreads reflect the market's efficient
-pricing of this revealed information.
+I microfound PRO via rational inattention. Lenders optimally allocate attention
+to dispersion, generating a state‑dependent tail weight
+$\theta_{\mathrm{RI}}(y,B')$ that enters the \emph{same} pricing operator; all
+baseline comparative statics (pivot, $B^*(y)$ increasing, deleveraging with
+higher mean spreads) extend mechanically. Empirically, the framework matches
+event‑style patterns such as Argentina’s inflation misreporting: sharper
+pivots, higher default thresholds with deleveraging, and maturity/peer
+decoupling concentrated in stress.
 
-This paper explores an alternative \textit{behavioral friction}. What if the
-problem is not what lenders do not know, but what they systematically believe
-to be true? Departing from rational learning, I posit that lenders suffer from
-policy-randomness overestimation (PRO): a second-moment belief distortion about
-government policy randomness. While sovereigns face unobserved ``taste
-shocks,'' lenders perceive these shocks as larger and more volatile than they
-truly are. This ``PRO wedge'' distorts default risk assessment. Events like
-Argentina's misreporting signal not just strategic behavior but perceived
-policy unpredictability. Markets react to this perceived randomness increase
-alongside reputational downgrades, offering a complementary channel rather than
-a substitute.
-
-My main contribution embeds this behavioral friction into a quantitative
-sovereign default model and traces its macroeconomic consequences. Lenders with
-policy-randomness overestimation (PRO) fundamentally alter the borrowing
-environment by ``pivoting'' bond price schedules—making debt cheaper near
-default but more expensive in safe states. Rational sovereigns respond
-optimally by deleveraging yet paradoxically face higher average spreads. The
-model generates an “illusion of financial stability” where market volatility
-falls despite rising risk premiums. This mechanism is complementary to
-reputational learning and can coexist in the data.
+Roadmap. Section~\ref{sec:model} presents the environment and recursive
+equilibrium; Section~\ref{sec:theory} develops core comparative statics;
+Section~\ref{sec:micro} provides the rational‑inattention microfoundation;
+Section~\ref{sec:extensions} studies policy and information extensions. I
+summarize testable implications before the conclusion.
 
 \paragraph{Intuition: Deleveraging with Higher Spreads}
 The pivoted pricing created by PRO raises spreads precisely where governments
@@ -1550,8 +1533,7 @@ formulation yields identical monotone comparative statics in precisions.)
 \paragraph{Effective dispersion and pricing}
 I adopt a linear mapping from attention to tail-weight:
 \begin{equation}
-	\theta_{\mathrm{RI}}(y,B') \;=\; \min\Big\{\,1 + \varphi\, w\!\big(a_\sigma(y,B')\big),\; \bar\theta\,\Big\},
-	\qquad \varphi>0,\; w\in C^1,\; w'(\cdot)>0.
+	\theta_{\mathrm{RI}}(y,B') \;=\; \min\Big\{\,1 + \varphi\, a_\sigma(y,B')\,,\; \bar\theta\,\Big\},\qquad \varphi>0.
 	\label{eq:theta_RI_micro}
 \end{equation}
 For any state $(y,B')$, prices are still defined as the unique fixed point of
@@ -1561,8 +1543,7 @@ the \emph{same} operator evaluated at $\theta_{\mathrm{RI}}(y,B')$:
 	\label{eq:pricing_same_operator_micro}
 \end{equation}
 
-\noindent\textit{Example (closed form).} For $w(a)=a$, the first-order condition
-below yields $a_\sigma(y,B')=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S(y,B')$, so that
+\noindent\textit{Closed form under the linear mapping.} The first-order condition below yields $a_\sigma(y,B')=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S(y,B')$, so that
 \begin{equation}
 	\theta_{\mathrm{RI}}(y,B')\;=\; \min\Big\{\,1 + \tfrac{\varphi^2}{\kappa_\sigma}\,\mathcal S(y,B')\,,\;\bar\theta\,\Big\}.
 	\label{eq:theta_RI_closed}
@@ -1603,8 +1584,7 @@ $\theta_{\mathrm{RI}}(y,B')$ increases in $\mathcal S(y,B')$ via~\eqref{eq:theta
 
 \begin{proposition}[Operator properties and inherited comparative statics]
 	\label{prop:RI_operator_micro}
-	Suppose $\Phi$ is strictly convex and $w$ in~\eqref{eq:theta_RI_micro} is
-	increasing. If $\mathcal T_\theta$ is positive and order-preserving for each
+	Suppose $\Phi$ is strictly convex. If $\mathcal T_\theta$ is positive and order-preserving for each
 	fixed $\theta\in[1,\bar\theta]$, then the state-dependent operator
 	$\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}$ is positive and order-preserving. The
 	baseline results—single-crossing price pivot at $B^*(y)$, $B^*(y)$ increasing
@@ -1781,42 +1761,21 @@ view these as light-touch empirical hooks—for calibration and event studies
 
 \section{Conclusion}
 
-Standard models struggle to explain why emerging economies face persistently
-high borrowing costs. This paper develops a quantitative sovereign default
-model with a behavioral friction---policy-randomness overestimation (PRO)---to
-address this puzzle. I assume lenders systematically overestimate the
-randomness of the sovereign's policy choices. Theoretically, this PRO wedge
-does not uniformly depress bond prices but instead \textit{pivots} the price
-schedule, making debt cheaper at the edge of default but more expensive in
-normal times. A rational sovereign responds to these altered incentives in
-counterintuitive ways: it tolerates a higher debt burden before defaulting, yet
-simultaneously deleverages its day-to-day borrowing. Quantitatively, the model
-shows that high PRO can force the debt-to-GDP ratio down from 7.90\% to 2.70\%,
-while more than doubling the average credit spread from 2.00\% to 4.15\%. This
-deleveraging creates an ``illusion of financial stability,'' where observable
-market volatility falls even as financial cycles are amplified and the
-sovereign's welfare declines.
+I unify a behavioral sovereign‑risk mechanism—policy‑randomness overestimation
+(PRO)—with standard default environments through a single pricing operator. The
+second‑moment distortion pivots price/spread schedules, so a rational sovereign
+deleverages while defaulting at higher debt, raising average spreads and
+generating a “stability illusion” (lower volatility with higher premia).
 
-I view PRO as complementary to reputation‑based learning rather than a
-substitute. A joint empirical strategy that leverages maturity‑specific
-responses to informational shocks, the shape of the price schedule, and the
-evolution of volatility can help separate first‑moment (type) from
-second‑moment (dispersion) channels. In practice, both mechanisms may operate
-simultaneously.
-
-The theoretical extensions provide additional insights. Even optimal Ramsey
-fiscal policy cannot eliminate the welfare costs of PRO because the distorted
-bond pricing creates fundamental allocative distortions that transfers cannot
-correct. When beliefs are formed endogenously through Bayesian learning with
-negativity bias, perceptions exhibiting PRO become self-reinforcing and persist
-over time, explaining why some economies face chronically high borrowing costs.
-However, governments can partially mitigate these effects through strategic
-policy communication, choosing optimal transparency levels to reduce perceived
-uncertainty while managing the costs of information disclosure. My work thus
-offers a new, behaviorally-grounded perspective on sovereign risk,
-demonstrating how market beliefs can be a fundamental driver of debt crises and
-highlighting the importance of optimal policy design in managing these
-behavioral frictions.
+The rational‑inattention microfoundation makes PRO state‑dependent but remains
+within the same operator: attention to dispersion yields
+$\theta_{\mathrm{RI}}(y,B')$, and all baseline comparative statics carry over.
+Policy and information extensions clarify limits and levers: Ramsey transfers
+cannot undo pricing wedges; negativity‑biased learning sustains PRO; and
+transparency lowers $\theta_{\mathrm{RI}}$ and raises welfare. The framework
+offers compact, testable implications (pivot, threshold, decoupling) aligned
+with episodes such as Argentina’s inflation misreporting, and provides a
+disciplined path for calibration and event‑study validation.
 
 \clearpage
 \appendix
