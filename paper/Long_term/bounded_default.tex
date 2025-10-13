@@ -606,6 +606,16 @@ well behaved.
 	See Appendix~\ref{app:proof_existence_uniqueness}.
 \end{proof}
 
+\begin{corollary}[Monotone attention and PRO intensity]
+	\label{cor:monotone_attention}
+	If $\mathcal S(y,B')$ is increasing in $B'$ and decreasing in $y$, then the
+	solution of~\eqref{eq:foc_sigma_micro} satisfies
+	\[
+		\frac{\partial a_\sigma}{\partial B'}>0,\quad \frac{\partial a_\sigma}{\partial y}<0,
+		\qquad \frac{\partial \theta_{\mathrm{RI}}}{\partial B'}>0,\quad \frac{\partial \theta_{\mathrm{RI}}}{\partial y}<0.
+	\]
+\end{corollary}
+
 \paragraph{Unified Operators and Notation}
 To keep the subsequent theory tightly anchored to the baseline model, I adopt
 an operator view of the same recursive equilibrium. Let $J_\rho$ denote the
@@ -1514,6 +1524,12 @@ I keep primitives, the debt structure, and the sovereign aggregator $J_\rho$
 fixed. The parameter $\theta\ge1$ indexes the weight on dispersion/tail risk in
 lenders' default beliefs and thus in pricing.
 
+\paragraph{State and function spaces}
+Let the state space be $\mathsf S\coloneqq \mathcal B\times \mathcal Y$ with
+generic element $s=(B',y)$. Let $\mathcal Q\coloneqq C_b(\mathsf S)$ denote the
+bounded continuous functions on $\mathsf S$ endowed with the sup norm
+$\|\cdot\|_\infty$. Fix $\bar\theta>1$ and restrict $\theta\in[1,\bar\theta]$.
+
 \paragraph{Information structure}
 Each period, competitive lenders observe two public signals about
 fundamentals/policy stability:
@@ -1522,7 +1538,7 @@ fundamentals/policy stability:
 	s_\sigma = \sigma + \varepsilon_\sigma,\quad \varepsilon_\sigma\sim \mathcal N(0,\,a_\sigma^{-1}),
 \]
 where $\mu$ proxies first-moment fundamentals and $\sigma$ proxies second-
-moment (dispersion/instability) of policy realizations. Lenders choose
+moment (dispersion / instability) of policy realizations. Lenders choose
 precisions $a_\mu,a_\sigma\ge0$ at convex cost
 \begin{equation}
 	\Phi(a_\mu,a_\sigma) = \tfrac{\kappa_\mu}{2}a_\mu^2 + \tfrac{\kappa_\sigma}{2}a_\sigma^2,
@@ -1531,19 +1547,26 @@ precisions $a_\mu,a_\sigma\ge0$ at convex cost
 interpretable as attention/processing costs. (An entropy/mutual-information
 formulation yields identical monotone comparative statics in precisions.)
 
-\paragraph{Posterior and effective dispersion}
-With Gaussian signals, the posterior variance of $\sigma$ is $(\bar
-	v_\sigma^{-1}+a_\sigma)^{-1}$ for prior variance $\bar v_\sigma$. I map this
-posterior dispersion to the pricing operator via a monotone function $g$:
+\paragraph{Effective dispersion and pricing}
+Let the dispersion weight entering the same pricing operator be an increasing
+function of attention to the dispersion signal:
 \begin{equation}
-	\theta_{\mathrm{RI}}(y,B') = 1 + \varphi\, g\!\Big( (\bar v_\sigma^{-1}+a_\sigma(y,B'))^{-1} \Big),\qquad \varphi>0,\ g'>0.
+	\theta_{\mathrm{RI}}(y,B') \;=\; \min\Big\{\,1 + \varphi\, w\!\big(a_\sigma(y,B')\big),\; \bar\theta\,\Big\},
+	\qquad \varphi>0,\; w\in C^1,\; w'(\cdot)>0.
 	\label{eq:theta_RI_micro}
 \end{equation}
-Prices remain fixed points of the \emph{same} operator evaluated at
-$\theta_{\mathrm{RI}}$:
+For any state $(y,B')$, prices are still defined as the unique fixed point of
+the \emph{same} operator evaluated at $\theta_{\mathrm{RI}}(y,B')$:
 \begin{equation}
-	q(B',y) = \mathcal T_{\theta_{\mathrm{RI}}(y,B')}[q](B',y).
+	q(B',y) \;=\; \mathcal T_{\theta_{\mathrm{RI}}(y,B')}[q](B',y).
 	\label{eq:pricing_same_operator_micro}
+\end{equation}
+
+\noindent\textit{Example (closed form).} For $w(a)=a$, the first-order condition
+below yields $a_\sigma(y,B')=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S(y,B')$, so that
+\begin{equation}
+	\theta_{\mathrm{RI}}(y,B')\;=\; \min\Big\{\,1 + \tfrac{\varphi^2}{\kappa_\sigma}\,\mathcal S(y,B')\,,\;\bar\theta\,\Big\}.
+	\label{eq:theta_RI_closed}
 \end{equation}
 
 \paragraph{Optimal attention}
@@ -1553,19 +1576,43 @@ costs). Attention solves
 	\max_{a_\mu,a_\sigma\ge0}\; \E[U\mid a_\mu,a_\sigma] - \Phi(a_\mu,a_\sigma).
 	\label{eq:att_opt_micro}
 \end{equation}
-Denote by $\mathcal S(y,B')\ge0$ the default-sensitivity of payouts to
-dispersion beliefs in state $(y,B')$. The first-order condition implies
+Define the marginal pricing sensitivity to dispersion by
 \begin{equation}
-	a_\sigma(y,B') = \kappa_\sigma^{-1}\, \mathcal S(y,B'),\qquad
-	\frac{\partial a_\sigma}{\partial \text{stress}} > 0 \ \Rightarrow\ \frac{\partial \theta_{\mathrm{RI}}}{\partial \text{stress}} > 0.
+	\mathcal S(y,B') \;\coloneqq\; \E\!\left[\frac{\partial U}{\partial \theta}(y,B';\,\theta_{\mathrm{RI}}(y,B'))\right] \;\ge 0.
+	\label{eq:sensitivity_def}
+\end{equation}
+The first-order condition for $a_\sigma$ is
+\begin{equation}
+	\varphi\,w'\!\big(a_\sigma(y,B')\big)\, \mathcal S(y,B') \;=\; \kappa_\sigma\, a_\sigma(y,B').
 	\label{eq:foc_sigma_micro}
 \end{equation}
-Hence attention to dispersion—and thus the PRO intensity—rises in high-debt/low-$y$
-states where price schedules are steeper in default probability.
+Under $w'(\cdot)>0$ and $\kappa_\sigma>0$, the solution $a_\sigma(y,B')$ is increasing
+in $\mathcal S(y,B')$; therefore $\theta_{\mathrm{RI}}(y,B')$ is also increasing in
+$\mathcal S(y,B')$ by~\eqref{eq:theta_RI_micro}.
+
+\begin{lemma}[Existence/uniqueness and continuity of attention]
+	\label{lem:attention_solution}
+	Assume $w\in C^1$ with $w'(a)>0$ for all $a\ge0$ and $\Phi$ is strictly convex.
+	For each fixed $\mathcal S\ge0$, the equation~\eqref{eq:foc_sigma_micro} admits a
+	unique solution $a_\sigma=a_\sigma(\mathcal S)\in\mathbb R_+$, and the mapping
+	$\mathcal S\mapsto a_\sigma(\mathcal S)$ is continuous and strictly increasing.
+	If $\mathcal S(\cdot)$ is continuous on $\mathsf S$, then $a_\sigma(\cdot)$ and
+	$\theta_{\mathrm{RI}}(\cdot)$ are continuous on $\mathsf S$.
+\end{lemma}
+
+\begin{proof}
+	Define $H(a;\mathcal S)\coloneqq \kappa_\sigma a-\varphi w'(a)\mathcal S$. For fixed
+	$\mathcal S\ge0$, $H(\cdot;\mathcal S)$ is strictly increasing and continuous with
+	$\lim_{a\to\infty}H(a;\mathcal S)=+\infty$ and $H(0;\mathcal S)\le0$, hence a unique
+	root exists by the intermediate value theorem. Monotone comparative statics in
+	$\mathcal S$ follows from the implicit function theorem since $\partial H/\partial a
+		=\kappa_\sigma-\varphi w''(a)\mathcal S>0$ under strict convexity of $\Phi$ and bounded
+	$w''$. Continuity is standard.
+\end{proof}
 
 \begin{proposition}[Operator properties and inherited comparative statics]
 	\label{prop:RI_operator_micro}
-	Suppose $\Phi$ is strictly convex and $g$ in~\eqref{eq:theta_RI_micro} is
+	Suppose $\Phi$ is strictly convex and $w$ in~\eqref{eq:theta_RI_micro} is
 	increasing. If $\mathcal T_\theta$ is positive and order-preserving for each
 	fixed $\theta\in[1,\bar\theta]$, then the state-dependent operator
 	$\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}$ is positive and order-preserving. The
@@ -1576,22 +1623,21 @@ states where price schedules are steeper in default probability.
 
 \begin{proof}
 	Pointwise positivity/order of $\mathcal T_\theta$ carries to
-	$\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}$ by monotonicity of $g$ and continuity of
-	$a_\sigma(y,B')$ from~\eqref{eq:foc_sigma_micro}. Fixed-point arguments on
+	$\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}$ by monotonicity of $w$ and continuity of
+	$a_\sigma(y,B')$ implied by~\eqref{eq:foc_sigma_micro}. Fixed-point arguments on
 	compact grids then match Appendix~\ref{app:operator_analysis}.
 \end{proof}
 
 \paragraph{Empirical link: Argentina misreporting}
 In Section~\ref{sec:motivation}, Argentina's inflation misreporting reduced the
-credibility and precision of official macro signals. In
+credibility of official signals. From
 \eqref{eq:att_opt_micro}–\eqref{eq:foc_sigma_micro}, a fall in the productivity
-of mean information (effective $a_\mu$) raises the marginal value of learning
-about dispersion, pushing up $a_\sigma$ and therefore $\theta_{\mathrm{RI}}$
-via \eqref{eq:theta_RI_micro}. The model predicts: (i) higher average spreads;
-(ii) a steeper price pivot; (iii) cross-peer “decoupling” when others'
-dispersion signals did not deteriorate; and (iv) a higher default threshold
-with concurrent deleveraging—matching the event-study patterns in the Argentina
-episode.
+of mean information (effective $a_\mu$) raises $\mathcal S(y,B')$, increasing
+$a_\sigma$ and thus $\theta_{\mathrm{RI}}$ via~\eqref{eq:theta_RI_micro}. The
+model then predicts: (i) higher average spreads; (ii) a steeper price pivot;
+(iii) cross-peer “decoupling” when others’ dispersion signals do not
+deteriorate; and (iv) a higher default threshold with concurrent
+deleveraging—matching the event-study patterns in the Argentina episode.
 
 \section{Policy and Information Extensions}\label{sec:extensions}
 
@@ -1699,60 +1745,6 @@ negativity bias means that $\widehat\theta$ responds more to larger $\xi$ when $
 \begin{proof}
 	See Appendix~\ref{app:proof_endogenous_beliefs}.
 \end{proof}
-
-\paragraph{Rational Inattention to Second Moments}
-Still within the same operator framework, I microfound PRO as an optimal
-attention allocation over first- versus second-moment information. Lenders
-observe two signals about the sovereign's fundamentals: a mean signal $s_\mu$
-and a dispersion (second-moment) signal $s_\sigma$. They choose precisions
-$a_\mu,a_\sigma\ge0$ subject to a convex information cost, for instance
-$\Phi(a_\mu,a_\sigma)=\tfrac{\kappa_\mu}{2}a_\mu^2+\tfrac{\kappa_\sigma}{2}a_\sigma^2$.
-Higher $a_\sigma$ tightens beliefs about tail risk and thus lowers the
-effective dispersion they attach to policy realizations.
-
-Let $\theta$ summarize the dispersion/tail weight inside the same pricing
-operator $\mathcal T_\theta$. Under rational inattention, $\theta$ becomes
-endogenous: $\theta_{\mathrm{RI}}(y,B') =
-	1+\varphi\,g\!\big(a_\sigma(y,B')\big)$ with $\varphi>0$ and $g$ increasing,
-and prices still solve the \emph{same} fixed-point condition with $\mathcal
-	T_{\theta_{\mathrm{RI}}(y,B')}$. The optimal attention vector solves
-\[
-	\max_{a_\mu,a_\sigma\ge0}\; \E\big[U\,|\,a_\mu,a_\sigma\big] - \Phi(a_\mu,a_\sigma),
-\]
-where the marginal value of $a_\sigma$ is proportional to how strongly prices
-react to dispersion in the current state $(y,B')$. Because the price schedule
-is steeper in states with higher default sensitivity, the FOC implies
-state-dependent attention to dispersion:
-\begin{equation}
-	\frac{\partial a_\sigma(y,B')}{\partial \text{stress}}\;>\;0
-	\quad\Rightarrow\quad
-	\frac{\partial \theta_{\mathrm{RI}}(y,B')}{\partial \text{stress}}\;>\;0.
-	\label{eq:ri_comparative_static}
-\end{equation}
-
-\begin{proposition}[Within-baseline comparative statics under RI]
-	\label{prop:ri_maintains_results}
-	Suppose $\Phi$ is strictly convex and separable and that attention raises the
-	weight on dispersion monotonically as in~\eqref{eq:ri_comparative_static}.
-	Then the operator $\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}$ remains positive
-	and order-preserving on prices. Consequently, the baseline results—single-
-	crossing price pivot at $B^*(y)$, $B^*(y)$ increasing in $y$, and
-	deleveraging alongside higher mean spreads—continue to hold as within-baseline
-	comparative statics with $\theta$ replaced by $\theta_{\mathrm{RI}}(y,B')$.
-\end{proposition}
-
-\begin{proof}
-	Positivity and order preservation are inherited from $\mathcal T_\theta$ pointwise
-	in $(y,B')$; continuity of $\theta_{\mathrm{RI}}$ and the monotone mapping in
-	\eqref{eq:ri_comparative_static} preserve the lattice and fixed-point
-	arguments used in the baseline propositions.
-\end{proof}
-
-Empirically, exogenous reductions in the cost of dispersion-relevant
-information (e.g., disclosure reforms or standardized risk reporting) should
-compress spreads disproportionately in high-debt/high-stress states, flatten
-the price pivot, and lower the default threshold—all testable within event
-studies or difference-in-differences designs.
 
 \paragraph{Optimal Policy Communication}
 This extension likewise preserves the baseline structure: transparency affects
