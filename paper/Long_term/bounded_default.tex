@@ -1548,8 +1548,7 @@ interpretable as attention/processing costs. (An entropy/mutual-information
 formulation yields identical monotone comparative statics in precisions.)
 
 \paragraph{Effective dispersion and pricing}
-Let the dispersion weight entering the same pricing operator be an increasing
-function of attention to the dispersion signal:
+I adopt a linear mapping from attention to tail-weight:
 \begin{equation}
 	\theta_{\mathrm{RI}}(y,B') \;=\; \min\Big\{\,1 + \varphi\, w\!\big(a_\sigma(y,B')\big),\; \bar\theta\,\Big\},
 	\qquad \varphi>0,\; w\in C^1,\; w'(\cdot)>0.
@@ -1583,31 +1582,23 @@ Define the marginal pricing sensitivity to dispersion by
 \end{equation}
 The first-order condition for $a_\sigma$ is
 \begin{equation}
-	\varphi\,w'\!\big(a_\sigma(y,B')\big)\, \mathcal S(y,B') \;=\; \kappa_\sigma\, a_\sigma(y,B').
+	\varphi\, \mathcal S(y,B') \;=\; \kappa_\sigma\, a_\sigma(y,B').
 	\label{eq:foc_sigma_micro}
 \end{equation}
-Under $w'(\cdot)>0$ and $\kappa_\sigma>0$, the solution $a_\sigma(y,B')$ is increasing
-in $\mathcal S(y,B')$; therefore $\theta_{\mathrm{RI}}(y,B')$ is also increasing in
-$\mathcal S(y,B')$ by~\eqref{eq:theta_RI_micro}.
+Thus $a_\sigma(y,B')=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S(y,B')$, hence
+$\theta_{\mathrm{RI}}(y,B')$ increases in $\mathcal S(y,B')$ via~\eqref{eq:theta_RI_micro}.
 
 \begin{lemma}[Existence/uniqueness and continuity of attention]
 	\label{lem:attention_solution}
-	Assume $w\in C^1$ with $w'(a)>0$ for all $a\ge0$ and $\Phi$ is strictly convex.
-	For each fixed $\mathcal S\ge0$, the equation~\eqref{eq:foc_sigma_micro} admits a
-	unique solution $a_\sigma=a_\sigma(\mathcal S)\in\mathbb R_+$, and the mapping
-	$\mathcal S\mapsto a_\sigma(\mathcal S)$ is continuous and strictly increasing.
+	With the linear mapping, for each fixed $\mathcal S\ge0$, the equation~\eqref{eq:foc_sigma_micro}
+	admits the unique closed-form solution $a_\sigma(\mathcal S)=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S$.
+	The map $\mathcal S\mapsto a_\sigma(\mathcal S)$ is continuous and strictly increasing.
 	If $\mathcal S(\cdot)$ is continuous on $\mathsf S$, then $a_\sigma(\cdot)$ and
 	$\theta_{\mathrm{RI}}(\cdot)$ are continuous on $\mathsf S$.
 \end{lemma}
 
 \begin{proof}
-	Define $H(a;\mathcal S)\coloneqq \kappa_\sigma a-\varphi w'(a)\mathcal S$. For fixed
-	$\mathcal S\ge0$, $H(\cdot;\mathcal S)$ is strictly increasing and continuous with
-	$\lim_{a\to\infty}H(a;\mathcal S)=+\infty$ and $H(0;\mathcal S)\le0$, hence a unique
-	root exists by the intermediate value theorem. Monotone comparative statics in
-	$\mathcal S$ follows from the implicit function theorem since $\partial H/\partial a
-		=\kappa_\sigma-\varphi w''(a)\mathcal S>0$ under strict convexity of $\Phi$ and bounded
-	$w''$. Continuity is standard.
+	Immediate by rearrangement of~\eqref{eq:foc_sigma_micro}.
 \end{proof}
 
 \begin{proposition}[Operator properties and inherited comparative statics]
@@ -1623,9 +1614,7 @@ $\mathcal S(y,B')$ by~\eqref{eq:theta_RI_micro}.
 
 \begin{proof}
 	Pointwise positivity/order of $\mathcal T_\theta$ carries to
-	$\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}$ by monotonicity of $w$ and continuity of
-	$a_\sigma(y,B')$ implied by~\eqref{eq:foc_sigma_micro}. Fixed-point arguments on
-	compact grids then match Appendix~\ref{app:operator_analysis}.
+	$\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}$ by continuity of $a_\sigma(y,B')$ implied by~\eqref{eq:foc_sigma_micro}. Fixed-point arguments on compact grids then match Appendix~\ref{app:operator_analysis}.
 \end{proof}
 
 \paragraph{Empirical link: Argentina misreporting}
@@ -3193,6 +3182,17 @@ I can rewrite \eqref{eq:q_derivative_resolvent} pointwise as
 	\big(I-\mathcal T_\theta\big)\,\frac{\partial q_\theta(\cdot)}{\partial\theta}\,(y,B')\;=\;-\,\frac{1}{1+r}\,\E_{y'|y}\Big[\big(\partial_\theta \tilde P_\theta(y',B')\big)\,\Lambda(y',B')\Big],
 \end{equation}
 which coincides with Equation~\eqref{eq:q_deriv_linear} used in the main text. Existence and uniqueness of \(\partial_\theta q_\theta\) follow from invertibility of \(I-\mathcal T_\theta\).
+
+\paragraph{Rational Inattention (linear): Uniform Contraction and Convergence}
+\noindent\textbf{Assumption RI.1 (Uniform contraction over $[1,\bar\theta]$).} There exists $\alpha\in(0,1)$ such that for every fixed $\theta\in[1,\bar\theta]$, the pricing operator $\mathcal T_\theta: \mathcal Q\to\mathcal Q$ satisfies $\|\mathcal T_\theta q - \mathcal T_\theta q'\|_\infty \le \alpha \|q-q'\|_\infty$ for all $q,q'\in\mathcal Q$.
+
+\noindent\textbf{Proposition RI.1 (State-dependent $\theta$ with uniform modulus).} Let $\theta_{\mathrm{RI}}: \mathsf S\to[1,\bar\theta]$ be continuous (as in Lemma~\ref{lem:attention_solution}). Define $\mathcal T^{\mathrm{RI}} q (s) \coloneqq (\mathcal T_{\theta_{\mathrm{RI}}(s)} q)(s)$. Under Assumption RI.1, $\mathcal T^{\mathrm{RI}}$ is a contraction on $(\mathcal Q, \|\cdot\|_\infty)$ with modulus $\alpha$. Hence there exists a unique fixed point $q^\star \in \mathcal Q$ solving $q^\star = \mathcal T^{\mathrm{RI}} q^\star$, and successive approximation converges at rate $\alpha$.
+
+\noindent\textit{Proof.} For any $q,q' \in \mathcal Q$ and $s \in \mathsf S$,
+\[ \big| (\mathcal T^{\mathrm{RI}} q)(s) - (\mathcal T^{\mathrm{RI}} q')(s) \big| \;=\; \big| (\mathcal T_{\theta_{\mathrm{RI}}(s)} q)(s) - (\mathcal T_{\theta_{\mathrm{RI}}(s)} q')(s) \big| \\
+	\le \alpha \, \| q-q' \|_\infty. \]
+Taking sup over $s$ delivers $\| \mathcal T^{\mathrm{RI}} q - \mathcal
+	T^{\mathrm{RI}} q' \|_\infty \le \alpha \| q-q' \|_\infty$.
 
 \bibliographystyle{aer}
 % This tells LaTeX to read the references from the file 'references.bib'
