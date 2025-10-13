@@ -110,7 +110,7 @@ states, two forces determine the net effect: (i) a price‑wedge effect—under
 PRO, $1/q$ is higher than under rational pricing in the safe region—raises the
 average spread; (ii) a composition effect—deleveraging moves weight toward
 states with lower baseline spreads—works in the opposite direction. Because the
-sovereign spends most of its time in the safe region, the price‑wedge effect
+sovereign spends most of its time in the safe region, the price ‑wedge effect
 dominates, so average spreads rise even as debt falls. This intuition is
 formalized in the paper by a simple two‑term decomposition and local
 comparative statics that deliver $\partial q/\partial \theta < 0$ in the safe
@@ -1531,7 +1531,15 @@ interpretable as attention/processing costs. (An entropy/mutual-information
 formulation yields identical monotone comparative statics in precisions.)
 
 \paragraph{Effective dispersion and pricing}
-I adopt a linear mapping from attention to tail-weight:
+I adopt a linear mapping from attention to tail-weight:\footnote{More
+	generally, if \(\theta_{\mathrm{RI}}(y,B')=\min\{\,1+\varphi\,
+	w(a_\sigma(y,B'))\!,\;\bar\theta\,\}\) with a strictly increasing \(w\in C^1\)
+	and \(w(0)=0\), then under the same positivity/order and uniform-contraction
+	conditions on the pricing operator over \(\theta\in[1,\bar\theta]\), the
+	price-pivot and policy comparative statics are unchanged. I adopt the linear
+	case for parsimony and closed-form identification; see
+	Appendices~\ref{app:operator_analysis},\ref{app:ri_general} for operator
+	conditions and the general $w(\cdot)$ treatment.}
 \begin{equation}
 	\theta_{\mathrm{RI}}(y,B') \;=\; \min\Big\{\,1 + \varphi\, a_\sigma(y,B')\,,\; \bar\theta\,\Big\},\qquad \varphi>0.
 	\label{eq:theta_RI_micro}
@@ -1792,13 +1800,7 @@ disciplined path for calibration and event‑study validation.
 	\large \today
 \end{center}
 
-This appendix contains the details of the Gumbel distribution and the proofs
-for the lemmas and propositions in the paper. Section~\ref{app:gumbel} contains
-the details of the Gumbel distribution. Section~\ref{app:proofs} contains the
-proofs for the lemmas and propositions in the paper.
-Section~\ref{app:computations} contains the computational algorithm details for
-the model, including the numerical stability techniques employed in the
-discrete choice implementation.
+This appendix collects auxiliary results, proofs, and computational details. Section~\ref{app:gumbel} details the Gumbel distribution and the logit identities used in the text. Section~\ref{app:proofs} provides proofs for the lemmas and propositions. Section~\ref{app:operator_analysis} states contraction, positivity/order, and differentiability results for the pricing operator (including Assumption RI.1 and a uniform convergence argument). Section~\ref{app:ri_general} develops the rational-inattention mapping with a general monotone $w(\cdot)$, establishing existence/uniqueness, continuity, and operator inheritance of the main comparative statics. Section~\ref{app:computations} documents the computational algorithm and the numerical stability techniques for the discrete-choice implementation.
 
 \section{Gumbel Distribution in Default Models}\label{app:gumbel}
 In this section, I provide some useful results about the Gumbel distribution to
@@ -2583,6 +2585,173 @@ This section contains the proofs for the lemmas and propositions in the paper.
 
 \end{proof}
 
+\subsection{Pricing Operator: Contraction and Differentiability}\label{app:operator_analysis}
+\textbf{Setup.} For each \(\theta\ge 1\), define the bounded linear operator \(\mathcal T_\theta\) on the Banach space \(\mathcal X\) of bounded functions \(q:\,\Y\times\mathcal B\to\mathbb R\) (with sup norm) by
+\begin{equation}\label{eq:Ttheta_def}
+	(\mathcal T_\theta q)(y,B')\;\coloneqq\;\frac{1}{1+r}\,\E_{y'|y}\Big[(1-\tilde P_\theta(y',B'))\,(1-\delta)\,\E_{B''|y',B'}\big[q(y',B'')\big]\Big],
+\end{equation}
+and the bounded function
+\begin{equation}\label{eq:Ftheta_def}
+	F_\theta(y,B')\;\coloneqq\;\frac{1}{1+r}\,\E_{y'|y}\Big[(1-\tilde P_\theta(y',B'))\,\kappa\Big].
+\end{equation}
+The equilibrium price \(q_\theta\) solves the fixed point equation
+\begin{equation}\label{eq:q_fixed_point}
+	q_\theta\;=\;F_\theta\;+\;\mathcal T_\theta q_\theta\,.
+\end{equation}
+
+\textbf{Contraction and resolvent.} Since \(0\le 1-\tilde P_\theta\le 1\) and conditional expectation is a contraction under the sup norm,
+\begin{equation}\label{eq:Ttheta_norm}
+	\|\mathcal T_\theta q\|_\infty\;\le\;\frac{1}{1+r}\,(1-\delta)\,\|q\|_\infty\,\quad\Rightarrow\quad\|\mathcal T_\theta\|\;\le\;\beta(1-\delta)\,<1\,,\ \beta\coloneqq\tfrac{1}{1+r}.
+\end{equation}
+Thus \(\mathcal T_\theta\) is a contraction. By the Banach fixed-point theorem, \eqref{eq:q_fixed_point} has a unique solution and
+\((I-\mathcal T_\theta)^{-1}=\sum_{n\ge 0}\mathcal T_\theta^{\,n}\) exists as a bounded linear operator. Moreover, \(\mathcal T_\theta\) is \emph{positive} (maps nonnegative functions to nonnegative functions), hence the resolvent \((I-\mathcal T_\theta)^{-1}\) is positive.
+
+\textbf{Differentiability in \(\theta\).} Suppose \(\tilde P_\theta(y',B')\) is \(C^1\) in \(\theta\) and \(\sup_{y',B',\theta}\big|\partial_\theta \tilde P_\theta(y',B')\big|<\infty\). Then \(\theta\mapsto F_\theta\in\mathcal X\) and \(\theta\mapsto \mathcal T_\theta\in\mathcal L(\mathcal X)\) are \(C^1\) with
+\begin{align}
+	\partial_\theta F_\theta(y,B')               & = -\,\frac{1}{1+r}\,\E_{y'|y}\big[\,(\partial_\theta \tilde P_\theta(y',B'))\,\kappa\,\big], \label{eq:dF}                                   \\
+	(\partial_\theta \mathcal T_\theta)q\,(y,B') & = -\,\frac{1}{1+r}\,\E_{y'|y}\Big[\,(\partial_\theta \tilde P_\theta(y',B'))\,(1-\delta)\,\E_{B''|y',B'}[\,q(y',B'')\,] \Big]. \label{eq:dT}
+\end{align}
+Differentiate \eqref{eq:q_fixed_point} and use \((I-\mathcal T_\theta)^{-1}\) to obtain the unique derivative \(q_\theta^{(1)}\coloneqq\partial_\theta q_\theta\in\mathcal X\):
+\begin{equation}\label{eq:q_derivative_resolvent}
+	(I-\mathcal T_\theta)\,q_\theta^{(1)}\;=\;\partial_\theta F_\theta\;+\;(\partial_\theta \mathcal T_\theta)\,q_\theta\,.
+\end{equation}
+
+\textbf{Link to Equation~\eqref{eq:q_deriv_linear}.} Combining \eqref{eq:dF}–\eqref{eq:dT} and defining
+\begin{equation}\label{eq:Lambda_def}
+	\Lambda(y',B')\;\coloneqq\;\kappa\;+\;(1-\delta)\,\E_{B''|y',B'}\big[q_\theta(y',B'')\big],
+\end{equation}
+I can rewrite \eqref{eq:q_derivative_resolvent} pointwise as
+\begin{equation}\label{eq:q_deriv_linear_appendix}
+	\big(I-\mathcal T_\theta\big)\,\frac{\partial q_\theta(\cdot)}{\partial\theta}\,(y,B')\;=\;-\,\frac{1}{1+r}\,\E_{y'|y}\Big[\big(\partial_\theta \tilde P_\theta(y',B')\big)\,\Lambda(y',B')\Big],
+\end{equation}
+which coincides with Equation~\eqref{eq:q_deriv_linear} used in the main text. Existence and uniqueness of \(\partial_\theta q_\theta\) follow from invertibility of \(I-\mathcal T_\theta\).
+
+\paragraph{Rational Inattention (linear): Uniform Contraction and Convergence}
+\noindent\textbf{Assumption RI.1 (Uniform contraction over $[1,\bar\theta]$).} There exists $\alpha\in(0,1)$ such that for every fixed $\theta\in[1,\bar\theta]$, the pricing operator $\mathcal T_\theta: \mathcal Q\to\mathcal Q$ satisfies $\|\mathcal T_\theta q - \mathcal T_\theta q'\|_\infty \le \alpha \|q-q'\|_\infty$ for all $q,q'\in\mathcal Q$.
+
+\noindent\textbf{Proposition RI.1 (State-dependent $\theta$ with uniform modulus).} Let $\theta_{\mathrm{RI}}: \mathsf S\to[1,\bar\theta]$ be continuous (as in Lemma~\ref{lem:attention_solution}). Define $\mathcal T^{\mathrm{RI}} q (s) \coloneqq (\mathcal T_{\theta_{\mathrm{RI}}(s)} q)(s)$. Under Assumption RI.1, $\mathcal T^{\mathrm{RI}}$ is a contraction on $(\mathcal Q, \|\cdot\|_\infty)$ with modulus $\alpha$. Hence there exists a unique fixed point $q^\star \in \mathcal Q$ solving $q^\star = \mathcal T^{\mathrm{RI}} q^\star$, and successive approximation converges at rate $\alpha$.
+
+\noindent\textit{Proof.} For any $q,q' \in \mathcal Q$ and $s \in \mathsf S$,
+\[ \big| (\mathcal T^{\mathrm{RI}} q)(s) - (\mathcal T^{\mathrm{RI}} q')(s) \big| \;=\; \big| (\mathcal T_{\theta_{\mathrm{RI}}(s)} q)(s) - (\mathcal T_{\theta_{\mathrm{RI}}(s)} q')(s) \big| \\
+	\le \alpha \, \| q-q' \|_\infty. \]
+Taking sup over $s$ delivers $\| \mathcal T^{\mathrm{RI}} q - \mathcal
+	T^{\mathrm{RI}} q' \|_\infty \le \alpha \| q-q' \|_\infty$.
+
+\subsection{Rational Inattention with General \texorpdfstring{$w(\cdot)$}{w(·)}: Existence, Uniqueness, and Inheritance}\label{app:ri_general}
+
+\textbf{Setup.} Let the attention--tail map be
+\begin{equation}\label{eq:theta_RI_general}
+	\theta_{\mathrm{RI}}(s)\;=\;\min\Big\{\,1+\varphi\, w\big(a_\sigma(s)\big),\;\bar\theta\,\Big\},\qquad s\equiv(y,B'),\ \varphi>0,\ \bar\theta>1,
+\end{equation}
+with $w:\,[0,\infty)\to[0,\infty)$ twice continuously differentiable, strictly increasing, and $w(0)=0$.
+Information costs are separable and strictly convex with a quadratic component in dispersion attention,
+\(\Phi(a_\mu,a_\sigma)=\tfrac{\kappa_\mu}{2}a_\mu^2+\tfrac{\kappa_\sigma}{2}a_\sigma^2\), $\kappa_\sigma>0$.
+Define the (nonnegative) pricing sensitivity to dispersion by
+\begin{equation}\label{eq:S_bound_def}
+	\mathcal S(s)\;\coloneqq\;\E\!\left[\frac{\partial U}{\partial\theta}(s;\,\theta_{\mathrm{RI}}(s))\right] \ \ge 0\,.
+\end{equation}
+
+\noindent\textbf{Assumption G.1 (Regularity and bounded curvature).} There exists $L_w<\infty$ such that $\sup_{a\ge 0}|w''(a)|\le L_w$ and $w'(a)>0$ for all $a\ge 0$.
+
+\noindent\textbf{Assumption G.2 (Bounded sensitivity).} $\mathcal S:\,\mathsf S\to\mathbb R_+$ is continuous and bounded: $0\le \mathcal S(s)\le \bar S$ for some $\bar S<\infty$.
+
+\begin{remark}
+	Assumption G.2 holds in the baseline environment because payoffs are bounded, $\partial_\theta \tilde P$ is uniformly bounded, and the resolvent $(I-\mathcal T_\theta)^{-1}$ is bounded and positive on $[1,\bar\theta]$ (see Appendix~\ref{app:operator_analysis}).
+\end{remark}
+
+\noindent\textbf{KKT and interior FOC.} Let $a_{\max}\coloneqq w^{-1}((\bar\theta-1)/\varphi)$ denote the unique attention level at which the cap binds. The choice set is $\mathcal A\coloneqq[0,a_{\max}]$. The KKT conditions imply that any optimizer satisfies $a_\sigma(s)\in\mathcal A$ and, when interior and the cap is slack, the first-order condition
+\begin{equation}\label{eq:FOC_general}
+	\kappa_\sigma\, a_\sigma(s)\;=\;\varphi\, w'\big(a_\sigma(s)\big)\,\mathcal S(s).
+\end{equation}
+
+\begin{lemma}[Existence, uniqueness, and continuity of $a_\sigma$]\label{lem:attention_general}
+	Suppose Assumptions G.1–G.2 hold and
+	\begin{equation}\label{eq:contraction_condition}
+		\gamma\;\coloneqq\;\frac{\varphi}{\kappa_\sigma}\,\bar S\,L_w\;<\;1.
+	\end{equation}
+	For each $s\in\mathsf S$, define $H_s(a)\coloneqq (\varphi/\kappa_\sigma)\,\mathcal S(s)\, w'(a)$ on $\mathcal A$. Then:
+	\begin{itemize}
+		\item $H_s$ is a contraction on $\mathcal A$ with modulus at most $\gamma$; hence the fixed point equation $a=H_s(a)$ has a unique solution $a^{\circ}(s)\in\mathcal A$.
+		\item The mapping $s\mapsto a^{\circ}(s)$ is continuous; moreover $a^{\circ}(s)$ is
+		      nondecreasing in $\mathcal S(s)$.
+		\item The optimizer is $a_\sigma(s)=a^{\circ}(s)$ unless the cap binds, in which case
+		      $a_\sigma(s)=a_{\max}$. In either case, $a_\sigma:\,\mathsf S\to\mathcal A$ is
+		      continuous and nondecreasing in $\mathcal S$.
+	\end{itemize}
+\end{lemma}
+
+\begin{proof}
+	By Assumption G.1, $|H_s'(a)|= (\varphi/\kappa_\sigma)\,\mathcal S(s)\,|w''(a)|\le (\varphi/\kappa_\sigma)\,\bar S\,L_w=\gamma<1$, so $H_s$ is a contraction on the complete metric space $\mathcal A$ (with the usual metric). Banach's fixed-point theorem yields a unique fixed point $a^{\circ}(s)$. Parametric continuity follows from the uniform contraction bound and continuity of $\mathcal S(\cdot)$. Monotonicity in $\mathcal S$ follows from Topkis/Milgrom–Shannon monotone comparative statics since $H_s$ is increasing in $\mathcal S$. The cap case is handled by applying the same arguments to the truncated domain and using continuity of $w$ and $w^{-1}$.
+\end{proof}
+
+\begin{proposition}[Continuity and monotonicity of $\theta_{\mathrm{RI}}$]\label{prop:theta_continuity_general}
+	Under Lemma~\ref{lem:attention_general}, $\theta_{\mathrm{RI}}(s)$ defined in \eqref{eq:theta_RI_general} is continuous on $\mathsf S$, takes values in $[1,\bar\theta]$, and is nondecreasing in $\mathcal S(s)$.
+\end{proposition}
+
+\begin{proof}
+	Immediate from continuity/monotonicity of $a_\sigma(\cdot)$ and continuity/monotonicity of $w(\cdot)$ and the truncation map $x\mapsto\min\{1+\varphi x,\bar\theta\}$.
+\end{proof}
+
+\begin{proposition}[Operator inheritance and comparative statics]\label{prop:inheritance_general}
+	Let $\mathcal T_\theta$ satisfy Assumption RI.1 and be positive and order-preserving for each fixed $\theta\in[1,\bar\theta]$. Define $\mathcal T^{\mathrm{RI}}$ by $\mathcal T^{\mathrm{RI}}q(s)\equiv \big(\mathcal T_{\theta_{\mathrm{RI}}(s)}q\big)(s)$. Then $\mathcal T^{\mathrm{RI}}$ is a contraction on $(\mathcal Q,\|\cdot\|_\infty)$ with the same modulus and is positive and order-preserving. Consequently, the baseline comparative statics proved for fixed $\theta$ (price pivot and single-crossing at $B^*(y)$, $B^*(y)$ increasing in $y$, deleveraging with higher mean spreads, and welfare ranking) continue to hold under the state-dependent $\theta_{\mathrm{RI}}(\cdot)$.
+\end{proposition}
+
+\begin{proof}
+	Contraction follows from Proposition RI.1. Positivity and order preservation carry over pointwise from $\mathcal T_\theta$. The comparative statics in the main text rely on the positivity of the resolvent $(I-\mathcal T_\theta)^{-1}$, the sign of $\partial_\theta \tilde P$, and single-crossing arguments evaluated at the same operators; these extend verbatim with $\theta$ replaced by $\theta_{\mathrm{RI}}(s)$.
+\end{proof}
+
+\paragraph{A uniform bound for $\mathcal S(s)$}
+Recall the sensitivity definition in~\eqref{eq:sensitivity_def} and denote
+$\beta\coloneqq 1/(1+r)\in(0,1)$. Assume
+\begin{equation}\label{eq:Ptheta_bound}
+	\sup_{y',B',\theta\in[1,\bar\theta]}\big|\partial_\theta\tilde P_\theta(y',B')\big|\;\le\;C_P\;<\;\infty,\qquad 0<\delta<1,\quad 0<\kappa\le \overline\kappa.
+\end{equation}
+Let $\|\mathcal T_\theta\|\le \beta(1-\delta)$ for all $\theta\in[1,\bar\theta]$ as in~\eqref{eq:Ttheta_norm}. Define the uniform resolvent bound
+\begin{equation}\label{eq:resolvent_bound}
+	\mathfrak R\;\coloneqq\;\sup_{\theta\in[1,\bar\theta]}\big\|(I-\mathcal T_\theta)^{-1}\big\|\;\le\;\frac{1}{1-\beta(1-\delta)}\,.
+\end{equation}
+
+\begin{lemma}[Uniform price bound]\label{lem:q_uniform_bound}
+	For every $\theta\in[1,\bar\theta]$, the equilibrium price satisfies
+	\begin{equation}\label{eq:q_uniform_bound}
+		\|q_\theta\|_\infty\;\le\;\mathfrak R\,\|F_\theta\|_\infty\;\le\;\frac{\beta\,\overline\kappa}{1-\beta(1-\delta)}\,.
+	\end{equation}
+	Consequently, the one–step continuation payoff in~\eqref{eq:Lambda_def} is uniformly bounded by
+	\begin{equation}\label{eq:Lambda_uniform_bound}
+		0\;\le\;\Lambda(y',B')\;\le\;\overline\Pi\;\coloneqq\;\overline\kappa\,\mathfrak R\;=\;\frac{\overline\kappa}{1-\beta(1-\delta)}\,.
+	\end{equation}
+\end{lemma}
+
+\begin{proof}
+	From~\eqref{eq:q_fixed_point}, $q_\theta=(I-\mathcal T_\theta)^{-1}F_\theta$. Using~\eqref{eq:Ttheta_norm} and $0\le 1-\tilde P_\theta\le 1$, we have $\|F_\theta\|_\infty\le \beta\,\overline\kappa$. Combine with~\eqref{eq:resolvent_bound} to obtain~\eqref{eq:q_uniform_bound}. Then~\eqref{eq:Lambda_def} implies $\Lambda\le \overline\kappa+(1-\delta)\|q_\theta\|_\infty\le \overline\kappa+(1-\delta)\,\beta\,\overline\kappa/(1-\beta(1-\delta))=\overline\kappa/(1-\beta(1-\delta))$.
+\end{proof}
+
+\begin{proposition}[Uniform sensitivity bound]\label{prop:S_uniform_bound}
+	Under~\eqref{eq:Ptheta_bound} and Lemma~\ref{lem:q_uniform_bound}, there exists a finite constant
+	\begin{equation}\label{eq:S_bar_bound}
+		\overline S\;\coloneqq\;\beta\,C_P\,\overline\Pi\,\mathfrak R\;=\;\frac{\beta\,C_P\,\overline\kappa}{\big(1-\beta(1-\delta)\big)^2}
+	\end{equation}
+	such that $0\le \mathcal S(s)\le \overline S$ for all $s\in\mathsf S$.
+\end{proposition}
+
+\begin{proof}
+	Let $U_\theta$ denote the lenders’ present value in the pricing problem; as in~\eqref{eq:q_fixed_point}, $U_\theta$ solves $U_\theta=F_\theta+\mathcal T_\theta U_\theta$, hence $U_\theta=(I-\mathcal T_\theta)^{-1}F_\theta$ and $\partial_\theta U_\theta$ satisfies~\eqref{eq:q_derivative_resolvent} with $q_\theta$ replaced by $U_\theta$. Taking sup norms and applying~\eqref{eq:dF}–\eqref{eq:dT} yields
+	\[ \big\|\partial_\theta U_\theta\big\|_\infty \;\le\; \mathfrak R\,\Big(\,\|\partial_\theta F_\theta\|_\infty + \|\partial_\theta \mathcal T_\theta\|\,\|U_\theta\|_\infty\,\Big) \;\le\; \mathfrak R\,\beta\,C_P\,\Big(\,\overline\kappa + (1-\delta)\,\|U_\theta\|_\infty\,\Big). \]
+	Using $\|U_\theta\|_\infty\le \|q_\theta\|_\infty$ and
+	Lemma~\ref{lem:q_uniform_bound}, the bracket is bounded by $\overline\Pi$.
+	Therefore $\|\partial_\theta U_\theta\|_\infty \le \mathfrak
+		R\,\beta\,C_P\,\overline\Pi$, which equals~\eqref{eq:S_bar_bound}. Since
+	$\mathcal S(s)=\E[\partial_\theta U_\theta(s)]$ by~\eqref{eq:sensitivity_def}
+	and the integrand is nonnegative, the same bound holds pointwise.
+\end{proof}
+
+As a direct corollary, Assumption G.2 can take $\bar S=\overline S$. Combined
+with the contraction condition~\eqref{eq:contraction_condition} in
+Lemma~\ref{lem:attention_general}, a sufficient condition is
+\[ \frac{\varphi}{\kappa_\sigma}\,\overline S\,L_w\;<\;1\quad\Longleftrightarrow\quad \frac{\varphi}{\kappa_\sigma}\,\frac{\beta\,C_P\,\overline\kappa}{\big(1-\beta(1-\delta)\big)^2}\,L_w\;<\;1, \]
+which is naturally satisfied when discounting is sufficient, maturity is
+finite, and the curvature of $w$ is bounded.
+
 \subsection{Proof of Proposition~\ref{prop:ramsey_welfare}}\label{app:proof_ramsey}
 
 \begin{proof}
@@ -3100,58 +3269,6 @@ These numerical stability techniques, following the approach of
 \citep{MIHALACHEOREEF2024}, are essential for ensuring convergence of my value
 function iteration algorithm, particularly in the presence of the small taste
 shock parameters that characterize the discrete choice approach.
-
-\subsection{Pricing Operator: Contraction and Differentiability}\label{app:operator_analysis}
-\textbf{Setup.} For each \(\theta\ge 1\), define the bounded linear operator \(\mathcal T_\theta\) on the Banach space \(\mathcal X\) of bounded functions \(q:\,\Y\times\mathcal B\to\mathbb R\) (with sup norm) by
-\begin{equation}\label{eq:Ttheta_def}
-	(\mathcal T_\theta q)(y,B')\;\coloneqq\;\frac{1}{1+r}\,\E_{y'|y}\Big[(1-\tilde P_\theta(y',B'))\,(1-\delta)\,\E_{B''|y',B'}\big[q(y',B'')\big]\Big],
-\end{equation}
-and the bounded function
-\begin{equation}\label{eq:Ftheta_def}
-	F_\theta(y,B')\;\coloneqq\;\frac{1}{1+r}\,\E_{y'|y}\Big[(1-\tilde P_\theta(y',B'))\,\kappa\Big].
-\end{equation}
-The equilibrium price \(q_\theta\) solves the fixed point equation
-\begin{equation}\label{eq:q_fixed_point}
-	q_\theta\;=\;F_\theta\;+\;\mathcal T_\theta q_\theta\,.
-\end{equation}
-
-\textbf{Contraction and resolvent.} Since \(0\le 1-\tilde P_\theta\le 1\) and conditional expectation is a contraction under the sup norm,
-\begin{equation}\label{eq:Ttheta_norm}
-	\|\mathcal T_\theta q\|_\infty\;\le\;\frac{1}{1+r}\,(1-\delta)\,\|q\|_\infty\,\quad\Rightarrow\quad\|\mathcal T_\theta\|\;\le\;\beta(1-\delta)\,<1\,,\ \beta\coloneqq\tfrac{1}{1+r}.
-\end{equation}
-Thus \(\mathcal T_\theta\) is a contraction. By the Banach fixed-point theorem, \eqref{eq:q_fixed_point} has a unique solution and
-\((I-\mathcal T_\theta)^{-1}=\sum_{n\ge 0}\mathcal T_\theta^{\,n}\) exists as a bounded linear operator. Moreover, \(\mathcal T_\theta\) is \emph{positive} (maps nonnegative functions to nonnegative functions), hence the resolvent \((I-\mathcal T_\theta)^{-1}\) is positive.
-
-\textbf{Differentiability in \(\theta\).} Suppose \(\tilde P_\theta(y',B')\) is \(C^1\) in \(\theta\) and \(\sup_{y',B',\theta}\big|\partial_\theta \tilde P_\theta(y',B')\big|<\infty\). Then \(\theta\mapsto F_\theta\in\mathcal X\) and \(\theta\mapsto \mathcal T_\theta\in\mathcal L(\mathcal X)\) are \(C^1\) with
-\begin{align}
-	\partial_\theta F_\theta(y,B')               & = -\,\frac{1}{1+r}\,\E_{y'|y}\big[\,(\partial_\theta \tilde P_\theta(y',B'))\,\kappa\,\big], \label{eq:dF}                                   \\
-	(\partial_\theta \mathcal T_\theta)q\,(y,B') & = -\,\frac{1}{1+r}\,\E_{y'|y}\Big[\,(\partial_\theta \tilde P_\theta(y',B'))\,(1-\delta)\,\E_{B''|y',B'}[\,q(y',B'')\,] \Big]. \label{eq:dT}
-\end{align}
-Differentiate \eqref{eq:q_fixed_point} and use \((I-\mathcal T_\theta)^{-1}\) to obtain the unique derivative \(q_\theta^{(1)}\coloneqq\partial_\theta q_\theta\in\mathcal X\):
-\begin{equation}\label{eq:q_derivative_resolvent}
-	(I-\mathcal T_\theta)\,q_\theta^{(1)}\;=\;\partial_\theta F_\theta\;+\;(\partial_\theta \mathcal T_\theta)\,q_\theta\,.
-\end{equation}
-
-\textbf{Link to Equation~\eqref{eq:q_deriv_linear}.} Combining \eqref{eq:dF}–\eqref{eq:dT} and defining
-\begin{equation}\label{eq:Lambda_def}
-	\Lambda(y',B')\;\coloneqq\;\kappa\;+\;(1-\delta)\,\E_{B''|y',B'}\big[q_\theta(y',B'')\big],
-\end{equation}
-I can rewrite \eqref{eq:q_derivative_resolvent} pointwise as
-\begin{equation}\label{eq:q_deriv_linear_appendix}
-	\big(I-\mathcal T_\theta\big)\,\frac{\partial q_\theta(\cdot)}{\partial\theta}\,(y,B')\;=\;-\,\frac{1}{1+r}\,\E_{y'|y}\Big[\big(\partial_\theta \tilde P_\theta(y',B')\big)\,\Lambda(y',B')\Big],
-\end{equation}
-which coincides with Equation~\eqref{eq:q_deriv_linear} used in the main text. Existence and uniqueness of \(\partial_\theta q_\theta\) follow from invertibility of \(I-\mathcal T_\theta\).
-
-\paragraph{Rational Inattention (linear): Uniform Contraction and Convergence}
-\noindent\textbf{Assumption RI.1 (Uniform contraction over $[1,\bar\theta]$).} There exists $\alpha\in(0,1)$ such that for every fixed $\theta\in[1,\bar\theta]$, the pricing operator $\mathcal T_\theta: \mathcal Q\to\mathcal Q$ satisfies $\|\mathcal T_\theta q - \mathcal T_\theta q'\|_\infty \le \alpha \|q-q'\|_\infty$ for all $q,q'\in\mathcal Q$.
-
-\noindent\textbf{Proposition RI.1 (State-dependent $\theta$ with uniform modulus).} Let $\theta_{\mathrm{RI}}: \mathsf S\to[1,\bar\theta]$ be continuous (as in Lemma~\ref{lem:attention_solution}). Define $\mathcal T^{\mathrm{RI}} q (s) \coloneqq (\mathcal T_{\theta_{\mathrm{RI}}(s)} q)(s)$. Under Assumption RI.1, $\mathcal T^{\mathrm{RI}}$ is a contraction on $(\mathcal Q, \|\cdot\|_\infty)$ with modulus $\alpha$. Hence there exists a unique fixed point $q^\star \in \mathcal Q$ solving $q^\star = \mathcal T^{\mathrm{RI}} q^\star$, and successive approximation converges at rate $\alpha$.
-
-\noindent\textit{Proof.} For any $q,q' \in \mathcal Q$ and $s \in \mathsf S$,
-\[ \big| (\mathcal T^{\mathrm{RI}} q)(s) - (\mathcal T^{\mathrm{RI}} q')(s) \big| \;=\; \big| (\mathcal T_{\theta_{\mathrm{RI}}(s)} q)(s) - (\mathcal T_{\theta_{\mathrm{RI}}(s)} q')(s) \big| \\
-	\le \alpha \, \| q-q' \|_\infty. \]
-Taking sup over $s$ delivers $\| \mathcal T^{\mathrm{RI}} q - \mathcal
-	T^{\mathrm{RI}} q' \|_\infty \le \alpha \| q-q' \|_\infty$.
 
 \bibliographystyle{aer}
 % This tells LaTeX to read the references from the file 'references.bib'
