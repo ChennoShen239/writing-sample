@@ -62,7 +62,7 @@
 \maketitle
 
 \begin{abstract}
-	Why do some sovereigns pay high spreads despite moderate debt? I build a quantitative default model where lenders overweight the dispersion of policy realizations (policy‑randomness overestimation, PRO). Within a single pricing operator, PRO pivots price/spread schedules around a state‑contingent threshold: the sovereign deleverages while defaulting at higher debt, raising average spreads and producing a “stability illusion” (lower volatility with higher premia). I microfound PRO via rational inattention: optimal attention to dispersion generates a state‑dependent tail weight $\theta_{\mathrm{RI}}(y,B')$ that enters the same operator, so baseline comparative statics extend mechanically. Policy and information extensions show limited power of fiscal transfers, persistence from negativity‑biased learning, and welfare gains from transparency. Event‑style hooks (e.g., Argentina’s inflation misreporting) align with the model’s pivot, threshold, and decoupling predictions.
+	Why do some sovereigns pay high spreads despite moderate debt? I build a quantitative default model where lenders overweight the dispersion of policy realizations (policy‑randomness overestimation, PRO). Within a single pricing operator, PRO pivots price/spread schedules around a state‑contingent threshold: the sovereign deleverages while defaulting at higher debt, raising average spreads and producing a “stability illusion” (lower volatility with higher premia). I microfound PRO via rational inattention: optimal attention to dispersion generates a state‑dependent tail weight that enters the same operator, so baseline comparative statics extend mechanically. Policy and information extensions show limited power of fiscal transfers, persistence from negativity‑biased learning, and welfare gains from transparency. Event‑style hooks (e.g., Argentina’s inflation misreporting) align with the model’s pivot, threshold, and decoupling predictions.
 \end{abstract}
 
 \noindent \textbf{Keywords:} Sovereign Default, Behavioral Macroeconomics, Policy-Randomness Overestimation (PRO), Sovereign Spreads, Information Frictions, Argentina, Debt Management.
@@ -81,40 +81,25 @@ pricing operator, PRO pivots price/spread schedules around a state‑contingent
 threshold. A rational sovereign deleverages while defaulting at higher debt, so
 average spreads rise and volatility falls—a “stability illusion.”
 
-I microfound PRO via rational inattention. Lenders optimally allocate attention
-to dispersion, generating a state‑dependent tail weight
-$\theta_{\mathrm{RI}}(y,B')$ that enters the \emph{same} pricing operator; all
-baseline comparative statics (pivot, $B^*(y)$ increasing, deleveraging with
-higher mean spreads) extend mechanically. Empirically, the framework matches
-event‑style patterns such as Argentina’s inflation misreporting: sharper
-pivots, higher default thresholds with deleveraging, and maturity/peer
-decoupling concentrated in stress.
-
-Roadmap. Section~\ref{sec:model} presents the environment and recursive
-equilibrium; Section~\ref{sec:theory} develops core comparative statics;
-Section~\ref{sec:micro} provides the rational‑inattention microfoundation;
-Section~\ref{sec:extensions} studies policy and information extensions. I
-summarize testable implications before the conclusion.
-
-\paragraph{Intuition: Deleveraging with Higher Spreads}
-The pivoted pricing created by PRO raises spreads precisely where governments
-typically borrow and lowers them only near the brink of default. In the normal
-borrowing region (future debt $B' < B^*(y)$), PRO magnifies perceived policy
-randomness, making lenders demand extra compensation; prices $q$ fall and
-spreads $s$ rise even when default risk is low. Near default ($B' > B^*(y)$),
-the same belief distortion makes lenders attach more weight to (perceived)
-repayment realizations, softening the “doom” and raising prices there. A
-rational sovereign facing this pivoted schedule borrows less (deleverages),
-which shifts the distribution of choices toward the safe region. Averaging over
-states, two forces determine the net effect: (i) a price‑wedge effect—under
-PRO, $1/q$ is higher than under rational pricing in the safe region—raises the
-average spread; (ii) a composition effect—deleveraging moves weight toward
-states with lower baseline spreads—works in the opposite direction. Because the
-sovereign spends most of its time in the safe region, the price ‑wedge effect
-dominates, so average spreads rise even as debt falls. This intuition is
-formalized in the paper by a simple two‑term decomposition and local
-comparative statics that deliver $\partial q/\partial \theta < 0$ in the safe
-region and $\partial q/\partial \theta > 0$ near default.
+I microfound PRO via rational inattention: lenders endogenously allocate
+attention to dispersion, producing a state‑dependent tilt toward tails that
+enters the same pricing operator; the baseline comparative statics then carry
+through directly. Empirically, the framework matches event‑style patterns such
+as Argentina’s inflation misreporting: sharper pivots, higher default
+thresholds alongside deleveraging, and maturity/peer decoupling concentrated in
+stress.
+Intuitively, PRO tilts pricing so that borrowing becomes costlier in the range
+where governments normally issue and slightly cheaper only very close to
+default. In the usual borrowing region (below the pivot threshold) the
+perceived policy dispersion attracts extra compensation, lowering prices and
+raising spreads even when default risk is low; near default the same tilt
+softens the “doom,” lifting prices there. Facing this pivoted schedule, a
+sovereign borrows less, shifting choices toward the safer region. Averaging
+over time, two forces matter: a wedge in pricing that lifts spreads in the safe
+region, and a composition shift toward states with lower baseline spreads. In
+quantitative exercises, the wedge dominates, so average spreads rise even as
+debt falls. The body of the paper formalizes this logic with a decomposition
+and operator‑based comparative statics.
 
 Three theoretical extensions deepen the analysis. First, even optimal Ramsey
 fiscal policy cannot eliminate welfare losses from PRO due to fundamental
@@ -189,6 +174,8 @@ implementations by \citep{GennaioliMartinRossi2014} and
 directly on this insight but asks a deeper question: what if markets
 systematically \emph{misperceive} the very nature of sovereign decision-making?
 
+\noindent\textit{Information choice and rational inattention.} A complementary literature studies how decision makers optimally allocate attention/precision across signals and how this shapes macro/finance outcomes. Foundational contributions include \citet{Sims2003}, \citet{MackowiakWiederholt2009}, and \citet{MatejkaMcKay2015}; investors’ information acquisition and its equilibrium implications are surveyed in \citet{Veldkamp2011} and quantified in portfolio contexts by \citet{VanNieuwerburghVeldkamp2009}. I build on this logic by allowing lenders to allocate attention to second-moment (dispersion) information alongside first-moment fundamentals. The resulting, state-dependent tail weight $\theta_{\mathrm{RI}}(y,B')$ remains embedded in the same pricing operator, so baseline comparative statics carry through.
+
 Drawing from behavioral economics, I propose policy-randomness overestimation
 (PRO) rooted in well-documented biases like \textit{heuristics and biases}
 \citep{TverskyKahneman1974}, \textit{prospect theory}
@@ -208,28 +195,40 @@ ambiguity premium that can explain high sovereign spreads
 \citep{RochRoldan2023}. While these models distort the perceived distribution
 of \textit{macroeconomic shocks} across all states, my ``PRO wedge''
 specifically targets the perceived volatility of the sovereign's \textit{policy
-	choices}, creating a distinctive bond-price \textit{pivot}.\footnote{This pivot
-	effect differs from both reputation and ambiguity aversion models. While
-	reputation models like \citep{AmadorPhelan2021} often generate monotonic price
-	effects through type revelation under standard implementations, and
-	\citep{Fourakis2021} shows reputation loss \textit{before} default through
-	rapid debt accumulation, the mechanism here can produce non-monotonic price
-	schedules where debt becomes cheaper near default but more expensive in normal
-	times. Similarly, ambiguity models like \citep{RochRoldan2023} explain high
-	spreads through a uniform distortion of fundamental shocks, which also differs
-	from the pivot mechanism.} And unlike \textit{diagnostic expectations}
-\citep{GennaioliShleifer2018, BordaloEtAl2023}, which generate boom-bust cycles
-through time-varying news overreaction, my time-invariant bias produces
-persistent ``PRO premia,'' counterintuitive deleveraging, and the
-``softening-of-doom'' effects that standard formulations may find challenging
-to replicate.\footnote{The empirical predictions may differ from those of
-	reputation models. While \citep{MorelliMoretti2023} find that misreporting
-	episodes increase spreads on all debt instruments, the mechanism here implies
-	divergent effects across the debt distribution. Similarly, while
-	\citep{AmadorPhelan2023} shows reputation effects strengthen with haircut size,
-	the mechanism here implies that PRO effects may weaken as larger haircuts
-	reduce the perceived randomness component.}
+	choices}, creating a distinctive bond-price \textit{pivot}. Related
+preference-based formulations---\textit{smooth ambiguity}
+\citep{KlibanoffMarinacciMukerji2005} and \textit{variational preferences}
+\citep{MaccheroniMarinacciRustichini2006}---likewise tilt decision weights
+toward adverse scenarios via second-order beliefs or penalty terms. My RI
+microfoundation offers an information-constraint counterpart: in the unified
+operator it induces a (possibly state-dependent) tail weight $\theta$ with
+aligned comparative statics.\footnote{This pivot effect differs from both
+	reputation and ambiguity aversion models. While reputation models like
+	\citep{AmadorPhelan2021} often generate monotonic price effects through type
+	revelation under standard implementations, and \citep{Fourakis2021} shows
+	reputation loss \textit{before} default through rapid debt accumulation, the
+	mechanism here can produce non-monotonic price schedules where debt becomes
+	cheaper near default but more expensive in normal times. Similarly, ambiguity
+	models like \citep{RochRoldan2023} explain high spreads through a uniform
+	distortion of fundamental shocks, which also differs from the pivot mechanism.}
+And unlike \textit{diagnostic expectations} \citep{GennaioliShleifer2018,
+	BordaloEtAl2023}, which generate boom-bust cycles through time-varying news
+overreaction, my time-invariant bias produces persistent ``PRO premia,''
+counterintuitive deleveraging, and the ``softening-of-doom'' effects that
+standard formulations may find challenging to replicate.\footnote{The empirical
+	predictions may differ from those of reputation models. While
+	\citep{MorelliMoretti2023} find that misreporting episodes increase spreads on
+	all debt instruments, the mechanism here implies divergent effects across the
+	debt distribution. Similarly, while \citep{AmadorPhelan2023} shows reputation
+	effects strengthen with haircut size, the mechanism here implies that PRO
+	effects may weaken as larger haircuts reduce the perceived randomness
+	component.}
 
+\paragraph{Roadmap} Section~\ref{sec:model} presents the environment and recursive equilibrium;
+Section~\ref{sec:theory} develops core comparative statics;
+Section~\ref{sec:micro} provides the rational‑inattention microfoundation;
+Section~\ref{sec:extensions} studies policy and information extensions. I
+summarize testable implications before the conclusion.
 % --- MOTIVATION ---------------------------------------------------------------
 \section{Motivation: Argentina's Inflation--Misreporting Episode}
 \label{sec:motivation}
@@ -1528,7 +1527,7 @@ precisions $a_\mu,a_\sigma\ge0$ at convex cost
 	\label{eq:info_cost_micro}
 \end{equation}
 interpretable as attention/processing costs. (An entropy/mutual-information
-formulation yields identical monotone comparative statics in precisions.)
+formulation yields identical monotone comparative statics in precisions; see \citealp{Sims2003, MackowiakWiederholt2009, MatejkaMcKay2015, Veldkamp2011}.)
 
 \paragraph{Effective dispersion and pricing}
 I adopt a linear mapping from attention to tail-weight:\footnote{More
@@ -1556,6 +1555,10 @@ the \emph{same} operator evaluated at $\theta_{\mathrm{RI}}(y,B')$:
 	\theta_{\mathrm{RI}}(y,B')\;=\; \min\Big\{\,1 + \tfrac{\varphi^2}{\kappa_\sigma}\,\mathcal S(y,B')\,,\;\bar\theta\,\Big\}.
 	\label{eq:theta_RI_closed}
 \end{equation}
+
+\begin{remark}[Relation to ambiguity/robust preferences]
+	Preference-based ambiguity models---smooth ambiguity \citep{KlibanoffMarinacciMukerji2005}, variational preferences \citep{MaccheroniMarinacciRustichini2006}, and robust control \citep{HansenSargent2008}---can be represented as likelihood twists or penalty-adjusted evaluations that effectively tilt tails in the same pricing operator. Under the operator assumptions in Appendix~\ref{app:operator_analysis}, the pivot and policy comparative statics follow analogously. The RI formulation here endogenizes the tilt through attention choice, yielding the state-dependent $\theta_{\mathrm{RI}}(\cdot)$.
+\end{remark}
 
 \paragraph{Optimal attention}
 Let $U$ be lenders' objective (expected discounted payouts net of information
@@ -1770,19 +1773,19 @@ view these as light-touch empirical hooks—for calibration and event studies
 \section{Conclusion}
 
 I unify a behavioral sovereign‑risk mechanism—policy‑randomness overestimation
-(PRO)—with standard default environments through a single pricing operator. The
-second‑moment distortion pivots price/spread schedules, so a rational sovereign
-deleverages while defaulting at higher debt, raising average spreads and
-generating a “stability illusion” (lower volatility with higher premia).
+(PRO)—with standard default environments through a single pricing mechanism.
+PRO tilts pricing around a state‑contingent threshold, so governments borrow
+less while tolerating higher debt at default, raising average spreads and
+producing a “stability illusion”: lower volatility with higher premia.
 
-The rational‑inattention microfoundation makes PRO state‑dependent but remains
-within the same operator: attention to dispersion yields
-$\theta_{\mathrm{RI}}(y,B')$, and all baseline comparative statics carry over.
-Policy and information extensions clarify limits and levers: Ramsey transfers
-cannot undo pricing wedges; negativity‑biased learning sustains PRO; and
-transparency lowers $\theta_{\mathrm{RI}}$ and raises welfare. The framework
-offers compact, testable implications (pivot, threshold, decoupling) aligned
-with episodes such as Argentina’s inflation misreporting, and provides a
+The microfoundation based on rational inattention endogenizes the tail‑tilt yet
+keeps the same mechanism: attention to dispersion varies with the state, and
+the main comparative statics carry through. Policy and information extensions
+clarify limits and levers: transfers cannot undo pricing wedges;
+negativity‑biased learning makes distortions persistent; and transparency
+improves welfare by curbing tail‑tilting. The framework yields compact,
+testable implications—pivot, threshold shifts, and decoupling—consistent with
+event evidence such as Argentina’s inflation misreporting, and offers a
 disciplined path for calibration and event‑study validation.
 
 \clearpage
@@ -1800,7 +1803,17 @@ disciplined path for calibration and event‑study validation.
 	\large \today
 \end{center}
 
-This appendix collects auxiliary results, proofs, and computational details. Section~\ref{app:gumbel} details the Gumbel distribution and the logit identities used in the text. Section~\ref{app:proofs} provides proofs for the lemmas and propositions. Section~\ref{app:operator_analysis} states contraction, positivity/order, and differentiability results for the pricing operator (including Assumption RI.1 and a uniform convergence argument). Section~\ref{app:ri_general} develops the rational-inattention mapping with a general monotone $w(\cdot)$, establishing existence/uniqueness, continuity, and operator inheritance of the main comparative statics. Section~\ref{app:computations} documents the computational algorithm and the numerical stability techniques for the discrete-choice implementation.
+This appendix collects auxiliary results, proofs, and computational details.
+Section~\ref{app:gumbel} details the Gumbel distribution and the logit
+identities used in the text. Section~\ref{app:proofs} provides proofs for the
+lemmas and propositions. Section~\ref{app:operator_analysis} states
+contraction, positivity/order, and differentiability results for the pricing
+operator (including Assumption RI.1 and a uniform convergence argument).
+Section~\ref{app:ri_general} develops the rational-inattention mapping with a
+general monotone $w(\cdot)$, establishing existence/uniqueness, continuity, and
+operator inheritance of the main comparative statics.
+Section~\ref{app:computations} documents the computational algorithm and the
+numerical stability techniques for the discrete-choice implementation.
 
 \section{Gumbel Distribution in Default Models}\label{app:gumbel}
 In this section, I provide some useful results about the Gumbel distribution to
