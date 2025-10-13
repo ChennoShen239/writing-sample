@@ -191,7 +191,7 @@ mixed-strategy equilibrium \citep{AmadorPhelan2023}.\footnote{Other important
 lenders eventually converge to the truth, leaving unexplained why some
 sovereign risk premia appear systematically and persistently excessive.
 
-\noindent\textit{Comparative framing.} We view type‑based reputation and PRO as complementary rather than competing channels. Under canonical implementations, reputation models tend to generate monotonic price effects via type revelation, whereas the second‑moment distortion in this paper (PRO) implies a pivoting price schedule. This difference yields distinct, testable predictions for default thresholds, cross‑maturity responses to informational shocks, and spread–cycle comovement. Empirically, both mechanisms may coexist: reputation primarily shifts the perceived mean (type) while PRO inflates the perceived dispersion of policy choices.
+\noindent\textit{Comparative framing.} I view type‑based reputation and PRO as complementary rather than competing channels. Under canonical implementations, reputation models tend to generate monotonic price effects via type revelation, whereas the second‑moment distortion in this paper (PRO) implies a pivoting price schedule. This difference yields distinct, testable predictions for default thresholds, cross‑maturity responses to informational shocks, and spread–cycle comovement. Empirically, both mechanisms may coexist: reputation primarily shifts the perceived mean (type) while PRO inflates the perceived dispersion of policy choices.
 
 A third strand recognizes that market \textit{sentiment itself} can become a
 fundamental force. Beginning with \citep{CalvoLeidermanReinhart1996} and
@@ -303,7 +303,7 @@ government's character and future actions.
 		\subcaption{EMBI+ spreads: Argentina (black) vs other LA (gray).}
 		\label{fig:argentina_spread}
 	\end{subfigure}
-	\caption{Argentina’s misreport of inflation and decoupling of spreads. Panel A shows the monthly official inflation rate announced by the Argentine government (black line) and alternative measures of inflation (gray lines). Panel B shows annualized emerging market bond index spreads for Argentina (black line) and other Latin American countries (gray lines). Vertical lines denote the first month in which the Argentine government underreported the inflation rate. Sources: INDEC (official CPI); private and provincial estimates (\citep{Cavallo2013}); J.P. Morgan EMBI+.}
+	\caption{Argentina’s misreport of inflation and decoupling of spreads. Panel A shows the monthly official inflation rate announced by the Argentine government (black line) and alternative measures of inflation (gray lines). Panel B shows annualized emerging market bond index spreads for Argentina (black line) and other Latin American countries (gray lines). Vertical lines denote the first month in which the Argentine government underreported the inflation rate. Sources: INDEC (official CPI); private and provincial estimates \citep{Cavallo2013}; J.P. Morgan EMBI+.}
 	\label{fig:argentina_spreads}
 \end{figure}
 
@@ -365,6 +365,13 @@ higher average spreads, and market volatility can fall even as the underlying
 risk premium rises, creating an ``illusion of financial stability.'' This
 framework provides a new, behaviorally-grounded perspective on the persistent
 debt challenges that many emerging economies face.
+
+Roadmap. Section~\ref{sec:model} lays out the environment and recursive
+equilibrium; Section~\ref{sec:theory} develops the core comparative statics
+(price/spread pivots, default threshold, borrowing, welfare); and
+Section~\ref{sec:extensions} embeds policy and information extensions (Ramsey
+planning, endogenous beliefs, optimal communication). The appendix collects
+proofs and operator analysis.
 
 \section{A Model of Policy-Randomness Overestimation (PRO)}
 \label{sec:model}
@@ -598,8 +605,44 @@ well behaved.
 	See Appendix~\ref{app:proof_existence_uniqueness}.
 \end{proof}
 
+\paragraph{Unified Operators and Notation}
+To keep the subsequent theory tightly anchored to the baseline model, I adopt
+an operator view of the same recursive equilibrium. Let $J_\rho$ denote the
+sovereign's Bellman aggregator given by the log-sum-exp with
+borrowing-choice scale $\rho$, and let $\mathcal T_\theta$ denote the lenders'
+pricing operator induced by their perceived default probability with
+``policy-randomness overestimation'' $\theta$. Given the payoff kernel and
+resale term, the equilibrium bond price function $q_\theta$ is the unique fixed
+point of the pricing operator defined in~\eqref{eq:pricing_operator}. Unless
+otherwise noted, all results below are comparative statics or state
+augmentations \emph{within this same recursive equilibrium}: primitives, bond
+structure, and the Bellman aggregator $J_\rho$ remain unchanged; only the
+belief parameter $\theta$ (or information/policy that enters \emph{through}
+$\mathcal T_\theta$) differs across the economies I compare.
+
 \section{Theoretical Analysis}
 \label{sec:theory}
+
+This section develops comparative statics and extensions within the same
+baseline economy defined by Definition~\ref{def:equilibrium} and the pricing
+operator in~\eqref{eq:pricing_operator}. Unless stated otherwise, I hold
+preferences, technologies, and debt structure fixed, and vary only: (i) the
+lenders' belief parameter $\theta$; (ii) the information structure that governs
+the evolution of $\theta$ (learning as a slow-moving state); or (iii) planner
+instruments that affect resources or the mapping from information to beliefs
+while preserving the pricing mechanism. In all cases, equilibrium objects are
+unique fixed points of the same operators $J_\rho$ and $\mathcal T_\theta$, so
+the results are natural comparative statics of the \emph{baseline} model rather
+than separate models.
+
+\paragraph{Toolbox (in brief)}
+I repeatedly use three ingredients drawn from the appendix: (i) the pricing
+operator $\mathcal T_\theta$ is a contraction and positive, so $(I-\mathcal
+	T_\theta)^{-1}$ exists and is positive; (ii) Bellman and pricing operators are
+monotone, hence orderings propagate to their fixed points; and (iii)
+fixed-point differentiation applies, allowing us to sign $\partial_\theta
+	q_\theta$ via an implicit-function argument. Formal statements are collected in
+Appendix~\ref{app:operator_analysis}.
 
 Before proceeding to the full quantitative analysis, this section theoretically
 unpacks the consequences of the behavioral wedge between the sovereign and its
@@ -609,13 +652,16 @@ on the bond price schedule and tracing the effects through to the sovereign's
 policies and ultimate welfare.
 
 \paragraph{Bond Price Pivot}The first and most fundamental consequence of PRO is on the price of debt. The
-following proposition establishes that PRO does not uniformly depress bond
-prices. Instead, it causes the price schedule to pivot relative to the rational
+following comparative-static result is stated \emph{within} the baseline
+economy: the only difference across economies is the belief parameter $\theta$
+that enters the same pricing operator $\mathcal T_\theta$
+in~\eqref{eq:pricing_operator}. PRO does not uniformly depress bond prices;
+instead, it causes the price schedule to pivot relative to the rational
 benchmark, an effect distinct from the monotonic downward shift one might
 associate with reputational deterioration in canonical setups.
 
 \begin{proposition}\label{prop:pivot_concise}
-	Consider an economy with PRO lenders ($\theta > 1$) and a baseline economy with rational lenders ($\theta = 1$), both having a small true taste shock parameter $\eta > 0$. Let $q_1(B', y)$ and $q_\theta(B', y)$ be the respective equilibrium bond price functions. For a given endowment level $y$, there exists a debt threshold $B^*(y)$ such that the price difference $\Delta q(B', y) \equiv q_\theta(B', y) - q_1(B', y)$ satisfies:
+	Consider an economy with PRO lenders ($\theta > 1$) and the baseline economy with rational lenders ($\theta = 1$), both having a small true taste shock parameter $\eta > 0$. Let $q_1(B', y)$ and $q_\theta(B', y)$ be the respective equilibrium bond price functions, each defined as the unique fixed point of the \emph{same} pricing operator $\mathcal T_\theta$ in~\eqref{eq:pricing_operator} evaluated at $\theta=1$ and $\theta>1$, respectively. For a given endowment level $y$, there exists a debt threshold $B^*(y)$ such that the price difference $\Delta q(B', y) \equiv q_\theta(B', y) - q_1(B', y)$ satisfies:
 	\begin{itemize}
 		\item For levels of future debt $B' < B^*(y)$, $\Delta q(B', y) < 0$ (PRO lenders
 		      offer lower prices).
@@ -684,9 +730,12 @@ The intuition for this result lies in the differential response of the two marke
 \end{figure}
 
 \paragraph{Spread}
-These results on prices map directly and inversely to credit spreads. The
-sovereign credit spread, $s(y, B')$, is defined as the yield premium over the
-risk-free rate, $r$. Given the bond's price $q(y, B')$, the spread is:
+Within the same baseline equilibrium, spreads are an inverse mapping from the
+same fixed-point price schedule $q$, so all results below are algebraic
+comparative statics of the \emph{same} operators. These results on prices map
+directly and inversely to credit spreads. The sovereign credit spread, $s(y,
+	B')$, is defined as the yield premium over the risk-free rate, $r$. Given the
+bond's price $q(y, B')$, the spread is:
 \begin{equation}
 	s(y, B') = \frac{\kappa}{q(y, B')} - \delta - r.
 	\label{eq:spread_definition}
@@ -715,7 +764,7 @@ level.\footnote{This result differs fundamentally from the negative duration
 	effect in \citep{ChatterjeeEyigungor2012}. In their model, longer maturity
 	reduces the sovereign's incentive to default because it dilutes existing
 	bondholders, creating a debt dilution channel that works through the
-	\emph{quantity} of debt issued. In contrast, our mechanism operates through
+\emph{quantity} of debt issued. In contrast, this mechanism operates through
 	lender \emph{beliefs} about the sovereign's decision-making process: PRO
 	lenders offer better terms in high-debt states due to their perception of
 	greater randomness in sovereign choices, making continued market access more
@@ -724,6 +773,10 @@ level.\footnote{This result differs fundamentally from the negative duration
 reputation models, where a sovereign with a worse reputation (i.e., a higher
 perceived probability of being a 'strategic' type) would typically be expected
 to default at a lower debt level.
+
+In keeping with the unified framework, the objects $V^R_i$ and $q_i$ below are
+determined by the \emph{same} Bellman aggregator $J_\rho$ and pricing operator
+$\mathcal T_\theta$; only the belief parameter is set to $i\in\{1,\theta\}$.
 
 \begin{proposition}
 	\label{prop:threshold}
@@ -784,10 +837,12 @@ Two implications follow.
 \end{itemize}
 
 \paragraph{Borrowing Policy}
-While PRO makes the sovereign more resilient at the brink of crisis, it has the
-opposite effect on its day-to-day borrowing. The next proposition shows that a
-PRO market actively disciplines the sovereign into adopting a more conservative
-debt policy.
+Within the same operator framework, only the belief parameter differs across
+economies; the sovereign's choice aggregator $J_\rho$ and the induced price
+schedule $q_i$ arise from the same fixed-point problems. While PRO makes the
+sovereign more resilient at the brink of crisis, it has the opposite effect on
+its day-to-day borrowing. The next proposition shows that a PRO market actively
+disciplines the sovereign into adopting a more conservative debt policy.
 
 \begin{proposition}
 	\label{prop:deleveraging}
@@ -1442,15 +1497,22 @@ persistence and beliefs generates hysteresis effects: temporary improvements in
 fundamentals produce limited deleveraging, while sustained improvements are
 necessary to overcome entrenched priors exhibiting PRO.
 
-\section{Extensions}
+\section{Policy and Information Extensions}
 
 \subsection{Theoretical Extensions}\label{sec:extensions}
+This section remains within the same operator framework: I vary information
+and policy mappings that enter \emph{through} the pricing operator $\mathcal
+	T_\theta$, while holding primitives and the sovereign's choice aggregator
+$J_\rho$ fixed.
 
 \paragraph{Ramsey Planning Under PRO}\label{sec:ramsey}
 Proposition~\ref{prop:welfare} shows that PRO reduces equilibrium welfare. A
-natural question is whether an optimal fiscal authority can undo this loss. We
+natural question is whether an optimal fiscal authority can undo this loss. I
 study a Ramsey planner who can choose lump-sum taxes/transfers but takes the
-bond pricing mechanism as given.
+bond pricing mechanism as given. Formally, the planner's problem preserves the
+same choice aggregator $J_\rho$, while bond prices are the unique fixed points
+of the same operator $\mathcal T_\theta$; the planner's instruments enter only
+the resource constraint and do not alter the pricing mechanism.
 
 PRO acts like a persistent wedge in the intertemporal price of borrowing.
 Transfers can reallocate resources within and across periods subject to a zero
@@ -1505,7 +1567,11 @@ constraint; therefore the wedge in $q_\theta$ generates a genuine efficiency
 loss. See also \citep{AiyagariMarcetSargentSeppala2002}.
 
 \paragraph{Endogenous Belief Formation}
-We next let lenders learn about the taste-shock dispersion parameter $\theta$.
+I next let lenders learn about the taste-shock dispersion parameter $\theta$.
+This is a state augmentation of the baseline economy: I extend the state to
+$S_t=(y_t,B_t,\theta_t)$ and keep the pricing operator unchanged except that it
+is evaluated at the current belief, i.e., prices satisfy the same fixed-point
+condition with $\mathcal T_{\theta_t}$.
 
 Even with Bayesian updating, ``negativity bias''---overweighting unexpected
 defaults relative to unexpected repayments---can make PRO persistent and
@@ -1540,6 +1606,9 @@ negativity bias means that $\widehat\theta$ responds more to larger $\xi$ when $
 \end{proof}
 
 \paragraph{Optimal Policy Communication}
+This extension likewise preserves the baseline structure: transparency affects
+only the \emph{effective} belief input into the same pricing operator, while
+the sovereign's choice aggregator $J_\rho$ and other primitives are unchanged.
 Now allow the government to choose a transparency level $\alpha\in[0,1]$ that
 affects lenders' effective dispersion:
 \begin{equation}
@@ -1570,6 +1639,16 @@ rational benchmark, but convex disclosure costs imply an interior optimum. The
 comparative static in (ii) formalizes that transparency is most valuable when
 PRO is severe.
 
+\paragraph{Testable Predictions and Empirical Hooks}
+As brief guidance for future empirical work, the framework yields concise,
+testable implications: (i) a single-crossing pivot in price/spread schedules
+with $B^*(y)$ increasing in $y$; (ii) higher default thresholds despite higher
+average spreads; (iii) deleveraging alongside higher mean spreads and lower
+volatility (``stability illusion''); and (iv) cross-maturity and peer
+``decoupling'' patterns consistent with second-moment (dispersion) beliefs. I
+view these as light-touch empirical hooks—for calibration and event studies
+(e.g., Argentina)—rather than the focus here.
+
 \section{Conclusion}
 
 Standard models struggle to explain why emerging economies face persistently
@@ -1588,7 +1667,7 @@ deleveraging creates an ``illusion of financial stability,'' where observable
 market volatility falls even as financial cycles are amplified and the
 sovereign's welfare declines.
 
-We view PRO as complementary to reputation‑based learning rather than a
+I view PRO as complementary to reputation‑based learning rather than a
 substitute. A joint empirical strategy that leverages maturity‑specific
 responses to informational shocks, the shape of the price schedule, and the
 evolution of volatility can help separate first‑moment (type) from
@@ -1698,7 +1777,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 		            & = \exp\left(-e^{-\gamma}\left(\exp\left(-\frac{x - V_1}{\eta}\right) + \exp\left(-\frac{x - V_2}{\eta}\right)\right)\right).
 	\end{align*}
 	Let $\tilde{\mu} = \eta \ln\left(\exp\frac{V_1}{\eta} +
-		\exp\frac{V_2}{\eta}\right)$. We can rewrite:
+		\exp\frac{V_2}{\eta}\right)$. I can rewrite:
 	\begin{align*}
 		 & \exp\left(-\frac{x - V_1}{\eta}\right) + \exp\left(-\frac{x - V_2}{\eta}\right)                                   \\
 		 & = \exp\left(-\frac{x}{\eta}\right)\left(\exp\frac{V_1}{\eta} + \exp\frac{V_2}{\eta}\right)                        \\
@@ -1733,7 +1812,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	\begin{equation*}
 		F_Z(z) = \frac{1}{1 + \exp(-z/\sigma)}
 	\end{equation*}
-	This is the CDF of a logistic distribution with location 0 and scale $\sigma$.	With $\sigma = \eta$ and our parametrization:
+This is the CDF of a logistic distribution with location 0 and scale $\sigma$.	With $\sigma = \eta$ and the parametrization:
 	\begin{align*}
 		\Pr\{X_1 > X_2\} & = \Pr\{\varepsilon_1 - \varepsilon_2 > V_2 - V_1\}                  \\
 		                 & = 1 - F_{Z}(V_2 - V_1; 0, \eta)                                     \\
@@ -1820,7 +1899,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	Thus $T(V,q)$ is bounded and continuous, so $\mathcal T(\mathbf X)\subseteq\mathbf X$.
 
 	\paragraph{Step 2: Lipschitz bounds (decoupled).}
-	We record the following constants (finite by compactness and~\eqref{eq:qbar}):
+	I record the following constants (finite by compactness and~\eqref{eq:qbar}):
 
 	\medskip
 	(i) \emph{$J$ with respect to $V$.}
@@ -1970,7 +2049,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	\end{align}
 	Intuitively: when repayment strictly dominates default (\(\Delta V>0\)), PRO lenders assign a \emph{higher} default probability; when default dominates (\(\Delta V<0\)), they assign a \emph{lower} default probability.
 
-	Given the strictly positive payoff term in \eqref{eq:pricing_operator}, we have
+	Given the strictly positive payoff term in \eqref{eq:pricing_operator}, I have
 	\begin{equation}
 		\mathrm{sign}\bigl((T_\theta q-T_1 q)(B',y)\bigr)
 		= \mathrm{sign}\Bigl(\E_{y'|y}\,[\,P_1(y',B')-P_\theta(y',B')\,]\Bigr).
@@ -2038,12 +2117,12 @@ This section contains the proofs for the lemmas and propositions in the paper.
 
 \begin{proof}
 	Define \(F(B',y)\equiv q_\theta(B',y)-q_1(B',y)\) and let \(B^*(y)\) be implicitly defined by \(F(B^*(y),y)=0\).
-	We verify the conditions of the Implicit Function Theorem at any \((B^*(y),y)\) where the crossing is interior.
+	I verify the conditions of the Implicit Function Theorem at any \((B^*(y),y)\) where the crossing is interior.
 
 	\paragraph{Regularity.}
 	\textbf{(i) Smoothness.} Under the primitives assumed in the main text (CRRA utility, log-sum-exp smoothing in the sovereign’s choices, compact state grids, and the pricing operator with strictly positive payoff term), the pricing operator is \(C^1\) in \((B',y)\). Hence each fixed-point price function \(q_i(B',y)\) is \(C^1\) in both arguments.\footnote{This follows from differentiability of the Bellman/pricing operators and standard fixed-point differentiation arguments on compact spaces.}
 
-	\textbf{(ii) Non-degeneracy.} We show \(F_{B'}(B^*(y),y)\neq 0\) and in fact \(F_{B'}(B^*(y),y)>0\).
+\textbf{(ii) Non-degeneracy.} I show \(F_{B'}(B^*(y),y)\neq 0\) and in fact \(F_{B'}(B^*(y),y)>0\).
 	Recall the lenders’ perceived default probability
 	\[
 		P_i(y',B') \;=\; L\!\left(-\frac{\Delta V_i(y',B')}{\theta_i\eta}\right),
@@ -2182,7 +2261,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 		W_i(y,B,B') \;=\; u\!\left(y-\kappa B + [B'-(1-\delta)B]\,q_i(y,B')\right)
 		\;+\; \beta\,\E_{y'|y}\big[V_i(y',B')\big],
 	\]
-	we have for all such relevant \(B'\ge B^*(y)\),
+	I have for all such relevant \(B'\ge B^*(y)\),
 	\[
 		q_\theta(y,B') \ge q_1(y,B') \quad\Longrightarrow\quad
 		u\!\big(\cdot\ \text{with }q_\theta\big)\; \ge\; u\!\big(\cdot\ \text{with }q_1\big),
@@ -2196,7 +2275,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	\[
 		V^R_i(y,B) \;=\; \rho \log\!\Big(\sum_{B'} \exp\{W_i(y,B,B')/\rho\}\Big),
 	\]
-	which is strictly increasing in each \(W_i(y,B,B')\), we obtain
+	which is strictly increasing in each \(W_i(y,B,B')\), I obtain
 	\begin{equation}
 		V^R_\theta\!\big(y,B^*_{D,\theta}(y)\big) \;>\; V^R_1\!\big(y,B^*_{D,\theta}(y)\big).
 		\label{eq:VR_dominance}
@@ -2207,7 +2286,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 		V^R_\theta\!\big(y,B^*_{D,\theta}(y)\big) \;>\; V^D(y),
 	\]
 	which contradicts the definition of \(B^*_{D,\theta}(y)\) as the point where
-	\(V^R_\theta=V^D\). Hence the assumed ordering is false, and we must have
+\(V^R_\theta=V^D\). Hence the assumed ordering is false, and must have
 	\[
 		B^*_{D,\theta}(y) \;>\; B^*_{D,1}(y).
 	\]
@@ -2248,7 +2327,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 		B'\ge B^*(y)\ \Longrightarrow\ q_\theta(y,B')<q_1(y,B'),\qquad
 		B'\le B^*(y)\ \Longrightarrow\ q_\theta(y,B')>q_1(y,B').
 	\end{equation}
-	We prove the claim on the empirically relevant \emph{risky} side, i.e. for states with the baseline choice on (or to the right of) the pivot:
+	I prove the claim on the empirically relevant \emph{risky} side, i.e. for states with the baseline choice on (or to the right of) the pivot:
 	\begin{equation}\label{eq:baseline_risky_side}
 		B'_1(y,B)\ \ge\ B^*(y).
 	\end{equation}
@@ -2383,7 +2462,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	\[
 		u(c_\theta(B')) < u(c_1(B')).
 	\]
-	Because the continuation term in $W$ is identical, we have
+	Because the continuation term in $W$ is identical, I have
 	\begin{equation}\label{eq:choice_value_order}
 		W(y,B,B';q_\theta,V_{in}) < W(y,B,B';q_1,V_{in})
 		\quad\text{for such $B'$}.
@@ -2487,7 +2566,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 \subsection{Proof of Proposition~\ref{prop:endogenous_beliefs}}\label{app:proof_endogenous_beliefs}
 
 \begin{proof}
-	We establish each part through rigorous analysis of the belief updating dynamics.
+I establish each part through rigorous analysis of the belief updating dynamics.
 
 	\textbf{Part (i): Persistent PRO.}
 	Define the conditional maximum likelihood estimators:
@@ -2542,7 +2621,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	depends explicitly on the history $\mathcal{H}$.
 
 	Since $\hat{\theta}(\mathcal{H}^A) \neq \hat{\theta}(\mathcal{H}^B)$ for
-	histories with different default intensities, we have $\Theta^A \neq \Theta^B$.
+histories with different default intensities, I have $\Theta^A \neq \Theta^B$.
 	Moreover, if $\mathcal{H}^A$ contains more surprising defaults than
 	$\mathcal{H}^B$, then $\Theta^A$ first-order stochastically dominates
 	$\Theta^B$:
@@ -2583,7 +2662,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 \subsection{Proof of Proposition~\ref{prop:optimal_communication}}\label{app:proof_optimal_communication}
 
 \begin{proof}
-	We establish each part through detailed analysis of the sovereign's optimization problem under strategic communication.
+I establish each part through detailed analysis of the sovereign's optimization problem under strategic communication.
 
 	\textbf{Setup: The Communication Problem.}
 	Let $\mathcal{W}(\alpha; \theta)$ denote the sovereign's value function under transparency level $\alpha$ and baseline PRO $\theta$. This satisfies the Bellman equation:
@@ -2617,12 +2696,12 @@ This section contains the proofs for the lemmas and propositions in the paper.
 
 	Since $\frac{\partial q_{\theta_{\text{eff}}}}{\partial \theta_{\text{eff}}} <
 		0$ (higher perceived volatility reduces bond prices) and $(1-\theta) < 0$ for
-	$\theta > 1$, we have:
+$\theta > 1$, I have:
 	\begin{equation}
 		\frac{\partial \mathcal{W}}{\partial \alpha} = (\theta-1) \mathbb{E}_0 \left[ \sum_{t=0}^\infty \beta^t u'(c_t) [B_{t+1} - (1-\delta)B_t] \left|\frac{\partial q_{\theta_{\text{eff}}}}{\partial \theta_{\text{eff}}}\right| \right] > 0 \label{eq:marginal_benefit}
 	\end{equation}
 
-	For an interior solution, we need both concavity and appropriate boundary
+For an interior solution, I need both concavity and appropriate boundary
 	conditions. The second-order condition requires:
 	\begin{equation}
 		\frac{\partial^2 V(\alpha)}{\partial \alpha^2}\bigg|_{\alpha=\alpha^*} = \frac{\partial^2 \mathcal{W}}{\partial \alpha^2}\bigg|_{\alpha=\alpha^*} - \gamma < 0 \label{eq:soc}
@@ -2667,7 +2746,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 		adjustments are second-order.}
 
 	Since the denominator in \eqref{eq:transparency_theta_derivative} is positive
-	by the second-order condition \eqref{eq:soc}, we conclude:
+by the second-order condition \eqref{eq:soc}, I conclude:
 	\begin{equation}
 		\frac{\partial
 			\alpha^*}{\partial \theta} > 0 \label{eq:transparency_increasing}
@@ -2692,7 +2771,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	\end{equation}
 
 	Since the second-order condition requires $\frac{\partial^2
-			\mathcal{W}}{\partial \alpha^2} - \gamma < 0$, we have $\Delta W(\theta) < 0$
+			\mathcal{W}}{\partial \alpha^2} - \gamma < 0$, I have $\Delta W(\theta) < 0$
 	for $\theta$ close to 1. However, as $\theta$ increases, the benefits of
 	transparency grow faster than the costs.\footnote{This occurs because the
 		marginal benefit of transparency is proportional to $(\theta-1)$, while the
@@ -2968,7 +3047,7 @@ Differentiate \eqref{eq:q_fixed_point} and use \((I-\mathcal T_\theta)^{-1}\) to
 \begin{equation}\label{eq:Lambda_def}
 	\Lambda(y',B')\;\coloneqq\;\kappa\;+\;(1-\delta)\,\E_{B''|y',B'}\big[q_\theta(y',B'')\big],
 \end{equation}
-we can rewrite \eqref{eq:q_derivative_resolvent} pointwise as
+I can rewrite \eqref{eq:q_derivative_resolvent} pointwise as
 \begin{equation}\label{eq:q_deriv_linear_appendix}
 	\big(I-\mathcal T_\theta\big)\,\frac{\partial q_\theta(\cdot)}{\partial\theta}\,(y,B')\;=\;-\,\frac{1}{1+r}\,\E_{y'|y}\Big[\big(\partial_\theta \tilde P_\theta(y',B')\big)\,\Lambda(y',B')\Big],
 \end{equation}
