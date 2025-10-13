@@ -608,17 +608,17 @@ well behaved.
 \paragraph{Unified Operators and Notation}
 To keep the subsequent theory tightly anchored to the baseline model, I adopt
 an operator view of the same recursive equilibrium. Let $J_\rho$ denote the
-sovereign's Bellman aggregator given by the log-sum-exp with
-borrowing-choice scale $\rho$, and let $\mathcal T_\theta$ denote the lenders'
-pricing operator induced by their perceived default probability with
-``policy-randomness overestimation'' $\theta$. Given the payoff kernel and
-resale term, the equilibrium bond price function $q_\theta$ is the unique fixed
-point of the pricing operator defined in~\eqref{eq:pricing_operator}. Unless
-otherwise noted, all results below are comparative statics or state
-augmentations \emph{within this same recursive equilibrium}: primitives, bond
-structure, and the Bellman aggregator $J_\rho$ remain unchanged; only the
-belief parameter $\theta$ (or information/policy that enters \emph{through}
-$\mathcal T_\theta$) differs across the economies I compare.
+sovereign's Bellman aggregator given by the log-sum-exp with borrowing-choice
+scale $\rho$, and let $\mathcal T_\theta$ denote the lenders' pricing operator
+induced by their perceived default probability with ``policy-randomness
+overestimation'' $\theta$. Given the payoff kernel and resale term, the
+equilibrium bond price function $q_\theta$ is the unique fixed point of the
+pricing operator defined in~\eqref{eq:pricing_operator}. Unless otherwise
+noted, all results below are comparative statics or state augmentations
+\emph{within this same recursive equilibrium}: primitives, bond structure, and
+the Bellman aggregator $J_\rho$ remain unchanged; only the belief parameter
+$\theta$ (or information/policy that enters \emph{through} $\mathcal T_\theta$)
+differs across the economies I compare.
 
 \section{Theoretical Analysis}
 \label{sec:theory}
@@ -764,7 +764,7 @@ level.\footnote{This result differs fundamentally from the negative duration
 	effect in \citep{ChatterjeeEyigungor2012}. In their model, longer maturity
 	reduces the sovereign's incentive to default because it dilutes existing
 	bondholders, creating a debt dilution channel that works through the
-\emph{quantity} of debt issued. In contrast, this mechanism operates through
+	\emph{quantity} of debt issued. In contrast, this mechanism operates through
 	lender \emph{beliefs} about the sovereign's decision-making process: PRO
 	lenders offer better terms in high-debt states due to their perception of
 	greater randomness in sovereign choices, making continued market access more
@@ -1497,11 +1497,11 @@ persistence and beliefs generates hysteresis effects: temporary improvements in
 fundamentals produce limited deleveraging, while sustained improvements are
 necessary to overcome entrenched priors exhibiting PRO.
 
-\section{Policy and Information Extensions}
+\section{Policy and Information Extensions}\label{sec:extensions}
 
-\subsection{Theoretical Extensions}\label{sec:extensions}
-This section remains within the same operator framework: I vary information
-and policy mappings that enter \emph{through} the pricing operator $\mathcal
+\subsection{Theoretical Extensions}
+This section remains within the same operator framework: I vary information and
+policy mappings that enter \emph{through} the pricing operator $\mathcal
 	T_\theta$, while holding primitives and the sovereign's choice aggregator
 $J_\rho$ fixed.
 
@@ -1604,6 +1604,60 @@ negativity bias means that $\widehat\theta$ responds more to larger $\xi$ when $
 \begin{proof}
 	See Appendix~\ref{app:proof_endogenous_beliefs}.
 \end{proof}
+
+\paragraph{Rational Inattention to Second Moments}
+Still within the same operator framework, I microfound PRO as an optimal
+attention allocation over first- versus second-moment information. Lenders
+observe two signals about the sovereign's fundamentals: a mean signal $s_\mu$
+and a dispersion (second-moment) signal $s_\sigma$. They choose precisions
+$a_\mu,a_\sigma\ge0$ subject to a convex information cost, for instance
+$\Phi(a_\mu,a_\sigma)=\tfrac{\kappa_\mu}{2}a_\mu^2+\tfrac{\kappa_\sigma}{2}a_\sigma^2$.
+Higher $a_\sigma$ tightens beliefs about tail risk and thus lowers the
+effective dispersion they attach to policy realizations.
+
+Let $\theta$ summarize the dispersion/tail weight inside the same pricing
+operator $\mathcal T_\theta$. Under rational inattention, $\theta$ becomes
+endogenous: $\theta_{\mathrm{RI}}(y,B') =
+	1+\varphi\,g\!\big(a_\sigma(y,B')\big)$ with $\varphi>0$ and $g$ increasing,
+and prices still solve the \emph{same} fixed-point condition with $\mathcal
+	T_{\theta_{\mathrm{RI}}(y,B')}$. The optimal attention vector solves
+\[
+	\max_{a_\mu,a_\sigma\ge0}\; \E\big[U\,|\,a_\mu,a_\sigma\big] - \Phi(a_\mu,a_\sigma),
+\]
+where the marginal value of $a_\sigma$ is proportional to how strongly prices
+react to dispersion in the current state $(y,B')$. Because the price schedule
+is steeper in states with higher default sensitivity, the FOC implies
+state-dependent attention to dispersion:
+\begin{equation}
+	\frac{\partial a_\sigma(y,B')}{\partial \text{stress}}\;>\;0
+	\quad\Rightarrow\quad
+	\frac{\partial \theta_{\mathrm{RI}}(y,B')}{\partial \text{stress}}\;>\;0.
+	\label{eq:ri_comparative_static}
+\end{equation}
+
+\begin{proposition}[Within-baseline comparative statics under RI]
+	\label{prop:ri_maintains_results}
+	Suppose $\Phi$ is strictly convex and separable and that attention raises the
+	weight on dispersion monotonically as in~\eqref{eq:ri_comparative_static}.
+	Then the operator $\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}$ remains positive
+	and order-preserving on prices. Consequently, the baseline results—single-
+	crossing price pivot at $B^*(y)$, $B^*(y)$ increasing in $y$, and
+	deleveraging alongside higher mean spreads—continue to hold as within-baseline
+	comparative statics with $\theta$ replaced by $\theta_{\mathrm{RI}}(y,B')$.
+\end{proposition}
+
+\begin{proof}
+	Positivity and order preservation are inherited from $\mathcal T_\theta$ pointwise
+	in $(y,B')$; continuity of $\theta_{\mathrm{RI}}$ and the monotone mapping in
+	\eqref{eq:ri_comparative_static} preserve the lattice and fixed-point
+	arguments used in the baseline propositions.
+\end{proof}
+
+Empirically, exogenous reductions in the cost of dispersion-relevant
+information (e.g., disclosure reforms or standardized risk reporting) should
+compress spreads disproportionately in high-debt/high-stress states, flatten
+the price pivot, and lower the default threshold—all testable within event
+studies or difference-in-differences designs.
 
 \paragraph{Optimal Policy Communication}
 This extension likewise preserves the baseline structure: transparency affects
@@ -1812,7 +1866,7 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	\begin{equation*}
 		F_Z(z) = \frac{1}{1 + \exp(-z/\sigma)}
 	\end{equation*}
-This is the CDF of a logistic distribution with location 0 and scale $\sigma$.	With $\sigma = \eta$ and the parametrization:
+	This is the CDF of a logistic distribution with location 0 and scale $\sigma$.	With $\sigma = \eta$ and the parametrization:
 	\begin{align*}
 		\Pr\{X_1 > X_2\} & = \Pr\{\varepsilon_1 - \varepsilon_2 > V_2 - V_1\}                  \\
 		                 & = 1 - F_{Z}(V_2 - V_1; 0, \eta)                                     \\
@@ -2122,7 +2176,7 @@ This is the CDF of a logistic distribution with location 0 and scale $\sigma$.	W
 	\paragraph{Regularity.}
 	\textbf{(i) Smoothness.} Under the primitives assumed in the main text (CRRA utility, log-sum-exp smoothing in the sovereign’s choices, compact state grids, and the pricing operator with strictly positive payoff term), the pricing operator is \(C^1\) in \((B',y)\). Hence each fixed-point price function \(q_i(B',y)\) is \(C^1\) in both arguments.\footnote{This follows from differentiability of the Bellman/pricing operators and standard fixed-point differentiation arguments on compact spaces.}
 
-\textbf{(ii) Non-degeneracy.} I show \(F_{B'}(B^*(y),y)\neq 0\) and in fact \(F_{B'}(B^*(y),y)>0\).
+	\textbf{(ii) Non-degeneracy.} I show \(F_{B'}(B^*(y),y)\neq 0\) and in fact \(F_{B'}(B^*(y),y)>0\).
 	Recall the lenders’ perceived default probability
 	\[
 		P_i(y',B') \;=\; L\!\left(-\frac{\Delta V_i(y',B')}{\theta_i\eta}\right),
@@ -2286,7 +2340,7 @@ This is the CDF of a logistic distribution with location 0 and scale $\sigma$.	W
 		V^R_\theta\!\big(y,B^*_{D,\theta}(y)\big) \;>\; V^D(y),
 	\]
 	which contradicts the definition of \(B^*_{D,\theta}(y)\) as the point where
-\(V^R_\theta=V^D\). Hence the assumed ordering is false, and must have
+	\(V^R_\theta=V^D\). Hence the assumed ordering is false, and I must have
 	\[
 		B^*_{D,\theta}(y) \;>\; B^*_{D,1}(y).
 	\]
@@ -2566,7 +2620,7 @@ This is the CDF of a logistic distribution with location 0 and scale $\sigma$.	W
 \subsection{Proof of Proposition~\ref{prop:endogenous_beliefs}}\label{app:proof_endogenous_beliefs}
 
 \begin{proof}
-I establish each part through rigorous analysis of the belief updating dynamics.
+	I establish each part through rigorous analysis of the belief updating dynamics.
 
 	\textbf{Part (i): Persistent PRO.}
 	Define the conditional maximum likelihood estimators:
@@ -2621,7 +2675,7 @@ I establish each part through rigorous analysis of the belief updating dynamics.
 	depends explicitly on the history $\mathcal{H}$.
 
 	Since $\hat{\theta}(\mathcal{H}^A) \neq \hat{\theta}(\mathcal{H}^B)$ for
-histories with different default intensities, I have $\Theta^A \neq \Theta^B$.
+	histories with different default intensities, I have $\Theta^A \neq \Theta^B$.
 	Moreover, if $\mathcal{H}^A$ contains more surprising defaults than
 	$\mathcal{H}^B$, then $\Theta^A$ first-order stochastically dominates
 	$\Theta^B$:
@@ -2662,7 +2716,7 @@ histories with different default intensities, I have $\Theta^A \neq \Theta^B$.
 \subsection{Proof of Proposition~\ref{prop:optimal_communication}}\label{app:proof_optimal_communication}
 
 \begin{proof}
-I establish each part through detailed analysis of the sovereign's optimization problem under strategic communication.
+	I establish each part through detailed analysis of the sovereign's optimization problem under strategic communication.
 
 	\textbf{Setup: The Communication Problem.}
 	Let $\mathcal{W}(\alpha; \theta)$ denote the sovereign's value function under transparency level $\alpha$ and baseline PRO $\theta$. This satisfies the Bellman equation:
@@ -2696,12 +2750,12 @@ I establish each part through detailed analysis of the sovereign's optimization 
 
 	Since $\frac{\partial q_{\theta_{\text{eff}}}}{\partial \theta_{\text{eff}}} <
 		0$ (higher perceived volatility reduces bond prices) and $(1-\theta) < 0$ for
-$\theta > 1$, I have:
+	$\theta > 1$, I have:
 	\begin{equation}
 		\frac{\partial \mathcal{W}}{\partial \alpha} = (\theta-1) \mathbb{E}_0 \left[ \sum_{t=0}^\infty \beta^t u'(c_t) [B_{t+1} - (1-\delta)B_t] \left|\frac{\partial q_{\theta_{\text{eff}}}}{\partial \theta_{\text{eff}}}\right| \right] > 0 \label{eq:marginal_benefit}
 	\end{equation}
 
-For an interior solution, I need both concavity and appropriate boundary
+	For an interior solution, I need both concavity and appropriate boundary
 	conditions. The second-order condition requires:
 	\begin{equation}
 		\frac{\partial^2 V(\alpha)}{\partial \alpha^2}\bigg|_{\alpha=\alpha^*} = \frac{\partial^2 \mathcal{W}}{\partial \alpha^2}\bigg|_{\alpha=\alpha^*} - \gamma < 0 \label{eq:soc}
@@ -2746,7 +2800,7 @@ For an interior solution, I need both concavity and appropriate boundary
 		adjustments are second-order.}
 
 	Since the denominator in \eqref{eq:transparency_theta_derivative} is positive
-by the second-order condition \eqref{eq:soc}, I conclude:
+	by the second-order condition \eqref{eq:soc}, I conclude:
 	\begin{equation}
 		\frac{\partial
 			\alpha^*}{\partial \theta} > 0 \label{eq:transparency_increasing}
