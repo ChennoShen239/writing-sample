@@ -79,18 +79,17 @@
 \begin{frame}{Argentina: Data Misreporting and Spread Decoupling}
   \begin{columns}[T,onlytextwidth]
     \column{0.5\textwidth}
-    \includegraphics[width=\linewidth]{inflation_arg.png}
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/inflation_arg.png}
     \vspace{0.3em}
     {\scriptsize Official CPI vs. alternative measures}
     \column{0.5\textwidth}
-    \includegraphics[width=\linewidth]{spread_arg.png}
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/spread_arg.png}
     \vspace{0.3em}
     {\scriptsize EMBI+ spreads: Argentina vs. LA peers}
   \end{columns}
   \vspace{0.3em}
   \begin{itemize}
-    \item Interpretation: reputational channel (type) + PRO (policy dispersion) likely
-          both active.
+    \item \textbf{Interpretation}: reputational channel (type) + \textbf{PRO} (policy dispersion) both active.
   \end{itemize}
 \end{frame}
 
@@ -99,50 +98,64 @@
 
 \begin{frame}{Environment}
   \begin{itemize}
-    \item Time: $t=0,1,2,\dots$. Endowment $\ln y'=(1-\rho_y)\mu_y+\rho_y\ln
-            y+\sigma_y\varepsilon'$, $\varepsilon'\sim\mathcal N(0,1)$.
-    \item Long-term debt with coupon $\kappa$, decay $\delta$, risk-free rate $r$.
-    \item Default exclusion probability $1-\gamma$; output cost $h(y)=y-\max\{0,\lambda_0
-            y+\lambda_1 y^2\}$.
-    \item Sovereign utility $u(c)=(c^{1-\sigma}-1)/(1-\sigma)$, discount $\beta$.
+    \item \textbf{Endowment}: $\ln y'=(1-\rho_y)\mu_y+\rho_y\ln y+\sigma_y\varepsilon'$, $\varepsilon'\sim\mathcal N(0,1)$.
+    \item \textbf{Debt}: long-term bond with coupon $\kappa$, decay $\delta$, risk-free rate $r$.
+    \item \textbf{Default}: exclusion prob. $1-\gamma$; cost $h(y)=y-\max\{0,\lambda_0 y+\lambda_1 y^2\}$.
+    \item \textbf{Preferences}: $u(c)=(c^{1-\sigma}-1)/(1-\sigma)$, discount $\beta$.
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Discrete Choice: Default and Borrowing}
-  Taste shocks (Gumbel) deliver closed-form aggregator and logit probabilities.
-  \begin{align*}
-    V(y,B)                & = \eta\,\ln\!\Big( e^{V^D(y)/\eta}+e^{V^R(y,B)/\eta}\Big),                                                         \\
-    \bbP\{d{=}1\mid y,B\} & =\frac{e^{V^D(y)/\eta}}{e^{V^D(y)/\eta}+e^{V^R(y,B)/\eta}}\;=\;\Lsig\!\Big(-\tfrac{\Delta V(y,B)}{\eta}\Big),      \\
-    V^R(y,B)              & =\rho\,\ln\!\sum_{B'\in\mathcal B} e^{W(y,B,B')/\rho},\quad \bbP\{B'\mid y,B\}=\frac{e^{W/\rho}}{\sum e^{W/\rho}},
-  \end{align*}
+  \textbf{Taste shocks (Gumbel)} yield smooth aggregator and logit rules.
+  \begin{gather*}
+    \textbf{Ex-ante value:}\quad V(y,B)=\eta\,\ln\!\Big( e^{V^D(y)/\eta}+e^{V^R(y,B)/\eta}\Big),\\
+    \textbf{Default prob.:}\quad \bbP\{d{=}1\mid y,B\}=\Lsig\!\Big(-\tfrac{\Delta V(y,B)}{\eta}\Big)=\tfrac{e^{V^D/\eta}}{e^{V^D/\eta}+e^{V^R/\eta}},\\
+    \textbf{Borrowing aggregator:}\quad V^R(y,B)=\rho\,\ln\!\sum_{B'\in\mathcal B} e^{W(y,B,B')/\rho},\\
+    \textbf{Borrowing policy:}\quad \bbP\{B'\mid y,B\}=\frac{e^{W(y,B,B')/\rho}}{\sum_{\tilde B'} e^{W(y,B,\tilde B')/\rho}},
+  \end{gather*}
+  \vspace{-0.5em}
   where $\Delta V\equiv V^R{-}V^D$, $W(y,B,B')=u\big(y-\kappa B+[B'-(1{-}\delta)B]q(y,B')\big)+\beta\E V(y',B')$.
 \end{frame}
 
 \begin{frame}{Lenders and Pricing Operator}
-  PRO scales the taste-shock parameter in the \emph{default logit} via a tail weight $\theta\ge1$:
+  \textbf{PRO} scales the \emph{default logit} via tail weight $\bm{\theta\ge1}$:
   \begin{equation*}
-    P_\theta(y,B')\;=\;\Lsig\!\Big(-\tfrac{\Delta V(y,B')}{\theta\,\eta}\Big),\qquad \Lsig(z)=\tfrac{1}{1+e^{-z}}.
+    \boxed{\;P_\theta(y,B')=\Lsig\!\Big(-\tfrac{\Delta V(y,B')}{\theta\,\eta}\Big),\qquad \Lsig(z)=\tfrac{1}{1+e^{-z}}\;}
   \end{equation*}
-  Pricing operator (unique fixed point):
+  \textbf{Pricing operator (unique fixed point):}
   \begin{equation*}
-    (\mathcal T_\theta q)(B',y)=\frac{1}{1+r}\,\E_{y'|y}\!\Big[(1{-}P_\theta(y',B'))\big(\kappa+(1{-}\delta)\,\E_{B''|y',B'}q(y',B'')\big)\Big].
+    \boxed{\;(\mathcal T_\theta q)(B',y)=\tfrac{1}{1+r}\,\E_{y'|y}\!\Big[(1{-}P_\theta(y',B'))\big(\kappa+(1{-}\delta)\,\E_{B''|y',B'}q(y',B'')\big)\Big]\;}
   \end{equation*}
+  \textbf{Slope (joint contraction) condition:}
+  \begin{equation*}
+    L_{Jq}L_{TV}\;<\;(1-\beta)\Big(1-\tfrac{1-\delta}{1+r}\Big)\quad\Rightarrow\quad \text{unique fixed point.}
+  \end{equation*}
+  
 \end{frame}
 
 % Pivot intuition
 \section{Pivot Intuition}
 
-\begin{frame}{One-Line Schematic of Pivot}
-  Compact schematic anchoring the single-crossing:
+\begin{frame}{One-Line Schematic of \textbf{Pivot}}
+  \textbf{Compact schematic anchoring the single-crossing:}
   \begin{align*}
      & P_\theta(y,B')=\Lsig\!\Big(-\tfrac{\Delta V(y,B')}{\theta\eta}\Big),\quad \Delta V\equiv V^R{-}V^D,                                   \\
      & \Rightarrow\quad \mathrm{sign}\big( P_1{-}P_\theta\big)=-\,\mathrm{sign}(\Delta V),                                                   \\
      & \Rightarrow\quad \mathrm{sign}\big(q_\theta{-}q_1\big)=\mathrm{sign}\,\E[(P_1{-}P_\theta)\Pi]\;=\;-\,\mathrm{sign}(\Delta V),\;\Pi>0.
   \end{align*}
-  Define the state-dependent threshold $B^*(y):\ \Delta V(y,B^*(y))=0$. Then:
+  \textbf{Define the threshold} $B^*(y):\ \Delta V(y,B^*(y))=0$. Then:
   \begin{itemize}
-    \item $B' < B^*(y)$ (safe region, $\Delta V>0$): $\;q_\theta<q_1$ (costlier borrowing).
-    \item $B' > B^*(y)$ (near default, $\Delta V<0$): $\;q_\theta>q_1$ (softened doom).
+    \item \textbf{$B' < B^*(y)$} (safe region, $\Delta V>0$): $\;q_\theta<q_1$ (\textbf{PRO premium}).
+    \item \textbf{$B' > B^*(y)$} (near default, $\Delta V<0$): $\;q_\theta>q_1$ (\textbf{softened doom}).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Pivot: Proof Sketch and Comparative Statics}
+  \textbf{Operator order}: If $P_\theta\gtrless P_1$ pointwise, positivity of payoff kernel implies $(\mathcal T_\theta q)\lessgtr (\mathcal T_1 q)$.
+  \begin{itemize}
+    \item \textbf{Sign}: $\mathrm{sign}(P_1-P_\theta)=-\mathrm{sign}(\Delta V)$ $\Rightarrow$ single crossing at $\Delta V{=}0$.
+    \item \textbf{Threshold monotonicity}: $B^*(y)$ increases in $y$ (rational schedule shifts out more than PRO).
+    \item \textbf{Policies}: higher \textbf{default threshold}, \textbf{deleveraging}, \textbf{higher mean spreads}.
   \end{itemize}
 \end{frame}
 
@@ -166,13 +179,14 @@
 \begin{frame}{Business Cycle Moments}
   \begin{columns}[T,onlytextwidth]
     \column{0.56\textwidth}
-    \includegraphics[width=\linewidth]{moments_comparison_table.pdf}
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/moments_comparison_table.pdf}
     \column{0.44\textwidth}
     \begin{itemize}
-      \item Higher avg spreads with deleveraging (pivot wedge dominates composition).
-      \item Spreads more countercyclical; volatility of spreads/debt falls (illusion of
-            stability).
-      \item Consumption volatility nearly unchanged; risk insurance impaired.
+      \item \textbf{Higher avg spreads} with \textbf{deleveraging} (pivot wedge dominates composition).
+      \item Spreads \textbf{more countercyclical}; volatility of spreads/debt
+            \textbf{falls} (\textbf{stability illusion}).
+      \item Consumption volatility \textbf{nearly unchanged}; risk insurance
+            \textbf{impaired}.
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -180,30 +194,30 @@
 \begin{frame}{Price, Spread, and Default Risk}
   \begin{columns}[T,onlytextwidth]
     \column{0.33\textwidth}
-    \includegraphics[width=\linewidth]{bond_price_comparison.png}\\[0.3em]
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/bond_price_comparison.png}\\[0.3em]
     {\scriptsize Bond prices}
     \column{0.33\textwidth}
-    \includegraphics[width=\linewidth]{spread_comparison.png}\\[0.3em]
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/spread_comparison.png}\\[0.3em]
     {\scriptsize Spreads}
     \column{0.33\textwidth}
-    \includegraphics[width=\linewidth]{default_prob_comparison.png}\\[0.3em]
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/default_prob_comparison.png}\\[0.3em]
     {\scriptsize Default probabilities}
   \end{columns}
   \vspace{0.3em}
-  {\scriptsize Single-crossing pivot around $B^*(y)$; PRO discounts safe region and softens near-doom.}
+  {\scriptsize \textbf{Single-crossing pivot} around $B^*(y)$; PRO discounts \textbf{safe region} and \textbf{softens near-doom}.}
 \end{frame}
 
 \begin{frame}{Impulse Responses: Transitory Shock}
   \begin{columns}[T,onlytextwidth]
     \column{0.5\textwidth}
-    \includegraphics[width=\linewidth]{comparison_figure_13.pdf}\\[-0.5em]
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/comparison_figure_13.pdf}\\[-0.5em]
     {\scriptsize Output}
-    \includegraphics[width=\linewidth]{comparison_figure_15.pdf}\\[-0.5em]
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/comparison_figure_15.pdf}\\[-0.5em]
     {\scriptsize Consumption}
     \column{0.5\textwidth}
-    \includegraphics[width=\linewidth]{comparison_figure_14.pdf}\\[-0.5em]
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/comparison_figure_14.pdf}\\[-0.5em]
     {\scriptsize Debt}
-    \includegraphics[width=\linewidth]{comparison_figure_16.pdf}\\[-0.5em]
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/comparison_figure_16.pdf}\\[-0.5em]
     {\scriptsize Spread}
   \end{columns}
 \end{frame}
@@ -211,14 +225,14 @@
 \begin{frame}{Impulse Responses: Persistent Shock}
   \begin{columns}[T,onlytextwidth]
     \column{0.5\textwidth}
-    \includegraphics[width=\linewidth]{comparison_figure_17.pdf}\\[-0.5em]
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/comparison_figure_17.pdf}\\[-0.5em]
     {\scriptsize Output}
-    \includegraphics[width=\linewidth]{comparison_figure_19.pdf}\\[-0.5em]
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/comparison_figure_19.pdf}\\[-0.5em]
     {\scriptsize Consumption}
     \column{0.5\textwidth}
-    \includegraphics[width=\linewidth]{comparison_figure_18.pdf}\\[-0.5em]
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/comparison_figure_18.pdf}\\[-0.5em]
     {\scriptsize Debt}
-    \includegraphics[width=\linewidth]{comparison_figure_20.pdf}\\[-0.5em]
+    \includegraphics[width=\linewidth]{../../pro-default-model/results/comparison_figure_20.pdf}\\[-0.5em]
     {\scriptsize Spread}
   \end{columns}
 \end{frame}
@@ -228,13 +242,12 @@
 
 \begin{frame}{Rational Inattention: Tail Weight from Attention}
   \begin{itemize}
-    \item Lenders choose precisions $(a_\mu,a_\sigma)$ at convex cost
+    \item Lenders choose \textbf{precisions} $(a_\mu,a_\sigma)$ at convex cost
           $\Phi(a_\mu,a_\sigma)$.
-    \item Closed-form linear map: $\displaystyle
-            \theta_{\mathrm{RI}}(y,B')=\min\Big\{\,1+\frac{\varphi^2}{\kappa_\sigma}\,\mathcal
-            S(y,B')\,,\;\bar\theta\,\Big\}$.
-    \item Pricing remains the same operator evaluated at $\theta_{\mathrm{RI}}(\cdot)$;
-          comparative statics inherit.
+    \item \textbf{FOC}: $\varphi\,\mathcal S=\kappa_\sigma a_\sigma\Rightarrow a_\sigma=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S$.
+    \item \textbf{Tail weight}: $\displaystyle \theta_{\mathrm{RI}}(y,B')=\min\Big\{\,1+\frac{\varphi^2}{\kappa_\sigma}\,\mathcal S(y,B')\,,\;\bar\theta\,\Big\}$.
+    \item Pricing remains the \textbf{same operator} at $\theta_{\mathrm{RI}}(\cdot)$;
+          comparative statics \textbf{inherit}.
   \end{itemize}
   \vspace{0.5em}
   \begin{equation*}
@@ -244,9 +257,8 @@
 
 \begin{frame}{Empirical Hook: Misreporting \texorpdfstring{$\Rightarrow$}{=>} Higher Dispersion Attention}
   \begin{itemize}
-    \item Degraded mean-information ($a_\mu$) raises marginal value of dispersion info
-          $\mathcal S$.
-    \item $\uparrow\mathcal S\Rightarrow \uparrow a_\sigma\Rightarrow \uparrow \theta_{\mathrm{RI}}$: higher average spreads, steeper pivot, decoupling.
+    \item \textbf{Degraded mean-information} ($a_\mu$) raises marginal value of dispersion info $\mathcal S$.
+    \item $\uparrow\mathcal S\Rightarrow \uparrow a_\sigma\Rightarrow \uparrow \theta_{\mathrm{RI}}$: \textbf{higher average spreads}, \textbf{steeper pivot}, \textbf{decoupling}.
   \end{itemize}
 \end{frame}
 
@@ -259,9 +271,8 @@
     \E_0\sum_t \beta^t\tau_t=0,\quad u'(\cdot)>0,\ u''(\cdot)<0.
   \end{gather*}
   \begin{itemize}
-    \item Intertemporal trade price distorted by PRO persists in implementability; wedge
-          creates deadweight loss.
-    \item Result: $W^R_\theta<W^R_1$ even with optimal transfers.
+    \item \textbf{Intertemporal trade price} distorted by PRO persists in implementability; \textbf{deadweight loss}.
+    \item \textbf{Result}: $W^R_\theta<W^R_1$ even with optimal transfers.
   \end{itemize}
 \end{frame}
 
@@ -277,8 +288,7 @@
     \alpha^*:\ \frac{\mathrm d}{\mathrm d\alpha}W(\alpha)=\gamma\alpha.
   \end{gather*}
   \begin{itemize}
-    \item Persistent PRO in invariant beliefs; optimal transparency rises with PRO
-          severity.
+    \item \textbf{Persistent PRO} in invariant beliefs; \textbf{optimal transparency rises} with PRO severity.
   \end{itemize}
 \end{frame}
 
@@ -287,16 +297,15 @@
 
 \begin{frame}{Computation and Stability}
   \begin{itemize}
-    \item Value and price iteration on $(N_y{=}201, N_B{=}600)$ grid; OpenMP parallel.
-    \item Stabilized log-sum-exp for borrowing/default logits; infeasible-consumption
-          guard.
-    \item Convergence tolerances $10^{-6}$; long simulation for moments and IRFs.
+    \item \textbf{Value and price iteration} on $(N_y{=}201, N_B{=}600)$ grid; OpenMP parallel.
+    \item \textbf{Stabilized log-sum-exp} for borrowing/default logits; \textbf{infeasible-consumption guard}.
+    \item \textbf{Convergence} tolerances $10^{-6}$; long simulation for moments and IRFs.
   \end{itemize}
   \vspace{0.5em}
   \centering
-  \includegraphics[width=0.6\linewidth]{gumbel_distribution.png}
+  \includegraphics[width=0.6\linewidth]{../../paper/Long_term/gumbel_distribution.png}
   \\
-  {\scriptsize Mean-zero Gumbel: logit and LSE arise naturally}
+  {\scriptsize Mean-zero Gumbel: \textbf{logit and LSE} arise naturally}
 \end{frame}
 
 % Conclusion
@@ -304,14 +313,66 @@
 
 \begin{frame}{Takeaways}
   \begin{itemize}
-    \item Single operator with PRO produces a \emph{pivot} in price/spread schedules.
-    \item Sovereigns deleverage yet face higher average spreads; volatility falls
-          (stability illusion).
-    \item RI microfoundation endogenizes the tail tilt; policy/info extensions clarify
-          limits and levers.
-    \item Event hooks (Argentina) align with pivot, threshold, and decoupling
-          predictions.
+    \item \textbf{Single operator + PRO} \Rightarrow \textbf{pivot} in price/spread schedules.
+    \item \textbf{Deleveraging} yet \textbf{higher average spreads}; volatility \textbf{falls} (\textbf{stability illusion}).
+    \item \textbf{RI microfoundation} endogenizes tail tilt; \textbf{policy/info} extensions clarify limits and levers.
+    \item Event hooks (Argentina) align with \textbf{pivot}, \textbf{threshold}, and
+          \textbf{decoupling} predictions.
   \end{itemize}
+\end{frame}
+
+% Literature Review
+\section{Literature Review}
+
+\begin{frame}{Sovereign Default: Canonical and Extensions}
+  \begin{itemize}
+    \item \textbf{Canonical strategic default}: Eaton\,–\,Gersovitz (1981); Aguiar\,–\,Gopinath (2007); Arellano (2008);
+          long-term debt: Hatchondo\,–\,Martinez (2009); Chatterjee\,–\,Eyigungor (2012); Mendoza\,–\,Yue (2012).
+    \item \textbf{Empirics}: Tomz\,–\,Wright (2013); Meyer\,–\,Reinhart\,–\,Trebesch (2022); event studies (Argentina misreporting).
+    \item \textbf{Reputation}: Cole\,–\,Dow\,–\,English (1995); Phelan (2006); Amador\,–\,Phelan (2021, 2023);
+          learning via policy signals (Fourakis, 2024).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Beliefs, Ambiguity, and Information}
+  \begin{itemize}
+    \item \textbf{Ambiguity/robust control}: Hansen\,–\,Sargent (2001, 2008);
+          smooth/variational prefs (Klibanoff et al., 2005; Maccheroni et al., 2006);
+          applications to default (Pouzo\,–\,Presno, 2016; Roch\,–\,Roldan, 2023).
+    \item \textbf{Behavioral beliefs}: Diagnostic expectations (Gennaioli\,–\,Shleifer, 2018; Bordalo et al., 2023);
+          sentiment, noise trading, limits to arbitrage.
+    \item \textbf{Information choice}: Rational inattention (Sims, 2003; Mačkowiak\,–\,Wiederholt, 2009; Matejka\,–\,McKay, 2015);
+          macro finance (Veldkamp, 2011).
+  \end{itemize}
+  \vspace{0.3em}
+  \textbf{This paper}: \emph{second-moment} belief wedge (PRO) \Rightarrow \textbf{pivot}, \textbf{deleveraging}, \textbf{stability illusion};
+  RI microfoundation embeds \textbf{in the same operator}.
+\end{frame}
+
+% Deeper Math Details
+\section{Deeper Math}
+
+\begin{frame}{Bellman Aggregator and Sensitivities}
+  \begin{gather*}
+    J_\rho[V](y,B)=\rho\ln\sum_{B'}\exp\tfrac{W(y,B,B')}{\rho},\quad V(y,B)=\eta\ln\Big(e^{V^D/\eta}+e^{V^R/\eta}\Big).\\
+    \frac{\partial V}{\partial q}\;=\;u'(c)\,\big[B'-(1{-}\delta)B\big]\cdot \text{softmax}(W/\rho).\quad (\text{Envelope over } B')
+  \end{gather*}
+  \begin{itemize}
+    \item Lipschitz: $\|J(V_1){-}J(V_2)\|\le\beta\|V_1{-}V_2\|$,
+          $\|J(\cdot,q_1){-}J(\cdot,q_2)\|\le L_{Jq}\|q_1{-}q_2\|$.
+    \item Pricing: $\|T(V_1,\cdot){-}T(V_2,\cdot)\|\le L_{TV}\|V_1{-}V_2\|$,
+          $\|T(\cdot,q_1){-}T(\cdot,q_2)\|\le m_q\|q_1{-}q_2\|$.
+    \item \textbf{Slope condition}: $L_{Jq}L_{TV}<(1-\beta)(1-m_q)$ with $m_q=(1-\delta)/(1+r)$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{From $\partial_\theta P$ to $\partial_\theta q$}
+  \begin{gather*}
+    P_\theta=\Lsig\!\Big(-\tfrac{\Delta V}{\theta\eta}\Big),\quad \partial_\theta P_\theta\;=\;L'(\cdot)\,\tfrac{\Delta V}{\theta^2\eta}.\\
+    (I-\mathcal T_\theta)'\,\partial_\theta q_\theta\;=\;\partial_\theta \mathcal T_\theta[q_\theta],\quad (I-\mathcal T_\theta)^{-1}\ge0.\\
+    \Rightarrow\ \mathrm{sign}(\partial_\theta q_\theta) \text{ follows from } \mathrm{sign}(\partial_\theta P_\theta) \text{ and positivity of }(I{-}\mathcal T_\theta)^{-1}.
+  \end{gather*}
+  \textbf{Implication}: \textbf{pivot} persists under smooth perturbations and state-dependent $\theta_{\mathrm{RI}}(y,B')$.
 \end{frame}
 
 % Backup (optional)
@@ -327,4 +388,3 @@
 \end{frame}
 
 \end{document}
-
