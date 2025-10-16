@@ -1,0 +1,560 @@
+#LyX file created by tex2lyx 2.4
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pre/15Oct_ug/
+\textclass beamer
+\begin_preamble
+% 可换主题：\usetheme{metropolis}
+\usepackage{bookmark}
+
+
+\title{Literature Review (One Page)}
+\author{Chen Gao}
+
+
+
+\end_preamble
+\options aspectratio=169
+\use_default_options false
+\maintain_unincluded_children no
+\language english
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\use_minted 0
+\use_lineno false
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Frame
+
+\begin_inset Argument 4
+status collapsed
+
+
+\begin_layout Standard
+Literature Review (Sovereign Risk, Information, Behavior)
+\end_layout
+
+\end_inset
+
+
+\size footnotesize
+
+\end_layout
+
+\begin_layout Frame
+
+\size footnotesize
+
+\series bold
+Canonical quantitative sovereign default
+\series default
+ [Aguiar & Gopinath 2007; Arellano 2008; Hatchondo & Martinez 2009; Chatterjee & Eyigungor 2012; Mendoza & Yue 2012] 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space \quad{}
+
+\end_inset
+
+
+\begin_inset Formula $\bullet$
+\end_inset
+
+ Long-term debt with exclusion/costs; matches countercyclical spreads but struggles with 
+\emph on
+persistently high premia at moderate debt
+\emph default
+.
+\end_layout
+
+\begin_layout Frame
+
+\size footnotesize
+
+\begin_inset VSpace 0.45em
+\end_inset
+
+ 
+\series bold
+Reputation / type learning as information channel
+\series default
+ [Cole, Dow, English 1995; Phelan 2006; Amador & Phelan 2021, 2023; Fourakis 2024; Tomz & Wright 2013; Mitchener & Trebesch 2023; Morelli & Moretti 2023] 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space \quad{}
+
+\end_inset
+
+
+\begin_inset Formula $\bullet$
+\end_inset
+
+ Markets update hidden 
+\begin_inset Quotes eld
+\end_inset
+
+type
+\begin_inset Quotes erd
+\end_inset
+
+ from policy/default signals; powerful for long-run trust, but effects are typically 
+\emph on
+monotone
+\emph default
+ (worse type 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ uniformly worse prices).
+\end_layout
+
+\begin_layout Frame
+
+\size footnotesize
+
+\begin_inset VSpace 0.45em
+\end_inset
+
+ 
+\series bold
+Sunspots / market sentiment as fundamentals
+\series default
+ [Calvo 1996; Cole & Kehoe 2000; Gennaioli, Martin & Rossi 2014; Bocola & Dovis 2019] 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space \quad{}
+
+\end_inset
+
+
+\begin_inset Formula $\bullet$
+\end_inset
+
+ Expectations can self-validate crises; explains sudden stops but not necessarily 
+\emph on
+systematic, state-contingent pivots
+\emph default
+ in price schedules.
+\end_layout
+
+\begin_layout Frame
+
+\size footnotesize
+
+\begin_inset VSpace 0.45em
+\end_inset
+
+ 
+\series bold
+Ambiguity / model uncertainty (preferences)
+\series default
+ [Hansen & Sargent 2008; Pouzo & Presno 2016; Roch & Roldán 2023; Klibanoff, Marinacci & Mukerji 2005; Maccheroni et al. 2006] 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space \quad{}
+
+\end_inset
+
+
+\begin_inset Formula $\bullet$
+\end_inset
+
+ Worst-case tilts raise premia 
+\emph on
+uniformly across states
+\emph default
+; strong fit for high spreads, less for 
+\emph on
+cross-maturity divergence
+\emph default
+ after information shocks.
+\end_layout
+
+\begin_layout Frame
+
+\size footnotesize
+
+\begin_inset VSpace 0.45em
+\end_inset
+
+ 
+\series bold
+Information choice / rational inattention (beliefs)
+\series default
+ [Sims 2003; Maćkowiak & Wiederholt 2009; Matějka & McKay 2015; Van Nieuwerburgh & Veldkamp 2009; Veldkamp 2011] 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space \quad{}
+
+\end_inset
+
+
+\begin_inset Formula $\bullet$
+\end_inset
+
+ Agents optimally allocate attention; allows state-dependent distortions in perceived moments (mean/variance) consistent with pricing wedges.
+\end_layout
+
+\begin_layout Frame
+
+\size footnotesize
+
+\begin_inset VSpace 0.45em
+\end_inset
+
+ 
+\series bold
+Diagnostic/behavioral expectations
+\series default
+ [Gennaioli & Shleifer 2018; Bordalo et al. 2023; Baker & Wurgler 2006; Gabaix 2012] 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space \quad{}
+
+\end_inset
+
+
+\begin_inset Formula $\bullet$
+\end_inset
+
+ Overreaction / tail-focus can generate 
+\emph on
+boom–bust
+\emph default
+; most models imply time-varying biases rather than a 
+\emph on
+time-invariant second-moment wedge
+\emph default
+.
+\end_layout
+
+\begin_layout Frame
+
+\size footnotesize
+
+\begin_inset VSpace 0.8em
+\end_inset
+
+ 
+\series bold
+Steady state & This paper: Policy-Randomness Overestimation (PRO)
+\series default
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space \quad{}
+
+\end_inset
+
+
+\begin_inset Formula $\bullet$
+\end_inset
+
+ 
+\emph on
+Single unified pricing operator
+\emph default
+ with PRO: lenders overweight policy dispersion 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\series bold
+bond-price pivot
+\series default
+ around a state-dependent threshold (safe states cheaper for lenders, risky states 
+\begin_inset Quotes eld
+\end_inset
+
+softening of doom
+\begin_inset Quotes erd
+\end_inset
+
+). 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space \quad{}
+
+\end_inset
+
+
+\begin_inset Formula $\bullet$
+\end_inset
+
+ 
+\series bold
+Comparative statics in one operator
+\series default
+: higher default thresholds, 
+\series bold
+deleveraging yet higher average spreads
+\series default
+ (
+\emph on
+stability illusion
+\emph default
+), welfare loss from distorted intertemporal prices; operator proof of existence/uniqueness. 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space \quad{}
+
+\end_inset
+
+
+\begin_inset Formula $\bullet$
+\end_inset
+
+ 
+\series bold
+RI microfoundation
+\series default
+: optimal attention to dispersion 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ state-dependent tail weight entering the same operator, so baseline results carry over mechanically. 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space \quad{}
+
+\end_inset
+
+
+\begin_inset Formula $\bullet$
+\end_inset
+
+ 
+\series bold
+Policy & information
+\series default
+: limits of fiscal transfers; negativity-biased learning persistence; transparency improves welfare; event hooks (Argentina misreporting) match pivot/threshold/decoupling predictions. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% 引用你上传的论文（按要求保留此标记）
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\size scriptsize
+
+\begin_inset space \medspace{}
+
+\end_inset
+
+[Default with Policy-Randomness Overestimation] 
+\begin_inset space \medspace{}
+
+\end_inset
+
+:contentReference[oaicite:0]
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+index=0
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\size footnotesize
+
+\end_layout
+
+\begin_layout Frame
+
+\size footnotesize
+
+\begin_inset VSpace 0.6em
+\end_inset
+
+ 
+\series bold
+Empirical tension addressed
+\series default
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space \quad{}
+
+\end_inset
+
+
+\begin_inset Formula $\bullet$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+underline{Puzzle}
+\end_layout
+
+\end_inset
+
+: elevated, persistent premia at moderate debt (and maturity/peer 
+\emph on
+decoupling
+\emph default
+) after information shocks. 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space \quad{}
+
+\end_inset
+
+
+\begin_inset Formula $\bullet$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+underline{PRO vs. Reputation/Ambiguity}
+\end_layout
+
+\end_inset
+
+: reputation 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ monotone price shifts; ambiguity 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ uniform tilt; 
+\series bold
+PRO
+\series default
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\emph on
+pivot + cross-maturity divergence
+\emph default
+ and deleveraging with higher average spreads.
+\end_layout
+
+\end_body
+\end_document

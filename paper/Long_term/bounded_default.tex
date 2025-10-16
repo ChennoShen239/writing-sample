@@ -580,15 +580,7 @@ well behaved.
 	See Appendix~\ref{app:proof_existence_uniqueness}.
 \end{proof}
 
-\begin{corollary}[Monotone attention and PRO intensity]
-	\label{cor:monotone_attention}
-	If $\mathcal S(y,B')$ is increasing in $B'$ and decreasing in $y$, then the
-	solution of~\eqref{eq:foc_sigma_micro} satisfies
-	\[
-		\frac{\partial a_\sigma}{\partial B'}>0,\quad \frac{\partial a_\sigma}{\partial y}<0,
-		\qquad \frac{\partial \theta_{\mathrm{RI}}}{\partial B'}>0,\quad \frac{\partial \theta_{\mathrm{RI}}}{\partial y}<0.
-	\]
-\end{corollary}
+% (Moved: see microfoundations section after Eq.~\eqref{eq:foc_sigma_micro})
 
 \paragraph{Unified Operators and Notation}
 To keep the subsequent theory tightly anchored to the baseline model, I adopt
@@ -604,6 +596,24 @@ noted, all results below are comparative statics or state augmentations
 the Bellman aggregator $J_\rho$ remain unchanged; only the belief parameter
 $\theta$ (or information/policy that enters \emph{through} $\mathcal T_\theta$)
 differs across the economies I compare.
+
+\begin{definition}[Pricing operator]
+	\label{def:pricing_operator}
+	For any belief parameter $\theta \ge 1$, define the lenders' pricing operator $\mathcal T_\theta$ acting on a bounded price function $q$ as
+	\begin{equation}
+		(\mathcal T_\theta q)(B',y)
+		\;=\; \frac{1}{1+r}\,\E_{y'|y}\!\left[\bigl(1-P_\theta(y',B')\bigr)\Bigl(\kappa+(1-\delta)\,\E_{B''|y',B'}\big[\,q(y',B'')\,\big]\Bigr)\right],
+		\label{eq:pricing_operator}
+	\end{equation}
+	where the perceived default probability is logistic in the repayment--default net value difference:
+	\begin{equation}
+		P_\theta(y',B') \;=\; L\!\Bigl(-\tfrac{\Delta V_\theta(y',B')}{\theta\eta}\Bigr),\qquad
+		L(z)=\frac{1}{1+e^{-z}},\qquad
+		\Delta V_\theta(y',B')\equiv V_\theta^R(y',B')-V_\theta^D(y').
+		\label{eq:net_value_definition}
+	\end{equation}
+	Given primitives and $\theta$, the equilibrium bond price $q_\theta$ is the unique fixed point of $\mathcal T_\theta$.
+\end{definition}
 
 \section{Theoretical Analysis}
 \label{sec:theory}
@@ -789,37 +799,6 @@ high, PRO lenders offer \textit{better} prices (the``softening of doom''
 effect). A rational sovereign in the PRO economy foresees these more favorable
 future borrowing terms should it choose to repay. This increases the option
 value of repaying and rolling over debt.
-\paragraph{Why Average Spreads Rise Despite Deleveraging}
-Let $s_i(y,B')$ denote the spread defined in~\eqref{eq:spread_definition} with
-price $q_i$ for economy $i\in\{1,\theta\}$, where $q_i$ is the equilibrium bond
-price under rational lenders ($i=1$) and PRO lenders ($i=\theta$). Denote by
-$\mu_i$ the stationary distribution over non-default states and optimal choices
-(including the sovereign's optimal $B'$) in economy $i$. The difference in
-average spreads can be written as the decomposition
-\begin{equation}\label{eq:spread_decomp}
-	\bar s_\theta - \bar s_1 \;=\; \kappa\,\underbrace{\E_{\mu_\theta}\Big[\tfrac{1}{q_\theta}-\tfrac{1}{q_1}\Big]}_{\text{price wedge at PRO weights}}\;\; +\; \kappa\,\underbrace{\Big(\E_{\mu_\theta}\left[\tfrac{1}{q_1}\right] - \E_{\mu_1}\left[\tfrac{1}{q_1}\right]\Big)}_{\text{composition (policy) effect}}\,.
-\end{equation}
-The pivot result (Proposition~\ref{prop:pivot_concise}) implies that for each $y$ there exists $B^*(y)$ such that $q_\theta(y,B')<q_1(y,B')$ (equivalently, $1/q_\theta>1/q_1$) for $B'<B^*(y)$, and the opposite inequality holds for $B'>B^*(y)$. In the empirically relevant set where new issuance occurs (the primary borrowing region), one typically has $B'<B^*(y)$ and $V^R(y,B')>V^D(y)$.
-
-Two implications follow.
-\begin{itemize}
-	\item \emph{Local comparative statics.} Differentiating~\eqref{eq:qprice_biased} with respect to $\theta$ yields the linear equation
-	      \begin{equation}\label{eq:q_deriv_linear}
-		      \big(I - \mathcal T_\theta\big)\,\frac{\partial q_\theta(\cdot)}{\partial\theta}\,(y,B') \;=\; -\frac{1}{1+r}\,\E_{y'|y}\Big[\big(\partial_\theta \tilde P(y',B')\big)\,\Lambda(y',B')\Big],
-	      \end{equation}
-	      where $\Lambda(y',B')\equiv \kappa + (1-\delta)\sum_{B''\in\mathcal B} \Pr\{B''|y',B'\}\,q_\theta(y',B'')$ and $\mathcal T_\theta$ is the positive linear operator
-	      \[\big(\mathcal T_\theta f\big)(y,B') \;=\; \frac{1}{1+r}\,\E_{y'|y}\Big[(1-\tilde P(y',B'))\,(1-\delta)\sum_{B''\in\mathcal B} \Pr\{B''|y',B'\}\, f(y',B'')\Big].\]
-	      Because $\|\mathcal T_\theta\|<1$ under discounting and $(1-\delta)<1$,
-	      $(I-\mathcal T_\theta)^{-1}$ exists and is positive. Using~\eqref{eq:plender}
-	      with $\Delta V(y',B')\equiv V^R(y',B')-V^D(y')$ gives
-	      \[\partial_\theta \tilde P(y',B')
-		      = \tilde P(y',B')\big(1-\tilde P(y',B')\big)\,\frac{\Delta V(y',B')}{\theta^2\eta}.\]
-	      Hence, when $\Delta V(y',B')>0$ (repayment dominates; typically $B'<B^*(y)$),
-	      the right-hand side of~\eqref{eq:q_deriv_linear} is negative, implying
-	      $\partial q_\theta/\partial\theta<0$, and therefore $\partial
-		      s_\theta/\partial\theta>0$ by~\eqref{eq:spread_definition}.
-	\item \emph{Average spread dominance.} By~\eqref{eq:spread_decomp}, the first term (price wedge at PRO weights) is strictly positive and \emph{strengthened} by deleveraging, because mass shifts toward $B'<B^*(y)$ where $1/q_\theta - 1/q_1>0$. The second term (composition effect at baseline prices) is weakly negative since $1/q_1$ is lower at smaller $B'$. Under mild regularity (small taste-shock scale $\eta$ and monotone price/borrowing policies), the first term dominates the second, implying $\bar s_\theta>\bar s_1$ even though the sovereign deleverages.
-\end{itemize}
 
 \paragraph{Borrowing Policy}
 Within the same operator framework, only the belief parameter differs across
@@ -1320,6 +1299,38 @@ propensity to fail.
 	\parbox{\linewidth}{\small\textit{Note:} The figure plots the sovereign's ex-ante value function $V(y, B)$ for the baseline ($\theta=1$, dashed), medium PRO ($\theta=10$, dash-dot), and high PRO ($\theta=100$, solid) economies. The value function is uniformly lower under higher degrees of PRO, indicating a progressive welfare loss.}
 \end{figure}
 
+\paragraph{Why Average Spreads Rise Despite Deleveraging}
+Let $s_i(y,B')$ denote the spread defined in~\eqref{eq:spread_definition} with
+price $q_i$ for economy $i\in\{1,\theta\}$, where $q_i$ is the equilibrium bond
+price under rational lenders ($i=1$) and PRO lenders ($i=\theta$). Denote by
+$\mu_i$ the stationary distribution over non-default states and optimal choices
+(including the sovereign's optimal $B'$) in economy $i$. The difference in
+average spreads can be written as the decomposition
+\begin{equation}\label{eq:spread_decomp}
+	\bar s_\theta - \bar s_1 \;=\; \kappa\,\underbrace{\E_{\mu_\theta}\Big[\tfrac{1}{q_\theta}-\tfrac{1}{q_1}\Big]}_{\text{price wedge at PRO weights}}\;\; +\; \kappa\,\underbrace{\Big(\E_{\mu_\theta}\left[\tfrac{1}{q_1}\right] - \E_{\mu_1}\left[\tfrac{1}{q_1}\right]\Big)}_{\text{composition (policy) effect}}\,.
+\end{equation}
+The pivot result (Proposition~\ref{prop:pivot_concise}) implies that for each $y$ there exists $B^*(y)$ such that $q_\theta(y,B')<q_1(y,B')$ (equivalently, $1/q_\theta>1/q_1$) for $B'<B^*(y)$, and the opposite inequality holds for $B'>B^*(y)$. In the empirically relevant set where new issuance occurs (the primary borrowing region), one typically has $B'<B^*(y)$ and $V^R(y,B')>V^D(y)$.
+
+Two implications follow.
+\begin{itemize}
+	\item \emph{Local comparative statics.} Differentiating~\eqref{eq:qprice_biased} with respect to $\theta$ yields the linear equation
+	      \begin{equation}\label{eq:q_deriv_linear}
+		      \big(I - \mathcal T_\theta\big)\,\frac{\partial q_\theta(\cdot)}{\partial\theta}\,(y,B') \;=\; -\frac{1}{1+r}\,\E_{y'|y}\Big[\big(\partial_\theta \tilde P(y',B')\big)\,\Lambda(y',B')\Big],
+	      \end{equation}
+	      where $\Lambda(y',B')\equiv \kappa + (1-\delta)\sum_{B''\in\mathcal B} \Pr\{B''|y',B'\}\,q_\theta(y',B'')$ and $\mathcal T_\theta$ is the positive linear operator
+	      \[\big(\mathcal T_\theta f\big)(y,B') \;=\; \frac{1}{1+r}\,\E_{y'|y}\Big[(1-\tilde P(y',B'))\,(1-\delta)\sum_{B''\in\mathcal B} \Pr\{B''|y',B'\}\, f(y',B'')\Big].\]
+	      Because $\|\mathcal T_\theta\|<1$ under discounting and $(1-\delta)<1$,
+	      $(I-\mathcal T_\theta)^{-1}$ exists and is positive. Using~\eqref{eq:plender}
+	      with $\Delta V(y',B')\equiv V^R(y',B')-V^D(y')$ gives
+	      \[\partial_\theta \tilde P(y',B')
+		      = \tilde P(y',B')\big(1-\tilde P(y',B')\big)\,\frac{\Delta V(y',B')}{\theta^2\eta}.\]
+	      Hence, when $\Delta V(y',B')>0$ (repayment dominates; typically $B'<B^*(y)$),
+	      the right-hand side of~\eqref{eq:q_deriv_linear} is negative, implying
+	      $\partial q_\theta/\partial\theta<0$, and therefore $\partial
+		      s_\theta/\partial\theta>0$ by~\eqref{eq:spread_definition}.
+	\item \emph{Average spread dominance.} By~\eqref{eq:spread_decomp}, the first term (price wedge at PRO weights) is strictly positive and \emph{strengthened} by deleveraging, because mass shifts toward $B'<B^*(y)$ where $1/q_\theta - 1/q_1>0$. The second term (composition effect at baseline prices) is weakly negative since $1/q_1$ is lower at smaller $B'$. Under mild regularity (small taste-shock scale $\eta$ and monotone price/borrowing policies), the first term dominates the second, implying $\bar s_\theta>\bar s_1$ even though the sovereign deleverages.
+\end{itemize}
+
 \subsection{Dynamic Responses and Adjustment Paths}
 
 The dynamic implications of PRO reveal how PRO affects the sovereign's
@@ -1484,29 +1495,24 @@ necessary to overcome entrenched priors exhibiting PRO.
 
 \section{Microfoundations for PRO}\label{sec:micro}
 
-This section provides a rigorous microfoundation for PRO as optimal,
-state-dependent attention to second-moment information within the same pricing
-operator framework. I formalize lenders' information choice and posterior
-mapping, then show how it induces an endogenous dispersion parameter
-$\theta_{\mathrm{RI}}$ inside the operator. I close by linking the comparative
-statics to the Argentina episode in Section~\ref{sec:motivation}.
+This section microfounds PRO via rational inattention: competitive lenders
+optimally allocate attention across mean and dispersion signals subject to
+processing costs. The choice endogenizes a state-dependent tail-weight
+parameter $\theta_{\mathrm{RI}}(s)$ that enters the \emph{same} pricing
+operator as in the baseline model, so all results are genuine comparative
+statics within a single environment rather than across different models.
 
-\paragraph{Baseline operator recap}
-Let $q(B',y)$ denote the unique fixed point of the pricing operator $\mathcal
-	T_\theta$ defined in the main text (see Appendix~\ref{app:operator_analysis}).
-I keep primitives, the debt structure, and the sovereign aggregator $J_\rho$
-fixed. The parameter $\theta\ge1$ indexes the weight on dispersion/tail risk in
-lenders' default beliefs and thus in pricing.
-
-\paragraph{State and function spaces}
-Let the state space be $\mathsf S\coloneqq \mathcal B\times \mathcal Y$ with
-generic element $s=(B',y)$. Let $\mathcal Q\coloneqq C_b(\mathsf S)$ denote the
-bounded continuous functions on $\mathsf S$ endowed with the sup norm
-$\|\cdot\|_\infty$. Fix $\bar\theta>1$ and restrict $\theta\in[1,\bar\theta]$.
+\paragraph{Overview and link to baseline}
+I maintain primitives, debt structure, and the sovereign aggregator $J_\rho$ and
+use the pricing operator in Definition~\ref{def:pricing_operator}. Only the
+belief/tilt parameter becomes state-dependent through information choice. Let
+$s=(B',y)$ denote the relevant state. For operator properties used here and in
+Appendix~\ref{app:operator_analysis}, I restrict $\theta\in[1,\bar\theta]$ for a
+finite $\bar\theta>1$.
 
 \paragraph{Information structure}
-Each period, competitive lenders observe two public signals about
-fundamentals/policy stability:
+Each period, competitive lenders observe two public signals: a mean/fundamentals
+signal and a dispersion/stability signal,
 \[
 	s_\mu = \mu + \varepsilon_\mu,\quad \varepsilon_\mu\sim \mathcal N(0,\,a_\mu^{-1}),\qquad
 	s_\sigma = \sigma + \varepsilon_\sigma,\quad \varepsilon_\sigma\sim \mathcal N(0,\,a_\sigma^{-1}),
@@ -1521,8 +1527,9 @@ precisions $a_\mu,a_\sigma\ge0$ at convex cost
 interpretable as attention/processing costs. (An entropy/mutual-information
 formulation yields identical monotone comparative statics in precisions; see \citet{Sims2003, MackowiakWiederholt2009, MatejkaMcKay2015, Veldkamp2011}.)
 
-\paragraph{Effective dispersion and pricing}
-I adopt a linear mapping from attention to tail-weight:\footnote{More
+\paragraph{From attention to tail weight and pricing}
+Attention to dispersion maps into the tail-weight in lenders' default beliefs.
+I adopt a linear mapping for clarity and identification:\footnote{More
 	generally, if \(\theta_{\mathrm{RI}}(y,B')=\min\{\,1+\varphi\,
 	w(a_\sigma(y,B'))\!,\;\bar\theta\,\}\) with a strictly increasing \(w\in C^1\)
 	and \(w(0)=0\), then under the same positivity/order and uniform-contraction
@@ -1535,14 +1542,15 @@ I adopt a linear mapping from attention to tail-weight:\footnote{More
 	\theta_{\mathrm{RI}}(y,B') \;=\; \min\Big\{\,1 + \varphi\, a_\sigma(y,B')\,,\; \bar\theta\,\Big\},\qquad \varphi>0.
 	\label{eq:theta_RI_micro}
 \end{equation}
-For any state $(y,B')$, prices are still defined as the unique fixed point of
-the \emph{same} operator evaluated at $\theta_{\mathrm{RI}}(y,B')$:
+For any state $(y,B')$, prices are defined by the \emph{same} operator,
+evaluated at $\theta_{\mathrm{RI}}(y,B')$:
 \begin{equation}
 	q(B',y) \;=\; \mathcal T_{\theta_{\mathrm{RI}}(y,B')}[q](B',y).
 	\label{eq:pricing_same_operator_micro}
 \end{equation}
 
-\noindent\textit{Closed form under the linear mapping.} The first-order condition below yields $a_\sigma(y,B')=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S(y,B')$, so that
+Under the linear mapping, the first-order condition below implies
+$a_\sigma(y,B')=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S(y,B')$, hence
 \begin{equation}
 	\theta_{\mathrm{RI}}(y,B')\;=\; \min\Big\{\,1 + \tfrac{\varphi^2}{\kappa_\sigma}\,\mathcal S(y,B')\,,\;\bar\theta\,\Big\}.
 	\label{eq:theta_RI_closed}
@@ -1552,9 +1560,10 @@ the \emph{same} operator evaluated at $\theta_{\mathrm{RI}}(y,B')$:
 	Preference-based ambiguity models---smooth ambiguity \citet{KlibanoffMarinacciMukerji2005}, variational preferences \citet{MaccheroniMarinacciRustichini2006}, and robust control \citet{HansenSargent2008}---can be represented as likelihood twists or penalty-adjusted evaluations that effectively tilt tails in the same pricing operator. Under the operator assumptions in Appendix~\ref{app:operator_analysis}, the pivot and policy comparative statics follow analogously. The RI formulation here endogenizes the tilt through attention choice, yielding the state-dependent $\theta_{\mathrm{RI}}(\cdot)$.
 \end{remark}
 
-\paragraph{Optimal attention}
-Let $U$ be lenders' objective (expected discounted payouts net of information
-costs). Attention solves
+\paragraph{Attention choice}
+Given this mapping, lenders choose attention to maximize expected discounted
+payouts net of information costs. Let $U$ denote the objective; then attention
+solves
 \begin{equation}
 	\max_{a_\mu,a_\sigma\ge0}\; \E[U\mid a_\mu,a_\sigma] - \Phi(a_\mu,a_\sigma).
 	\label{eq:att_opt_micro}
@@ -1569,8 +1578,18 @@ The first-order condition for $a_\sigma$ is
 	\varphi\, \mathcal S(y,B') \;=\; \kappa_\sigma\, a_\sigma(y,B').
 	\label{eq:foc_sigma_micro}
 \end{equation}
-Thus $a_\sigma(y,B')=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S(y,B')$, hence
+Thus $a_\sigma(y,B')=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S(y,B')$, and
 $\theta_{\mathrm{RI}}(y,B')$ increases in $\mathcal S(y,B')$ via~\eqref{eq:theta_RI_micro}.
+
+\begin{corollary}[Monotone attention and PRO intensity]
+	\label{cor:monotone_attention}
+	If $\mathcal S(y,B')$ is increasing in $B'$ and decreasing in $y$, then the
+	solution of~\eqref{eq:foc_sigma_micro} satisfies
+	\[
+		\frac{\partial a_\sigma}{\partial B'}>0,\quad \frac{\partial a_\sigma}{\partial y}<0,
+		\qquad \frac{\partial \theta_{\mathrm{RI}}}{\partial B'}>0,\quad \frac{\partial \theta_{\mathrm{RI}}}{\partial y}<0.
+	\]
+\end{corollary}
 
 \begin{lemma}[Existence/uniqueness and continuity of attention]
 	\label{lem:attention_solution}
@@ -1584,6 +1603,10 @@ $\theta_{\mathrm{RI}}(y,B')$ increases in $\mathcal S(y,B')$ via~\eqref{eq:theta
 \begin{proof}
 	Immediate by rearrangement of~\eqref{eq:foc_sigma_micro}.
 \end{proof}
+
+\medskip
+These continuity and monotonicity properties feed directly into the operator that
+prices bonds.
 
 \begin{proposition}[Operator properties and inherited comparative statics]
 	\label{prop:RI_operator_micro}
@@ -1601,8 +1624,8 @@ $\theta_{\mathrm{RI}}(y,B')$ increases in $\mathcal S(y,B')$ via~\eqref{eq:theta
 \end{proof}
 
 \paragraph{Empirical link: Argentina misreporting}
-In Section~\ref{sec:motivation}, Argentina's inflation misreporting reduced the
-credibility of official signals. From
+Returning to Section~\ref{sec:motivation}, Argentina's inflation misreporting
+reduced the credibility of official signals. From
 \eqref{eq:att_opt_micro}–\eqref{eq:foc_sigma_micro}, a fall in the productivity
 of mean information (effective $a_\mu$) raises $\mathcal S(y,B')$, increasing
 $a_\sigma$ and thus $\theta_{\mathrm{RI}}$ via~\eqref{eq:theta_RI_micro}. The
@@ -2112,18 +2135,8 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	\end{proof}
 
 	Let $q_i(B',y)$, $i\in\{1,\theta\}$ with $\theta_1=1$ and $\theta>1$, be the
-	fixed point of the pricing operator
-	\begin{equation}
-		(T_i q)(B',y)=\frac{1}{1+r}\,\E_{y'|y}\!\left[\bigl(1-P_i(y',B')\bigr)\Bigl(\kappa+(1-\delta)\E_{B''|y',B'}[\,q(y',B'')\,]\Bigr)\right],
-		\label{eq:pricing_operator}
-	\end{equation}
-	where
-	\begin{equation}
-		P_i(y',B') \;=\; L\!\Bigl(-\frac{\Delta V_i(y',B')}{\theta_i\eta}\Bigr),\qquad
-		L(z)=\frac{1}{1+e^{-z}},\qquad
-		\Delta V_i(y',B')\equiv V_i^R(y',B')-V_i^D(y').
-		\label{eq:net_value_definition}
-	\end{equation}
+	fixed point of the pricing operator in~\eqref{eq:pricing_operator}, with
+	perceived default probabilities given by~\eqref{eq:net_value_definition}.
 
 	\paragraph{Step 1: Probability ordering (correct sign).}
 	Fix $(y,B')$ and write $\xi\equiv \Delta V_i(y,B')\neq 0$. Define
