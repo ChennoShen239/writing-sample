@@ -1513,12 +1513,15 @@ a finite $\bar\theta>1$.
 Each period, competitive lenders observe two public signals: a
 mean/fundamentals signal and a dispersion/stability signal,
 \[
-	s_\mu = \mu + \varepsilon_\mu,\quad \varepsilon_\mu\sim \mathcal N(0,\,a_\mu^{-1}),\qquad
+	s_\mu = \mu + \varepsilon_\mu,\quad \varepsilon_\mu\sim \mathcal N\bigl(0,\,(\psi_\mu a_\mu)^{-1}\bigr),\qquad
 	s_\sigma = \sigma + \varepsilon_\sigma,\quad \varepsilon_\sigma\sim \mathcal N(0,\,a_\sigma^{-1}),
 \]
 where $\mu$ proxies first-moment fundamentals and $\sigma$ proxies second-
-moment (dispersion / instability) of policy realizations. Lenders choose
-precisions $a_\mu,a_\sigma\ge0$ at convex cost
+moment (dispersion / instability) of policy realizations. The parameter
+$\psi_\mu\in(0,1]$ captures the credibility/productivity of the mean signal: a
+lower $\psi_\mu$ means the same attention $a_\mu$ produces lower
+\emph{effective} precision. Lenders choose precisions $a_\mu,a_\sigma\ge0$ at
+convex cost
 \begin{equation}
 	\Phi(a_\mu,a_\sigma) = \tfrac{\kappa_\mu}{2}a_\mu^2 + \tfrac{\kappa_\sigma}{2}a_\sigma^2,
 	\label{eq:info_cost_micro}
@@ -1580,6 +1583,17 @@ The first-order condition for $a_\sigma$ is
 Thus $a_\sigma(y,B')=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S(y,B')$, and
 $\theta_{\mathrm{RI}}(y,B')$ increases in $\mathcal S(y,B')$ via~\eqref{eq:theta_RI_micro}.
 
+\noindent Similarly, write the \emph{effective} mean precision as $a_\mu^{\mathrm{eff}}\coloneqq \psi_\mu a_\mu$ and define its marginal value
+\begin{equation}
+	\mathcal M(y,B') \;\coloneqq\; \E\!\left[\frac{\partial U}{\partial a_\mu^{\mathrm{eff}}}(y,B')\right] \;\ge 0.
+\end{equation}
+The first-order condition for $a_\mu$ is
+\begin{equation}
+	\psi_\mu\, \mathcal M(y,B') \;=\; \kappa_\mu\, a_\mu(y,B').
+	\label{eq:foc_mu_micro}
+\end{equation}
+Hence $a_\mu(y,B')=\tfrac{\psi_\mu}{\kappa_\mu}\,\mathcal M(y,B')$, so a decline in credibility/productivity ($\psi_\mu\downarrow$) strictly reduces the optimal attention to the mean signal.
+
 \begin{corollary}[Monotone attention and PRO intensity]
 	\label{cor:monotone_attention}
 	If $\mathcal S(y,B')$ is increasing in $B'$ and decreasing in $y$, then the
@@ -1624,14 +1638,17 @@ prices bonds.
 
 \paragraph{Empirical link: Argentina misreporting}
 Returning to Section~\ref{sec:motivation}, Argentina's inflation misreporting
-reduced the credibility of official signals. From
+reduced the credibility of official signals. In this framework, that shock is a
+decline in $\psi_\mu$, which—holding costs fixed—lowers the optimal attention
+to the mean signal by \eqref{eq:foc_mu_micro}. From
 \eqref{eq:att_opt_micro}–\eqref{eq:foc_sigma_micro}, a fall in the productivity
-of mean information (effective $a_\mu$) raises $\mathcal S(y,B')$, increasing
-$a_\sigma$ and thus $\theta_{\mathrm{RI}}$ via~\eqref{eq:theta_RI_micro}. The
-model then predicts: (i) higher average spreads; (ii) a steeper price pivot;
-(iii) cross-peer “decoupling” when others’ dispersion signals do not
-deteriorate; and (iv) a higher default threshold with concurrent
-deleveraging—matching the event-study patterns in the Argentina episode.
+of mean information (lower $\psi_\mu$ and thus lower effective $a_\mu$) raises
+$\mathcal S(y,B')$, increasing $a_\sigma$ and thus $\theta_{\mathrm{RI}}$
+via~\eqref{eq:theta_RI_micro}. The model then predicts: (i) higher average
+spreads; (ii) a steeper price pivot; (iii) cross-peer “decoupling” when others’
+dispersion signals do not deteriorate; and (iv) a higher default threshold with
+concurrent deleveraging—matching the event-study patterns in the Argentina
+episode.
 
 \section{Policy and Information Extensions}\label{sec:extensions}
 

@@ -19,6 +19,8 @@
 \usetikzlibrary{fit, positioning}
 \usetikzlibrary{calc}
 \usepackage{booktabs}
+
+\usepackage{subfig}
 \end_preamble
 \options aspectratio=1610
 \use_default_options false
@@ -1131,8 +1133,24 @@ policy-randomness overestimation (PRO)
 Price:
 \begin_inset Formula 
 \[
-q(y,B')=\frac{1}{1+r}\mathbb{E}_{y'|y}\left[\left(1-\tilde{P}(y',B')\right)\left(\kappa+(1-\delta)\mathbb{E}_{B''|y',B'}\left[q(y',B'')\right]\right)\right]
+q(y,B')=\underset{\equiv(\mathcal{T}_{\theta}q)(B',y)}{\underbrace{\frac{1}{1+r}\mathbb{E}_{y'|y}\left[\left(1-\tilde{P}(y',B')\right)\left(\kappa+(1-\delta)\mathbb{E}_{B''|y',B'}\left[q(y',B'')\right]\right)\right]}}
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
 
 \end_inset
 
@@ -2403,7 +2421,7 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -2411,7 +2429,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2443,7 +2461,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2469,10 +2487,6 @@ Credit Spread Distribution
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2599,9 +2613,871 @@ dominates
 
 \end_layout
 
-\begin_layout PlainFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IRFs 
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Transitory
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_13.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Debt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_14.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Consumption
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_15.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Spread
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_16.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Persistent
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_17.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Debt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_18.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Consumption
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_19.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Spread
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_20.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Deleverage Paths
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Debt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_11.pdf
+	width 33col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Consumption
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_12.pdf
+	width 33col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Spread
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_21.pdf
+	width 33col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+High PRO:
+\end_layout
+
+\begin_layout Itemize
+systematically converge to 
+\series bold
+lower 
+\series default
+debt levels 
+\end_layout
+
+\begin_layout Itemize
+consumption is more 
+\series bold
+volatile
+\end_layout
+
+\begin_layout Itemize
+Interest rate spreads remain 
+\series bold
+high
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Microfound PRO with Rational Inattention
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Additional Assumption:
+ 
+\begin_inset Formula $\theta\in\left[1,\bar{\theta}\right]$
+\end_inset
+
+ 
+\series default
+where 
+\begin_inset Formula $\bar{\theta}>1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Information Structure:
+ 
+\series default
+Competitive lenders observe two public signals:
+\end_layout
+
+\begin_layout Enumerate
+Mean/Fundamentals 
+\begin_inset Formula 
+\[
+s_{\mu}=\mu+\varepsilon_{\mu},\quad\varepsilon_{\mu}\sim\mathcal{N}\bigl(0,\,(\psi_{\mu}a_{\mu})^{-1}\bigr),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\psi_{\mu}\in(0,1]$
+\end_inset
+
+ captures the credibility/productivity of the mean signal
+\end_layout
+
+\begin_layout Enumerate
+Dispersion/Stability
+\begin_inset Formula 
+\[
+s_{\sigma}=\sigma+\varepsilon_{\sigma},\quad\varepsilon_{\sigma}\sim\mathcal{N}(0,\,a_{\sigma}^{-1}),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Convex precision cost:
+ 
+\series default
+interpreted as attention/processing costs:
+\series bold
+
+\begin_inset Formula 
+\[
+\Phi(a_{\mu},a_{\sigma})=\tfrac{\kappa_{\mu}}{2}a_{\mu}^{2}+\tfrac{\kappa_{\sigma}}{2}a_{\sigma}^{2},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An entropy/mutual-information formulation yields identical monotone comparative statics in precisions
+\end_layout
+
+\end_deeper
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tail-weight and Pricing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Lenders maximize
+\begin_inset Formula 
+\[
+\max_{a_{\mu},a_{\sigma}\ge0}\mathbb{E}[U\mid a_{\mu},a_{\sigma}]-\Phi(a_{\mu},a_{\sigma}).
+\]
+
+\end_inset
+
+Let the marginal pricing sensitivity be:
+\begin_inset Formula 
+\[
+\mathcal{S}(y,B')\equiv\mathbb{E}\left[\frac{\partial U}{\partial\theta}(y,B';\theta_{\mathrm{RI}}(y,B'))\right]\ge0.
+\]
+
+\end_inset
+
+we have the FOC 
+\begin_inset Formula $a_{\sigma}(y,B')=\tfrac{\varphi}{\kappa_{\sigma}}\mathcal{S}(y,B')$
+\end_inset
+
+.
+ Attention to dispersion maps into the 
+\series bold
+tail-weight
+\series default
+ in lenders' default beliefs.
+\begin_inset Formula 
+\[
+\theta_{\mathrm{RI}}(y,B')=\min\Big\{1+\varphi a_{\sigma}(y,B'),\bar{\theta}\Big\}=\min\Big\{1+\tfrac{\varphi^{2}}{\kappa_{\sigma}}\mathcal{S}(y,B'),\bar{\theta}\Big\},\quad\varphi>0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The price is then 
+\begin_inset Formula 
+\[
+q(B',y)=\mathcal{T}_{\theta_{\mathrm{RI}}(y,B')}[q](B',y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Monotone attention and PRO intensity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Corollary 2
+\series default
+ If 
+\begin_inset Formula $\mathcal{S}(y,B')$
+\end_inset
+
+ is increasing in 
+\begin_inset Formula $B'$
+\end_inset
+
+ and decreasing in 
+\begin_inset Formula $y$
+\end_inset
+
+,
+ then 
+\begin_inset Formula 
+\[
+\frac{\partial a_{\sigma}}{\partial B'}>0,\quad\frac{\partial a_{\sigma}}{\partial y}<0,\quad\frac{\partial\theta_{\mathrm{RI}}}{\partial B'}>0,\quad\frac{\partial\theta_{\mathrm{RI}}}{\partial y}<0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Intuition:
+
+\series default
+ Decision makers (lenders) will only pay the most attention to the most 
+\emph on
+critical 
+\begin_inset Formula $B'\uparrow$
+\end_inset
+
+ and uncertain
+\emph default
+ 
+\begin_inset Formula $y\downarrow$
+\end_inset
+
+ areas.
+\end_layout
+
+\begin_layout Standard
+Given the setup,
+ we can show the 
+\emph on
+existence,
+ uniqueness,
+ and continuity
+\emph default
+ of attention.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 7 
+\series default
+\emph on
+Suppose 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ is strictly convex.
+ If 
+\begin_inset Formula $\mathcal{T}_{\theta}$
+\end_inset
+
+ is positive and order-preserving for each fixed 
+\begin_inset Formula $\theta\in[1,\bar{\theta}]$
+\end_inset
+
+,
+ then the state-dependent operator 
+\begin_inset Formula $\mathcal{T}_{\theta_{\mathrm{RI}}(\cdot)}$
+\end_inset
+
+ is positive and order-preserving.
+ The baseline results 
+\series bold
+continue to hold
+\series default
+ with 
+\begin_inset Formula $\theta$
+\end_inset
+
+ replaced by 
+\begin_inset Formula $\theta_{\mathrm{RI}}(y,B')$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mechanism:
+ Argentina misreporting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Let 
+\begin_inset Formula $a_{\mu}^{\mathrm{eff}}\equiv\psi_{\mu}a_{\mu}$
+\end_inset
+
+,
+ similarly define its marginal value 
+\begin_inset Formula $\mathcal{M}(y,B')\equiv\mathbb{E}\left[\frac{\partial U}{\partial a_{\mu}^{\mathrm{eff}}}(y,B')\right]\ge0.$
+\end_inset
+
+ The optimal choice is:
+\begin_inset Formula 
+\[
+a_{\mu}(y,B')=\tfrac{\psi_{\mu}}{\kappa_{\mu}}\mathcal{M}(y,B')
+\]
+
+\end_inset
+
+
+\series bold
+The Argentina case can be explained by:
+\end_layout
+
+\begin_layout Enumerate
+Misreporting inflation data 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\psi_{\mu}\downarrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Lenders actively choose to 
+\series bold
+reduce
+\series default
+ their attention to mean signals 
+\begin_inset Formula $a_{\mu}\downarrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+the marginal benefits of policy instability 
+\begin_inset Formula $\mathcal{S}\uparrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Lender will actively choose a higher attention level to the policy dispersion 
+\begin_inset Formula $a_{\sigma}\uparrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+PRO bias increases 
+\begin_inset Formula $\theta_{\mathrm{RI}}\uparrow\Longrightarrow$
+\end_inset
+
+ 
+\series bold
+Higher average spread and decoupling from similar countries
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
