@@ -17,6 +17,8 @@
 \usepackage{amsmath}
 \usetikzlibrary{arrows.meta, positioning}
 \usetikzlibrary{fit, positioning}
+\usetikzlibrary{calc}
+\usepackage{booktabs}
 \end_preamble
 \options aspectratio=1610
 \use_default_options false
@@ -494,7 +496,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -1162,9 +1164,1459 @@ misperceive
 
 \end_layout
 
+\begin_layout Section
+Baseline Results
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Main Result:
+ Bond Price Pivot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Main Proposition:
+ 
+\series default
+Consider 2 economies with 
+\begin_inset Formula $\theta>1$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta=1$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $q_{1}(B',y)$
+\end_inset
+
+ and 
+\begin_inset Formula $q_{\theta}(B',y)$
+\end_inset
+
+ be the respective equilibrium bond price functions.
+ For a given endowment level 
+\begin_inset Formula $y$
+\end_inset
+
+,
+ there exists a debt threshold 
+\begin_inset Formula $B^{*}(y)$
+\end_inset
+
+ such that the price difference 
+\begin_inset Formula $\Delta q(B',y)\equiv q_{\theta}(B',y)-q_{1}(B',y)$
+\end_inset
+
+ satisfies:
+\end_layout
+
+\begin_layout Itemize
+For levels of future debt 
+\begin_inset Formula $B'<B^{*}(y)$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\Delta q(B',y)<0$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+For levels of future debt 
+\begin_inset Formula $B'>B^{*}(y)$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\Delta q(B',y)>0$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Corollary:
+ 
+\series default
+Given the spread defined by 
+\begin_inset Formula $s(y,B')=\frac{\kappa}{q(y,B')}-\delta-r$
+\end_inset
+
+,
+ the spread difference 
+\begin_inset Formula $\Delta s(B',y)\equiv s_{\theta}(B',y)-s_{1}(B',y)$
+\end_inset
+
+ satisfies the opposite relationship to the price difference at the same threshold 
+\begin_inset Formula $B^{*}(y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Low position 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ Elevated average premia 
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Pivoting I
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pivoting Bond Price Schedules
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_5.pdf
+	width 60col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout PlainFrame
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Pivoting II
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+PRO economy is 
+\series bold
+less
+\series default
+ responsive to positive news:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 3
+\series default
+ 
+\emph on
+The threshold 
+\begin_inset Formula $B^{*}(y)$
+\end_inset
+
+ is monotonically increasing in the endowment level 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ That is,
+ 
+\begin_inset Formula $\frac{dB^{*}(y)}{dy}>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+With PRO,
+ it's more 
+\series bold
+unlikely
+\series default
+ to default:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 4
+\series default
+\emph on
+ Let 
+\begin_inset Formula $B_{D,i}^{*}(y)$
+\end_inset
+
+ be the sovereign's default threshold for economy 
+\begin_inset Formula $i\in\{1,\theta\}$
+\end_inset
+
+.
+ For any given endowment level 
+\begin_inset Formula $y$
+\end_inset
+
+,
+ the default threshold is higher in the economy with PRO lenders:
+\emph default
+
+\begin_inset Formula 
+\[
+B_{D,\theta}^{*}(y)>B_{D,1}^{*}(y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And the sovereign tries to 
+\series bold
+deleverage
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 5 
+\series default
+\emph on
+Let 
+\begin_inset Formula $\mathbb{E}_{i}[B'|y,B]$
+\end_inset
+
+ be the expected next-period debt.
+ For states 
+\begin_inset Formula $(y,B)$
+\end_inset
+
+ where the sovereign chooses not to default,
+ 
+\emph default
+
+\begin_inset Formula 
+\[
+\mathbb{E}_{\theta}[B'|y,B]<\mathbb{E}_{1}[B'|y,B].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Pivoting III
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The overall welfare decreases for a PRO economy.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{tikzpicture}[
+\end_layout
+
+\begin_layout Plain Layout
+
+			node distance=1cm and 1.5cm,
+\end_layout
+
+\begin_layout Plain Layout
+
+			every node/.style={text centered,
+ minimum height=0.8cm},
+\end_layout
+
+\begin_layout Plain Layout
+
+			box/.style={rectangle,
+ draw=blue!5,
+ thick,
+ fill=blue!10,text width=4cm,
+ minimum height=1cm,
+ rounded corners=3pt},
+\end_layout
+
+\begin_layout Plain Layout
+
+			arrow/.style={->,
+ thick,
+ >=stealth},
+\end_layout
+
+\begin_layout Plain Layout
+
+			effect/.style={rectangle,
+ draw=red!5,
+ thick,
+ fill=red!10,
+ text width=4cm,
+ minimum height=1cm,
+ rounded corners=3pt},
+\end_layout
+
+\begin_layout Plain Layout
+
+			outcome/.style={rectangle,
+ draw=green!5,
+ thick,
+ fill=green!10,
+ text width=3cm,
+ minimum height=1cm,
+ rounded corners=3pt}
+\end_layout
+
+\begin_layout Plain Layout
+
+		]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		% Initial shock
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node[box] (shock) {
+\backslash
+textbf{Policy‑Randomness Overestimation (PRO)} 
+\backslash
+
+\backslash
+ $
+\backslash
+theta > 1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		% Market effects
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node[effect,
+ right=of shock] (pivot) {
+\backslash
+textbf{Price Pivot} 
+\backslash
+
+\backslash
+ $q_
+\backslash
+theta(B',y) 
+\backslash
+gtrless q_1(B',y)$ 
+\backslash
+
+\backslash
+ at $B^*(y)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node[effect,
+ below=of pivot] (spread) {
+\backslash
+textbf{Spread Pivot} 
+\backslash
+
+\backslash
+ $s_
+\backslash
+theta(B',y) 
+\backslash
+lessgtr s_1(B',y)$ 
+\backslash
+
+\backslash
+ at $B^*(y)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		% Policy responses (left and right)
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node[outcome,
+ below left=1cm and 0.8cm of spread] (threshold) {
+\backslash
+textbf{Higher Default} 
+\backslash
+
+\backslash
+ 
+\backslash
+textbf{Threshold} 
+\backslash
+
+\backslash
+ $B^*_{D,
+\backslash
+theta}(y) > B^*_{D,1}(y)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node[outcome,
+ below right=1cm and 0.8cm of spread] (deleverage) {
+\backslash
+textbf{Deleveraging} 
+\backslash
+
+\backslash
+ $
+\backslash
+mathbb{E}_
+\backslash
+theta[B'|y,B] <$ 
+\backslash
+
+\backslash
+ $
+\backslash
+mathbb{E}_1[B'|y,B]$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		% Final outcome
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node[effect,
+ below=1.2cm of spread] (welfare) {
+\backslash
+textbf{Welfare Loss} 
+\backslash
+
+\backslash
+ $V_
+\backslash
+theta(y,B) < V_1(y,B)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		% Arrows
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw[arrow] (shock) -- (pivot);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw[arrow] (pivot) -- (spread);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw[arrow] (spread) -- (threshold);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw[arrow] (spread) -- (deleverage);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw[arrow] (threshold) -- (welfare);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw[arrow] (deleverage) -- (welfare);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		% Labels on arrows
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node[above=0.05cm] at ($(shock)!0.5!(pivot)$) {Pricing};
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node[right=0.05cm] at ($(pivot)!0.5!(spread)$) {Algebraic};
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node[left=0.05cm] at ($(spread)!0.5!(threshold)$) {``Doom Softening''};
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node[right=0.05cm] at ($(spread)!0.5!(deleverage)$) {``PRO Premium''};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout PlainFrame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[h!]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Baseline Calibration (Quarterly)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.6
+\backslash
+linewidth}{!}{%  <-- 开始缩放
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{@{}lll@{}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+Parameter & Value & Description 
+\backslash
+
+\backslash
+ 
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{3}{l}{
+\backslash
+textit{Preferences and Endowments}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+sigma$ & 2.0 & CRRA coefficient of relative risk aversion 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+beta$ & 0.9775 & Sovereign’s discount factor 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+rho_y$ & 0.95 & Persistence of log endowment AR(1) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+sigma_y$ & 0.005 & Std.
+ dev.
+ of endowment innovations 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{3}{l}{
+\backslash
+textit{Debt and Default}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$r$ & 0.01 & Quarterly risk-free interest rate (4
+\backslash
+% ann.) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+delta$ & 0.04 & Principal decay rate (for 5-year duration) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+kappa$ & 0.05 & Coupon rate ($
+\backslash
+delta+r$) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+gamma$ & 0.125 & Re-entry probability (avg.
+ 2-year exclusion) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+lambda_0,
+ 
+\backslash
+lambda_1$ & -0.48,
+ 0.525 & Output cost function parameters 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{3}{l}{
+\backslash
+textit{Computational Parameters}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+eta$ & $5 
+\backslash
+times 10^{-4}$ & Scale of default taste shock 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+rho$ & $1 
+\backslash
+times 10^{-5}$ & Scale of borrowing taste shock 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+theta$ & 1.0 & Baseline PRO coefficient 
+\backslash
+
+\backslash
+ 
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+} % <-- 结束缩放
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Business Cycle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[h]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+caption{Business Cycle Implications of PRO}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.8
+\backslash
+linewidth}{!}{%
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{tabular}{@{}lccc@{}}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+		Moment                               & Baseline ($
+\backslash
+theta=1$) & Med.
+ ($
+\backslash
+theta=10$) & High  ($
+\backslash
+theta=100$) 
+\backslash
+
+\backslash
+ 
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+multicolumn{3}{l}{
+\backslash
+textit{Mean and Volatility}}                                                         
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Mean Debt-to-GDP Ratio (
+\backslash
+%)          & 7.90                  & 5.53               & 2.70                 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Std.
+ Dev.
+ of Debt-to-GDP Ratio (
+\backslash
+%)  & 0.87                  & 0.85               & 0.74                 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Mean Spread (annualized,
+ 
+\backslash
+%)         & 2.00                  & 2.75               & 4.15                 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Std.
+ Dev.
+ of Spread (annualized,
+ 
+\backslash
+%) & 0.77                  & 0.49               & 0.58                 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Std.
+ Dev.
+ of ln(Consumption) (
+\backslash
+%)    & 3.48                  & 3.53               & 3.41                 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Std.
+ Dev.
+ of ln(GDP) (
+\backslash
+%)            & 3.04                  & 3.19               & 3.19                 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Mean Trade Balance/GDP (
+\backslash
+%)          & 0.42                  & 0.32               & 0.18                 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Std.
+ Dev.
+ of Trade Balance/GDP (
+\backslash
+%)  & 0.51                  & 0.43               & 0.32                 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+multicolumn{3}{l}{
+\backslash
+textit{Correlations}}                                                                
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Corr(Spread,
+ ln(GDP))                & -0.43                 & -0.80              & -0.89                
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Corr(Trade Balance/GDP,
+ ln(GDP))     & -0.28                 & -0.28              & -0.26                
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Corr(Debt/GDP,
+ ln(GDP))              & 0.70                  & 0.79               & 0.84                 
+\backslash
+
+\backslash
+ 
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Deleveraging and Low-debt Trap I
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Debt-to-GDP Ratio Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_7.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Credit Spread Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_6.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+PRO 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ Punitive pricing 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ Conservative finances 
+\series bold
+BUT
+\series default
+ Trapped in a low-debt 
+\series bold
+trap
+\series default
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ Continued 
+\series bold
+higher
+\series default
+ capital costs
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Deleveraging and Low-debt Trap II
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Why does the average spread rise while deleveraging?
+\begin_inset Formula 
+\[
+\bar{s}_{\theta}-\bar{s}_{1}=\kappa\underbrace{\mathbb{E}_{\mu_{\theta}}\Big[\tfrac{1}{q_{\theta}}-\tfrac{1}{q_{1}}\Big]}_{\text{price wedge at PRO weights}}+\kappa\underbrace{\Big(\mathbb{E}_{\mu_{\theta}}\left[\tfrac{1}{q_{1}}\right]-\mathbb{E}_{\mu_{1}}\left[\tfrac{1}{q_{1}}\right]\Big)}_{\text{composition (policy) effect}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Average spread dominance
+\end_layout
+
+\begin_layout Itemize
+The first term (price wedge at PRO weights) is 
+\series bold
+strictly positive
+\series default
+ and 
+\emph on
+strengthened
+\emph default
+ by deleveraging,
+ mass shifts toward 
+\begin_inset Formula $B'<B^{*}(y)$
+\end_inset
+
+ where 
+\begin_inset Formula $1/q_{\theta}-1/q_{1}>0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+The second term (composition effect at baseline prices) is weakly negative since 
+\begin_inset Formula $1/q_{1}$
+\end_inset
+
+ is lower at smaller 
+\begin_inset Formula $B'$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Under mild regularity,
+ the first term 
+\series bold
+dominates
+\series default
+ the second 
+\begin_inset Formula $\Longrightarrow\bar{s}_{\theta}>\bar{s}_{1}$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout PlainFrame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IRFs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\end_layout
+
+\end_deeper
 \end_body
 \end_document

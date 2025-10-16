@@ -156,11 +156,20 @@ for i = 1:5
     fig = figure(i);
     set(findall(fig, '-property', 'FontName'), 'FontName', 'Times New Roman');
     % formatFigure() is already called within each figure block
+
+    % 设置透明背景
+    set(fig, 'Color', 'none');  % 设置figure背景为透明
+    ax = findall(fig, 'Type', 'axes');  % 找到所有axes对象
+    for j = 1:length(ax)
+        set(ax(j), 'Color', 'none');  % 设置每个axes背景为透明
+    end
+
     set(fig, 'PaperPositionMode', 'auto');
     fig_pos = get(fig, 'PaperPosition');
     set(fig, 'PaperSize', [fig_pos(3) fig_pos(4)]);
     filename = sprintf('comparison_figure_%d.pdf', i);
-    print(fig, filename, '-dpdf', '-r300');
+    print(fig, filename, '-dpdf', '-r300', '-painters');  % 添加-painters渲染器以支持透明度
+    saveas(fig, filename, 'pdf');
 end
 
 %% 图10：债务阈值 B*(y) 的单调性 (Monotonicity of Debt Threshold)
@@ -353,11 +362,19 @@ for i = 6:10
     fig = figure(i);
     set(findall(fig, '-property', 'FontName'), 'FontName', 'Times New Roman');
     % formatFigure() is already called within each figure block
+
+    % 设置透明背景
+    set(fig, 'Color', 'none');  % 设置figure背景为透明
+    ax = findall(fig, 'Type', 'axes');  % 找到所有axes对象
+    for j = 1:length(ax)
+        set(ax(j), 'Color', 'none');  % 设置每个axes背景为透明
+    end
+
     set(fig, 'PaperPositionMode', 'auto');
     fig_pos = get(fig, 'PaperPosition');
     set(fig, 'PaperSize', [fig_pos(3) fig_pos(4)]);
     filename = sprintf('comparison_figure_%d.pdf', i);
-    print(fig, filename, '-dpdf', '-r300');
+    print(fig, filename, '-dpdf', '-r300', '-painters');  % 添加-painters渲染器以支持透明度
     fprintf('  Figure %d saved successfully.\n', i);
 end
 
@@ -464,11 +481,19 @@ fprintf('\nSaving deleveraging dynamics figures (11,12,21)...\n');
 for i = [11,12,21]
     fig = figure(i);
     set(findall(fig, '-property', 'FontName'), 'FontName', 'Times New Roman');
+
+    % 设置透明背景
+    set(fig, 'Color', 'none');  % 设置figure背景为透明
+    ax = findall(fig, 'Type', 'axes');  % 找到所有axes对象
+    for j = 1:length(ax)
+        set(ax(j), 'Color', 'none');  % 设置每个axes背景为透明
+    end
+
     set(fig, 'PaperPositionMode', 'auto');
     fig_pos = get(fig, 'PaperPosition');
     set(fig, 'PaperSize', [fig_pos(3) fig_pos(4)]);
     filename = sprintf('comparison_figure_%d.pdf', i);
-    print(fig, filename, '-dpdf', '-r300');
+    print(fig, filename, '-dpdf', '-r300', '-painters');  % 添加-painters渲染器以支持透明度
 end
 fprintf('Figures 11, 12, 21 saved successfully.\n');
 
@@ -525,11 +550,19 @@ fprintf('\nSaving Transitory IRF figures (13-16)...\n');
 for i = 13:16
     fig = figure(i);
     set(findall(fig, '-property', 'FontName'), 'FontName', 'Times New Roman');
+
+    % 设置透明背景
+    set(fig, 'Color', 'none');  % 设置figure背景为透明
+    ax = findall(fig, 'Type', 'axes');  % 找到所有axes对象
+    for j = 1:length(ax)
+        set(ax(j), 'Color', 'none');  % 设置每个axes背景为透明
+    end
+
     set(fig, 'PaperPositionMode', 'auto');
     fig_pos = get(fig, 'PaperPosition');
     set(fig, 'PaperSize', [fig_pos(3) fig_pos(4)]);
     filename = sprintf('comparison_figure_%d.pdf', i);
-    print(fig, filename, '-dpdf', '-r300');
+    print(fig, filename, '-dpdf', '-r300', '-painters');  % 添加-painters渲染器以支持透明度
 end
 fprintf('Figures 13-16 saved successfully.\n');
 
@@ -600,11 +633,19 @@ fprintf('\nSaving Persistent IRF figures (17-20)...\n');
 for i = 17:20
     fig = figure(i);
     set(findall(fig, '-property', 'FontName'), 'FontName', 'Times New Roman');
+
+    % 设置透明背景
+    set(fig, 'Color', 'none');  % 设置figure背景为透明
+    ax = findall(fig, 'Type', 'axes');  % 找到所有axes对象
+    for j = 1:length(ax)
+        set(ax(j), 'Color', 'none');  % 设置每个axes背景为透明
+    end
+
     set(fig, 'PaperPositionMode', 'auto');
     fig_pos = get(fig, 'PaperPosition');
     set(fig, 'PaperSize', [fig_pos(3) fig_pos(4)]);
     filename = sprintf('comparison_figure_%d.pdf', i);
-    print(fig, filename, '-dpdf', '-r300');
+    print(fig, filename, '-dpdf', '-r300', '-painters');  % 添加-painters渲染器以支持透明度
 end
 fprintf('Figures 17-20 saved successfully.\n');
 

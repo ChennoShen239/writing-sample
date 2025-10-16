@@ -1317,8 +1317,7 @@ Two implications follow.
 	      \begin{equation}\label{eq:q_deriv_linear}
 		      \big(I - \mathcal T_\theta\big)\,\frac{\partial q_\theta(\cdot)}{\partial\theta}\,(y,B') \;=\; -\frac{1}{1+r}\,\E_{y'|y}\Big[\big(\partial_\theta \tilde P(y',B')\big)\,\Lambda(y',B')\Big],
 	      \end{equation}
-	      where $\Lambda(y',B')\equiv \kappa + (1-\delta)\sum_{B''\in\mathcal B} \Pr\{B''|y',B'\}\,q_\theta(y',B'')$ and $\mathcal T_\theta$ is the positive linear operator
-	      \[\big(\mathcal T_\theta f\big)(y,B') \;=\; \frac{1}{1+r}\,\E_{y'|y}\Big[(1-\tilde P(y',B'))\,(1-\delta)\sum_{B''\in\mathcal B} \Pr\{B''|y',B'\}\, f(y',B'')\Big].\]
+	      where $\Lambda(y',B')\equiv \kappa + (1-\delta)\sum_{B''\in\mathcal B} \Pr\{B''|y',B'\}\,q_\theta(y',B'')$ and $\mathcal T_\theta$ is the positive linear operator defined in~\eqref{eq:pricing_operator}.
 	      Because $\|\mathcal T_\theta\|<1$ under discounting and $(1-\delta)<1$,
 	      $(I-\mathcal T_\theta)^{-1}$ exists and is positive. Using~\eqref{eq:plender}
 	      with $\Delta V(y',B')\equiv V^R(y',B')-V^D(y')$ gives
@@ -1503,16 +1502,16 @@ operator as in the baseline model, so all results are genuine comparative
 statics within a single environment rather than across different models.
 
 \paragraph{Overview and link to baseline}
-I maintain primitives, debt structure, and the sovereign aggregator $J_\rho$ and
-use the pricing operator in Definition~\ref{def:pricing_operator}. Only the
+I maintain primitives, debt structure, and the sovereign aggregator $J_\rho$
+and use the pricing operator in Definition~\ref{def:pricing_operator}. Only the
 belief/tilt parameter becomes state-dependent through information choice. Let
 $s=(B',y)$ denote the relevant state. For operator properties used here and in
-Appendix~\ref{app:operator_analysis}, I restrict $\theta\in[1,\bar\theta]$ for a
-finite $\bar\theta>1$.
+Appendix~\ref{app:operator_analysis}, I restrict $\theta\in[1,\bar\theta]$ for
+a finite $\bar\theta>1$.
 
 \paragraph{Information structure}
-Each period, competitive lenders observe two public signals: a mean/fundamentals
-signal and a dispersion/stability signal,
+Each period, competitive lenders observe two public signals: a
+mean/fundamentals signal and a dispersion/stability signal,
 \[
 	s_\mu = \mu + \varepsilon_\mu,\quad \varepsilon_\mu\sim \mathcal N(0,\,a_\mu^{-1}),\qquad
 	s_\sigma = \sigma + \varepsilon_\sigma,\quad \varepsilon_\sigma\sim \mathcal N(0,\,a_\sigma^{-1}),
