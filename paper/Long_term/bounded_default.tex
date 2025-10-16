@@ -1529,6 +1529,10 @@ convex cost
 interpretable as attention/processing costs. (An entropy/mutual-information
 formulation yields identical monotone comparative statics in precisions; see \citet{Sims2003, MackowiakWiederholt2009, MatejkaMcKay2015, Veldkamp2011}.)
 
+This information environment will feed into pricing through the attention–tilt
+mapping below: attention determines effective information, which determines the
+tail-weight in default beliefs that the same pricing operator uses.
+
 \paragraph{From attention to tail weight and pricing}
 Attention to dispersion maps into the tail-weight in lenders' default beliefs.
 I adopt a linear mapping for clarity and identification:\footnote{More
@@ -1544,6 +1548,26 @@ I adopt a linear mapping for clarity and identification:\footnote{More
 	\theta_{\mathrm{RI}}(y,B') \;=\; \min\Big\{\,1 + \varphi\, a_\sigma(y,B')\,,\; \bar\theta\,\Big\},\qquad \varphi>0.
 	\label{eq:theta_RI_micro}
 \end{equation}
+\begin{remark}[Why $a_\sigma\mapsto \theta_{\mathrm{RI}}$ is increasing]
+	In the logistic default mapping of~\eqref{eq:net_value_definition}, $\theta$ scales the within‑period shock in the denominator: \(P_\theta=L(-\Delta V/(\theta\eta))\). Raising $\theta$ flattens the logistic around the decision margin $\Delta V\approx 0$, pushing probabilities toward $1/2$: safer states look a bit riskier (default probability up when $\Delta V>0$) and doomed states look a bit less certain (default probability down when $\Delta V<0$). This is exactly what it means to put \emph{more weight on randomness near the threshold}.
+
+	The dispersion attention $a_\sigma$ is the resource devoted to processing
+	instability/second‑moment information. Allocating more $a_\sigma$ is valuable
+	only insofar as it changes prices via the "threshold‑randomness" channel. The
+	reduced‑form that implements this, while keeping the \emph{same} pricing
+	operator, is to evaluate it at a larger $\theta$. Two complementary points pin
+	down the monotonicity: - By construction (see the definition of $\mathcal S$
+	below), the marginal value of tail‑weight in pricing is nonnegative, \(\mathcal
+	S(y,B')=\E[\partial U/\partial\theta]\ge 0\). The lender’s FOC \(\kappa_\sigma
+	a_\sigma=\varphi\,\mathcal S\) then says: whenever an extra bit of tail‑weight
+	raises expected payouts, the optimal response is to raise $a_\sigma$.
+	Consistency of signs requires that $a_\sigma\mapsto\theta$ be
+	\emph{increasing}. - Geometrically, as $a_\sigma$ rises, the lender
+	intentionally broadens the perceived decision noise exactly where payoffs are
+	most sensitive (around $\Delta V\approx 0$). In the logit, the unique
+	one‑parameter way to broaden around the center while preserving the functional
+	form is to increase $\theta$.
+\end{remark}
 For any state $(y,B')$, prices are defined by the \emph{same} operator,
 evaluated at $\theta_{\mathrm{RI}}(y,B')$:
 \begin{equation}
@@ -1551,12 +1575,9 @@ evaluated at $\theta_{\mathrm{RI}}(y,B')$:
 	\label{eq:pricing_same_operator_micro}
 \end{equation}
 
-Under the linear mapping, the first-order condition below implies
-$a_\sigma(y,B')=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S(y,B')$, hence
-\begin{equation}
-	\theta_{\mathrm{RI}}(y,B')\;=\; \min\Big\{\,1 + \tfrac{\varphi^2}{\kappa_\sigma}\,\mathcal S(y,B')\,,\;\bar\theta\,\Big\}.
-	\label{eq:theta_RI_closed}
-\end{equation}
+Thus micro decisions about attention enter prices only by changing the
+parameter at which the same operator is evaluated—no new pricing friction is
+introduced relative to the baseline.
 
 \begin{remark}[Relation to ambiguity/robust preferences]
 	Preference-based ambiguity models---smooth ambiguity \citet{KlibanoffMarinacciMukerji2005}, variational preferences \citet{MaccheroniMarinacciRustichini2006}, and robust control \citet{HansenSargent2008}---can be represented as likelihood twists or penalty-adjusted evaluations that effectively tilt tails in the same pricing operator. Under the operator assumptions in Appendix~\ref{app:operator_analysis}, the pivot and policy comparative statics follow analogously. The RI formulation here endogenizes the tilt through attention choice, yielding the state-dependent $\theta_{\mathrm{RI}}(\cdot)$.
@@ -1583,6 +1604,9 @@ The first-order condition for $a_\sigma$ is
 Thus $a_\sigma(y,B')=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S(y,B')$, and
 $\theta_{\mathrm{RI}}(y,B')$ increases in $\mathcal S(y,B')$ via~\eqref{eq:theta_RI_micro}.
 
+The next corollary records the implied state monotonicity of attention and the
+RI tail weight.
+
 \noindent Similarly, write the \emph{effective} mean precision as $a_\mu^{\mathrm{eff}}\coloneqq \psi_\mu a_\mu$ and define its marginal value
 \begin{equation}
 	\mathcal M(y,B') \;\coloneqq\; \E\!\left[\frac{\partial U}{\partial a_\mu^{\mathrm{eff}}}(y,B')\right] \;\ge 0.
@@ -1593,6 +1617,13 @@ The first-order condition for $a_\mu$ is
 	\label{eq:foc_mu_micro}
 \end{equation}
 Hence $a_\mu(y,B')=\tfrac{\psi_\mu}{\kappa_\mu}\,\mathcal M(y,B')$, so a decline in credibility/productivity ($\psi_\mu\downarrow$) strictly reduces the optimal attention to the mean signal.
+
+Under the linear mapping and the FOC for $a_\sigma$, we further obtain the
+closed form
+\begin{equation}
+	\theta_{\mathrm{RI}}(y,B')\;=\; \min\Big\{\,1 + \tfrac{\varphi^2}{\kappa_\sigma}\,\mathcal S(y,B')\,,\;\bar\theta\,\Big\}.
+	\label{eq:theta_RI_closed}
+\end{equation}
 
 \begin{corollary}[Monotone attention and PRO intensity]
 	\label{cor:monotone_attention}
@@ -1615,6 +1646,46 @@ Hence $a_\mu(y,B')=\tfrac{\psi_\mu}{\kappa_\mu}\,\mathcal M(y,B')$, so a decline
 
 \begin{proof}
 	Immediate by rearrangement of~\eqref{eq:foc_sigma_micro}.
+\end{proof}
+
+Beyond state monotonicity, it is crucial to establish cross-channel
+substitution: when credibility of mean information falls, optimal mean
+attention declines while dispersion attention rises. The next result formalizes
+this effect within the same optimization problem.
+
+\begin{proposition}[Attention substitution under credibility shifts]\label{prop:attention_substitution}
+	Fix a state $s=(y,B')$ and write $a_\mu^{\mathrm{eff}}\coloneqq \psi_\mu a_\mu$. Let
+	\(\mathcal M(a_\mu^{\mathrm{eff}},a_\sigma)\coloneqq \E\big[\partial U/\partial a_\mu^{\mathrm{eff}}\big]\)
+	and \(\mathcal S(a_\mu^{\mathrm{eff}},a_\sigma)\coloneqq \E\big[\partial U/\partial \theta\big]\).
+	Assume $\mathcal M,\mathcal S\in C^1$ and for all relevant arguments the following hold:
+	\begin{enumerate}
+		\item[(A1)] Diminishing returns: $\mathcal M_{\mu}\le0$, $\mathcal S_{\sigma}\le0$.
+		\item[(A2')] Posterior-concentration effect (primitive): $\mathcal S_{\mu}\le0$.
+		\item[(A3)] Strict concavity of the attention problem in $(a_\mu,a_\sigma)$ at the interior maximizer:
+		      \[
+			      \kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu} \,>\,0,\qquad \kappa_\sigma-\varphi\,\mathcal S_{\sigma} \,>\,0,
+		      \]
+		      and
+		      \[
+			      \bigl(\kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu}\bigr)\bigl(\kappa_\sigma-\varphi\,\mathcal S_{\sigma}\bigr)
+			      \;>\; 0.
+		      \]
+		\item[(A4)] Productivity raises the marginal return to mean attention: $\mathcal M+\psi_\mu a_\mu\,\mathcal M_{\mu}>0$.
+	\end{enumerate}
+	Then the unique interior solution $(a_\mu^\ast,a_\sigma^\ast)$ to the first-order conditions
+	\eqref{eq:foc_sigma_micro} and~\eqref{eq:foc_mu_micro} satisfies
+	\[
+		\frac{\partial a_\sigma^\ast}{\partial \psi_\mu}\;\le\;0.
+	\]
+	Moreover, if in addition $\mathcal M_{\sigma}\le0$, then also
+	\[
+		\frac{\partial a_\mu^\ast}{\partial \psi_\mu}\;\ge\;0.
+	\]
+	Strict inequalities obtain when the relevant weak inequalities are strict.
+\end{proposition}
+
+\begin{proof}
+	See Appendix~\ref{app:attention_substitution}.
 \end{proof}
 
 \medskip
@@ -1649,6 +1720,12 @@ spreads; (ii) a steeper price pivot; (iii) cross-peer “decoupling” when othe
 dispersion signals do not deteriorate; and (iv) a higher default threshold with
 concurrent deleveraging—matching the event-study patterns in the Argentina
 episode.
+
+In short, credibility shocks (lower $\psi_\mu$) cascade through endogenous
+attention—reducing $a_\mu^*$, raising $a_\sigma^*$, and increasing
+$\theta_{\mathrm{RI}}$—and all pricing remains governed by the same operator as
+in the baseline. This makes the microfoundation fully consistent with the
+comparative statics developed earlier.
 
 \section{Policy and Information Extensions}\label{sec:extensions}
 
@@ -2617,6 +2694,64 @@ This section contains the proofs for the lemmas and propositions in the paper.
 	\]
 	with strict inequality under the risky-side condition.
 
+\end{proof}
+
+\subsection{Proof of Proposition~\ref{prop:attention_substitution}}\label{app:attention_substitution}
+\begin{proof}
+	Suppress the state $s$ for notational clarity. Define the two first-order conditions as
+	\[
+		F_1(a_\mu,a_\sigma,\psi_\mu)\;\coloneqq\; \kappa_\sigma a_\sigma-\varphi\,\mathcal S(\psi_\mu a_\mu,a_\sigma)=0,
+	\]
+	\[
+		F_2(a_\mu,a_\sigma,\psi_\mu)\;\coloneqq\; \kappa_\mu a_\mu-\psi_\mu\,\mathcal M(\psi_\mu a_\mu,a_\sigma)=0.
+	\]
+	Let subscripts denote partial derivatives with respect to the indicated
+	argument. The Jacobian with respect to $(a_\mu,a_\sigma)$ is
+	\[
+		J\;=\;\begin{bmatrix}
+			\partial_{a_\mu}F_1 & \partial_{a_\sigma}F_1 \\[2pt]
+			\partial_{a_\mu}F_2 & \partial_{a_\sigma}F_2
+		\end{bmatrix}
+		\;=\;
+		\begin{bmatrix}
+			-\varphi\,\psi_\mu\,\mathcal S_{\mu}      & \kappa_\sigma-\varphi\,\mathcal S_{\sigma} \\[2pt]
+			\kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu} & -\psi_\mu\,\mathcal M_{\sigma}
+		\end{bmatrix}.
+	\]
+	By (A1)–(A3), $\kappa_\sigma-\varphi\,\mathcal S_{\sigma}>0$ and
+	$\kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu}>0$, and the negative definiteness of
+	the Hessian of the attention objective is equivalent to
+	\[\det J \,=\, \varphi\,\psi_\mu^{2}\,\mathcal S_{\mu}\,\mathcal M_{\sigma}-\bigl(\kappa_\sigma-\varphi\,\mathcal S_{\sigma}\bigr)\bigl(\kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu}\bigr) \;<\;0,\]
+	so $J$ is nonsingular. Differentiate $F_1=F_2=0$ with respect to $\psi_\mu$ and
+	solve via the Implicit Function Theorem:
+	\[
+		\begin{bmatrix} \partial a_\mu^*/\partial\psi_\mu \\ \partial a_\sigma^*/\partial\psi_\mu \end{bmatrix}
+		\;=\; - J^{-1}\,\begin{bmatrix} \partial_{\psi_\mu}F_1 \\ \partial_{\psi_\mu}F_2 \end{bmatrix}.
+	\]
+	Compute the parameter derivatives:
+	\[\partial_{\psi_\mu}F_1 = -\varphi\,a_\mu\,\mathcal S_{\mu} \;\ge\;0\quad\text{by (A2')},\]
+	\[\partial_{\psi_\mu}F_2 = -\bigl(\mathcal M+\psi_\mu a_\mu\,\mathcal M_{\mu}\bigr) \;<\;0\quad\text{by (A4)}.\]
+	Using the explicit inverse of a $2\times2$ matrix, the $a_\sigma$ derivative is
+	\[
+		\frac{\partial a_\sigma^*}{\partial\psi_\mu}
+		\;=\;\frac{1}{\det J}\Bigl[\bigl(\kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu}\bigr)\,\partial_{\psi_\mu}F_1 \;+\; \varphi\,\psi_\mu\,\mathcal S_{\mu}\,\partial_{\psi_\mu}F_2\Bigr].
+	\]
+	Here $\det J<0$, $\kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu}>0$,
+	$\partial_{\psi_\mu}F_1\ge0$, and $\mathcal S_{\mu}\le0$ while
+	$\partial_{\psi_\mu}F_2<0$, so the numerator is nonnegative and strictly
+	positive if (A2') is strict. Therefore $\partial
+		a_\sigma^*/\partial\psi_\mu\le0$ (strictly $<0$ under strict (A2')).
+
+	Similarly,
+	\[
+		\frac{\partial a_\mu^*}{\partial\psi_\mu}
+		\;=\; -\frac{1}{\det J}\Bigl[ -\psi_\mu\,\mathcal M_{\sigma}\,\partial_{\psi_\mu}F_1 \;-\;\bigl(\kappa_\sigma-\varphi\,\mathcal S_{\sigma}\bigr)\,\partial_{\psi_\mu}F_2\Bigr].
+	\]
+	If, in addition, $\mathcal M_{\sigma}\le0$, then $-\psi_\mu\,\mathcal
+		M_{\sigma}\ge0$, $\partial_{\psi_\mu}F_1\ge0$, $\kappa_\sigma-\varphi\,\mathcal
+		S_{\sigma}>0$ by (A1), and $\partial_{\psi_\mu}F_2<0$, the bracket is positive;
+	hence $\partial a_\mu^*/\partial\psi_\mu\ge0$ (strict under strict
+	inequalities). This proves the claim.
 \end{proof}
 
 \subsection{Pricing Operator: Contraction and Differentiability}\label{app:operator_analysis}

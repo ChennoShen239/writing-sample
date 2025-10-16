@@ -3279,6 +3279,89 @@ q(B',y)=\mathcal{T}_{\theta_{\mathrm{RI}}(y,B')}[q](B',y).
 status open
 
 \begin_layout Plain Layout
+Attention substitution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Similarly,
+ write the effective mean precision as 
+\begin_inset Formula $a_{\mu}^{\mathrm{eff}}\equiv\psi_{\mu}a_{\mu}$
+\end_inset
+
+ and define its marginal value
+\begin_inset Formula 
+\[
+\mathcal{M}(y,B')\coloneqq\mathbb{E}\left[\frac{\partial U}{\partial a_{\mu}^{\mathrm{eff}}}(y,B')\right]\ge0.
+\]
+
+\end_inset
+
+The optimality condition gives
+\begin_inset Formula 
+\[
+\psi_{\mu}\,\mathcal{M}(y,B')=\kappa_{\mu}\,a_{\mu}(y,B').
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 7 
+\series default
+\emph on
+Fix a state 
+\begin_inset Formula $s=(y,B')$
+\end_inset
+
+ and assume 
+\begin_inset Formula $\mathcal{M},\mathcal{S}\in C^{1}$
+\end_inset
+
+ and the following hold:
+ Diminishing returns,
+ Cross (substitution) effects,
+ Strict concavity of the attention and Productivity raises the marginal return to mean attention problem.
+ Then the unique interior solution 
+\begin_inset Formula $(a_{\mu}^{\ast},a_{\sigma}^{\ast})$
+\end_inset
+
+ to the first-order conditions satisfies
+\begin_inset Formula 
+\[
+\frac{\partial a_{\mu}^{\ast}}{\partial\psi_{\mu}}\ge0,\frac{\partial a_{\sigma}^{\ast}}{\partial\psi_{\mu}}\le0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+with strict inequalities if at least one of the cross effects is strict.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Monotone attention and PRO intensity
 \end_layout
 
@@ -3352,7 +3435,7 @@ existence,
 \begin_layout Standard
 
 \series bold
-Proposition 7 
+Proposition 8 
 \series default
 \emph on
 Suppose 
@@ -3390,13 +3473,13 @@ continue to hold
 \end_layout
 
 \end_deeper
-\begin_layout PlainFrame
+\begin_layout Frame
 \begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
 Mechanism:
- Argentina misreporting
+ Argentina misreporting II
 \end_layout
 
 \end_inset
@@ -3406,23 +3489,6 @@ Mechanism:
 
 \begin_deeper
 \begin_layout Standard
-Let 
-\begin_inset Formula $a_{\mu}^{\mathrm{eff}}\equiv\psi_{\mu}a_{\mu}$
-\end_inset
-
-,
- similarly define its marginal value 
-\begin_inset Formula $\mathcal{M}(y,B')\equiv\mathbb{E}\left[\frac{\partial U}{\partial a_{\mu}^{\mathrm{eff}}}(y,B')\right]\ge0.$
-\end_inset
-
- The optimal choice is:
-\begin_inset Formula 
-\[
-a_{\mu}(y,B')=\tfrac{\psi_{\mu}}{\kappa_{\mu}}\mathcal{M}(y,B')
-\]
-
-\end_inset
-
 
 \series bold
 The Argentina case can be explained by:
@@ -3440,6 +3506,15 @@ Misreporting inflation data
 
 \end_layout
 
+\begin_layout Enumerate
+By 
+\series bold
+Proposition 7
+\series default
+:
+\end_layout
+
+\begin_deeper
 \begin_layout Enumerate
 Lenders actively choose to 
 \series bold
@@ -3468,6 +3543,7 @@ Lender will actively choose a higher attention level to the policy dispersion
 
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 PRO bias increases 
 \begin_inset Formula $\theta_{\mathrm{RI}}\uparrow\Longrightarrow$
@@ -3479,5 +3555,196 @@ Higher average spread and decoupling from similar countries
 \end_layout
 
 \end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Section
+Policy and Information Extension
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Extensions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Optimal fiscal policy:
+ 
+\series default
+welfare losses 
+\series bold
+still exist
+\series default
+ 
+\end_layout
+
+\begin_layout Itemize
+Real efficiency losses that cannot be compensated by 
+\emph on
+resource transfers
+\emph default
+ alone
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+The formation of endogenous beliefs:
+ 
+\series default
+Lenders learn by observing default history
+\end_layout
+
+\begin_layout Itemize
+PRO bias will persist in the long term
+\end_layout
+
+\begin_layout Itemize
+When default events are rare,
+ beliefs converge very slowly to a steady state
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Optimal policy communication:
+ 
+\series default
+Can PRO bias be combated by increasing transparency?
+\end_layout
+
+\begin_layout Itemize
+The more severe the PRO bias,
+ the stronger the incentive to choose greater transparency
+\end_layout
+
+\begin_layout Itemize
+PRO bias is severe enough 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ choosing a certain degree of transparency 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ higher social welfare 
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Summary
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Takeaways
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Why do some sovereigns face 
+\emph on
+high and persistent borrowing spreads
+\emph default
+ despite 
+\emph on
+moderate
+\emph default
+ debt and improving fundamentals?
+ (e.g.,
+ Argentina)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Core Mechanism:
+ 
+\series default
+Lenders systematically 
+\series bold
+overestimate
+\series default
+ the randomness or "irrational" component in sovereign policy choices 
+\end_layout
+
+\begin_layout Itemize
+The price/spread schedule to 
+\series bold
+pivot
+\series default
+ around a threshold 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Quantitative Result:
+ 
+\series default
+Paradox 
+\end_layout
+
+\begin_layout Itemize
+Optimally 
+\series bold
+deleverages
+\series default
+ to avoid high costs.
+\end_layout
+
+\begin_layout Itemize
+Yet,
+ average spreads 
+\series bold
+rise
+\series default
+,
+ creating a "low-debt,
+ high-cost" trap.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Microfoundation:
+ 
+\series default
+Rational inattention
+\end_layout
+
+\begin_layout Itemize
+Explain the lo
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
 \end_body
 \end_document
