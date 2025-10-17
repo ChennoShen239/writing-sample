@@ -1595,10 +1595,13 @@ attention costs:
 where $w(s)$ weights states near the default boundary. Under \eqref{eq:beta_posterior}–\eqref{eq:sigma_post_mean} and convex \eqref{eq:attention_cost}, the program admits a unique solution $(a_\beta^*,a_\sigma^*)$.
 
 \begin{proposition}[Mean‑quality shock induces attention substitution]\label{prop:att_sub}
-Under Assumptions (A1)–(A4) stated in Appendix~\ref{app:att_sub_assumptions}, suppose $\psi_\beta$ falls while $\psi_\sigma$ and other primitives are fixed. Then at any interior optimum of \eqref{eq:attention_program}, $a_\beta^*$ weakly decreases and $a_\sigma^*$ weakly increases. Consequently, $\widehat{\sigma^2}$ weakly rises in expectation and $\theta_{\mathrm{RI}}(s)$ weakly increases pointwise via \eqref{eq:theta_RI_def}.
+	Under Assumptions (A1)–(A4) stated in Appendix~\ref{app:att_sub_assumptions}, suppose $\psi_\beta$ falls while $\psi_\sigma$ and other primitives are fixed. Then at any interior optimum of \eqref{eq:attention_program}, $a_\beta^*$ weakly decreases and $a_\sigma^*$ weakly increases. Consequently, $\widehat{\sigma^2}$ weakly rises in expectation and $\theta_{\mathrm{RI}}(s)$ weakly increases pointwise via \eqref{eq:theta_RI_def}.
 \end{proposition}
 % See Appendix~\ref{app:attention_substitution} for a formal proof.
 
+\begin{proof}
+	See Appendix \ref{app:attention_substitution}.
+\end{proof}
 \paragraph{Event mapping}
 Interpreting Argentina’s inflation misreporting as a persistent negative shock
 to $\psi_\beta$ (signal quality for fundamentals),
@@ -1607,7 +1610,6 @@ $(a_\beta^*\downarrow,\,a_\sigma^*\uparrow)$. Through \eqref{eq:theta_RI_def},
 $\theta_{\mathrm{RI}}$ rises, so the same operator $\mathcal T_{\theta}$
 generates steeper price pivots, higher default thresholds with deleveraging,
 and elevated average spreads as documented in Section~\ref{sec:motivation}.
-
 
 \section{Policy and Information Extensions}\label{sec:extensions}
 
@@ -2584,60 +2586,69 @@ This section contains the proofs for the lemmas and propositions in the paper.
 \paragraph{Assumptions for Proposition~\ref{prop:att_sub}}\label{app:att_sub_assumptions}
 Let $\alpha\equiv \psi_\beta a_\beta$ denote effective mean precision and let $w(s)\propto L'\!\big(-\Delta V(s)/\eta\big)$ be the margin kernel from the main text. Define
 \[
-\mathcal M(\alpha,a_\sigma)\;\coloneqq\; \E\big[\,w(s)\,\nabla f\,^{\!\top}\,\hat\Sigma_\beta(\alpha)^{2}\,\nabla f\,\big],\qquad \hat\Sigma_\beta(\alpha)\;\equiv\;\big(\Sigma_\beta^{-1}+\alpha I_k\big)^{-1},
+	\mathcal M(\alpha,a_\sigma)\;\coloneqq\; \E\big[\,w(s)\,\nabla f\,^{\!\top}\,\hat\Sigma_\beta(\alpha)^{2}\,\nabla f\,\big],\qquad \hat\Sigma_\beta(\alpha)\;\equiv\;\big(\Sigma_\beta^{-1}+\alpha I_k\big)^{-1},
 \]
 \[
-\mathcal S(\alpha,a_\sigma)\;\coloneqq\; \E\Big[\,w(s)\,\big(-\,\partial\widehat{\sigma^2}/\partial a_\sigma\big)\,\Big],
+	\mathcal S(\alpha,a_\sigma)\;\coloneqq\; \E\Big[\,w(s)\,\big(-\,\partial\widehat{\sigma^2}/\partial a_\sigma\big)\,\Big],
 \]
-where expectations are taken under the stationary distribution of states. The first‑order conditions in the main text (Eq.~\eqref{eq:foc_compact}) can be written compactly as
+where expectations are taken under the stationary distribution of states. The
+first‑order conditions in the main text (Eq.~\eqref{eq:foc_compact}) can be
+written compactly as
 \[
-F_\beta(a_\beta,a_\sigma,\psi_\beta)\;\coloneqq\; \kappa_\beta a_\beta-\frac{\psi_\beta}{\eta^2}\,\mathcal M(\alpha,a_\sigma)\;=\;0,\qquad
-F_\sigma(a_\beta,a_\sigma,\psi_\beta)\;\coloneqq\; \kappa_\sigma a_\sigma-\frac{1}{\eta^2}\,\mathcal S(\alpha,a_\sigma)\;=\;0.
+	F_\beta(a_\beta,a_\sigma,\psi_\beta)\;\coloneqq\; \kappa_\beta a_\beta-\frac{\psi_\beta}{\eta^2}\,\mathcal M(\alpha,a_\sigma)\;=\;0,\qquad
+	F_\sigma(a_\beta,a_\sigma,\psi_\beta)\;\coloneqq\; \kappa_\sigma a_\sigma-\frac{1}{\eta^2}\,\mathcal S(\alpha,a_\sigma)\;=\;0.
 \]
 Assume:
 \begin{enumerate}
-  \item[(A1)] Diminishing returns: $\mathcal M_\alpha\le 0$ and $\mathcal S_{a_\sigma}\le 0$ for all relevant arguments.
-  \item[(A2)] Substitutability at the margin: $\mathcal S_\alpha\le 0$ (greater mean precision lowers the marginal value of dispersion attention).
-  \item[(A3)] Interior regularity: the Jacobian $J\equiv \partial(F_\beta,F_\sigma)/\partial(a_\beta,a_\sigma)$ is nonsingular at the optimum; sufficient conditions are
-  \[
-  \kappa_\beta-\frac{\psi_\beta^{2}}{\eta^2}\,\mathcal M_\alpha\;>\;0,\qquad \kappa_\sigma-\frac{1}{\eta^2}\,\mathcal S_{a_\sigma}\;>\;0,\qquad \det J\neq 0.
-  \]
-  \item[(A4)] Parameter effect on mean attention: $\mathcal M+\alpha\,\mathcal M_\alpha>0$.
+	\item[(A1)] Diminishing returns: $\mathcal M_\alpha\le 0$ and $\mathcal S_{a_\sigma}\le 0$ for all relevant arguments.
+	\item[(A2)] Substitutability at the margin: $\mathcal S_\alpha\le 0$ (greater mean precision lowers the marginal value of dispersion attention).
+	\item[(A3)] Interior regularity: the Jacobian $J\equiv \partial(F_\beta,F_\sigma)/\partial(a_\beta,a_\sigma)$ is nonsingular at the optimum; sufficient conditions are
+	      \[
+		      \kappa_\beta-\frac{\psi_\beta^{2}}{\eta^2}\,\mathcal M_\alpha\;>\;0,\qquad \kappa_\sigma-\frac{1}{\eta^2}\,\mathcal S_{a_\sigma}\;>\;0,\qquad \det J\neq 0.
+	      \]
+	\item[(A4)] Parameter effect on mean attention: $\mathcal M+\alpha\,\mathcal M_\alpha>0$.
 \end{enumerate}
 
 \subsection{Proof of Proposition~\ref{prop:att_sub}}\label{app:attention_substitution}
 \begin{proof}
-Suppress the state $s$ for notational clarity. Let $F_\beta=0$ and $F_\sigma=0$ denote the two first‑order conditions above. Write $\alpha\equiv\psi_\beta a_\beta$. The Jacobian with respect to $(a_\beta,a_\sigma)$ is
-\[
-J\;=\;\begin{bmatrix}
-\partial_{a_\beta}F_\beta & \partial_{a_\sigma}F_\beta \\[2pt]
-\partial_{a_\beta}F_\sigma & \partial_{a_\sigma}F_\sigma
-\end{bmatrix}
-\;=\;
-\begin{bmatrix}
-\kappa_\beta-\tfrac{\psi_\beta^{2}}{\eta^2}\,\mathcal M_\alpha & -\tfrac{\psi_\beta}{\eta^2}\,\mathcal M_{a_\sigma} \\[4pt]
--\tfrac{\psi_\beta}{\eta^2}\,\mathcal S_\alpha & \kappa_\sigma-\tfrac{1}{\eta^2}\,\mathcal S_{a_\sigma}
-\end{bmatrix}.
-\]
-By (A1)–(A3), the diagonal entries are positive and $J$ is nonsingular. Differentiate $F_\beta=F_\sigma=0$ with respect to $\psi_\beta$ and apply the Implicit Function Theorem:
-\[
-\begin{bmatrix} \partial a_\beta^*/\partial\psi_\beta \\ \partial a_\sigma^*/\partial\psi_\beta \end{bmatrix}
-\;=\; - J^{-1}\,\begin{bmatrix} \partial_{\psi_\beta}F_\beta \\ \partial_{\psi_\beta}F_\sigma \end{bmatrix}.
-\]
-Parameter derivatives are
-\[\partial_{\psi_\beta}F_\sigma = -\tfrac{1}{\eta^2}\,a_\beta\,\mathcal S_\alpha \;\ge\;0\quad\text{by (A2),}\]
-\[\partial_{\psi_\beta}F_\beta = -\tfrac{1}{\eta^2}\,\bigl(\mathcal M+\alpha\,\mathcal M_\alpha\bigr) \;<\;0\quad\text{by (A4).}\]
-Using the explicit inverse of a $2\times2$ matrix, one obtains
-\[
-\frac{\partial a_\sigma^*}{\partial\psi_\beta}
-\;=\;\frac{1}{\det J}\Bigl[\bigl(\kappa_\beta-\tfrac{\psi_\beta^{2}}{\eta^2}\,\mathcal M_\alpha\bigr)\,\partial_{\psi_\beta}F_\sigma \;+\; \tfrac{\psi_\beta}{\eta^2}\,\mathcal S_\alpha\,\partial_{\psi_\beta}F_\beta\Bigr] \;\le\;0,
-\]
-where the inequality uses $\det J\neq0$ with positive diagonal terms, $\partial_{\psi_\beta}F_\sigma\ge0$, $\partial_{\psi_\beta}F_\beta<0$, and $\mathcal S_\alpha\le0$. Similarly,
-\[
-\frac{\partial a_\beta^*}{\partial\psi_\beta}
-\;=\;\frac{1}{\det J}\Bigl[ \tfrac{\psi_\beta}{\eta^2}\,\mathcal M_{a_\sigma}\,\partial_{\psi_\beta}F_\sigma \;+\; \bigl(\kappa_\sigma-\tfrac{1}{\eta^2}\,\mathcal S_{a_\sigma}\bigr)\,\big(-\partial_{\psi_\beta}F_\beta\big)\Bigr] \;\ge\;0,
-\]
-which is weakly positive under (A1)–(A3); it is strictly positive if at least one inequality in (A1)–(A2) is strict. This establishes that a fall in $\psi_\beta$ (lower fundamental signal quality) weakly reduces $a_\beta^*$ and weakly raises $a_\sigma^*$ at an interior optimum.
+	Suppress the state $s$ for notational clarity. Let $F_\beta=0$ and $F_\sigma=0$ denote the two first‑order conditions above. Write $\alpha\equiv\psi_\beta a_\beta$. The Jacobian with respect to $(a_\beta,a_\sigma)$ is
+	\[
+		J\;=\;\begin{bmatrix}
+			\partial_{a_\beta}F_\beta  & \partial_{a_\sigma}F_\beta  \\[2pt]
+			\partial_{a_\beta}F_\sigma & \partial_{a_\sigma}F_\sigma
+		\end{bmatrix}
+		\;=\;
+		\begin{bmatrix}
+			\kappa_\beta-\tfrac{\psi_\beta^{2}}{\eta^2}\,\mathcal M_\alpha & -\tfrac{\psi_\beta}{\eta^2}\,\mathcal M_{a_\sigma}     \\[4pt]
+			-\tfrac{\psi_\beta}{\eta^2}\,\mathcal S_\alpha                 & \kappa_\sigma-\tfrac{1}{\eta^2}\,\mathcal S_{a_\sigma}
+		\end{bmatrix}.
+	\]
+	By (A1)–(A3), the diagonal entries are positive and $J$ is nonsingular.
+	Differentiate $F_\beta=F_\sigma=0$ with respect to $\psi_\beta$ and apply the
+	Implicit Function Theorem:
+	\[
+		\begin{bmatrix} \partial a_\beta^*/\partial\psi_\beta \\ \partial a_\sigma^*/\partial\psi_\beta \end{bmatrix}
+		\;=\; - J^{-1}\,\begin{bmatrix} \partial_{\psi_\beta}F_\beta \\ \partial_{\psi_\beta}F_\sigma \end{bmatrix}.
+	\]
+	Parameter derivatives are
+	\[\partial_{\psi_\beta}F_\sigma = -\tfrac{1}{\eta^2}\,a_\beta\,\mathcal S_\alpha \;\ge\;0\quad\text{by (A2),}\]
+	\[\partial_{\psi_\beta}F_\beta = -\tfrac{1}{\eta^2}\,\bigl(\mathcal M+\alpha\,\mathcal M_\alpha\bigr) \;<\;0\quad\text{by (A4).}\]
+	Using the explicit inverse of a $2\times2$ matrix, one obtains
+	\[
+		\frac{\partial a_\sigma^*}{\partial\psi_\beta}
+		\;=\;\frac{1}{\det J}\Bigl[\bigl(\kappa_\beta-\tfrac{\psi_\beta^{2}}{\eta^2}\,\mathcal M_\alpha\bigr)\,\partial_{\psi_\beta}F_\sigma \;+\; \tfrac{\psi_\beta}{\eta^2}\,\mathcal S_\alpha\,\partial_{\psi_\beta}F_\beta\Bigr] \;\le\;0,
+	\]
+	where the inequality uses $\det J\neq0$ with positive diagonal terms,
+	$\partial_{\psi_\beta}F_\sigma\ge0$, $\partial_{\psi_\beta}F_\beta<0$, and
+	$\mathcal S_\alpha\le0$. Similarly,
+	\[
+		\frac{\partial a_\beta^*}{\partial\psi_\beta}
+		\;=\;\frac{1}{\det J}\Bigl[ \tfrac{\psi_\beta}{\eta^2}\,\mathcal M_{a_\sigma}\,\partial_{\psi_\beta}F_\sigma \;+\; \bigl(\kappa_\sigma-\tfrac{1}{\eta^2}\,\mathcal S_{a_\sigma}\bigr)\,\big(-\partial_{\psi_\beta}F_\beta\big)\Bigr] \;\ge\;0,
+	\]
+	which is weakly positive under (A1)–(A3); it is strictly positive if at least
+	one inequality in (A1)–(A2) is strict. This establishes that a fall in
+	$\psi_\beta$ (lower fundamental signal quality) weakly reduces $a_\beta^*$ and
+	weakly raises $a_\sigma^*$ at an interior optimum.
 \end{proof}
 
 \subsection{Pricing Operator: Contraction and Differentiability}\label{app:operator_analysis}
@@ -2728,7 +2739,6 @@ $\tilde\theta\approx 1+\Var(\xi)/(4\eta^2)$. This formalizes the main-text
 claim that posterior dispersion around the default margin softens the logit in a
 way that is locally equivalent to evaluating the same pricing operator at a
 higher $\theta$.
-
 
 \subsection{Proof of Proposition~\ref{prop:ramsey_welfare}}\label{app:proof_ramsey}
 
