@@ -3233,6 +3233,21 @@ Lenders maximize
 
 \end_inset
 
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Formally,
+ 
+\begin_inset Formula $U(y,B';a_{\mu},a_{\sigma};q)\;\coloneqq\;\frac{1}{1+r}\;\mathbb{E}_{s_{\mu}\mid y;\,a_{\mu}}\;\\_{y'\mid y,s_{\mu};\,a_{\mu}}\!\left[\bigl(1-P_{\theta_{\mathrm{RI}}(y,B';a_{\sigma})}(y',B')\bigr)\Bigl(\kappa+(1-\delta)\,\E_{B''\mid y',B'}\big[\,q(y',B'')\,\big]\Bigr)\right],$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 Let the marginal pricing sensitivity be:
 \begin_inset Formula 
 \[
@@ -3710,7 +3725,7 @@ Optimally
 \series bold
 deleverages
 \series default
- to avoid high costs.
+ to avoid high costs
 \end_layout
 
 \begin_layout Itemize
@@ -3721,7 +3736,7 @@ rise
 \series default
 ,
  creating a "low-debt,
- high-cost" trap.
+ high-cost" trap
 \end_layout
 
 \begin_layout Standard
@@ -3734,7 +3749,7 @@ Rational inattention
 \end_layout
 
 \begin_layout Itemize
-Explain the lo
+Explain the logic of Argentina's decoupling
 \end_layout
 
 \end_deeper

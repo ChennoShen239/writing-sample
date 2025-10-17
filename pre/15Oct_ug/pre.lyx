@@ -3226,6 +3226,25 @@ Tail-weight and Pricing
 \begin_deeper
 \begin_layout Standard
 Lenders maximize
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Formally,
+ 
+\begin_inset Formula 
+\[
+U(y,B';a_{\mu},a_{\sigma};q)\coloneqq\frac{1}{1+r}\mathbb{E}_{s_{\mu}\mid y;\,a_{\mu}}\mathbb{E}_{y'\mid y,s_{\mu};\,a_{\mu}}\left[\bigl(1-P_{\theta_{\mathrm{RI}}(y,B';a_{\sigma})}(y',B')\bigr)\Bigl(\kappa+(1-\delta)\mathbb{E}_{B''\mid y',B'}\big[q(y',B'')\big]\Bigr)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset Formula 
 \[
 \max_{a_{\mu},a_{\sigma}\ge0}\mathbb{E}[U\mid a_{\mu},a_{\sigma}]-\Phi(a_{\mu},a_{\sigma}).

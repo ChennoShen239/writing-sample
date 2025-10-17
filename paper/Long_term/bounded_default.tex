@@ -1529,6 +1529,13 @@ convex cost
 interpretable as attention/processing costs. (An entropy/mutual-information
 formulation yields identical monotone comparative statics in precisions; see \citet{Sims2003, MackowiakWiederholt2009, MatejkaMcKay2015, Veldkamp2011}.)
 
+Signals do not augment the state or alter primitives. Mean attention $a_\mu$
+refines the posterior over the \emph{same} fundamentals that shift $\Delta V$;
+dispersion attention $a_\sigma$ only moves the tail-weight parameter at which
+the \emph{same} pricing operator is evaluated, $\theta_{\mathrm{RI}}(y,B')$.
+Setting $a_\sigma\equiv0$ (hence $\theta_{\mathrm{RI}}\equiv1$) recovers the
+baseline with rational lenders.
+
 This information environment will feed into pricing through the attention–tilt
 mapping below: attention determines effective information, which determines the
 tail-weight in default beliefs that the same pricing operator uses.
@@ -1591,6 +1598,21 @@ solves
 	\max_{a_\mu,a_\sigma\ge0}\; \E[U\mid a_\mu,a_\sigma] - \Phi(a_\mu,a_\sigma).
 	\label{eq:att_opt_micro}
 \end{equation}
+\noindent\textit{Lenders' objective.} For a given state $(y,B')$ and price function
+$q$, define the ex-ante value of a unit face-value bond under attention
+$(a_\mu,a_\sigma)$ by
+\begin{equation}
+	\label{eq:lender_U_def}
+	U(y,B';a_\mu,a_\sigma; q)
+	\;\coloneqq\; \frac{1}{1+r}\;\E_{s_\mu\mid y;\,a_\mu}\;\E_{y'\mid y, s_\mu;\,a_\mu}\!\left[\bigl(1-P_{\theta_{\mathrm{RI}}(y,B';a_\sigma)}(y',B')\bigr)\Bigl(\kappa+(1-\delta)\,\E_{B''\mid y',B'}\big[\,q(y',B'')\,\big]\Bigr)\right],
+\end{equation}
+where the inner expectation is taken under the posterior for $y'$ implied by the
+Gaussian signal $s_\mu$ with precision $\psi_\mu a_\mu$ (for concreteness, take
+$\mu\equiv y'$), and $P_{\theta}$ is the logistic default probability in
+\eqref{eq:net_value_definition}. Prices in equilibrium continue to be the fixed
+point of the \emph{same} operator evaluated at $\theta_{\mathrm{RI}}(\cdot)$; the
+objective in~\eqref{eq:lender_U_def} formalizes the pre-signal valuation that
+determines the marginal benefits of attention.
 Define the marginal pricing sensitivity to dispersion by
 \begin{equation}
 	\mathcal S(y,B') \;\coloneqq\; \E\!\left[\frac{\partial U}{\partial \theta}(y,B';\,\theta_{\mathrm{RI}}(y,B'))\right] \;\ge 0.
