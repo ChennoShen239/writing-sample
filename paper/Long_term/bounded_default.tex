@@ -1495,22 +1495,27 @@ necessary to overcome entrenched priors exhibiting PRO.
 
 \section{Microfoundations for PRO}\label{sec:micro}
 
-This section microfounds PRO via rational inattention: competitive lenders
-optimally allocate attention across mean and dispersion signals subject to
-processing costs. The choice endogenizes a state-dependent tail-weight
-parameter $\theta_{\mathrm{RI}}(s)$ that enters the \emph{same} pricing
-operator as in the baseline model, so all results are genuine comparative
-statics within a single environment rather than across different models.
+This section microfounds PRO via rational inattention (RI). Competitive lenders
+choose how to allocate limited attention across mean and dispersion signals, at
+convex information-processing costs. Their choice endogenizes a state-dependent
+tail-weight parameter $\theta_{\mathrm{RI}}(s)$ that we evaluate inside the
+\emph{same} pricing operator as in the baseline, so all results are genuine
+comparative statics within a single, unified environment.
 
-\paragraph{Overview and link to baseline}
-I maintain primitives, debt structure, and the sovereign aggregator $J_\rho$
-and use the pricing operator in Definition~\ref{def:pricing_operator}. Only the
-belief/tilt parameter becomes state-dependent through information choice. Let
-$s=(y,B')$ denote the relevant state. For operator properties used here and in
-Appendix~\ref{app:operator_analysis}, I restrict $\theta\in[1,\bar\theta]$ for
-a finite $\bar\theta>1$.
+\paragraph{Motivation and linkage}
+The goal is to show that the baseline PRO parameter $\theta$ is not an
+exogenous belief shifter but the endogenous outcome of optimal attention under
+costs. The key discipline is the \emph{same-operator} principle: the
+state-dependent tail weight $\theta_{\mathrm{RI}}(s)$ enters directly into the
+baseline pricing operator $\mathcal T_\theta$
+(Definition~\ref{def:pricing_operator}). Thus, the microfoundation preserves
+primitives, debt structure, and the sovereign’s aggregator $J_\rho$; only the
+evaluation point of the \emph{same} operator changes through information
+choice. Let $s=(y,B')$ denote the state. For the operator properties used here
+and in Appendix~\ref{app:operator_analysis}, restrict $\theta\in[1,\bar\theta]$
+with finite $\bar\theta>1$.
 
-\paragraph{Information structure}
+\paragraph{Economic environment and information structure}
 Each period, competitive lenders observe two public signals: a
 mean/fundamentals signal and a dispersion/stability signal,
 \[
@@ -1541,7 +1546,7 @@ This information environment will feed into pricing through the attention–tilt
 mapping below: attention determines effective information, which determines the
 tail-weight in default beliefs that the same pricing operator uses.
 
-\paragraph{From attention to tail weight and pricing}
+\paragraph{Core mechanism: from attention to tail weight and pricing}
 Attention to dispersion maps into the tail-weight in lenders' default beliefs.
 I adopt a linear mapping for clarity and identification:\footnote{More
 	generally, if \(\theta_{\mathrm{RI}}(y,B')=\min\{\,1+\varphi\,
@@ -1620,7 +1625,7 @@ introduced relative to the baseline.
 	Preference-based ambiguity models---smooth ambiguity \citet{KlibanoffMarinacciMukerji2005}, variational preferences \citet{MaccheroniMarinacciRustichini2006}, and robust control \citet{HansenSargent2008}---can be represented as likelihood twists or penalty-adjusted evaluations that effectively tilt tails in the same pricing operator. Under the operator assumptions in Appendix~\ref{app:operator_analysis}, the pivot and policy comparative statics follow analogously. The RI formulation here endogenizes the tilt through attention choice, yielding the state-dependent $\theta_{\mathrm{RI}}(\cdot)$.
 \end{remark}
 
-\paragraph{Attention choice}
+\paragraph{Choice problem and first-order conditions}
 Given this mapping, lenders choose attention to maximize expected discounted
 payouts net of information costs. Let $U$ denote the objective; then attention
 solves
@@ -1656,6 +1661,7 @@ The first-order condition for $a_\sigma$ is
 Thus $a_\sigma(y,B')=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S(y,B')$, and
 $\theta_{\mathrm{RI}}(y,B')$ increases in $\mathcal S(y,B')$ via~\eqref{eq:theta_RI_micro}.
 
+\paragraph{Key results: comparative statics}
 The next corollary records the implied state monotonicity of attention and the
 RI tail weight.
 
@@ -1741,8 +1747,9 @@ this effect within the same optimization problem.
 \end{proof}
 
 \medskip
-These continuity and monotonicity properties feed directly into the operator that
-prices bonds.
+\paragraph{Closing the loop: same operator and empirics}
+These continuity and monotonicity properties feed directly into the operator
+that prices bonds.
 
 \begin{proposition}[Operator properties and inherited comparative statics]
 	\label{prop:RI_operator_micro}
