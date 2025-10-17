@@ -63,7 +63,8 @@
 \maketitle
 
 \begin{abstract}
-	Why do some sovereigns pay high spreads despite moderate debt? I build a quantitative default model where lenders overweight the dispersion of policy realizations (policy‑randomness overestimation, PRO). Within a single pricing operator, PRO pivots price/spread schedules around a state‑contingent threshold: the sovereign deleverages while defaulting at higher debt, raising average spreads and producing a “stability illusion” (lower volatility with higher premia). I microfound PRO via rational inattention: optimal attention to dispersion generates a state‑dependent tail weight that enters the same operator, so baseline comparative statics extend mechanically. Policy and information extensions show limited power of fiscal transfers, persistence from negativity‑biased learning, and welfare gains from transparency. Event‑style hooks (e.g., Argentina’s inflation misreporting) align with the model’s pivot, threshold, and decoupling predictions.
+	Why do some sovereigns pay high spreads despite moderate debt? I build a quantitative default model where lenders overweight the dispersion of policy realizations (policy‑randomness overestimation, PRO). Within a single pricing operator, PRO pivots price/spread schedules around a state‑contingent threshold: the sovereign deleverages while defaulting at higher debt, raising average spreads and producing a "stability illusion" (lower volatility with higher premia). Policy and information extensions show limited power of fiscal transfers, persistence from negativity‑biased learning, and welfare gains from transparency. Event‑style hooks (e.g., Argentina's inflation misreporting) align with the model's pivot, threshold, and decoupling predictions.
+	A rational‑inattention microfoundation based on a mental‑model‑plus‑residual representation endogenizes the tail weight $\theta$ \emph{within the same pricing operator}.
 \end{abstract}
 
 \noindent \textbf{Keywords:} Sovereign Default, Behavioral Macroeconomics, Policy-Randomness Overestimation (PRO), Sovereign Spreads, Information Frictions, Argentina, Debt Management.
@@ -82,24 +83,21 @@ pricing operator, PRO pivots price/spread schedules around a state‑contingent
 threshold. A rational sovereign deleverages while defaulting at higher debt, so
 average spreads rise and volatility falls—a “stability illusion.”
 
-I microfound PRO via rational inattention: lenders endogenously allocate
-attention to dispersion, producing a state‑dependent tilt toward tails that
-enters the same pricing operator; the baseline comparative statics then carry
-through directly. Empirically, the framework matches event‑style patterns such
-as Argentina’s inflation misreporting: sharper pivots, higher default
-thresholds alongside deleveraging, and maturity/peer decoupling concentrated in
-stress. Intuitively, PRO tilts pricing so that borrowing becomes costlier in
-the range where governments normally issue and slightly cheaper only very close
-to default. In the usual borrowing region (below the pivot threshold) the
-perceived policy dispersion attracts extra compensation, lowering prices and
-raising spreads even when default risk is low; near default the same tilt
-softens the “doom,” lifting prices there. Facing this pivoted schedule, a
-sovereign borrows less, shifting choices toward the safer region. Averaging
-over time, two forces matter: a wedge in pricing that lifts spreads in the safe
-region, and a composition shift toward states with lower baseline spreads. In
-quantitative exercises, the wedge dominates, so average spreads rise even as
-debt falls. The body of the paper formalizes this logic with a decomposition
-and operator‑based comparative statics.
+Empirically, the framework matches event‑style patterns such as Argentina’s
+inflation misreporting: sharper pivots, higher default thresholds alongside
+deleveraging, and maturity/peer decoupling concentrated in stress. Intuitively,
+PRO tilts pricing so that borrowing becomes costlier in the range where
+governments normally issue and slightly cheaper only very close to default. In
+the usual borrowing region (below the pivot threshold) the perceived policy
+dispersion attracts extra compensation, lowering prices and raising spreads
+even when default risk is low; near default the same tilt softens the “doom,”
+lifting prices there. Facing this pivoted schedule, a sovereign borrows less,
+shifting choices toward the safer region. Averaging over time, two forces
+matter: a wedge in pricing that lifts spreads in the safe region, and a
+composition shift toward states with lower baseline spreads. In quantitative
+exercises, the wedge dominates, so average spreads rise even as debt falls. The
+body of the paper formalizes this logic with a decomposition and operator‑based
+comparative statics.
 
 Three theoretical extensions deepen the analysis. First, even optimal Ramsey
 fiscal policy cannot eliminate welfare losses from PRO due to fundamental
@@ -199,19 +197,19 @@ specifically targets the perceived volatility of the sovereign's \textit{policy
 preference-based formulations---\textit{smooth ambiguity}
 \citet{KlibanoffMarinacciMukerji2005} and \textit{variational preferences}
 \citet{MaccheroniMarinacciRustichini2006}---likewise tilt decision weights
-toward adverse scenarios via second-order beliefs or penalty terms. My RI
-microfoundation offers an information-constraint counterpart: in the unified
-operator it induces a (possibly state-dependent) tail weight $\theta$ with
-aligned comparative statics.\footnote{This pivot effect differs from both
-	reputation and ambiguity aversion models. While reputation models like
-	\citet{AmadorPhelan2021} often generate monotonic price effects through type
-	revelation under standard implementations, and \citet{Fourakis2021} shows
-	reputation loss \textit{before} default through rapid debt accumulation, the
-	mechanism here can produce non-monotonic price schedules where debt becomes
-	cheaper near default but more expensive in normal times. Similarly, ambiguity
-	models like \citet{RochRoldan2023} explain high spreads through a uniform
-	distortion of fundamental shocks, which also differs from the pivot mechanism.}
-And unlike \textit{diagnostic expectations} \citet{GennaioliShleifer2018,
+toward adverse scenarios via second-order beliefs or penalty terms. An
+information-constraint counterpart can, within the same operator, induce a
+(possibly state-dependent) tail weight $\theta$ with aligned comparative
+statics.\footnote{This pivot effect differs from both reputation and ambiguity
+	aversion models. While reputation models like \citet{AmadorPhelan2021} often
+	generate monotonic price effects through type revelation under standard
+	implementations, and \citet{Fourakis2021} shows reputation loss \textit{before}
+	default through rapid debt accumulation, the mechanism here can produce
+	non-monotonic price schedules where debt becomes cheaper near default but more
+	expensive in normal times. Similarly, ambiguity models like
+	\citet{RochRoldan2023} explain high spreads through a uniform distortion of
+	fundamental shocks, which also differs from the pivot mechanism.} And unlike
+\textit{diagnostic expectations} \citet{GennaioliShleifer2018,
 	BordaloEtAl2023}, which generate boom-bust cycles through time-varying news
 overreaction, my time-invariant bias produces persistent ``PRO premia,''
 counterintuitive deleveraging, and the ``softening-of-doom'' effects that
@@ -226,10 +224,11 @@ standard formulations may find challenging to replicate.\footnote{The empirical
 
 \paragraph{Roadmap} Section ~\ref{sec:motivation} presents the motivation; Section~\ref{sec:model}
 presents the environment and recursive equilibrium; Section~\ref{sec:theory}
-develops core comparative statics; Section~\ref{sec:micro} provides the
-rational‑inattention microfoundation; Section~\ref{sec:extensions} studies
-policy and information extensions. I summarize testable implications before the
-conclusion.
+develops core comparative statics; Section~\ref{sec:micro} develops a
+rational‑inattention microfoundation based on a mental‑model‑plus‑residual
+representation that preserves the same pricing operator;
+Section~\ref{sec:extensions} studies policy and information extensions. I
+summarize testable implications before the conclusion.
 % --- MOTIVATION ---------------------------------------------------------------
 \section{Motivation: Argentina's Inflation--Misreporting Episode}
 \label{sec:motivation}
@@ -580,8 +579,6 @@ well behaved.
 \begin{proof}
 	See Appendix~\ref{app:proof_existence_uniqueness}.
 \end{proof}
-
-% (Moved: see microfoundations section after Eq.~\eqref{eq:foc_sigma_micro})
 
 \paragraph{Unified Operators and Notation}
 To keep the subsequent theory tightly anchored to the baseline model, I adopt
@@ -1493,349 +1490,124 @@ persistence and beliefs generates hysteresis effects: temporary improvements in
 fundamentals produce limited deleveraging, while sustained improvements are
 necessary to overcome entrenched priors exhibiting PRO.
 
-\section{Microfoundations for PRO}\label{sec:micro}
+\section{Microfoundations for PRO: Mental Model and Residual Uncertainty}\label{sec:micro}
 
-This section microfounds PRO via rational inattention (RI). Competitive lenders
-choose how to allocate limited attention across mean and dispersion signals, at
-convex information-processing costs. Their choice endogenizes a state-dependent
-tail-weight parameter $\theta_{\mathrm{RI}}(s)$ that we evaluate inside the
-\emph{same} pricing operator as in the baseline, so all results are genuine
-comparative statics within a single, unified environment.
+This section develops a rational‑inattention (RI) microfoundation that is fully
+consistent with the baseline structure and the same pricing operator
+(Definition~\ref{def:pricing_operator}). Lenders use a simplified mental model
+of the sovereign’s net payoff difference and acknowledge model imperfection via
+a residual. Limited attention is allocated between learning model parameters
+and learning the residual’s instability. The residual‑uncertainty channel
+softens the default logit locally around the decision boundary, which is
+equivalent to evaluating the same pricing operator at a larger tail weight
+$\theta>1$.
 
-\paragraph{Motivation and linkage}
-The goal is to show that the baseline PRO parameter $\theta$ is not an
-exogenous belief shifter but the endogenous outcome of optimal attention under
-costs. The key discipline is the \emph{same-operator} principle: the
-state-dependent tail weight $\theta_{\mathrm{RI}}(s)$ enters directly into the
-baseline pricing operator $\mathcal T_\theta$
-(Definition~\ref{def:pricing_operator}). Thus, the microfoundation preserves
-primitives, debt structure, and the sovereign’s aggregator $J_\rho$; only the
-evaluation point of the \emph{same} operator changes through information
-choice. Let $s=(y,B')$ denote the state. For the operator properties used here
-and in Appendix~\ref{app:operator_analysis}, restrict $\theta\in[1,\bar\theta]$
-with finite $\bar\theta>1$.
+\paragraph{Same‑operator discipline}
+Let $s\equiv(y,B')$ denote the state. As in the baseline, lenders price bonds
+using the operator
+\begin{equation*}
+	\big(\mathcal T_\theta q\big)(y,B')=\frac{1}{1+r}\,\E_{y'|y}\Big[(1-P_\theta(y',B'))\,\big(\kappa+(1-\delta)\,\E_{B''|y',B'}[q(y',B'')]\big)\Big],
+\end{equation*}
+with logistic default
+\begin{equation*}
+	P_\theta(y',B')=L\!\Big(-\tfrac{\Delta V(y',B')}{\theta\eta}\Big),\qquad L(z)\equiv(1+e^{-z})^{-1},\quad \eta>0.
+\end{equation*}
+The sovereign’s problem and all primitives are unchanged. The microfoundation endogenizes the state‑dependent evaluation parameter $\theta_{\mathrm{RI}}(s)\ge 1$; the operator itself is the same. This framework moves beyond the simple mean‑vs‑dispersion dichotomy: lenders’ core challenge is to distinguish ``known unknowns'' (model‑parameter uncertainty) from ``unknown unknowns'' (model‑residual uncertainty).
 
-\paragraph{Economic environment and information structure}
-Each period, competitive lenders observe two public signals: a
-mean/fundamentals signal and a dispersion/stability signal,
-\[
-	s_\mu = \mu + \varepsilon_\mu,\quad \varepsilon_\mu\sim \mathcal N\bigl(0,\,(\psi_\mu a_\mu)^{-1}\bigr),\qquad
-	s_\sigma = \sigma + \varepsilon_\sigma,\quad \varepsilon_\sigma\sim \mathcal N(0,\,a_\sigma^{-1}),
-\]
-where $\mu$ proxies first-moment fundamentals and $\sigma$ proxies second-
-moment (dispersion / instability) of policy realizations. The parameter
-$\psi_\mu\in(0,1]$ captures the credibility/productivity of the mean signal: a
-lower $\psi_\mu$ means the same attention $a_\mu$ produces lower
-\emph{effective} precision. Lenders choose precisions $a_\mu,a_\sigma\ge0$ at
-convex cost
-\begin{equation}
-	\Phi(a_\mu,a_\sigma) = \tfrac{\kappa_\mu}{2}a_\mu^2 + \tfrac{\kappa_\sigma}{2}a_\sigma^2,
-	\label{eq:info_cost_micro}
+\subsection{Mental model with residual}
+Lenders believe the net value difference can be decomposed as
+\begin{equation}\label{eq:mental_model}
+	\Delta V(s)=f(s;\beta)+\xi,\qquad s=(y,B').
 \end{equation}
-interpretable as attention/processing costs. (An entropy/mutual-information
-formulation yields identical monotone comparative statics in precisions; see \citet{Sims2003, MackowiakWiederholt2009, MatejkaMcKay2015, Veldkamp2011}.)
-
-Signals do not augment the state or alter primitives. Mean attention $a_\mu$
-refines the posterior over the \emph{same} fundamentals that shift $\Delta V$;
-dispersion attention $a_\sigma$ only moves the tail-weight parameter at which
-the \emph{same} pricing operator is evaluated, $\theta_{\mathrm{RI}}(y,B')$.
-Setting $a_\sigma\equiv0$ (hence $\theta_{\mathrm{RI}}\equiv1$) recovers the
-baseline with rational lenders.
-
-This information environment will feed into pricing through the attention–tilt
-mapping below: attention determines effective information, which determines the
-tail-weight in default beliefs that the same pricing operator uses.
-
-\paragraph{Core mechanism: from attention to tail weight and pricing}
-Attention to dispersion maps into the tail-weight in lenders' default beliefs.
-I adopt a linear mapping for clarity and identification:\footnote{More
-	generally, if \(\theta_{\mathrm{RI}}(y,B')=\min\{\,1+\varphi\,
-	w(a_\sigma(y,B'))\!,\;\bar\theta\,\}\) with a strictly increasing \(w\in C^1\)
-	and \(w(0)=0\), then under the same positivity/order and uniform-contraction
-	conditions on the pricing operator over \(\theta\in[1,\bar\theta]\), the
-	price-pivot and policy comparative statics are unchanged. I adopt the linear
-	case for parsimony and closed-form identification; see
-	Appendices~\ref{app:operator_analysis},\ref{app:ri_general} for operator
-	conditions and the general $w(\cdot)$ treatment.}
-\begin{equation}
-	\theta_{\mathrm{RI}}(y,B') \;=\; \min\Big\{\,1 + \varphi\, a_\sigma(y,B')\,,\; \bar\theta\,\Big\},\qquad \varphi>0.
-	\label{eq:theta_RI_micro}
-\end{equation}
-\begin{remark}[Why $a_\sigma\mapsto \theta_{\mathrm{RI}}$ is increasing]
-	In the logistic default mapping of~\eqref{eq:net_value_definition}, $\theta$ scales the within‑period shock in the denominator: \(P_\theta=L(-\Delta V/(\theta\eta))\). Raising $\theta$ flattens the logistic around the decision margin $\Delta V\approx 0$, pushing probabilities toward $1/2$: safer states look a bit riskier (default probability up when $\Delta V>0$) and doomed states look a bit less certain (default probability down when $\Delta V<0$). This is exactly what it means to put \emph{more weight on randomness near the threshold}.
-
-	The dispersion attention $a_\sigma$ is the resource devoted to processing
-	instability/second‑moment information. Allocating more $a_\sigma$ is valuable
-	only insofar as it changes prices via the "threshold‑randomness" channel. The
-	reduced‑form that implements this, while keeping the \emph{same} pricing
-	operator, is to evaluate it at a larger $\theta$. Two complementary points pin
-	down the monotonicity: - By construction (see the definition of $\mathcal S$
-	below), the marginal value of tail‑weight in pricing is nonnegative, \(\mathcal
-	S(y,B')=\E[\partial U/\partial\theta]\ge 0\). The lender’s FOC \(\kappa_\sigma
-	a_\sigma=\varphi\,\mathcal S\) then says: whenever an extra bit of tail‑weight
-	raises expected payouts, the optimal response is to raise $a_\sigma$.
-	Consistency of signs requires that $a_\sigma\mapsto\theta$ be
-	\emph{increasing}. - Geometrically, as $a_\sigma$ rises, the lender
-	intentionally broadens the perceived decision noise exactly where payoffs are
-	most sensitive (around $\Delta V\approx 0$). In the logit, the unique
-	one‑parameter way to broaden around the center while preserving the functional
-	form is to increase $\theta$.
-\end{remark}
-\medskip
-\paragraph{A local bridge: posterior mixtures soften the logit}
-Let $z\equiv -\Delta V/\eta$ and $P(z)=L(z)$. If beliefs are a mean-zero
-mixture $z+\varepsilon$ with $\Var(\varepsilon)=\nu$ (reflecting how processing
-and emphasizing dispersion risk affects the perceived margin), then small
-dispersion softens slopes around the threshold in the same way as a higher
-logit temperature.
-
-\begin{lemma}[RI mixture $\Rightarrow$ logit temperature, local]
-	\label{lem:ri_logit_bridge}
-	There exists a function $\tilde\theta(\nu)=1+\tfrac{\nu}{4}+o(\nu)$ as
-	$\nu\to0$ such that, uniformly on $|z|\le \bar z$,
-	\[
-		\E\big[L(z+\varepsilon)\big] \;=\; L\!\Big(\tfrac{z}{\tilde\theta(\nu)}\Big)\; +\; O\big(\nu^{3/2}\big).
-	\]
-	In particular, at the margin $z=0$, the slope satisfies $\E[L'(\varepsilon)] =
-		\tfrac{1}{4}\big(1-\tfrac{\nu}{4}\big) + o(\nu)$, which matches a logit with
-	temperature $\tilde\theta$ via $L'_\theta(0)=\tfrac{1}{4\theta}$. Identifying
-	$\nu=\Var(\varepsilon)=\Var(\xi)/\eta^2$ for an implied uncertainty on $\Delta
-		V$, small posterior dispersion is locally equivalent to evaluating the same
-	operator at $\theta=\tilde\theta>1$.
-\end{lemma}
-
-\noindent\textit{Proof sketch.} Third-order Taylor around $z=0$ using
-$L'(0)=1/4$, $L''(0)=0$, $L'''(0)=-1/8$ yields
-$\E[L'(\varepsilon)] = L'(0) + \tfrac{\Var(\varepsilon)}{2}L'''(0)+o(\nu)$.
-Slope matching with $L'(0)/\tilde\theta$ delivers the expansion for
-$\tilde\theta(\nu)$. A standard remainder bound gives the uniform approximation
-on compact neighborhoods. Full details are in Appendix~\ref{app:ri_logit_bridge}.
-For any state $(y,B')$, prices are defined by the \emph{same} operator,
-evaluated at $\theta_{\mathrm{RI}}(y,B')$:
-\begin{equation}
-	q(B',y) \;=\; \mathcal T_{\theta_{\mathrm{RI}}(y,B')}[q](B',y).
-	\label{eq:pricing_same_operator_micro}
+Here $f$ is a known functional form with an unknown parameter vector $\beta\in\mathbb R^k$ and $\xi$ is an unmodeled residual. Priors and data are:
+\begin{align}
+	 & \beta\sim\mathcal N(\bar\beta,\,\Sigma_\beta),\quad &  & s_\beta=\beta+\varepsilon_\beta,\quad                                 &  & \varepsilon_\beta\sim\mathcal N\big(0,(\psi_\beta a_\beta)^{-1}I_k\big),\label{eq:beta_signal}                           \\
+	 & \xi\,|\,\sigma^2\sim\mathcal N(0,\sigma^2),\quad    &  & \ell_\sigma\equiv\log\sigma^2\sim \mathcal N(\bar\ell,\,\tau^2),\quad &  & s_{\ell}\;=\;\ell_\sigma+\varepsilon_\sigma,\ \ \varepsilon_\sigma\sim\mathcal N\big(0,(\psi_\sigma a_\sigma)^{-1}\big).
+\end{align}
+The attention levels $a_\beta,a_\sigma\ge 0$ scale effective signal precisions via $\psi_\beta,\psi_\sigma\in(0,1]$. Attention is costly:
+\begin{equation}\label{eq:attention_cost}
+	\Phi(a_\beta,a_\sigma)=\tfrac{\kappa_\beta}{2}a_\beta^2+\tfrac{\kappa_\sigma}{2}a_\sigma^2,\qquad\kappa_\beta,\kappa_\sigma>0.
 \end{equation}
 
-Thus micro decisions about attention enter prices only by changing the
-parameter at which the same operator is evaluated—no new pricing friction is
-introduced relative to the baseline.
+\paragraph{Posteriors}
+Given \eqref{eq:beta_signal}, the posterior for $\beta$ is Gaussian with
+\begin{equation}\label{eq:beta_posterior}
+	\hat\Sigma_\beta\;=\;\big(\Sigma_\beta^{-1}+\psi_\beta a_\beta I_k\big)^{-1},\qquad \hat\beta\;=\;\hat\Sigma_\beta\big(\Sigma_\beta^{-1}\bar\beta+\psi_\beta a_\beta s_\beta\big).
+\end{equation}
+For the residual variance, using a log‑normal prior and Gaussian signal for $\ell_\sigma$ yields a Gaussian posterior for $\ell_\sigma$ with precision increasing in $\psi_\sigma a_\sigma$; define the posterior mean
+\begin{equation}\label{eq:sigma_post_mean}
+	\widehat{\sigma^2}\;\equiv\;\E\big[\sigma^2\,\big|\,s_{\ell}\big]\;=\;\E\big[\exp(\ell_\sigma)\,\big|\,s_{\ell}\big],
+\end{equation}
+which is well‑defined and continuous in the sufficient statistic $s_{\ell}$ and strictly increasing in its posterior mean for $\ell_\sigma$.
 
-\begin{remark}[Relation to ambiguity/robust preferences]
-	Preference-based ambiguity models---smooth ambiguity \citet{KlibanoffMarinacciMukerji2005}, variational preferences \citet{MaccheroniMarinacciRustichini2006}, and robust control \citet{HansenSargent2008}---can be represented as likelihood twists or penalty-adjusted evaluations that effectively tilt tails in the same pricing operator. Under the operator assumptions in Appendix~\ref{app:operator_analysis}, the pivot and policy comparative statics follow analogously. The RI formulation here endogenizes the tilt through attention choice, yielding the state-dependent $\theta_{\mathrm{RI}}(\cdot)$.
-\end{remark}
-
-\paragraph{Choice problem and first-order conditions}
-Given this mapping, lenders choose attention to maximize expected discounted
-payouts net of information costs. Let $U$ denote the objective; then attention
-solves
-\begin{equation}
-	\max_{a_\mu,a_\sigma\ge0}\; \E[U\mid a_\mu,a_\sigma] - \Phi(a_\mu,a_\sigma).
-	\label{eq:att_opt_micro}
+\subsection{From posterior uncertainty to an effective tail weight}
+Linearize $f$ at $\hat\beta$ and define
+\begin{equation}\label{eq:Z_def}
+	Z(s)\;\coloneqq\;-\frac{1}{\eta}\Big( f(s;\hat\beta)+\nabla_\beta f(s;\hat\beta)^\top(\beta-\hat\beta)+\xi\Big),\qquad z_0(s)\;\coloneqq\;-\frac{f(s;\hat\beta)}{\eta}.
 \end{equation}
-\noindent\textit{Lenders' objective.} For a given state $(y,B')$ and price function
-$q$, define the ex-ante value of a unit face-value bond under attention
-$(a_\mu,a_\sigma)$ by
-\begin{equation}
-	\label{eq:lender_U_def}
-	U(y,B';a_\mu,a_\sigma; q)
-	\;\coloneqq\; \frac{1}{1+r}\;\E_{s_\mu\mid y;\,a_\mu}\;\E_{y'\mid y, s_\mu;\,a_\mu}\!\left[\bigl(1-P_{\theta_{\mathrm{RI}}(y,B';a_\sigma)}(y',B')\bigr)\Bigl(\kappa+(1-\delta)\,\E_{B''\mid y',B'}\big[\,q(y',B'')\,\big]\Bigr)\right],
-\end{equation}
-where the inner expectation is taken under the posterior for $y'$ implied by the
-Gaussian signal $s_\mu$ with precision $\psi_\mu a_\mu$ (for concreteness, take
-$\mu\equiv y'$), and $P_{\theta}$ is the logistic default probability in
-\eqref{eq:net_value_definition}. Prices in equilibrium continue to be the fixed
-point of the \emph{same} operator evaluated at $\theta_{\mathrm{RI}}(\cdot)$; the
-objective in~\eqref{eq:lender_U_def} formalizes the pre-signal valuation that
-determines the marginal benefits of attention.
-Define the marginal pricing sensitivity to dispersion by
-\begin{equation}
-	\mathcal S(y,B') \;\coloneqq\; \E\!\left[\frac{\partial U}{\partial \theta}(y,B';\,\theta_{\mathrm{RI}}(y,B'))\right] \;\ge 0.
-	\label{eq:sensitivity_def}
-\end{equation}
-The first-order condition for $a_\sigma$ is
-\begin{equation}
-	\varphi\, \mathcal S(y,B') \;=\; \kappa_\sigma\, a_\sigma(y,B').
-	\label{eq:foc_sigma_micro}
-\end{equation}
-Thus $a_\sigma(y,B')=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S(y,B')$, and
-$\theta_{\mathrm{RI}}(y,B')$ increases in $\mathcal S(y,B')$ via~\eqref{eq:theta_RI_micro}.
-
-\paragraph{Key results: comparative statics}
-The next corollary records the implied state monotonicity of attention and the
-RI tail weight.
-
-\noindent Similarly, write the \emph{effective} mean precision as $a_\mu^{\mathrm{eff}}\coloneqq \psi_\mu a_\mu$ and define its marginal value
-\begin{equation}
-	\mathcal M(y,B') \;\coloneqq\; \E\!\left[\frac{\partial U}{\partial a_\mu^{\mathrm{eff}}}(y,B')\right] \;\ge 0.
-\end{equation}
-The first-order condition for $a_\mu$ is
-\begin{equation}
-	\psi_\mu\, \mathcal M(y,B') \;=\; \kappa_\mu\, a_\mu(y,B').
-	\label{eq:foc_mu_micro}
-\end{equation}
-Hence $a_\mu(y,B')=\tfrac{\psi_\mu}{\kappa_\mu}\,\mathcal M(y,B')$, so a decline in credibility/productivity ($\psi_\mu\downarrow$) strictly reduces the optimal attention to the mean signal.
-
-Under the linear mapping and the FOC for $a_\sigma$, we further obtain the
-closed form
-\begin{equation}
-	\theta_{\mathrm{RI}}(y,B')\;=\; \min\Big\{\,1 + \tfrac{\varphi^2}{\kappa_\sigma}\,\mathcal S(y,B')\,,\;\bar\theta\,\Big\}.
-	\label{eq:theta_RI_closed}
+Conditional on posteriors, $Z=z_0+\varepsilon$ is mean‑shifted Gaussian with variance
+\begin{equation}\label{eq:Z_var}
+	\Var(\varepsilon\,|\,s)\;=\;\frac{1}{\eta^2}\Big(\nabla f\,^\top\hat\Sigma_\beta\,\nabla f\,+\,\widehat{\sigma^2}\Big)\eqqcolon\nu(s),\qquad \nabla f\,\coloneqq\nabla_\beta f(s;\hat\beta).
 \end{equation}
 
-\begin{corollary}[Monotone attention and PRO intensity]
-	\label{cor:monotone_attention}
-	If $\mathcal S(y,B')$ is increasing in $B'$ and decreasing in $y$, then the
-	solution of~\eqref{eq:foc_sigma_micro} satisfies
-	\[
-		\frac{\partial a_\sigma}{\partial B'}>0,\quad \frac{\partial a_\sigma}{\partial y}<0,
-		\qquad \frac{\partial \theta_{\mathrm{RI}}}{\partial B'}>0,\quad \frac{\partial \theta_{\mathrm{RI}}}{\partial y}<0.
-	\]
-\end{corollary}
+By Lemma in Appendix~\ref{app:ri_logit_bridge}, posterior mixtures locally
+soften the logit and admit an equivalent temperature representation. Applying
+this result with $z_0=-f(s;\hat\beta)/\eta$ and variance \eqref{eq:Z_var}, the
+lenders’ perceived default probability is locally equivalent to evaluating the
+same logit at a higher temperature $\tilde\theta\big(\nu(s)\big)$, i.e.
+\begin{equation}\label{eq:theta_RI_def}
+	\theta_{\mathrm{RI}}(s)\;=\;1+\frac{\nabla f\,^\top\hat\Sigma_\beta\,\nabla f\;+\;\widehat{\sigma^2}}{4\,\eta^2}\;+\;o\!\left(\frac{\nabla f\,^\top\hat\Sigma_\beta\,\nabla f\;+\;\widehat{\sigma^2}}{\eta^2}\right),\qquad \theta_{\mathrm{RI}}(s)\ge 1.
+\end{equation}
+Assuming the variance term is bounded on compact subsets of the state space, we can restrict to $\theta_{\mathrm{RI}}(s)\in[1,\bar\theta]$ with finite $\bar\theta>1$.
 
-\begin{lemma}[Existence/uniqueness and continuity of attention]
-	\label{lem:attention_solution}
-	With the linear mapping, for each fixed $\mathcal S\ge0$, the equation~\eqref{eq:foc_sigma_micro}
-	admits the unique closed-form solution $a_\sigma(\mathcal S)=\tfrac{\varphi}{\kappa_\sigma}\,\mathcal S$.
-	The map $\mathcal S\mapsto a_\sigma(\mathcal S)$ is continuous and strictly increasing.
-	If $\mathcal S(\cdot)$ is continuous on $\mathsf S$, then $a_\sigma(\cdot)$ and
-	$\theta_{\mathrm{RI}}(\cdot)$ are continuous on $\mathsf S$.
-\end{lemma}
+\subsection{Decomposing \texorpdfstring{$\theta_{\mathrm{RI}}$}{theta-RI} and attention sensitivities}\label{sec:theta_decomp}
+Define the threshold variance
+\begin{equation}\label{eq:nu_def}
+	\nu(s)\;\coloneqq\;\underbrace{\nabla f\,^{\!\top}\,\hat\Sigma_\beta\,\nabla f}_{\nu_\beta(s)}\;+\;\underbrace{\widehat{\sigma^2}}_{\nu_\xi(s)}\,,\qquad \theta_{\mathrm{RI}}(s)\;\approx\;1+\frac{\nu(s)}{4\,\eta^2}\,.
+\end{equation}
+Thus $\theta_{\mathrm{RI}}(s)-1$ is the sum of a parameter component $\nu_\beta(s)$ and a residual component $\nu_\xi(s)$, both scaled by $4\eta^2$. Local attention sensitivities (holding $\nabla f$ fixed) are
+\begin{equation}\label{eq:theta_a_beta_sigma_short}
+	\frac{\partial \theta}{\partial a_\beta}(s)\;=\;-\,\frac{\psi_\beta}{4\,\eta^2}\,\nabla f\,^{\!\top}\,\hat\Sigma_\beta^{\,2}\,\nabla f\;\le 0,\qquad
+	\frac{\partial \theta}{\partial a_\sigma}(s)\;=\;\frac{1}{4\,\eta^2}\,\frac{\partial \widehat{\sigma^2}}{\partial a_\sigma}(s)\,.
+\end{equation}
+With the objective in~\eqref{eq:attention_program}, the state‑weighted first‑order conditions compactly read
+\begin{equation}\label{eq:foc_compact}
+	\kappa_\beta a_\beta\;=\;\E\left[\,w(s)\,\frac{\psi_\beta}{\eta^2}\,\nabla f\,^{\!\top}\,\hat\Sigma_\beta^{\,2}\,\nabla f\,\right],\qquad
+	\kappa_\sigma a_\sigma\;=\;-\,\E\left[\,w(s)\,\frac{1}{\eta^2}\,\frac{\partial \widehat{\sigma^2}}{\partial a_\sigma}(s)\,\right],
+\end{equation}
+where $w(s)\propto L'\!\big(-\Delta V(s)/\eta\big)$ concentrates mass near the default boundary.\footnote{In \eqref{eq:foc_compact}, under symmetric innovations and stability‑biased priors, attention typically reduces the posterior mean of the residual variance, so $\E[-\partial \, \widehat{\sigma}^2/\partial a_\sigma]>0$. With adverse (instability) signals, $\partial \, \widehat{\sigma}^2/\partial a_\sigma$ can locally turn positive, which the sign‑robust form in \eqref{eq:foc_compact} accommodates.}
 
-\begin{proof}
-	Immediate by rearrangement of~\eqref{eq:foc_sigma_micro}.
-\end{proof}
+\paragraph{Economic intuition} $\theta_{\mathrm{RI}}(s)-1$ is the (state‑wise) posterior variance around the default threshold, scaled by $4\eta^2$. It has two sources: uncertainty about fundamentals along the most relevant direction $\nabla f$, and uncertainty about the residual $\sigma^2$. Accordingly, $a_\beta$ compresses posterior variance precisely along the direction that most shifts the default margin (typically lowering $\theta$, i.e., “cooling”), whereas $a_\sigma$ diagnoses instability: if attention reveals stability it cools (lowers $\theta$); if it reveals larger residual risk (bad news) it warms (raises $\theta$). The kernel $w(s)\propto L'(-\Delta V/\eta)$ concentrates attention near the threshold, ensuring scarce attention is spent where prices are most sensitive.
+\paragraph{Pricing with state‑dependent $\theta_{\mathrm{RI}}$}
+Define $\big(\mathcal T^{\mathrm{RI}}q\big)(s)\coloneqq\big(\mathcal T_{\theta_{\mathrm{RI}}(s)}q\big)(s)$. Since $\mathcal T_\theta$ is positive and a contraction uniformly in $\theta\in[1,\bar\theta]$ (Appendix~\ref{app:operator_analysis}), continuity of $\theta_{\mathrm{RI}}$ implies $\mathcal T^{\mathrm{RI}}$ is a contraction with the same modulus. Hence there exists a unique price fixed point $q^\star$ solving $q^\star=\mathcal T^{\mathrm{RI}}q^\star$. All operator‑based comparative statics from the baseline therefore carry over with $\theta$ replaced by $\theta_{\mathrm{RI}}(\cdot)$.
 
-Beyond state monotonicity, it is crucial to establish cross-channel
-substitution: when credibility of mean information falls, optimal mean
-attention declines while dispersion attention rises. The next result formalizes
-this effect within the same optimization problem.
+\subsection{Attention choice and substitution}
+Lenders choose $(a_\beta,a_\sigma)$ taking primitives and the operator mapping
+as given. To keep the same‑operator discipline, attention affects prices only
+through $\theta_{\mathrm{RI}}(\cdot)$ via
+\eqref{eq:beta_posterior}–\eqref{eq:theta_RI_def}. A convenient objective is to
+minimize a weighted posterior dispersion around the decision margin subject to
+attention costs:
+\begin{equation}\label{eq:attention_program}
+	\max_{a_\beta,a_\sigma\ge 0}\;\mathcal J(a_\beta,a_\sigma)\;\coloneqq\;-\,\E\big[\nu(s;a_\beta,a_\sigma)\,w(s)\big]\;-
+	\Phi(a_\beta,a_\sigma),\qquad w(s)\propto L'\!\left(-\tfrac{\Delta V(s)}{\eta}\right),
+\end{equation}
+where $w(s)$ weights states near the default boundary. Under \eqref{eq:beta_posterior}–\eqref{eq:sigma_post_mean} and convex \eqref{eq:attention_cost}, the program admits a unique solution $(a_\beta^*,a_\sigma^*)$.
 
-\begin{proposition}[Attention substitution under credibility shifts]\label{prop:attention_substitution}
-	Fix a state $s=(y,B')$ and write $a_\mu^{\mathrm{eff}}\coloneqq \psi_\mu a_\mu$. Let
-	\(\mathcal M(a_\mu^{\mathrm{eff}},a_\sigma)\coloneqq \E\big[\partial U/\partial a_\mu^{\mathrm{eff}}\big]\)
-	and \(\mathcal S(a_\mu^{\mathrm{eff}},a_\sigma)\coloneqq \E\big[\partial U/\partial \theta\big]\).
-	Assume $\mathcal M,\mathcal S\in C^1$ and for all relevant arguments the following hold:
-	\begin{enumerate}
-		\item[(A1)] Diminishing returns: $\mathcal M_{\mu}\le0$, $\mathcal S_{\sigma}\le0$.
-		\item[(A2')] Posterior-concentration effect (primitive): $\mathcal S_{\mu}\le0$.
-		\item[(A3)] Strict concavity of the attention problem in $(a_\mu,a_\sigma)$ at the interior maximizer:
-		      \[
-			      \kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu} \,>\,0,\qquad \kappa_\sigma-\varphi\,\mathcal S_{\sigma} \,>\,0,
-		      \]
-		      and
-		      \[
-			      \bigl(\kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu}\bigr)\bigl(\kappa_\sigma-\varphi\,\mathcal S_{\sigma}\bigr)
-			      \;>\; 0.
-		      \]
-		\item[(A4)] Productivity raises the marginal return to mean attention: $\mathcal M+\psi_\mu a_\mu\,\mathcal M_{\mu}>0$.
-	\end{enumerate}
-	Then the unique interior solution $(a_\mu^\ast,a_\sigma^\ast)$ to the first-order conditions
-	\eqref{eq:foc_sigma_micro} and~\eqref{eq:foc_mu_micro} satisfies
-	\[
-		\frac{\partial a_\sigma^\ast}{\partial \psi_\mu}\;\le\;0.
-	\]
-	Moreover, if in addition $\mathcal M_{\sigma}\le0$, then also
-	\[
-		\frac{\partial a_\mu^\ast}{\partial \psi_\mu}\;\ge\;0.
-	\]
-	Strict inequalities obtain when the relevant weak inequalities are strict.
+\begin{proposition}[Mean‑quality shock induces attention substitution]\label{prop:att_sub}
+Under Assumptions (A1)–(A4) stated in Appendix~\ref{app:att_sub_assumptions}, suppose $\psi_\beta$ falls while $\psi_\sigma$ and other primitives are fixed. Then at any interior optimum of \eqref{eq:attention_program}, $a_\beta^*$ weakly decreases and $a_\sigma^*$ weakly increases. Consequently, $\widehat{\sigma^2}$ weakly rises in expectation and $\theta_{\mathrm{RI}}(s)$ weakly increases pointwise via \eqref{eq:theta_RI_def}.
 \end{proposition}
+% See Appendix~\ref{app:attention_substitution} for a formal proof.
 
-\begin{proof}
-	See Appendix~\ref{app:attention_substitution}.
-\end{proof}
+\paragraph{Event mapping}
+Interpreting Argentina’s inflation misreporting as a persistent negative shock
+to $\psi_\beta$ (signal quality for fundamentals),
+Proposition~\ref{prop:att_sub} predicts
+$(a_\beta^*\downarrow,\,a_\sigma^*\uparrow)$. Through \eqref{eq:theta_RI_def},
+$\theta_{\mathrm{RI}}$ rises, so the same operator $\mathcal T_{\theta}$
+generates steeper price pivots, higher default thresholds with deleveraging,
+and elevated average spreads as documented in Section~\ref{sec:motivation}.
 
-\medskip
-\paragraph{Closing the loop: same operator and empirics}
-These continuity and monotonicity properties feed directly into the operator
-that prices bonds.
-
-\begin{proposition}[Operator properties and inherited comparative statics]
-	\label{prop:RI_operator_micro}
-	Suppose $\Phi$ is strictly convex. If $\mathcal T_\theta$ is positive and order-preserving for each
-	fixed $\theta\in[1,\bar\theta]$, then the state-dependent operator
-	$\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}$ is positive and order-preserving. The
-	baseline results—single-crossing price pivot at $B^*(y)$, $B^*(y)$ increasing
-	in $y$, higher default thresholds, and deleveraging with higher mean spreads—
-	continue to hold with $\theta$ replaced by $\theta_{\mathrm{RI}}(y,B')$.
-\end{proposition}
-
-\begin{proof}
-	Pointwise positivity/order of $\mathcal T_\theta$ carries to
-	$\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}$ by continuity of $a_\sigma(y,B')$ implied by~\eqref{eq:foc_sigma_micro}. Fixed-point arguments on compact grids then match Appendix~\ref{app:operator_analysis}.
-\end{proof}
-
-\paragraph{Mean-attention channel and pivot invariance}
-Mean attention $a_\mu$ refines the posterior over fundamentals that already
-enter $\Delta V$. To keep the same-operator discipline, I separate channels:
-$a_\sigma$ moves the tail-weight $\theta$ used by the \emph{same} pricing
-operator, while $a_\mu$ can (in principle) shift the location of $\Delta V$.
-The core pivot results are robust to such shifts.
-
-\begin{proposition}[Mean attention and price-pivot invariance]
-	\label{prop:mean_attention_pivot}
-	Suppose $\Delta V(y,B';a_\mu^{\mathrm{eff}})$ preserves the baseline
-	monotonicity ($\partial_y\Delta V>0$, $\partial_{B'}\Delta V<0$) uniformly in
-	$a_\mu^{\mathrm{eff}}$, and remains continuous and bounded. Then under the
-	operator conditions in Appendix~\ref{app:operator_analysis}, the
-	single-crossing price pivot in $B'$ at $B^*(y)$, its monotonicity in $y$, and
-	the deleveraging/high-threshold comparative statics continue to hold with
-	$\theta$ replaced by $\theta_{\mathrm{RI}}(y,B')$ and $\Delta V$ replaced by
-	$\Delta V(y,B';a_\mu^{\mathrm{eff}})$.
-\end{proposition}
-
-\noindent\textit{Proof sketch.} Positivity and order preservation of
-$\mathcal T_\theta$ extend to $\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}$.
-Monotone changes in $\Delta V$ retain single crossing in the logistic argument,
-so the pivot characterization and its monotone comparative statics survive.
-Details are in Appendix~\ref{app:mean_attention_pivot}.
-
-\paragraph{Intuition for Assumption (A2').}
-Assumption (A2') requires $\mathcal S_\mu\le0$: when mean information becomes
-more precise, the \emph{marginal} value of dispersion attention falls. The
-intuition is kernel-based: the price sensitivity to $\theta$ is proportional to
-weights like $L'\!\left(-\Delta V/(\theta\eta)\right)$, which peak at the
-threshold and decay as $|\Delta V|$ grows. Sharper mean posteriors reduce mass
-near the threshold, shrinking the integral that defines $\mathcal S$. A
-two‑point illustration: if $\Delta V\in\{+m,-m\}$ with posterior weight $\pi$
-on $+m$, then the contribution to $\mathcal S$ is
-$\pi(1-\pi)\,L'\!\left(m/(\theta\eta)\right)$, maximized at $\pi=\tfrac12$;
-increasing mean precision pushes $\pi$ away from $\tfrac12$, reducing the
-marginal return to extra tail‑tilt. A formal statement is in
-Appendix~\ref{app:attention_substitution}.
-
-\paragraph{Operator pipeline at a glance}
-For clarity, the static pricing fixed point with endogenous attention can be
-viewed as the composition
-\[
-	\quad q \;\xrightarrow{\,J_\rho\,}\; U \;\xrightarrow{\,(\mathcal M,\mathcal S)\,}\;
-	(a_\mu,a_\sigma) \;\xrightarrow{\,a_\sigma\mapsto\theta_{\mathrm{RI}}\,}\;
-	\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}[q] \, ,
-\]
-with the continuity and boundedness conditions in
-Appendices~\ref{app:operator_analysis},\ref{app:ri_general} ensuring a unique
-and well-behaved equilibrium price schedule.
-
-\paragraph{Empirical link: Argentina misreporting}
-Returning to Section~\ref{sec:motivation}, Argentina's inflation misreporting
-reduced the credibility of official signals. In this framework, that shock is a
-decline in $\psi_\mu$, which—holding costs fixed—lowers the optimal attention
-to the mean signal by \eqref{eq:foc_mu_micro}. From
-\eqref{eq:att_opt_micro}–\eqref{eq:foc_sigma_micro}, a fall in the productivity
-of mean information (lower $\psi_\mu$ and thus lower effective $a_\mu$) raises
-$\mathcal S(y,B')$, increasing $a_\sigma$ and thus $\theta_{\mathrm{RI}}$
-via~\eqref{eq:theta_RI_micro}. The model then predicts: (i) higher average
-spreads; (ii) a steeper price pivot; (iii) cross-peer “decoupling” when others’
-dispersion signals do not deteriorate; and (iv) a higher default threshold with
-concurrent deleveraging—matching the event-study patterns in the Argentina
-episode.
-
-In short, credibility shocks (lower $\psi_\mu$) cascade through endogenous
-attention—reducing $a_\mu^*$, raising $a_\sigma^*$, and increasing
-$\theta_{\mathrm{RI}}$—and all pricing remains governed by the same operator as
-in the baseline. This makes the microfoundation fully consistent with the
-comparative statics developed earlier.
 
 \section{Policy and Information Extensions}\label{sec:extensions}
 
@@ -1996,15 +1768,21 @@ PRO tilts pricing around a state‑contingent threshold, so governments borrow
 less while tolerating higher debt at default, raising average spreads and
 producing a “stability illusion”: lower volatility with higher premia.
 
-The microfoundation based on rational inattention endogenizes the tail‑tilt yet
-keeps the same mechanism: attention to dispersion varies with the state, and
-the main comparative statics carry through. Policy and information extensions
-clarify limits and levers: transfers cannot undo pricing wedges;
-negativity‑biased learning makes distortions persistent; and transparency
-improves welfare by curbing tail‑tilting. The framework yields compact,
-testable implications—pivot, threshold shifts, and decoupling—consistent with
-event evidence such as Argentina’s inflation misreporting, and offers a
-disciplined path for calibration and event‑study validation.
+Policy and information extensions clarify limits and levers: transfers cannot
+undo pricing wedges; negativity‑biased learning makes distortions persistent;
+and transparency improves welfare by curbing tail‑tilting. The framework yields
+compact, testable implications—pivot, threshold shifts, and
+decoupling—consistent with event evidence such as Argentina’s inflation
+misreporting, and offers a disciplined path for calibration and event‑study
+validation.
+
+\paragraph{Microfoundation} A rational‑inattention microfoundation embeds a mental‑model‑plus‑residual
+decomposition and endogenizes the state‑dependent tail weight
+$\theta_{\mathrm{RI}}(s)$ \emph{inside the same pricing operator} $\mathcal
+	T_\theta$. This preserves internal consistency while providing a clean channel
+for credibility shocks (e.g., a fall in $\psi_\beta$) to raise $\theta$ via
+attention substitution, thereby tightening the link between mechanism, events,
+and the paper’s comparative statics.
 
 \clearpage
 \appendix
@@ -2027,9 +1805,6 @@ identities used in the text. Section~\ref{app:proofs} provides proofs for the
 lemmas and propositions. Section~\ref{app:operator_analysis} states
 contraction, positivity/order, and differentiability results for the pricing
 operator (including Assumption RI.1 and a uniform convergence argument).
-Section~\ref{app:ri_general} develops the rational-inattention mapping with a
-general monotone $w(\cdot)$, establishing existence/uniqueness, continuity, and
-operator inheritance of the main comparative statics.
 Section~\ref{app:computations} documents the computational algorithm and the
 numerical stability techniques for the discrete-choice implementation.
 
@@ -2806,62 +2581,63 @@ This section contains the proofs for the lemmas and propositions in the paper.
 
 \end{proof}
 
-\subsection{Proof of Proposition~\ref{prop:attention_substitution}}\label{app:attention_substitution}
-\begin{proof}
-	Suppress the state $s$ for notational clarity. Define the two first-order conditions as
-	\[
-		F_1(a_\mu,a_\sigma,\psi_\mu)\;\coloneqq\; \kappa_\sigma a_\sigma-\varphi\,\mathcal S(\psi_\mu a_\mu,a_\sigma)=0,
-	\]
-	\[
-		F_2(a_\mu,a_\sigma,\psi_\mu)\;\coloneqq\; \kappa_\mu a_\mu-\psi_\mu\,\mathcal M(\psi_\mu a_\mu,a_\sigma)=0.
-	\]
-	Let subscripts denote partial derivatives with respect to the indicated
-	argument. The Jacobian with respect to $(a_\mu,a_\sigma)$ is
-	\[
-		J\;=\;\begin{bmatrix}
-			\partial_{a_\mu}F_1 & \partial_{a_\sigma}F_1 \\[2pt]
-			\partial_{a_\mu}F_2 & \partial_{a_\sigma}F_2
-		\end{bmatrix}
-		\;=\;
-		\begin{bmatrix}
-			-\varphi\,\psi_\mu\,\mathcal S_{\mu}      & \kappa_\sigma-\varphi\,\mathcal S_{\sigma} \\[2pt]
-			\kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu} & -\psi_\mu\,\mathcal M_{\sigma}
-		\end{bmatrix}.
-	\]
-	By (A1)–(A3), $\kappa_\sigma-\varphi\,\mathcal S_{\sigma}>0$ and
-	$\kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu}>0$, and the negative definiteness of
-	the Hessian of the attention objective is equivalent to
-	\[\det J \,=\, \varphi\,\psi_\mu^{2}\,\mathcal S_{\mu}\,\mathcal M_{\sigma}-\bigl(\kappa_\sigma-\varphi\,\mathcal S_{\sigma}\bigr)\bigl(\kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu}\bigr) \;<\;0,\]
-	so $J$ is nonsingular. Differentiate $F_1=F_2=0$ with respect to $\psi_\mu$ and
-	solve via the Implicit Function Theorem:
-	\[
-		\begin{bmatrix} \partial a_\mu^*/\partial\psi_\mu \\ \partial a_\sigma^*/\partial\psi_\mu \end{bmatrix}
-		\;=\; - J^{-1}\,\begin{bmatrix} \partial_{\psi_\mu}F_1 \\ \partial_{\psi_\mu}F_2 \end{bmatrix}.
-	\]
-	Compute the parameter derivatives:
-	\[\partial_{\psi_\mu}F_1 = -\varphi\,a_\mu\,\mathcal S_{\mu} \;\ge\;0\quad\text{by (A2')},\]
-	\[\partial_{\psi_\mu}F_2 = -\bigl(\mathcal M+\psi_\mu a_\mu\,\mathcal M_{\mu}\bigr) \;<\;0\quad\text{by (A4)}.\]
-	Using the explicit inverse of a $2\times2$ matrix, the $a_\sigma$ derivative is
-	\[
-		\frac{\partial a_\sigma^*}{\partial\psi_\mu}
-		\;=\;\frac{1}{\det J}\Bigl[\bigl(\kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu}\bigr)\,\partial_{\psi_\mu}F_1 \;+\; \varphi\,\psi_\mu\,\mathcal S_{\mu}\,\partial_{\psi_\mu}F_2\Bigr].
-	\]
-	Here $\det J<0$, $\kappa_\mu-\psi_\mu^{2}\,\mathcal M_{\mu}>0$,
-	$\partial_{\psi_\mu}F_1\ge0$, and $\mathcal S_{\mu}\le0$ while
-	$\partial_{\psi_\mu}F_2<0$, so the numerator is nonnegative and strictly
-	positive if (A2') is strict. Therefore $\partial
-		a_\sigma^*/\partial\psi_\mu\le0$ (strictly $<0$ under strict (A2')).
+\paragraph{Assumptions for Proposition~\ref{prop:att_sub}}\label{app:att_sub_assumptions}
+Let $\alpha\equiv \psi_\beta a_\beta$ denote effective mean precision and let $w(s)\propto L'\!\big(-\Delta V(s)/\eta\big)$ be the margin kernel from the main text. Define
+\[
+\mathcal M(\alpha,a_\sigma)\;\coloneqq\; \E\big[\,w(s)\,\nabla f\,^{\!\top}\,\hat\Sigma_\beta(\alpha)^{2}\,\nabla f\,\big],\qquad \hat\Sigma_\beta(\alpha)\;\equiv\;\big(\Sigma_\beta^{-1}+\alpha I_k\big)^{-1},
+\]
+\[
+\mathcal S(\alpha,a_\sigma)\;\coloneqq\; \E\Big[\,w(s)\,\big(-\,\partial\widehat{\sigma^2}/\partial a_\sigma\big)\,\Big],
+\]
+where expectations are taken under the stationary distribution of states. The first‑order conditions in the main text (Eq.~\eqref{eq:foc_compact}) can be written compactly as
+\[
+F_\beta(a_\beta,a_\sigma,\psi_\beta)\;\coloneqq\; \kappa_\beta a_\beta-\frac{\psi_\beta}{\eta^2}\,\mathcal M(\alpha,a_\sigma)\;=\;0,\qquad
+F_\sigma(a_\beta,a_\sigma,\psi_\beta)\;\coloneqq\; \kappa_\sigma a_\sigma-\frac{1}{\eta^2}\,\mathcal S(\alpha,a_\sigma)\;=\;0.
+\]
+Assume:
+\begin{enumerate}
+  \item[(A1)] Diminishing returns: $\mathcal M_\alpha\le 0$ and $\mathcal S_{a_\sigma}\le 0$ for all relevant arguments.
+  \item[(A2)] Substitutability at the margin: $\mathcal S_\alpha\le 0$ (greater mean precision lowers the marginal value of dispersion attention).
+  \item[(A3)] Interior regularity: the Jacobian $J\equiv \partial(F_\beta,F_\sigma)/\partial(a_\beta,a_\sigma)$ is nonsingular at the optimum; sufficient conditions are
+  \[
+  \kappa_\beta-\frac{\psi_\beta^{2}}{\eta^2}\,\mathcal M_\alpha\;>\;0,\qquad \kappa_\sigma-\frac{1}{\eta^2}\,\mathcal S_{a_\sigma}\;>\;0,\qquad \det J\neq 0.
+  \]
+  \item[(A4)] Parameter effect on mean attention: $\mathcal M+\alpha\,\mathcal M_\alpha>0$.
+\end{enumerate}
 
-	Similarly,
-	\[
-		\frac{\partial a_\mu^*}{\partial\psi_\mu}
-		\;=\; -\frac{1}{\det J}\Bigl[ -\psi_\mu\,\mathcal M_{\sigma}\,\partial_{\psi_\mu}F_1 \;-\;\bigl(\kappa_\sigma-\varphi\,\mathcal S_{\sigma}\bigr)\,\partial_{\psi_\mu}F_2\Bigr].
-	\]
-	If, in addition, $\mathcal M_{\sigma}\le0$, then $-\psi_\mu\,\mathcal
-		M_{\sigma}\ge0$, $\partial_{\psi_\mu}F_1\ge0$, $\kappa_\sigma-\varphi\,\mathcal
-		S_{\sigma}>0$ by (A1), and $\partial_{\psi_\mu}F_2<0$, the bracket is positive;
-	hence $\partial a_\mu^*/\partial\psi_\mu\ge0$ (strict under strict
-	inequalities). This proves the claim.
+\subsection{Proof of Proposition~\ref{prop:att_sub}}\label{app:attention_substitution}
+\begin{proof}
+Suppress the state $s$ for notational clarity. Let $F_\beta=0$ and $F_\sigma=0$ denote the two first‑order conditions above. Write $\alpha\equiv\psi_\beta a_\beta$. The Jacobian with respect to $(a_\beta,a_\sigma)$ is
+\[
+J\;=\;\begin{bmatrix}
+\partial_{a_\beta}F_\beta & \partial_{a_\sigma}F_\beta \\[2pt]
+\partial_{a_\beta}F_\sigma & \partial_{a_\sigma}F_\sigma
+\end{bmatrix}
+\;=\;
+\begin{bmatrix}
+\kappa_\beta-\tfrac{\psi_\beta^{2}}{\eta^2}\,\mathcal M_\alpha & -\tfrac{\psi_\beta}{\eta^2}\,\mathcal M_{a_\sigma} \\[4pt]
+-\tfrac{\psi_\beta}{\eta^2}\,\mathcal S_\alpha & \kappa_\sigma-\tfrac{1}{\eta^2}\,\mathcal S_{a_\sigma}
+\end{bmatrix}.
+\]
+By (A1)–(A3), the diagonal entries are positive and $J$ is nonsingular. Differentiate $F_\beta=F_\sigma=0$ with respect to $\psi_\beta$ and apply the Implicit Function Theorem:
+\[
+\begin{bmatrix} \partial a_\beta^*/\partial\psi_\beta \\ \partial a_\sigma^*/\partial\psi_\beta \end{bmatrix}
+\;=\; - J^{-1}\,\begin{bmatrix} \partial_{\psi_\beta}F_\beta \\ \partial_{\psi_\beta}F_\sigma \end{bmatrix}.
+\]
+Parameter derivatives are
+\[\partial_{\psi_\beta}F_\sigma = -\tfrac{1}{\eta^2}\,a_\beta\,\mathcal S_\alpha \;\ge\;0\quad\text{by (A2),}\]
+\[\partial_{\psi_\beta}F_\beta = -\tfrac{1}{\eta^2}\,\bigl(\mathcal M+\alpha\,\mathcal M_\alpha\bigr) \;<\;0\quad\text{by (A4).}\]
+Using the explicit inverse of a $2\times2$ matrix, one obtains
+\[
+\frac{\partial a_\sigma^*}{\partial\psi_\beta}
+\;=\;\frac{1}{\det J}\Bigl[\bigl(\kappa_\beta-\tfrac{\psi_\beta^{2}}{\eta^2}\,\mathcal M_\alpha\bigr)\,\partial_{\psi_\beta}F_\sigma \;+\; \tfrac{\psi_\beta}{\eta^2}\,\mathcal S_\alpha\,\partial_{\psi_\beta}F_\beta\Bigr] \;\le\;0,
+\]
+where the inequality uses $\det J\neq0$ with positive diagonal terms, $\partial_{\psi_\beta}F_\sigma\ge0$, $\partial_{\psi_\beta}F_\beta<0$, and $\mathcal S_\alpha\le0$. Similarly,
+\[
+\frac{\partial a_\beta^*}{\partial\psi_\beta}
+\;=\;\frac{1}{\det J}\Bigl[ \tfrac{\psi_\beta}{\eta^2}\,\mathcal M_{a_\sigma}\,\partial_{\psi_\beta}F_\sigma \;+\; \bigl(\kappa_\sigma-\tfrac{1}{\eta^2}\,\mathcal S_{a_\sigma}\bigr)\,\big(-\partial_{\psi_\beta}F_\beta\big)\Bigr] \;\ge\;0,
+\]
+which is weakly positive under (A1)–(A3); it is strictly positive if at least one inequality in (A1)–(A2) is strict. This establishes that a fall in $\psi_\beta$ (lower fundamental signal quality) weakly reduces $a_\beta^*$ and weakly raises $a_\sigma^*$ at an interior optimum.
 \end{proof}
 
 \subsection{Pricing Operator: Contraction and Differentiability}\label{app:operator_analysis}
@@ -2908,128 +2684,13 @@ which coincides with Equation~\eqref{eq:q_deriv_linear} used in the main text. E
 \paragraph{Rational Inattention (linear): Uniform Contraction and Convergence}
 \noindent\textbf{Assumption RI.1 (Uniform contraction over $[1,\bar\theta]$).} There exists $\alpha\in(0,1)$ such that for every fixed $\theta\in[1,\bar\theta]$, the pricing operator $\mathcal T_\theta: \mathcal Q\to\mathcal Q$ satisfies $\|\mathcal T_\theta q - \mathcal T_\theta q'\|_\infty \le \alpha \|q-q'\|_\infty$ for all $q,q'\in\mathcal Q$.
 
-\noindent\textbf{Proposition RI.1 (State-dependent $\theta$ with uniform modulus).} Let $\theta_{\mathrm{RI}}: \mathsf S\to[1,\bar\theta]$ be continuous (as in Lemma~\ref{lem:attention_solution}). Define $\mathcal T^{\mathrm{RI}} q (s) \coloneqq (\mathcal T_{\theta_{\mathrm{RI}}(s)} q)(s)$. Under Assumption RI.1, $\mathcal T^{\mathrm{RI}}$ is a contraction on $(\mathcal Q, \|\cdot\|_\infty)$ with modulus $\alpha$. Hence there exists a unique fixed point $q^\star \in \mathcal Q$ solving $q^\star = \mathcal T^{\mathrm{RI}} q^\star$, and successive approximation converges at rate $\alpha$.
+\noindent\textbf{Proposition RI.1 (State-dependent $\theta$ with uniform modulus).} Let $\theta_{\mathrm{RI}}: \mathsf S\to[1,\bar\theta]$ be continuous. Define $\mathcal T^{\mathrm{RI}} q (s) \coloneqq (\mathcal T_{\theta_{\mathrm{RI}}(s)} q)(s)$. Under Assumption RI.1, $\mathcal T^{\mathrm{RI}}$ is a contraction on $(\mathcal Q, \|\cdot\|_\infty)$ with modulus $\alpha$. Hence there exists a unique fixed point $q^\star \in \mathcal Q$ solving $q^\star = \mathcal T^{\mathrm{RI}} q^\star$, and successive approximation converges at rate $\alpha$.
 
 \noindent\textit{Proof.} For any $q,q' \in \mathcal Q$ and $s \in \mathsf S$,
 \[ \big| (\mathcal T^{\mathrm{RI}} q)(s) - (\mathcal T^{\mathrm{RI}} q')(s) \big| \;=\; \big| (\mathcal T_{\theta_{\mathrm{RI}}(s)} q)(s) - (\mathcal T_{\theta_{\mathrm{RI}}(s)} q')(s) \big| \\
 	\le \alpha \, \| q-q' \|_\infty. \]
 Taking sup over $s$ delivers $\| \mathcal T^{\mathrm{RI}} q - \mathcal
 	T^{\mathrm{RI}} q' \|_\infty \le \alpha \| q-q' \|_\infty$.
-
-\subsection{Rational Inattention with General \texorpdfstring{$w(\cdot)$}{w(·)}: Existence, Uniqueness, and Inheritance}\label{app:ri_general}
-
-\textbf{Setup.} Let the attention--tail map be
-\begin{equation}\label{eq:theta_RI_general}
-	\theta_{\mathrm{RI}}(s)\;=\;\min\Big\{\,1+\varphi\, w\big(a_\sigma(s)\big),\;\bar\theta\,\Big\},\qquad s\equiv(y,B'),\ \varphi>0,\ \bar\theta>1,
-\end{equation}
-with $w:\,[0,\infty)\to[0,\infty)$ twice continuously differentiable, strictly increasing, and $w(0)=0$.
-Information costs are separable and strictly convex with a quadratic component in dispersion attention,
-\(\Phi(a_\mu,a_\sigma)=\tfrac{\kappa_\mu}{2}a_\mu^2+\tfrac{\kappa_\sigma}{2}a_\sigma^2\), $\kappa_\sigma>0$.
-Define the (nonnegative) pricing sensitivity to dispersion by
-\begin{equation}\label{eq:S_bound_def}
-	\mathcal S(s)\;\coloneqq\;\E\!\left[\frac{\partial U}{\partial\theta}(s;\,\theta_{\mathrm{RI}}(s))\right] \ \ge 0\,.
-\end{equation}
-
-\noindent\textbf{Assumption G.1 (Regularity and bounded curvature).} There exists $L_w<\infty$ such that $\sup_{a\ge 0}|w''(a)|\le L_w$ and $w'(a)>0$ for all $a\ge 0$.
-
-\noindent\textbf{Assumption G.2 (Bounded sensitivity).} $\mathcal S:\,\mathsf S\to\mathbb R_+$ is continuous and bounded: $0\le \mathcal S(s)\le \bar S$ for some $\bar S<\infty$.
-
-\begin{remark}
-	Assumption G.2 holds in the baseline environment because payoffs are bounded, $\partial_\theta \tilde P$ is uniformly bounded, and the resolvent $(I-\mathcal T_\theta)^{-1}$ is bounded and positive on $[1,\bar\theta]$ (see Appendix~\ref{app:operator_analysis}).
-\end{remark}
-
-\noindent\textbf{KKT and interior FOC.} Let $a_{\max}\coloneqq w^{-1}((\bar\theta-1)/\varphi)$ denote the unique attention level at which the cap binds. The choice set is $\mathcal A\coloneqq[0,a_{\max}]$. The KKT conditions imply that any optimizer satisfies $a_\sigma(s)\in\mathcal A$ and, when interior and the cap is slack, the first-order condition
-\begin{equation}\label{eq:FOC_general}
-	\kappa_\sigma\, a_\sigma(s)\;=\;\varphi\, w'\big(a_\sigma(s)\big)\,\mathcal S(s).
-\end{equation}
-
-\begin{lemma}[Existence, uniqueness, and continuity of $a_\sigma$]\label{lem:attention_general}
-	Suppose Assumptions G.1–G.2 hold and
-	\begin{equation}\label{eq:contraction_condition}
-		\gamma\;\coloneqq\;\frac{\varphi}{\kappa_\sigma}\,\bar S\,L_w\;<\;1.
-	\end{equation}
-	For each $s\in\mathsf S$, define $H_s(a)\coloneqq (\varphi/\kappa_\sigma)\,\mathcal S(s)\, w'(a)$ on $\mathcal A$. Then:
-	\begin{itemize}
-		\item $H_s$ is a contraction on $\mathcal A$ with modulus at most $\gamma$; hence the fixed point equation $a=H_s(a)$ has a unique solution $a^{\circ}(s)\in\mathcal A$.
-		\item The mapping $s\mapsto a^{\circ}(s)$ is continuous; moreover $a^{\circ}(s)$ is
-		      nondecreasing in $\mathcal S(s)$.
-		\item The optimizer is $a_\sigma(s)=a^{\circ}(s)$ unless the cap binds, in which case
-		      $a_\sigma(s)=a_{\max}$. In either case, $a_\sigma:\,\mathsf S\to\mathcal A$ is
-		      continuous and nondecreasing in $\mathcal S$.
-	\end{itemize}
-\end{lemma}
-
-\begin{proof}
-	By Assumption G.1, $|H_s'(a)|= (\varphi/\kappa_\sigma)\,\mathcal S(s)\,|w''(a)|\le (\varphi/\kappa_\sigma)\,\bar S\,L_w=\gamma<1$, so $H_s$ is a contraction on the complete metric space $\mathcal A$ (with the usual metric). Banach's fixed-point theorem yields a unique fixed point $a^{\circ}(s)$. Parametric continuity follows from the uniform contraction bound and continuity of $\mathcal S(\cdot)$. Monotonicity in $\mathcal S$ follows from Topkis/Milgrom–Shannon monotone comparative statics since $H_s$ is increasing in $\mathcal S$. The cap case is handled by applying the same arguments to the truncated domain and using continuity of $w$ and $w^{-1}$.
-\end{proof}
-
-\begin{proposition}[Continuity and monotonicity of $\theta_{\mathrm{RI}}$]\label{prop:theta_continuity_general}
-	Under Lemma~\ref{lem:attention_general}, $\theta_{\mathrm{RI}}(s)$ defined in \eqref{eq:theta_RI_general} is continuous on $\mathsf S$, takes values in $[1,\bar\theta]$, and is nondecreasing in $\mathcal S(s)$.
-\end{proposition}
-
-\begin{proof}
-	Immediate from continuity/monotonicity of $a_\sigma(\cdot)$ and continuity/monotonicity of $w(\cdot)$ and the truncation map $x\mapsto\min\{1+\varphi x,\bar\theta\}$.
-\end{proof}
-
-\begin{proposition}[Operator inheritance and comparative statics]\label{prop:inheritance_general}
-	Let $\mathcal T_\theta$ satisfy Assumption RI.1 and be positive and order-preserving for each fixed $\theta\in[1,\bar\theta]$. Define $\mathcal T^{\mathrm{RI}}$ by $\mathcal T^{\mathrm{RI}}q(s)\equiv \big(\mathcal T_{\theta_{\mathrm{RI}}(s)}q\big)(s)$. Then $\mathcal T^{\mathrm{RI}}$ is a contraction on $(\mathcal Q,\|\cdot\|_\infty)$ with the same modulus and is positive and order-preserving. Consequently, the baseline comparative statics proved for fixed $\theta$ (price pivot and single-crossing at $B^*(y)$, $B^*(y)$ increasing in $y$, deleveraging with higher mean spreads, and welfare ranking) continue to hold under the state-dependent $\theta_{\mathrm{RI}}(\cdot)$.
-\end{proposition}
-
-\begin{proof}
-	Contraction follows from Proposition RI.1. Positivity and order preservation carry over pointwise from $\mathcal T_\theta$. The comparative statics in the main text rely on the positivity of the resolvent $(I-\mathcal T_\theta)^{-1}$, the sign of $\partial_\theta \tilde P$, and single-crossing arguments evaluated at the same operators; these extend verbatim with $\theta$ replaced by $\theta_{\mathrm{RI}}(s)$.
-\end{proof}
-
-\paragraph{A uniform bound for $\mathcal S(s)$}
-Recall the sensitivity definition in~\eqref{eq:sensitivity_def} and denote
-$\beta\coloneqq 1/(1+r)\in(0,1)$. Assume
-\begin{equation}\label{eq:Ptheta_bound}
-	\sup_{y',B',\theta\in[1,\bar\theta]}\big|\partial_\theta\tilde P_\theta(y',B')\big|\;\le\;C_P\;<\;\infty,\qquad 0<\delta<1,\quad 0<\kappa\le \overline\kappa.
-\end{equation}
-Let $\|\mathcal T_\theta\|\le \beta(1-\delta)$ for all $\theta\in[1,\bar\theta]$ as in~\eqref{eq:Ttheta_norm}. Define the uniform resolvent bound
-\begin{equation}\label{eq:resolvent_bound}
-	\mathfrak R\;\coloneqq\;\sup_{\theta\in[1,\bar\theta]}\big\|(I-\mathcal T_\theta)^{-1}\big\|\;\le\;\frac{1}{1-\beta(1-\delta)}\,.
-\end{equation}
-
-\begin{lemma}[Uniform price bound]\label{lem:q_uniform_bound}
-	For every $\theta\in[1,\bar\theta]$, the equilibrium price satisfies
-	\begin{equation}\label{eq:q_uniform_bound}
-		\|q_\theta\|_\infty\;\le\;\mathfrak R\,\|F_\theta\|_\infty\;\le\;\frac{\beta\,\overline\kappa}{1-\beta(1-\delta)}\,.
-	\end{equation}
-	Consequently, the one–step continuation payoff in~\eqref{eq:Lambda_def} is uniformly bounded by
-	\begin{equation}\label{eq:Lambda_uniform_bound}
-		0\;\le\;\Lambda(y',B')\;\le\;\overline\Pi\;\coloneqq\;\overline\kappa\,\mathfrak R\;=\;\frac{\overline\kappa}{1-\beta(1-\delta)}\,.
-	\end{equation}
-\end{lemma}
-
-\begin{proof}
-	From~\eqref{eq:q_fixed_point}, $q_\theta=(I-\mathcal T_\theta)^{-1}F_\theta$. Using~\eqref{eq:Ttheta_norm} and $0\le 1-\tilde P_\theta\le 1$, we have $\|F_\theta\|_\infty\le \beta\,\overline\kappa$. Combine with~\eqref{eq:resolvent_bound} to obtain~\eqref{eq:q_uniform_bound}. Then~\eqref{eq:Lambda_def} implies $\Lambda\le \overline\kappa+(1-\delta)\|q_\theta\|_\infty\le \overline\kappa+(1-\delta)\,\beta\,\overline\kappa/(1-\beta(1-\delta))=\overline\kappa/(1-\beta(1-\delta))$.
-\end{proof}
-
-\begin{proposition}[Uniform sensitivity bound]\label{prop:S_uniform_bound}
-	Under~\eqref{eq:Ptheta_bound} and Lemma~\ref{lem:q_uniform_bound}, there exists a finite constant
-	\begin{equation}\label{eq:S_bar_bound}
-		\overline S\;\coloneqq\;\beta\,C_P\,\overline\Pi\,\mathfrak R\;=\;\frac{\beta\,C_P\,\overline\kappa}{\big(1-\beta(1-\delta)\big)^2}
-	\end{equation}
-	such that $0\le \mathcal S(s)\le \overline S$ for all $s\in\mathsf S$.
-\end{proposition}
-
-\begin{proof}
-	Let $U_\theta$ denote the lenders’ present value in the pricing problem; as in~\eqref{eq:q_fixed_point}, $U_\theta$ solves $U_\theta=F_\theta+\mathcal T_\theta U_\theta$, hence $U_\theta=(I-\mathcal T_\theta)^{-1}F_\theta$ and $\partial_\theta U_\theta$ satisfies~\eqref{eq:q_derivative_resolvent} with $q_\theta$ replaced by $U_\theta$. Taking sup norms and applying~\eqref{eq:dF}–\eqref{eq:dT} yields
-	\[ \big\|\partial_\theta U_\theta\big\|_\infty \;\le\; \mathfrak R\,\Big(\,\|\partial_\theta F_\theta\|_\infty + \|\partial_\theta \mathcal T_\theta\|\,\|U_\theta\|_\infty\,\Big) \;\le\; \mathfrak R\,\beta\,C_P\,\Big(\,\overline\kappa + (1-\delta)\,\|U_\theta\|_\infty\,\Big). \]
-	Using $\|U_\theta\|_\infty\le \|q_\theta\|_\infty$ and
-	Lemma~\ref{lem:q_uniform_bound}, the bracket is bounded by $\overline\Pi$.
-	Therefore $\|\partial_\theta U_\theta\|_\infty \le \mathfrak
-		R\,\beta\,C_P\,\overline\Pi$, which equals~\eqref{eq:S_bar_bound}. Since
-	$\mathcal S(s)=\E[\partial_\theta U_\theta(s)]$ by~\eqref{eq:sensitivity_def}
-	and the integrand is nonnegative, the same bound holds pointwise.
-\end{proof}
-
-As a direct corollary, Assumption G.2 can take $\bar S=\overline S$. Combined
-with the contraction condition~\eqref{eq:contraction_condition} in
-Lemma~\ref{lem:attention_general}, a sufficient condition is
-\[ \frac{\varphi}{\kappa_\sigma}\,\overline S\,L_w\;<\;1\quad\Longleftrightarrow\quad \frac{\varphi}{\kappa_\sigma}\,\frac{\beta\,C_P\,\overline\kappa}{\big(1-\beta(1-\delta)\big)^2}\,L_w\;<\;1, \]
-which is naturally satisfied when discounting is sufficient, maturity is
-finite, and the curvature of $w$ is bounded.
 
 \subsection{Logit softening under posterior mixtures: a local equivalence}\label{app:ri_logit_bridge}
 
@@ -3068,30 +2729,6 @@ claim that posterior dispersion around the default margin softens the logit in a
 way that is locally equivalent to evaluating the same pricing operator at a
 higher $\theta$.
 
-\subsection{Mean attention and price pivot}\label{app:mean_attention_pivot}
-
-\begin{proposition}
-	Let $\Delta V(y,B';a_\mu^{\mathrm{eff}})$ be continuous and preserve the
-	baseline monotonicity in $(y,B')$ uniformly in $a_\mu^{\mathrm{eff}}$. Under
-	the operator conditions in Appendix~\ref{app:operator_analysis}, the
-	single-crossing pivot of prices in $B'$ at $B^*(y)$, its monotonicity in $y$,
-	and the deleveraging/high-threshold comparative statics continue to hold with
-	$\theta$ replaced by $\theta_{\mathrm{RI}}(y,B')$ and $\Delta V$ replaced by
-	$\Delta V(y,B';a_\mu^{\mathrm{eff}})$.
-\end{proposition}
-
-\begin{proof}
-	For each fixed $a_\mu^{\mathrm{eff}}$ and $\theta$, the operator
-	$\mathcal T_\theta$ is positive and order preserving, and the resolvent is
-	positive. The logistic default probability $\tilde P_\theta$ is single-crossing
-	in $B'$ whenever the argument $-\Delta V/(\theta\eta)$ is. Since the mapping
-	$\Delta V\mapsto L(-\Delta V/(\theta\eta))$ is strictly decreasing and smooth,
-	single-crossing in $\Delta V$ transfers to $\tilde P_\theta$, hence to
-	prices. The operator inheritance arguments used for the baseline (and for the
-	state-dependent $\theta_{\mathrm{RI}}$) carry through, preserving the pivot and
-	its monotone comparative statics in $y$. Monotone shifts in
-	$\Delta V(\cdot; a_\mu^{\mathrm{eff}})$ do not overturn single crossing.
-\end{proof}
 
 \subsection{Proof of Proposition~\ref{prop:ramsey_welfare}}\label{app:proof_ramsey}
 
