@@ -49,6 +49,7 @@
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\Y}{\mathcal{Y}}
 \newcommand{\bbP}{\mathbb{P}}
+\newcommand{\Var}{\mathrm{Var}}
 
 
 % --- TITLE BLOCK ---
@@ -1584,18 +1585,18 @@ dispersion softens slopes around the threshold in the same way as a higher
 logit temperature.
 
 \begin{lemma}[RI mixture $\Rightarrow$ logit temperature, local]
-\label{lem:ri_logit_bridge}
-There exists a function $\tilde\theta(\nu)=1+\tfrac{\nu}{4}+o(\nu)$ as
-$\nu\to0$ such that, uniformly on $|z|\le \bar z$,
-\[
-\E\big[L(z+\varepsilon)\big] \;=\; L\!\Big(\tfrac{z}{\tilde\theta(\nu)}\Big)\; +\; O\big(\nu^{3/2}\big).
-\]
-In particular, at the margin $z=0$, the slope satisfies
-$\E[L'(\varepsilon)] = \tfrac{1}{4}\big(1-\tfrac{\nu}{4}\big) + o(\nu)$,
-which matches a logit with temperature $\tilde\theta$ via
-$L'_\theta(0)=\tfrac{1}{4\theta}$. Identifying $\nu=\Var(\varepsilon)=\Var(\xi)/\eta^2$ for an implied uncertainty
-on $\Delta V$, small posterior dispersion is locally equivalent to evaluating
-the same operator at $\theta=\tilde\theta>1$.
+	\label{lem:ri_logit_bridge}
+	There exists a function $\tilde\theta(\nu)=1+\tfrac{\nu}{4}+o(\nu)$ as
+	$\nu\to0$ such that, uniformly on $|z|\le \bar z$,
+	\[
+		\E\big[L(z+\varepsilon)\big] \;=\; L\!\Big(\tfrac{z}{\tilde\theta(\nu)}\Big)\; +\; O\big(\nu^{3/2}\big).
+	\]
+	In particular, at the margin $z=0$, the slope satisfies $\E[L'(\varepsilon)] =
+		\tfrac{1}{4}\big(1-\tfrac{\nu}{4}\big) + o(\nu)$, which matches a logit with
+	temperature $\tilde\theta$ via $L'_\theta(0)=\tfrac{1}{4\theta}$. Identifying
+	$\nu=\Var(\varepsilon)=\Var(\xi)/\eta^2$ for an implied uncertainty on $\Delta
+		V$, small posterior dispersion is locally equivalent to evaluating the same
+	operator at $\theta=\tilde\theta>1$.
 \end{lemma}
 
 \noindent\textit{Proof sketch.} Third-order Taylor around $z=0$ using
@@ -1766,15 +1767,15 @@ operator, while $a_\mu$ can (in principle) shift the location of $\Delta V$.
 The core pivot results are robust to such shifts.
 
 \begin{proposition}[Mean attention and price-pivot invariance]
-\label{prop:mean_attention_pivot}
-Suppose $\Delta V(y,B';a_\mu^{\mathrm{eff}})$ preserves the baseline
-monotonicity ($\partial_y\Delta V>0$, $\partial_{B'}\Delta V<0$) uniformly in
-$a_\mu^{\mathrm{eff}}$, and remains continuous and bounded. Then under the
-operator conditions in Appendix~\ref{app:operator_analysis}, the
-single-crossing price pivot in $B'$ at $B^*(y)$, its monotonicity in $y$, and
-the deleveraging/high-threshold comparative statics continue to hold with
-$\theta$ replaced by $\theta_{\mathrm{RI}}(y,B')$ and $\Delta V$ replaced by
-$\Delta V(y,B';a_\mu^{\mathrm{eff}})$.
+	\label{prop:mean_attention_pivot}
+	Suppose $\Delta V(y,B';a_\mu^{\mathrm{eff}})$ preserves the baseline
+	monotonicity ($\partial_y\Delta V>0$, $\partial_{B'}\Delta V<0$) uniformly in
+	$a_\mu^{\mathrm{eff}}$, and remains continuous and bounded. Then under the
+	operator conditions in Appendix~\ref{app:operator_analysis}, the
+	single-crossing price pivot in $B'$ at $B^*(y)$, its monotonicity in $y$, and
+	the deleveraging/high-threshold comparative statics continue to hold with
+	$\theta$ replaced by $\theta_{\mathrm{RI}}(y,B')$ and $\Delta V$ replaced by
+	$\Delta V(y,B';a_\mu^{\mathrm{eff}})$.
 \end{proposition}
 
 \noindent\textit{Proof sketch.} Positivity and order preservation of
@@ -1790,8 +1791,8 @@ intuition is kernel-based: the price sensitivity to $\theta$ is proportional to
 weights like $L'\!\left(-\Delta V/(\theta\eta)\right)$, which peak at the
 threshold and decay as $|\Delta V|$ grows. Sharper mean posteriors reduce mass
 near the threshold, shrinking the integral that defines $\mathcal S$. A
-two‑point illustration: if $\Delta V\in\{+m,-m\}$ with posterior weight
-$\pi$ on $+m$, then the contribution to $\mathcal S$ is
+two‑point illustration: if $\Delta V\in\{+m,-m\}$ with posterior weight $\pi$
+on $+m$, then the contribution to $\mathcal S$ is
 $\pi(1-\pi)\,L'\!\left(m/(\theta\eta)\right)$, maximized at $\pi=\tfrac12$;
 increasing mean precision pushes $\pi$ away from $\tfrac12$, reducing the
 marginal return to extra tail‑tilt. A formal statement is in
@@ -1801,9 +1802,9 @@ Appendix~\ref{app:attention_substitution}.
 For clarity, the static pricing fixed point with endogenous attention can be
 viewed as the composition
 \[
-\quad q \;\xrightarrow{\,J_\rho\,}\; U \;\xrightarrow{\,(\mathcal M,\mathcal S)\,}\;
-(a_\mu,a_\sigma) \;\xrightarrow{\,a_\sigma\mapsto\theta_{\mathrm{RI}}\,}\;
-\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}[q] \, ,
+	\quad q \;\xrightarrow{\,J_\rho\,}\; U \;\xrightarrow{\,(\mathcal M,\mathcal S)\,}\;
+	(a_\mu,a_\sigma) \;\xrightarrow{\,a_\sigma\mapsto\theta_{\mathrm{RI}}\,}\;
+	\mathcal T_{\theta_{\mathrm{RI}}(\cdot)}[q] \, ,
 \]
 with the continuity and boundedness conditions in
 Appendices~\ref{app:operator_analysis},\ref{app:ri_general} ensuring a unique
@@ -3026,30 +3027,30 @@ finite, and the curvature of $w$ is bounded.
 \subsection{Logit softening under posterior mixtures: a local equivalence}\label{app:ri_logit_bridge}
 
 \begin{lemma}[Posterior mixtures and effective logit temperature]
-Let $L$ be the logistic CDF, $P(z)=L(z)$, and let $z\equiv-\Delta V/\eta$. For a
-mean-zero perturbation $\varepsilon$ with $\Var(\varepsilon)=\nu$ and finite
-third moment, there exists $\tilde\theta(\nu)=1+\tfrac{\nu}{4}+o(\nu)$ such
-that
-\[
-\E\big[L(z+\varepsilon)\big] \;=\; L\!\Big(\tfrac{z}{\tilde\theta(\nu)}\Big)\; +\; O\big(\nu^{3/2}\big)
-\]
-uniformly on $|z|\le\bar z$. In particular, at $z=0$,
-\(\E[L'(\varepsilon)]=\tfrac{1}{4}(1-\tfrac{\nu}{4})+o(\nu)\) and
-\(L'_\theta(0)=\tfrac{1}{4\theta}\), so matching slopes yields
-\(\tilde\theta(\nu)=1+\tfrac{\nu}{4}+o(\nu)\).
+	Let $L$ be the logistic CDF, $P(z)=L(z)$, and let $z\equiv-\Delta V/\eta$. For a
+	mean-zero perturbation $\varepsilon$ with $\Var(\varepsilon)=\nu$ and finite
+	third moment, there exists $\tilde\theta(\nu)=1+\tfrac{\nu}{4}+o(\nu)$ such
+	that
+	\[
+		\E\big[L(z+\varepsilon)\big] \;=\; L\!\Big(\tfrac{z}{\tilde\theta(\nu)}\Big)\; +\; O\big(\nu^{3/2}\big)
+	\]
+	uniformly on $|z|\le\bar z$. In particular, at $z=0$,
+	\(\E[L'(\varepsilon)]=\tfrac{1}{4}(1-\tfrac{\nu}{4})+o(\nu)\) and
+	\(L'_\theta(0)=\tfrac{1}{4\theta}\), so matching slopes yields
+	\(\tilde\theta(\nu)=1+\tfrac{\nu}{4}+o(\nu)\).
 \end{lemma}
 
 \begin{proof}
-Let $f(z)=L(z)$, $f'(z)=f(z)(1-f(z))$, $f''(z)=f'(z)(1-2f(z))$, and
-$f'''(z)=f''(z)(1-2f(z)) - 2\,\big(f'(z)\big)^2$. At $z=0$, $f(0)=\tfrac12$,
-$f'(0)=\tfrac14$, $f''(0)=0$, $f'''(0)=-\tfrac18$. A third-order Taylor around
-0 gives $\E[f'(\varepsilon)]=f'(0)+\tfrac{\nu}{2}f'''(0)+o(\nu)=\tfrac14(1-\tfrac{\nu}{4})+o(\nu)$.
-For any fixed $\bar z>0$, $f$ and its first three derivatives are bounded on
-$[-\bar z,\bar z]$; a standard remainder bound then yields the stated uniform
-approximation for $\E[f(z+\varepsilon)]$. For the matching logit with
-temperature $\theta$, $g(z)=L(z/\theta)$ has $g'(0)=\tfrac{1}{4\theta}$.
-Equating slopes gives $\tilde\theta(\nu)=1+\tfrac{\nu}{4}+o(\nu)$. Substituting
-back yields the uniform approximation.
+	Let $f(z)=L(z)$, $f'(z)=f(z)(1-f(z))$, $f''(z)=f'(z)(1-2f(z))$, and
+	$f'''(z)=f''(z)(1-2f(z)) - 2\,\big(f'(z)\big)^2$. At $z=0$, $f(0)=\tfrac12$,
+	$f'(0)=\tfrac14$, $f''(0)=0$, $f'''(0)=-\tfrac18$. A third-order Taylor around
+	0 gives $\E[f'(\varepsilon)]=f'(0)+\tfrac{\nu}{2}f'''(0)+o(\nu)=\tfrac14(1-\tfrac{\nu}{4})+o(\nu)$.
+	For any fixed $\bar z>0$, $f$ and its first three derivatives are bounded on
+	$[-\bar z,\bar z]$; a standard remainder bound then yields the stated uniform
+	approximation for $\E[f(z+\varepsilon)]$. For the matching logit with
+	temperature $\theta$, $g(z)=L(z/\theta)$ has $g'(0)=\tfrac{1}{4\theta}$.
+	Equating slopes gives $\tilde\theta(\nu)=1+\tfrac{\nu}{4}+o(\nu)$. Substituting
+	back yields the uniform approximation.
 \end{proof}
 
 \noindent Since $z=-\Delta V/\eta$, any small mean-zero dispersion in the
@@ -3063,26 +3064,26 @@ higher $\theta$.
 \subsection{Mean attention and price pivot}\label{app:mean_attention_pivot}
 
 \begin{proposition}
-Let $\Delta V(y,B';a_\mu^{\mathrm{eff}})$ be continuous and preserve the
-baseline monotonicity in $(y,B')$ uniformly in $a_\mu^{\mathrm{eff}}$. Under
-the operator conditions in Appendix~\ref{app:operator_analysis}, the
-single-crossing pivot of prices in $B'$ at $B^*(y)$, its monotonicity in $y$,
-and the deleveraging/high-threshold comparative statics continue to hold with
-$\theta$ replaced by $\theta_{\mathrm{RI}}(y,B')$ and $\Delta V$ replaced by
-$\Delta V(y,B';a_\mu^{\mathrm{eff}})$.
+	Let $\Delta V(y,B';a_\mu^{\mathrm{eff}})$ be continuous and preserve the
+	baseline monotonicity in $(y,B')$ uniformly in $a_\mu^{\mathrm{eff}}$. Under
+	the operator conditions in Appendix~\ref{app:operator_analysis}, the
+	single-crossing pivot of prices in $B'$ at $B^*(y)$, its monotonicity in $y$,
+	and the deleveraging/high-threshold comparative statics continue to hold with
+	$\theta$ replaced by $\theta_{\mathrm{RI}}(y,B')$ and $\Delta V$ replaced by
+	$\Delta V(y,B';a_\mu^{\mathrm{eff}})$.
 \end{proposition}
 
 \begin{proof}
-For each fixed $a_\mu^{\mathrm{eff}}$ and $\theta$, the operator
-$\mathcal T_\theta$ is positive and order preserving, and the resolvent is
-positive. The logistic default probability $\tilde P_\theta$ is single-crossing
-in $B'$ whenever the argument $-\Delta V/(\theta\eta)$ is. Since the mapping
-$\Delta V\mapsto L(-\Delta V/(\theta\eta))$ is strictly decreasing and smooth,
-single-crossing in $\Delta V$ transfers to $\tilde P_\theta$, hence to
-prices. The operator inheritance arguments used for the baseline (and for the
-state-dependent $\theta_{\mathrm{RI}}$) carry through, preserving the pivot and
-its monotone comparative statics in $y$. Monotone shifts in
-$\Delta V(\cdot; a_\mu^{\mathrm{eff}})$ do not overturn single crossing.
+	For each fixed $a_\mu^{\mathrm{eff}}$ and $\theta$, the operator
+	$\mathcal T_\theta$ is positive and order preserving, and the resolvent is
+	positive. The logistic default probability $\tilde P_\theta$ is single-crossing
+	in $B'$ whenever the argument $-\Delta V/(\theta\eta)$ is. Since the mapping
+	$\Delta V\mapsto L(-\Delta V/(\theta\eta))$ is strictly decreasing and smooth,
+	single-crossing in $\Delta V$ transfers to $\tilde P_\theta$, hence to
+	prices. The operator inheritance arguments used for the baseline (and for the
+	state-dependent $\theta_{\mathrm{RI}}$) carry through, preserving the pivot and
+	its monotone comparative statics in $y$. Monotone shifts in
+	$\Delta V(\cdot; a_\mu^{\mathrm{eff}})$ do not overturn single crossing.
 \end{proof}
 
 \subsection{Proof of Proposition~\ref{prop:ramsey_welfare}}\label{app:proof_ramsey}
