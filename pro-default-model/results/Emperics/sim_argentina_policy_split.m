@@ -149,8 +149,8 @@ colors = [188 228 183; 64 171 92; 0 78 45] / 255;
 % 95% CI shading (baseline and theta=100)
 shadeCI(t_series, drA_q(1,:), drA_q(3,:), colors(2,:), 0.15);
 shadeCI(t_series, drB_q(1,:), drB_q(3,:), colors(3,:), 0.15);
-hDebtA = plot(xn, debt_ratio_A, '--', 'Color', colors(2,:), 'LineWidth', 2.5, 'DisplayName', 'Baseline debt/GDP');
-hDebtB = plot(xn, debt_ratio_B, '-',  'Color', colors(3,:), 'LineWidth', 2.5, 'DisplayName', 'High $\theta$ debt/GDP');
+hDebtA = plot(xn, debt_ratio_A, '--', 'Color', colors(2,:), 'LineWidth', 2.5, 'DisplayName', 'Baseline');
+hDebtB = plot(xn, debt_ratio_B, '-',  'Color', colors(3,:), 'LineWidth', 2.5, 'DisplayName', 'High $\theta$');
 xlim([datenum(datetime(2005,12,31)) datenum(datetime(2009,1,1))]);
 
 xsplit = datenum(splitDate);
@@ -170,7 +170,14 @@ legend([hDebtA hDebtB], 'Location','southoutside', 'Orientation','horizontal', '
 % Save
 out1 = fullfile(resultsDir, 'Emperics', 'argentina_debt_series.pdf');
 drawnow;
-print(gcf, out1, '-dpdf', '-r300', '-painters');
+
+w = 9; h = 6;
+set(gcf,'Units','inches');                 % 图窗物理单位（可选）
+set(gcf,'Position',[1 1 w h]);             % 屏幕显示大小（可选）
+set(gcf,'PaperUnits','inches');
+set(gcf,'PaperPosition',[0 0 w h]);        % 图在纸上占据的框
+set(gcf,'PaperSize',[w h]);                % 整个页面大小 = 图大小
+print(gcf, out1, '-dpdf', '-painters');    % -r300 对矢量 PDF 无影响，可省
 
 %% Plot: Spread series (annualized, %)
 figure(2); clf; set(gcf, 'Position', [100,460,900,600]);
@@ -178,8 +185,8 @@ hold on;
 % 95% CI shading for spreads
 shadeCI(t_series, spA_q(1,:), spA_q(3,:), colors(2,:), 0.15);
 shadeCI(t_series, spB_q(1,:), spB_q(3,:), colors(3,:), 0.15);
-hSpA = plot(xn, 100*sp_A, '--', 'Color', colors(2,:), 'LineWidth', 2.5, 'DisplayName', 'Baseline spreads');
-hSpB = plot(xn, 100*sp_B, '-',  'Color', colors(3,:), 'LineWidth', 2.5, 'DisplayName', 'High $\theta$ spreads');
+hSpA = plot(xn, 100*sp_A, '--', 'Color', colors(2,:), 'LineWidth', 2.5, 'DisplayName', 'Baseline');
+hSpB = plot(xn, 100*sp_B, '-',  'Color', colors(3,:), 'LineWidth', 2.5, 'DisplayName', 'High $\theta$');
 
 xline(xsplit, ':k', '2007-Q1', 'Interpreter','latex','FontSize', 15,'LineWidth',2);
 
@@ -195,7 +202,13 @@ legend([hSpA hSpB], 'Location','southoutside', 'Orientation','horizontal', 'Inte
 
 out2 = fullfile(resultsDir, 'Emperics', 'argentina_spread_series.pdf');
 drawnow;
-print(gcf, out2, '-dpdf', '-r300', '-painters');
+w = 9; h = 6;
+set(gcf,'Units','inches');                 % 图窗物理单位（可选）
+set(gcf,'Position',[1 1 w h]);             % 屏幕显示大小（可选）
+set(gcf,'PaperUnits','inches');
+set(gcf,'PaperPosition',[0 0 w h]);        % 图在纸上占据的框
+set(gcf,'PaperSize',[w h]);                % 整个页面大小 = 图大小
+print(gcf, out2, '-dpdf', '-painters');    % -r300 对矢量 PDF 无影响，可省
 
 fprintf('\nSaved:\n  %s\n  %s\n', out1, out2);
 

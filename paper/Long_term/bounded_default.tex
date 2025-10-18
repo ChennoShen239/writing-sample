@@ -1505,6 +1505,50 @@ persistence and beliefs generates hysteresis effects: temporary improvements in
 fundamentals produce limited deleveraging, while sustained improvements are
 necessary to overcome entrenched priors exhibiting PRO.
 
+\subsection{Event-style simulation along Argentina's GDP path}\label{sec:argentina_policy_split}
+We run an event-style simulation that feeds the model Argentina’s observed
+quarterly real GDP (2006Q1–2009Q1) and compares two policy evaluations that
+coincide before 2007Q1 and diverge afterward. Real GDP is mapped to the model’s
+output grid via standardized rank matching. The initial debt-to-annual-GDP
+ratio is set to about 6.5\% in 2006Q1. From 2007Q1 onward we evaluate the same
+pricing operator under two attention regimes: baseline (rational benchmark)
+versus a warmer assessment consistent with PRO ($\theta=100$). The resulting
+debt ratio and annualized spread series are in
+Figure~\ref{fig:argentina_policy_split}.
+
+Two patterns stand out and align with the paper’s mechanism. First, debt
+dynamics: after the split, the $\theta=100$ branch systematically deleverages
+relative to the baseline path, a direct consequence of the pivoted price
+schedule that raises borrowing costs in the typical issuance region. Second,
+spreads: the PRO branch jumps up on impact and remains elevated, consistent
+with an immediate ``instability signal'' (an impact increase in perceived
+residual uncertainty) and a more persistent ``credibility collapse'' (a shift
+of attention away from fundamentals toward diagnosing instability). The 95\%
+bands reflect uncertainty from the policy distribution over next-period debt
+conditional on $(y,B)$; even allowing for this endogenous dispersion, the
+baseline and PRO paths remain clearly separated after 2007Q1, quantifying the
+wedge implied by the same-operator evaluation at a higher tail weight.
+
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[t]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{../../pro-default-model/results/Emperics/argentina_debt_series.pdf}
+		\subcaption{Debt-to-annual-GDP (\%). Baseline vs $\theta=100$ with 95\% CI.}
+		\label{fig:arg_debt_series}
+	\end{subfigure}\hfill
+	\begin{subfigure}[t]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{../../pro-default-model/results/Emperics/argentina_spread_series.pdf}
+		\subcaption{Annualized spreads (\%). Baseline vs $\theta=100$ with 95\% CI.}
+		\label{fig:arg_spread_series}
+	\end{subfigure}
+	\caption{Policy split at 2007Q1 along observed GDP: debt and spreads}
+	\label{fig:argentina_policy_split}
+\end{figure}
+
+\parbox{\linewidth}{\small\textit{Note:} Both panels simulate the model along Argentina’s observed quarterly real GDP (2006Q1–2009Q1), mapped to the $y$-grid by standardized rank matching. The initial debt-to-annual-GDP ratio is set to about 6.5\% in 2006Q1. Before 2007Q1 both paths use the baseline policy; from 2007Q1 onward the second path evaluates the same pricing operator at a higher tail weight ($\theta=100$). Shaded bands are pointwise 95\% confidence intervals obtained by Monte Carlo sampling from the policy distribution over $B'$ conditional on $(y,B)$ (spreads annualized). The vertical line marks 2007Q1.}
+
 \section{Microfoundations for PRO: Mental Model and Residual Uncertainty}\label{sec:micro}
 
 This section develops a rational‑inattention (RI) microfoundation that is fully

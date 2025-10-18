@@ -2457,7 +2457,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3179,6 +3179,137 @@ high
 \end_layout
 
 \end_deeper
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Argentina's Case
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Event Simulation Using Argentina's Data
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-3em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Debt-to-GDP Ratio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/Emperics/argentina_debt_series.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Credit Spread
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/Emperics/argentina_spread_series.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Policy Splits:
+\end_layout
+
+\begin_layout Itemize
+Debt Dynamics:
+ 
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Microfound PRO with Rational Inattention
 \end_layout
@@ -3389,7 +3520,7 @@ locally equivalent
  i.e.
 \begin_inset Formula 
 \[
-\theta_{\mathrm{RI}}(s)=1+{\color{teal}\underset{\text{Prediction}}{\underbrace{\frac{\nabla f{}^{\top}\hat{\Sigma}_{\beta}\nabla f}{4\eta^{2}}}}}+{\color{red}\underset{\text{Randomness}}{\underbrace{\frac{\widehat{\sigma^{2}}}{4\eta^{2}}}}}+o\left(\frac{\nabla f{}^{\top}\hat{\Sigma}_{\beta}\nabla f+\widehat{\sigma^{2}}}{\eta^{2}}\right)\ge1.
+\theta_{\mathrm{RI}}(s)=1+{\color{teal}\underset{\text{Prediction}}{\underbrace{\frac{\nabla f{}^{\top}\hat{\Sigma}_{\beta}\nabla f}{4\eta^{2}}}}}+{\color{red}\underset{\text{Randomness}}{\underbrace{\frac{\widehat{\sigma^{2}}}{4\eta^{2}}}}}+o\left(v\left(s\right)\right)\ge1.
 \]
 
 \end_inset
@@ -3596,20 +3727,32 @@ Suppose
  and other primitives are fixed.
  Then at any interior optimum,
  
+\color teal
+
 \begin_inset Formula $a_{\beta}^{*}$
 \end_inset
 
- weakly decreases and 
+ weakly decreases
+\color inherit
+ and 
+\color red
+
 \begin_inset Formula $a_{\sigma}^{*}$
 \end_inset
 
- weakly increases.
+ weakly increases
+\color inherit
+.
  Consequently,
  
+\color red
+
 \begin_inset Formula $\widehat{\sigma^{2}}$
 \end_inset
 
- weakly rises in expectation and 
+ weakly rises
+\color inherit
+ in expectation and 
 \begin_inset Formula $\theta_{\mathrm{RI}}(s)$
 \end_inset
 
