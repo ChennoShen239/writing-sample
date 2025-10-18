@@ -1577,6 +1577,17 @@ With the objective in~\eqref{eq:attention_program}, the state‑weighted first�
 \end{equation}
 where $w(s)\propto L'\!\big(-\Delta V(s)/\eta\big)$ concentrates mass near the default boundary.\footnote{In \eqref{eq:foc_compact}, under symmetric innovations and stability‑biased priors, attention typically reduces the posterior mean of the residual variance, so $\E[-\partial \, \widehat{\sigma}^2/\partial a_\sigma]>0$. With adverse (instability) signals, $\partial \, \widehat{\sigma}^2/\partial a_\sigma$ can locally turn positive, which the sign‑robust form in \eqref{eq:foc_compact} accommodates.}
 
+\paragraph{Posterior mechanics for $\widehat{\sigma^2}$}
+Under the Gaussian prior/likelihood for $\ell_\sigma\equiv\log\sigma^2$ in \eqref{eq:beta_posterior}–\eqref{eq:sigma_post_mean}, the posterior is $\ell_\sigma\,|\,s_\ell\sim\mathcal N\big(\hat\ell,\hat\tau^2\big)$ with $\hat\tau^2=(\tau^{-2}+\psi_\sigma a_\sigma)^{-1}$ and $\hat\ell=\big(\tau^{-2}\bar\ell+\psi_\sigma a_\sigma s_\ell\big)/(\tau^{-2}+\psi_\sigma a_\sigma)$. Hence
+\begin{equation}\label{eq:sigma_post_closed}
+	\widehat{\sigma^2}(a_\sigma,s_\ell)\;=\;\exp\!\Big(\hat\ell(a_\sigma,s_\ell)+\tfrac12\hat\tau^2(a_\sigma)\Big),
+\end{equation}
+and a direct calculation (Appendix~\ref{app:sigma_posterior_mechanics}) yields the local sensitivity
+\begin{equation}\label{eq:d_sigmahat_da_main}
+	\frac{\partial\widehat{\sigma^2}}{\partial a_\sigma}\;=\;\widehat{\sigma^2}\,\psi_\sigma\,\hat\tau^4\,\left(\frac{s_\ell-\bar\ell}{\tau^2}-\frac{1}{2}\right).
+\end{equation}
+Equation~\eqref{eq:d_sigmahat_da_main} makes explicit when dispersion attention ``warms'' (raises $\widehat{\sigma^2}$ and thus $\theta$) or ``cools'': large instability signals ($s_\ell$ sufficiently above~$\bar\ell$) overturn the certainty effect ($-\tfrac12$ term) and increase $\widehat{\sigma^2}$; otherwise, posterior concentration dominates and $\widehat{\sigma^2}$ falls.
+
 \paragraph{Economic intuition} $\theta_{\mathrm{RI}}(s)-1$ is the (state‑wise) posterior variance around the default threshold, scaled by $4\eta^2$. It has two sources: uncertainty about fundamentals along the most relevant direction $\nabla f$, and uncertainty about the residual $\sigma^2$. Accordingly, $a_\beta$ compresses posterior variance precisely along the direction that most shifts the default margin (typically lowering $\theta$, i.e., “cooling”), whereas $a_\sigma$ diagnoses instability: if attention reveals stability it cools (lowers $\theta$); if it reveals larger residual risk (bad news) it warms (raises $\theta$). The kernel $w(s)\propto L'(-\Delta V/\eta)$ concentrates attention near the threshold, ensuring scarce attention is spent where prices are most sensitive.
 \paragraph{Pricing with state‑dependent $\theta_{\mathrm{RI}}$}
 Define $\big(\mathcal T^{\mathrm{RI}}q\big)(s)\coloneqq\big(\mathcal T_{\theta_{\mathrm{RI}}(s)}q\big)(s)$. Since $\mathcal T_\theta$ is positive and a contraction uniformly in $\theta\in[1,\bar\theta]$ (Appendix~\ref{app:operator_analysis}), continuity of $\theta_{\mathrm{RI}}$ implies $\mathcal T^{\mathrm{RI}}$ is a contraction with the same modulus. Hence there exists a unique price fixed point $q^\star$ solving $q^\star=\mathcal T^{\mathrm{RI}}q^\star$. All operator‑based comparative statics from the baseline therefore carry over with $\theta$ replaced by $\theta_{\mathrm{RI}}(\cdot)$.
@@ -1602,14 +1613,20 @@ where $w(s)$ weights states near the default boundary. Under \eqref{eq:beta_post
 \begin{proof}
 	See Appendix \ref{app:attention_substitution}.
 \end{proof}
-\paragraph{Event mapping}
-Interpreting Argentina’s inflation misreporting as a persistent negative shock
-to $\psi_\beta$ (signal quality for fundamentals),
-Proposition~\ref{prop:att_sub} predicts
-$(a_\beta^*\downarrow,\,a_\sigma^*\uparrow)$. Through \eqref{eq:theta_RI_def},
-$\theta_{\mathrm{RI}}$ rises, so the same operator $\mathcal T_{\theta}$
-generates steeper price pivots, higher default thresholds with deleveraging,
-and elevated average spreads as documented in Section~\ref{sec:motivation}.
+\paragraph{Event mapping: two channels}
+Argentina’s inflation misreporting can be read through two distinct channels: -
+Credibility collapse (quality channel): a persistent fall in $\psi_\beta$
+lowers the marginal value of fundamentals signals. By
+Proposition~\ref{prop:att_sub}, attention substitutes toward dispersion
+$(a_\beta^*\downarrow,\,a_\sigma^*\uparrow)$, which raises
+$\theta_{\mathrm{RI}}(s)$ via \eqref{eq:theta_RI_def}. - Instability shock
+(signal channel): the act of misreporting is itself a large instability signal
+$s_\ell\gg\bar\ell$. By \eqref{eq:d_sigmahat_da_main}, dispersion attention
+amplifies $\widehat{\sigma^2}$ on impact, lifting $\theta_{\mathrm{RI}}$ even
+holding $\psi_\beta$ fixed. Both channels operate through the same pricing
+operator $\mathcal T_\theta$ evaluated at a higher
+$\theta_{\mathrm{RI}}(\cdot)$, generating steeper price pivots, higher default
+thresholds with deleveraging, and elevated average spreads.
 
 \section{Policy and Information Extensions}\label{sec:extensions}
 
@@ -2739,6 +2756,35 @@ $\tilde\theta\approx 1+\Var(\xi)/(4\eta^2)$. This formalizes the main-text
 claim that posterior dispersion around the default margin softens the logit in a
 way that is locally equivalent to evaluating the same pricing operator at a
 higher $\theta$.
+
+\subsection{Posterior of \texorpdfstring{$\ell_\sigma$}{ell-sigma} and the sensitivity of \texorpdfstring{$\widehat{\sigma^2}$}{sigma-hat-squared}}\label{app:sigma_posterior_mechanics}
+\paragraph{Setup and posterior.} Recall the prior and signal for $\ell_\sigma\equiv\log\sigma^2$:
+\[
+	\ell_\sigma\sim\mathcal N(\bar\ell,\tau^2),\qquad s_\ell\,|\,\ell_\sigma\sim\mathcal N\big(\ell_\sigma,(\psi_\sigma a_\sigma)^{-1}\big).
+\]
+Bayesian updating gives the Gaussian posterior
+$\ell_\sigma\,|\,s_\ell\sim\mathcal N\big(\hat\ell,\hat\tau^2\big)$ with
+\begin{equation}\label{eq:post_tau_ell}
+	\hat\tau^2(\!a_\sigma\!)\;=\;\big(\tau^{-2}+\psi_\sigma a_\sigma\big)^{-1},\qquad \hat\ell(a_\sigma,s_\ell)\;=\;\frac{\tau^{-2}\bar\ell+\psi_\sigma a_\sigma s_\ell}{\tau^{-2}+\psi_\sigma a_\sigma}.
+\end{equation}
+Since $\sigma^2=\exp(\ell_\sigma)$, the posterior mean is
+\begin{equation}\label{eq:sigma_post_appendix}
+	\widehat{\sigma^2}(a_\sigma,s_\ell)\;=\;\E\big[\exp(\ell_\sigma)\,\big|\,s_\ell\big]\;=\;\exp\!\Big(\hat\ell(a_\sigma,s_\ell)+\tfrac12\hat\tau^2(a_\sigma)\Big),
+\end{equation}
+which coincides with the main-text expression \eqref{eq:sigma_post_closed}.
+
+\paragraph{Sensitivity with respect to $a_\sigma$.} Differentiating \eqref{eq:sigma_post_appendix} and using
+\eqref{eq:post_tau_ell},
+\[
+	\partial_{a_\sigma}\widehat{\sigma^2}\;=\;\widehat{\sigma^2}\,\Big(\partial_{a_\sigma}\hat\ell\;+\;\tfrac12\,\partial_{a_\sigma}\hat\tau^2\Big),\qquad \partial_{a_\sigma}\hat\tau^2\;=\;-\,\psi_\sigma\,\hat\tau^4.
+\]
+A quotient rule gives
+$\partial_{a_\sigma}\hat\ell=\psi_\sigma\,(s_\ell-\bar\ell)\,\hat\tau^4/\tau^2$.
+Therefore
+\begin{equation}\label{eq:d_sigmahat_da_appendix}
+	\frac{\partial\widehat{\sigma^2}}{\partial a_\sigma}\;=\;\widehat{\sigma^2}\,\psi_\sigma\,\hat\tau^4\,\left(\frac{s_\ell-\bar\ell}{\tau^2}-\frac{1}{2}\right),
+\end{equation}
+matching Equation~\eqref{eq:d_sigmahat_da_main} in the main text. The term $-(1/2)$ captures the certainty effect (posterior concentration), while the surprise term $\tfrac{s_\ell-\bar\ell}{\tau^2}$ captures the information content of the instability signal.
 
 \subsection{Proof of Proposition~\ref{prop:ramsey_welfare}}\label{app:proof_ramsey}
 

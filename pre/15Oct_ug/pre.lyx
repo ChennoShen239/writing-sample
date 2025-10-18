@@ -452,7 +452,11 @@ A Persistent Puzzle
 \end_layout
 
 \begin_layout Frame
-Some sovereigns face persistently high spreads despite moderate debt and improving fundamentals.
+Some sovereigns face persistently 
+\series bold
+high spreads
+\series default
+ despite moderate debt and improving fundamentals.
 \end_layout
 
 \begin_layout Frame
@@ -696,7 +700,11 @@ This Paper
 PRO Mechanism:
 
 \series default
- Lenders overweight policy dispersion 
+ Lenders 
+\color red
+overweight policy dispersion
+\color inherit
+ 
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
@@ -731,13 +739,13 @@ stability illusion
 RI microfoundation:
 
 \series default
- Optimal attention to dispersion 
+ Optimal attention to default 
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
  
 \series bold
-state-dependent
+endogenous state-dependent
 \series default
  tail weight of 
 \emph on
@@ -907,7 +915,7 @@ and value of repay
 
 \begin_inset Formula 
 \[
-\tilde{V}^{D}(y,\varepsilon_{d})=V^{D}(y)+\varepsilon_{d},\quad\tilde{V}^{R}(y,B,\varepsilon_{r})=V^{R}(y,B)+\varepsilon_{r}
+\tilde{V}^{D}(y,\varepsilon_{d})=V^{D}(y)+{\color{teal}\boldsymbol{\varepsilon_{d}}},\quad\tilde{V}^{R}(y,B,\varepsilon_{r})=V^{R}(y,B)+{\color{teal}\boldsymbol{\varepsilon_{r}}}
 \]
 
 \end_inset
@@ -929,13 +937,13 @@ ex-post
  value
 \begin_inset Formula 
 \[
-V(y,B)=\mathbb{E}_{\varepsilon_{d},\varepsilon_{r}}\left[\max\left\{ \underbrace{V^{D}(y)+\varepsilon_{d}}_{\tilde{V}^{D}(y,\varepsilon_{d})},\underbrace{V^{R}(y,B)+\varepsilon_{r}}_{\tilde{V}^{R}(y,B,\varepsilon_{r})}\right\} \right]=\eta\ln\left(\exp\frac{V^{D}(y)}{\eta}+\exp\frac{V^{R}(y,B)}{\eta}\right)
+V(y,B)=\mathbb{E}_{{\color{teal}\varepsilon_{d},\varepsilon_{r}}}\left[\max\left\{ \underbrace{V^{D}(y)+\varepsilon_{d}}_{\tilde{V}^{D}(y,\varepsilon_{d})},\underbrace{V^{R}(y,B)+\varepsilon_{r}}_{\tilde{V}^{R}(y,B,\varepsilon_{r})}\right\} \right]=\eta\ln\left(\exp\frac{V^{D}(y)}{\eta}+\exp\frac{V^{R}(y,B)}{\eta}\right)
 \]
 
 \end_inset
 
 where 
-\begin_inset Formula $\varepsilon_{R},\ \varepsilon_{D}\overset{i.i.d.}{\sim}\text{Type‐I EV}(-\eta\gamma,\eta)$
+\begin_inset Formula ${\color{teal}\varepsilon_{R},\varepsilon_{D}}\overset{i.i.d.}{\sim}\text{Type‐I EV}(-\eta\gamma,\eta)$
 \end_inset
 
  
@@ -1024,14 +1032,14 @@ W(y,B,B')=u\left(y-\kappa B+\left[B'-(1-\delta)B\right]q(y,B')\right)+\beta\math
 
 \begin_layout Standard
 assuming 
-\begin_inset Formula $\left\{ \varepsilon_{B'}\right\} _{B'\in\mathcal{B}}\overset{i.i.d.}{\sim}\text{Type‐I EV}(-\rho\gamma,\rho)$
+\begin_inset Formula ${\color{teal}\left\{ \varepsilon_{B'}\right\} _{B'\in\mathcal{B}}}\overset{i.i.d.}{\sim}\text{Type‐I EV}(-\rho\gamma,\rho)$
 \end_inset
 
 ,
  we have
 \begin_inset Formula 
 \[
-V^{R}(y,B)=\rho\ln\left(\sum_{B'\in\mathcal{B}}\exp\frac{W(y,B,B')}{\rho}\right)
+V^{R}(y,B)=\mathbb{E}_{{\color{teal}\left\{ \varepsilon_{B'}\right\} }}\left[\max_{B'\in\mathcal{B}}\left\{ W\left(y,B,B'\right)+\varepsilon_{B'}\right\} \right]=\rho\ln\left(\sum_{B'\in\mathcal{B}}\exp\frac{W(y,B,B')}{\rho}\right)
 \]
 
 \end_inset
@@ -1066,6 +1074,7 @@ Intuition:
 \series default
 Lenders perceive the sovereign to be more 
 \emph on
+\color red
 erratic
 \emph default
  or 
@@ -1080,6 +1089,7 @@ irrational
 
 
 \emph default
+\color inherit
  than it truly is
 \end_layout
 
@@ -1090,11 +1100,11 @@ Formally:
  
 \series default
 Lenders estimate the price with scale 
-\begin_inset Formula $\ensuremath{\tilde{\eta}=\theta\cdot\eta}$
+\begin_inset Formula $\ensuremath{{\color{red}\tilde{\eta}=\theta\cdot\eta}}$
 \end_inset
 
  where 
-\begin_inset Formula $\theta>1$
+\begin_inset Formula ${\color{red}\theta>1}$
 \end_inset
 
 :
@@ -1108,7 +1118,7 @@ perceived
  probability of default:
 \begin_inset Formula 
 \[
-\tilde{P}(y',B')=\frac{\exp\frac{V^{D}(y')}{\theta\eta}}{\exp\frac{V^{D}(y')}{\theta\eta}+\exp\frac{V^{R}(y',B')}{\theta\eta}}
+{\color{red}\tilde{P}(y',B')}=\frac{\exp\frac{V^{D}(y')}{{\color{red}\theta\eta}}}{\exp\frac{V^{D}(y')}{{\color{red}\theta\eta}}+\exp\frac{V^{R}(y',B')}{{\color{red}\theta\eta}}}
 \]
 
 \end_inset
@@ -1133,7 +1143,7 @@ policy-randomness overestimation (PRO)
 Price:
 \begin_inset Formula 
 \[
-q(y,B')=\underset{\equiv(\mathcal{T}_{\theta}q)(B',y)}{\underbrace{\frac{1}{1+r}\mathbb{E}_{y'|y}\left[\left(1-\tilde{P}(y',B')\right)\left(\kappa+(1-\delta)\mathbb{E}_{B''|y',B'}\left[q(y',B'')\right]\right)\right]}}
+q(y,B')=\underset{\equiv(\mathcal{T}_{\theta}q)(B',y)}{\underbrace{\frac{1}{1+r}\mathbb{E}_{y'|y}\left[\left(1-{\color{red}\boldsymbol{\tilde{P}\left(y',B'\right)}}\right)\left(\kappa+(1-\delta)\mathbb{E}_{B''|y',B'}\left[q(y',B'')\right]\right)\right]}}
 \]
 
 \end_inset
@@ -1207,6 +1217,7 @@ Main Result:
 Main Proposition:
  
 \series default
+\emph on
 Consider 2 economies with 
 \begin_inset Formula $\theta>1$
 \end_inset
@@ -1221,7 +1232,7 @@ Consider 2 economies with
 \end_inset
 
  and 
-\begin_inset Formula $q_{\theta}(B',y)$
+\begin_inset Formula ${\color{red}q_{\theta}(B',y)}$
 \end_inset
 
  be the respective equilibrium bond price functions.
@@ -1235,13 +1246,15 @@ Consider 2 economies with
 \end_inset
 
  such that the price difference 
-\begin_inset Formula $\Delta q(B',y)\equiv q_{\theta}(B',y)-q_{1}(B',y)$
+\begin_inset Formula $\Delta q(B',y)\equiv{\color{red}q_{\theta}(B',y)}-q_{1}(B',y)$
 \end_inset
 
  satisfies:
 \end_layout
 
 \begin_layout Itemize
+
+\emph on
 For levels of future debt 
 \begin_inset Formula $B'<B^{*}(y)$
 \end_inset
@@ -1255,6 +1268,8 @@ For levels of future debt
 \end_layout
 
 \begin_layout Itemize
+
+\emph on
 For levels of future debt 
 \begin_inset Formula $B'>B^{*}(y)$
 \end_inset
@@ -1273,20 +1288,21 @@ For levels of future debt
 Corollary:
  
 \series default
+\emph on
 Given the spread defined by 
 \begin_inset Formula $s(y,B')=\frac{\kappa}{q(y,B')}-\delta-r$
 \end_inset
 
 ,
  the spread difference 
-\begin_inset Formula $\Delta s(B',y)\equiv s_{\theta}(B',y)-s_{1}(B',y)$
+\begin_inset Formula $\Delta s(B',y)\equiv{\color{red}s_{\theta}(B',y)}-s_{1}(B',y)$
 \end_inset
 
  satisfies the opposite relationship to the price difference at the same threshold 
 \begin_inset Formula $B^{*}(y)$
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -1296,7 +1312,11 @@ Low position
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
- Elevated average premia 
+ 
+\color red
+Elevated
+\color inherit
+ average spread 
 \end_layout
 
 \end_deeper
@@ -1339,9 +1359,25 @@ Pivoting Bond Price Schedules
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_5.pdf
-	width 60col%
+	width 75col%
 
 \end_inset
 
@@ -2424,6 +2460,35 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulated Distribution
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-3em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Float figure
 placement document
 alignment document
@@ -2435,7 +2500,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Debt-to-GDP Ratio Distribution
+Debt-to-GDP Ratio 
 \end_layout
 
 \end_inset
@@ -2467,7 +2532,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Credit Spread Distribution
+Credit Spread 
 \end_layout
 
 \end_inset
@@ -2546,7 +2611,7 @@ Deleveraging and Low-debt Trap II
 Why does the average spread rise while deleveraging?
 \begin_inset Formula 
 \[
-\bar{s}_{\theta}-\bar{s}_{1}=\kappa\underbrace{\mathbb{E}_{\mu_{\theta}}\Big[\tfrac{1}{q_{\theta}}-\tfrac{1}{q_{1}}\Big]}_{\text{price wedge at PRO weights}}+\kappa\underbrace{\Big(\mathbb{E}_{\mu_{\theta}}\left[\tfrac{1}{q_{1}}\right]-\mathbb{E}_{\mu_{1}}\left[\tfrac{1}{q_{1}}\right]\Big)}_{\text{composition (policy) effect}}
+\bar{s}_{\theta}-\bar{s}_{1}=\kappa{\color{red}\underbrace{\mathbb{E}_{\mu_{\theta}}\Big[\tfrac{1}{q_{\theta}}-\tfrac{1}{q_{1}}\Big]}_{\text{price wedge at PRO weights}}}+\kappa\underbrace{\Big(\mathbb{E}_{\mu_{\theta}}\left[\tfrac{1}{q_{1}}\right]-\mathbb{E}_{\mu_{1}}\left[\tfrac{1}{q_{1}}\right]\Big)}_{\text{composition (policy) effect}}
 \]
 
 \end_inset
@@ -3146,7 +3211,7 @@ Let
  the net value difference is perceived as
 \begin_inset Formula 
 \[
-\Delta V(s)=f(s;\beta)+\xi
+\Delta V(s)={\color{teal}f(s;\beta)}+{\color{red}\xi}
 \]
 
 \end_inset
@@ -3166,7 +3231,7 @@ for model parameters:
  
 \series bold
 
-\begin_inset Formula $\beta\sim\mathcal{N}(\bar{\beta},\Sigma_{\beta}),s_{\beta}=\beta+\varepsilon_{\beta},\varepsilon_{\beta}\sim\mathcal{N}\big(0,(\psi_{\beta}a_{\beta})^{-1}I_{k}\big)$
+\begin_inset Formula $\beta\sim\mathcal{N}(\bar{\beta},\Sigma_{\beta}),s_{\beta}=\beta+\varepsilon_{\beta},{\color{teal}\boldsymbol{\varepsilon_{\beta}\sim\mathcal{N}\big(0,(\psi_{\beta}a_{\beta})^{-1}I_{k}\big)}}$
 \end_inset
 
  
@@ -3175,11 +3240,11 @@ for model parameters:
 \begin_layout Itemize
 for residuals:
  
-\begin_inset Formula $\xi|\sigma^{2}\sim\mathcal{N}(0,\sigma^{2}),\ell_{\sigma}\equiv\log\sigma^{2}\sim\mathcal{N}(\bar{\ell},\,\tau^{2}),$
+\begin_inset Formula $\xi|\sigma^{2}\sim\mathcal{N}(0,\sigma^{2}),\ell_{\sigma}\equiv\log\sigma^{2}\sim\mathcal{N}(\bar{\ell},\tau^{2}),$
 \end_inset
 
 
-\begin_inset Formula $s_{\ell}=\ell_{\sigma}+\varepsilon_{\sigma},\varepsilon_{\sigma}\sim\mathcal{N}\big(0,(\psi_{\sigma}a_{\sigma})^{-1}\big)$
+\begin_inset Formula $s_{\ell}=\ell_{\sigma}+\varepsilon_{\sigma},{\color{red}\varepsilon_{\sigma}\sim\mathcal{N}\big(0,(\psi_{\sigma}a_{\sigma})^{-1}\big)}$
 \end_inset
 
 
@@ -3191,7 +3256,7 @@ for residuals:
 Convex Attention Cost:
 \begin_inset Formula 
 \[
-\Phi(a_{\beta},a_{\sigma})=\tfrac{\kappa_{\beta}}{2}a_{\beta}^{2}+\tfrac{\kappa_{\sigma}}{2}a_{\sigma}^{2},\quad\kappa_{\beta},\kappa_{\sigma}>0
+\Phi(a_{\beta},a_{\sigma})={\color{teal}\boldsymbol{\tfrac{\kappa_{\beta}}{2}a_{\beta}^{2}}}+{\color{red}\boldsymbol{\tfrac{\kappa_{\sigma}}{2}a_{\sigma}^{2}}},\quad\kappa_{\beta},\kappa_{\sigma}>0
 \]
 
 \end_inset
@@ -3209,7 +3274,7 @@ Posterior Distribution:
 \begin_layout Itemize
 for model parameters:
  
-\begin_inset Formula $\hat{\Sigma}_{\beta}=\big(\Sigma_{\beta}^{-1}+\psi_{\beta}a_{\beta}I_{k}\big)^{-1},\hat{\beta}=\hat{\Sigma}_{\beta}\big(\Sigma_{\beta}^{-1}\bar{\beta}+\psi_{\beta}a_{\beta}s_{\beta}\big)$
+\begin_inset Formula ${\color{teal}\hat{\Sigma}_{\beta}}=\big(\Sigma_{\beta}^{-1}+\psi_{\beta}a_{\beta}I_{k}\big)^{-1},\hat{\beta}=\hat{\Sigma}_{\beta}\big(\Sigma_{\beta}^{-1}\bar{\beta}+\psi_{\beta}a_{\beta}s_{\beta}\big)$
 \end_inset
 
 
@@ -3218,7 +3283,7 @@ for model parameters:
 \begin_layout Itemize
 for residuals:
  
-\begin_inset Formula $\widehat{\sigma^{2}}\equiv\mathbb{E}\big[\sigma^{2}\big|s_{\ell}\big]\;=\mathbb{E}\big[\exp(\ell_{\sigma})\big|s_{\ell}\big]$
+\begin_inset Formula ${\color{red}\widehat{\sigma^{2}}}\equiv\mathbb{E}\big[\sigma^{2}\big|s_{\ell}\big]=\mathbb{E}\big[\exp(\ell_{\sigma})\big|s_{\ell}\big]$
 \end_inset
 
 
@@ -3247,7 +3312,7 @@ Default Revisited
 Recall the perceived default probability
 \begin_inset Formula 
 \[
-P_{\theta}(y',B')=L\Big(\underset{\equiv Z\left(s\right)}{\underbrace{-\tfrac{\Delta V(y',B')}{\theta\eta}}}\Big),L(z)\equiv(1+e^{-z})^{-1}
+P_{\theta}(y',B')=L\underset{Z\left(s\right)}{\underbrace{\left(-\tfrac{\Delta V(y',B')}{\theta\eta}\right)}},L(z)\equiv(1+\exp\left(-z\right))^{-1}
 \]
 
 \end_inset
@@ -3257,13 +3322,17 @@ Linearize
 \end_inset
 
  around the posterior 
+\color teal
+
 \begin_inset Formula $\hat{\beta}$
 \end_inset
 
+
+\color inherit
 :
 \begin_inset Formula 
 \[
-Z(s)\approx-\frac{1}{\eta}\Big(f(s;\hat{\beta})+\nabla_{\beta}f(s;\hat{\beta})^{\top}(\beta-\hat{\beta})+\xi\Big)
+Z(s)\approx-\frac{1}{\eta}\Big({\color{teal}f(s;\hat{\beta})+\nabla_{\beta}f(s;\hat{\beta})^{\top}(\beta-\hat{\beta})}+{\color{red}\xi}\Big)
 \]
 
 \end_inset
@@ -3280,7 +3349,7 @@ and let
  is mean-shifted Gaussian with:
 \begin_inset Formula 
 \[
-\nu(s)\equiv\mathrm{Var}(\varepsilon|s)=\frac{1}{\eta^{2}}\left(\nabla f{}^{\top}\hat{\Sigma}_{\beta}\nabla f+\widehat{\sigma^{2}}\right),\quad\nabla f\equiv\nabla_{\beta}f(s;\hat{\beta})
+\nu(s)\equiv\mathrm{Var}(\varepsilon|s)=\frac{1}{\eta^{2}}\left({\color{teal}\nabla f{}^{\top}\hat{\Sigma}_{\beta}\nabla f}+{\color{red}\widehat{\sigma^{2}}}\right),\quad{\color{teal}\nabla f\equiv\nabla_{\beta}f(s;\hat{\beta})}
 \]
 
 \end_inset
@@ -3320,7 +3389,7 @@ locally equivalent
  i.e.
 \begin_inset Formula 
 \[
-\theta_{\mathrm{RI}}(s)=1+\underset{\text{Prediction}}{\underbrace{\frac{\nabla f{}^{\top}\hat{\Sigma}_{\beta}\nabla f}{4\eta^{2}}}}+\underset{\text{Randomness}}{\underbrace{\frac{\widehat{\sigma^{2}}}{4\eta^{2}}}}+o\left(\frac{\nabla f{}^{\top}\hat{\Sigma}_{\beta}\nabla f+\widehat{\sigma^{2}}}{\eta^{2}}\right)\ge1.
+\theta_{\mathrm{RI}}(s)=1+{\color{teal}\underset{\text{Prediction}}{\underbrace{\frac{\nabla f{}^{\top}\hat{\Sigma}_{\beta}\nabla f}{4\eta^{2}}}}}+{\color{red}\underset{\text{Randomness}}{\underbrace{\frac{\widehat{\sigma^{2}}}{4\eta^{2}}}}}+o\left(v\left(s\right)\right)\ge1.
 \]
 
 \end_inset
@@ -3334,11 +3403,29 @@ locally equivalent
 The role of attention:
 \begin_inset Formula 
 \[
-\frac{\partial\theta}{\partial a_{\beta}}(s)=-\frac{\psi_{\beta}}{4\eta^{2}}\nabla f{}^{\top}\hat{\Sigma}_{\beta}^{2}\nabla f\le0,\quad\frac{\partial\theta}{\partial a_{\sigma}}(s)=\frac{1}{4\eta^{2}}\frac{\partial\widehat{\sigma^{2}}}{\partial a_{\sigma}}(s).
+{\color{teal}\boldsymbol{\frac{\partial\theta}{\partial a_{\beta}}(s)}}={\color{teal}\boldsymbol{-}}\frac{\psi_{\beta}}{4\eta^{2}}\nabla f{}^{\top}\hat{\Sigma}_{\beta}^{2}\nabla f{\color{teal}\boldsymbol{\le}}0,\quad{\color{red}\boldsymbol{\frac{\partial\theta}{\partial a_{\sigma}}(s)}}=\frac{1}{4\eta^{2}}\frac{\partial\widehat{\sigma^{2}}}{\partial a_{\sigma}}(s)=\frac{\widehat{\sigma^{2}}\left(s\right)\psi_{\sigma}\hat{\tau}^{4}}{4\eta^{2}}\left({\color{red}\boldsymbol{\frac{s_{\ell}-\bar{\ell}}{\tau^{2}}-\frac{1}{2}}}\right)
 \]
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+where
+\series bold
+ 
+\begin_inset Formula $\hat{\tau}^{2}(a_{\sigma})=\left(\frac{1}{\tau^{2}}+\psi_{\sigma}a_{\sigma}\right)^{-1}$
+\end_inset
+
+
+\series default
+is posterior residual variance
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 Intuition:
  
 \end_layout
@@ -3367,16 +3454,16 @@ most
 instability
 \series default
 :
- if attention reveals 
+ 
 \series bold
 stability
 \series default
- it cools (lowers 
+ lowers 
 \begin_inset Formula $\theta$
 \end_inset
 
-);
- if it reveals 
+;
+ 
 \series bold
 larger
 \series default
@@ -3388,11 +3475,11 @@ residual
 \series bold
 risk
 \series default
- it warms (raises 
+ raises 
 \begin_inset Formula $\theta$
 \end_inset
 
-)
+
 \end_layout
 
 \end_deeper
@@ -3428,8 +3515,11 @@ Best predict the price
 \series bold
  
 \series default
-Best default probability prediction
+Best default probability 
+\color teal
+prediction
 \series bold
+\color inherit
 
 \begin_inset Formula 
 \[
@@ -3455,6 +3545,23 @@ where
 
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+Optimal Attention Allocation:
+ 
+\series default
+
+\begin_inset Formula 
+\[
+{\color{teal}\kappa_{\beta}a_{\beta}=\mathbb{E}\left[w(s)\frac{\psi_{\beta}}{\eta^{2}}\nabla f{}^{\top}\hat{\Sigma}_{\beta}^{2}\nabla f\right]},\quad{\color{red}\kappa_{\sigma}a_{\sigma}=-\mathbb{E}\left[w(s)\frac{1}{\eta^{2}}\frac{\partial\widehat{\sigma^{2}}}{\partial a_{\sigma}}(s)\right],}
+\]
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3462,7 +3569,7 @@ status open
 
 \begin_layout Plain Layout
 Mechanism:
- Argentina misreporting II
+ Argentina's Misreporting
 \end_layout
 
 \end_inset
@@ -3474,70 +3581,129 @@ Mechanism:
 \begin_layout Standard
 
 \series bold
-The Argentina case can be explained by:
+Proposition 7
+\series default
+ 
+\emph on
+Suppose 
+\begin_inset Formula $\psi_{\beta}$
+\end_inset
+
+ falls while 
+\begin_inset Formula $\psi_{\sigma}$
+\end_inset
+
+ and other primitives are fixed.
+ Then at any interior optimum,
+ 
+\color teal
+
+\begin_inset Formula $a_{\beta}^{*}$
+\end_inset
+
+ weakly decreases
+\color inherit
+ and 
+\color red
+
+\begin_inset Formula $a_{\sigma}^{*}$
+\end_inset
+
+ weakly increases
+\color inherit
+.
+ Consequently,
+ 
+\color red
+
+\begin_inset Formula $\widehat{\sigma^{2}}$
+\end_inset
+
+ weakly rises
+\color inherit
+ in expectation and 
+\begin_inset Formula $\theta_{\mathrm{RI}}(s)$
+\end_inset
+
+ 
+\series bold
+weakly increases pointwise
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Two channels to generate PRO:
 \end_layout
 
 \begin_layout Enumerate
-Misreporting inflation data 
+
+\series bold
+Unreliable fundamental information:
+ 
+\series default
+Lower credibility 
+\begin_inset Formula $\psi_{\beta}\Longrightarrow({\color{teal}a_{\beta}^{*}\downarrow},{\color{red}a_{\sigma}^{*}\uparrow})$
+\end_inset
+
+ 
 \begin_inset Formula $\Longrightarrow$
 \end_inset
 
- 
-\begin_inset Formula $\psi_{\mu}\downarrow$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-By 
-\series bold
-Proposition 7
-\series default
-:
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-Lenders actively choose to 
-\series bold
-reduce
-\series default
- their attention to mean signals 
-\begin_inset Formula $a_{\mu}\downarrow$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-the marginal benefits of policy instability 
-\begin_inset Formula $\mathcal{S}\uparrow$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-Lender will actively choose a higher attention level to the policy dispersion 
-\begin_inset Formula $a_{\sigma}\uparrow$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-PRO bias increases 
-\begin_inset Formula $\theta_{\mathrm{RI}}\uparrow\Longrightarrow$
+ Higher 
+\begin_inset Formula $\theta_{\mathrm{RI}}(s)$
 \end_inset
 
  
+\end_layout
+
+\begin_layout Enumerate
+
 \series bold
-Higher average spread and decoupling from similar countries
+Bad news about uncertainty:
+ 
+\series default
+High 
+\begin_inset Formula ${\color{red}s_{\ell}}$
+\end_inset
+
+ realization 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ Larger 
+\series bold
+posterior
+\series default
+ estimates of the residual variance 
+\begin_inset Formula ${\color{red}\widehat{\sigma^{2}}}\Longrightarrow$
+\end_inset
+
+ Higher 
+\begin_inset Formula $\theta_{\mathrm{RI}}(s)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Intuition:
+ 
+\series default
+Misreporting raises spread through 
+\series bold
+destroying
+\series default
+ sovereign's credibility and lender's prediction
 \end_layout
 
 \end_deeper
+\begin_layout Frame
+
+\end_layout
+
 \begin_layout Frame
 
 \end_layout
@@ -3574,7 +3740,11 @@ still exist
 \end_layout
 
 \begin_layout Itemize
-Real efficiency losses that cannot be compensated by 
+Real efficiency losses that 
+\emph on
+cannot
+\emph default
+ be compensated by 
 \emph on
 resource transfers
 \emph default
@@ -3596,7 +3766,11 @@ PRO bias will persist in the long term
 
 \begin_layout Itemize
 When default events are rare,
- beliefs converge very slowly to a steady state
+ beliefs converge very 
+\emph on
+slowly
+\emph default
+ to a steady state
 \end_layout
 
 \begin_layout Standard
@@ -3618,7 +3792,11 @@ PRO bias is severe enough
 \begin_inset Formula $\Longrightarrow$
 \end_inset
 
- choosing a certain degree of transparency 
+ 
+\emph on
+choosing a certain degree of transparency
+\emph default
+ 
 \begin_inset Formula $\Longrightarrow$
 \end_inset
 
@@ -3668,7 +3846,11 @@ Lenders systematically
 \series bold
 overestimate
 \series default
- the randomness or "irrational" component in sovereign policy choices 
+ the 
+\color red
+randomness or "irrational"
+\color inherit
+ component in sovereign policy choices 
 \end_layout
 
 \begin_layout Itemize
@@ -3717,7 +3899,7 @@ Rational inattention
 \end_layout
 
 \begin_layout Itemize
-Explain the logic of Argentina's decoupling
+Explain the logic of Argentina's decoupling through 2 channels
 \end_layout
 
 \end_deeper
