@@ -929,7 +929,7 @@ ex-post
  value
 \begin_inset Formula 
 \[
-V(y,B)=\mathbb{E}_{\varepsilon_{d},\varepsilon_{r}}\left[\max\left\{ \underbrace{V^{D}(y)+\varepsilon_{d}}_{\tilde{V}^{D}(y,\varepsilon_{d})},\underbrace{V^{R}(y,B)+\varepsilon_{r}}_{\tilde{V}^{R}(y,B,\varepsilon_{r})}\right\} \right]
+V(y,B)=\mathbb{E}_{\varepsilon_{d},\varepsilon_{r}}\left[\max\left\{ \underbrace{V^{D}(y)+\varepsilon_{d}}_{\tilde{V}^{D}(y,\varepsilon_{d})},\underbrace{V^{R}(y,B)+\varepsilon_{r}}_{\tilde{V}^{R}(y,B,\varepsilon_{r})}\right\} \right]=\eta\ln\left(\exp\frac{V^{D}(y)}{\eta}+\exp\frac{V^{R}(y,B)}{\eta}\right)
 \]
 
 \end_inset
@@ -3135,15 +3135,20 @@ Setup
 \begin_layout Standard
 
 \series bold
-Additional Assumption:
- 
-\begin_inset Formula $\theta\in\left[1,\bar{\theta}\right]$
-\end_inset
-
+Mental Model:
  
 \series default
-where 
-\begin_inset Formula $\bar{\theta}>1$
+Let 
+\begin_inset Formula $s\equiv(y,B')$
+\end_inset
+
+ denote the state,
+ the net value difference is perceived as
+\begin_inset Formula 
+\[
+\Delta V(s)=f(s;\beta)+\xi
+\]
+
 \end_inset
 
 
@@ -3154,165 +3159,39 @@ where
 \series bold
 Information Structure:
  
-\series default
-Competitive lenders observe two public signals:
 \end_layout
 
-\begin_layout Enumerate
-Mean/Fundamentals 
-\begin_inset Formula 
-\[
-s_{\mu}=\mu+\varepsilon_{\mu},\quad\varepsilon_{\mu}\sim\mathcal{N}\bigl(0,\,(\psi_{\mu}a_{\mu})^{-1}\bigr),
-\]
-
-\end_inset
-
-where 
-\begin_inset Formula $\psi_{\mu}\in(0,1]$
-\end_inset
-
- captures the credibility/productivity of the mean signal
-\end_layout
-
-\begin_layout Enumerate
-Dispersion/Stability
-\begin_inset Formula 
-\[
-s_{\sigma}=\sigma+\varepsilon_{\sigma},\quad\varepsilon_{\sigma}\sim\mathcal{N}(0,\,a_{\sigma}^{-1}),
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Convex precision cost:
+\begin_layout Itemize
+for model parameters:
  
-\series default
-interpreted as attention/processing costs:
 \series bold
 
-\begin_inset Formula 
-\[
-\Phi(a_{\mu},a_{\sigma})=\tfrac{\kappa_{\mu}}{2}a_{\mu}^{2}+\tfrac{\kappa_{\sigma}}{2}a_{\sigma}^{2},
-\]
-
+\begin_inset Formula $\beta\sim\mathcal{N}(\bar{\beta},\Sigma_{\beta}),s_{\beta}=\beta+\varepsilon_{\beta},\varepsilon_{\beta}\sim\mathcal{N}\big(0,(\psi_{\beta}a_{\beta})^{-1}I_{k}\big)$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-An entropy/mutual-information formulation yields identical monotone comparative statics in precisions
-\end_layout
-
-\end_deeper
-\begin_layout PlainFrame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Tail-weight and Pricing
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-Lenders maximize
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Formally,
  
-\begin_inset Formula 
-\[
-U(y,B';a_{\mu},a_{\sigma};q)\equiv\frac{1}{1+r}\mathbb{E}_{s_{\mu}\mid y;a_{\mu}}\mathbb{E}_{y'\mid y,s_{\mu};a_{\mu}}\left[\bigl(1-P_{\theta_{\mathrm{RI}}(y,B';a_{\sigma})}(y',B')\bigr)\Bigl(\kappa+(1-\delta)\mathbb{E}_{B''\mid y',B'}\big[q(y',B'')\big]\Bigr)\right]
-\]
+\end_layout
 
+\begin_layout Itemize
+for residuals:
+ 
+\begin_inset Formula $\xi|\sigma^{2}\sim\mathcal{N}(0,\sigma^{2}),\ell_{\sigma}\equiv\log\sigma^{2}\sim\mathcal{N}(\bar{\ell},\,\tau^{2}),$
+\end_inset
+
+
+\begin_inset Formula $s_{\ell}=\ell_{\sigma}+\varepsilon_{\sigma},\varepsilon_{\sigma}\sim\mathcal{N}\big(0,(\psi_{\sigma}a_{\sigma})^{-1}\big)$
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Formula 
-\[
-\max_{a_{\mu},a_{\sigma}\ge0}\mathbb{E}[U\mid a_{\mu},a_{\sigma}]-\Phi(a_{\mu},a_{\sigma}).
-\]
-
-\end_inset
-
-Let the marginal pricing sensitivity be:
-\begin_inset Formula 
-\[
-\mathcal{S}(y,B')\equiv\mathbb{E}\left[\frac{\partial U}{\partial\theta}(y,B';\theta_{\mathrm{RI}}(y,B'))\right]\ge0.
-\]
-
-\end_inset
-
-we have the FOC 
-\begin_inset Formula $a_{\sigma}(y,B')=\tfrac{\varphi}{\kappa_{\sigma}}\mathcal{S}(y,B')$
-\end_inset
-
-.
- Attention to dispersion maps into the 
-\series bold
-tail-weight
-\series default
- in lenders' default beliefs.
-\begin_inset Formula 
-\[
-\theta_{\mathrm{RI}}(y,B')=\min\Big\{1+\varphi a_{\sigma}(y,B'),\bar{\theta}\Big\}=\min\Big\{1+\tfrac{\varphi^{2}}{\kappa_{\sigma}}\mathcal{S}(y,B'),\bar{\theta}\Big\},\quad\varphi>0.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Attention substitution
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
-Similarly,
- write the effective mean precision as 
-\begin_inset Formula $a_{\mu}^{\mathrm{eff}}\equiv\psi_{\mu}a_{\mu}$
-\end_inset
 
- and define its marginal value
+\series bold
+Convex Attention Cost:
 \begin_inset Formula 
 \[
-\mathcal{M}(y,B')\coloneqq\mathbb{E}\left[\frac{\partial U}{\partial a_{\mu}^{\mathrm{eff}}}(y,B')\right]\ge0.
-\]
-
-\end_inset
-
-The optimality condition gives
-\begin_inset Formula 
-\[
-\psi_{\mu}\,\mathcal{M}(y,B')=\kappa_{\mu}\,a_{\mu}(y,B').
+\Phi(a_{\beta},a_{\sigma})=\tfrac{\kappa_{\beta}}{2}a_{\beta}^{2}+\tfrac{\kappa_{\sigma}}{2}a_{\sigma}^{2},\quad\kappa_{\beta},\kappa_{\sigma}>0
 \]
 
 \end_inset
@@ -3323,40 +3202,26 @@ The optimality condition gives
 \begin_layout Standard
 
 \series bold
-Proposition 7 
-\series default
-\emph on
-Fix a state 
-\begin_inset Formula $s=(y,B')$
-\end_inset
+Posterior Distribution:
+ 
+\end_layout
 
- and assume 
-\begin_inset Formula $\mathcal{M},\mathcal{S}\in C^{1}$
-\end_inset
-
- and the following hold:
- Diminishing returns,
- Cross (substitution) effects,
- Strict concavity of the attention and Productivity raises the marginal return to mean attention problem.
- Then the unique interior solution 
-\begin_inset Formula $(a_{\mu}^{\ast},a_{\sigma}^{\ast})$
-\end_inset
-
- to the first-order conditions satisfies
-\begin_inset Formula 
-\[
-\frac{\partial a_{\mu}^{\ast}}{\partial\psi_{\mu}}\ge0,\frac{\partial a_{\sigma}^{\ast}}{\partial\psi_{\mu}}\le0,
-\]
-
+\begin_layout Itemize
+for model parameters:
+ 
+\begin_inset Formula $\hat{\Sigma}_{\beta}=\big(\Sigma_{\beta}^{-1}+\psi_{\beta}a_{\beta}I_{k}\big)^{-1},\hat{\beta}=\hat{\Sigma}_{\beta}\big(\Sigma_{\beta}^{-1}\bar{\beta}+\psi_{\beta}a_{\beta}s_{\beta}\big)$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
+for residuals:
+ 
+\begin_inset Formula $\widehat{\sigma^{2}}\equiv\mathbb{E}\big[\sigma^{2}\big|s_{\ell}\big]\;=\mathbb{E}\big[\exp(\ell_{\sigma})\big|s_{\ell}\big]$
+\end_inset
 
-\emph on
-with strict inequalities if at least one of the cross effects is strict.
+
 \end_layout
 
 \end_deeper
@@ -3369,7 +3234,7 @@ with strict inequalities if at least one of the cross effects is strict.
 status open
 
 \begin_layout Plain Layout
-Monotone attention and PRO intensity
+Default Revisited
 \end_layout
 
 \end_inset
@@ -3379,27 +3244,83 @@ Monotone attention and PRO intensity
 
 \begin_deeper
 \begin_layout Standard
+Recall the perceived default probability
+\begin_inset Formula 
+\[
+P_{\theta}(y',B')=L\Big(\underset{\equiv Z\left(s\right)}{\underbrace{-\tfrac{\Delta V(y',B')}{\theta\eta}}}\Big),L(z)\equiv(1+e^{-z})^{-1}
+\]
 
-\series bold
-Corollary 2
-\series default
- If 
-\begin_inset Formula $\mathcal{S}(y,B')$
 \end_inset
 
- is increasing in 
-\begin_inset Formula $B'$
+Linearize 
+\begin_inset Formula $f$
 \end_inset
 
- and decreasing in 
-\begin_inset Formula $y$
+ around the posterior 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+Z(s)\approx-\frac{1}{\eta}\Big(f(s;\hat{\beta})+\nabla_{\beta}f(s;\hat{\beta})^{\top}(\beta-\hat{\beta})+\xi\Big)
+\]
+
+\end_inset
+
+and let 
+\begin_inset Formula $z_{0}(s)\equiv-\frac{f(s;\hat{\beta})}{\eta}$
 \end_inset
 
 ,
  then 
+\begin_inset Formula $Z\left(s\right)=z_{0}\left(s\right)+\varepsilon$
+\end_inset
+
+ is mean-shifted Gaussian with:
 \begin_inset Formula 
 \[
-\frac{\partial a_{\sigma}}{\partial B'}>0,\quad\frac{\partial a_{\sigma}}{\partial y}<0,\quad\frac{\partial\theta_{\mathrm{RI}}}{\partial B'}>0,\quad\frac{\partial\theta_{\mathrm{RI}}}{\partial y}<0.
+\nu(s)\equiv\mathrm{Var}(\varepsilon|s)=\frac{1}{\eta^{2}}\left(\nabla f{}^{\top}\hat{\Sigma}_{\beta}\nabla f+\widehat{\sigma^{2}}\right),\quad\nabla f\equiv\nabla_{\beta}f(s;\hat{\beta})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Local Equivalence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The perceived default probability 
+\begin_inset Formula $P_{\theta}(s)$
+\end_inset
+
+ is 
+\series bold
+locally equivalent
+\series default
+ to evaluating the same logit at a higher temperature 
+\begin_inset Formula $\tilde{\theta}\big(\nu(s)\big)$
+\end_inset
+
+,
+ i.e.
+\begin_inset Formula 
+\[
+\theta_{\mathrm{RI}}(s)=1+\underset{\text{Prediction}}{\underbrace{\frac{\nabla f{}^{\top}\hat{\Sigma}_{\beta}\nabla f}{4\eta^{2}}}}+\underset{\text{Randomness}}{\underbrace{\frac{\widehat{\sigma^{2}}}{4\eta^{2}}}}+o\left(\frac{\nabla f{}^{\top}\hat{\Sigma}_{\beta}\nabla f+\widehat{\sigma^{2}}}{\eta^{2}}\right)\ge1.
 \]
 
 \end_inset
@@ -3410,73 +3331,128 @@ Corollary 2
 \begin_layout Standard
 
 \series bold
+The role of attention:
+\begin_inset Formula 
+\[
+\frac{\partial\theta}{\partial a_{\beta}}(s)=-\frac{\psi_{\beta}}{4\eta^{2}}\nabla f{}^{\top}\hat{\Sigma}_{\beta}^{2}\nabla f\le0,\quad\frac{\partial\theta}{\partial a_{\sigma}}(s)=\frac{1}{4\eta^{2}}\frac{\partial\widehat{\sigma^{2}}}{\partial a_{\sigma}}(s).
+\]
+
+\end_inset
+
 Intuition:
-
-\series default
- Decision makers (lenders) will only pay the most attention to the most 
-\emph on
-critical 
-\begin_inset Formula $B'\uparrow$
-\end_inset
-
- and uncertain
-\emph default
  
-\begin_inset Formula $y\downarrow$
-\end_inset
-
- areas.
 \end_layout
 
-\begin_layout Standard
-Given the setup,
- we can show the 
-\emph on
-existence,
- uniqueness,
- and continuity
-\emph default
- of attention.
+\begin_layout Itemize
+\begin_inset Formula $a_{\beta}$
+\end_inset
+
+ 
+\series bold
+compresses
+\series default
+ posterior variance precisely along the direction that 
+\series bold
+most
+\series default
+ shifts the default margin 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
+\begin_inset Formula $a_{\sigma}$
+\end_inset
 
+ diagnoses 
 \series bold
-Proposition 8 
+instability
 \series default
-\emph on
-Suppose 
-\begin_inset Formula $\Phi$
-\end_inset
-
- is strictly convex.
- If 
-\begin_inset Formula $\mathcal{T}_{\theta}$
-\end_inset
-
- is positive and order-preserving for each fixed 
-\begin_inset Formula $\theta\in[1,\bar{\theta}]$
-\end_inset
-
-,
- then the state-dependent operator 
-\begin_inset Formula $\mathcal{T}_{\theta_{\mathrm{RI}}(\cdot)}$
-\end_inset
-
- is positive and order-preserving.
- The baseline results 
+:
+ if attention reveals 
 \series bold
-continue to hold
+stability
 \series default
- with 
+ it cools (lowers 
 \begin_inset Formula $\theta$
 \end_inset
 
- replaced by 
-\begin_inset Formula $\theta_{\mathrm{RI}}(y,B')$
+);
+ if it reveals 
+\series bold
+larger
+\series default
+ 
+\series bold
+residual
+\series default
+ 
+\series bold
+risk
+\series default
+ it warms (raises 
+\begin_inset Formula $\theta$
 \end_inset
 
-.
+)
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Attention Choice
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Lender's Goal:
+ 
+\series default
+Best predict the price 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+
+\series bold
+ 
+\series default
+Best default probability prediction
+\series bold
+
+\begin_inset Formula 
+\[
+\max_{a_{\beta},a_{\sigma}\ge0}\mathcal{J}(a_{\beta},a_{\sigma})\equiv-\mathbb{E}\big[\nu(s;a_{\beta},a_{\sigma})w(s)\big]-\Phi(a_{\beta},a_{\sigma})
+\]
+
+\end_inset
+
+
+\series default
+where 
+\begin_inset Formula $w(s)\propto L'\left(-\tfrac{\Delta V(s)}{\eta}\right)$
+\end_inset
+
+ denotes each state 
+\begin_inset Formula $s$
+\end_inset
+
+' weight with 
+\begin_inset Formula $\int_{\mathcal{S}}dw=1$
+\end_inset
+
+
 \end_layout
 
 \end_deeper
