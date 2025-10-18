@@ -160,7 +160,7 @@ xline(xsplit, ':k', '2007-Q1', 'Interpreter','latex','FontSize',15,'LineWidth',2
 
 
 xlabel('Quarter', 'Interpreter','latex'); datetick('x','yyyy-QQ','keeplimits');
-ylabel('Debt / Annual GDP (%)', 'Interpreter','latex');
+ylabel('Debt / Annual GDP (\%)', 'Interpreter','latex');
 % title('Debt Ratio: Baseline vs High $\theta$ (Argentina GDP path)', 'Interpreter','latex');
 grid on;
 % xlim([datenum(datetime(2006,1,1)) datenum(datetime(2013,12,31))]);
@@ -186,7 +186,7 @@ xline(xsplit, ':k', '2007-Q1', 'Interpreter','latex','FontSize', 15,'LineWidth',
 
 xlim([datenum(datetime(2005,12,31)) datenum(datetime(2009,1,1))]);
 xlabel('Quarter', 'Interpreter','latex'); datetick('x','yyyy-QQ','keeplimits');
-ylabel('Spread (annualized, %)', 'Interpreter','latex');
+ylabel('Spread (annualized, \%)', 'Interpreter','latex');
 % title('Spreads: Baseline vs High $\theta$ (Argentina GDP path)', 'Interpreter','latex');
 grid on;
 % xlim([datenum(datetime(2006,1,1)) datenum(datetime(2013,12,31))]);
