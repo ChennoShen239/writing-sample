@@ -63,7 +63,7 @@
 \maketitle
 
 \begin{abstract}
-	Why do some sovereigns pay high spreads despite moderate debt? I build a quantitative default model where lenders overweight the dispersion of policy realizations (policy‑randomness overestimation, PRO). Within a single pricing operator, PRO pivots price/spread schedules around a state‑contingent threshold: the sovereign deleverages while defaulting at higher debt, raising average spreads and producing a "stability illusion" (lower volatility with higher premia).A rational‑inattention microfoundation based on a mental‑model representation endogenizes the tail weight \emph{within the same pricing operator} and explains the state-contingent PRO level in Argentina's Case. Policy and information extensions show limited power of fiscal transfers, persistence from negativity‑biased learning, and welfare gains from transparency.
+	Why do some sovereigns pay high spreads despite moderate debt? I build a quantitative default model where lenders overweight the dispersion of policy realizations (policy‑randomness overestimation, PRO). Within a single pricing operator, PRO pivots price/spread schedules around a state‑contingent threshold: the sovereign deleverages while defaulting at higher debt, raising average spreads and producing a "stability illusion" (lower volatility with higher premia). A rational‑inattention microfoundation, based on a mental‑model‑plus‑residual representation, endogenizes PRO level. It highlights two empirically salient channels (Argentina): (i) a credibility collapse that shifts attention away from fundamentals toward diagnosing instability, raising the effective temperature; and (ii) a sharp instability signal that increases perceived residual uncertainty and lifts the effective temperature on impact. Policy and information extensions show limited power of fiscal transfers, persistence from negativity‑biased learning, and welfare gains from transparency.
 \end{abstract}
 
 \noindent \textbf{Keywords:} Sovereign Default, Behavioral Macroeconomics, Policy-Randomness Overestimation (PRO), Sovereign Spreads, Information Frictions, Argentina, Debt Management.
@@ -97,6 +97,22 @@ composition shift toward states with lower baseline spreads. In quantitative
 exercises, the wedge dominates, so average spreads rise even as debt falls. The
 body of the paper formalizes this logic with a decomposition and operator‑based
 comparative statics.
+
+I establish a rational‑inattention microfoundation with a
+mental‑model‑plus‑residual structure that maps posterior dispersion around the
+default threshold to the same pricing operator through a state‑dependent
+evaluation parameter. In words: uncertainty comes from two sources—the part of
+the model we can estimate and the residual we cannot. Attention to fundamentals
+mainly reduces uncertainty along the most decision‑relevant direction (which
+“cools” prices), whereas attention to dispersion either cools or warms
+depending on what new information reveals: stability news cools; instability
+news warms (Appendix~\ref{app:sigma_posterior_mechanics}). This yields two
+event channels for Argentina. First, a credibility collapse reduces the payoff
+to studying fundamentals, so attention shifts toward diagnosing instability and
+the effective temperature rises. Second, the act of misreporting is itself a
+strong instability signal that raises perceived residual uncertainty and lifts
+the effective temperature on impact. Both channels operate within the same
+operator and preserve the paper’s comparative statics.
 
 Three theoretical extensions deepen the analysis. First, even optimal Ramsey
 fiscal policy cannot eliminate welfare losses from PRO due to fundamental
@@ -1795,12 +1811,15 @@ misreporting, and offers a disciplined path for calibration and event‑study
 validation.
 
 \paragraph{Microfoundation} A rational‑inattention microfoundation embeds a mental‑model‑plus‑residual
-decomposition and endogenizes the state‑dependent tail weight
-$\theta_{\mathrm{RI}}(s)$ \emph{inside the same pricing operator} $\mathcal
-	T_\theta$. This preserves internal consistency while providing a clean channel
-for credibility shocks (e.g., a fall in $\psi_\beta$) to raise $\theta$ via
-attention substitution, thereby tightening the link between mechanism, events,
-and the paper’s comparative statics.
+decomposition and endogenizes a state‑dependent effective temperature inside
+the same pricing operator. This preserves internal consistency and clarifies
+two event channels: (i) credibility shocks shift attention away from
+fundamentals toward diagnosing instability, raising the effective temperature;
+and (ii) sharp instability signals increase perceived residual uncertainty and
+lift the effective temperature on impact (see
+Appendix~\ref{app:sigma_posterior_mechanics}). Both operate through the same
+operator, tying the mechanism tightly to events and the paper’s comparative
+statics.
 
 \clearpage
 \appendix
