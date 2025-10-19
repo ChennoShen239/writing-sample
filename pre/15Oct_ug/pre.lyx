@@ -1921,7 +1921,14 @@ caption{Baseline Calibration (Quarterly)}
 
 
 \backslash
-resizebox{0.6
+vspace{-1em}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.7
 \backslash
 linewidth}{!}{%  <-- 开始缩放
 \end_layout
@@ -2209,7 +2216,7 @@ caption{Business Cycle Implications of PRO}
 
 
 \backslash
-resizebox{0.8
+resizebox{0.9
 \backslash
 linewidth}{!}{%
 \end_layout
