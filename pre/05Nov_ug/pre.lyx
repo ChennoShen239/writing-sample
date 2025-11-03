@@ -213,12 +213,8 @@ Chen Gao
 \begin_layout Institute
 National School of Development,
  Peking University
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Itemize
 Use the 
@@ -438,49 +434,6 @@ LatexCommand tableofcontents
 Motivation
 \end_layout
 
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-A Persistent Puzzle
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-Some sovereigns face persistently 
-\series bold
-high spreads
-\series default
- despite moderate debt and improving fundamentals.
-\end_layout
-
-\begin_layout Frame
-Event evidence (e.g.,
- Argentina’s inflation misreporting) shows spread decoupling beyond direct balance-sheet effects.
-\end_layout
-
-\begin_layout Frame
-Standard models struggle to match elevated average premia with lower volatility.
-\end_layout
-
-\begin_layout Frame
-
-\series bold
-This paper
-\series default
-:
- a single pricing operator with a second-moment belief wedge (PRO) that 
-\emph on
-pivots
-\emph default
- price/spread schedules.
-\end_layout
-
 \begin_layout PlainFrame
 \begin_inset Argument 4
 status open
@@ -497,12 +450,46 @@ Argentina:
 
 \begin_deeper
 \begin_layout Standard
+
+\emph on
+\color red
+\begin_inset Quotes eld
+\end_inset
+
+Don't Lie to Me,
+ Argentina
+\begin_inset Quotes erd
+\end_inset
+
+ —
+—
+ The Economist,
+ 2012
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-2em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -588,6 +575,22 @@ Source:
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 Interpretation
@@ -597,8 +600,7 @@ Interpretation
 \series bold
 PRO
 \series default
- (policy dispersion) both active.
- 
+ (policy dispersion) both active
 \end_layout
 
 \end_deeper
@@ -618,12 +620,15 @@ Literature on Sovereign Risk,
 
 \begin_deeper
 \begin_layout Standard
+
+\series bold
+Default:
+ 
+\series default
 Long-term debt with exclusion/costs;
  matches countercyclical spreads but struggles with 
 \emph on
 persistently high premia at moderate debt
-\emph default
-.
 \end_layout
 
 \begin_layout Itemize
@@ -637,17 +642,14 @@ persistently high premia at moderate debt
 \end_layout
 
 \begin_layout Standard
+
+\series bold
+Information:
+ 
+\series default
 Worst-case tilts raise premia 
 \emph on
 uniformly across states
-\emph default
-;
- strong fit for high spreads,
- less for 
-\emph on
-cross-maturity divergence
-\emph default
- after information shocks.
 \end_layout
 
 \begin_layout Itemize
@@ -664,8 +666,13 @@ cross-maturity divergence
 \end_layout
 
 \begin_layout Standard
+
+\series bold
+Behavior:
+ 
+\series default
 Agents optimally allocate attention;
- allows state-dependent distortions in perceived moments (mean/variance) consistent with pricing wedges.
+ allows state-dependent distortions in perceived moments (mean/variance) 
 \end_layout
 
 \begin_layout Itemize
@@ -685,7 +692,8 @@ Agents optimally allocate attention;
 status open
 
 \begin_layout Plain Layout
-This Paper
+This Paper:
+ PRO Beyond FIRE
 \end_layout
 
 \end_inset
@@ -708,14 +716,7 @@ overweight policy dispersion
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
- bond-price pivot around a state-dependent threshold 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- safe states cheaper for lenders,
- risky states 
-\emph on
-softening of doom
+ bond-price pivot around a state-dependent threshold
 \end_layout
 
 \begin_layout Standard
@@ -751,7 +752,7 @@ endogenous state-dependent
 \emph on
 default
 \emph default
- entering the same operator
+ 
 \end_layout
 
 \begin_layout Standard
@@ -874,6 +875,10 @@ So far so standard
 \end_layout
 
 \end_deeper
+\begin_layout Frame
+
+\end_layout
+
 \begin_layout PlainFrame
 \begin_inset Argument 4
 status open
@@ -922,19 +927,21 @@ and value of repay
 
 
 \series default
-The sovereign observes the shocks 
-\begin_inset Formula $\varepsilon_{d}$
+where 
+\begin_inset Formula ${\color{teal}\varepsilon_{r},\varepsilon_{d}}\overset{i.i.d.}{\sim}\text{Type‐I EV}(-\eta\gamma,\eta)$
 \end_inset
 
- and 
-\begin_inset Formula $\varepsilon_{r}$
-\end_inset
+ 
+\color red
+[Mean-zero Gumbel Distribution]
+\end_layout
 
- and chooses the action that yields the highest 
-\emph on
-ex-post
-\emph default
- value
+\begin_layout Standard
+The sovereign chooses the higher 
+\series bold
+ex-post value
+\series default
+:
 \begin_inset Formula 
 \[
 V(y,B)=\mathbb{E}_{{\color{teal}\varepsilon_{d},\varepsilon_{r}}}\left[\max\left\{ \underbrace{V^{D}(y)+\varepsilon_{d}}_{\tilde{V}^{D}(y,\varepsilon_{d})},\underbrace{V^{R}(y,B)+\varepsilon_{r}}_{\tilde{V}^{R}(y,B,\varepsilon_{r})}\right\} \right]=\eta\ln\left(\exp\frac{V^{D}(y)}{\eta}+\exp\frac{V^{R}(y,B)}{\eta}\right)
@@ -942,11 +949,7 @@ V(y,B)=\mathbb{E}_{{\color{teal}\varepsilon_{d},\varepsilon_{r}}}\left[\max\left
 
 \end_inset
 
-where 
-\begin_inset Formula ${\color{teal}\varepsilon_{R},\varepsilon_{D}}\overset{i.i.d.}{\sim}\text{Type‐I EV}(-\eta\gamma,\eta)$
-\end_inset
 
- 
 \end_layout
 
 \begin_layout Standard
@@ -976,8 +979,30 @@ Let
 status open
 
 \begin_layout Plain Layout
-Value of Default/Repay
+Value of Default/Repay 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{app:value_func}{
+\backslash
+beamergotobutton{Details}}
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "main:value_func"
 
 \end_inset
 
@@ -1014,41 +1039,19 @@ V^{D}(y)=u(h(y))+\beta\mathbb{E}_{y'|y}\left[\gamma V(y',0)+(1-\gamma)V^{D}(y')\
 Repay:
  
 \series default
-Pays the coupon 
-\begin_inset Formula $\kappa B$
-\end_inset
-
- ,
- the ex-ante value is:
+Similar to value function:
 \begin_inset Formula 
 \[
-W(y,B,B')=u\left(y-\kappa B+\left[B'-(1-\delta)B\right]q(y,B')\right)+\beta\mathbb{E}_{y'|y}\left[V(y',B')\right]
+V^{R}(y,B)=\rho\ln\left(\sum_{B'\in\mathcal{B}}\exp\frac{W(y,B,B')}{\rho}\right)
 \]
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-assuming 
-\begin_inset Formula ${\color{teal}\left\{ \varepsilon_{B'}\right\} _{B'\in\mathcal{B}}}\overset{i.i.d.}{\sim}\text{Type‐I EV}(-\rho\gamma,\rho)$
+where 
+\begin_inset Formula $W(y,B,B')=u\left(c\right)+\beta\mathbb{E}_{y'|y}\left[V(y',B')\right]$
 \end_inset
 
-,
- we have
-\begin_inset Formula 
-\[
-V^{R}(y,B)=\mathbb{E}_{{\color{teal}\left\{ \varepsilon_{B'}\right\} }}\left[\max_{B'\in\mathcal{B}}\left\{ W\left(y,B,B'\right)+\varepsilon_{B'}\right\} \right]=\rho\ln\left(\sum_{B'\in\mathcal{B}}\exp\frac{W(y,B,B')}{\rho}\right)
-\]
 
-\end_inset
-
-and the policy distribution follows 
-\begin_inset Formula $\Pr\{B'|y,B\}=\exp\frac{W(y,B,B')}{\rho}/\sum_{B_{j}\in\mathcal{B}}\exp\frac{W(y,B,B_{j})}{\rho}$
-\end_inset
-
-.
 \end_layout
 
 \end_deeper
@@ -1143,7 +1146,7 @@ policy-randomness overestimation (PRO)
 Price:
 \begin_inset Formula 
 \[
-q(y,B')=\underset{\equiv(\mathcal{T}_{\theta}q)(B',y)}{\underbrace{\frac{1}{1+r}\mathbb{E}_{y'|y}\left[\left(1-{\color{red}\boldsymbol{\tilde{P}\left(y',B'\right)}}\right)\left(\kappa+(1-\delta)\mathbb{E}_{B''|y',B'}\left[q(y',B'')\right]\right)\right]}}
+q(y,B')=\underset{\equiv({\color{red}\boldsymbol{\mathcal{T}_{\theta}}}q)(B',y)}{\underbrace{\frac{1}{1+r}\mathbb{E}_{y'|y}\left[\left(1-{\color{red}\boldsymbol{\tilde{P}\left(y',B'\right)}}\right)\left(\kappa+(1-\delta)\mathbb{E}_{B''|y',B'}\left[q(y',B'')\right]\right)\right]}}
 \]
 
 \end_inset
@@ -1202,7 +1205,7 @@ status open
 
 \begin_layout Plain Layout
 Main Result:
- Bond Price Pivot
+ Bond Price Pivoting
 \end_layout
 
 \end_inset
@@ -1399,134 +1402,30 @@ vspace{-1em}
 status open
 
 \begin_layout Plain Layout
-Pivoting II
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-PRO economy is 
-\series bold
-less
-\series default
- responsive to positive news:
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Proposition 3
-\series default
- 
-\emph on
-The threshold 
-\begin_inset Formula $B^{*}(y)$
-\end_inset
-
- is monotonically increasing in the endowment level 
-\begin_inset Formula $y$
-\end_inset
-
-.
- That is,
- 
-\begin_inset Formula $\frac{dB^{*}(y)}{dy}>0$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-With PRO,
- it's more 
-\series bold
-unlikely
-\series default
- to default:
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Proposition 4
-\series default
-\emph on
- Let 
-\begin_inset Formula $B_{D,i}^{*}(y)$
-\end_inset
-
- be the sovereign's default threshold for economy 
-\begin_inset Formula $i\in\{1,\theta\}$
-\end_inset
-
-.
- For any given endowment level 
-\begin_inset Formula $y$
-\end_inset
-
-,
- the default threshold is higher in the economy with PRO lenders:
-\emph default
-
-\begin_inset Formula 
-\[
-B_{D,\theta}^{*}(y)>B_{D,1}^{*}(y).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-And the sovereign tries to 
-\series bold
-deleverage
-\series default
-:
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Proposition 5 
-\series default
-\emph on
-Let 
-\begin_inset Formula $\mathbb{E}_{i}[B'|y,B]$
-\end_inset
-
- be the expected next-period debt.
- For states 
-\begin_inset Formula $(y,B)$
-\end_inset
-
- where the sovereign chooses not to default,
- 
-\emph default
-
-\begin_inset Formula 
-\[
-\mathbb{E}_{\theta}[B'|y,B]<\mathbb{E}_{1}[B'|y,B].
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout PlainFrame
-\begin_inset Argument 4
+Pivoting II 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Pivoting III
+
+
+\backslash
+hyperlink{app:more_theory}{
+\backslash
+beamergotobutton{Formal Propositions}}
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "main:more_theory"
 
 \end_inset
 
@@ -1536,6 +1435,7 @@ Pivoting III
 \begin_deeper
 \begin_layout Standard
 The overall welfare decreases for a PRO economy.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1875,24 +1775,11 @@ end{tikzpicture}
 
 \end_deeper
 \begin_layout PlainFrame
-
-\end_layout
-
-\begin_layout Frame
 \begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-Parameters
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
+Business Cycle 
 \begin_inset ERT
 status open
 
@@ -1900,267 +1787,9 @@ status open
 
 
 \backslash
-begin{table}[h!]
-\end_layout
-
-\begin_layout Plain Layout
-
-
+hyperlink{app:bc}{
 \backslash
-centering
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Baseline Calibration (Quarterly)}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{-1em}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-resizebox{0.7
-\backslash
-linewidth}{!}{%  <-- 开始缩放
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tabular}{@{}lll@{}}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-toprule
-\end_layout
-
-\begin_layout Plain Layout
-
-Parameter & Value & Description 
-\backslash
-
-\backslash
- 
-\backslash
-midrule
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{3}{l}{
-\backslash
-textit{Preferences and Endowments}} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-$
-\backslash
-sigma$ & 2.0 & CRRA coefficient of relative risk aversion 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-$
-\backslash
-beta$ & 0.9775 & Sovereign’s discount factor 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-$
-\backslash
-rho_y$ & 0.95 & Persistence of log endowment AR(1) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-$
-\backslash
-sigma_y$ & 0.005 & Std.
- dev.
- of endowment innovations 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{3}{l}{
-\backslash
-textit{Debt and Default}} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-$r$ & 0.01 & Quarterly risk-free interest rate (4
-\backslash
-% ann.) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-$
-\backslash
-delta$ & 0.04 & Principal decay rate (for 5-year duration) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-$
-\backslash
-kappa$ & 0.05 & Coupon rate ($
-\backslash
-delta+r$) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-$
-\backslash
-gamma$ & 0.125 & Re-entry probability (avg.
- 2-year exclusion) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-$
-\backslash
-lambda_0,
- 
-\backslash
-lambda_1$ & -0.48,
- 0.525 & Output cost function parameters 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{3}{l}{
-\backslash
-textit{Computational Parameters}} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-$
-\backslash
-eta$ & $5 
-\backslash
-times 10^{-4}$ & Scale of default taste shock 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-$
-\backslash
-rho$ & $1 
-\backslash
-times 10^{-5}$ & Scale of borrowing taste shock 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-$
-\backslash
-theta$ & 1.0 & Baseline PRO coefficient 
-\backslash
-
-\backslash
- 
-\backslash
-bottomrule
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
-} % <-- 结束缩放
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{table}
+beamergotobutton{Parameters}}
 \end_layout
 
 \end_inset
@@ -2168,14 +1797,12 @@ end{table}
 
 \end_layout
 
-\end_deeper
-\begin_layout PlainFrame
-\begin_inset Argument 4
-status open
+\end_inset
 
-\begin_layout Plain Layout
-Business Cycle
-\end_layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "main:bc"
 
 \end_inset
 
@@ -2605,109 +2232,7 @@ higher
 status open
 
 \begin_layout Plain Layout
-Deleveraging and Low-debt Trap II
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-Why does the average spread rise while deleveraging?
-\begin_inset Formula 
-\[
-\bar{s}_{\theta}-\bar{s}_{1}=\kappa{\color{red}\underbrace{\mathbb{E}_{\mu_{\theta}}\Big[\tfrac{1}{q_{\theta}}-\tfrac{1}{q_{1}}\Big]}_{\text{price wedge at PRO weights}}}+\kappa\underbrace{\Big(\mathbb{E}_{\mu_{\theta}}\left[\tfrac{1}{q_{1}}\right]-\mathbb{E}_{\mu_{1}}\left[\tfrac{1}{q_{1}}\right]\Big)}_{\text{composition (policy) effect}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Average spread dominance
-\end_layout
-
-\begin_layout Itemize
-The first term (price wedge at PRO weights) is 
-\series bold
-strictly positive
-\series default
- and 
-\emph on
-strengthened
-\emph default
- by deleveraging,
- mass shifts toward 
-\begin_inset Formula $B'<B^{*}(y)$
-\end_inset
-
- where 
-\begin_inset Formula $1/q_{\theta}-1/q_{1}>0$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Itemize
-The second term (composition effect at baseline prices) is weakly negative since 
-\begin_inset Formula $1/q_{1}$
-\end_inset
-
- is lower at smaller 
-\begin_inset Formula $B'$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Itemize
-Under mild regularity,
- the first term 
-\series bold
-dominates
-\series default
- the second 
-\begin_inset Formula $\Longrightarrow\bar{s}_{\theta}>\bar{s}_{1}$
-\end_inset
-
- 
-\end_layout
-
-\end_deeper
-\begin_layout PlainFrame
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-IRFs 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
+Argentina's Case 
 \begin_inset ERT
 status open
 
@@ -2715,313 +2240,13 @@ status open
 
 
 \backslash
-centering
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-Transitory
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
+hyperlink{app:dp}{
 \backslash
-vspace{-1em}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Output
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_13.pdf
-	width 25col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Debt
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_14.pdf
-	width 25col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Consumption
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_15.pdf
-	width 25col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Spread
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_16.pdf
-	width 25col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-Persistent
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
+beamergotobutton{Deleverage Path}}  
 \backslash
-vspace{-1em}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Output
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_17.pdf
-	width 25col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Debt
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_18.pdf
-	width 25col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Consumption
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_19.pdf
-	width 25col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Spread
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_20.pdf
-	width 25col%
-
-\end_inset
-
-
+hyperlink{app:irfs}{
+\backslash
+beamergotobutton{IRFs}}
 \end_layout
 
 \end_inset
@@ -3032,167 +2257,9 @@ Spread
 \end_inset
 
 
-\end_layout
-
-\end_deeper
-\begin_layout PlainFrame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Deleverage Paths
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Debt
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_11.pdf
-	width 33col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Consumption
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_12.pdf
-	width 33col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Spread
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_21.pdf
-	width 33col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-High PRO:
-\end_layout
-
-\begin_layout Itemize
-systematically converge to 
-\series bold
-lower 
-\series default
-debt levels 
-\end_layout
-
-\begin_layout Itemize
-consumption is more 
-\series bold
-volatile
-\end_layout
-
-\begin_layout Itemize
-Interest rate spreads remain 
-\series bold
-high
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Argentina's Case
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "main:dp"
 
 \end_inset
 
@@ -3458,72 +2525,30 @@ for residuals:
 status open
 
 \begin_layout Plain Layout
-Default Revisited
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-Recall the perceived default probability
-\begin_inset Formula 
-\[
-P_{\theta}(y',B')=L\underset{Z\left(s\right)}{\underbrace{\left(-\tfrac{\Delta V(y',B')}{\theta\eta}\right)}},L(z)\equiv(1+\exp\left(-z\right))^{-1}
-\]
-
-\end_inset
-
-Linearize 
-\begin_inset Formula $f$
-\end_inset
-
- around the posterior 
-\color teal
-
-\begin_inset Formula $\hat{\beta}$
-\end_inset
-
-
-\color inherit
-:
-\begin_inset Formula 
-\[
-Z(s)\approx-\frac{1}{\eta}\Big({\color{teal}f(s;\hat{\beta})+\nabla_{\beta}f(s;\hat{\beta})^{\top}(\beta-\hat{\beta})}+{\color{red}\xi}\Big)
-\]
-
-\end_inset
-
-and let 
-\begin_inset Formula $z_{0}(s)\equiv-\frac{f(s;\hat{\beta})}{\eta}$
-\end_inset
-
-,
- then 
-\begin_inset Formula $Z\left(s\right)=z_{0}\left(s\right)+\varepsilon$
-\end_inset
-
- is mean-shifted Gaussian with:
-\begin_inset Formula 
-\[
-\nu(s)\equiv\mathrm{Var}(\varepsilon|s)=\frac{1}{\eta^{2}}\left({\color{teal}\nabla f{}^{\top}\hat{\Sigma}_{\beta}\nabla f}+{\color{red}\widehat{\sigma^{2}}}\right),\quad{\color{teal}\nabla f\equiv\nabla_{\beta}f(s;\hat{\beta})}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-\begin_inset Argument 4
+Local Equivalence in Default 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Local Equivalence
+
+
+\backslash
+hyperlink{app:micro_default}{
+\backslash
+beamergotobutton{Details}}
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "main:micro_default"
 
 \end_inset
 
@@ -3533,7 +2558,7 @@ Local Equivalence
 \begin_deeper
 \begin_layout Standard
 The perceived default probability 
-\begin_inset Formula $P_{\theta}(s)$
+\begin_inset Formula $P_{\theta}(y',B')=L\left(-\tfrac{\Delta V(y',B')}{\theta\eta}\right)$
 \end_inset
 
  is 
@@ -3562,7 +2587,7 @@ locally equivalent
 The role of attention:
 \begin_inset Formula 
 \[
-{\color{teal}\boldsymbol{\frac{\partial\theta}{\partial a_{\beta}}(s)}}={\color{teal}\boldsymbol{-}}\frac{\psi_{\beta}}{4\eta^{2}}\nabla f{}^{\top}\hat{\Sigma}_{\beta}^{2}\nabla f{\color{teal}\boldsymbol{\le}}0,\quad{\color{red}\boldsymbol{\frac{\partial\theta}{\partial a_{\sigma}}(s)}}=\frac{1}{4\eta^{2}}\frac{\partial\widehat{\sigma^{2}}}{\partial a_{\sigma}}(s)=\frac{\widehat{\sigma^{2}}\left(s\right)\psi_{\sigma}\hat{\tau}^{4}}{4\eta^{2}}\left({\color{red}\boldsymbol{\frac{s_{\ell}-\bar{\ell}}{\tau^{2}}-\frac{1}{2}}}\right)
+{\color{teal}\boldsymbol{\frac{\partial\theta}{\partial a_{\beta}}(s)}}={\color{teal}\boldsymbol{-}}\frac{\psi_{\beta}}{4\eta^{2}}\nabla f{}^{\top}\hat{\Sigma}_{\beta}^{2}\nabla f{\color{teal}\boldsymbol{\le}}0,\quad{\color{red}\boldsymbol{\frac{\partial\theta}{\partial a_{\sigma}}(s)}}=\frac{\widehat{\sigma^{2}}\left(s\right)\psi_{\sigma}\hat{\tau}^{4}}{4\eta^{2}}\left({\color{red}\boldsymbol{\frac{s_{\ell}-\bar{\ell}}{\tau^{2}}-\frac{1}{2}}}\right)
 \]
 
 \end_inset
@@ -3643,93 +2668,35 @@ risk
 
 \end_deeper
 \begin_layout Frame
-
-\end_layout
-
-\begin_layout PlainFrame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Attention Choice
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-
-\series bold
-Lender's Goal:
- 
-\series default
-Best predict the price 
-\begin_inset Formula $\Longrightarrow$
-\end_inset
-
-
-\series bold
- 
-\series default
-Best default probability 
-\color teal
-prediction
-\series bold
-\color inherit
-
-\begin_inset Formula 
-\[
-\max_{a_{\beta},a_{\sigma}\ge0}\mathcal{J}(a_{\beta},a_{\sigma})\equiv-\mathbb{E}\big[\nu(s;a_{\beta},a_{\sigma})w(s)\big]-\Phi(a_{\beta},a_{\sigma})
-\]
-
-\end_inset
-
-
-\series default
-where 
-\begin_inset Formula $w(s)\propto L'\left(-\tfrac{\Delta V(s)}{\eta}\right)$
-\end_inset
-
- denotes each state 
-\begin_inset Formula $s$
-\end_inset
-
-' weight with 
-\begin_inset Formula $\int_{\mathcal{S}}dw=1$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Optimal Attention Allocation:
- 
-\series default
-
-\begin_inset Formula 
-\[
-{\color{teal}\kappa_{\beta}a_{\beta}=\mathbb{E}\left[w(s)\frac{\psi_{\beta}}{\eta^{2}}\nabla f{}^{\top}\hat{\Sigma}_{\beta}^{2}\nabla f\right]},\quad{\color{red}\kappa_{\sigma}a_{\sigma}=-\mathbb{E}\left[w(s)\frac{1}{\eta^{2}}\frac{\partial\widehat{\sigma^{2}}}{\partial a_{\sigma}}(s)\right],}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
 \begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
 Mechanism:
- Argentina's Misreporting
+ Argentina's Misreporting 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{app:micro_optimal}{
+\backslash
+beamergotobutton{Optimization Problem}}
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "main:micro_optimal"
 
 \end_inset
 
@@ -4066,9 +3033,1302 @@ Explain the logic of Argentina's decoupling through 2 channels
 
 \end_layout
 
+\begin_layout Section
+Appendix
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Value of Default/Repay:
+ Detailed 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{main:value_func}{
+\backslash
+beamergotobutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "app:value_func"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Default:
+ 
+\series default
+Upon re-entry,
+ all past debts are forgiven,
+ so it starts with 
+\begin_inset Formula $B=0$
+\end_inset
+
+:
+ 
+\begin_inset Formula 
+\[
+V^{D}(y)=u(h(y))+\beta\mathbb{E}_{y'|y}\left[\gamma V(y',0)+(1-\gamma)V^{D}(y')\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Repay:
+ 
+\series default
+Pays the coupon 
+\begin_inset Formula $\kappa B$
+\end_inset
+
+ ,
+ the ex-ante value is:
+\begin_inset Formula 
+\[
+W(y,B,B')=u\left(y-\kappa B+\left[B'-(1-\delta)B\right]q(y,B')\right)+\beta\mathbb{E}_{y'|y}\left[V(y',B')\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+assuming 
+\begin_inset Formula ${\color{teal}\left\{ \varepsilon_{B'}\right\} _{B'\in\mathcal{B}}}\overset{i.i.d.}{\sim}\text{Type‐I EV}(-\rho\gamma,\rho)$
+\end_inset
+
+,
+ we have
+\begin_inset Formula 
+\[
+V^{R}(y,B)=\mathbb{E}_{{\color{teal}\left\{ \varepsilon_{B'}\right\} }}\left[\max_{B'\in\mathcal{B}}\left\{ W\left(y,B,B'\right)+\varepsilon_{B'}\right\} \right]=\rho\ln\left(\sum_{B'\in\mathcal{B}}\exp\frac{W(y,B,B')}{\rho}\right)
+\]
+
+\end_inset
+
+and the policy distribution follows 
+\begin_inset Formula $\Pr\{B'|y,B\}=\exp\frac{W(y,B,B')}{\rho}/\sum_{B_{j}\in\mathcal{B}}\exp\frac{W(y,B,B_{j})}{\rho}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Pivoting II:
+ Formal Propositions 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{main:more_theory}{
+\backslash
+beamergotobutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "app:more_theory"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+PRO economy is 
+\series bold
+less
+\series default
+ responsive to positive news:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 3
+\series default
+ 
+\emph on
+The threshold 
+\begin_inset Formula $B^{*}(y)$
+\end_inset
+
+ is monotonically increasing in the endowment level 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ That is,
+ 
+\begin_inset Formula $\frac{dB^{*}(y)}{dy}>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+With PRO,
+ it's more 
+\series bold
+unlikely
+\series default
+ to default:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 4
+\series default
+\emph on
+ Let 
+\begin_inset Formula $B_{D,i}^{*}(y)$
+\end_inset
+
+ be the sovereign's default threshold for economy 
+\begin_inset Formula $i\in\{1,\theta\}$
+\end_inset
+
+.
+ For any given endowment level 
+\begin_inset Formula $y$
+\end_inset
+
+,
+ the default threshold is higher in the economy with PRO lenders:
+\emph default
+
+\begin_inset Formula 
+\[
+B_{D,\theta}^{*}(y)>B_{D,1}^{*}(y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And the sovereign tries to 
+\series bold
+deleverage
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 5 
+\series default
+\emph on
+Let 
+\begin_inset Formula $\mathbb{E}_{i}[B'|y,B]$
+\end_inset
+
+ be the expected next-period debt.
+ For states 
+\begin_inset Formula $(y,B)$
+\end_inset
+
+ where the sovereign chooses not to default,
+ 
+\emph default
+
+\begin_inset Formula 
+\[
+\mathbb{E}_{\theta}[B'|y,B]<\mathbb{E}_{1}[B'|y,B].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Parameters 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{main:bc}{
+\backslash
+beamergotobutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "app:bc"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[h!]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Baseline Calibration (Quarterly)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.7
+\backslash
+linewidth}{!}{%  <-- 开始缩放
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{@{}lll@{}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+Parameter & Value & Description 
+\backslash
+
+\backslash
+ 
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{3}{l}{
+\backslash
+textit{Preferences and Endowments}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+sigma$ & 2.0 & CRRA coefficient of relative risk aversion 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+beta$ & 0.9775 & Sovereign’s discount factor 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+rho_y$ & 0.95 & Persistence of log endowment AR(1) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+sigma_y$ & 0.005 & Std.
+ dev.
+ of endowment innovations 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{3}{l}{
+\backslash
+textit{Debt and Default}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$r$ & 0.01 & Quarterly risk-free interest rate (4
+\backslash
+% ann.) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+delta$ & 0.04 & Principal decay rate (for 5-year duration) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+kappa$ & 0.05 & Coupon rate ($
+\backslash
+delta+r$) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+gamma$ & 0.125 & Re-entry probability (avg.
+ 2-year exclusion) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+lambda_0,
+ 
+\backslash
+lambda_1$ & -0.48,
+ 0.525 & Output cost function parameters 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{3}{l}{
+\backslash
+textit{Computational Parameters}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+eta$ & $5 
+\backslash
+times 10^{-4}$ & Scale of default taste shock 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+rho$ & $1 
+\backslash
+times 10^{-5}$ & Scale of borrowing taste shock 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+theta$ & 1.0 & Baseline PRO coefficient 
+\backslash
+
+\backslash
+ 
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+} % <-- 结束缩放
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Deleverage Paths 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{main:dp}{
+\backslash
+beamergotobutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "app:dp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Debt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_11.pdf
+	width 33col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Consumption
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_12.pdf
+	width 33col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Spread
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_21.pdf
+	width 33col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+High PRO:
+\end_layout
+
+\begin_layout Itemize
+systematically converge to 
+\series bold
+lower 
+\series default
+debt levels 
+\end_layout
+
+\begin_layout Itemize
+consumption is more 
+\series bold
+volatile
+\end_layout
+
+\begin_layout Itemize
+Interest rate spreads remain 
+\series bold
+high
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IRFs 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{main:dp}{
+\backslash
+beamergotobutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "app:irfs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Transitory
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_13.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Debt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_14.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Consumption
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_15.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Spread
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_16.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Persistent
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_17.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Debt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_18.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Consumption
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_19.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Spread
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/cheneyg./Documents/Documents - Chen Gao’s MacBook Pro/WorkingProjects/blind/pro-default-model/results/comparison_figure_20.pdf
+	width 25col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Frame
 
 \end_layout
 
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Default Revisited 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{main:micro_default}{
+\backslash
+beamergotobutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "app:micro_default"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Recall the perceived default probability
+\begin_inset Formula 
+\[
+P_{\theta}(y',B')=L\underset{Z\left(s\right)}{\underbrace{\left(-\tfrac{\Delta V(y',B')}{\theta\eta}\right)}},L(z)\equiv(1+\exp\left(-z\right))^{-1}
+\]
+
+\end_inset
+
+Linearize 
+\begin_inset Formula $f$
+\end_inset
+
+ around the posterior 
+\color teal
+
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+
+\color inherit
+:
+\begin_inset Formula 
+\[
+Z(s)\approx-\frac{1}{\eta}\Big({\color{teal}f(s;\hat{\beta})+\nabla_{\beta}f(s;\hat{\beta})^{\top}(\beta-\hat{\beta})}+{\color{red}\xi}\Big)
+\]
+
+\end_inset
+
+and let 
+\begin_inset Formula $z_{0}(s)\equiv-\frac{f(s;\hat{\beta})}{\eta}$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $Z\left(s\right)=z_{0}\left(s\right)+\varepsilon$
+\end_inset
+
+ is mean-shifted Gaussian with:
+\begin_inset Formula 
+\[
+\nu(s)\equiv\mathrm{Var}(\varepsilon|s)=\frac{1}{\eta^{2}}\left({\color{teal}\nabla f{}^{\top}\hat{\Sigma}_{\beta}\nabla f}+{\color{red}\widehat{\sigma^{2}}}\right),\quad{\color{teal}\nabla f\equiv\nabla_{\beta}f(s;\hat{\beta})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Attention Choice 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{main:micro_optimal}{
+\backslash
+beamergotobutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Lender's Goal:
+ 
+\series default
+Best predict the price 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+
+\series bold
+ 
+\series default
+Best default probability 
+\color teal
+prediction
+\series bold
+\color inherit
+
+\begin_inset Formula 
+\[
+\max_{a_{\beta},a_{\sigma}\ge0}\mathcal{J}(a_{\beta},a_{\sigma})\equiv-\mathbb{E}\big[\nu(s;a_{\beta},a_{\sigma})w(s)\big]-\Phi(a_{\beta},a_{\sigma})
+\]
+
+\end_inset
+
+
+\series default
+where 
+\begin_inset Formula $w(s)\propto L'\left(-\tfrac{\Delta V(s)}{\eta}\right)$
+\end_inset
+
+ denotes each state 
+\begin_inset Formula $s$
+\end_inset
+
+' weight with 
+\begin_inset Formula $\int_{\mathcal{S}}dw=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Optimal Attention Allocation:
+ 
+\series default
+
+\begin_inset Formula 
+\[
+{\color{teal}\kappa_{\beta}a_{\beta}=\mathbb{E}\left[w(s)\frac{\psi_{\beta}}{\eta^{2}}\nabla f{}^{\top}\hat{\Sigma}_{\beta}^{2}\nabla f\right]},\quad{\color{red}\kappa_{\sigma}a_{\sigma}=-\mathbb{E}\left[w(s)\frac{1}{\eta^{2}}\frac{\partial\widehat{\sigma^{2}}}{\partial a_{\sigma}}(s)\right],}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
