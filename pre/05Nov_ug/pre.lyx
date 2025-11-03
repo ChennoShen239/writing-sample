@@ -958,11 +958,7 @@ V(y,B)=\mathbb{E}_{{\color{teal}\varepsilon_{d},\varepsilon_{r}}}\left[\max\left
 Default Choice:
  
 \series default
-Let 
-\begin_inset Formula $d\in\left\{ 0,1\right\} $
-\end_inset
-
- denote the default choice:
+Default if ex-post value of default is higher.
 \begin_inset Formula 
 \[
 \Pr\{d=1|y,B\}=\Pr\left\{ {\color{red}\tilde{V}^{D}(y,\varepsilon_{d})>\tilde{V}^{R}(y,B,\varepsilon_{r})}|y,B\right\} =\frac{\exp\frac{V^{D}(y)}{\eta}}{\exp\frac{V^{D}(y)}{\eta}+\exp\frac{V^{R}(y,B)}{\eta}}
